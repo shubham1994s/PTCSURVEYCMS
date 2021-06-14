@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DEVPTCSURVEYMAINModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AD_USER_MST">
+          <Key>
+            <PropertyRef Name="ADUM_USER_CODE" />
+          </Key>
+          <Property Name="ADUM_USER_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERVER_ID" Type="tinyint" />
+          <Property Name="APP_ID" Type="int" Nullable="false" />
+          <Property Name="ADUM_USER_ID" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ADUM_USER_NAME" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ADUM_LOGIN_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ADUM_PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ADUM_EMPLOYEE_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ADUM_DESIGNATION" Type="varchar" MaxLength="50" />
+          <Property Name="ADUM_MOBILE" Type="varchar" MaxLength="15" />
+          <Property Name="ADUM_EMAIL" Type="varchar" MaxLength="200" />
+          <Property Name="LOCAL_USER_NAME" Type="varchar" MaxLength="200" />
+          <Property Name="PROFILE_IMAGE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ADUM_FRDT" Type="datetime" />
+          <Property Name="ADUM_TODT" Type="datetime" />
+          <Property Name="ADUM_STATUS" Type="bit" />
+          <Property Name="UPDATE_FLAG" Type="bit" />
+          <Property Name="LAST_UPDATE" Type="smalldatetime" />
+          <Property Name="AD_USER_TYPE_ID" Type="int" />
+          <Property Name="MOBILE_ID" Type="nvarchar" MaxLength="100" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="IMO_NO" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="AppConnection">
+          <Key>
+            <PropertyRef Name="AppConnectionId" />
+          </Key>
+          <Property Name="AppConnectionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppId" Type="int" Nullable="false" />
+          <Property Name="DataSource" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="InitialCatalog" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="UserId" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AppDetails">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppName" Type="nvarchar" MaxLength="100" />
+          <Property Name="AppName_mar" Type="nvarchar" MaxLength="100" />
+          <Property Name="State" Type="int" />
+          <Property Name="Tehsil" Type="int" />
+          <Property Name="District" Type="int" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="100" />
+          <Property Name="website" Type="nvarchar" MaxLength="100" />
+          <Property Name="Android_GCM_pushNotification_Key" Type="varchar" MaxLength="150" />
+          <Property Name="IsProduction" Type="bit" />
+          <Property Name="baseImageUrlCMS" Type="nvarchar" MaxLength="255" />
+          <Property Name="baseImageUrl" Type="nvarchar" MaxLength="255" />
+          <Property Name="AboutThumbnailURL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="AboutAppynity" Type="nvarchar" MaxLength="50" />
+          <Property Name="AboutTeamDetail" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactUsTeamMember" Type="nvarchar" MaxLength="50" />
+          <Property Name="HomeSplash" Type="nvarchar" MaxLength="50" />
+          <Property Name="FAQ" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactUs" Type="nvarchar" MaxLength="50" />
+          <Property Name="basePath" Type="nvarchar" MaxLength="40" />
+          <Property Name="yoccContact" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nchar" MaxLength="20" />
+          <Property Name="Logo" Type="nvarchar(max)" />
+          <Property Name="Latitude" Type="nvarchar(max)" />
+          <Property Name="Logitude" Type="nvarchar(max)" />
+          <Property Name="UserProfile" Type="nvarchar" MaxLength="200" />
+          <Property Name="Collection" Type="nvarchar" MaxLength="200" />
+          <Property Name="HouseQRCode" Type="nvarchar" MaxLength="220" />
+          <Property Name="PointQRCode" Type="nvarchar" MaxLength="220" />
+          <Property Name="HousePDF" Type="nvarchar" MaxLength="550" />
+          <Property Name="PointPDF" Type="nvarchar" MaxLength="550" />
+          <Property Name="Grampanchayat_Pro" Type="nvarchar(max)" />
+          <Property Name="AppVersion" Type="nvarchar" MaxLength="500" />
+          <Property Name="ForceUpdate" Type="bit" />
+          <Property Name="APIHit" Type="int" />
+          <Property Name="NewFeatures" Type="bit" />
+          <Property Name="ReportEnable" Type="bit" />
+          <Property Name="DumpYardQRCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="DumpYardPDF" Type="nvarchar" MaxLength="250" />
+          <Property Name="GramPanchyatAppID" Type="int" />
+          <Property Name="YoccClientID" Type="int" />
+          <Property Name="YoccFeddbackLink" Type="nvarchar" MaxLength="250" />
+          <Property Name="YoccDndLink" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="LanguageId" Type="int" />
+          <Property Name="IsScanNear" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="DEVPTCSURVEYMAINModelStoreContainer">
+          <EntitySet Name="AD_USER_MST" EntityType="Self.AD_USER_MST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppConnection" EntityType="Self.AppConnection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppDetails" EntityType="Self.AppDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DEVPTCSURVEYMAINModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AD_USER_MST">
+          <Key>
+            <PropertyRef Name="ADUM_USER_CODE" />
+          </Key>
+          <Property Name="ADUM_USER_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERVER_ID" Type="Byte" />
+          <Property Name="APP_ID" Type="Int32" Nullable="false" />
+          <Property Name="ADUM_USER_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADUM_USER_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADUM_LOGIN_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ADUM_PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADUM_EMPLOYEE_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ADUM_DESIGNATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADUM_MOBILE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ADUM_EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="LOCAL_USER_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PROFILE_IMAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ADUM_FRDT" Type="DateTime" Precision="3" />
+          <Property Name="ADUM_TODT" Type="DateTime" Precision="3" />
+          <Property Name="ADUM_STATUS" Type="Boolean" />
+          <Property Name="UPDATE_FLAG" Type="Boolean" />
+          <Property Name="LAST_UPDATE" Type="DateTime" Precision="0" />
+          <Property Name="AD_USER_TYPE_ID" Type="Int32" />
+          <Property Name="MOBILE_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="IMO_NO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AppConnection">
+          <Key>
+            <PropertyRef Name="AppConnectionId" />
+          </Key>
+          <Property Name="AppConnectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppId" Type="Int32" Nullable="false" />
+          <Property Name="DataSource" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InitialCatalog" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AppDetail">
+          <Key>
+            <PropertyRef Name="AppId" />
+          </Key>
+          <Property Name="AppId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AppName_mar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="Tehsil" Type="Int32" />
+          <Property Name="District" Type="Int32" />
+          <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Android_GCM_pushNotification_Key" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsProduction" Type="Boolean" />
+          <Property Name="baseImageUrlCMS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="baseImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AboutThumbnailURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="AboutAppynity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AboutTeamDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactUsTeamMember" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HomeSplash" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FAQ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactUs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="basePath" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="yoccContact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Logitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserProfile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Collection" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HouseQRCode" Type="String" MaxLength="220" FixedLength="false" Unicode="true" />
+          <Property Name="PointQRCode" Type="String" MaxLength="220" FixedLength="false" Unicode="true" />
+          <Property Name="HousePDF" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="PointPDF" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="Grampanchayat_Pro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AppVersion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ForceUpdate" Type="Boolean" />
+          <Property Name="APIHit" Type="Int32" />
+          <Property Name="NewFeatures" Type="Boolean" />
+          <Property Name="ReportEnable" Type="Boolean" />
+          <Property Name="DumpYardQRCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DumpYardPDF" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="GramPanchyatAppID" Type="Int32" />
+          <Property Name="YoccClientID" Type="Int32" />
+          <Property Name="YoccFeddbackLink" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="YoccDndLink" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="LanguageId" Type="Int32" />
+          <Property Name="IsScanNear" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="DEVPTCSURVEYMAINEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AD_USER_MST" EntityType="Self.AD_USER_MST" />
+          <EntitySet Name="AppConnections" EntityType="Self.AppConnection" />
+          <EntitySet Name="AppDetails" EntityType="Self.AppDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DEVPTCSURVEYMAINModelStoreContainer" CdmEntityContainer="DEVPTCSURVEYMAINEntities">
+          <EntitySetMapping Name="AD_USER_MST">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMAINModel.AD_USER_MST">
+              <MappingFragment StoreEntitySet="AD_USER_MST">
+                <ScalarProperty Name="ADUM_USER_CODE" ColumnName="ADUM_USER_CODE" />
+                <ScalarProperty Name="SERVER_ID" ColumnName="SERVER_ID" />
+                <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+                <ScalarProperty Name="ADUM_USER_ID" ColumnName="ADUM_USER_ID" />
+                <ScalarProperty Name="ADUM_USER_NAME" ColumnName="ADUM_USER_NAME" />
+                <ScalarProperty Name="ADUM_LOGIN_ID" ColumnName="ADUM_LOGIN_ID" />
+                <ScalarProperty Name="ADUM_PASSWORD" ColumnName="ADUM_PASSWORD" />
+                <ScalarProperty Name="ADUM_EMPLOYEE_ID" ColumnName="ADUM_EMPLOYEE_ID" />
+                <ScalarProperty Name="ADUM_DESIGNATION" ColumnName="ADUM_DESIGNATION" />
+                <ScalarProperty Name="ADUM_MOBILE" ColumnName="ADUM_MOBILE" />
+                <ScalarProperty Name="ADUM_EMAIL" ColumnName="ADUM_EMAIL" />
+                <ScalarProperty Name="LOCAL_USER_NAME" ColumnName="LOCAL_USER_NAME" />
+                <ScalarProperty Name="PROFILE_IMAGE" ColumnName="PROFILE_IMAGE" />
+                <ScalarProperty Name="ADUM_FRDT" ColumnName="ADUM_FRDT" />
+                <ScalarProperty Name="ADUM_TODT" ColumnName="ADUM_TODT" />
+                <ScalarProperty Name="ADUM_STATUS" ColumnName="ADUM_STATUS" />
+                <ScalarProperty Name="UPDATE_FLAG" ColumnName="UPDATE_FLAG" />
+                <ScalarProperty Name="LAST_UPDATE" ColumnName="LAST_UPDATE" />
+                <ScalarProperty Name="AD_USER_TYPE_ID" ColumnName="AD_USER_TYPE_ID" />
+                <ScalarProperty Name="MOBILE_ID" ColumnName="MOBILE_ID" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IMO_NO" ColumnName="IMO_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppConnections">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMAINModel.AppConnection">
+              <MappingFragment StoreEntitySet="AppConnection">
+                <ScalarProperty Name="AppConnectionId" ColumnName="AppConnectionId" />
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+                <ScalarProperty Name="InitialCatalog" ColumnName="InitialCatalog" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppDetails">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMAINModel.AppDetail">
+              <MappingFragment StoreEntitySet="AppDetails">
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+                <ScalarProperty Name="AppName_mar" ColumnName="AppName_mar" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Tehsil" ColumnName="Tehsil" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="Android_GCM_pushNotification_Key" ColumnName="Android_GCM_pushNotification_Key" />
+                <ScalarProperty Name="IsProduction" ColumnName="IsProduction" />
+                <ScalarProperty Name="baseImageUrlCMS" ColumnName="baseImageUrlCMS" />
+                <ScalarProperty Name="baseImageUrl" ColumnName="baseImageUrl" />
+                <ScalarProperty Name="AboutThumbnailURL" ColumnName="AboutThumbnailURL" />
+                <ScalarProperty Name="AboutAppynity" ColumnName="AboutAppynity" />
+                <ScalarProperty Name="AboutTeamDetail" ColumnName="AboutTeamDetail" />
+                <ScalarProperty Name="ContactUsTeamMember" ColumnName="ContactUsTeamMember" />
+                <ScalarProperty Name="HomeSplash" ColumnName="HomeSplash" />
+                <ScalarProperty Name="FAQ" ColumnName="FAQ" />
+                <ScalarProperty Name="ContactUs" ColumnName="ContactUs" />
+                <ScalarProperty Name="basePath" ColumnName="basePath" />
+                <ScalarProperty Name="yoccContact" ColumnName="yoccContact" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Logitude" ColumnName="Logitude" />
+                <ScalarProperty Name="UserProfile" ColumnName="UserProfile" />
+                <ScalarProperty Name="Collection" ColumnName="Collection" />
+                <ScalarProperty Name="HouseQRCode" ColumnName="HouseQRCode" />
+                <ScalarProperty Name="PointQRCode" ColumnName="PointQRCode" />
+                <ScalarProperty Name="HousePDF" ColumnName="HousePDF" />
+                <ScalarProperty Name="PointPDF" ColumnName="PointPDF" />
+                <ScalarProperty Name="Grampanchayat_Pro" ColumnName="Grampanchayat_Pro" />
+                <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
+                <ScalarProperty Name="ForceUpdate" ColumnName="ForceUpdate" />
+                <ScalarProperty Name="APIHit" ColumnName="APIHit" />
+                <ScalarProperty Name="NewFeatures" ColumnName="NewFeatures" />
+                <ScalarProperty Name="ReportEnable" ColumnName="ReportEnable" />
+                <ScalarProperty Name="DumpYardQRCode" ColumnName="DumpYardQRCode" />
+                <ScalarProperty Name="DumpYardPDF" ColumnName="DumpYardPDF" />
+                <ScalarProperty Name="GramPanchyatAppID" ColumnName="GramPanchyatAppID" />
+                <ScalarProperty Name="YoccClientID" ColumnName="YoccClientID" />
+                <ScalarProperty Name="YoccFeddbackLink" ColumnName="YoccFeddbackLink" />
+                <ScalarProperty Name="YoccDndLink" ColumnName="YoccDndLink" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="IsScanNear" ColumnName="IsScanNear" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

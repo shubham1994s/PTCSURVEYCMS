@@ -1,0 +1,14 @@
+﻿body {
+    font-size:0.8rem !important
+}
+.label{font-size:0.9rem !important}
+hr{border-top:black !important}
+.back{
+    background:#c0ecf3;
+    border-radius:15px;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    padding-right: 1%;
+    border: 1px solid #12b3de;
+}

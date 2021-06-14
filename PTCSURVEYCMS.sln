@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTCSURVEYCMS", "PTCSURVEYCMS\PTCSURVEYCMS.csproj", "{0962C0FD-CCED-494F-B39B-EC31E479A918}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.PresentationLayer", "1.PresentationLayer", "{E85A5CD1-C3E0-4087-B9DF-06C1A2442D87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.BusinessLayer", "2.BusinessLayer", "{88862845-8ED2-49FB-AFB0-381A80ECC16F}"
+	ProjectSection(SolutionItems) = preProject
+		PTCSURVEYCMS\Global.asax = PTCSURVEYCMS\Global.asax
+		PTCSURVEYCMS\Global.asax.cs = PTCSURVEYCMS\Global.asax.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.DataAcessLayer", "3.DataAcessLayer", "{11D8B5DF-376F-4D00-B8D9-2184EC64FE2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B5A8A87C-1E20-480B-A49A-4A0FEEB7C5D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL.Repository", "BLL.Repository\BLL.Repository.csproj", "{D6A92231-A0AF-407D-96B3-A37404C729FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL.ViewModel", "BLL.ViewModel\BLL.ViewModel.csproj", "{A5B39A71-B08C-4BA7-A82B-19B36B2C3F08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0962C0FD-CCED-494F-B39B-EC31E479A918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0962C0FD-CCED-494F-B39B-EC31E479A918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0962C0FD-CCED-494F-B39B-EC31E479A918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0962C0FD-CCED-494F-B39B-EC31E479A918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A8A87C-1E20-480B-A49A-4A0FEEB7C5D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A8A87C-1E20-480B-A49A-4A0FEEB7C5D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A8A87C-1E20-480B-A49A-4A0FEEB7C5D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A8A87C-1E20-480B-A49A-4A0FEEB7C5D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6A92231-A0AF-407D-96B3-A37404C729FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A92231-A0AF-407D-96B3-A37404C729FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A92231-A0AF-407D-96B3-A37404C729FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6A92231-A0AF-407D-96B3-A37404C729FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5B39A71-B08C-4BA7-A82B-19B36B2C3F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B39A71-B08C-4BA7-A82B-19B36B2C3F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B39A71-B08C-4BA7-A82B-19B36B2C3F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B39A71-B08C-4BA7-A82B-19B36B2C3F08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0962C0FD-CCED-494F-B39B-EC31E479A918} = {E85A5CD1-C3E0-4087-B9DF-06C1A2442D87}
+		{B5A8A87C-1E20-480B-A49A-4A0FEEB7C5D1} = {11D8B5DF-376F-4D00-B8D9-2184EC64FE2B}
+		{D6A92231-A0AF-407D-96B3-A37404C729FE} = {88862845-8ED2-49FB-AFB0-381A80ECC16F}
+		{A5B39A71-B08C-4BA7-A82B-19B36B2C3F08} = {88862845-8ED2-49FB-AFB0-381A80ECC16F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F087A231-C7C9-49B1-82F1-F01267B448B3}
+	EndGlobalSection
+EndGlobal

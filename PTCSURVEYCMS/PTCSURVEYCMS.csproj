@@ -1,0 +1,1724 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0962C0FD-CCED-494F-B39B-EC31E479A918}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PTCSURVEYCMS</RootNamespace>
+    <AssemblyName>PTCSURVEYCMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ionic.Zip.1.9.1.8\lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf, Version=2021.3.1.0, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.2021.3.1\lib\net45\IronPdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IronPdf.Assets.Rendering.Windows, Version=22.0.0.0, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.Assets.Rendering.Windows.22.0.0\lib\net40\IronPdf.Assets.Rendering.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\40-System.IO.Compression.1.0.0.2\lib\net40-client\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\40-System.IO.Compression.FileSystem.1.0.0.2\lib\net40-client\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PTCController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="DEVPTCSURVEYMALEGAONDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DEVPTCSURVEYMALEGAONDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FileDownload.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\BC_Image_new.jpg" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\btnCss\StyleSheet1.css" />
+    <Content Include="Content\Images\mkmj.jpeg" />
+    <Content Include="Content\Images\property_tax_logo.png" />
+    <Content Include="Content\Images\vengurla logo.jpeg" />
+    <Content Include="Content\SurveyDatatable.js" />
+    <Content Include="Content\SurveyForm.css" />
+    <Content Include="Content\theme-assets\assets\css\component.css" />
+    <Content Include="Content\theme-assets\assets\css\datepicker.css" />
+    <Content Include="Content\theme-assets\assets\css\font-awesome.min.css" />
+    <Content Include="Content\theme-assets\assets\css\jquery.mCustomScrollbar.css" />
+    <Content Include="Content\theme-assets\assets\css\linearicons.css" />
+    <Content Include="Content\theme-assets\assets\css\pcoded-horizontal.min.css" />
+    <Content Include="Content\theme-assets\assets\css\style.css" />
+    <Content Include="Content\theme-assets\assets\fonts\fontawesome-webfont-1.hxd" />
+    <Content Include="Content\theme-assets\assets\fonts\fontawesome-webfont.hxd" />
+    <Content Include="Content\theme-assets\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\theme-assets\assets\fonts\Linearicons-Free-1.hxd" />
+    <Content Include="Content\theme-assets\assets\fonts\Linearicons-Free.hxd" />
+    <Content Include="Content\theme-assets\assets\fonts\Linearicons-Free.svg" />
+    <Content Include="Content\theme-assets\assets\icon\feather\css\feather.css" />
+    <Content Include="Content\theme-assets\assets\icon\feather\fonts\feather.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\feather\fonts\feather.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\css\flag-icon.css" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ad.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ae.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\af.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ag.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ai.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\al.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\am.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ao.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\aq.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ar.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\as.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\at.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\au.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\aw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ax.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\az.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ba.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bb.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bd.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\be.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bf.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bh.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bi.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bj.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bl.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bo.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bq.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\br.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bs.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bt.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bv.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\by.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\bz.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ca.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cc.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cd.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cf.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ch.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ci.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ck.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cl.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\co.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cu.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cv.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cx.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cy.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\cz.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\de.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\dj.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\dk.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\dm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\do.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\dz.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ec.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ee.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\eg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\eh.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\er.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\es.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\et.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\eu.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\fi.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\fj.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\fk.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\fm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\fo.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\fr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ga.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gb.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gd.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ge.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gf.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gh.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gi.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gl.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gp.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gq.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gs.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gt.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gu.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\gy.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\hk.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\hm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\hn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\hr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ht.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\hu.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\id.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ie.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\il.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\im.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\in.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\io.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\iq.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ir.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\is.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\it.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\je.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\jm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\jo.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\jp.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ke.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\kg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\kh.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ki.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\km.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\kn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\kp.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\kr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\kw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ky.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\kz.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\la.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\lb.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\lc.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\li.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\lk.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\lr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ls.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\lt.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\lu.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\lv.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ly.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ma.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mc.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\md.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\me.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mf.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mh.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mk.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ml.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mo.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mp.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mq.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ms.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mt.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mu.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mv.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mx.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\my.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\mz.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\na.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\nc.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ne.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\nf.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ng.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ni.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\nl.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\no.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\np.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\nr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\nu.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\nz.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\om.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pa.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pe.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pf.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ph.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pk.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pl.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ps.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pt.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\pw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\py.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\qa.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ro.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\rs.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ru.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\rw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sa.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sb.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sc.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sd.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\se.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sh.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\si.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sj.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sk.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sl.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\so.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ss.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\st.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sv.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sx.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sy.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\sz.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tc.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\td.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tf.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\th.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tj.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tk.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tl.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\to.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tr.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tt.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tv.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\tz.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ua.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ug.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\um.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\un.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\us.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\uy.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\uz.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\va.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\vc.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ve.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\vg.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\vi.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\vn.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\vu.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\wf.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ws.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\ye.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\yt.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\za.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\zm.svg" />
+    <Content Include="Content\theme-assets\assets\icon\flag-icons\fonts\zw.svg" />
+    <Content Include="Content\theme-assets\assets\icon\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\theme-assets\assets\icon\font-awesome\fonts\fontawesome-webfont-1.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\font-awesome\fonts\fontawesome-webfont.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\theme-assets\assets\icon\icofont\css\icofont.css" />
+    <Content Include="Content\theme-assets\assets\icon\icofont\fonts\icofont.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\icofont\fonts\icofont.svg" />
+    <Content Include="Content\theme-assets\assets\icon\ion-icon\css\ionicons.min.css" />
+    <Content Include="Content\theme-assets\assets\icon\ion-icon\fonts\ionicons.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\ion-icon\fonts\ionicons.svg" />
+    <Content Include="Content\theme-assets\assets\icon\material-design\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\theme-assets\assets\icon\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="Content\theme-assets\assets\icon\simple-line-icons\fonts\Simple-Line-Icons.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Content\theme-assets\assets\icon\SVG-animated\svg-weather.css" />
+    <Content Include="Content\theme-assets\assets\icon\themify-icons\fonts\themify-1.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\themify-icons\fonts\themify.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\themify-icons\fonts\themify.svg" />
+    <Content Include="Content\theme-assets\assets\icon\themify-icons\themify-icons.css" />
+    <Content Include="Content\theme-assets\assets\icon\typicons-icons\css\typicons.min.css" />
+    <Content Include="Content\theme-assets\assets\icon\typicons-icons\fonts\typicons-1.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\typicons-icons\fonts\typicons.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\typicons-icons\fonts\typicons.svg" />
+    <Content Include="Content\theme-assets\assets\icon\weather-icons\css\weather-icons-wind.min.css" />
+    <Content Include="Content\theme-assets\assets\icon\weather-icons\css\weather-icons.min.css" />
+    <Content Include="Content\theme-assets\assets\icon\weather-icons\fonts\weathericons-regular-webfont-1.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\weather-icons\fonts\weathericons-regular-webfont.hxd" />
+    <Content Include="Content\theme-assets\assets\icon\weather-icons\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Content\theme-assets\assets\icon\weather-icons\weather-custom.js" />
+    <Content Include="Content\theme-assets\assets\images\animate.jpg" />
+    <Content Include="Content\theme-assets\assets\images\auth\BC_Image_new.jpg" />
+    <Content Include="Content\theme-assets\assets\images\auth\bg-old.jpg" />
+    <Content Include="Content\theme-assets\assets\images\auth\bg.jpg" />
+    <Content Include="Content\theme-assets\assets\images\auth\ic_launcher.png" />
+    <Content Include="Content\theme-assets\assets\images\auth\Logo-small-bottom.png" />
+    <Content Include="Content\theme-assets\assets\images\auth\logo.png" />
+    <Content Include="Content\theme-assets\assets\images\avatar-1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\avatar-2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\avatar-3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\avatar-4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\avatar-5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\avatar-6.jpg" />
+    <Content Include="Content\theme-assets\assets\images\avatar-7.jpg" />
+    <Content Include="Content\theme-assets\assets\images\breadcrumb-bg.jpg" />
+    <Content Include="Content\theme-assets\assets\images\browser\chrome.png" />
+    <Content Include="Content\theme-assets\assets\images\browser\firefox.png" />
+    <Content Include="Content\theme-assets\assets\images\browser\ie.png" />
+    <Content Include="Content\theme-assets\assets\images\browser\opera.png" />
+    <Content Include="Content\theme-assets\assets\images\browser\safari.png" />
+    <Content Include="Content\theme-assets\assets\images\card-block\card1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\card-block\card13.jpg" />
+    <Content Include="Content\theme-assets\assets\images\card-block\card14.jpg" />
+    <Content Include="Content\theme-assets\assets\images\card-block\card2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\chat-bg.jpg" />
+    <Content Include="Content\theme-assets\assets\images\commingsoon\cs-1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\commingsoon\cs-2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\complete.png" />
+    <Content Include="Content\theme-assets\assets\images\details_close.png" />
+    <Content Include="Content\theme-assets\assets\images\details_open.png" />
+    <Content Include="Content\theme-assets\assets\images\e-payment\card\amex.jpg" />
+    <Content Include="Content\theme-assets\assets\images\e-payment\card\mastercard.jpg" />
+    <Content Include="Content\theme-assets\assets\images\e-payment\card\visa.jpg" />
+    <Content Include="Content\theme-assets\assets\images\error\error-1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\error\error-2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\error\error-3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\error\error-4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\error\error-5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\error\error-6.jpg" />
+    <Content Include="Content\theme-assets\assets\images\favicon.ico" />
+    <Content Include="Content\theme-assets\assets\images\gallery-grid\1.png" />
+    <Content Include="Content\theme-assets\assets\images\gallery-grid\masonry-1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\gallery-grid\masonry-2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\gallery-grid\masonry-3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\gallery-grid\masonry-4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\gallery-grid\masonry-5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\gallery-grid\masonry-6.jpg" />
+    <Content Include="Content\theme-assets\assets\images\gallery-grid\masonry-7.jpg" />
+    <Content Include="Content\theme-assets\assets\images\gallery-grid\masonry-8.jpg" />
+    <Content Include="Content\theme-assets\assets\images\ic_launcher.png" />
+    <Content Include="Content\theme-assets\assets\images\light-box\l1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\l2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\l3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\l4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\l5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\l6.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\mixin.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\sl1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\sl2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\sl3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\sl4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\sl5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\sl6.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\smixin.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\v1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\v2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\v3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\light-box\v4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\logo-blue.png" />
+    <Content Include="Content\theme-assets\assets\images\logo.png" />
+    <Content Include="Content\theme-assets\assets\images\marker24.png" />
+    <Content Include="Content\theme-assets\assets\images\mega-menu\01.jpg" />
+    <Content Include="Content\theme-assets\assets\images\mega-menu\02.jpg" />
+    <Content Include="Content\theme-assets\assets\images\mega-menu\03.jpg" />
+    <Content Include="Content\theme-assets\assets\images\modal\overflow.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav10.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav6.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav7.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav8.jpg" />
+    <Content Include="Content\theme-assets\assets\images\navbar\nav9.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-l-1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-l-2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-l-3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-l-4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-l-5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-l-6.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-l-7.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-s-1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-s-2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-s-3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-s-4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-s-5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-s-6.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-detail\pro-d-s-7.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-edit\product-edit1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-edit\product-edit2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-edit\product-edit3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product-list\pro-l1.png" />
+    <Content Include="Content\theme-assets\assets\images\product-list\pro-l2.png" />
+    <Content Include="Content\theme-assets\assets\images\product-list\pro-l3.png" />
+    <Content Include="Content\theme-assets\assets\images\product-list\pro-l4.png" />
+    <Content Include="Content\theme-assets\assets\images\product-list\pro-l5.png" />
+    <Content Include="Content\theme-assets\assets\images\product-list\pro-l6.png" />
+    <Content Include="Content\theme-assets\assets\images\product-list\pro-l7.png" />
+    <Content Include="Content\theme-assets\assets\images\product-list\pro-l8.png" />
+    <Content Include="Content\theme-assets\assets\images\product-list\pro-l9.png" />
+    <Content Include="Content\theme-assets\assets\images\product\p1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product\p2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product\p3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\product\p4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\search-images\01.jpg" />
+    <Content Include="Content\theme-assets\assets\images\search-images\02.jpg" />
+    <Content Include="Content\theme-assets\assets\images\search-images\03.jpg" />
+    <Content Include="Content\theme-assets\assets\images\search-images\04.jpg" />
+    <Content Include="Content\theme-assets\assets\images\search-images\05.jpg" />
+    <Content Include="Content\theme-assets\assets\images\search-images\06.jpg" />
+    <Content Include="Content\theme-assets\assets\images\select-arrow.png" />
+    <Content Include="Content\theme-assets\assets\images\slider\slide1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\slider\slide2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\slider\slide3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\slider\slide4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\slider\slider5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\slider\slider6.jpg" />
+    <Content Include="Content\theme-assets\assets\images\slider\slider7.jpg" />
+    <Content Include="Content\theme-assets\assets\images\social\img1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\social\profile.jpg" />
+    <Content Include="Content\theme-assets\assets\images\task\task-u1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\task\task-u2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\task\task-u3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\task\task-u4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\timeline\img1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\timeline\img2.png" />
+    <Content Include="Content\theme-assets\assets\images\tooltip\Euclid.png" />
+    <Content Include="Content\theme-assets\assets\images\tooltip\shape1.svg" />
+    <Content Include="Content\theme-assets\assets\images\tooltip\tooltip1.svg" />
+    <Content Include="Content\theme-assets\assets\images\user-card\img-round1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-card\img-round2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-card\img-round3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-card\img-round4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-card\inverse-img1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-card\inverse-img2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-profile\bg-img1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-profile\follower\f-1.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-profile\follower\f-2.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-profile\follower\f-3.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-profile\follower\f-4.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-profile\follower\f-5.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user-profile\user-img.jpg" />
+    <Content Include="Content\theme-assets\assets\images\user.png" />
+    <Content Include="Content\theme-assets\assets\images\widget\AUSTRALIA.jpg" />
+    <Content Include="Content\theme-assets\assets\images\widget\BRAZIL.jpg" />
+    <Content Include="Content\theme-assets\assets\images\widget\GERMANY.jpg" />
+    <Content Include="Content\theme-assets\assets\images\widget\icon-1.png" />
+    <Content Include="Content\theme-assets\assets\images\widget\icon-2.png" />
+    <Content Include="Content\theme-assets\assets\images\widget\icon-3.png" />
+    <Content Include="Content\theme-assets\assets\images\widget\icon-4.png" />
+    <Content Include="Content\theme-assets\assets\images\widget\UK.jpg" />
+    <Content Include="Content\theme-assets\assets\images\widget\USA.jpg" />
+    <Content Include="Content\theme-assets\assets\images\widget\watherbottom.png" />
+    <Content Include="Content\theme-assets\assets\images\widget\wathernature.png" />
+    <Content Include="Content\theme-assets\assets\images\widget\watherstar1.png" />
+    <Content Include="Content\theme-assets\assets\images\widget\watherstar2.png" />
+    <Content Include="Content\theme-assets\assets\js\animation.js" />
+    <Content Include="Content\theme-assets\assets\js\bootstrap-growl.min.js" />
+    <Content Include="Content\theme-assets\assets\js\classie.js" />
+    <Content Include="Content\theme-assets\assets\js\common-pages.js" />
+    <Content Include="Content\theme-assets\assets\js\datepicker.js" />
+    <Content Include="Content\theme-assets\assets\js\horizontal-layout.min.js" />
+    <Content Include="Content\theme-assets\assets\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Content\theme-assets\assets\js\jquery.mousewheel.min.js" />
+    <Content Include="Content\theme-assets\assets\js\jquery.quicksearch.js" />
+    <Content Include="Content\theme-assets\assets\js\menu\box-layout.js" />
+    <Content Include="Content\theme-assets\assets\js\menu\menu-compact.js" />
+    <Content Include="Content\theme-assets\assets\js\menu\menu-header-fixed.js" />
+    <Content Include="Content\theme-assets\assets\js\menu\menu-hori-fixed.js" />
+    <Content Include="Content\theme-assets\assets\js\menu\menu-rtl.js" />
+    <Content Include="Content\theme-assets\assets\js\menu\menu-sidebar-fixed.js" />
+    <Content Include="Content\theme-assets\assets\js\menu\menu-sidebar-static.js" />
+    <Content Include="Content\theme-assets\assets\js\modal.js" />
+    <Content Include="Content\theme-assets\assets\js\modalEffects.js" />
+    <Content Include="Content\theme-assets\assets\js\owl-custom.js" />
+    <Content Include="Content\theme-assets\assets\js\pcoded.min.js" />
+    <Content Include="Content\theme-assets\assets\js\rating.js" />
+    <Content Include="Content\theme-assets\assets\js\script.js" />
+    <Content Include="Content\theme-assets\assets\js\script.min.js" />
+    <Content Include="Content\theme-assets\assets\js\SmoothScroll.js" />
+    <Content Include="Content\theme-assets\assets\js\swiper-custom.js" />
+    <Content Include="Content\theme-assets\assets\js\vartical-layout.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\accordion\accordion.js" />
+    <Content Include="Content\theme-assets\assets\pages\ace-editor\ace-editor-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\ace-editor\build\aui\aui.js" />
+    <Content Include="Content\theme-assets\assets\pages\advance-elements\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\advance-elements\css\bootstrap-datetimepicker.css" />
+    <Content Include="Content\theme-assets\assets\pages\advance-elements\custom-picker.js" />
+    <Content Include="Content\theme-assets\assets\pages\advance-elements\moment-with-locales.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\advance-elements\select2-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\advance-elements\swithces.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\c3\c3-custom-chart.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\chartjs\chartjs-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\chartlist\chartlist-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\chartlist\js\chartist-plugin-threshold.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\echarts\echart-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\echarts\js\echarts-all.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\float\float-chart-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\float\jquery.flot.categories.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\float\jquery.flot.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\float\jquery.flot.pie.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\google\js\custom-google-chart.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\knob\jquery.knob.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\knob\knob-custom-chart.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\morris\morris-custom-chart.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\nv-chart\js\stream_layers.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\nvd3\chart-nvd3.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\peity\peity-custom-chart.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\radial\css\radial.css" />
+    <Content Include="Content\theme-assets\assets\pages\chart\rickshow\rickshow-custom-.js" />
+    <Content Include="Content\theme-assets\assets\pages\chart\sparkline\chart-sparkline.js" />
+    <Content Include="Content\theme-assets\assets\pages\chat\js\chat.js" />
+    <Content Include="Content\theme-assets\assets\pages\chat\js\mmc-chat.js" />
+    <Content Include="Content\theme-assets\assets\pages\chat\js\mmc-common.js" />
+    <Content Include="Content\theme-assets\assets\pages\ckeditor\ckeditor-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\ckeditor\ckeditor.js" />
+    <Content Include="Content\theme-assets\assets\pages\clndr-calendar\css\clndr.css" />
+    <Content Include="Content\theme-assets\assets\pages\clndr-calendar\js\clndr-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\counter\task-detail.js" />
+    <Content Include="Content\theme-assets\assets\pages\cropper\croper.js" />
+    <Content Include="Content\theme-assets\assets\pages\dashboard\amchart\js\amcharts.js" />
+    <Content Include="Content\theme-assets\assets\pages\dashboard\amchart\js\images\dragIconRoundBig.svg" />
+    <Content Include="Content\theme-assets\assets\pages\dashboard\amchart\js\images\lens.svg" />
+    <Content Include="Content\theme-assets\assets\pages\dashboard\amchart\js\light.js" />
+    <Content Include="Content\theme-assets\assets\pages\dashboard\amchart\js\serial.js" />
+    <Content Include="Content\theme-assets\assets\pages\dashboard\analytic-dashboard.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\dashboard\crm-dashboard.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\dashboard\custom-dashboard.js" />
+    <Content Include="Content\theme-assets\assets\pages\dashboard\custom-dashboard.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\css\buttons.dataTables.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\autofill\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\autofill\css\select.dataTables.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\autofill\js\dataTables.autoFill.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\autofill\js\dataTables.select.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\autofill\js\extensions-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\buttons\css\buttons.dataTables.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\buttons\js\buttons.colVis.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\buttons\js\buttons.flash.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\buttons\js\dataTables.buttons.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\buttons\js\extension-btns-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\buttons\js\jszip.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\buttons\js\pdfmake.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\buttons\js\vfs_fonts.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\colreorder\js\colreorder-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\colreorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\fixed-colums\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\fixed-colums\js\fixed-column-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\fixed-header\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\fixed-header\js\fixed-header-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\key-table\js\dataTables.keyTable.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\key-table\js\key-table-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\responsive\css\responsive.dataTables.css" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\responsive\js\responsive-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\row-reorder\js\dataTables.rowReorder.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\row-reorder\js\row-reorder-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\scroller\js\scroller-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\select\css\select.dataTables.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\select\js\dataTables.select.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\extensions\select\js\select-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\js\data-table-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\js\jszip.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\js\pdfmake.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\data-table\js\vfs_fonts.js" />
+    <Content Include="Content\theme-assets\assets\pages\edit-table\editable.js" />
+    <Content Include="Content\theme-assets\assets\pages\edit-table\jquery.tabledit.js" />
+    <Content Include="Content\theme-assets\assets\pages\filer\custom-filer.js" />
+    <Content Include="Content\theme-assets\assets\pages\filer\jquery.fileuploads.init.js" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icons.js" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flag-icon.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ad.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ae.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\af.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ag.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ai.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\al.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\am.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ao.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\aq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ar.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\as.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\at.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\au.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\aw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ax.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\az.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ba.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bb.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bd.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\be.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bi.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bo.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\br.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bs.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\by.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\bz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ca.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cd.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ch.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ci.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ck.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\co.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cx.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cy.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\cz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\de.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\dj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\dk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\dm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\do.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\dz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ec.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ee.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\eg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\eh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\er.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\es.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\et.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\eu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\fi.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\fj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\fk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\fm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\fo.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\fr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ga.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gb-eng.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gb-sct.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gb-wls.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gb.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gd.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ge.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gi.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gp.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gs.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\gy.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\hk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\hm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\hn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\hr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ht.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\hu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\id.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ie.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\il.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\im.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\in.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\io.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\iq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ir.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\is.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\it.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\je.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\jm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\jo.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\jp.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ke.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\kg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\kh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ki.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\km.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\kn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\kp.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\kr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\kw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ky.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\kz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\la.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\lb.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\lc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\li.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\lk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\lr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ls.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\lt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\lu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\lv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ly.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ma.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\md.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\me.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ml.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mo.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mp.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ms.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mx.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\my.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\mz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\na.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\nc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ne.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\nf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ng.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ni.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\nl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\no.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\np.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\nr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\nu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\nz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\om.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pa.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pe.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ph.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ps.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\pw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\py.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\qa.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\re.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ro.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\rs.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ru.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\rw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sa.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sb.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sd.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\se.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\si.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\so.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ss.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\st.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sx.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sy.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\sz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\td.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\th.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\to.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\tz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ua.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ug.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\um.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\us.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\uy.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\uz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\va.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\vc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ve.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\vg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\vi.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\vn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\vu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\wf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ws.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\ye.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\yt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\za.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\zm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\1x1\zw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ad.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ae.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\af.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ag.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ai.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\al.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\am.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ao.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\aq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ar.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\as.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\at.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\au.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\aw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ax.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\az.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ba.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bb.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bd.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\be.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bi.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bo.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\br.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bs.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\by.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\bz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ca.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cd.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ch.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ci.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ck.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\co.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cx.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cy.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\cz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\de.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\dj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\dk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\dm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\do.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\dz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ec.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ee.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\eg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\eh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\er.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\es.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\et.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\eu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\fi.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\fj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\fk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\fm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\fo.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\fr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ga.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gb-eng.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gb-sct.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gb-wls.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gb.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gd.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ge.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gi.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gp.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gs.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\gy.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\hk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\hm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\hn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\hr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ht.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\hu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\id.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ie.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\il.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\im.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\in.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\io.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\iq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ir.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\is.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\it.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\je.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\jm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\jo.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\jp.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ke.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\kg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\kh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ki.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\km.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\kn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\kp.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\kr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\kw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ky.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\kz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\la.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\lb.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\lc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\li.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\lk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\lr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ls.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\lt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\lu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\lv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ly.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ma.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\md.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\me.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ml.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mo.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mp.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mq.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ms.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mx.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\my.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\mz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\na.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\nc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ne.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\nf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ng.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ni.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\nl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\no.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\np.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\nr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\nu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\nz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\om.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pa.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pe.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ph.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ps.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\pw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\py.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\qa.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\re.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ro.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\rs.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ru.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\rw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sa.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sb.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sd.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\se.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sh.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\si.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\so.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ss.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\st.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sx.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sy.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\sz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\td.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\th.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tj.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tk.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tl.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\to.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tr.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tv.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\tz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ua.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ug.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\um.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\us.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\uy.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\uz.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\va.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\vc.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ve.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\vg.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\vi.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\vn.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\vu.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\wf.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ws.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\ye.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\yt.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\za.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\zm.svg" />
+    <Content Include="Content\theme-assets\assets\pages\flag-icon\flags\4x3\zw.svg" />
+    <Content Include="Content\theme-assets\assets\pages\foo-table\css\footable.bootstrap.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\foo-table\css\footable.standalone.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\foo-table\css\jquery.dataTables.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\foo-table\js\foo-table-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\foo-table\js\footable.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\form-masking\autoNumeric.js" />
+    <Content Include="Content\theme-assets\assets\pages\form-masking\form-mask.js" />
+    <Content Include="Content\theme-assets\assets\pages\form-masking\inputmask.js" />
+    <Content Include="Content\theme-assets\assets\pages\form-masking\jquery.inputmask.js" />
+    <Content Include="Content\theme-assets\assets\pages\form-validation\form-validation.js" />
+    <Content Include="Content\theme-assets\assets\pages\form-validation\validate.js" />
+    <Content Include="Content\theme-assets\assets\pages\forms-wizard-validation\form-wizard.js" />
+    <Content Include="Content\theme-assets\assets\pages\full-calender\calendar.js" />
+    <Content Include="Content\theme-assets\assets\pages\google-maps\gmaps.js" />
+    <Content Include="Content\theme-assets\assets\pages\google-maps\google-maps.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\appearance-table.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\cell-features.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\cell-types.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\chroma.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\columns-only.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\data-operation.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\integration.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\rows-cols-table.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\rows-only.js" />
+    <Content Include="Content\theme-assets\assets\pages\handson-table\utilities.js" />
+    <Content Include="Content\theme-assets\assets\pages\hover-effect\images\triangle.svg" />
+    <Content Include="Content\theme-assets\assets\pages\hover-effect\images\triangle2.svg" />
+    <Content Include="Content\theme-assets\assets\pages\hover-effect\normalize.css" />
+    <Content Include="Content\theme-assets\assets\pages\hover-effect\set2.css" />
+    <Content Include="Content\theme-assets\assets\pages\icon-modal.js" />
+    <Content Include="Content\theme-assets\assets\pages\invoice-summary\invoice-summary.js" />
+    <Content Include="Content\theme-assets\assets\pages\isotope\isotope.pkgd.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\isotope\jquery.isotope.js" />
+    <Content Include="Content\theme-assets\assets\pages\issue-list\issue-list.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\css\demo.css" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\css\font-awesome.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\css\j-forms.css" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\css\j-pro-modern.css" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\fonts\fontawesome-webfont-1.hxd" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\fonts\fontawesome-webfont.hxd" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\img\bg.jpg" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\autoNumeric.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\booking-comment.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\booking-multistep.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\booking.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\cloned-form.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\contact-form.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\currency-form.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\form-comment.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\form-job.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\login-form.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\popup-menu-form.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\reg-form.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\review-form.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\subscrbe-form.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\custom\suggestion-form.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\j-forms-additions.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\jquery-cloneya.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\jquery.j-pro.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\jquery.maskedinput.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\jquery.stepper.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\js\jquery.ui.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\jqpagination\jqpagination.css" />
+    <Content Include="Content\theme-assets\assets\pages\jqpagination\jquery.jqpagination.js" />
+    <Content Include="Content\theme-assets\assets\pages\jquery.filer\css\jquery.filer.css" />
+    <Content Include="Content\theme-assets\assets\pages\jquery.filer\css\themes\jquery.filer-dragdropbox-theme.css" />
+    <Content Include="Content\theme-assets\assets\pages\jquery.filer\fonts\jquery.filer-icons\jquery-filer-1.hxd" />
+    <Content Include="Content\theme-assets\assets\pages\jquery.filer\fonts\jquery.filer-icons\jquery-filer.css" />
+    <Content Include="Content\theme-assets\assets\pages\jquery.filer\fonts\jquery.filer-icons\jquery-filer.hxd" />
+    <Content Include="Content\theme-assets\assets\pages\jquery.filer\fonts\jquery.filer-icons\jquery-filer.svg" />
+    <Content Include="Content\theme-assets\assets\pages\jquery.filer\js\jquery.filer.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\list-scroll\list-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\list-scroll\list.css" />
+    <Content Include="Content\theme-assets\assets\pages\location\leaflet-mapbox-gl.js" />
+    <Content Include="Content\theme-assets\assets\pages\map-api\map-api.js" />
+    <Content Include="Content\theme-assets\assets\pages\menu-search\css\component.css" />
+    <Content Include="Content\theme-assets\assets\pages\message\message.css" />
+    <Content Include="Content\theme-assets\assets\pages\message\message.js" />
+    <Content Include="Content\theme-assets\assets\pages\multi-step-sign-up\css\reset.min.css" />
+    <Content Include="Content\theme-assets\assets\pages\multi-step-sign-up\css\style.css" />
+    <Content Include="Content\theme-assets\assets\pages\multi-step-sign-up\js\main.js" />
+    <Content Include="Content\theme-assets\assets\pages\nestable\custom-nestable.js" />
+    <Content Include="Content\theme-assets\assets\pages\nestable\jquery.nestable.js" />
+    <Content Include="Content\theme-assets\assets\pages\nestable\nestable.css" />
+    <Content Include="Content\theme-assets\assets\pages\notification\notification.css" />
+    <Content Include="Content\theme-assets\assets\pages\notification\notification.js" />
+    <Content Include="Content\theme-assets\assets\pages\offline\offline-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\payment-card\card.js" />
+    <Content Include="Content\theme-assets\assets\pages\payment-card\e-payment.js" />
+    <Content Include="Content\theme-assets\assets\pages\payment-card\jquery.payform.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\pnotify\notify.css" />
+    <Content Include="Content\theme-assets\assets\pages\pnotify\notify.js" />
+    <Content Include="Content\theme-assets\assets\pages\prism\custom-prism.js" />
+    <Content Include="Content\theme-assets\assets\pages\prism\prism.css" />
+    <Content Include="Content\theme-assets\assets\pages\product-detail\product-detail.js" />
+    <Content Include="Content\theme-assets\assets\pages\product-list\product-list.js" />
+    <Content Include="Content\theme-assets\assets\pages\range-slider.js" />
+    <Content Include="Content\theme-assets\assets\pages\rating\rating.js" />
+    <Content Include="Content\theme-assets\assets\pages\session-idle-Timeout\session-idle-Timeout-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\session-idle-Timeout\session_timeout.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\sessionTimeout\sessionTimeout-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\social-timeline\social.js" />
+    <Content Include="Content\theme-assets\assets\pages\social-timeline\timeline.css" />
+    <Content Include="Content\theme-assets\assets\pages\sortable-custom.js" />
+    <Content Include="Content\theme-assets\assets\pages\sparkline\jquery.sparkline.js" />
+    <Content Include="Content\theme-assets\assets\pages\sticky\css\jquery.postitall.css" />
+    <Content Include="Content\theme-assets\assets\pages\sticky\css\trumbowyg.css" />
+    <Content Include="Content\theme-assets\assets\pages\sticky\js\jquery.minicolors.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\sticky\js\jquery.postitall.js" />
+    <Content Include="Content\theme-assets\assets\pages\sticky\js\sticky.js" />
+    <Content Include="Content\theme-assets\assets\pages\sticky\js\trumbowyg.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\store-js\moment.js" />
+    <Content Include="Content\theme-assets\assets\pages\store-js\note.js" />
+    <Content Include="Content\theme-assets\assets\pages\store-js\store.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\task-board\task-board.js" />
+    <Content Include="Content\theme-assets\assets\pages\timeline\style.css" />
+    <Content Include="Content\theme-assets\assets\pages\todo\todo.js" />
+    <Content Include="Content\theme-assets\assets\pages\toolbar\custom-toolbar.css" />
+    <Content Include="Content\theme-assets\assets\pages\toolbar\custom-toolbar.js" />
+    <Content Include="Content\theme-assets\assets\pages\toolbar\jquery.toolbar.css" />
+    <Content Include="Content\theme-assets\assets\pages\toolbar\jquery.toolbar.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\treeview\icon-tree.png" />
+    <Content Include="Content\theme-assets\assets\pages\treeview\jquery.tree.js" />
+    <Content Include="Content\theme-assets\assets\pages\treeview\throbber.gif" />
+    <Content Include="Content\theme-assets\assets\pages\treeview\treeview.css" />
+    <Content Include="Content\theme-assets\assets\pages\user-profile.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\css\jquery-jvectormap-2.0.2.css" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\gdp-data.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-asia-mill.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-au-mill.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-ca-lcc.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-de-mill.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-in-mill.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-us-il-chicago-mill-en.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\theme-assets\assets\pages\vector-maps\js\map-vector.js" />
+    <Content Include="Content\theme-assets\assets\pages\wall\wall.js" />
+    <Content Include="Content\theme-assets\assets\pages\widget\amchart\amcharts.js" />
+    <Content Include="Content\theme-assets\assets\pages\widget\amchart\gauge.js" />
+    <Content Include="Content\theme-assets\assets\pages\widget\amchart\images\dragIconRoundBig.svg" />
+    <Content Include="Content\theme-assets\assets\pages\widget\amchart\images\lens.svg" />
+    <Content Include="Content\theme-assets\assets\pages\widget\amchart\light.js" />
+    <Content Include="Content\theme-assets\assets\pages\widget\amchart\pie.js" />
+    <Content Include="Content\theme-assets\assets\pages\widget\amchart\serial.js" />
+    <Content Include="Content\theme-assets\assets\pages\widget\custom-widget1.js" />
+    <Content Include="Content\theme-assets\assets\pages\widget\excanvas.js" />
+    <Content Include="Content\theme-assets\assets\pages\widget\gauge\gauge.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\wysiwyg-editor\js\tinymce.min.js" />
+    <Content Include="Content\theme-assets\assets\pages\wysiwyg-editor\wysiwyg-editor.js" />
+    <Content Include="Content\theme-assets\assets\pages\x-editable\css\dotted-line-theme.css" />
+    <Content Include="Content\theme-assets\assets\pages\x-editable\css\tm_editable.css" />
+    <Content Include="Content\theme-assets\assets\pages\x-editable\css\tm_validator.css" />
+    <Content Include="Content\theme-assets\assets\pages\x-editable\js\tm_editable.js" />
+    <Content Include="Content\theme-assets\assets\pages\x-editable\js\tm_validator.js" />
+    <Content Include="Content\theme-assets\assets\pages\x-editable\js\xeditable.js" />
+    <Content Include="Content\theme-assets\assets\scss\generate.js" />
+    <Content Include="Content\theme-assets\assets\scss\style.css" />
+    <Content Include="Content\theme-assets\assets\scss\style.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\Capture001.png" />
+    <Content Include="Images\fay.png" />
+    <Content Include="Images\fhnoimg.png" />
+    <Content Include="Images\hfsimg.png" />
+    <Content Include="Images\hissano.png" />
+    <Content Include="Images\imgno.png" />
+    <Content Include="Images\legalimg.png" />
+    <Content Include="Images\orvimg.png" />
+    <Content Include="Images\ott.png" />
+    <Content Include="Images\out.png" />
+    <Content Include="Images\outype.png" />
+    <Content Include="Images\photography-checklist-green-check-mark-in-box.png" />
+    <Content Include="Images\propt.png" />
+    <Content Include="Images\square_checkbox_unchecked.png" />
+    <Content Include="Images\vengurlaheading.png" />
+    <Content Include="Images\village.png" />
+    <Content Include="Images\zoneno.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\theme-assets\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\theme-assets\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\theme-assets\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\theme-assets\assets\fonts\Linearicons-Free.ttf" />
+    <Content Include="Content\theme-assets\assets\fonts\Linearicons-Free.woff" />
+    <Content Include="Content\theme-assets\assets\fonts\Linearicons-Free.woff2" />
+    <Content Include="Content\theme-assets\assets\icon\feather\fonts\feather.ttf" />
+    <Content Include="Content\theme-assets\assets\icon\feather\fonts\feather.woff" />
+    <Content Include="Content\theme-assets\assets\icon\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\theme-assets\assets\icon\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\theme-assets\assets\icon\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\theme-assets\assets\icon\icofont\fonts\icofont.ttf" />
+    <Content Include="Content\theme-assets\assets\icon\icofont\fonts\icofont.woff" />
+    <Content Include="Content\theme-assets\assets\icon\ion-icon\fonts\ionicons.ttf" />
+    <Content Include="Content\theme-assets\assets\icon\ion-icon\fonts\ionicons.woff" />
+    <Content Include="Content\theme-assets\assets\icon\material-design\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\theme-assets\assets\icon\material-design\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\theme-assets\assets\icon\material-design\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\theme-assets\assets\icon\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Content\theme-assets\assets\icon\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Content\theme-assets\assets\icon\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Content\theme-assets\assets\icon\themify-icons\fonts\themify.ttf" />
+    <Content Include="Content\theme-assets\assets\icon\themify-icons\fonts\themify.woff" />
+    <Content Include="Content\theme-assets\assets\icon\typicons-icons\fonts\typicons.ttf" />
+    <Content Include="Content\theme-assets\assets\icon\typicons-icons\fonts\typicons.woff" />
+    <Content Include="Content\theme-assets\assets\icon\weather-icons\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="Content\theme-assets\assets\icon\weather-icons\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="Content\theme-assets\assets\icon\weather-icons\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\theme-assets\assets\pages\j-pro\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\theme-assets\assets\pages\jquery.filer\fonts\jquery.filer-icons\jquery-filer.ttf" />
+    <Content Include="Content\theme-assets\assets\pages\jquery.filer\fonts\jquery.filer-icons\jquery-filer.woff" />
+    <Content Include="Content\theme-assets\assets\scss\partials\menu\_pcmenu.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\Nueva carpeta\_widget.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_alert.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_authentication.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_breadcrumb.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_charts.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_chat.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_color.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_draggable.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_e-payment.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_editors.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_fb-wall.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_full-calender.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_job-find.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_mail-pages.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_maps.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_navbars.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_note.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_pre-loader.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_prism.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_progress-bar.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_range-slider.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\other\_rating.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\responsive\_responsive.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\tables\_tables.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\theme-elements\_box-shadow.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\theme-elements\_button.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\theme-elements\_form-elements.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\theme-elements\_icon-layout.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\theme-elements\_label-badges.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\theme-elements\_ready-to-use.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\todo\_todo.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\_dark.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\_general.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\_generic.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\_mixins.scss" />
+    <Content Include="Content\theme-assets\assets\scss\partials\_variables.scss" />
+    <Content Include="Content\theme-assets\assets\scss\style.scss" />
+    <Content Include="DEVPTCSURVEYMALEGAONDataSet.xsc">
+      <DependentUpon>DEVPTCSURVEYMALEGAONDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="DEVPTCSURVEYMALEGAONDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DEVPTCSURVEYMALEGAONDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DEVPTCSURVEYMALEGAONDataSet.xss">
+      <DependentUpon>DEVPTCSURVEYMALEGAONDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="libman.json" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\PPTCSURVEY.pubxml" />
+    <None Include="Properties\PublishProfiles\PTCPublish.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\PTC\SurveyForm.cshtml" />
+    <Content Include="Views\PTC\SurveyList.cshtml" />
+    <Content Include="Views\PTC\ViewSurveyForm.cshtml" />
+    <Content Include="Views\Report\Report.cshtml" />
+    <Content Include="Views\Report\GenerateReport.cshtml" />
+    <Content Include="Views\Report\SurveyForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL.Repository\BLL.Repository.csproj">
+      <Project>{d6a92231-a0af-407d-96b3-a37404c729fe}</Project>
+      <Name>BLL.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL.ViewModel\BLL.ViewModel.csproj">
+      <Project>{a5b39a71-b08c-4ba7-a82b-19b36b2c3f08}</Project>
+      <Name>BLL.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{b5a8a87c-1e20-480b-a49a-4a0feeb7c5d1}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\Report1.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>27674</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:27674/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

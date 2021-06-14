@@ -1,0 +1,25 @@
+﻿@media screen and (max-width: 500px) {
+    .back {
+        width: 85% !important;
+        border-radius: 20px;
+        height: 360px;
+    }
+
+    .container {
+        margin-left: 20% !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .back {
+       /* width: 85% !important;
+        border-radius: 20px;
+        height: 360px;*/
+    }
+
+    .container {
+        margin-left: 20% !important;
+    }
+}
+
+

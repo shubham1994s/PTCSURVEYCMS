@@ -1,0 +1,850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DEVPTCSURVEYMALEGAONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyMaster">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+          </Key>
+          <Property Name="PropertyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrabhagNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="WardNameNo" Type="varchar" MaxLength="200" />
+          <Property Name="ElectionWard" Type="nvarchar" MaxLength="200" />
+          <Property Name="NewPropertyNo" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropertyNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="HouseNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurveyNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="GatNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="CitySurveyNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="AnnualRateableValue" Type="nvarchar" MaxLength="500" />
+          <Property Name="TotalPlotArea" Type="nvarchar" MaxLength="500" />
+          <Property Name="TotalBuildupArea" Type="nvarchar" MaxLength="500" />
+          <Property Name="MarginSpace" Type="varchar" MaxLength="200" />
+          <Property Name="BuildingName" Type="nvarchar" MaxLength="200" />
+          <Property Name="PlotNo" Type="nvarchar" MaxLength="200" />
+          <Property Name="FlatNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoofFloors" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoofFlats" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoofShops" Type="nvarchar" MaxLength="500" />
+          <Property Name="PropOwnerFirstName" Type="nvarchar" MaxLength="500" />
+          <Property Name="PropOwnerMiddleName" Type="nvarchar" MaxLength="500" />
+          <Property Name="PropOwnerLastName" Type="nvarchar" MaxLength="500" />
+          <Property Name="PropOwnerTelephoneNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="PropOwnerMobileNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="PropOwnerEmailId" Type="nvarchar" MaxLength="500" />
+          <Property Name="PropOwnerAdhaarNo" Type="varchar" MaxLength="200" />
+          <Property Name="OccupierFirstName" Type="nvarchar" MaxLength="200" />
+          <Property Name="OccupierMiddleName" Type="nvarchar" MaxLength="200" />
+          <Property Name="OccupierLastName" Type="nvarchar" MaxLength="200" />
+          <Property Name="OccupierMobileNo" Type="nvarchar" MaxLength="200" />
+          <Property Name="OccupierAdhaarNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="TenantName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Rent" Type="nvarchar" MaxLength="500" />
+          <Property Name="TenantMobileNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="TenantAdhaarNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Longitude" Type="nvarchar" MaxLength="500" />
+          <Property Name="Latitude" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConstStartYear" Type="varchar" MaxLength="200" />
+          <Property Name="CompletionYear" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age" Type="nvarchar" MaxLength="200" />
+          <Property Name="Usage" Type="nvarchar" MaxLength="500" />
+          <Property Name="TypeofBldg" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConstPermNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="PermUseNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Rainwaterharvest" Type="bit" />
+          <Property Name="SolarWaterheater" Type="bit" />
+          <Property Name="VermicultureProject" Type="bit" />
+          <Property Name="SWHRemark" Type="nvarchar" MaxLength="500" />
+          <Property Name="Borewell" Type="bit" />
+          <Property Name="NoofToilets" Type="int" />
+          <Property Name="PermanentDoorLock" Type="bit" />
+          <Property Name="OuterMeasurement" Type="bit" />
+          <Property Name="Lift" Type="bit" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="FloorNo1" Type="nvarchar" MaxLength="500" />
+          <Property Name="OccupancyStatus1" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConstType1" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateofConstruction1" Type="datetime" />
+          <Property Name="UsageType1" Type="nvarchar" MaxLength="500" />
+          <Property Name="UsageTypeClass1" Type="nvarchar" MaxLength="500" />
+          <Property Name="Legal1" Type="nvarchar" MaxLength="100" />
+          <Property Name="CarpetArea1" Type="nvarchar" MaxLength="500" />
+          <Property Name="BuildupArea1" Type="nvarchar" MaxLength="500" />
+          <Property Name="FloorNo2" Type="nvarchar" MaxLength="500" />
+          <Property Name="OccupancyStatus2" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConstType2" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateofConstruction2" Type="datetime" />
+          <Property Name="UsageType2" Type="nvarchar" MaxLength="500" />
+          <Property Name="UsageTypeClass2" Type="nvarchar" MaxLength="500" />
+          <Property Name="Legal2" Type="nvarchar" MaxLength="100" />
+          <Property Name="CarpetArea2" Type="nvarchar" MaxLength="500" />
+          <Property Name="BuildupArea2" Type="nvarchar" MaxLength="500" />
+          <Property Name="FloorNo3" Type="nvarchar" MaxLength="500" />
+          <Property Name="OccupancyStatus3" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConstType3" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateofConstruction3" Type="datetime" />
+          <Property Name="UsageType3" Type="nvarchar" MaxLength="500" />
+          <Property Name="UsageTypeClass3" Type="nvarchar" MaxLength="500" />
+          <Property Name="Legal3" Type="nvarchar" MaxLength="100" />
+          <Property Name="CarpetArea3" Type="nvarchar" MaxLength="500" />
+          <Property Name="BuildupArea3" Type="nvarchar" MaxLength="500" />
+          <Property Name="FloorNo4" Type="nvarchar" MaxLength="500" />
+          <Property Name="OccupancyStatus4" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConstType4" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateofConstruction4" Type="datetime" />
+          <Property Name="UsageType4" Type="nvarchar" MaxLength="500" />
+          <Property Name="UsageTypeClass4" Type="nvarchar" MaxLength="500" />
+          <Property Name="Legal4" Type="nvarchar" MaxLength="100" />
+          <Property Name="CarpetArea4" Type="nvarchar" MaxLength="500" />
+          <Property Name="BuildupArea4" Type="nvarchar" MaxLength="500" />
+          <Property Name="FloorNo5" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConstType5" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateofConstruction5" Type="datetime" />
+          <Property Name="UsageType5" Type="nvarchar" MaxLength="500" />
+          <Property Name="UsageTypeClass5" Type="nvarchar" MaxLength="500" />
+          <Property Name="Legal5" Type="nvarchar" MaxLength="100" />
+          <Property Name="CarpetArea5" Type="nvarchar" MaxLength="500" />
+          <Property Name="BuildupArea5" Type="nvarchar" MaxLength="500" />
+          <Property Name="OldUsageType" Type="nvarchar" MaxLength="500" />
+          <Property Name="OldConstructionType" Type="nvarchar" MaxLength="500" />
+          <Property Name="NewUsageType" Type="nvarchar" MaxLength="500" />
+          <Property Name="NewConstructionType" Type="nvarchar" MaxLength="500" />
+          <Property Name="ExtendUsageType" Type="nvarchar" MaxLength="500" />
+          <Property Name="ExtendConstructionType" Type="nvarchar" MaxLength="500" />
+          <Property Name="PropertyType" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurveyorName" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurveyorSignature" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurveyorDate" Type="datetime" />
+          <Property Name="DataEntryName" Type="nvarchar" MaxLength="500" />
+          <Property Name="DataEntrySignature" Type="nvarchar" MaxLength="500" />
+          <Property Name="DataEntryDate" Type="datetime" />
+          <Property Name="NonRainwaterharvest" Type="bit" />
+          <Property Name="NonSolarWaterheater" Type="bit" />
+          <Property Name="NonVermicultureProject" Type="bit" />
+          <Property Name="NonBorewellr" Type="bit" />
+          <Property Name="NoLift" Type="bit" />
+          <Property Name="WaterConnectionResidential" Type="nvarchar" MaxLength="100" />
+          <Property Name="WaterConnectionSpecialCategory" Type="nvarchar" MaxLength="100" />
+          <Property Name="WaterConnectionIndustrial" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationofToiletResidential" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationofToiletSpecial" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationofToiletIndustrial" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParkingFacilityResidential" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParkingFacilitySpecial" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParkingFacilityIndustrial" Type="nvarchar" MaxLength="100" />
+          <Property Name="DoorLockResidential" Type="nvarchar" MaxLength="100" />
+          <Property Name="DoorLockSpecial" Type="nvarchar" MaxLength="100" />
+          <Property Name="DoorLockIndustrial" Type="nvarchar" MaxLength="100" />
+          <Property Name="UnderGroundGutter" Type="nvarchar" MaxLength="100" />
+          <Property Name="OpenGutter" Type="nvarchar" MaxLength="100" />
+          <Property Name="totalCarpetArea" Type="nvarchar" MaxLength="100" />
+          <Property Name="totalBuildupArea1" Type="nvarchar" MaxLength="100" />
+          <Property Name="totaltax" Type="nvarchar" MaxLength="100" />
+          <Property Name="OldCarpetAreaResident" Type="nvarchar" MaxLength="100" />
+          <Property Name="OldCarpetAreaNonResident" Type="nvarchar" MaxLength="100" />
+          <Property Name="NewCarpetAreaResident" Type="nvarchar" MaxLength="100" />
+          <Property Name="NewCarpetAreaNonResident" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExtendCarpetAreaResident" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExtendCarpetAreaNonResident" Type="nvarchar" MaxLength="100" />
+          <Property Name="OccupancyStatus5" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Sketchdiagram" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Sketchdiagram2" Type="nvarchar" MaxLength="200" />
+          <Property Name="AppId" Type="int" />
+          <Property Name="ZoneNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="VillageName" Type="nvarchar" MaxLength="100" />
+          <Property Name="HFSNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Legal" Type="nvarchar" MaxLength="100" />
+          <Property Name="HissaNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="OldRateableValue" Type="nvarchar" MaxLength="100" />
+          <Property Name="OldTotalTax" Type="nvarchar" MaxLength="100" />
+          <Property Name="FirstAssessmentYear" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="WardNameNo2" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZoneNo2" Type="nvarchar" MaxLength="100" />
+          <Property Name="FHNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyType2" Type="nvarchar" MaxLength="100" />
+          <Property Name="NewPropertyNo2" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DEVPTCSURVEYMALEGAONModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyMaster" EntityType="Self.PropertyMaster" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DEVPTCSURVEYMALEGAONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DEVPTCSURVEYMALEGAONEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <EntitySet Name="PropertyMasters" EntityType="DEVPTCSURVEYMALEGAONModel.PropertyMaster" />
+        </EntityContainer>
+        <EntityType Name="PropertyMaster">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+          </Key>
+          <Property Name="PropertyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrabhagNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="WardNameNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ElectionWard" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NewPropertyNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HouseNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurveyNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GatNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CitySurveyNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AnnualRateableValue" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TotalPlotArea" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TotalBuildupArea" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MarginSpace" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BuildingName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PlotNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FlatNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NoofFloors" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NoofFlats" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NoofShops" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerFirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerMiddleName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerLastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerTelephoneNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerMobileNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerEmailId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerAdhaarNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OccupierFirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OccupierMiddleName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OccupierLastName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OccupierMobileNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OccupierAdhaarNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TenantName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Rent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TenantMobileNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TenantAdhaarNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ConstStartYear" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CompletionYear" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Usage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TypeofBldg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ConstPermNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PermUseNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Rainwaterharvest" Type="Boolean" />
+          <Property Name="SolarWaterheater" Type="Boolean" />
+          <Property Name="VermicultureProject" Type="Boolean" />
+          <Property Name="SWHRemark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Borewell" Type="Boolean" />
+          <Property Name="NoofToilets" Type="Int32" />
+          <Property Name="PermanentDoorLock" Type="Boolean" />
+          <Property Name="OuterMeasurement" Type="Boolean" />
+          <Property Name="Lift" Type="Boolean" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FloorNo1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OccupancyStatus1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ConstType1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateofConstruction1" Type="DateTime" Precision="3" />
+          <Property Name="UsageType1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UsageTypeClass1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Legal1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CarpetArea1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BuildupArea1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FloorNo2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OccupancyStatus2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ConstType2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateofConstruction2" Type="DateTime" Precision="3" />
+          <Property Name="UsageType2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UsageTypeClass2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Legal2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CarpetArea2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BuildupArea2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FloorNo3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OccupancyStatus3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ConstType3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateofConstruction3" Type="DateTime" Precision="3" />
+          <Property Name="UsageType3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UsageTypeClass3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Legal3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CarpetArea3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BuildupArea3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FloorNo4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OccupancyStatus4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ConstType4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateofConstruction4" Type="DateTime" Precision="3" />
+          <Property Name="UsageType4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UsageTypeClass4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Legal4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CarpetArea4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BuildupArea4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FloorNo5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ConstType5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateofConstruction5" Type="DateTime" Precision="3" />
+          <Property Name="UsageType5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UsageTypeClass5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Legal5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CarpetArea5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BuildupArea5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OldUsageType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OldConstructionType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NewUsageType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NewConstructionType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ExtendUsageType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ExtendConstructionType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurveyorName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurveyorSignature" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurveyorDate" Type="DateTime" Precision="3" />
+          <Property Name="DataEntryName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DataEntrySignature" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DataEntryDate" Type="DateTime" Precision="3" />
+          <Property Name="NonRainwaterharvest" Type="Boolean" />
+          <Property Name="NonSolarWaterheater" Type="Boolean" />
+          <Property Name="NonVermicultureProject" Type="Boolean" />
+          <Property Name="NonBorewellr" Type="Boolean" />
+          <Property Name="NoLift" Type="Boolean" />
+          <Property Name="WaterConnectionResidential" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WaterConnectionSpecialCategory" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WaterConnectionIndustrial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LocationofToiletResidential" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LocationofToiletSpecial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LocationofToiletIndustrial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParkingFacilityResidential" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParkingFacilitySpecial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParkingFacilityIndustrial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DoorLockResidential" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DoorLockSpecial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DoorLockIndustrial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UnderGroundGutter" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OpenGutter" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="totalCarpetArea" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="totalBuildupArea1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="totaltax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OldCarpetAreaResident" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OldCarpetAreaNonResident" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NewCarpetAreaResident" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NewCarpetAreaNonResident" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ExtendCarpetAreaResident" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ExtendCarpetAreaNonResident" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OccupancyStatus5" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Sketchdiagram" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Sketchdiagram2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AppId" Type="Int32" />
+          <Property Name="ZoneNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VillageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HFSNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Legal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HissaNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OldRateableValue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OldTotalTax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FirstAssessmentYear" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WardNameNo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneNo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FHNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyType2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NewPropertyNo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DEVPTCSURVEYMALEGAONModelStoreContainer" CdmEntityContainer="DEVPTCSURVEYMALEGAONEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="DEVPTCSURVEYMALEGAONModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="PropertyMasters">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.PropertyMaster">
+              <MappingFragment StoreEntitySet="PropertyMaster">
+                <ScalarProperty Name="NewPropertyNo2" ColumnName="NewPropertyNo2" />
+                <ScalarProperty Name="PropertyType2" ColumnName="PropertyType2" />
+                <ScalarProperty Name="FHNo" ColumnName="FHNo" />
+                <ScalarProperty Name="ZoneNo2" ColumnName="ZoneNo2" />
+                <ScalarProperty Name="WardNameNo2" ColumnName="WardNameNo2" />
+                <ScalarProperty Name="ImageNo" ColumnName="ImageNo" />
+                <ScalarProperty Name="FirstAssessmentYear" ColumnName="FirstAssessmentYear" />
+                <ScalarProperty Name="OldTotalTax" ColumnName="OldTotalTax" />
+                <ScalarProperty Name="OldRateableValue" ColumnName="OldRateableValue" />
+                <ScalarProperty Name="HissaNo" ColumnName="HissaNo" />
+                <ScalarProperty Name="Legal" ColumnName="Legal" />
+                <ScalarProperty Name="HFSNo" ColumnName="HFSNo" />
+                <ScalarProperty Name="VillageName" ColumnName="VillageName" />
+                <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+                <ScalarProperty Name="AppId" ColumnName="AppId" />
+                <ScalarProperty Name="Sketchdiagram2" ColumnName="Sketchdiagram2" />
+                <ScalarProperty Name="Sketchdiagram" ColumnName="Sketchdiagram" />
+                <ScalarProperty Name="OccupancyStatus5" ColumnName="OccupancyStatus5" />
+                <ScalarProperty Name="ExtendCarpetAreaNonResident" ColumnName="ExtendCarpetAreaNonResident" />
+                <ScalarProperty Name="ExtendCarpetAreaResident" ColumnName="ExtendCarpetAreaResident" />
+                <ScalarProperty Name="NewCarpetAreaNonResident" ColumnName="NewCarpetAreaNonResident" />
+                <ScalarProperty Name="NewCarpetAreaResident" ColumnName="NewCarpetAreaResident" />
+                <ScalarProperty Name="OldCarpetAreaNonResident" ColumnName="OldCarpetAreaNonResident" />
+                <ScalarProperty Name="OldCarpetAreaResident" ColumnName="OldCarpetAreaResident" />
+                <ScalarProperty Name="totaltax" ColumnName="totaltax" />
+                <ScalarProperty Name="totalBuildupArea1" ColumnName="totalBuildupArea1" />
+                <ScalarProperty Name="totalCarpetArea" ColumnName="totalCarpetArea" />
+                <ScalarProperty Name="OpenGutter" ColumnName="OpenGutter" />
+                <ScalarProperty Name="UnderGroundGutter" ColumnName="UnderGroundGutter" />
+                <ScalarProperty Name="DoorLockIndustrial" ColumnName="DoorLockIndustrial" />
+                <ScalarProperty Name="DoorLockSpecial" ColumnName="DoorLockSpecial" />
+                <ScalarProperty Name="DoorLockResidential" ColumnName="DoorLockResidential" />
+                <ScalarProperty Name="ParkingFacilityIndustrial" ColumnName="ParkingFacilityIndustrial" />
+                <ScalarProperty Name="ParkingFacilitySpecial" ColumnName="ParkingFacilitySpecial" />
+                <ScalarProperty Name="ParkingFacilityResidential" ColumnName="ParkingFacilityResidential" />
+                <ScalarProperty Name="LocationofToiletIndustrial" ColumnName="LocationofToiletIndustrial" />
+                <ScalarProperty Name="LocationofToiletSpecial" ColumnName="LocationofToiletSpecial" />
+                <ScalarProperty Name="LocationofToiletResidential" ColumnName="LocationofToiletResidential" />
+                <ScalarProperty Name="WaterConnectionIndustrial" ColumnName="WaterConnectionIndustrial" />
+                <ScalarProperty Name="WaterConnectionSpecialCategory" ColumnName="WaterConnectionSpecialCategory" />
+                <ScalarProperty Name="WaterConnectionResidential" ColumnName="WaterConnectionResidential" />
+                <ScalarProperty Name="NoLift" ColumnName="NoLift" />
+                <ScalarProperty Name="NonBorewellr" ColumnName="NonBorewellr" />
+                <ScalarProperty Name="NonVermicultureProject" ColumnName="NonVermicultureProject" />
+                <ScalarProperty Name="NonSolarWaterheater" ColumnName="NonSolarWaterheater" />
+                <ScalarProperty Name="NonRainwaterharvest" ColumnName="NonRainwaterharvest" />
+                <ScalarProperty Name="DataEntryDate" ColumnName="DataEntryDate" />
+                <ScalarProperty Name="DataEntrySignature" ColumnName="DataEntrySignature" />
+                <ScalarProperty Name="DataEntryName" ColumnName="DataEntryName" />
+                <ScalarProperty Name="SurveyorDate" ColumnName="SurveyorDate" />
+                <ScalarProperty Name="SurveyorSignature" ColumnName="SurveyorSignature" />
+                <ScalarProperty Name="SurveyorName" ColumnName="SurveyorName" />
+                <ScalarProperty Name="PropertyType" ColumnName="PropertyType" />
+                <ScalarProperty Name="ExtendConstructionType" ColumnName="ExtendConstructionType" />
+                <ScalarProperty Name="ExtendUsageType" ColumnName="ExtendUsageType" />
+                <ScalarProperty Name="NewConstructionType" ColumnName="NewConstructionType" />
+                <ScalarProperty Name="NewUsageType" ColumnName="NewUsageType" />
+                <ScalarProperty Name="OldConstructionType" ColumnName="OldConstructionType" />
+                <ScalarProperty Name="OldUsageType" ColumnName="OldUsageType" />
+                <ScalarProperty Name="BuildupArea5" ColumnName="BuildupArea5" />
+                <ScalarProperty Name="CarpetArea5" ColumnName="CarpetArea5" />
+                <ScalarProperty Name="Legal5" ColumnName="Legal5" />
+                <ScalarProperty Name="UsageTypeClass5" ColumnName="UsageTypeClass5" />
+                <ScalarProperty Name="UsageType5" ColumnName="UsageType5" />
+                <ScalarProperty Name="DateofConstruction5" ColumnName="DateofConstruction5" />
+                <ScalarProperty Name="ConstType5" ColumnName="ConstType5" />
+                <ScalarProperty Name="FloorNo5" ColumnName="FloorNo5" />
+                <ScalarProperty Name="BuildupArea4" ColumnName="BuildupArea4" />
+                <ScalarProperty Name="CarpetArea4" ColumnName="CarpetArea4" />
+                <ScalarProperty Name="Legal4" ColumnName="Legal4" />
+                <ScalarProperty Name="UsageTypeClass4" ColumnName="UsageTypeClass4" />
+                <ScalarProperty Name="UsageType4" ColumnName="UsageType4" />
+                <ScalarProperty Name="DateofConstruction4" ColumnName="DateofConstruction4" />
+                <ScalarProperty Name="ConstType4" ColumnName="ConstType4" />
+                <ScalarProperty Name="OccupancyStatus4" ColumnName="OccupancyStatus4" />
+                <ScalarProperty Name="FloorNo4" ColumnName="FloorNo4" />
+                <ScalarProperty Name="BuildupArea3" ColumnName="BuildupArea3" />
+                <ScalarProperty Name="CarpetArea3" ColumnName="CarpetArea3" />
+                <ScalarProperty Name="Legal3" ColumnName="Legal3" />
+                <ScalarProperty Name="UsageTypeClass3" ColumnName="UsageTypeClass3" />
+                <ScalarProperty Name="UsageType3" ColumnName="UsageType3" />
+                <ScalarProperty Name="DateofConstruction3" ColumnName="DateofConstruction3" />
+                <ScalarProperty Name="ConstType3" ColumnName="ConstType3" />
+                <ScalarProperty Name="OccupancyStatus3" ColumnName="OccupancyStatus3" />
+                <ScalarProperty Name="FloorNo3" ColumnName="FloorNo3" />
+                <ScalarProperty Name="BuildupArea2" ColumnName="BuildupArea2" />
+                <ScalarProperty Name="CarpetArea2" ColumnName="CarpetArea2" />
+                <ScalarProperty Name="Legal2" ColumnName="Legal2" />
+                <ScalarProperty Name="UsageTypeClass2" ColumnName="UsageTypeClass2" />
+                <ScalarProperty Name="UsageType2" ColumnName="UsageType2" />
+                <ScalarProperty Name="DateofConstruction2" ColumnName="DateofConstruction2" />
+                <ScalarProperty Name="ConstType2" ColumnName="ConstType2" />
+                <ScalarProperty Name="OccupancyStatus2" ColumnName="OccupancyStatus2" />
+                <ScalarProperty Name="FloorNo2" ColumnName="FloorNo2" />
+                <ScalarProperty Name="BuildupArea1" ColumnName="BuildupArea1" />
+                <ScalarProperty Name="CarpetArea1" ColumnName="CarpetArea1" />
+                <ScalarProperty Name="Legal1" ColumnName="Legal1" />
+                <ScalarProperty Name="UsageTypeClass1" ColumnName="UsageTypeClass1" />
+                <ScalarProperty Name="UsageType1" ColumnName="UsageType1" />
+                <ScalarProperty Name="DateofConstruction1" ColumnName="DateofConstruction1" />
+                <ScalarProperty Name="ConstType1" ColumnName="ConstType1" />
+                <ScalarProperty Name="OccupancyStatus1" ColumnName="OccupancyStatus1" />
+                <ScalarProperty Name="FloorNo1" ColumnName="FloorNo1" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Lift" ColumnName="Lift" />
+                <ScalarProperty Name="OuterMeasurement" ColumnName="OuterMeasurement" />
+                <ScalarProperty Name="PermanentDoorLock" ColumnName="PermanentDoorLock" />
+                <ScalarProperty Name="NoofToilets" ColumnName="NoofToilets" />
+                <ScalarProperty Name="Borewell" ColumnName="Borewell" />
+                <ScalarProperty Name="SWHRemark" ColumnName="SWHRemark" />
+                <ScalarProperty Name="VermicultureProject" ColumnName="VermicultureProject" />
+                <ScalarProperty Name="SolarWaterheater" ColumnName="SolarWaterheater" />
+                <ScalarProperty Name="Rainwaterharvest" ColumnName="Rainwaterharvest" />
+                <ScalarProperty Name="PermUseNo" ColumnName="PermUseNo" />
+                <ScalarProperty Name="ConstPermNo" ColumnName="ConstPermNo" />
+                <ScalarProperty Name="TypeofBldg" ColumnName="TypeofBldg" />
+                <ScalarProperty Name="Usage" ColumnName="Usage" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="CompletionYear" ColumnName="CompletionYear" />
+                <ScalarProperty Name="ConstStartYear" ColumnName="ConstStartYear" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="TenantAdhaarNo" ColumnName="TenantAdhaarNo" />
+                <ScalarProperty Name="TenantMobileNo" ColumnName="TenantMobileNo" />
+                <ScalarProperty Name="Rent" ColumnName="Rent" />
+                <ScalarProperty Name="TenantName" ColumnName="TenantName" />
+                <ScalarProperty Name="OccupierAdhaarNo" ColumnName="OccupierAdhaarNo" />
+                <ScalarProperty Name="OccupierMobileNo" ColumnName="OccupierMobileNo" />
+                <ScalarProperty Name="OccupierLastName" ColumnName="OccupierLastName" />
+                <ScalarProperty Name="OccupierMiddleName" ColumnName="OccupierMiddleName" />
+                <ScalarProperty Name="OccupierFirstName" ColumnName="OccupierFirstName" />
+                <ScalarProperty Name="PropOwnerAdhaarNo" ColumnName="PropOwnerAdhaarNo" />
+                <ScalarProperty Name="PropOwnerEmailId" ColumnName="PropOwnerEmailId" />
+                <ScalarProperty Name="PropOwnerMobileNo" ColumnName="PropOwnerMobileNo" />
+                <ScalarProperty Name="PropOwnerTelephoneNo" ColumnName="PropOwnerTelephoneNo" />
+                <ScalarProperty Name="PropOwnerLastName" ColumnName="PropOwnerLastName" />
+                <ScalarProperty Name="PropOwnerMiddleName" ColumnName="PropOwnerMiddleName" />
+                <ScalarProperty Name="PropOwnerFirstName" ColumnName="PropOwnerFirstName" />
+                <ScalarProperty Name="NoofShops" ColumnName="NoofShops" />
+                <ScalarProperty Name="NoofFlats" ColumnName="NoofFlats" />
+                <ScalarProperty Name="NoofFloors" ColumnName="NoofFloors" />
+                <ScalarProperty Name="FlatNo" ColumnName="FlatNo" />
+                <ScalarProperty Name="PlotNo" ColumnName="PlotNo" />
+                <ScalarProperty Name="BuildingName" ColumnName="BuildingName" />
+                <ScalarProperty Name="MarginSpace" ColumnName="MarginSpace" />
+                <ScalarProperty Name="TotalBuildupArea" ColumnName="TotalBuildupArea" />
+                <ScalarProperty Name="TotalPlotArea" ColumnName="TotalPlotArea" />
+                <ScalarProperty Name="AnnualRateableValue" ColumnName="AnnualRateableValue" />
+                <ScalarProperty Name="CitySurveyNo" ColumnName="CitySurveyNo" />
+                <ScalarProperty Name="GatNo" ColumnName="GatNo" />
+                <ScalarProperty Name="SurveyNo" ColumnName="SurveyNo" />
+                <ScalarProperty Name="HouseNo" ColumnName="HouseNo" />
+                <ScalarProperty Name="PropertyNo" ColumnName="PropertyNo" />
+                <ScalarProperty Name="NewPropertyNo" ColumnName="NewPropertyNo" />
+                <ScalarProperty Name="ElectionWard" ColumnName="ElectionWard" />
+                <ScalarProperty Name="WardNameNo" ColumnName="WardNameNo" />
+                <ScalarProperty Name="PrabhagNo" ColumnName="PrabhagNo" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

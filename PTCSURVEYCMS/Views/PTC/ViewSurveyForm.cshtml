@@ -1,0 +1,1351 @@
+﻿@model BLL.ViewModel.PropertyMasterVM
+@{
+    ViewBag.Title = "SurveyForm";
+    Layout = "";
+}
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .p_5 {
+        padding: 5px 5px 5px 5px !important;
+    }
+
+    .border1 {
+        border: 1px solid black;
+    }
+
+    .back {
+        background: none !important;
+        border: none !important;
+    }
+</style>
+@*@Styles.Render("~/Content/AddEditCSS")*@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/SurveyForm.css" rel="stylesheet" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+
+<div id="target">
+    <button class="ml-5" type="button" style="position:absolute;top:25px;padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
+    line-height: 1.5;border-radius: 3px;border-style: none;" onclick="goBack()">
+        Back
+    </button>
+    <img src="~/Content/Images/@ViewBag.logo " style="position: absolute;height: 150px;top: 0%;left:10%" />
+    <h1 class="text-center my-3">@ViewBag.Appname_mar </h1>
+    <h6 class="text-center mb-3">मालमत्ता कर विभाग / Property Tax Department</h6>
+    <h6 class="text-center mb-3 font-weight-bold"> कर आकारणी सर्वेक्षण फॉर्म / Property Tax Assessment Survey Form</h6>
+    <img src="~/content/Images/mkmj.jpeg" style="position: absolute;height: 150px;top:0%; right:10%" />
+    @*<button type="button" onclick="print()">pdf</button>*@
+<div class="container">
+    <div class="d-flex justify-content-end pr-3">
+        <div class="d-flex justify-content-end pr-3">
+            <button type="button" style="padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
+    line-height: 1.5;border-radius: 3px;border-style: none;" onclick="window.print()">
+                Genrate Pdf
+            </button>
+        </div>
+    </div>
+    @* Building Name Section A *@
+    <div class="d-flex flex-row back mb-3">
+        <table style="width:100%">
+            <tr class="text-center">
+                <th><label class="label text-center">प्रभाग  क्रमांक/ Prabhag No.</label></th>
+                <th><label class="label ">वार्ड क्र / Ward No.</label></th>
+                <th> <label class="label">झोन क्र / <br /> Zone No.</label></th>
+                <th><label class="label">निवडणूक वार्ड / Election Ward</label></th>
+                <th><label class="label">मालमत्ता क्रमांक / Property No.</label></th>
+                <th><label class="label">नवीन मालमत्ता क्रमांक / New Property No.</label></th>
+
+                @*<th> <label class="label">घर क्रमांक / House No.</label></th>*@
+            </tr>
+            <tr class="text-center">
+                <td>@Html.DisplayFor(model => model.PrabhagNo, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td class="p_5">@Html.DisplayFor(model => model.WardName_No, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td class="p_5">@Html.DisplayFor(model => model.ZoneNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.ElectionWard, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td> @Html.DisplayFor(model => model.PropertyNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.NewPropertyNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+                @*<td>@Html.DisplayFor(model => model.HouseNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>*@
+            </tr>
+        </table>
+
+
+    </div>
+
+    <div class="d-flex flex-row back mb-3">
+        <table style="width:100%">
+            <tr class="text-center">
+                <th>
+                    <label class="label text-center">
+                        मालमत्ता प्रकार (इमारत/जमीन)/ Property Type
+                        (Building / Land)
+                    </label>
+                </th>
+                <th><label class="label ">गावचे नाव/<br />Village Name</label></th>
+                <th> <label class="label">घर क्र / सदनिका क्र / गाळा क्र <br /> House No./ Flat No./ Shop No.</label></th>
+                <th><label class="label">अधिकृत (होय /नाही) / Legal (Y/N)</label></th>
+
+
+
+            </tr>
+            <tr class="text-center">
+                <td>@Html.DisplayFor(model => model.PropertyType, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td class="p_5">@Html.DisplayFor(model => model.VillageName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.HFSNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Legal, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+            </tr>
+        </table>
+
+
+    </div>
+    @* Survey No. Name Section B *@
+    <div class="d-flex flex-column back mb-3">
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th>
+                        <label class="label">सर्वे नं. / Survey No.</label>
+                    </th>
+                    <th>
+
+                        <label class="label">हिस्सा नं./ Hissa No.</label>
+                    </th>
+
+                    <th>
+                        <label class="label">सिटी सर्वे नं. /City Survey No.</label>
+                    </th>
+                    <th>
+                        <label class="label">जुना वापराचा प्रकार / Old Usage Type</label>
+                    </th>
+                    <th> <label class="label mb-4">जुना  करयोग्य मूल्य / Old Rateable Value</label></th>
+                    <th>   <label class="label">जुना एकूण कर / Old Total Tax</label></th>
+                    <th>   <label class="label">प्रथम  आकारणी वर्ष /First Assessment Year</label></th>
+
+                </tr>
+
+                <tr class="text-center">
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.SurveyNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(model => model.HissaNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+
+
+                    <td>
+                        @Html.DisplayFor(model => model.CitySurveyNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+
+
+                    <td>   @Html.DisplayFor(model => model.OldUsageType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>  @Html.DisplayFor(model => model.OldRateableValue, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+                    <td>  @Html.DisplayFor(model => model.OldTotalTax, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>  @Html.DisplayFor(model => model.FirstAssessmentYear, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    @* Building Name Section C *@
+    <div class="d-flex flex-row back mb-3">
+        <table style="width:100%">
+            <tr class="text-center">
+                <th class="text-center"><label class="label">इमारतीचे नाव / Building Name</label></th>
+                @*<th class="text-center"><label class="label">भूखंड क्र. /<br /> Plot No.</label></th>
+                    <th class="text-center"><label class="label">फ्लॅट क्रमांक /<br /> Flat No.</label></th>*@
+                <th class="text-center"><label class="label">एकूण मजले / No. of Floors</label></th>
+                <th class="text-center"><label class="label">एकूण सदिनका/ No. of Flats</label></th>
+                <th class="text-center"><label class="label">एकूण गाळे /<br /> No. of Shops</label></th>
+            </tr>
+            <tr class="text-center">
+
+                <td class="p_5">
+                    @Html.DisplayFor(model => model.BuildingName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                </td>
+                @*<td class="p_5">
+                        @Html.DisplayFor(model => model.PlotNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+                    <td>
+
+                        @Html.DisplayFor(model => model.FlatNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                    </td>*@
+
+
+                <td>
+                    @Html.DisplayFor(model => model.NoofFloors, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.NoofFlats, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(model => model.NoofShops, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    @* Prop. Owner Namee Section D *@
+    <div class="d-flex flex-column back mb-3">
+
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th class="text-center" rowspan='2'>
+                        <label class="label"> मालमत्ता मालकाचे नाव /<br /> Prop. Owner Name</label>
+                    </th>
+                    <th class="text-center">
+
+                        <label class="label">प्रथम नाव/ First Name</label>
+                    </th>
+                    <th class="text-center">
+
+                        <label class="label">मधले नाव / Middle Name</label>
+                    </th>
+                    <th class="text-center">
+
+                        <label class="label">आडनाव / Last Name</label>
+                    </th>
+                </tr>
+                <tr class="text-center">
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.PropOwnerFirstName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                    </td>
+
+
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.PropOwnerMiddleName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+
+
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.PropOwnerLastName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th>
+                        <label class="label"> दूरध्वनी क्रमांक. /<br /> Telephone No.</label>
+                    </th>
+                    <th>
+                        <label class="label">मोबाईल क्रमांक /<br /> Mobile No.</label>
+                    </th>
+                </tr>
+                <tr class="text-center">
+                    <td class="p_5"> @Html.DisplayFor(model => model.PropOwnerTelephoneNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+
+                    <td class="p_5">@Html.DisplayFor(model => model.PropOwnerMobileNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+
+
+            </table>
+        </div>
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th>
+                        <label class="label"> ई - मेल आयडी. /<br /> Email Id.</label>
+                    </th>
+                    <th>
+                        <label class="label">आधार क्रमांक /<br /> Adhaar No.</label>
+                    </th>
+                </tr>
+                <tr class="text-center">
+                    <td class="p_5"> @Html.DisplayFor(model => model.PropOwnerEmailId, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+
+
+
+                    <td class="p_5">@Html.DisplayFor(model => model.PropOwnerAdhaarNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+
+
+            </table>
+
+        </div>
+
+    </div>
+    @* Occupier Name Section E *@
+    <div class="d-flex flex-column back mb-3">
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th class="text-center" rowspan='2'>
+                        <label class="label"> भोगवटदाराचे नाव /<br /> Occupier Name</label>
+                    </th>
+                    <th class="text-center">
+
+                        <label class="label">प्रथम नाव / First Name</label>
+                    </th>
+                    <th class="text-center">
+
+                        <label class="label">मधले नाव / Middle Name</label>
+                    </th>
+                    <th class="text-center">
+
+                        <label class="label">आडनाव / Last Name</label>
+                    </th>
+                </tr>
+                <tr class="text-center">
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.OccupierFirstName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                    </td>
+
+
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.OccupierMiddleName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+
+
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.OccupierLastName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th>
+                        <label class="label">मोबाईल क्रमांक /<br /> Mobile No.</label>
+                    </th>
+                    <th>
+                        <label class="label">आधार क्रमांक /<br /> Adhaar No.</label>
+                    </th>
+                </tr>
+                <tr class="text-center">
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.OccupierMobileNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+
+                    <td class="p_5">   @Html.DisplayFor(model => model.OccupierAdhaarNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" }) </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+
+
+    @* Occupier Name Section F *@
+    <div class="d-flex flex-column back mb-3">
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr>
+                    <th rowspan='2'>   <label class="label"> भाडेकरी नाव / Tenant Name</label></th>
+                </tr>
+                <tr>
+                    <td class="p_5"> @Html.DisplayFor(model => model.TenantName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+
+                </tr>
+
+                <tr>
+                    <th rowspan='2'>  <label class="label">भाडे / Rent</label></th>
+                </tr>
+                <tr>
+                    <td class="p_5">@Html.DisplayFor(model => model.Rent, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+
+                </tr>
+
+
+            </table>
+        </div>
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th>
+                        <label class="label">मोबाईल क्रमांक /<br /> Mobile No.</label>
+                    </th>
+                    <th>
+                        <label class="label">आधार क्रमांक /<br /> Adhaar No.</label>
+                    </th>
+                </tr>
+                <tr class="text-center">
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.TenantMobileNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+
+                    <td class="p_5">  @Html.DisplayFor(model => model.TenantAdhaarNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+    <hr />
+    @* Address Section G *@
+    <div class="d-flex flex-column back mb-4">
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th rowspan='2'>   <label class="label">पत्ता /<br /> Address</label></th>
+                </tr>
+                <tr>
+                    <td class="p_5"> @Html.DisplayFor(model => model.Address, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th>
+                        <label class="label">रेखावृत्त /<br /> Longitude</label>
+                    </th>
+                    <td class="p_5">
+
+                        @Html.DisplayFor(model => model.Longitude, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <th>
+
+                        <label class="label">अक्षवृत्त /<br /> Latitude</label>
+                    </th>
+                    <td class="p_5">
+
+                        @Html.DisplayFor(model => model.Latitude, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                </tr>
+
+            </table>
+
+
+        </div>
+        <div class="d-flex flex-row mt-5 mb-3">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th>   <label class="label">बांधकाम चालू केलेले वर्ष / Const. Start Year</label></th>
+                    <th>  <label class="label">बांधकाम पूर्णवाचे वर्ष / Const.Completion Year</label></th>
+                    <th>  <label class="label">वय / Age</label></th>
+                    <th>  <label class="label">वापराचा (रेसी. / नॉन-रेसी. / मिश्रित) / Usage (Resi. / Non-resi. / Mixed)</label></th>
+                    <th>  <label class="label">इमारतीचा प्रकार / Type of Bldg<br />(इमारत/ बंगला/चाळ./रो-हाउस /मोकळी जमीन /झोपडी/ औद्योगिक) <br />(Bldg./ Bunglow/Chawl/O.L/Row House/Slum/Industrial)</label></th>
+                </tr>
+                <tr class="text-center">
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.ConstStartYear, new { @class = "p-5", style = "font-family:Arial, FontAwesome", required = "required" })
+                    </td>
+
+
+                    <td>
+
+                        @Html.DisplayFor(model => model.CompletionYear, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+
+
+
+                    <td>
+                        @Html.DisplayFor(model => model.Age, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+
+
+                    <td>
+
+                        @Html.DisplayFor(model => model.Usage, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+                    <td>
+
+                        @Html.DisplayFor(model => model.TypeofBldg, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column back mb-4">
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <th>
+                        <label class="label">बांधकाम परवानगी क्र / Const. Perm. No.</label>
+                    </th>
+                    <td class="p_5">
+
+                        @Html.DisplayFor(model => model.ConstPermNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <th>
+
+                        <label class="label">भोगवटा दाखला  क्र / Perm. Use. No.</label>
+                    </th>
+                    <td class="p_5">
+
+                        @Html.DisplayFor(model => model.PermUseNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                </tr>
+
+                <tr class="text-center">
+                    <th>
+                        <label class="label">जलपुनभरण व्यावस्था /Rain water harvest</label>
+                    </th>
+                    <td class="p_5">
+                        @Html.CheckBox("Rainwaterharvest", new { @class = "chkBx" })
+                        <label>Yes </label>
+                        @Html.CheckBox("NonRainwaterharvest", new { @class = "chkBx" })
+                        <label>No </label>
+
+                    </td>
+                    <th>
+
+                        <label class="label">सौर ऊर्जा योजना /Solar Water heater</label>
+                    </th>
+                    <td class="p_5">
+                        @Html.CheckBox("SolarWaterheater")
+                        <label>Yes </label>
+                        @Html.CheckBox("NonSolarWaterheater")
+                        <label>No </label>
+
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <th>
+                        <label class="label">गांडूळ प्रकल्प / Vermiculture Project </label>
+                    </th>
+                    <td class="p_5">
+                        @Html.CheckBox("VermicultureProject")
+                        <label>Yes </label>
+                        @Html.CheckBox("NonVermicultureProject")
+                        <label>No </label>
+
+                    </td>
+                    <th>
+
+                        <label class="label">शेरा  / SWH Remark</label>
+                    </th>
+                    <td class="p_5">
+
+                        @Html.DisplayFor(model => model.SWHRemark, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                </tr>
+
+                <tr class="text-center">
+                    <th>
+                        <label class="label">नळ जोडणी /Water Connection</label>
+                    </th>
+                    <td class="p_5">
+                        @Html.CheckBox("WaterConnectionResidential")
+                        <label>निवासी /<br /> Residential </label>
+
+
+                        @Html.CheckBox("WaterConnectionSpecial")
+                        <label>विशेष वर्ग /<br />Special Category </label>
+
+                        @Html.CheckBox("WaterConnectionIndustrial")
+                        <label>औद्योगिक /<br />Industrial </label>
+
+                    </td>
+                    <th>
+
+                        <label class="label">बोअरवेल /Borewellr</label>
+                    </th>
+                    <td class="p_5">
+                        @Html.CheckBox("Borewell")
+                        <label>Yes </label>
+                        @Html.CheckBox("NonBorewellr")
+                        <label>No </label>
+
+                    </td>
+                </tr>
+
+                <tr class="text-center">
+                    <th>
+                        <label class="label">शौचालय संख्या / No. of Toilets</label>
+                    </th>
+                    <td class="p_5">
+                        @Html.DisplayFor(model => model.NoofToilets, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <th>
+
+                        <label class="label">शौचालयाचा प्रकार / Location of Toilet</label>
+                    </th>
+                    <td class="p_5">
+
+                        <label class="mr-3">@Html.CheckBox("LocationofToiletResidential") स्वातंत्र्य / self </label>
+
+
+                        <label>@Html.CheckBox("LocationofToiletSpecial") एकत्र / Common </label>
+
+
+                        <label>@Html.CheckBox("LocationofToiletIndustrial") व्यवस्था नाही / No Arrangement </label>
+
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <th>
+                        <label class="label">पार्किंगची व्यवस्था / Parking Facility</label>
+                    </th>
+                    <td class="p_5">
+
+                        @Html.CheckBox("ParkingFacilityResidential")
+
+                        <label class="mr-3">सामान्य वापर / Ordinary Use </label>
+
+
+                        <label>@Html.CheckBox("ParkingFacilitySpecial")विशेष वर्ग /Special Category </label>
+
+                        @Html.CheckBox("ParkingFacilityIndustrial")
+                        <label>बंद / Closed Garage</label>
+
+                    </td>
+                    <th>
+
+                        <label class="label">सांडपाणी व्यवस्था / Drainage System</label>
+                    </th>
+                    <td class="p_5">
+                        <label> @Html.CheckBox("UnderGroundGutter") ग्राउंड गटार अंतर्गत / Under Ground Gutter</label>
+
+
+                        <label>@Html.CheckBox("OpenGutter")गटर उघडा / Open Gutter </label>
+                    </td>
+                </tr>
+
+
+                <tr class="text-center" style="width:100%">
+                    <td class="p_5">
+                        <label>@Html.CheckBox("DoorLockResidential") घर बंद / Door Lock</label>
+                    </td>
+                    <td class="p_5">
+
+
+                        <label>@Html.CheckBox("DoorLockSpecial")  कायम घर बंद / Permanent Door Lock </label>
+                        <label>@Html.CheckBox("DoorLockIndustrial") बाह्य मोजमाप / Outer Measurement </label>
+
+                    </td>
+                    <th>
+
+                        <label class="label">लिफ्ट / Lift</label>
+                    </th>
+                    <td class="p_5">
+                        <label>Yes </label>
+                        @Html.CheckBox("Lift")
+                        <label>No </label>
+                        @Html.CheckBox("NoLift")
+
+
+                </tr>
+
+
+
+
+            </table>
+
+        </div>
+        <table style="width:100%">
+            <tr class="text-center">
+                <th rowspan='2'>   <label class="label">टिप्पणी  / Remark :</label></th>
+            </tr>
+            <tr>
+                <td class="p_5"> @Html.DisplayFor(model => model.Remarks, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="d-flex flex-column back mb-4">
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <td class="pr-2 pl-2 pt-2">
+                        <label class="label">जुना वापर प्रकार (रेसी. / नॉन-रेसी. / मिश्रित) / <br />Old Usage Type(Resi. / Non-Resi. / Mixed )</label>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.OldUsageType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>
+                        <label class="label">जुने बांधकाम प्रकार / <br />Old Construction Type</label>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.OldConstructionType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+                </tr>
+
+                <table style="width:100%">
+                    <tr class="text-center">
+                        <th></th>
+                        <td class="pr-2 pl-2 pt-2"></td>
+                        <td></td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="pr-2 pl-2 pt-2">जुने चटई क्षेत्रफळ / Old Carpet Area</td>
+
+                        <td>  @Html.DisplayFor(model => model.OldCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+                        <td>  @Html.DisplayFor(model => model.OldCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                    </tr>
+                </table>
+            </table>
+        </div>
+        <div class="d-flex flex-row">
+            <table style="width:100%">
+                <tr class="text-center">
+                    <td class="pr-2 pl-2 pt-2">
+                        <label class="label">नवीन वापर प्रकार (रेसी. / नॉन-रेसी. / मिश्रित) / <br />New Usage Type(Resi. / Non-Resi. / Mixed )</label>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.NewUsageType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>
+                        <label class="label">नवीन बांधकाम प्रकार / <br />New Construction Type</label>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.NewConstructionType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                    </td>
+
+                </tr>
+
+                <table style="width:100%">
+                    <tr class="text-center">
+                        <th></th>
+                        <td class="pr-2 pl-2 pt-2"></td>
+                        <td> </td>
+                    </tr>
+
+                    <tr class="text-center">
+                        <td class="pr-2 pl-2 pt-2">नवीन चटई क्षेत्रफळ / New Carpet Area</td>
+                        <td>  @Html.DisplayFor(model => model.NewCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>  @Html.DisplayFor(model => model.NewCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+                    </tr>
+
+                </table>
+            </table>
+        </div>
+
+        @*<div class="d-flex flex-row">
+                <table style="width:100%">
+                    <tr class="text-center">
+                        <td class="pr-2 pl-2 pt-2">
+                            <label class="label">वाढीव वापर प्रकार (रेसी. / नॉन-रेसी. / मिश्रित) / <br />Extend Usage Type(Resi. / Non-Resi. / Mixed )</label>
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </td>
+                        <td>
+                            <label class="label">वाढीव बांधकाम प्रकार / <br />Extend Construction Type</label>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ExtendConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
+
+                    </tr>
+
+
+
+                    <table style="width:100%">
+                        <tr class="text-center">
+                            <th></th>
+                            <td class="pr-2 pl-2 pt-2">निवाशी</td>
+                            <td>बिगर रहावाशी</td>
+                        </tr>
+
+                        <tr class="text-center">
+
+                            <td class="pr-2 pl-2 pt-2">वाढीव चटई क्षेत्रफळ / Extend Carpet Area</td>
+                            <td>  @Html.DisplayFor(model => model.ExtendCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                            <td>  @Html.DisplayFor(model => model.ExtendCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                        </tr>
+                    </table>
+
+
+
+                </table>
+            </div>*@
+    </div>
+
+    <div class="d-flex flex-column back mb-4">
+
+        <table style="width:100%" class="back mb-4">
+            <tr class="text-center">
+                <th>मजला क्र/Floor No.</th>
+                <th> मालकी (मालमत्ता धारक/भाडेकरू/लीज) /Occupancy Status<br />(Owner / Tenant/ Lease)</th>
+                <th>बांधकामाचा प्रकार/Const.Type<br />(A, B, C,D, E,OP)</th>
+                <th>बांधकाम वर्ष/Date of Construction</th>
+                <th>वापराचा प्रकार (निवासी/ बिगर निवासी)/Usage Type (Resi. / Non-Resi.)</th>
+                <th>वापराचा प्रकारचे वर्गीकरण/Usage Type Class</th>
+                <th>अिधकृत(आहे/नाही)Legal(Y/N)</th>
+                <th>चटई क्षेत्रफ़ळ (चौ.मी.)/Carpet Area(In Sq. M.)</th>
+                <th>बांधीव क्षेत्रफ़ळ (चौ.मी.)/Buildup Area(In Sq. M.)</th>
+
+            </tr>
+            <tr class="text-center">
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.FloorNo1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.OccupancyStatus1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.ConstType1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.DateofConstruction1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageType1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageTypeClass1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.Legal1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.CarpetArea1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.BuildupArea1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.FloorNo2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.OccupancyStatus2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.ConstType2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.DateofConstruction2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageType2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageTypeClass2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.Legal2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.CarpetArea2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.BuildupArea2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.FloorNo3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.OccupancyStatus3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.ConstType3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.DateofConstruction3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageType3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageTypeClass3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.Legal3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.CarpetArea3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.BuildupArea3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.FloorNo4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.OccupancyStatus4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.ConstType4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.DateofConstruction4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageType4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageTypeClass4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.Legal4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.CarpetArea4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.BuildupArea4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.FloorNo5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.OccupancyStatus5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.ConstType5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.DateofConstruction5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageType5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.UsageTypeClass5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.Legal5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.CarpetArea5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.BuildupArea5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <span class="font-weight-bold">Total</span>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.totalCarpetArea, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                        <div>
+                            @Html.DisplayFor(model => model.totalBuildupArea1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="d-flex flex-row">
+        <div class="form-group pr-4 back mr-3" style="width:100%">
+            <label class="label"> प्रतिमा क्र/Image No.</label>
+
+            <div>
+                @Html.TextBoxFor(model => model.ImageNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome;border:1px solid black;border-radius:0px" })
+                @Html.ValidationMessageFor(model => model.ImageNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group pr-4 back mr-3" style="width:100%">
+            <label class="label">टिप्पणी  / Remark :</label>
+
+            <div>
+                @Html.TextBoxFor(model => model.Remarks, new { @class = "form-control", style = "font-family:Arial, FontAwesome;border:1px solid black;border-radius:0px" })
+                @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row back mb-4">
+
+        <table style="width:100%" class="back mb-3">
+            <tr>
+                <th>वर्णन / Description</th>
+                <th>नाव / Name</th>
+                <th>स्वाक्षरी / Signature</th>
+                <th>तारीख / Date</th>
+            </tr>
+            <tr>
+                <td>सर्वेक्षण करणारा / Surveyor</td>
+                <td>@Html.DisplayFor(model => model.SurveyorName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.SurveyorSignature, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.SurveyorDate, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+            <tr>
+                <td>डेटा एन्ट्री /Data Entry By</td>
+                <td>@Html.DisplayFor(model => model.DataEntryName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.DataEntrySignature, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.DataEntryDate, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="d-flex flex-row back mb-4">
+        <table style="width:100%">
+            <tr class="text-center">
+                <th>
+                    <label class="label">वार्ड क्र/ नाव<br /> Ward No./Name</label>
+                </th>
+
+                <th>  <label class="label">झोन क्र / <br /> Zone No.</label></th>
+                <th>
+                    <label class="label">सदनिका क्र. /घर क्र /<br />Flat No./ House No.</label>
+                </th>
+                <th>
+                    <label class="label">नवीन मालमत्ता क्र /  New Property No.</label>
+                </th>
+                <th>
+                    <label class="label">मालमत्तेचा प्रकार / Property Type </label>
+                </th>
+
+            </tr>
+
+            <tr class="text-center">
+
+                <td>
+                    @Html.DisplayFor(model => model.WardName_No2, new { @class = "p-5", style = "font-family:Arial, FontAwesome", required = "required" })
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ZoneNo2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(model => model.FHNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                </td>
+
+
+                <td>
+
+                    @Html.DisplayFor(model => model.NewPropertyNo2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+
+                </td>
+
+
+                <td>
+
+                    @Html.DisplayFor(model => model.PropertyType2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+    <script>
+        $('.chkBx').change(function () {
+            $(".chkBx").not(this).prop('checked', false);
+        });
+        function goBack() {
+            window.history.back();
+        }
+            //function print() {
+            //    const filename  = 'ThisIsYourPDFFilename.pdf';
+
+            //    html2canvas(document.getElementById('target')).then(canvas => {
+            //        let pdf = new jsPDF('p', 'mm', 'a4');
+            //        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+            //        pdf.save(filename);
+            //    });
+            //}
+            //function print() {
+            //    window.print()
+            //}
+
+            // Variant
+            // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
+            //var quality=4;
+            //function print(quality) {
+            //    const filename  = 'ThisIsYourPDFFilename.pdf';
+
+            //    html2canvas(document.getElementById('target'),
+            //							{scale: quality}
+            //					 ).then(canvas => {
+            //					     let pdf = new jsPDF('p', 'mm', 'a4');
+            //					     pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+            //					     pdf.addPage();
+            //					     pdf.save(filename);
+            //					 });
+            //}
+    </script>
