@@ -613,11 +613,13 @@ namespace BLL.Repository.Repository
                     Master.SurveyorDate = Convert.ToDateTime(_Property.SurveyorDate).ToString("dd-MM-yyyy");
                     Master.DataEntryName = _Property.DataEntryName;
                     Master.DataEntrySignature = _Property.DataEntrySignature;
-
                     Master.DataEntryDate = Convert.ToDateTime(_Property.DataEntryDate).ToString("dd-MM-yyyy");
                     Master.NonSolarWaterheater = _Property.NonSolarWaterheater;
                     Master.NonVermicultureProject = _Property.NonVermicultureProject;
                     Master.NoLift = _Property.NoLift;
+                    Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
+                    Master.Sketchdiagram = _Property.Sketchdiagram;
+                    Master.Sketchdiagram2 = _Property.Sketchdiagram2;
                     Master.ZoneNo = _Property.ZoneNo;
                     Master.VillageName = _Property.VillageName;
                     Master.HFSNo = _Property.HFSNo;
@@ -632,9 +634,6 @@ namespace BLL.Repository.Repository
                     Master.FHNo = _Property.FHNo;
                     Master.PropertyType2 = _Property.PropertyType2;
                     Master.NewPropertyNo2 = _Property.NewPropertyNo2;
-                    Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
-                    Master.Sketchdiagram = _Property.Sketchdiagram;
-                    Master.Sketchdiagram2 = _Property.Sketchdiagram2;
                 }
             }
             return Master;
