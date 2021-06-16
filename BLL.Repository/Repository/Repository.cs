@@ -452,7 +452,7 @@ namespace BLL.Repository.Repository
                     PropertyId = x.PropertyId,
                     NewPropertyNo = x.NewPropertyNo,
                     PropertyNo = x.PropertyNo,
-                    HouseNo = x.HouseNo,
+                    HouseNo = x.HFSNo,
                     PropOwnerFirstName = x.PropOwnerFirstName,
                     PropOwnerLastName = x.PropOwnerLastName,
                     PropOwnerMobileNo = x.PropOwnerMobileNo,
