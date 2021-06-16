@@ -36,10 +36,7 @@ namespace BLL.Repository.Repository
         }
 
         public AppDetailsVM GetApplicationDetails(int AppId)
-        {
-
-
-
+        { 
             using (DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities())
             {
                 AppDetailsVM model = new AppDetailsVM();

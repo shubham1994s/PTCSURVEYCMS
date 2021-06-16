@@ -10,6 +10,7 @@ namespace DAL
         {
             try
             {
+
                 const string DefaultStringCon = @"metadata=res://*/ChildDatabase.ChildModel1.csdl|res://*/ChildDatabase.ChildModel1.ssdl|res://*/ChildDatabase.ChildModel1.msl;provider=System.Data.SqlClient;provider connection string='";
                 const string Data_Source = "data source=";
                 const string Initial_Catlog = ";initial catalog=";
