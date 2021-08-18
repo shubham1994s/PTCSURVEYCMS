@@ -157,13 +157,18 @@ namespace PTCSURVEYCMS.Controllers
 
         public ActionResult SurveyList(int q = -1,int clientId=0)
         {
-            if(clientId!=0)
+            Repository = new Repository();
+            if (clientId!=0)
             {
-                SessionHandler.Current.AppId = clientId;       
-                AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(clientId);
+                SessionHandler.Current.AppId = clientId;
+                int AppId = SessionHandler.Current.AppId;     
+                AppDetailsVM  ApplicationDetails = Repository.GetApplicationDetails(AppId);
                 ViewBag.Appname = ApplicationDetails.AppName;
             }
-          
+          else
+            {
+                ViewBag.Appname = SessionHandler.Current.AppName;
+            }
             if (SessionHandler.Current.AppId != 0)
             {
                 int Appid = SessionHandler.Current.AppId;
@@ -176,8 +181,8 @@ namespace PTCSURVEYCMS.Controllers
                 {
                     ViewBag.Clogo = "vengurla logo.jpeg";               
                 }
-                ViewBag.Appname = SessionHandler.Current.AppName;
-                Repository = new Repository();
+              
+           
                 var viewModel = new PropertyMasterVM();
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);
                 using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(Appid))
