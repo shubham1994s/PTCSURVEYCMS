@@ -30,10 +30,10 @@
                             <div class="" style="display:flex;justify-content:space-between">
 
                                 @*<a href="@Url.Action("GenerateReport","Report" ,new {typeOfReport="PDF"})">Get All Entries Report </a>*@
-
                                 <h4 sytle="magin-bottom:30px;font-weight:800;">
                                     <a href="@Url.Action("SurveyForm", "PTC")" type="button" class="btn btn-sm btn-primary">Add New Survey Form</a>
-                                </h4> <span style="border:1px solid gray; padding:5px;height:fit-content;">Total Proprety Count : @ViewBag.EntryCount</span>
+                                </h4><img src="~/Content/Images/@ViewBag.Clogo" style="position: absolute;height: 155px;top: -5%;left:42%" />
+                                <span style="border: 1px solid #357ebd; padding: 5px; height: fit-content; margin-top: 10px !important ">Total Proprety Count : @ViewBag.EntryCount</span>
                             </div>
 
                                 @*<button type="button" class="btn btn-default active" onclick="location.href='@Url.Action("SurveyForm", "Report")'">Financial</button>*@
@@ -55,7 +55,7 @@
                             <div class="card-block">
                                 <div style="display:flex;justify-content:space-between">
                                     <span style="font-size:2em;font-weight:600">Property List </span>
-                                    <h3 style="margin-bottom:35px"><a href="@Url.Action("GenerateReport", "Report",new {typeOfReport="PDF"})" type="button" class="btn btn-sm btn-primary float-right" style="margin-left: 10px;">Get All Entries Report</a></h3>
+                                    <h3 style="margin-bottom:35px;margin-top:5px"><a href="@Url.Action("GenerateReport", "Report",new {typeOfReport="PDF"})" type="button" class="btn btn-sm btn-primary float-right" style="margin-left: 10px;">Get All Entries Report</a></h3>
                                 </div>
                                 <div class="dt-responsive table-responsive">
 

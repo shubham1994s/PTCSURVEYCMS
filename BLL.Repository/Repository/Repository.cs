@@ -16,7 +16,7 @@ namespace BLL.Repository.Repository
             EmployeeVM _EmployeeVM = new EmployeeVM();
             using (DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities())
             {
-                var appUser = (db.AD_USER_MST.Where(x => x.ADUM_LOGIN_ID == _userinfo.ADUM_LOGIN_ID && x.ADUM_PASSWORD == _userinfo.ADUM_PASSWORD).FirstOrDefault());
+                var appUser = (db.AD_USER_MST.Where(x => x.ADUM_LOGIN_ID == _userinfo.ADUM_LOGIN_ID && x.ADUM_PASSWORD == _userinfo.ADUM_PASSWORD).SingleOrDefault());
                 if (appUser != null)
                 {
                     _EmployeeVM.ADUM_LOGIN_ID = appUser.ADUM_LOGIN_ID;
@@ -82,7 +82,122 @@ namespace BLL.Repository.Repository
                         obj.ElectionWard = _Property.ElectionWard;
                         obj.NewPropertyNo = _Property.NewPropertyNo;
                         obj.PropertyNo = _Property.PropertyNo;
-                        obj.HouseNo = _Property.HouseNo;
+                        obj.HouseNo = _Property.OldHouseNo1;
+                        obj.oldHouseNo2 = _Property.OldHouseNo2;
+                        obj.NoOfTrees = _Property.NoOfTrees;
+                        obj.Personalwell = _Property.Personalwell;
+                        obj.HeritageTree = _Property.HeritageTree;
+
+                        obj.WaterConnection = _Property.WaterConnection;
+                        obj.NoWaterConnection = _Property.NoWaterConnection;
+                        obj.STP = _Property.STP;
+                        obj.FST = _Property.FST;
+                        obj.STS = _Property.STS;
+                        obj.Other = _Property.Other;
+                        obj.SGSK = _Property.SGSK;
+
+                        obj.NOSGSK = _Property.NOSGSK;
+                        obj.OtherGutter = _Property.OtherGutter;
+                        obj.NaturalMethod = _Property.NaturalMethod;
+                        obj.ArtifitialMethod = _Property.ArtifitialMethod;
+                        obj.OtherMethod = _Property.OtherMethod;
+                        obj.NoProject = _Property.NoProject;
+                        obj.Safe = _Property.Safe;
+                        obj.Danger = _Property.Danger;
+                        obj.Safe2 = _Property.Safe2;
+                        obj.Danger2 = _Property.Danger2;
+                        obj.Safe3 = _Property.Safe3;
+
+                        obj.NOSGSK = _Property.NOSGSK;
+                        obj.OtherGutter = _Property.OtherGutter;
+                        obj.NaturalMethod = _Property.NaturalMethod;
+                        obj.ArtifitialMethod = _Property.ArtifitialMethod;
+                        obj.OtherMethod = _Property.OtherMethod;
+                        obj.NoProject = _Property.NoProject;
+                        obj.Safe = _Property.Safe;
+                        obj.Danger = _Property.Danger;
+                        obj.Safe2 = _Property.Safe2;
+                        obj.Danger2 = _Property.Danger2;
+                        obj.Safe3 = _Property.Safe3;
+                        obj.Danger3 = _Property.Danger3;
+
+                        obj.TotalPropertyExpense = _Property.TotalPropertyExpense;
+                        obj.CurrentPropertyTax = _Property.CurrentPropertyTax;
+                        obj.CurrentProperyPrice = _Property.CurrentProperyPrice;
+                        obj.OpenAroundLandtaxprice = _Property.OpenAroundLandtaxprice;
+                        obj.ProperyTaxPrice = _Property.ProperyTaxPrice;
+                        obj.TotalTaxPrice = _Property.TotalTaxPrice;
+                        obj.OpenLandtaxprice = _Property.OpenLandtaxprice;
+                        obj.ProperyTaxMarketPrice = _Property.ProperyTaxMarketPrice;
+                        obj.Name1 = _Property.Name1;
+                        obj.Name2 = _Property.Name2;
+                        obj.Name3 = _Property.Name3;
+                        obj.Name4 = _Property.Name4;
+
+                        obj.Name5 = _Property.Name5;
+                        obj.Name6 = _Property.Name6;
+                        obj.Name7 = _Property.Name7;
+                        obj.Name8 = _Property.Name8;
+
+                        obj.Name9 = _Property.Name9;
+                        obj.Name10 = _Property.Name10;
+                        obj.Name11 = _Property.Name11;
+                        obj.Name12 = _Property.Name12;
+
+                        obj.Age1 = _Property.Age1;
+                        obj.Age2 = _Property.Age2;
+                        obj.Age3 = _Property.Age3;
+                        obj.Age4 = _Property.Age4;
+
+                        obj.Age5 = _Property.Age5;
+                        obj.Age6 = _Property.Age6;
+                        obj.Age7 = _Property.Age7;
+                        obj.Age8 = _Property.Age8;
+
+                        obj.Age9 = _Property.Age9;
+                        obj.Age10 = _Property.Age10;
+                        obj.Age11 = _Property.Age11;
+                        obj.Age12 = _Property.Age12;
+
+                        obj.link1 = _Property.link1;
+                        obj.link2 = _Property.link2; 
+                        obj.link3 = _Property.link3;
+                        obj.link4 = _Property.link4;
+                        obj.link5 = _Property.link5;
+                        obj.link6 = _Property.link6;
+                        obj.link7 = _Property.link7;
+                        obj.link8 = _Property.link8;
+                        obj.link9 = _Property.link9;
+                        obj.link10 = _Property.link10;
+                        obj.link11 = _Property.link11;
+                        obj.link12 = _Property.link12;
+
+                        obj.ContactNo1 = _Property.ContactNo1;
+                        obj.ContactNo2 = _Property.ContactNo2;
+                        obj.ContactNo3 = _Property.ContactNo3;
+                        obj.ContactNo4 = _Property.ContactNo4;
+                        obj.ContactNo5 = _Property.ContactNo5;
+                        obj.ContactNo6 = _Property.ContactNo6;
+                        obj.ContactNo7 = _Property.ContactNo7;
+                        obj.ContactNo8 = _Property.ContactNo8;
+                        obj.ContactNo9 = _Property.ContactNo9;
+                        obj.ContactNo10 = _Property.ContactNo10;
+                        obj.ContactNo11= _Property.ContactNo11;
+                        obj.ContactNo12 = _Property.ContactNo12;
+
+                        obj.VoterIdentityNo1 = _Property.VoterIdentityNo1;
+                        obj.VoterIdentityNo2 = _Property.VoterIdentityNo2;
+                        obj.VoterIdentityNo3 = _Property.VoterIdentityNo3;
+                        obj.VoterIdentityNo4 = _Property.VoterIdentityNo4;
+                        obj.VoterIdentityNo5 = _Property.VoterIdentityNo5;
+                        obj.VoterIdentityNo6 = _Property.VoterIdentityNo6;
+                        obj.VoterIdentityNo7 = _Property.VoterIdentityNo7;
+                        obj.VoterIdentityNo8 = _Property.VoterIdentityNo8;
+                        obj.VoterIdentityNo9 = _Property.VoterIdentityNo9;
+                        obj.VoterIdentityNo10 = _Property.VoterIdentityNo10;
+                        obj.VoterIdentityNo11 = _Property.VoterIdentityNo11;
+                        obj.VoterIdentityNo12 = _Property.VoterIdentityNo12;
+
                         obj.SurveyNo = _Property.SurveyNo;
                         obj.GatNo = _Property.GatNo;
                         obj.CitySurveyNo = _Property.CitySurveyNo;
@@ -249,7 +364,14 @@ namespace BLL.Repository.Repository
                         obj.FHNo = _Property.FHNo;
                         obj.PropertyType2 = _Property.PropertyType2;
                         obj.NewPropertyNo2 = _Property.NewPropertyNo2;
-                       
+                        obj.PropertyNo2 = _Property.PropertyNo2;
+                        obj.GarbageType = _Property.GarbageType;
+                        obj.NOGarbageType = _Property.NOGarbageType;
+                        obj.PrabhagNo2 = _Property.PrabhagNo2;
+                        obj.YConstPermNo = _Property.YConstPermNo;
+                        obj.NConstPermNo = _Property.NConstPermNo;
+                        obj.YPermUseNo = _Property.YPermUseNo;
+                        obj.NPermUseNo = _Property.NPermUseNo;
                         db.SaveChanges();
                         Result.message = "success";
                     }
@@ -260,7 +382,121 @@ namespace BLL.Repository.Repository
                         Master.ElectionWard = _Property.ElectionWard;
                         Master.NewPropertyNo = _Property.NewPropertyNo;
                         Master.PropertyNo = _Property.PropertyNo;
-                        Master.HouseNo = _Property.HouseNo;
+                        Master.HouseNo = _Property.OldHouseNo1;
+                        Master.oldHouseNo2 = _Property.OldHouseNo2;
+                        Master.NoOfTrees = _Property.NoOfTrees;
+                        Master.Personalwell = _Property.Personalwell;
+                        Master.HeritageTree = _Property.HeritageTree;
+
+                        Master.WaterConnection = _Property.WaterConnection;
+                        Master.NoWaterConnection = _Property.NoWaterConnection;
+                        Master.STP = _Property.STP;
+                        Master.FST = _Property.FST;
+                        Master.STS = _Property.STS;
+                        Master.Other = _Property.Other;
+                        Master.SGSK = _Property.SGSK;
+
+                        Master.NOSGSK = _Property.NOSGSK;
+                        Master.OtherGutter = _Property.OtherGutter;
+                        Master.NaturalMethod = _Property.NaturalMethod;
+                        Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                        Master.OtherMethod = _Property.OtherMethod;
+                        Master.NoProject = _Property.NoProject;
+                        Master.Safe = _Property.Safe;
+                        Master.Danger = _Property.Danger;
+                        Master.Safe2 = _Property.Safe2;
+                        Master.Danger2 = _Property.Danger2;
+                        Master.Safe3 = _Property.Safe3;
+
+                        Master.NOSGSK = _Property.NOSGSK;
+                        Master.OtherGutter = _Property.OtherGutter;
+                        Master.NaturalMethod = _Property.NaturalMethod;
+                        Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                        Master.OtherMethod = _Property.OtherMethod;
+                        Master.NoProject = _Property.NoProject;
+                        Master.Safe = _Property.Safe;
+                        Master.Danger = _Property.Danger;
+                        Master.Safe2 = _Property.Safe2;
+                        Master.Danger2 = _Property.Danger2;
+                        Master.Safe3 = _Property.Safe3;
+                        Master.Danger3 = _Property.Danger3;
+
+                        Master.TotalPropertyExpense = _Property.TotalPropertyExpense;
+                        Master.CurrentPropertyTax = _Property.CurrentPropertyTax;
+                        Master.CurrentProperyPrice = _Property.CurrentProperyPrice;
+                        Master.OpenAroundLandtaxprice = _Property.OpenAroundLandtaxprice;
+                        Master.ProperyTaxPrice = _Property.ProperyTaxPrice;
+                        Master.TotalTaxPrice = _Property.TotalTaxPrice;
+                        Master.OpenLandtaxprice = _Property.OpenLandtaxprice;
+                        Master.ProperyTaxMarketPrice = _Property.ProperyTaxMarketPrice;
+                        Master.Name1 = _Property.Name1;
+                        Master.Name2 = _Property.Name2;
+                        Master.Name3 = _Property.Name3;
+                        Master.Name4 = _Property.Name4;
+
+                        Master.Name5 = _Property.Name5;
+                        Master.Name6 = _Property.Name6;
+                        Master.Name7 = _Property.Name7;
+                        Master.Name8 = _Property.Name8;
+
+                        Master.Name9 = _Property.Name9;
+                        Master.Name10 = _Property.Name10;
+                        Master.Name11 = _Property.Name11;
+                        Master.Name12 = _Property.Name12;
+
+                        Master.Age1 = _Property.Age1;
+                        Master.Age2 = _Property.Age2;
+                        Master.Age3 = _Property.Age3;
+                        Master.Age4 = _Property.Age4;
+
+                        Master.Age5 = _Property.Age5;
+                        Master.Age6 = _Property.Age6;
+                        Master.Age7 = _Property.Age7;
+                        Master.Age8 = _Property.Age8;
+
+                        Master.Age9 = _Property.Age9;
+                        Master.Age10 = _Property.Age10;
+                        Master.Age11 = _Property.Age11;
+                        Master.Age12 = _Property.Age12;
+
+                        Master.link1 = _Property.link1;
+                        Master.link2 = _Property.link2;
+                        Master.link3 = _Property.link3;
+                        Master.link4 = _Property.link4;
+                        Master.link5 = _Property.link5;
+                        Master.link6 = _Property.link6;
+                        Master.link7 = _Property.link7;
+                        Master.link8 = _Property.link8;
+                        Master.link9 = _Property.link9;
+                        Master.link10 = _Property.link10;
+                        Master.link11 = _Property.link11;
+                        Master.link12 = _Property.link12;
+
+                        Master.ContactNo1 = _Property.ContactNo1;
+                        Master.ContactNo2 = _Property.ContactNo2;
+                        Master.ContactNo3 = _Property.ContactNo3;
+                        Master.ContactNo4 = _Property.ContactNo4;
+                        Master.ContactNo5 = _Property.ContactNo5;
+                        Master.ContactNo6 = _Property.ContactNo6;
+                        Master.ContactNo7 = _Property.ContactNo7;
+                        Master.ContactNo8 = _Property.ContactNo8;
+                        Master.ContactNo9 = _Property.ContactNo9;
+                        Master.ContactNo10 = _Property.ContactNo10;
+                        Master.ContactNo11 = _Property.ContactNo11;
+                        Master.ContactNo12 = _Property.ContactNo12;
+
+                        Master.VoterIdentityNo1 = _Property.VoterIdentityNo1;
+                        Master.VoterIdentityNo2 = _Property.VoterIdentityNo2;
+                        Master.VoterIdentityNo3 = _Property.VoterIdentityNo3;
+                        Master.VoterIdentityNo4 = _Property.VoterIdentityNo4;
+                        Master.VoterIdentityNo5 = _Property.VoterIdentityNo5;
+                        Master.VoterIdentityNo6 = _Property.VoterIdentityNo6;
+                        Master.VoterIdentityNo7 = _Property.VoterIdentityNo7;
+                        Master.VoterIdentityNo8 = _Property.VoterIdentityNo8;
+                        Master.VoterIdentityNo9 = _Property.VoterIdentityNo9;
+                        Master.VoterIdentityNo10 = _Property.VoterIdentityNo10;
+                        Master.VoterIdentityNo11 = _Property.VoterIdentityNo11;
+                        Master.VoterIdentityNo12 = _Property.VoterIdentityNo12;
                         Master.SurveyNo = _Property.SurveyNo;
                         Master.GatNo = _Property.GatNo;
                         Master.CitySurveyNo = _Property.CitySurveyNo;
@@ -427,6 +663,14 @@ namespace BLL.Repository.Repository
                         Master.FHNo = _Property.FHNo;
                         Master.PropertyType2 = _Property.PropertyType2;
                         Master.NewPropertyNo2 = _Property.NewPropertyNo2;
+                        Master.PropertyNo2 = _Property.PropertyNo2;
+                        Master.GarbageType = _Property.GarbageType;
+                        Master.NOGarbageType = _Property.NOGarbageType;
+                        Master.PrabhagNo2 = _Property.PrabhagNo2;
+                        Master.YConstPermNo = _Property.YConstPermNo;
+                        Master.NConstPermNo = _Property.NConstPermNo;
+                        Master.YPermUseNo = _Property.YPermUseNo;
+                        Master.NPermUseNo = _Property.NPermUseNo;
                         db.PropertyMasters.Add(Master);
                         db.SaveChanges();
                         Result.message = "success";
@@ -452,7 +696,7 @@ namespace BLL.Repository.Repository
                     PropertyId = x.PropertyId,
                     NewPropertyNo = x.NewPropertyNo,
                     PropertyNo = x.PropertyNo,
-                    HouseNo = x.HFSNo,
+                    OldHouseNo1 = x.HouseNo,
                     PropOwnerFirstName = x.PropOwnerFirstName,
                     PropOwnerLastName = x.PropOwnerLastName,
                     PropOwnerMobileNo = x.PropOwnerMobileNo,
@@ -480,7 +724,121 @@ namespace BLL.Repository.Repository
                     Master.ElectionWard = _Property.ElectionWard;
                     Master.NewPropertyNo = _Property.NewPropertyNo;
                     Master.PropertyNo = _Property.PropertyNo;
-                    Master.HouseNo = _Property.HouseNo;
+                    Master.OldHouseNo1 = _Property.HouseNo;
+                    Master.OldHouseNo2 = _Property.oldHouseNo2;
+                    Master.NoOfTrees = _Property.NoOfTrees;
+                    Master.Personalwell = _Property.Personalwell;
+                    Master.HeritageTree = _Property.HeritageTree;
+
+                    Master.WaterConnection = _Property.WaterConnection;
+                    Master.NoWaterConnection = _Property.NoWaterConnection;
+                    Master.STP = _Property.STP;
+                    Master.FST = _Property.FST;
+                    Master.STS = _Property.STS;
+                    Master.Other = _Property.Other;
+                    Master.SGSK = _Property.SGSK;
+
+                    Master.NOSGSK = _Property.NOSGSK;
+                    Master.OtherGutter = _Property.OtherGutter;
+                    Master.NaturalMethod = _Property.NaturalMethod;
+                    Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                    Master.OtherMethod = _Property.OtherMethod;
+                    Master.NoProject = _Property.NoProject;
+                    Master.Safe = _Property.Safe;
+                    Master.Danger = _Property.Danger;
+                    Master.Safe2 = _Property.Safe2;
+                    Master.Danger2 = _Property.Danger2;
+                    Master.Safe3 = _Property.Safe3;
+
+                    Master.NOSGSK = _Property.NOSGSK;
+                    Master.OtherGutter = _Property.OtherGutter;
+                    Master.NaturalMethod = _Property.NaturalMethod;
+                    Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                    Master.OtherMethod = _Property.OtherMethod;
+                    Master.NoProject = _Property.NoProject;
+                    Master.Safe = _Property.Safe;
+                    Master.Danger = _Property.Danger;
+                    Master.Safe2 = _Property.Safe2;
+                    Master.Danger2 = _Property.Danger2;
+                    Master.Safe3 = _Property.Safe3;
+                    Master.Danger3 = _Property.Danger3;
+
+                    Master.TotalPropertyExpense = _Property.TotalPropertyExpense;
+                    Master.CurrentPropertyTax = _Property.CurrentPropertyTax;
+                    Master.CurrentProperyPrice = _Property.CurrentProperyPrice;
+                    Master.OpenAroundLandtaxprice = _Property.OpenAroundLandtaxprice;
+                    Master.ProperyTaxPrice = _Property.ProperyTaxPrice;
+                    Master.TotalTaxPrice = _Property.TotalTaxPrice;
+                    Master.OpenLandtaxprice = _Property.OpenLandtaxprice;
+                    Master.ProperyTaxMarketPrice = _Property.ProperyTaxMarketPrice;
+                    Master.Name1 = _Property.Name1;
+                    Master.Name2 = _Property.Name2;
+                    Master.Name3 = _Property.Name3;
+                    Master.Name4 = _Property.Name4;
+
+                    Master.Name5 = _Property.Name5;
+                    Master.Name6 = _Property.Name6;
+                    Master.Name7 = _Property.Name7;
+                    Master.Name8 = _Property.Name8;
+
+                    Master.Name9 = _Property.Name9;
+                    Master.Name10 = _Property.Name10;
+                    Master.Name11 = _Property.Name11;
+                    Master.Name12 = _Property.Name12;
+
+                    Master.Age1 = _Property.Age1;
+                    Master.Age2 = _Property.Age2;
+                    Master.Age3 = _Property.Age3;
+                    Master.Age4 = _Property.Age4;
+
+                    Master.Age5 = _Property.Age5;
+                    Master.Age6 = _Property.Age6;
+                    Master.Age7 = _Property.Age7;
+                    Master.Age8 = _Property.Age8;
+
+                    Master.Age9 = _Property.Age9;
+                    Master.Age10 = _Property.Age10;
+                    Master.Age11 = _Property.Age11;
+                    Master.Age12 = _Property.Age12;
+
+                    Master.link1 = _Property.link1;
+                    Master.link2 = _Property.link2;
+                    Master.link3 = _Property.link3;
+                    Master.link4 = _Property.link4;
+                    Master.link5 = _Property.link5;
+                    Master.link6 = _Property.link6;
+                    Master.link7 = _Property.link7;
+                    Master.link8 = _Property.link8;
+                    Master.link9 = _Property.link9;
+                    Master.link10 = _Property.link10;
+                    Master.link11 = _Property.link11;
+                    Master.link12 = _Property.link12;
+
+                    Master.ContactNo1 = _Property.ContactNo1;
+                    Master.ContactNo2 = _Property.ContactNo2;
+                    Master.ContactNo3 = _Property.ContactNo3;
+                    Master.ContactNo4 = _Property.ContactNo4;
+                    Master.ContactNo5 = _Property.ContactNo5;
+                    Master.ContactNo6 = _Property.ContactNo6;
+                    Master.ContactNo7 = _Property.ContactNo7;
+                    Master.ContactNo8 = _Property.ContactNo8;
+                    Master.ContactNo9 = _Property.ContactNo9;
+                    Master.ContactNo10 = _Property.ContactNo10;
+                    Master.ContactNo11 = _Property.ContactNo11;
+                    Master.ContactNo12 = _Property.ContactNo12;
+
+                    Master.VoterIdentityNo1 = _Property.VoterIdentityNo1;
+                    Master.VoterIdentityNo2 = _Property.VoterIdentityNo2;
+                    Master.VoterIdentityNo3 = _Property.VoterIdentityNo3;
+                    Master.VoterIdentityNo4 = _Property.VoterIdentityNo4;
+                    Master.VoterIdentityNo5 = _Property.VoterIdentityNo5;
+                    Master.VoterIdentityNo6 = _Property.VoterIdentityNo6;
+                    Master.VoterIdentityNo7 = _Property.VoterIdentityNo7;
+                    Master.VoterIdentityNo8 = _Property.VoterIdentityNo8;
+                    Master.VoterIdentityNo9 = _Property.VoterIdentityNo9;
+                    Master.VoterIdentityNo10 = _Property.VoterIdentityNo10;
+                    Master.VoterIdentityNo11 = _Property.VoterIdentityNo11;
+                    Master.VoterIdentityNo12 = _Property.VoterIdentityNo12;
                     Master.SurveyNo = _Property.SurveyNo;
                     Master.GatNo = _Property.GatNo;
                     Master.CitySurveyNo = _Property.CitySurveyNo;
@@ -634,6 +992,14 @@ namespace BLL.Repository.Repository
                     Master.FHNo = _Property.FHNo;
                     Master.PropertyType2 = _Property.PropertyType2;
                     Master.NewPropertyNo2 = _Property.NewPropertyNo2;
+                    Master.PropertyNo2 = _Property.PropertyNo2;
+                    Master.GarbageType = _Property.GarbageType;
+                    Master.NOGarbageType = _Property.NOGarbageType;
+                    Master.PrabhagNo2 = _Property.PrabhagNo2;
+                    Master.YConstPermNo = _Property.YConstPermNo;
+                    Master.NConstPermNo = _Property.NConstPermNo;
+                    Master.YPermUseNo = _Property.YPermUseNo;
+                    Master.NPermUseNo = _Property.NPermUseNo;
                 }
             }
             return Master;

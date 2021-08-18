@@ -16,10 +16,12 @@ namespace PTCSURVEYCMS.Controllers
 
         public ActionResult SurveyForm()
         {
+         
             if (SessionHandler.Current.AppId != 0)
             {
 
                 ViewBag.Appname = SessionHandler.Current.AppName;
+            
             }
             return View();
         }
@@ -153,11 +155,27 @@ namespace PTCSURVEYCMS.Controllers
             }
         }
 
-        public ActionResult SurveyList(int q = -1)
+        public ActionResult SurveyList(int q = -1,int clientId=0)
         {
+            if(clientId!=0)
+            {
+                SessionHandler.Current.AppId = clientId;       
+                AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(clientId);
+                ViewBag.Appname = ApplicationDetails.AppName;
+            }
+          
             if (SessionHandler.Current.AppId != 0)
             {
                 int Appid = SessionHandler.Current.AppId;
+                if (Appid == 1)
+                {
+                    ViewBag.Clogo = "property_tax_logo.png";
+
+               }
+                if (Appid == 2)
+                {
+                    ViewBag.Clogo = "vengurla logo.jpeg";               
+                }
                 ViewBag.Appname = SessionHandler.Current.AppName;
                 Repository = new Repository();
                 var viewModel = new PropertyMasterVM();
@@ -170,11 +188,14 @@ namespace PTCSURVEYCMS.Controllers
                     ViewBag.EntryCount = EntryCount;
                 }
                 return View(viewModel);
+             
             }
+
             else
             {
                 return Redirect("/Account/Login");
             }
+         
         }
 
 
@@ -191,6 +212,14 @@ namespace PTCSURVEYCMS.Controllers
         [HttpGet]
         public ActionResult SurveyForm(int q = -1)
         {
+            if(q==-1)
+            {
+                ViewBag.btn = "Save";
+            }
+            else
+            {
+                ViewBag.btn = "Save Changes";
+            }
             if (SessionHandler.Current.AppId != 0)
             {
 
@@ -218,10 +247,12 @@ namespace PTCSURVEYCMS.Controllers
                 if (Appid==1)
                 {
                     ViewBag.logo = "property_tax_logo.png";
+                    ViewBag.RLogo = "mkmj.jpeg";
                 }
                 if (Appid == 2)
                 {
                     ViewBag.logo = "vengurla logo.jpeg";
+                    ViewBag.RLogo = "Logo_150x48.png";
                 }
                 ViewBag.Appname_mar = SessionHandler.Current.AppName_mar;
                 Repository = new Repository();

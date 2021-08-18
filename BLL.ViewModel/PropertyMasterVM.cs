@@ -8,6 +8,8 @@ namespace BLL.ViewModel
 
         public int PropertyId { get; set; }
         public string PrabhagNo { get; set; }
+
+        public string PrabhagNo2 { get; set; }
         public string WardName_No { get; set; }
 
         public string WardName_No2 { get; set; }
@@ -18,7 +20,8 @@ namespace BLL.ViewModel
 
         public string PropertyType2 { get; set; }
 
-
+        
+        
 
         public string ZoneNo { get; set; }
         public string ElectionWard { get; set; }
@@ -28,7 +31,93 @@ namespace BLL.ViewModel
 
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Can Not Be Blank")]
         public string PropertyNo { get; set; }
-        public string HouseNo { get; set; }
+
+        public string PropertyNo2 { get; set; }
+
+        public string OldHouseNo1 { get; set; }
+        public string OldHouseNo2 { get; set; }
+
+        public string NoOfTrees { get; set; }
+
+        public string TotalPropertyExpense { get; set; }
+
+        public string CurrentPropertyTax { get; set; }
+        public string CurrentProperyPrice { get; set; }
+
+        public string OpenAroundLandtaxprice { get; set; }
+
+        public string ProperyTaxPrice { get; set; }
+
+        public string TotalTaxPrice { get; set; }
+        public string OpenLandtaxprice { get; set; }
+
+        public string ProperyTaxMarketPrice { get; set; }
+
+        public string Name1 { get; set; }
+        public string Name2 { get; set; }
+        public string Name3 { get; set; }
+        public string Name4 { get; set; }
+        public string Name5 { get; set; }
+        public string Name6 { get; set; }
+        public string Name7 { get; set; }
+        public string Name8 { get; set; }
+        public string Name9 { get; set; }
+        public string Name10 { get; set; }
+        public string Name11 { get; set; }
+        public string Name12 { get; set; }
+
+        public string Age1 { get; set; }
+        public string Age2 { get; set; }
+        public string Age3 { get; set; }
+        public string Age4 { get; set; }
+        public string Age5 { get; set; }
+        public string Age6 { get; set; }
+        public string Age7 { get; set; }
+        public string Age8 { get; set; }
+        public string Age9 { get; set; }
+        public string Age10 { get; set; }
+        public string Age11 { get; set; }
+        public string Age12 { get; set; }
+
+        public string link1 { get; set; }
+        public string link2 { get; set; }
+        public string link3 { get; set; }
+        public string link4 { get; set; }
+        public string link5 { get; set; }
+        public string link6 { get; set; }
+        public string link7 { get; set; }
+        public string link8 { get; set; }
+        public string link9 { get; set; }
+        public string link10 { get; set; }
+        public string link11 { get; set; }
+        public string link12 { get; set; }
+
+        public string ContactNo1 { get; set; }
+        public string ContactNo2 { get; set; }
+        public string ContactNo3 { get; set; }
+        public string ContactNo4 { get; set; }
+        public string ContactNo5 { get; set; }
+        public string ContactNo6 { get; set; }
+        public string ContactNo7 { get; set; }
+        public string ContactNo8 { get; set; }
+        public string ContactNo9 { get; set; }
+        public string ContactNo10 { get; set; }
+        public string ContactNo11 { get; set; }
+        public string ContactNo12 { get; set; }
+
+        public string VoterIdentityNo1 { get; set; }
+        public string VoterIdentityNo2 { get; set; }
+        public string VoterIdentityNo3 { get; set; }
+        public string VoterIdentityNo4 { get; set; }
+        public string VoterIdentityNo5 { get; set; }
+        public string VoterIdentityNo6 { get; set; }
+        public string VoterIdentityNo7 { get; set; }
+        public string VoterIdentityNo8 { get; set; }
+        public string VoterIdentityNo9 { get; set; }
+        public string VoterIdentityNo10 { get; set; }
+        public string VoterIdentityNo11 { get; set; }
+        public string VoterIdentityNo12 { get; set; }
+
         public string SurveyNo { get; set; }
         public string GatNo { get; set; }
         public string CitySurveyNo { get; set; }
@@ -68,6 +157,37 @@ namespace BLL.ViewModel
         public string TypeofBldg { get; set; }
         public string ConstPermNo { get; set; }
         public string PermUseNo { get; set; }
+
+        public Nullable<bool> Personalwell { get; set; }
+
+        public Nullable<bool> Publicwell { get; set; }
+
+        public string HeritageTree { get; set; }
+
+        public Nullable<bool> WaterConnection { get; set; }
+        public Nullable<bool> NoWaterConnection { get; set; }
+        public Nullable<bool> STP { get; set; }
+        public Nullable<bool> FST { get; set; }
+        public Nullable<bool> STS { get; set; }
+        public Nullable<bool> Other { get; set; }
+        public Nullable<bool> SGSK { get; set; }
+
+        public Nullable<bool> NOSGSK { get; set; }
+        public Nullable<bool> OtherGutter { get; set; }
+        public Nullable<bool> NaturalMethod { get; set; }
+        public Nullable<bool> ArtifitialMethod { get; set; }
+        public Nullable<bool> OtherMethod { get; set; }
+
+
+        public Nullable<bool> NoProject { get; set; }
+
+        public Nullable<bool> Safe { get; set; }
+        public Nullable<bool> Danger { get; set; }
+        public Nullable<bool> Safe2 { get; set; }
+        public Nullable<bool> Danger2 { get; set; }
+        public Nullable<bool> Safe3 { get; set; }
+
+        public Nullable<bool> Danger3 { get; set; }
         public Nullable<bool> Rainwaterharvest { get; set; }
         public Nullable<bool> SolarWaterheater { get; set; }
         public Nullable<bool> VermicultureProject { get; set; }
@@ -76,6 +196,9 @@ namespace BLL.ViewModel
 
         public Nullable<bool> NonBorewellr { get; set; }
         public Nullable<int> NoofToilets { get; set; }
+
+        public Nullable<bool> GarbageType { get; set; }
+        public Nullable<bool> NOGarbageType { get; set; }
         public Nullable<bool> PermanentDoorLock { get; set; }
         public Nullable<bool> OuterMeasurement { get; set; }
         public Nullable<bool> Lift { get; set; }
@@ -170,9 +293,16 @@ namespace BLL.ViewModel
         public string DataEntryDate { get; set; }
         public Nullable<bool> NonRainwaterharvest { get; set; }
         public Nullable<bool> NonSolarWaterheater { get; set; }
+
         public Nullable<bool> NonVermicultureProject { get; set; }
 
         public Nullable<bool> NoLift { get; set; }
+
+        public Nullable<bool> YConstPermNo { get; set; }
+        public Nullable<bool> NConstPermNo { get; set; }
+
+        public Nullable<bool> YPermUseNo { get; set; }
+        public Nullable<bool> NPermUseNo { get; set; }
         public string WaterConnectionResidential { get; set; }
         public string WaterConnectionSpecialCategory { get; set; }
         public string WaterConnectionIndustrial { get; set; }

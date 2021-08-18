@@ -66,7 +66,7 @@ function ActiveEmployee() {
                 { "data": "PropOwnerMobileNo" },
                 { "data": "NewPropertyNo" },
                 { "data": "PropertyNo" },
-                { "data": "HouseNo" },
+            { "data": "OldHouseNo1" },
                
                 { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon">edit</i>'; }, "width": "10%" },
         { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }

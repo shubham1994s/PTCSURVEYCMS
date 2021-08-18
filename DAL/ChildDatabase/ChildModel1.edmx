@@ -215,20 +215,120 @@
           <Property Name="Sketchdiagram" Type="nvarchar" MaxLength="1000" />
           <Property Name="Sketchdiagram2" Type="nvarchar" MaxLength="200" />
           <Property Name="AppId" Type="int" />
-          <Property Name="ZoneNo" Type="nvarchar" MaxLength="100" />
-          <Property Name="VillageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="HFSNo" Type="nvarchar" MaxLength="100" />
-          <Property Name="Legal" Type="nvarchar" MaxLength="100" />
-          <Property Name="HissaNo" Type="nvarchar" MaxLength="100" />
-          <Property Name="OldRateableValue" Type="nvarchar" MaxLength="100" />
-          <Property Name="OldTotalTax" Type="nvarchar" MaxLength="100" />
-          <Property Name="FirstAssessmentYear" Type="nvarchar" MaxLength="100" />
-          <Property Name="ImageNo" Type="nvarchar" MaxLength="100" />
-          <Property Name="WardNameNo2" Type="nvarchar" MaxLength="100" />
-          <Property Name="ZoneNo2" Type="nvarchar" MaxLength="100" />
-          <Property Name="FHNo" Type="nvarchar" MaxLength="100" />
           <Property Name="PropertyType2" Type="nvarchar" MaxLength="100" />
+          <Property Name="FHNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZoneNo2" Type="nvarchar" MaxLength="100" />
+          <Property Name="WardNameNo2" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="FirstAssessmentYear" Type="nvarchar" MaxLength="100" />
+          <Property Name="OldTotalTax" Type="nvarchar" MaxLength="100" />
+          <Property Name="Legal" Type="nvarchar" MaxLength="100" />
+          <Property Name="OldRateableValue" Type="nvarchar" MaxLength="100" />
+          <Property Name="HissaNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZoneNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="HFSNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="VillageName" Type="nvarchar" MaxLength="100" />
           <Property Name="NewPropertyNo2" Type="nvarchar" MaxLength="100" />
+          <Property Name="NoOfTrees" Type="nvarchar" MaxLength="200" />
+          <Property Name="Personalwell" Type="bit" />
+          <Property Name="Publicwell" Type="bit" />
+          <Property Name="HeritageTree" Type="nvarchar" MaxLength="200" />
+          <Property Name="WaterConnection" Type="bit" />
+          <Property Name="NoWaterConnection" Type="bit" />
+          <Property Name="STP" Type="bit" />
+          <Property Name="FST" Type="bit" />
+          <Property Name="STS" Type="bit" />
+          <Property Name="Other" Type="bit" />
+          <Property Name="SGSK" Type="bit" />
+          <Property Name="NOSGSK" Type="bit" />
+          <Property Name="OtherGutter" Type="bit" />
+          <Property Name="NaturalMethod" Type="bit" />
+          <Property Name="ArtifitialMethod" Type="bit" />
+          <Property Name="OtherMethod" Type="bit" />
+          <Property Name="NoProject" Type="bit" />
+          <Property Name="Safe" Type="bit" />
+          <Property Name="Danger" Type="bit" />
+          <Property Name="Safe2" Type="bit" />
+          <Property Name="Danger2" Type="bit" />
+          <Property Name="Safe3" Type="bit" />
+          <Property Name="Danger3" Type="bit" />
+          <Property Name="TotalPropertyExpense" Type="nvarchar" MaxLength="200" />
+          <Property Name="CurrentPropertyTax" Type="nvarchar" MaxLength="200" />
+          <Property Name="CurrentProperyPrice" Type="nvarchar" MaxLength="200" />
+          <Property Name="OpenLandtaxprice" Type="nvarchar" MaxLength="200" />
+          <Property Name="ProperyTaxPrice" Type="nvarchar" MaxLength="200" />
+          <Property Name="TotalTaxPrice" Type="nvarchar" MaxLength="200" />
+          <Property Name="OpenAroundLandtaxprice" Type="nvarchar" MaxLength="200" />
+          <Property Name="ProperyTaxMarketPrice" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name3" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name5" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name6" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name7" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name8" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name9" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name10" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name11" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name12" Type="nvarchar" MaxLength="200" />
+          <Property Name="Name4" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age3" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age4" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age5" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age6" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age7" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age8" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age9" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age10" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age11" Type="nvarchar" MaxLength="200" />
+          <Property Name="Age12" Type="nvarchar" MaxLength="200" />
+          <Property Name="link1" Type="nvarchar" MaxLength="200" />
+          <Property Name="link2" Type="nvarchar" MaxLength="200" />
+          <Property Name="link3" Type="nvarchar" MaxLength="200" />
+          <Property Name="link4" Type="nvarchar" MaxLength="200" />
+          <Property Name="link5" Type="nvarchar" MaxLength="200" />
+          <Property Name="link6" Type="nvarchar" MaxLength="200" />
+          <Property Name="link7" Type="nvarchar" MaxLength="200" />
+          <Property Name="link8" Type="nvarchar" MaxLength="200" />
+          <Property Name="link9" Type="nvarchar" MaxLength="200" />
+          <Property Name="link10" Type="nvarchar" MaxLength="200" />
+          <Property Name="link11" Type="nvarchar" MaxLength="200" />
+          <Property Name="link12" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo1" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo2" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo3" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo4" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo5" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo6" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo7" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo8" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo9" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo10" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo11" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactNo12" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo1" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo2" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo3" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo4" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo5" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo6" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo7" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo8" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo9" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo10" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo11" Type="nvarchar" MaxLength="200" />
+          <Property Name="VoterIdentityNo12" Type="nvarchar" MaxLength="200" />
+          <Property Name="oldHouseNo2" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropertyNo2" Type="nvarchar" MaxLength="200" />
+          <Property Name="GarbageType" Type="bit" />
+          <Property Name="NOGarbageType" Type="bit" />
+          <Property Name="PrabhagNo2" Type="nvarchar" MaxLength="200" />
+          <Property Name="YConstPermNo" Type="bit" />
+          <Property Name="NConstPermNo" Type="bit" />
+          <Property Name="YPermUseNo" Type="bit" />
+          <Property Name="NPermUseNo" Type="bit" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -589,6 +689,106 @@
           <Property Name="FHNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PropertyType2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NewPropertyNo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoOfTrees" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Personalwell" Type="Boolean" />
+          <Property Name="Publicwell" Type="Boolean" />
+          <Property Name="HeritageTree" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WaterConnection" Type="Boolean" />
+          <Property Name="NoWaterConnection" Type="Boolean" />
+          <Property Name="STP" Type="Boolean" />
+          <Property Name="FST" Type="Boolean" />
+          <Property Name="STS" Type="Boolean" />
+          <Property Name="Other" Type="Boolean" />
+          <Property Name="SGSK" Type="Boolean" />
+          <Property Name="NOSGSK" Type="Boolean" />
+          <Property Name="OtherGutter" Type="Boolean" />
+          <Property Name="NaturalMethod" Type="Boolean" />
+          <Property Name="ArtifitialMethod" Type="Boolean" />
+          <Property Name="OtherMethod" Type="Boolean" />
+          <Property Name="NoProject" Type="Boolean" />
+          <Property Name="Safe" Type="Boolean" />
+          <Property Name="Danger" Type="Boolean" />
+          <Property Name="Safe2" Type="Boolean" />
+          <Property Name="Danger2" Type="Boolean" />
+          <Property Name="Safe3" Type="Boolean" />
+          <Property Name="Danger3" Type="Boolean" />
+          <Property Name="TotalPropertyExpense" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentPropertyTax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentProperyPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OpenAroundLandtaxprice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ProperyTaxPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TotalTaxPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OpenLandtaxprice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ProperyTaxMarketPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name9" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name10" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name11" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name12" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age9" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age10" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age11" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Age12" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link9" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link10" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link11" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="link12" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo9" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo10" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo11" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo12" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo9" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo10" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo11" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VoterIdentityNo12" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="oldHouseNo2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyNo2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GarbageType" Type="Boolean" />
+          <Property Name="NOGarbageType" Type="Boolean" />
+          <Property Name="PrabhagNo2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="YConstPermNo" Type="Boolean" />
+          <Property Name="NConstPermNo" Type="Boolean" />
+          <Property Name="YPermUseNo" Type="Boolean" />
+          <Property Name="NPermUseNo" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -662,6 +862,106 @@
           <EntitySetMapping Name="PropertyMasters">
             <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.PropertyMaster">
               <MappingFragment StoreEntitySet="PropertyMaster">
+                <ScalarProperty Name="NPermUseNo" ColumnName="NPermUseNo" />
+                <ScalarProperty Name="YPermUseNo" ColumnName="YPermUseNo" />
+                <ScalarProperty Name="NConstPermNo" ColumnName="NConstPermNo" />
+                <ScalarProperty Name="YConstPermNo" ColumnName="YConstPermNo" />
+                <ScalarProperty Name="PrabhagNo2" ColumnName="PrabhagNo2" />
+                <ScalarProperty Name="NOGarbageType" ColumnName="NOGarbageType" />
+                <ScalarProperty Name="GarbageType" ColumnName="GarbageType" />
+                <ScalarProperty Name="PropertyNo2" ColumnName="PropertyNo2" />
+                <ScalarProperty Name="oldHouseNo2" ColumnName="oldHouseNo2" />
+                <ScalarProperty Name="VoterIdentityNo12" ColumnName="VoterIdentityNo12" />
+                <ScalarProperty Name="VoterIdentityNo11" ColumnName="VoterIdentityNo11" />
+                <ScalarProperty Name="VoterIdentityNo10" ColumnName="VoterIdentityNo10" />
+                <ScalarProperty Name="VoterIdentityNo9" ColumnName="VoterIdentityNo9" />
+                <ScalarProperty Name="VoterIdentityNo8" ColumnName="VoterIdentityNo8" />
+                <ScalarProperty Name="VoterIdentityNo7" ColumnName="VoterIdentityNo7" />
+                <ScalarProperty Name="VoterIdentityNo6" ColumnName="VoterIdentityNo6" />
+                <ScalarProperty Name="VoterIdentityNo5" ColumnName="VoterIdentityNo5" />
+                <ScalarProperty Name="VoterIdentityNo4" ColumnName="VoterIdentityNo4" />
+                <ScalarProperty Name="VoterIdentityNo3" ColumnName="VoterIdentityNo3" />
+                <ScalarProperty Name="VoterIdentityNo2" ColumnName="VoterIdentityNo2" />
+                <ScalarProperty Name="VoterIdentityNo1" ColumnName="VoterIdentityNo1" />
+                <ScalarProperty Name="ContactNo12" ColumnName="ContactNo12" />
+                <ScalarProperty Name="ContactNo11" ColumnName="ContactNo11" />
+                <ScalarProperty Name="ContactNo10" ColumnName="ContactNo10" />
+                <ScalarProperty Name="ContactNo9" ColumnName="ContactNo9" />
+                <ScalarProperty Name="ContactNo8" ColumnName="ContactNo8" />
+                <ScalarProperty Name="ContactNo7" ColumnName="ContactNo7" />
+                <ScalarProperty Name="ContactNo6" ColumnName="ContactNo6" />
+                <ScalarProperty Name="ContactNo5" ColumnName="ContactNo5" />
+                <ScalarProperty Name="ContactNo4" ColumnName="ContactNo4" />
+                <ScalarProperty Name="ContactNo3" ColumnName="ContactNo3" />
+                <ScalarProperty Name="ContactNo2" ColumnName="ContactNo2" />
+                <ScalarProperty Name="ContactNo1" ColumnName="ContactNo1" />
+                <ScalarProperty Name="link12" ColumnName="link12" />
+                <ScalarProperty Name="link11" ColumnName="link11" />
+                <ScalarProperty Name="link10" ColumnName="link10" />
+                <ScalarProperty Name="link9" ColumnName="link9" />
+                <ScalarProperty Name="link8" ColumnName="link8" />
+                <ScalarProperty Name="link7" ColumnName="link7" />
+                <ScalarProperty Name="link6" ColumnName="link6" />
+                <ScalarProperty Name="link5" ColumnName="link5" />
+                <ScalarProperty Name="link4" ColumnName="link4" />
+                <ScalarProperty Name="link3" ColumnName="link3" />
+                <ScalarProperty Name="link2" ColumnName="link2" />
+                <ScalarProperty Name="link1" ColumnName="link1" />
+                <ScalarProperty Name="Age12" ColumnName="Age12" />
+                <ScalarProperty Name="Age11" ColumnName="Age11" />
+                <ScalarProperty Name="Age10" ColumnName="Age10" />
+                <ScalarProperty Name="Age9" ColumnName="Age9" />
+                <ScalarProperty Name="Age8" ColumnName="Age8" />
+                <ScalarProperty Name="Age7" ColumnName="Age7" />
+                <ScalarProperty Name="Age6" ColumnName="Age6" />
+                <ScalarProperty Name="Age5" ColumnName="Age5" />
+                <ScalarProperty Name="Age4" ColumnName="Age4" />
+                <ScalarProperty Name="Age3" ColumnName="Age3" />
+                <ScalarProperty Name="Age2" ColumnName="Age2" />
+                <ScalarProperty Name="Age1" ColumnName="Age1" />
+                <ScalarProperty Name="Name12" ColumnName="Name12" />
+                <ScalarProperty Name="Name11" ColumnName="Name11" />
+                <ScalarProperty Name="Name10" ColumnName="Name10" />
+                <ScalarProperty Name="Name9" ColumnName="Name9" />
+                <ScalarProperty Name="Name8" ColumnName="Name8" />
+                <ScalarProperty Name="Name7" ColumnName="Name7" />
+                <ScalarProperty Name="Name6" ColumnName="Name6" />
+                <ScalarProperty Name="Name5" ColumnName="Name5" />
+                <ScalarProperty Name="Name4" ColumnName="Name4" />
+                <ScalarProperty Name="Name3" ColumnName="Name3" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Name1" ColumnName="Name1" />
+                <ScalarProperty Name="ProperyTaxMarketPrice" ColumnName="ProperyTaxMarketPrice" />
+                <ScalarProperty Name="OpenLandtaxprice" ColumnName="OpenLandtaxprice" />
+                <ScalarProperty Name="TotalTaxPrice" ColumnName="TotalTaxPrice" />
+                <ScalarProperty Name="ProperyTaxPrice" ColumnName="ProperyTaxPrice" />
+                <ScalarProperty Name="OpenAroundLandtaxprice" ColumnName="OpenAroundLandtaxprice" />
+                <ScalarProperty Name="CurrentProperyPrice" ColumnName="CurrentProperyPrice" />
+                <ScalarProperty Name="CurrentPropertyTax" ColumnName="CurrentPropertyTax" />
+                <ScalarProperty Name="TotalPropertyExpense" ColumnName="TotalPropertyExpense" />
+                <ScalarProperty Name="Danger3" ColumnName="Danger3" />
+                <ScalarProperty Name="Safe3" ColumnName="Safe3" />
+                <ScalarProperty Name="Danger2" ColumnName="Danger2" />
+                <ScalarProperty Name="Safe2" ColumnName="Safe2" />
+                <ScalarProperty Name="Danger" ColumnName="Danger" />
+                <ScalarProperty Name="Safe" ColumnName="Safe" />
+                <ScalarProperty Name="NoProject" ColumnName="NoProject" />
+                <ScalarProperty Name="OtherMethod" ColumnName="OtherMethod" />
+                <ScalarProperty Name="ArtifitialMethod" ColumnName="ArtifitialMethod" />
+                <ScalarProperty Name="NaturalMethod" ColumnName="NaturalMethod" />
+                <ScalarProperty Name="OtherGutter" ColumnName="OtherGutter" />
+                <ScalarProperty Name="NOSGSK" ColumnName="NOSGSK" />
+                <ScalarProperty Name="SGSK" ColumnName="SGSK" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="STS" ColumnName="STS" />
+                <ScalarProperty Name="FST" ColumnName="FST" />
+                <ScalarProperty Name="STP" ColumnName="STP" />
+                <ScalarProperty Name="NoWaterConnection" ColumnName="NoWaterConnection" />
+                <ScalarProperty Name="WaterConnection" ColumnName="WaterConnection" />
+                <ScalarProperty Name="HeritageTree" ColumnName="HeritageTree" />
+                <ScalarProperty Name="Publicwell" ColumnName="Publicwell" />
+                <ScalarProperty Name="Personalwell" ColumnName="Personalwell" />
+                <ScalarProperty Name="NoOfTrees" ColumnName="NoOfTrees" />
                 <ScalarProperty Name="NewPropertyNo2" ColumnName="NewPropertyNo2" />
                 <ScalarProperty Name="PropertyType2" ColumnName="PropertyType2" />
                 <ScalarProperty Name="FHNo" ColumnName="FHNo" />

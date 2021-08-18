@@ -239,7 +239,7 @@
     <Content Include="Content\btnCss\StyleSheet1.css" />
     <Content Include="Content\Images\mkmj.jpeg" />
     <Content Include="Content\Images\property_tax_logo.png" />
-    <Content Include="Content\Images\vengurla logo.jpeg" />
+    <Content Include="Content\Images\vengurla logo.jpeg.png" />
     <Content Include="Content\SurveyDatatable.js" />
     <Content Include="Content\SurveyForm.css" />
     <Content Include="Content\theme-assets\assets\css\component.css" />
@@ -1499,6 +1499,7 @@
     <Content Include="Images\hissano.png" />
     <Content Include="Images\imgno.png" />
     <Content Include="Images\legalimg.png" />
+    <Content Include="Images\oldhouseno.png" />
     <Content Include="Images\orvimg.png" />
     <Content Include="Images\ott.png" />
     <Content Include="Images\out.png" />

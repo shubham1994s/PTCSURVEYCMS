@@ -19,7 +19,8 @@ namespace PTCSURVEYCMS.Controllers
 
         public ActionResult Report()
         {
-            using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(1))
+            int AppId = SessionHandler.Current.AppId;
+            using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(AppId))
             {
                 var v = db.PropertyMasters.ToList();
                 return View(v);
