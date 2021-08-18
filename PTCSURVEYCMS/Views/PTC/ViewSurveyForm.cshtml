@@ -1,6 +1,8 @@
 ﻿@model BLL.ViewModel.PropertyMasterVM
-@{ ViewBag.Title = "SurveyForm";
-                Layout = ""; }
+@{ ViewBag.Title = "View Survey Form";
+    Layout = ""; }
+<title>View Survey Form</title>
+<link rel="shortcut icon" href="~/Content/Images/vengurla_logo_header.png" />
 <style>
     table, th, td {
         border: 1px solid black;
@@ -38,7 +40,7 @@
     <h1 class="text-center my-3">@ViewBag.Appname_mar </h1>
     <h6 class="text-center mb-3">मालमत्ता कर विभाग / Property Tax Department</h6>
     <h6 class="text-center mb-3 font-weight-bold"> कर आकारणी सर्वेक्षण फॉर्म / Property Tax Assessment Survey Form</h6>
-    <img src="~/content/Images/@ViewBag.RLogo" style="position: absolute;height: 90px;top:2%; right:8%" />
+    <img src="~/content/Images/@ViewBag.RLogo" style="position: absolute;height: 90px;top:1%; right:2%" />
     @*<button type="button" onclick="print()">pdf</button>*@
     <div class="container">
         <div class="d-flex justify-content-end pr-3">
@@ -421,7 +423,7 @@
         <hr />
         @* Address Section G *@
         <div class="d-flex flex-column back mb-4">
-            <div class="d-flex flex-row">
+            <div class="d-flex flex-row" style="margin-bottom: 3%;">
                 <table style="width:100%">
                     <tr class="text-center">
                         <th rowspan='2'>   <label class="label">पत्ता /<br /> Address</label></th>
@@ -510,12 +512,12 @@
                             <label class="label">बांधकाम परवानगी क्र / Const. Perm. No.</label>
                         </th>
                         <td class="p_5">
-                            <label>
-                                आहे &nbsp;
-                            </label>@*Change*@
-                            @Html.CheckBox("YConstPermNo", new { @class = "chkBx" })
-                            <label class="pl">&nbsp;नाही&nbsp; </label>
+                            @Html.CheckBox("YConstPermNo", new { @class = "chkBx" }) <label>
+    आहे&nbsp;
+</label>@*Change*@
                             @Html.CheckBox("NConstPermNo", new { @class = "chkBx" })
+                            <label class="pl">नाही&nbsp; </label>
+
                             No. - @Html.DisplayFor(model => model.ConstPermNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </td>
                         <th>
@@ -523,12 +525,13 @@
                             <label class="label">भोगवटा दाखला  क्र / Perm. Use. No.</label>
                         </th>
                         <td class="p_5">
-                            <label>
-                                आहे &nbsp;
-                            </label>@*Change*@
                             @Html.CheckBox("YPermUseNo", new { @class = "chkBx" })
-                            <label class="pl">&nbsp;नाही&nbsp; </label>
+                            <label>
+                                आहे&nbsp;
+                            </label>@*Change*@
                             @Html.CheckBox("NPermUseNo", new { @class = "chkBx" })
+                            <label class="pl">नाही&nbsp; </label>
+
                             No. -
                             @Html.DisplayFor(model => model.PermUseNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </td>
@@ -540,9 +543,9 @@
                         </th>
                         <td class="p_5">
                             @Html.CheckBox("Rainwaterharvest", new { @class = "chkBx" })
-                            <label>Yes </label>
+                            <label>आहे/Yes &nbsp; </label>
                             @Html.CheckBox("NonRainwaterharvest", new { @class = "chkBx" })
-                            <label>No </label>
+                        <label>नाही/No </label>
 
                         </td>
                         <th>
@@ -551,9 +554,9 @@
                         </th>
                         <td class="p_5">
                             @Html.CheckBox("SolarWaterheater")
-                            <label>Yes </label>
+                            <label>आहे/Yes &nbsp;</label>
                             @Html.CheckBox("NonSolarWaterheater")
-                            <label>No </label>
+                        <label>नाही/No </label>
 
                         </td>
                     </tr>
@@ -564,7 +567,7 @@
                         <td class="p_5">
                             @*Change*@
                             @Html.CheckBox("VermicultureProject")
-                            <label>आहे/Yes </label>
+                            <label>आहे/Yes &nbsp;</label>
                             @Html.CheckBox("NonVermicultureProject")
                             <label>नाही/No </label>
 
@@ -576,7 +579,7 @@
                         <td class="p_5">
                             @*Change*@
                             @Html.CheckBox("GarbageType")
-                            <label>आहे/Yes </label>
+                            <label>आहे/Yes &nbsp;</label>
                             @Html.CheckBox("NOGarbageType")
                             <label>नाही/No </label>
 
@@ -637,10 +640,11 @@
                             <label class="label">नळ जोडणी /Water Connection</label>
                         </th>
                         <td>
-                            <label>आहे/Yes &nbsp;</label>
                             @Html.CheckBox("WaterConnection", new { @class = "chkBx2" })
-                            <label class="pl">&nbsp;नाही/No &nbsp;</label>
+                            <label>आहे/Yes &nbsp;</label>
                             @Html.CheckBox("NoWaterConnection", new { @class = "chkBx2" })
+                            <label class="pl">नाही/No</label>
+
                         </td>
                         <td class="p_5" colspan="2">
                             @Html.CheckBox("WaterConnectionResidential")
@@ -1210,8 +1214,8 @@
                     <table style="width:100%">
                         <tr class="text-center">
                             <th></th>
-                            <td class="pr-2 pl-2 pt-2"></td>
-                            <td></td>
+                            <td class="pr-2 pl-2 pt-2">निवाशी</td>
+                            <td>बिगर रहावाशी</td>
                         </tr>
                         <tr class="text-center">
                             <td class="pr-2 pl-2 pt-2">जुने चटई क्षेत्रफळ / Old Carpet Area</td>
@@ -1244,8 +1248,8 @@
                     <table style="width:100%">
                         <tr class="text-center">
                             <th></th>
-                            <td class="pr-2 pl-2 pt-2"></td>
-                            <td> </td>
+                            <td class="pr-2 pl-2 pt-2">निवाशी</td>
+                            <td>बिगर रहावाशी</td>
                         </tr>
 
                         <tr class="text-center">
@@ -1584,32 +1588,32 @@
         function goBack() {
             window.history.back();
         }
-                    //function print() {
-                    //    const filename  = 'ThisIsYourPDFFilename.pdf';
+                        //function print() {
+                        //    const filename  = 'ThisIsYourPDFFilename.pdf';
 
-                    //    html2canvas(document.getElementById('target')).then(canvas => {
-                    //        let pdf = new jsPDF('p', 'mm', 'a4');
-                    //        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
-                    //        pdf.save(filename);
-                    //    });
-                    //}
-                    //function print() {
-                    //    window.print()
-                    //}
+                        //    html2canvas(document.getElementById('target')).then(canvas => {
+                        //        let pdf = new jsPDF('p', 'mm', 'a4');
+                        //        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+                        //        pdf.save(filename);
+                        //    });
+                        //}
+                        //function print() {
+                        //    window.print()
+                        //}
 
-                    // Variant
-                    // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
-                    //var quality=4;
-                    //function print(quality) {
-                    //    const filename  = 'ThisIsYourPDFFilename.pdf';
+                        // Variant
+                        // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
+                        //var quality=4;
+                        //function print(quality) {
+                        //    const filename  = 'ThisIsYourPDFFilename.pdf';
 
-                    //    html2canvas(document.getElementById('target'),
-                    //							{scale: quality}
-                    //					 ).then(canvas => {
-                    //					     let pdf = new jsPDF('p', 'mm', 'a4');
-                    //					     pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
-                    //					     pdf.addPage();
-                    //					     pdf.save(filename);
-                    //					 });
-                    //}
+                        //    html2canvas(document.getElementById('target'),
+                        //							{scale: quality}
+                        //					 ).then(canvas => {
+                        //					     let pdf = new jsPDF('p', 'mm', 'a4');
+                        //					     pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+                        //					     pdf.addPage();
+                        //					     pdf.save(filename);
+                        //					 });
+                        //}
     </script>

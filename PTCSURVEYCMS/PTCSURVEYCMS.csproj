@@ -240,6 +240,7 @@
     <Content Include="Content\Images\mkmj.jpeg" />
     <Content Include="Content\Images\property_tax_logo.png" />
     <Content Include="Content\Images\vengurla logo.jpeg.png" />
+    <Content Include="Content\Images\vengurla_logo_header.png" />
     <Content Include="Content\SurveyDatatable.js" />
     <Content Include="Content\SurveyForm.css" />
     <Content Include="Content\theme-assets\assets\css\component.css" />

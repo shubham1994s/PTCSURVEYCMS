@@ -1,9 +1,10 @@
 ﻿@model BLL.ViewModel.EmployeeVM
-@{
-    ViewBag.Title = "Login";
-    Layout = null;
-}
+@{ ViewBag.Title = "Login";
+                Layout = null; }
 
+
+<title>Login</title>
+<link rel="shortcut icon" href="~/Content/Images/vengurla_logo_header.png" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +42,7 @@
 <body class="fix-menu" style="background: rgb(163,158,233);
 /*background: linear-gradient(90deg, rgba(163,158,233,1) 0%, rgba(44,176,226,1) 49%, rgba(81,128,173,1) 100%)*/
 background: url(../../Content/BC_Image_new.jpg);background-size:cover;">
-    
+
     <!-- Pre-loader start -->
     @*<div class="theme-loader">
             <div class="ball-scale">
@@ -69,7 +70,7 @@ background: url(../../Content/BC_Image_new.jpg);background-size:cover;">
 
                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
-                        @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
                         <form class="md-float-material">
 
                             @*<div class="text-center">
@@ -127,8 +128,7 @@ background: url(../../Content/BC_Image_new.jpg);background-size:cover;">
 
 
                             </div>
-                        </form>
-                    }
+                        </form>}
 
 
 
