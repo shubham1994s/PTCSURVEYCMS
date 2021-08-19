@@ -1188,7 +1188,7 @@
             </table>
         </div>
 
-        <h4 style="text-align:center" class="my-2">
+        <h4 style="text-align:center;font-weight:600" class="my-2">
             मालमत्ता सर्वेक्षण नुसार  तुलनात्मक  तक्ता
         </h4>
         <div class="d-flex flex-column back mb-4">
@@ -1196,15 +1196,15 @@
 
                 <table style="width:100%">
                     <tr class="text-center">
-                        <td class="pr-2 pl-2 pt-2">
+                        <th class="pr-2 pl-2 pt-2">
                             <label class="label">जुना वापर प्रकार (रेसी. / नॉन-रेसी. / मिश्रित) / <br />Old Usage Type(Resi. / Non-Resi. / Mixed )</label>
-                        </td>
+                        </th>
                         <td>
                             @Html.DisplayFor(model => model.OldUsageType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>
+                        <th>
                             <label class="label">जुने बांधकाम प्रकार / <br />Old Construction Type</label>
-                        </td>
+                        </th>
                         <td>
                             @Html.DisplayFor(model => model.OldConstructionType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </td>
@@ -1214,11 +1214,11 @@
                     <table style="width:100%">
                         <tr class="text-center">
                             <th></th>
-                            <td class="pr-2 pl-2 pt-2">निवाशी</td>
-                            <td>बिगर रहावाशी</td>
+                            <th class="pr-2 pl-2 pt-2">निवाशी</th>
+                            <th>बिगर रहावाशी</th>
                         </tr>
                         <tr class="text-center">
-                            <td class="pr-2 pl-2 pt-2">जुने चटई क्षेत्रफळ / Old Carpet Area</td>
+                            <th class="pr-2 pl-2 pt-2">जुने चटई क्षेत्रफळ / Old Carpet Area</th>
 
                             <td>  @Html.DisplayFor(model => model.OldCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
 
@@ -1230,15 +1230,15 @@
             <div class="d-flex flex-row">
                 <table style="width:100%">
                     <tr class="text-center">
-                        <td class="pr-2 pl-2 pt-2">
+                        <th class="pr-2 pl-2 pt-2">
                             <label class="label">नवीन वापर प्रकार (रेसी. / नॉन-रेसी. / मिश्रित) / <br />New Usage Type(Resi. / Non-Resi. / Mixed )</label>
-                        </td>
+                        </th>
                         <td>
                             @Html.DisplayFor(model => model.NewUsageType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>
+                        <th>
                             <label class="label">नवीन बांधकाम प्रकार / <br />New Construction Type</label>
-                        </td>
+                        </th>
                         <td>
                             @Html.DisplayFor(model => model.NewConstructionType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </td>
@@ -1248,12 +1248,12 @@
                     <table style="width:100%">
                         <tr class="text-center">
                             <th></th>
-                            <td class="pr-2 pl-2 pt-2">निवाशी</td>
-                            <td>बिगर रहावाशी</td>
+                            <th class="pr-2 pl-2 pt-2">निवाशी</th>
+                            <th>बिगर रहावाशी</th>
                         </tr>
 
                         <tr class="text-center">
-                            <td class="pr-2 pl-2 pt-2">नवीन चटई क्षेत्रफळ / New Carpet Area</td>
+                            <th class="pr-2 pl-2 pt-2">नवीन चटई क्षेत्रफळ / New Carpet Area</th>
                             <td>  @Html.DisplayFor(model => model.NewCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
                             <td>  @Html.DisplayFor(model => model.NewCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
 
@@ -1266,16 +1266,16 @@
             <div class="d-flex flex-row">
                 <table style="width:100%">
                     <tr class="text-center">
-                        <td class="pr-2 pl-2 pt-2">
+                        <th class="pr-2 pl-2 pt-2">
                             <label class="label">वाढीव वापर प्रकार (रेसी. / नॉन-रेसी. / मिश्रित) / <br />Extend Usage Type(Resi. / Non-Resi. / Mixed )</label>
-                        </td>
+                        </th>
                         <td>
 
                             @Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>
+                        <th>
                             <label class="label">वाढीव बांधकाम प्रकार / <br />Extend Construction Type</label>
-                        </td>
+                        </th>
                         <td>
                             @Html.DisplayFor(model => model.ExtendConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
@@ -1287,13 +1287,13 @@
                     <table style="width:100%">
                         <tr class="text-center">
                             <th></th>
-                            <td class="pr-2 pl-2 pt-2">निवाशी</td>
-                            <td>बिगर रहावाशी</td>
+                            <th class="pr-2 pl-2 pt-2">निवाशी</th>
+                            <th>बिगर रहावाशी</th>
                         </tr>
 
                         <tr class="text-center">
 
-                            <td class="pr-2 pl-2 pt-2">वाढीव चटई क्षेत्रफळ / Extend Carpet Area</td>
+                            <th class="pr-2 pl-2 pt-2">वाढीव चटई क्षेत्रफळ / Extend Carpet Area</th>
                             <td>  @Html.DisplayFor(model => model.ExtendCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
                             <td>  @Html.DisplayFor(model => model.ExtendCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
                         </tr>
@@ -1303,46 +1303,46 @@
 
                 </table>
             </div>
-            <h4 style="text-align:center" class="my-2">मालमत्तेचाबाबतचा इतर तपशील </h4>
+            <h4 style="text-align:center;font-weight:600" class="my-2">मालमत्तेचाबाबतचा इतर तपशील </h4>
             <table>
 
                 <tr>
-                    <td>
+                    <th>
                         जागेच्या मुल्यासह बांधकाम साठी
                         आलेला एकूण खर्च
-                    </td>
+                    </th>
                     <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <td>इमारतीचे चालू करपात्र मूल्य</td>
+                    <th>इमारतीचे चालू करपात्र मूल्य</th>
                     <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <td>
+                    <th>
                         मालमत्ता कराचा चालू
                         दर
-                    </td>
+                    </th>
                     <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                 </tr>
                 <tr>
-                    <td>
+                    <th>
                         मालमत्ता भोवतालच्या मोकळ्या
                         जागेवरील कराचे दर
-                    </td>
+                    </th>
                     <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <td>मालमत्ता कराची रक्तकम</td>
+                    <th>मालमत्ता कराची रक्तकम</th>
                     <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <td>
+                    <th>
                         एकूण करासह मालमत्ता
                         कराची रक्तकम
-                    </td>
+                    </th>
                     <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                 </tr>
                 <tr>
-                    <td>मोकळ्या जागेच्या कराची रक्तकम</td>
+                    <th>मोकळ्या जागेच्या कराची रक्तकम</th>
                     <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <td colspan="2">
+                    <th colspan="2">
                         इमारतीच्या जागेचे मूल्य व घसारा ववचारात घेता आजचे
                         बाजारमूल्य
-                    </td>
+                    </th>
                     <td colspan="2">@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
 
@@ -1355,16 +1355,16 @@
 
         <div class="d-flex flex-column back mb-4">
             <table style="width:100%" class="back mb-4">
-                <tr><th style="text-align:center" colspan="6">कुटुंबातील सदस्ययांचा  तपशील </th></tr>
+                <tr><th style="text-align:center;font-weight:600" colspan="6">कुटुंबातील सदस्ययांचा  तपशील </th></tr>
                 <tr>
-                    <td>अ. क्र.</td>
-                    <td>नाव</td>
-                    <td>वय</td>
-                    <td>लिंक  </td>
-                    <td>संपर्क क्र.</td>
-                    <td>
+                    <th>अ. क्र.</th>
+                    <th>नाव</th>
+                    <th>वय</th>
+                    <th>लिंक  </th>
+                    <th>संपर्क क्र.</th>
+                    <th>
                         मतादार ओळखपत्र क्र.
-                    </td>
+                    </th>
 
                 </tr>
 
