@@ -789,6 +789,14 @@ namespace PTCSURVEYCMS {
             
             private global::System.Data.DataColumn columnPrabhagNo2;
             
+            private global::System.Data.DataColumn columnYConstPermNo;
+            
+            private global::System.Data.DataColumn columnNConstPermNo;
+            
+            private global::System.Data.DataColumn columnYPermUseNo;
+            
+            private global::System.Data.DataColumn columnNPermUseNo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PropertyMasterDataTable() {
@@ -2864,6 +2872,38 @@ namespace PTCSURVEYCMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn YConstPermNoColumn {
+                get {
+                    return this.columnYConstPermNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NConstPermNoColumn {
+                get {
+                    return this.columnNConstPermNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn YPermUseNoColumn {
+                get {
+                    return this.columnYPermUseNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NPermUseNoColumn {
+                get {
+                    return this.columnNPermUseNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3153,7 +3193,11 @@ namespace PTCSURVEYCMS {
                         string PropertyNo2, 
                         bool GarbageType, 
                         bool NOGarbageType, 
-                        string PrabhagNo2) {
+                        string PrabhagNo2, 
+                        bool YConstPermNo, 
+                        bool NConstPermNo, 
+                        bool YPermUseNo, 
+                        bool NPermUseNo) {
                 PropertyMasterRow rowPropertyMasterRow = ((PropertyMasterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3410,7 +3454,11 @@ namespace PTCSURVEYCMS {
                         PropertyNo2,
                         GarbageType,
                         NOGarbageType,
-                        PrabhagNo2};
+                        PrabhagNo2,
+                        YConstPermNo,
+                        NConstPermNo,
+                        YPermUseNo,
+                        NPermUseNo};
                 rowPropertyMasterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPropertyMasterRow);
                 return rowPropertyMasterRow;
@@ -3695,6 +3743,10 @@ namespace PTCSURVEYCMS {
                 this.columnGarbageType = base.Columns["GarbageType"];
                 this.columnNOGarbageType = base.Columns["NOGarbageType"];
                 this.columnPrabhagNo2 = base.Columns["PrabhagNo2"];
+                this.columnYConstPermNo = base.Columns["YConstPermNo"];
+                this.columnNConstPermNo = base.Columns["NConstPermNo"];
+                this.columnYPermUseNo = base.Columns["YPermUseNo"];
+                this.columnNPermUseNo = base.Columns["NPermUseNo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4210,6 +4262,14 @@ namespace PTCSURVEYCMS {
                 base.Columns.Add(this.columnNOGarbageType);
                 this.columnPrabhagNo2 = new global::System.Data.DataColumn("PrabhagNo2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrabhagNo2);
+                this.columnYConstPermNo = new global::System.Data.DataColumn("YConstPermNo", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYConstPermNo);
+                this.columnNConstPermNo = new global::System.Data.DataColumn("NConstPermNo", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNConstPermNo);
+                this.columnYPermUseNo = new global::System.Data.DataColumn("YPermUseNo", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYPermUseNo);
+                this.columnNPermUseNo = new global::System.Data.DataColumn("NPermUseNo", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNPermUseNo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPropertyId}, true));
                 this.columnPropertyId.AutoIncrement = true;
@@ -8664,6 +8724,70 @@ namespace PTCSURVEYCMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool YConstPermNo {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePropertyMaster.YConstPermNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'YConstPermNo\' in table \'PropertyMaster\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePropertyMaster.YConstPermNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool NConstPermNo {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePropertyMaster.NConstPermNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NConstPermNo\' in table \'PropertyMaster\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePropertyMaster.NConstPermNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool YPermUseNo {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePropertyMaster.YPermUseNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'YPermUseNo\' in table \'PropertyMaster\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePropertyMaster.YPermUseNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool NPermUseNo {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePropertyMaster.NPermUseNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NPermUseNo\' in table \'PropertyMaster\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePropertyMaster.NPermUseNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPrabhagNoNull() {
                 return this.IsNull(this.tablePropertyMaster.PrabhagNoColumn);
             }
@@ -11709,6 +11833,54 @@ namespace PTCSURVEYCMS {
             public void SetPrabhagNo2Null() {
                 this[this.tablePropertyMaster.PrabhagNo2Column] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsYConstPermNoNull() {
+                return this.IsNull(this.tablePropertyMaster.YConstPermNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetYConstPermNoNull() {
+                this[this.tablePropertyMaster.YConstPermNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNConstPermNoNull() {
+                return this.IsNull(this.tablePropertyMaster.NConstPermNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNConstPermNoNull() {
+                this[this.tablePropertyMaster.NConstPermNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsYPermUseNoNull() {
+                return this.IsNull(this.tablePropertyMaster.YPermUseNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetYPermUseNoNull() {
+                this[this.tablePropertyMaster.YPermUseNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNPermUseNoNull() {
+                return this.IsNull(this.tablePropertyMaster.NPermUseNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNPermUseNoNull() {
+                this[this.tablePropertyMaster.NPermUseNoColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -12125,6 +12297,10 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("GarbageType", "GarbageType");
             tableMapping.ColumnMappings.Add("NOGarbageType", "NOGarbageType");
             tableMapping.ColumnMappings.Add("PrabhagNo2", "PrabhagNo2");
+            tableMapping.ColumnMappings.Add("YConstPermNo", "YConstPermNo");
+            tableMapping.ColumnMappings.Add("NConstPermNo", "NConstPermNo");
+            tableMapping.ColumnMappings.Add("YPermUseNo", "YPermUseNo");
+            tableMapping.ColumnMappings.Add("NPermUseNo", "NPermUseNo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -12183,55 +12359,56 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
                 "No1], [VoterIdentityNo2], [VoterIdentityNo3], [VoterIdentityNo4], [VoterIdentity" +
                 "No5], [VoterIdentityNo6], [VoterIdentityNo7], [VoterIdentityNo8], [VoterIdentity" +
                 "No9], [VoterIdentityNo10], [VoterIdentityNo11], [VoterIdentityNo12], [oldHouseNo" +
-                "2], [PropertyNo2], [GarbageType], [NOGarbageType], [PrabhagNo2]) VALUES (@Prabha" +
-                "gNo, @WardNameNo, @ElectionWard, @NewPropertyNo, @PropertyNo, @HouseNo, @SurveyN" +
-                "o, @GatNo, @CitySurveyNo, @AnnualRateableValue, @TotalPlotArea, @TotalBuildupAre" +
-                "a, @MarginSpace, @BuildingName, @PlotNo, @FlatNo, @NoofFloors, @NoofFlats, @Noof" +
-                "Shops, @PropOwnerFirstName, @PropOwnerMiddleName, @PropOwnerLastName, @PropOwner" +
-                "TelephoneNo, @PropOwnerMobileNo, @PropOwnerEmailId, @PropOwnerAdhaarNo, @Occupie" +
-                "rFirstName, @OccupierMiddleName, @OccupierLastName, @OccupierMobileNo, @Occupier" +
-                "AdhaarNo, @TenantName, @Rent, @TenantMobileNo, @TenantAdhaarNo, @Address, @Longi" +
-                "tude, @Latitude, @ConstStartYear, @CompletionYear, @Age, @Usage, @TypeofBldg, @C" +
-                "onstPermNo, @PermUseNo, @Rainwaterharvest, @SolarWaterheater, @VermicultureProje" +
-                "ct, @SWHRemark, @Borewell, @NoofToilets, @PermanentDoorLock, @OuterMeasurement, " +
-                "@Lift, @Remarks, @FloorNo1, @OccupancyStatus1, @ConstType1, @DateofConstruction1" +
-                ", @UsageType1, @UsageTypeClass1, @Legal1, @CarpetArea1, @BuildupArea1, @FloorNo2" +
-                ", @OccupancyStatus2, @ConstType2, @DateofConstruction2, @UsageType2, @UsageTypeC" +
-                "lass2, @Legal2, @CarpetArea2, @BuildupArea2, @FloorNo3, @OccupancyStatus3, @Cons" +
-                "tType3, @DateofConstruction3, @UsageType3, @UsageTypeClass3, @Legal3, @CarpetAre" +
-                "a3, @BuildupArea3, @FloorNo4, @OccupancyStatus4, @ConstType4, @DateofConstructio" +
-                "n4, @UsageType4, @UsageTypeClass4, @Legal4, @CarpetArea4, @BuildupArea4, @FloorN" +
-                "o5, @ConstType5, @DateofConstruction5, @UsageType5, @UsageTypeClass5, @Legal5, @" +
-                "CarpetArea5, @BuildupArea5, @OldUsageType, @OldConstructionType, @NewUsageType, " +
-                "@NewConstructionType, @ExtendUsageType, @ExtendConstructionType, @PropertyType, " +
-                "@SurveyorName, @SurveyorSignature, @SurveyorDate, @DataEntryName, @DataEntrySign" +
-                "ature, @DataEntryDate, @NonRainwaterharvest, @NonSolarWaterheater, @NonVermicult" +
-                "ureProject, @NonBorewellr, @NoLift, @WaterConnectionResidential, @WaterConnectio" +
-                "nSpecialCategory, @WaterConnectionIndustrial, @LocationofToiletResidential, @Loc" +
-                "ationofToiletSpecial, @LocationofToiletIndustrial, @ParkingFacilityResidential, " +
-                "@ParkingFacilitySpecial, @ParkingFacilityIndustrial, @DoorLockResidential, @Door" +
-                "LockSpecial, @DoorLockIndustrial, @UnderGroundGutter, @OpenGutter, @totalCarpetA" +
-                "rea, @totalBuildupArea1, @totaltax, @OldCarpetAreaResident, @OldCarpetAreaNonRes" +
-                "ident, @NewCarpetAreaResident, @NewCarpetAreaNonResident, @ExtendCarpetAreaResid" +
-                "ent, @ExtendCarpetAreaNonResident, @OccupancyStatus5, @Sketchdiagram, @Sketchdia" +
-                "gram2, @AppId, @PropertyType2, @FHNo, @ZoneNo2, @WardNameNo2, @ImageNo, @FirstAs" +
-                "sessmentYear, @OldTotalTax, @Legal, @OldRateableValue, @HissaNo, @ZoneNo, @HFSNo" +
-                ", @VillageName, @NewPropertyNo2, @NoOfTrees, @Personalwell, @Publicwell, @Herita" +
-                "geTree, @WaterConnection, @NoWaterConnection, @STP, @FST, @STS, @Other, @SGSK, @" +
-                "NOSGSK, @OtherGutter, @NaturalMethod, @ArtifitialMethod, @OtherMethod, @NoProjec" +
-                "t, @Safe, @Danger, @Safe2, @Danger2, @Safe3, @Danger3, @TotalPropertyExpense, @C" +
-                "urrentPropertyTax, @CurrentProperyPrice, @OpenLandtaxprice, @ProperyTaxPrice, @T" +
-                "otalTaxPrice, @OpenAroundLandtaxprice, @ProperyTaxMarketPrice, @Name1, @Name2, @" +
-                "Name3, @Name5, @Name6, @Name7, @Name8, @Name9, @Name10, @Name11, @Name12, @Name4" +
-                ", @Age1, @Age2, @Age3, @Age4, @Age5, @Age6, @Age7, @Age8, @Age9, @Age10, @Age11," +
-                " @Age12, @link1, @link2, @link3, @link4, @link5, @link6, @link7, @link8, @link9," +
-                " @link10, @link11, @link12, @ContactNo1, @ContactNo2, @ContactNo3, @ContactNo4, " +
-                "@ContactNo5, @ContactNo6, @ContactNo7, @ContactNo8, @ContactNo9, @ContactNo10, @" +
-                "ContactNo11, @ContactNo12, @VoterIdentityNo1, @VoterIdentityNo2, @VoterIdentityN" +
-                "o3, @VoterIdentityNo4, @VoterIdentityNo5, @VoterIdentityNo6, @VoterIdentityNo7, " +
-                "@VoterIdentityNo8, @VoterIdentityNo9, @VoterIdentityNo10, @VoterIdentityNo11, @V" +
-                "oterIdentityNo12, @oldHouseNo2, @PropertyNo2, @GarbageType, @NOGarbageType, @Pra" +
-                "bhagNo2)";
+                "2], [PropertyNo2], [GarbageType], [NOGarbageType], [PrabhagNo2], [YConstPermNo]," +
+                " [NConstPermNo], [YPermUseNo], [NPermUseNo]) VALUES (@PrabhagNo, @WardNameNo, @E" +
+                "lectionWard, @NewPropertyNo, @PropertyNo, @HouseNo, @SurveyNo, @GatNo, @CitySurv" +
+                "eyNo, @AnnualRateableValue, @TotalPlotArea, @TotalBuildupArea, @MarginSpace, @Bu" +
+                "ildingName, @PlotNo, @FlatNo, @NoofFloors, @NoofFlats, @NoofShops, @PropOwnerFir" +
+                "stName, @PropOwnerMiddleName, @PropOwnerLastName, @PropOwnerTelephoneNo, @PropOw" +
+                "nerMobileNo, @PropOwnerEmailId, @PropOwnerAdhaarNo, @OccupierFirstName, @Occupie" +
+                "rMiddleName, @OccupierLastName, @OccupierMobileNo, @OccupierAdhaarNo, @TenantNam" +
+                "e, @Rent, @TenantMobileNo, @TenantAdhaarNo, @Address, @Longitude, @Latitude, @Co" +
+                "nstStartYear, @CompletionYear, @Age, @Usage, @TypeofBldg, @ConstPermNo, @PermUse" +
+                "No, @Rainwaterharvest, @SolarWaterheater, @VermicultureProject, @SWHRemark, @Bor" +
+                "ewell, @NoofToilets, @PermanentDoorLock, @OuterMeasurement, @Lift, @Remarks, @Fl" +
+                "oorNo1, @OccupancyStatus1, @ConstType1, @DateofConstruction1, @UsageType1, @Usag" +
+                "eTypeClass1, @Legal1, @CarpetArea1, @BuildupArea1, @FloorNo2, @OccupancyStatus2," +
+                " @ConstType2, @DateofConstruction2, @UsageType2, @UsageTypeClass2, @Legal2, @Car" +
+                "petArea2, @BuildupArea2, @FloorNo3, @OccupancyStatus3, @ConstType3, @DateofConst" +
+                "ruction3, @UsageType3, @UsageTypeClass3, @Legal3, @CarpetArea3, @BuildupArea3, @" +
+                "FloorNo4, @OccupancyStatus4, @ConstType4, @DateofConstruction4, @UsageType4, @Us" +
+                "ageTypeClass4, @Legal4, @CarpetArea4, @BuildupArea4, @FloorNo5, @ConstType5, @Da" +
+                "teofConstruction5, @UsageType5, @UsageTypeClass5, @Legal5, @CarpetArea5, @Buildu" +
+                "pArea5, @OldUsageType, @OldConstructionType, @NewUsageType, @NewConstructionType" +
+                ", @ExtendUsageType, @ExtendConstructionType, @PropertyType, @SurveyorName, @Surv" +
+                "eyorSignature, @SurveyorDate, @DataEntryName, @DataEntrySignature, @DataEntryDat" +
+                "e, @NonRainwaterharvest, @NonSolarWaterheater, @NonVermicultureProject, @NonBore" +
+                "wellr, @NoLift, @WaterConnectionResidential, @WaterConnectionSpecialCategory, @W" +
+                "aterConnectionIndustrial, @LocationofToiletResidential, @LocationofToiletSpecial" +
+                ", @LocationofToiletIndustrial, @ParkingFacilityResidential, @ParkingFacilitySpec" +
+                "ial, @ParkingFacilityIndustrial, @DoorLockResidential, @DoorLockSpecial, @DoorLo" +
+                "ckIndustrial, @UnderGroundGutter, @OpenGutter, @totalCarpetArea, @totalBuildupAr" +
+                "ea1, @totaltax, @OldCarpetAreaResident, @OldCarpetAreaNonResident, @NewCarpetAre" +
+                "aResident, @NewCarpetAreaNonResident, @ExtendCarpetAreaResident, @ExtendCarpetAr" +
+                "eaNonResident, @OccupancyStatus5, @Sketchdiagram, @Sketchdiagram2, @AppId, @Prop" +
+                "ertyType2, @FHNo, @ZoneNo2, @WardNameNo2, @ImageNo, @FirstAssessmentYear, @OldTo" +
+                "talTax, @Legal, @OldRateableValue, @HissaNo, @ZoneNo, @HFSNo, @VillageName, @New" +
+                "PropertyNo2, @NoOfTrees, @Personalwell, @Publicwell, @HeritageTree, @WaterConnec" +
+                "tion, @NoWaterConnection, @STP, @FST, @STS, @Other, @SGSK, @NOSGSK, @OtherGutter" +
+                ", @NaturalMethod, @ArtifitialMethod, @OtherMethod, @NoProject, @Safe, @Danger, @" +
+                "Safe2, @Danger2, @Safe3, @Danger3, @TotalPropertyExpense, @CurrentPropertyTax, @" +
+                "CurrentProperyPrice, @OpenLandtaxprice, @ProperyTaxPrice, @TotalTaxPrice, @OpenA" +
+                "roundLandtaxprice, @ProperyTaxMarketPrice, @Name1, @Name2, @Name3, @Name5, @Name" +
+                "6, @Name7, @Name8, @Name9, @Name10, @Name11, @Name12, @Name4, @Age1, @Age2, @Age" +
+                "3, @Age4, @Age5, @Age6, @Age7, @Age8, @Age9, @Age10, @Age11, @Age12, @link1, @li" +
+                "nk2, @link3, @link4, @link5, @link6, @link7, @link8, @link9, @link10, @link11, @" +
+                "link12, @ContactNo1, @ContactNo2, @ContactNo3, @ContactNo4, @ContactNo5, @Contac" +
+                "tNo6, @ContactNo7, @ContactNo8, @ContactNo9, @ContactNo10, @ContactNo11, @Contac" +
+                "tNo12, @VoterIdentityNo1, @VoterIdentityNo2, @VoterIdentityNo3, @VoterIdentityNo" +
+                "4, @VoterIdentityNo5, @VoterIdentityNo6, @VoterIdentityNo7, @VoterIdentityNo8, @" +
+                "VoterIdentityNo9, @VoterIdentityNo10, @VoterIdentityNo11, @VoterIdentityNo12, @o" +
+                "ldHouseNo2, @PropertyNo2, @GarbageType, @NOGarbageType, @PrabhagNo2, @YConstPerm" +
+                "No, @NConstPermNo, @YPermUseNo, @NPermUseNo)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrabhagNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrabhagNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WardNameNo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WardNameNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -12487,6 +12664,10 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GarbageType", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GarbageType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOGarbageType", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOGarbageType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrabhagNo2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrabhagNo2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YConstPermNo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YConstPermNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NConstPermNo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NConstPermNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YPermUseNo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YPermUseNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NPermUseNo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPermUseNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PropertyMaster] SET [PrabhagNo] = @PrabhagNo, [WardNameNo] = @WardN" +
@@ -12590,7 +12771,9 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
                 "terIdentityNo10, [VoterIdentityNo11] = @VoterIdentityNo11, [VoterIdentityNo12] =" +
                 " @VoterIdentityNo12, [oldHouseNo2] = @oldHouseNo2, [PropertyNo2] = @PropertyNo2," +
                 " [GarbageType] = @GarbageType, [NOGarbageType] = @NOGarbageType, [PrabhagNo2] = " +
-                "@PrabhagNo2 WHERE (([PropertyId] = @Original_PropertyId))";
+                "@PrabhagNo2, [YConstPermNo] = @YConstPermNo, [NConstPermNo] = @NConstPermNo, [YP" +
+                "ermUseNo] = @YPermUseNo, [NPermUseNo] = @NPermUseNo WHERE (([PropertyId] = @Orig" +
+                "inal_PropertyId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrabhagNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrabhagNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WardNameNo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WardNameNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -12846,6 +13029,10 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GarbageType", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GarbageType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOGarbageType", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOGarbageType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrabhagNo2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrabhagNo2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YConstPermNo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YConstPermNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NConstPermNo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NConstPermNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YPermUseNo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YPermUseNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NPermUseNo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPermUseNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PropertyId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PropertyId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -12906,7 +13093,8 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
                 "entityNo2, VoterIdentityNo3, VoterIdentityNo4, VoterIdentityNo5, VoterIdentityNo" +
                 "6, VoterIdentityNo7, VoterIdentityNo8, VoterIdentityNo9, VoterIdentityNo10, Vote" +
                 "rIdentityNo11, VoterIdentityNo12, oldHouseNo2, PropertyNo2, GarbageType, NOGarba" +
-                "geType, PrabhagNo2 FROM dbo.PropertyMaster";
+                "geType, PrabhagNo2, YConstPermNo, NConstPermNo, YPermUseNo, NPermUseNo FROM dbo." +
+                "PropertyMaster";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13243,7 +13431,11 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
                     string PropertyNo2, 
                     global::System.Nullable<bool> GarbageType, 
                     global::System.Nullable<bool> NOGarbageType, 
-                    string PrabhagNo2) {
+                    string PrabhagNo2, 
+                    global::System.Nullable<bool> YConstPermNo, 
+                    global::System.Nullable<bool> NConstPermNo, 
+                    global::System.Nullable<bool> YPermUseNo, 
+                    global::System.Nullable<bool> NPermUseNo) {
             if ((PrabhagNo == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -14768,6 +14960,30 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[253].Value = ((string)(PrabhagNo2));
             }
+            if ((YConstPermNo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[254].Value = ((bool)(YConstPermNo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[254].Value = global::System.DBNull.Value;
+            }
+            if ((NConstPermNo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[255].Value = ((bool)(NConstPermNo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[255].Value = global::System.DBNull.Value;
+            }
+            if ((YPermUseNo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[256].Value = ((bool)(YPermUseNo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[256].Value = global::System.DBNull.Value;
+            }
+            if ((NPermUseNo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[257].Value = ((bool)(NPermUseNo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[257].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15043,6 +15259,10 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
                     global::System.Nullable<bool> GarbageType, 
                     global::System.Nullable<bool> NOGarbageType, 
                     string PrabhagNo2, 
+                    global::System.Nullable<bool> YConstPermNo, 
+                    global::System.Nullable<bool> NConstPermNo, 
+                    global::System.Nullable<bool> YPermUseNo, 
+                    global::System.Nullable<bool> NPermUseNo, 
                     int Original_PropertyId) {
             if ((PrabhagNo == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -16568,7 +16788,31 @@ namespace PTCSURVEYCMS.DEVPTCSURVEYMALEGAONDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[253].Value = ((string)(PrabhagNo2));
             }
-            this.Adapter.UpdateCommand.Parameters[254].Value = ((int)(Original_PropertyId));
+            if ((YConstPermNo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[254].Value = ((bool)(YConstPermNo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[254].Value = global::System.DBNull.Value;
+            }
+            if ((NConstPermNo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[255].Value = ((bool)(NConstPermNo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[255].Value = global::System.DBNull.Value;
+            }
+            if ((YPermUseNo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[256].Value = ((bool)(YPermUseNo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[256].Value = global::System.DBNull.Value;
+            }
+            if ((NPermUseNo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[257].Value = ((bool)(NPermUseNo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[257].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[258].Value = ((int)(Original_PropertyId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
