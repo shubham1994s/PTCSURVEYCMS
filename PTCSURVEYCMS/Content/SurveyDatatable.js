@@ -74,7 +74,7 @@ function ActiveEmployee() {
                     }
                 } },
 
-                { "data": "PropOwnerMobileNo" },
+            { "data": "PropOwnerElectionCardNo" },
                 { "data": "NewPropertyNo" },
                 { "data": "PropertyNo" },
             { "data": "OldHouseNo1" },

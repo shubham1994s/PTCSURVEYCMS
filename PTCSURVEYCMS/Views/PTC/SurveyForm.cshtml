@@ -62,13 +62,13 @@
             <!--<div class="form-group pr-4">-->
             @*change*@
             <!--<label class="label">झोन क्रमांक / &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp Zone No.</label>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(model => model.ZoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                @Html.ValidationMessageFor(model => model.ZoneNo, "", new { @class = "text-danger" })
-                <span class="text-danger" id="err_empidd"></span>
-                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                <span class="help-block with-errors"></span>
-            </div>-->
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.TextBoxFor(model => model.ZoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+        @Html.ValidationMessageFor(model => model.ZoneNo, "", new { @class = "text-danger" })
+        <span class="text-danger" id="err_empidd"></span>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <span class="help-block with-errors"></span>
+    </div>-->
             <div class="form-group pr-4">
                 <label class="label">निवडणूक वार्ड / Election Ward</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -80,15 +80,6 @@
             </div>
 
             <div class="form-group pr-4">
-                <label class="label">मालमत्ता क्रमांक / Property No.</label>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(model => model.PropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                @Html.ValidationMessageFor(model => model.PropertyNo, "", new { @class = "text-danger" })
-                <span class="text-danger" id="err_PropertyNo"></span>
-                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                <span class="help-block with-errors"></span>
-            </div>
-            <div class="form-group pr-4">
                 <label class="label">नवीन मालमत्ता क्रमांक / New Property No.</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.NewPropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -97,6 +88,16 @@
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <span class="help-block with-errors"></span>
             </div>
+            <div class="form-group pr-4">
+                <label class="label">मालमत्ता क्रमांक / Property No.</label>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.PropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                @Html.ValidationMessageFor(model => model.PropertyNo, "", new { @class = "text-danger" })
+                <span class="text-danger" id="err_PropertyNo"></span>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <span class="help-block with-errors"></span>
+            </div>
+
 
             <div class="form-group pr-4">
                 <label class="label">जुना घर क्रमांक / <br />Old House No.</label>
@@ -451,8 +452,8 @@
                         <div class="form-group pr-4">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerMobileNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
-                            @Html.ValidationMessageFor(model => model.PropOwnerMobileNo, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.PropOwnerElectionCardNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            @Html.ValidationMessageFor(model => model.PropOwnerElectionCardNo, "", new { @class = "text-danger" })
                             <span class="text-danger" id="err_empidd"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
@@ -1970,26 +1971,26 @@
         }
         today = dd + '-' + mm + '-' + yyyy;
         if ($('#DataEntryDate').val() == '') {
-            $('#DataEntryDate').val(today);
+            $('#DataEntryDate').val("--Select Date--");
         }
 
         if ($('#SurveyorDate').val() == '') {
-            $('#SurveyorDate').val(today);
+            $('#SurveyorDate').val("--Select Date--");
         }
         if ($('#DateofConstruction1').val() == '') {
-            $('#DateofConstruction1').val(today);
+            $('#DateofConstruction1').val("--Select Date--");
         }
         if ($('#DateofConstruction2').val() == '') {
-            $('#DateofConstruction2').val(today);
+            $('#DateofConstruction2').val("--Select Date--");
         }
         if ($('#DateofConstruction3').val() == '') {
-            $('#DateofConstruction3').val(today);
+            $('#DateofConstruction3').val("--Select Date--");
         }
         if ($('#DateofConstruction4').val() == '') {
-            $('#DateofConstruction4').val(today);
+            $('#DateofConstruction4').val("--Select Date--");
         }
         if ($('#DateofConstruction5').val() == '') {
-            $('#DateofConstruction5').val(today);
+            $('#DateofConstruction5').val("--Select Date--");
         }
         $("#PropertyNo").change(function () {
             debugger;

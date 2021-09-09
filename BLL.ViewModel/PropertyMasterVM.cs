@@ -136,7 +136,7 @@ namespace BLL.ViewModel
         public string PropOwnerMiddleName { get; set; }
         public string PropOwnerLastName { get; set; }
         public string PropOwnerTelephoneNo { get; set; }
-        public string PropOwnerMobileNo { get; set; }
+        public string PropOwnerElectionCardNo { get; set; }
         public string PropOwnerEmailId { get; set; }
         public string PropOwnerAdhaarNo { get; set; }
         public string OccupierFirstName { get; set; }
