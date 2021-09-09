@@ -1,12 +1,12 @@
 ﻿
 
 $(document).ready(function () {
-    debugger;
+
     ActiveEmployee();
 });
 
 function Edit(ID) {
-    debugger;
+
     window.location.href = "/PTC/SurveyForm?q=" + ID;
 }
 
@@ -56,13 +56,24 @@ function ActiveEmployee() {
             "targets": [0],
             "visible": false,
             "searchable": false
-        }],
+            }],
         "columns": [
             { "data": "PropertyId" },
             {
                 "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
-                    return '<p> ' + full["PropOwnerFirstName"].charAt(0).toUpperCase() + full["PropOwnerFirstName"].substr(1).toLowerCase()
-                        + ' ' + full["PropOwnerLastName"].charAt(0).toUpperCase() + full["PropOwnerLastName"].substr(1).toLowerCase() + '</p>' } },
+                    //return '<p> ' + full["PropOwnerFirstName"].charAt(0).toUpperCase() + full["PropOwnerFirstName"].substr(1).toLowerCase()
+                    //    + ' ' + full["PropOwnerLastName"].charAt(0).toUpperCase() + full["PropOwnerLastName"].substr(1).toLowerCase() + '</p>' } },
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+                        return '<p> ' + full["PropOwnerFirstName"].charAt(0).toUpperCase() + full["PropOwnerFirstName"].substr(1).toLowerCase()
+                            + ' ' + full["PropOwnerLastName"].charAt(0).toUpperCase() + full["PropOwnerLastName"].substr(1).toLowerCase() + '</p>';
+
+                    }
+                    else {
+                        return 'Not Available';
+                    }
+                } },
+
                 { "data": "PropOwnerMobileNo" },
                 { "data": "NewPropertyNo" },
                 { "data": "PropertyNo" },

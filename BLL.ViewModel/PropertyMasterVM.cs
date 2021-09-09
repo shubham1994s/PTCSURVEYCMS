@@ -131,6 +131,7 @@ namespace BLL.ViewModel
         public string NoofFloors { get; set; }
         public string NoofFlats { get; set; }
         public string NoofShops { get; set; }
+
         public string PropOwnerFirstName { get; set; }
         public string PropOwnerMiddleName { get; set; }
         public string PropOwnerLastName { get; set; }
