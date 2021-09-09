@@ -41,7 +41,7 @@
                                                                             <label class="label">प्रभाग  क्रमांक/ Prabhag No.</label>
                                                                             @Html.HiddenFor(model => model.PropertyId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                            @Html.TextBoxFor(model => model.PrabhagNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                            @Html.TextBoxFor(model => model.PrabhagNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                             @Html.ValidationMessageFor(model => model.PrabhagNo, "", new { @class = "text-danger" })
                                                                             <span class="text-danger" id="err_name"></span>
                                                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -51,7 +51,7 @@
                                                                         <div class="form-group pr-4">
                                                                             <label class="label">वार्ड क्र/<br /> Ward No.</label>
                                                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                            @Html.TextBoxFor(model => model.WardName_No, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                            @Html.TextBoxFor(model => model.WardName_No, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                             @Html.ValidationMessageFor(model => model.WardName_No, "", new { @class = "text-danger" })
                                                                             <span class="text-danger" id="err_empidd"></span>
                                                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -70,7 +70,7 @@
                                                                         <div class="form-group pr-4">
                                                                             <label class="label">निवडणूक वार्ड / Election Ward</label>
                                                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                            @Html.TextBoxFor(model => model.ElectionWard, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                            @Html.TextBoxFor(model => model.ElectionWard, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                             @Html.ValidationMessageFor(model => model.ElectionWard, "", new { @class = "text-danger" })
                                                                             <span class="text-danger" id="err_empidd"></span>
                                                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -80,7 +80,7 @@
                                                                         <div class="form-group pr-4">
                                                                             <label class="label">मालमत्ता क्रमांक / Property No.</label>
                                                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                            @Html.TextBoxFor(model => model.PropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                            @Html.TextBoxFor(model => model.PropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome"})
                                                                             @Html.ValidationMessageFor(model => model.PropertyNo, "", new { @class = "text-danger" })
                                                                             <span class="text-danger" id="err_PropertyNo"></span>
                                                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -89,7 +89,7 @@
                                                                         <div class="form-group pr-4">
                                                                             <label class="label">नवीन मालमत्ता क्रमांक / New Property No.</label>
                                                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                            @Html.TextBoxFor(model => model.NewPropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                            @Html.TextBoxFor(model => model.NewPropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                             @Html.ValidationMessageFor(model => model.NewPropertyNo, "", new { @class = "text-danger" })
                                                                             <span class="text-danger" id="err_NewPropertyNo"></span>
                                                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -99,7 +99,7 @@
                                                                         <div class="form-group pr-4">
                                                                             <label class="label">जुना घर क्रमांक / <br />Old House No.</label>
                                                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                            @Html.TextBoxFor(model => model.OldHouseNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                            @Html.TextBoxFor(model => model.OldHouseNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                             @Html.ValidationMessageFor(model => model.OldHouseNo1, "", new { @class = "text-danger" })
                                                                             <span class="text-danger" id="err_empidd"></span>
                                                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -115,7 +115,7 @@
                                                                                 <label class="label">सर्वे नं. / Survey No.</label>
 
                                                                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                @Html.TextBoxFor(model => model.SurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                @Html.TextBoxFor(model => model.SurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                 @Html.ValidationMessageFor(model => model.SurveyNo, "", new { @class = "text-danger" })
                                                                                 <span class="text-danger" id="err_name"></span>
                                                                                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -259,7 +259,7 @@
                                                                                     <label class="label">सर्वे नं. / Survey No.</label>
 
                                                                                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                    @Html.TextBoxFor(model => model.SurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                    @Html.TextBoxFor(model => model.SurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                     @Html.ValidationMessageFor(model => model.SurveyNo, "", new { @class = "text-danger" })
                                                                                     <span class="text-danger" id="err_name"></span>
                                                                                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -402,7 +402,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">प्रथम नाव/ First Name</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.PropOwnerFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.PropOwnerFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.PropOwnerFirstName, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -411,7 +411,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">मधले नाव / Middle Name</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.PropOwnerMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.PropOwnerMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.PropOwnerMiddleName, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -420,7 +420,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">आडनाव / Last Name</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.PropOwnerLastName, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -436,7 +436,7 @@
                                                                                     <div class="form-group pr-4" style="margin-left: 3.5%;">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.PropOwnerTelephoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.PropOwnerTelephoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
                                                                                         @Html.ValidationMessageFor(model => model.PropOwnerTelephoneNo, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -449,7 +449,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.PropOwnerMobileNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.PropOwnerMobileNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
                                                                                         @Html.ValidationMessageFor(model => model.PropOwnerMobileNo, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -464,7 +464,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.PropOwnerEmailId, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.PropOwnerEmailId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.PropOwnerEmailId, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_PropOwnerEmailId"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -477,7 +477,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.PropOwnerAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.PropOwnerAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12"})
                                                                                         @Html.ValidationMessageFor(model => model.PropOwnerAdhaarNo, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -495,7 +495,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">प्रथम नाव / First Name</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.OccupierFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.OccupierFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.OccupierFirstName, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -504,7 +504,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">मधले नाव / Middle Name</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.OccupierMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.OccupierMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.OccupierMiddleName, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -513,7 +513,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">आडनाव / Last Name</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.OccupierLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.OccupierLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.OccupierLastName, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -529,7 +529,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.OccupierMobileNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.OccupierMobileNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
                                                                                         @Html.ValidationMessageFor(model => model.OccupierMobileNo, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -542,7 +542,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.OccupierAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.OccupierAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12" })
                                                                                         @Html.ValidationMessageFor(model => model.OccupierAdhaarNo, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -561,7 +561,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.TenantName, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.TenantName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.TenantName, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -573,7 +573,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.Rent, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.Rent, new { @class = "form-control", style = "font-family:Arial, FontAwesome"})
                                                                                         @Html.ValidationMessageFor(model => model.Rent, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -589,7 +589,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.TenantMobileNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.TenantMobileNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
                                                                                         @Html.ValidationMessageFor(model => model.TenantMobileNo, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -602,7 +602,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.TenantAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.TenantAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12"})
                                                                                         @Html.ValidationMessageFor(model => model.TenantAdhaarNo, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -638,7 +638,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.Longitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.Longitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -651,7 +651,7 @@
                                                                                     <div class="form-group pr-4">
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.Latitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.Latitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -663,7 +663,7 @@
                                                                                         <label class="label">बांधकाम चालू केलेले वर्ष / Const. Start Year</label>
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.ConstStartYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.ConstStartYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.ConstStartYear, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_name"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -673,7 +673,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">बांधकाम पूर्णवाचे वर्ष / Const.Completion Year</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.CompletionYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.CompletionYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.CompletionYear, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -682,7 +682,7 @@
                                                                                     <div class="form-group pr-4" style="width:10%">
                                                                                         <label class="label">वय / Age</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.Age, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.Age, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -691,7 +691,7 @@
                                                                                     <div class="form-group pr-4" style="width:32%">
                                                                                         <label class="label">वापराचा (रेसी. / नॉन-रेसी. / मिश्रित) / Usage (Resi. / Non-resi. / Mixed)</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.Usage, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.Usage, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.Usage, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -700,7 +700,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">इमारतीचा प्रकार / Type of Bldg<br />(इमारत/ बंगला/चाळ./रो-हाउस /मोकळी जमीन /झोपडी/ औद्योगिक) <br />(Bldg./ Bunglow/Chawl/O.L/Row House/Slum/Industrial)</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.TypeofBldg, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.TypeofBldg, new { @class = "form-control", style = "font-family:Arial, FontAwesome"})
                                                                                         @Html.ValidationMessageFor(model => model.TypeofBldg, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -721,7 +721,7 @@
 
 
                                                                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                            @Html.TextBoxFor(model => model.ConstPermNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                            @Html.TextBoxFor(model => model.ConstPermNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                             @Html.ValidationMessageFor(model => model.ConstPermNo, "", new { @class = "text-danger" })
                                                                                             <span class="text-danger" id="err_name"></span>
                                                                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -1691,7 +1691,7 @@
                                                                                         <label class="label">प्रभाग  क्रमांक/ <br />  Prabhag No.</label>
                                                                                         @Html.HiddenFor(model => model.PropertyId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.PrabhagNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.PrabhagNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome"})
                                                                                         @Html.ValidationMessageFor(model => model.PrabhagNo2, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_name"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -1701,7 +1701,7 @@
                                                                                         <label class="label">वार्ड क्र/ नाव<br /> Ward No./Name</label>
 
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.WardName_No2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.WardName_No2, new { @class = "form-control", style = "font-family:Arial, FontAwesome"})
                                                                                         @Html.ValidationMessageFor(model => model.WardName_No2, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_name"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -1721,7 +1721,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">नवीन मालमत्ता क्रमांक / New Property No.</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.NewPropertyNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.NewPropertyNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                                                                         @Html.ValidationMessageFor(model => model.NewPropertyNo2, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -1731,7 +1731,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">मालमत्ता क्रमांक / Property No.</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.PropertyNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.PropertyNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome"})
                                                                                         @Html.ValidationMessageFor(model => model.PropertyNo2, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_PropertyNo"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -1740,7 +1740,7 @@
                                                                                     <div class="form-group pr-4">
                                                                                         <label class="label">जुना घर क्रमांक / <br />Old House No.</label>
                                                                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                                        @Html.TextBoxFor(model => model.OldHouseNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                                                                        @Html.TextBoxFor(model => model.OldHouseNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome"})
                                                                                         @Html.ValidationMessageFor(model => model.OldHouseNo2, "", new { @class = "text-danger" })
                                                                                         <span class="text-danger" id="err_empidd"></span>
                                                                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -1776,22 +1776,22 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>सर्वेक्षण करणारा / Surveyor</td>
-                                                                                    <td>@Html.TextBoxFor(model => model.SurveyorName, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })</td>
+                                                                                    <td>@Html.TextBoxFor(model => model.SurveyorName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                                                     @*<td>
                                                                                             <img src="~/Images/@Model.SurveyorSignature" id="SurveyorSignature" height="100" width="90" style="border:solid" />
                                                                                             <input type="file" name="file" id="SurveyorSignaturefile" value="@Model.SurveyorSignature" onchange="show(this)">
                                                                                         </td>*@
 
-                                                                                    <td>@Html.EditorFor(model => model.SurveyorDate, new { @class = "form-control", required = "required" })</td>
+                                                                                    <td>@Html.EditorFor(model => model.SurveyorDate, new { @class = "form-control" })</td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>डेटा एन्ट्री /Data Entry By</td>
-                                                                                    <td>@Html.TextBoxFor(model => model.DataEntryName, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })</td>
+                                                                                    <td>@Html.TextBoxFor(model => model.DataEntryName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                                                     @*<td>
                                                                                             <img src="~/Images/@Model.DataEntrySignature" id="DataEntrySignature" height="100" width="90" style="border:solid" />
                                                                                             <input type="file" name="file2" id="DataEntrySignaturefile" value="@Model.DataEntrySignature" onchange="show(this)">
                                                                                         </td>*@
-                                                                                    <td>@Html.EditorFor(model => model.DataEntryDate, new { @class = "form-control", required = "required" })</td>
+                                                                                    <td>@Html.EditorFor(model => model.DataEntryDate, new { @class = "form-control"})</td>
 
                                                                                 </tr>
 
