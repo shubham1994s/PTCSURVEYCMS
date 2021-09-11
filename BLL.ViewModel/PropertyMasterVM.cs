@@ -332,5 +332,57 @@ namespace BLL.ViewModel
         public string Sketchdiagram { get; set; }
 
         public string Sketchdiagram2 { get; set; }
+
+        public Nullable<bool> ZKMKG { get; set; }
+
+        public Nullable<bool> DVMKG { get; set; }
+
+
+        public Nullable<bool> ThirdPT { get; set; }
+        public Nullable<bool> FourthPT { get; set; }
+        public Nullable<bool> FifthPT { get; set; }
+        public Nullable<bool> SixPT { get; set; }
+        public Nullable<bool> SevenPT { get; set; }
+        public Nullable<bool> EightPT { get; set; }
+        public Nullable<bool> NinePT { get; set; }
+        public Nullable<bool> TenPT { get; set; }
+        public Nullable<bool> ElevenPT { get; set; }
+        public Nullable<bool> TwelvePT { get; set; }
+        public Nullable<bool> TherteenPT { get; set; }
+        public Nullable<bool> FourteenPT { get; set; }
+        public Nullable<bool> FifteenPT { get; set; }
+        public Nullable<bool> SixteenPT { get; set; }
+        public Nullable<bool> seventeenPT { get; set; }
+
+
+        public Nullable<bool> FirstRPC { get; set; }
+        public Nullable<bool> SecondRPC { get; set; }
+        public Nullable<bool> ThirdRPC { get; set; }
+        public Nullable<bool> FourthRPC { get; set; }
+        public Nullable<bool> FifthRPC { get; set; }
+        public Nullable<bool> SixRPC { get; set; }
+        public Nullable<bool> SevenRPC { get; set; }
+        public Nullable<bool> EightRPC { get; set; }
+        public Nullable<bool> NineRPC { get; set; }
+        public Nullable<bool> TenRPC { get; set; }
+        public Nullable<bool> ElevenRPC { get; set; }
+        public Nullable<bool> TwelveRPC { get; set; }
+        public Nullable<bool> FirstCPC { get; set; }
+        public Nullable<bool> SecondCPC { get; set; }
+        public Nullable<bool> ThirdCPC { get; set; }
+
+
+        public Nullable<bool> FourthCPC { get; set; }
+        public Nullable<bool> FifthCPC { get; set; }
+        public Nullable<bool> SixCPC { get; set; }
+        public Nullable<bool> SevenCPC { get; set; }
+        public Nullable<bool> EightCPC { get; set; }
+        public Nullable<bool> NineCPC { get; set; }
+        public Nullable<bool> TenCPC { get; set; }
+        public Nullable<bool> ElevenCPC { get; set; }
+        public Nullable<bool> TwelveCPC { get; set; }
+        public Nullable<bool> ThirteenCPC { get; set; }
+        public Nullable<bool> FourteenCPC { get; set; }
+      
     }
 }

@@ -329,6 +329,49 @@
           <Property Name="NConstPermNo" Type="bit" />
           <Property Name="YPermUseNo" Type="bit" />
           <Property Name="NPermUseNo" Type="bit" />
+          <Property Name="ZKMKG" Type="bit" />
+          <Property Name="DVMKG" Type="bit" />
+          <Property Name="ThirdPT" Type="bit" />
+          <Property Name="FourthPT" Type="bit" />
+          <Property Name="FifthPT" Type="bit" />
+          <Property Name="SixPT" Type="bit" />
+          <Property Name="SevenPT" Type="bit" />
+          <Property Name="EightPT" Type="bit" />
+          <Property Name="NinePT" Type="bit" />
+          <Property Name="TenPT" Type="bit" />
+          <Property Name="ElevenPT" Type="bit" />
+          <Property Name="TwelvePT" Type="bit" />
+          <Property Name="TherteenPT" Type="bit" />
+          <Property Name="FourteenPT" Type="bit" />
+          <Property Name="FifteenPT" Type="bit" />
+          <Property Name="SixteenPT" Type="bit" />
+          <Property Name="seventeenPT" Type="bit" />
+          <Property Name="FirstRPC" Type="bit" />
+          <Property Name="SecondRPC" Type="bit" />
+          <Property Name="ThirdRPC" Type="bit" />
+          <Property Name="FourthRPC" Type="bit" />
+          <Property Name="FifthRPC" Type="bit" />
+          <Property Name="SixRPC" Type="bit" />
+          <Property Name="SevenRPC" Type="bit" />
+          <Property Name="EightRPC" Type="bit" />
+          <Property Name="NineRPC" Type="bit" />
+          <Property Name="TenRPC" Type="bit" />
+          <Property Name="ElevenRPC" Type="bit" />
+          <Property Name="TwelveRPC" Type="bit" />
+          <Property Name="FirstCPC" Type="bit" />
+          <Property Name="SecondCPC" Type="bit" />
+          <Property Name="ThirdCPC" Type="bit" />
+          <Property Name="FourthCPC" Type="bit" />
+          <Property Name="FifthCPC" Type="bit" />
+          <Property Name="SixCPC" Type="bit" />
+          <Property Name="SevenCPC" Type="bit" />
+          <Property Name="EightCPC" Type="bit" />
+          <Property Name="NineCPC" Type="bit" />
+          <Property Name="TenCPC" Type="bit" />
+          <Property Name="ElevenCPC" Type="bit" />
+          <Property Name="TwelveCPC" Type="bit" />
+          <Property Name="ThirteenCPC" Type="bit" />
+          <Property Name="FourteenCPC" Type="bit" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -789,6 +832,49 @@
           <Property Name="NConstPermNo" Type="Boolean" />
           <Property Name="YPermUseNo" Type="Boolean" />
           <Property Name="NPermUseNo" Type="Boolean" />
+          <Property Name="ZKMKG" Type="Boolean" />
+          <Property Name="DVMKG" Type="Boolean" />
+          <Property Name="ThirdPT" Type="Boolean" />
+          <Property Name="FourthPT" Type="Boolean" />
+          <Property Name="FifthPT" Type="Boolean" />
+          <Property Name="SixPT" Type="Boolean" />
+          <Property Name="SevenPT" Type="Boolean" />
+          <Property Name="EightPT" Type="Boolean" />
+          <Property Name="NinePT" Type="Boolean" />
+          <Property Name="TenPT" Type="Boolean" />
+          <Property Name="ElevenPT" Type="Boolean" />
+          <Property Name="TwelvePT" Type="Boolean" />
+          <Property Name="TherteenPT" Type="Boolean" />
+          <Property Name="FourteenPT" Type="Boolean" />
+          <Property Name="FifteenPT" Type="Boolean" />
+          <Property Name="SixteenPT" Type="Boolean" />
+          <Property Name="seventeenPT" Type="Boolean" />
+          <Property Name="FirstRPC" Type="Boolean" />
+          <Property Name="SecondRPC" Type="Boolean" />
+          <Property Name="ThirdRPC" Type="Boolean" />
+          <Property Name="FourthRPC" Type="Boolean" />
+          <Property Name="FifthRPC" Type="Boolean" />
+          <Property Name="SixRPC" Type="Boolean" />
+          <Property Name="SevenRPC" Type="Boolean" />
+          <Property Name="EightRPC" Type="Boolean" />
+          <Property Name="NineRPC" Type="Boolean" />
+          <Property Name="TenRPC" Type="Boolean" />
+          <Property Name="ElevenRPC" Type="Boolean" />
+          <Property Name="TwelveRPC" Type="Boolean" />
+          <Property Name="FirstCPC" Type="Boolean" />
+          <Property Name="SecondCPC" Type="Boolean" />
+          <Property Name="ThirdCPC" Type="Boolean" />
+          <Property Name="FourthCPC" Type="Boolean" />
+          <Property Name="FifthCPC" Type="Boolean" />
+          <Property Name="SixCPC" Type="Boolean" />
+          <Property Name="SevenCPC" Type="Boolean" />
+          <Property Name="EightCPC" Type="Boolean" />
+          <Property Name="NineCPC" Type="Boolean" />
+          <Property Name="TenCPC" Type="Boolean" />
+          <Property Name="ElevenCPC" Type="Boolean" />
+          <Property Name="TwelveCPC" Type="Boolean" />
+          <Property Name="ThirteenCPC" Type="Boolean" />
+          <Property Name="FourteenCPC" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -862,6 +948,49 @@
           <EntitySetMapping Name="PropertyMasters">
             <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.PropertyMaster">
               <MappingFragment StoreEntitySet="PropertyMaster">
+                <ScalarProperty Name="FourteenCPC" ColumnName="FourteenCPC" />
+                <ScalarProperty Name="ThirteenCPC" ColumnName="ThirteenCPC" />
+                <ScalarProperty Name="TwelveCPC" ColumnName="TwelveCPC" />
+                <ScalarProperty Name="ElevenCPC" ColumnName="ElevenCPC" />
+                <ScalarProperty Name="TenCPC" ColumnName="TenCPC" />
+                <ScalarProperty Name="NineCPC" ColumnName="NineCPC" />
+                <ScalarProperty Name="EightCPC" ColumnName="EightCPC" />
+                <ScalarProperty Name="SevenCPC" ColumnName="SevenCPC" />
+                <ScalarProperty Name="SixCPC" ColumnName="SixCPC" />
+                <ScalarProperty Name="FifthCPC" ColumnName="FifthCPC" />
+                <ScalarProperty Name="FourthCPC" ColumnName="FourthCPC" />
+                <ScalarProperty Name="ThirdCPC" ColumnName="ThirdCPC" />
+                <ScalarProperty Name="SecondCPC" ColumnName="SecondCPC" />
+                <ScalarProperty Name="FirstCPC" ColumnName="FirstCPC" />
+                <ScalarProperty Name="TwelveRPC" ColumnName="TwelveRPC" />
+                <ScalarProperty Name="ElevenRPC" ColumnName="ElevenRPC" />
+                <ScalarProperty Name="TenRPC" ColumnName="TenRPC" />
+                <ScalarProperty Name="NineRPC" ColumnName="NineRPC" />
+                <ScalarProperty Name="EightRPC" ColumnName="EightRPC" />
+                <ScalarProperty Name="SevenRPC" ColumnName="SevenRPC" />
+                <ScalarProperty Name="SixRPC" ColumnName="SixRPC" />
+                <ScalarProperty Name="FifthRPC" ColumnName="FifthRPC" />
+                <ScalarProperty Name="FourthRPC" ColumnName="FourthRPC" />
+                <ScalarProperty Name="ThirdRPC" ColumnName="ThirdRPC" />
+                <ScalarProperty Name="SecondRPC" ColumnName="SecondRPC" />
+                <ScalarProperty Name="FirstRPC" ColumnName="FirstRPC" />
+                <ScalarProperty Name="seventeenPT" ColumnName="seventeenPT" />
+                <ScalarProperty Name="SixteenPT" ColumnName="SixteenPT" />
+                <ScalarProperty Name="FifteenPT" ColumnName="FifteenPT" />
+                <ScalarProperty Name="FourteenPT" ColumnName="FourteenPT" />
+                <ScalarProperty Name="TherteenPT" ColumnName="TherteenPT" />
+                <ScalarProperty Name="TwelvePT" ColumnName="TwelvePT" />
+                <ScalarProperty Name="ElevenPT" ColumnName="ElevenPT" />
+                <ScalarProperty Name="TenPT" ColumnName="TenPT" />
+                <ScalarProperty Name="NinePT" ColumnName="NinePT" />
+                <ScalarProperty Name="EightPT" ColumnName="EightPT" />
+                <ScalarProperty Name="SevenPT" ColumnName="SevenPT" />
+                <ScalarProperty Name="SixPT" ColumnName="SixPT" />
+                <ScalarProperty Name="FifthPT" ColumnName="FifthPT" />
+                <ScalarProperty Name="FourthPT" ColumnName="FourthPT" />
+                <ScalarProperty Name="ThirdPT" ColumnName="ThirdPT" />
+                <ScalarProperty Name="DVMKG" ColumnName="DVMKG" />
+                <ScalarProperty Name="ZKMKG" ColumnName="ZKMKG" />
                 <ScalarProperty Name="NPermUseNo" ColumnName="NPermUseNo" />
                 <ScalarProperty Name="YPermUseNo" ColumnName="YPermUseNo" />
                 <ScalarProperty Name="NConstPermNo" ColumnName="NConstPermNo" />
