@@ -11,8 +11,9 @@
     }
 
     .pl {
-        margin-left: 10px
+        margin-left: 5px
     }
+    .mr{margin-right:15px}
 </style>
 @*@Styles.Render("~/Content/AddEditCSS")*@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -40,7 +41,7 @@
         @* Building Name Section A *@
         <div class="d-flex flex-row back mb-4">
             <div class="form-group pr-4">
-                <label class="label">प्रभाग  क्रमांक/ Prabhag No.</label>
+                <label class="label">प्रभाग  क्र. /<br /> Prabhag No.</label>
                 @Html.HiddenFor(model => model.PropertyId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.PrabhagNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -51,7 +52,7 @@
             </div>
 
             <div class="form-group pr-4">
-                <label class="label">वार्ड क्र/<br /> Ward No.</label>
+                <label class="label">वार्ड नाव व क्र. /<br /> Ward Name & No.</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.WardName_No, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                 @Html.ValidationMessageFor(model => model.WardName_No, "", new { @class = "text-danger" })
@@ -70,7 +71,7 @@
         <span class="help-block with-errors"></span>
     </div>-->
             <div class="form-group pr-4">
-                <label class="label">निवडणूक वार्ड / Election Ward</label>
+                <label class="label">निवडणूक वार्ड /<br /> Election Ward</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.ElectionWard, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                 @Html.ValidationMessageFor(model => model.ElectionWard, "", new { @class = "text-danger" })
@@ -80,7 +81,7 @@
             </div>
 
             <div class="form-group pr-4">
-                <label class="label">नवीन मालमत्ता क्रमांक / New Property No.</label>
+                <label class="label">नवीन मालमत्ता क्र. /<br /> New Property No.</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.NewPropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                 @Html.ValidationMessageFor(model => model.NewPropertyNo, "", new { @class = "text-danger" })
@@ -89,7 +90,7 @@
                 <span class="help-block with-errors"></span>
             </div>
             <div class="form-group pr-4">
-                <label class="label">मालमत्ता क्रमांक / Property No.</label>
+                <label class="label">मालमत्ता क्र. /<br /> Property No.</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.PropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                 @Html.ValidationMessageFor(model => model.PropertyNo, "", new { @class = "text-danger" })
@@ -100,7 +101,7 @@
 
 
             <div class="form-group pr-4">
-                <label class="label">जुना घर क्रमांक / <br />Old House No.</label>
+                <label class="label">जुना घर क्र. / <br />Old House No.</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.OldHouseNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                 @Html.ValidationMessageFor(model => model.OldHouseNo1, "", new { @class = "text-danger" })
@@ -126,7 +127,7 @@
                 </div>
 
                 <div class="form-group pr-4">
-                    <label class="label">गट नं./ Gat No.</label>
+                    <label class="label">गट नं. / Gat No.</label>
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.TextBoxFor(model => model.GatNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                     @Html.ValidationMessageFor(model => model.GatNo, "", new { @class = "text-danger" })
@@ -135,7 +136,7 @@
                     <span class="help-block with-errors"></span>
                 </div>
                 <div class="form-group pr-4">
-                    <label class="label">शहर सर्वे नं. /City Survey No.</label>
+                    <label class="label">सिटी सर्वे नं. / City Survey No.</label>
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.TextBoxFor(model => model.CitySurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                     @Html.ValidationMessageFor(model => model.CitySurveyNo, "", new { @class = "text-danger" })
@@ -146,7 +147,7 @@
                 @*change*@
                 <div class="form-group pr-4">
                     <label class="label">
-                        वार्षिक भाडे मूल्य / Annual Rateable Value
+                        वार्षिक भाडेमूल्य / Annual Rateable Value
                     </label>
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.TextBoxFor(model => model.AnnualRateableValue, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -197,7 +198,7 @@
                 </div>
                 @*change*@
                 <div class="form-group pr-4">
-                    <label class="label">समास जागा /एकुन व्यतिरिक्त बांधकाम जागा (चो. मी.)/<br /> Margin Space (Sq. M.)</label>
+                    <label class="label">समास जागा / बांधकाम व्यतिरिक्त जागा  (चो. मी.)/<br /> Margin Space (Sq. M.)</label>
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.TextBoxFor(model => model.MarginSpace, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                     @Html.ValidationMessageFor(model => model.MarginSpace, "", new { @class = "text-danger" })
@@ -340,7 +341,7 @@
                 @* Building Name Section C *@
                 <div class="d-flex flex-row back mb-4">
                     <div class="form-group pr-4">
-                        <label class="label">इमारतीचे नाव / Building Name</label>
+                        <label class="label">इमारतीचे नाव /<br /> Building Name</label>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         @Html.TextBoxFor(model => model.BuildingName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         @Html.ValidationMessageFor(model => model.BuildingName, "", new { @class = "text-danger" })
@@ -349,7 +350,7 @@
                         <span class="help-block with-errors"></span>
                     </div>
                     <div class="form-group pr-4">
-                        <label class="label">भूखंड क्र. /<br /> Plot No.</label>
+                        <label class="label">प्लॉट क्र. /<br /> Plot No.</label>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         @Html.TextBoxFor(model => model.PlotNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         @Html.ValidationMessageFor(model => model.PlotNo, "", new { @class = "text-danger" })
@@ -358,7 +359,7 @@
                         <span class="help-block with-errors"></span>
                     </div>
                     <div class="form-group pr-4">
-                        <label class="label">फ्लॅट क्रमांक /<br /> Flat No.</label>
+                        <label class="label">सदनिका  क्र. /<br /> Flat No.</label>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         @Html.TextBoxFor(model => model.FlatNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         @Html.ValidationMessageFor(model => model.FlatNo, "", new { @class = "text-danger" })
@@ -367,7 +368,7 @@
                         <span class="help-block with-errors"></span>
                     </div>
                     <div class="form-group pr-4">
-                        <label class="label">एकूण मजले / No. of Floors</label>
+                        <label class="label">एकूण मजले /<br /> No. of Floors</label>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         @Html.TextBoxFor(model => model.NoofFloors, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         @Html.ValidationMessageFor(model => model.NoofFloors, "", new { @class = "text-danger" })
@@ -376,7 +377,7 @@
                         <span class="help-block with-errors"></span>
                     </div>
                     <div class="form-group pr-4">
-                        <label class="label">एकूण सदिनका/ No. of Flats</label>
+                        <label class="label">एकूण सदनिका  /<br /> No. of Flats</label>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         @Html.TextBoxFor(model => model.NoofFlats, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         @Html.ValidationMessageFor(model => model.NoofFlats, "", new { @class = "text-danger" })
@@ -385,7 +386,7 @@
                         <span class="help-block with-errors"></span>
                     </div>
                     <div class="form-group pr-4">
-                        <label class="label">एकूण गाळे / No. of Shops</label>
+                        <label class="label">एकूण गाळे /<br /> No. of Shops</label>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         @Html.TextBoxFor(model => model.NoofShops, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         @Html.ValidationMessageFor(model => model.NoofShops, "", new { @class = "text-danger" })
@@ -399,7 +400,7 @@
                 <div class="d-flex flex-column back mb-4">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
-                            <label class="label"> मालमत्ता मालकाचे नाव /<br /> Prop. Owner Name</label>
+                            <label class="label"> मालमत्ताधारकाचे नाव /<br /> Prop. Owner Name</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -433,7 +434,7 @@
 
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
-                            <label class="label"> दूरध्वनी क्रमांक. /<br /> Telephone No.</label>
+                            <label class="label"> संपर्क क्र. /<br /> Telephone No.</label>
 
                         </div>
                         <div class="form-group pr-4" style="margin-left: 3.5%;">
@@ -460,8 +461,8 @@
                         </div>
                     </div>
                     <div class="d-flex flex-row">
-                        <div class="form-group pr-4" style="margin-left:3.5%;">
-                            <label class="label"> ई - मेल आयडी. /<br /> Email Id.</label>
+                        <div class="form-group pr-4" style="margin-right:4.5%;">
+                            <label class="label"> ई - मेल पत्ता. /<br /> Email Id.</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -474,7 +475,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group pr-4">
-                            <label class="label">आधार क्रमांक /<br /> Adhaar No.</label>
+                            <label class="label">आधार क्र. /<br /> Adhaar No.</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -525,8 +526,8 @@
                     </div>
 
                     <div class="d-flex flex-row">
-                        <div class="form-group pr-4" style="margin-left: 1.2%;">
-                            <label class="label">मोबाईल क्रमांक /<br /> Mobile No.</label>
+                        <div class="form-group pr-4" style="margin-right:2%;">
+                            <label class="label">भ्रमणध्वनी क्र. /<br /> Mobile No.</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -539,7 +540,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group pr-4">
-                            <label class="label">आधार क्रमांक /<br /> Adhaar No.</label>
+                            <label class="label">आधार क्र. /<br /> Adhaar No.</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -557,8 +558,8 @@
                 @* Occupier Name Section F *@
                 <div class="d-flex flex-column back mb-4">
                     <div class="d-flex flex-row">
-                        <div class="form-group pr-4" style="margin-left: 1.2%;">
-                            <label class="label"> भाडेकरी नाव /<br /> Tenant Name</label>
+                        <div class="form-group pr-4">
+                            <label class="label"> भाडेकरूची नाव /<br /> Tenant Name</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -585,8 +586,8 @@
                     </div>
 
                     <div class="d-flex flex-row">
-                        <div class="form-group pr-4">
-                            <label class="label">मोबाईल क्रमांक /<br /> Mobile No.</label>
+                        <div class="form-group pr-4"  style="margin-right:1.2%;">
+                            <label class="label" >भ्रमणध्वनी क्र. /<br /> Mobile No.</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -599,7 +600,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group pr-4">
-                            <label class="label">आधार क्रमांक /<br /> Adhaar No.</label>
+                            <label class="label">आधार क्र. /<br /> Adhaar No.</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -674,7 +675,7 @@
                         </div>
 
                         <div class="form-group pr-4">
-                            <label class="label">बांधकाम पूर्णवाचे वर्ष / Const.Completion Year</label>
+                            <label class="label">बांधकाम पूर्णत्वाचे वर्ष / Const.Completion Year</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.CompletionYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.CompletionYear, "", new { @class = "text-danger" })
@@ -692,7 +693,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group pr-4" style="width:32%">
-                            <label class="label">वापराचा (रेसी. / नॉन-रेसी. / मिश्रित) / Usage (Resi. / Non-resi. / Mixed)</label>
+                            <label class="label">वापराचा प्रकार (निवासी/ बिगर निवासी / मिश्र) / Usage (Resi. / Non-resi. / Mixed)</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.Usage, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.Usage, "", new { @class = "text-danger" })
@@ -701,7 +702,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group pr-4">
-                            <label class="label">इमारतीचा प्रकार / Type of Bldg<br />(इमारत/ बंगला/चाळ./रो-हाउस /मोकळी जमीन /झोपडी/ औद्योगिक) <br />(Bldg./ Bunglow/Chawl/O.L/Row House/Slum/Industrial)</label>
+                            <label class="label">इमारतीचा प्रकार / Type of Bldg<br />सोबत जोडलेल्या तत्क्याप्रमाणे - प्रपत्र-१ </label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.TypeofBldg, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.TypeofBldg, "", new { @class = "text-danger" })
@@ -715,38 +716,26 @@
                 <div class="d-flex flex-column back mb-4">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
-                            <label class="label">बांधकाम परवानगी क्र / Const. Perm. No.</label>
+                            <label class="label">बांधकाम परवानगी क्र. / Const. Perm. No.</label>
                             <div>
-                                <label> आहे  &nbsp;</label>
                                 @Html.CheckBox("YConstPermNo", new { @class = "chkBx15" })
-                                <label class="pl">&nbsp;नाही&nbsp; </label>
+                                <label class="pl mr">आहे</label>
                                 @Html.CheckBox("NConstPermNo", new { @class = "chkBx15" })
-
-
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <label class="pl">नाही </label>
                                 @Html.TextBoxFor(model => model.ConstPermNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                @Html.ValidationMessageFor(model => model.ConstPermNo, "", new { @class = "text-danger" })
-                                <span class="text-danger" id="err_name"></span>
-                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                                <span class="help-block with-errors"></span>
                             </div>
                         </div>
 
                         <div class="form-group pr-4">
-                            <label class="label">भोगवटा दाखला  क्र / Perm. Use. No.</label>
+                            <label class="label">भोगवटा दाखला  क्र. / O. C. No.</label>
                             <div>
-                                <label>आहे &nbsp;</label>
                                 @Html.CheckBox("YPermUseNo", new { @class = "chkBx16" })
-                                <label class="pl">&nbsp;नाही&nbsp; </label>
+                                <label class="pl mr">आहे</label>
                                 @Html.CheckBox("NPermUseNo", new { @class = "chkBx16" })
+                                <label class="pl">नाही</label>
 
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.TextBoxFor(model => model.PermUseNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                @Html.ValidationMessageFor(model => model.PermUseNo, "", new { @class = "text-danger" })
-                                <span class="text-danger" id="err_empidd"></span>
-                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                                <span class="help-block with-errors"></span>
                             </div>
+                          @Html.TextBoxFor(model => model.PermUseNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </div>
 
 
@@ -754,38 +743,41 @@
                     <div class="d-flex flex-row">
                         <div class="d-flex flex-row  mb-4">
                             <div class="form-group pr-4 back mr-2">
-                                <label class="label">जलपुनभरण व्यावस्था /Rain water harvest</label>
+                                <label class="label">जलपुनर्भरण व्यवस्था /<br />Rain water harvest</label>
 
                                 <div>
-                                    <label>Yes &nbsp;</label>
                                     @Html.CheckBox("Rainwaterharvest", new { @class = "chkBx" })
-                                    <label class="pl">&nbsp;No&nbsp; </label>
+                                    <label class="pl mr">आहे/Yes</label><br />
                                     @Html.CheckBox("NonRainwaterharvest", new { @class = "chkBx" })
+                                <label class="pl">नाही/No</label>
+
                                 </div>
                             </div>
 
 
                             <div class="form-group pr-4 back  mr-2">
-                                <label class="label">सौर ऊर्जा प्रकल्प /Solar Water heater</label>
+                                <label class="label">सौर ऊर्जा प्रकल्प /<br />Solar Water heater</label>
 
                                 <div>
-                                    <label>Yes &nbsp;</label>
                                     @Html.CheckBox("SolarWaterheater", new { @class = "chkBx1" })
-                                    <label class="pl">&nbsp;No &nbsp;</label>
+                                    <label class="pl mr">आहे/Yes</label><br />
                                     @Html.CheckBox("NonSolarWaterheater", new { @class = "chkBx1" })
+                                    <label class="pl">नाही/No</label>
+
                                 </div>
                             </div>
 
                         </div>
                         <div class="d-flex flex-row  mb-4">
                             <div class="form-group pr-4 back  mr-2">
-                                <label class="label">खतनिर्माती प्रकल्प /Composting Project </label>
+                                <label class="label">खतनिर्माती प्रकल्प /<br />Composting Project </label>
 
                                 <div>
-                                    <label>Yes &nbsp;</label>
                                     @Html.CheckBox("VermicultureProject", new { @class = "chkBx14" })
-                                    <label class="pl">&nbsp;No &nbsp;</label>
+                                    <label class="pl mr">आहे/Yes</label><br />
                                     @Html.CheckBox("NonVermicultureProject", new { @class = "chkBx14" })
+                                    <label class="pl">नाही/No</label>
+
                                 </div>
                             </div>
 
@@ -794,10 +786,11 @@
                                 <label class="label">ओला सुका कचरा वर्गीकरण करता काय?</label>
 
                                 <div>
-                                    <label>Yes &nbsp;</label>
                                     @Html.CheckBox("GarbageType", new { @class = "chkBx12" })
-                                    <label class="pl">&nbsp;No &nbsp;</label>
+                                    <label>&nbsp;होय  &nbsp;</label>&nbsp;&nbsp;
                                     @Html.CheckBox("NOGarbageType", new { @class = "chkBx12" })
+                                <label class="pl">नाही</label>
+
                                 </div>
                             </div>
 
@@ -814,21 +807,24 @@
                                 <label class="label">विहीर/Well</label>
 
                                 <div>
+                                    @Html.CheckBox("Personalwell", new { @class = "chkBx4" })
                                     <label>
                                         &nbsp; वैयक्तिक&nbsp;
                                     </label>
-                                    @Html.CheckBox("Personalwell", new { @class = "chkBx4" })
+
                                 </div> <div style="width:max-content">
+                                    @Html.CheckBox("Publicwell", new { @class = "chkBx4" })
                                     <label>
                                         &nbsp; सार्वजनिक&nbsp;
                                     </label>
-                                    @Html.CheckBox("Publicwell", new { @class = "chkBx4" })
+
                                 </div>
                                 <div>
+                                    @Html.CheckBox("Borewell", new { @class = "chkBx4" })
                                     <label>
                                         &nbsp; बोअरवेल &nbsp;
                                     </label>
-                                    @Html.CheckBox("Borewell", new { @class = "chkBx4" })
+
                                 </div>
                             </div>
                             @*Change*@
@@ -857,16 +853,19 @@
                                 <label class="label">शौचालयाचा प्रकार / Type of Toilet</label>
 
                                 <div>
-                                    <label> स्वातंत्र्य / self &nbsp;</label>
                                     @Html.CheckBox("LocationofToiletResidential", new { @class = "chkBx5" })
+                                    <label> स्वतंत्र्य / self &nbsp;</label>
+
                                 </div>
                                 <div>
-                                    <label>एकत्र / Common &nbsp;</label>
                                     @Html.CheckBox("LocationofToiletSpecial", new { @class = "chkBx5" })
+                                    <label>संयुक्त / Common &nbsp;</label>
+
                                 </div>
                                 <div>
-                                    <label>व्यवस्था नाही / No Arrangement &nbsp;</label>
-                                    @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx5" })
+                                 
+                                    <label>   @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx5" }) व्यवस्था नाही /<br /> No Arrangement &nbsp;</label>
+
                                 </div>
                             </div>
 
@@ -875,22 +874,26 @@
                         <div class="form-group pr-4 back ml-3">
                             <label class="label">नळ जोडणी /Water Connection</label>
                             <div>
-                                <label>आहे/Yes &nbsp;</label>
                                 @Html.CheckBox("WaterConnection", new { @class = "chkBx2" })
-                                <label class="pl">&nbsp;नाही/No &nbsp;</label>
+                                <label class="pl mr">आहे/Yes</label><br />
                                 @Html.CheckBox("NoWaterConnection", new { @class = "chkBx2" })
+                                <label class="pl">नाही/No</label>
+
                             </div>
                             <div>
-                                <label>निवासी / Residential  &nbsp;</label>
                                 @Html.CheckBox("WaterConnectionResidential", new { @class = "chkBx3" })
+                                <label>निवासी / Residential</label>
+
                             </div>
                             <div>
-                                <label>विशेष वर्ग /Special Category  &nbsp;</label>
-                                @Html.CheckBox("WaterConnectionSpecial", new { @class = "chkBx3" })
+                              
+                                <label>  @Html.CheckBox("WaterConnectionSpecial", new { @class = "chkBx3" }) विशेष वर्ग / Special Category </label>
+
                             </div>
                             <div>
-                                <label>औद्योगिक /Industrial  &nbsp;</label>
                                 @Html.CheckBox("WaterConnectionIndustrial", new { @class = "chkBx3" })
+                                <label>औद्योगिक /Industrial  &nbsp;</label>
+
                             </div>
                         </div>
                     </div>
@@ -900,15 +903,16 @@
 
 
                             <div>
-                                <label>घर बंद / Door Lock &nbsp;</label>
                                 @Html.CheckBox("DoorLockResidential", new { @class = "chkBx8" })
-                            </div>
-                            <div>
-                                <label>कायम घर बंद / Permanent<br /> Door Lock &nbsp; @Html.CheckBox("DoorLockSpecial", new { @class = "chkBx8" })</label>
+                                <label>घर बंद / Door Lock &nbsp;</label>
 
                             </div>
                             <div>
-                                <label>बाह्य मोजमाप /Outer<br />  Measurement&nbsp; @Html.CheckBox("DoorLockIndustrial", new { @class = "chkBx8" })</label>
+                                <label> @Html.CheckBox("DoorLockSpecial", new { @class = "chkBx8" })&nbsp; कायम घर बंद / Permanent<br /> Door Lock </label>
+
+                            </div>
+                            <div>
+                                <label>@Html.CheckBox("DoorLockIndustrial", new { @class = "chkBx8" })&nbsp; बाहेरून मोजमाप /Outer<br />  Measurement </label>
 
                             </div>
                         </div>
@@ -920,18 +924,21 @@
                                 </label>
 
                                 <div>
-                                    <label>फक्त सेप्टिक  टैंक &nbsp;</label>
                                     @Html.CheckBox("FST", new { @class = "chkBx6" })
+                                    <label>फक्त सेप्टिक टैंक &nbsp;</label>
+
                                 </div>
                                 <div>
-                                    <label>सेप्टिक  टैंक + शोषखड्डा &nbsp;</label>
                                     @Html.CheckBox("STS", new { @class = "chkBx6" })
+                                    <label>सेप्टिक टैंक +<br> शोषखड्डा &nbsp;</label>
+
                                 </div>
                                 <div>
+                                    @Html.CheckBox("Other", new { @class = "chkBx6" })
                                     <label>
                                         इतर&nbsp;
                                     </label>
-                                    @Html.CheckBox("Other", new { @class = "chkBx6" })
+
                                 </div>
                             </div>
 
@@ -940,27 +947,30 @@
                             <div class="form-group pr-4 back  mr-3">
                                 <label class="label">सांडपाणी गटारात सोडता काय ?</label>
                                 <div>
-                                    <label>आहे/Yes &nbsp;</label>
                                     @Html.CheckBox("SGSK", new { @class = "chkBx2" })
-                                    <label class="pl">&nbsp;नाही/No &nbsp;</label>
+                                    <label>होय </label>&nbsp;
                                     @Html.CheckBox("NOSGSK", new { @class = "chkBx2" })
+                                    <label>नाही</label>
+
                                 </div>
                                 <div>
                                     <label>
-                                        भूमिगत गटर / Closed Drain &nbsp;@Html.CheckBox("UnderGroundGutter", new { @class = "chkBx7" })
+                                        @Html.CheckBox("UnderGroundGutter", new { @class = "chkBx7" })  भूमिगत गटर / Closed Drain
                                     </label>
 
                                 </div>
                                 <div>
-                                    <label>उघडी गटर / Open Drain &nbsp;</label>
-                                    @Html.CheckBox("OpenGutter", new { @class = "chkBx7" })
+                                  
+                                    <label>  @Html.CheckBox("OpenGutter", new { @class = "chkBx7" })  उघडी गटर / Open Drain </label>
+
                                 </div>
 
                                 <div>
+                                    @Html.CheckBox("OtherGutter", new { @class = "chkBx7" })
                                     <label>
                                         इतर&nbsp;
                                     </label>
-                                    @Html.CheckBox("OtherGutter", new { @class = "chkBx7" })
+
                                 </div>
                             </div>
 
@@ -973,25 +983,29 @@
                                 <label class="label">इमारती  करिता सांडपाणी शुद्धीकरण प्रकल्प आहे का ?</label>
 
                                 <div>
-                                    <label> नैसर्गिक पद्धत &nbsp;</label>
                                     @Html.CheckBox("NaturalMethod", new { @class = "chkBx9" })
+                                    <label> नैसर्गिक पद्धत &nbsp;</label>
+
                                 </div>
                                 <div>
-                                    <label>
-                                        कृतिम पद्धत&nbsp;&nbsp;
-                                        @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx9" })
-                                    </label>
-                                </div>
+                                    @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx9" })
+                                                                <label>
+                                                                    कृतिम पद्धत&nbsp;&nbsp;
+
+                                                                </label>
+                                                            </div>
                                 <div>
+                                    @Html.CheckBox("OtherMethod", new { @class = "chkBx9" })
                                     <label>
                                         इतर&nbsp;&nbsp;
-                                        @Html.CheckBox("OtherMethod", new { @class = "chkBx9" })
+
                                     </label>
                                 </div>
                                 <div>
+                                    @Html.CheckBox("NoProject", new { @class = "chkBx9" })
                                     <label>
                                         प्रकल्प नाही&nbsp;&nbsp;
-                                        @Html.CheckBox("NoProject", new { @class = "chkBx9" })
+
                                     </label>
                                 </div>
                             </div>
@@ -1038,15 +1052,15 @@
 
                 <table style="width:100%" class="back mb-4">
                     <tr>
-                        <th>मजला क्र/Floor No.</th>
+                        <th>मजला क्र./Floor No.</th>
                         <th>मालकी (मालमत्ता धारक/भाडेकरू/लीज) /<br />Occupancy Status(Owner / Tenant/ Lease)</th>
                         <th>बांधकामाचा प्रकार/Const.Type<br />(A, B, C,D, E,OP))</th>
                         <th>बांधकाम वर्ष/Date of Construction</th>
                         <th>वापराचा प्रकार (निवासी/ बिगर निवासी)/Usage Type (Resi. / Non-Resi.)</th>
-                        <th>वापराचा प्रकारचे वर्गीकरण/Usage Type Class</th>
-                        <th>अिधकृत(आहे/नाही)Legal(Y/N)</th>
-                        <th>चटई क्षेत्रफ़ळ (चौ.मी.)/Carpet Area(In Sq. M.)</th>
-                        <th>बांधीव क्षेत्रफ़ळ (चौ.मी.)/Buildup Area(In Sq. M.)</th>
+                        <th>वापराच्या   प्रकारचे वर्गीकरण/Usage Type Class</th>
+                        <th>अधिकुत (आहे/नाही)Legal(Y/N)</th>
+                        <th>इमारत बांधकाम क्षेत्रफ़ळ (चौ.मी.)/Buildup Area(In Sq. M.)</th>
+                        <th>मोकळया जागेचे क्षेत्रफ़ळ (चौ.मी.)/Open Space Area(In Sq. M.)</th>
 
                     </tr>
                     <tr>
@@ -1460,7 +1474,7 @@
 
 
                                 <th> <label class="label">जुना वापर प्रकार (निवाशी / बिगर निवाशी / मिश्र ) / <br />Old Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
-                                <th> <label class="label">जुने बांधकामाचा प्रकार / <br />Old Construction Type</label></th>
+                                <th> <label class="label">जुना बांधकामाचा प्रकार / <br />Old Construction Type</label></th>
                                 <th rowspan="3">जुने चटई क्षेत्रफळ / Old Carpet Area (sq.m.)</th>
                                 <th>निवाशी </th>
                                 <th>बिगर निवाशी </th>
@@ -1481,7 +1495,7 @@
                             <tr class="text-center">
 
 
-                                <th> <label class="label">नवीन वापर प्रकार (निवाशी / बिगर निवाशी / मिश्र ) / <br />New Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
+                                <th> <label class="label">नवीन वापर प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />New Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
                                 <th> <label class="label">नवीन बांधकामाचा प्रकार / <br />New Construction Type</label></th>
                                 <th rowspan="3"> नवीन चटई क्षेत्रफळ / New Carpet Area (sq.m.)</th>
                                 <th>निवाशी </th>
@@ -1505,7 +1519,7 @@
                             <tr class="text-center">
 
 
-                                <th> <label class="label">वाढीव वापर प्रकार (निवाशी / बिगर निवाशी / मिश्र ) / <br />Extend Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
+                                <th> <label class="label">वाढीव वापर प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />Extend Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
                                 <th> <label class="label">वाढीव बांधकामाचा प्रकार / <br />Extend Construction Type</label></th>
                                 <th rowspan="3">वाढीव चटई क्षेत्रफळ / Extend Carpet Area (sq.m.) </th>
                                 <th>निवाशी </th>
@@ -1566,7 +1580,7 @@
                             </td>
                             <td>@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                             <td colspan="2">
-                                इमारतीच्या जागेचे मूल्य व घसारा ववचारात घेता आजचे
+                                इमारतीच्या जागेचे मूल्य व घसारा विचारात घेता आजचे
                                 बाजारमूल्य
                             </td>
                             <td colspan="2">@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1720,7 +1734,7 @@
 
                                 <label class="label">
                                     @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx19" })&nbsp;
-                                    3. लोखंडी पत्रा, ऍसबेसटॉस पत्रा , फायबर, लाकूड इत्यादींचा वापर करून &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;उभारलेला लहान मोठे शेडस, टपऱ्या इ.
+                                    3. लोखंडी पत्रा, असबेसटॉस पत्रा , फायबर, लाकूड इत्यादींचा वापर करून &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;उभारलेला लहान मोठे शेडस, टपऱ्या इ.
                                 </label>
                             </div>
                             <div>
@@ -1749,7 +1763,7 @@
                             <div>
                                 @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx24" })&nbsp;
 
-                                <label class="label">8. आर. सी. सी. पद्धतीचे विना उद वाहक बहुमजली इमारती  </label>
+                                <label class="label">8. आर. सी. सी. पद्धतीचे विना उड् वाहक बहुमजली इमारती  </label>
                             </div>
                             <div>
                                 @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx25" })&nbsp;
@@ -1778,7 +1792,7 @@
 
                                 <label class="label">
                                     @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx28" })&nbsp;
-                                    12. कारखाने आणि उद्योगधंदे , व्यवसाय, बहुउद्देशीय सभागृह इत्यादी कारणासाठी &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;उभारण्यात येणारी लोखंडी एंगल्स, पत्रा किंवा ऍसबेसटॉस शीत यांचा वापर करून &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;बांधण्यात आलेली इमारती.
+                                    12. कारखाने आणि उद्योगधंदे , व्यवसाय, बहुउद्देशीय सभागृह इत्यादी कारणासाठी &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;उभारण्यात येणारी लोखंडी एंगल्स, पत्रा किंवा असबेसटॉस शीत यांचा वापर करून &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;बांधण्यात आलेली इमारती.
                                 </label>
                             </div>
                             <div>
@@ -1794,12 +1808,12 @@
                             <div>
                                 @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx31" })&nbsp;
 
-                                <label class="label">15. पोटरी फॉर्म शेड, जनावरांसाठी उभारण्यात येणारे गोठे इ. </label>
+                                <label class="label">15. पोल्ट्री फॉर्म शेड, जनावरांसाठी उभारण्यात येणारे गोठे इ. </label>
                             </div>
                             <div>
                                 @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx32" })&nbsp;
 
-                                <label class="label">16. नर्सरी शेडश, ग्रीन हाऊसेस, पौली हाऊसेस </label>
+                                <label class="label">16. नर्सरी शेड्स, ग्रीन हाऊसेस, पौली हाऊसेस </label>
                             </div>
                             <div>
 
@@ -1871,13 +1885,14 @@
                             <div>
                                 @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx42" })&nbsp;
 
-                                <label class="label">बंदिस्त गेराज / Attached Garage</label>
+                                <label class="label">बंदिस्त गॅरेज  / Attached Garage</label>
                             </div>
 
                             <div>
 
-
-                                <label class="label" style="font-weight:600">सोसायटी ऑफिस  / Society Office</label>
+                                @*cHANGE*@
+                                @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx42" })&nbsp;
+                                <label class="label">सोसायटी ऑफिस  / Society Office</label>
                             </div>
                             <div>
                                 @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx43" })&nbsp;
@@ -1945,7 +1960,7 @@
 
                                 <label class="label">
                                     @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx53" })&nbsp;
-                                    लोद्वगिंग / बोर्डिंग Lodging / Boarding
+                                    लॉजिंग / बोर्डिंग Lodging / Boarding
                                 </label>
                             </div>
                             <div>
@@ -1992,7 +2007,7 @@
                                 @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx59" })&nbsp;
                                 <label class="label">
 
-                                    हॉस्पिटल /Hospital दवाखाना / Clinic
+                                    हॉस्पिटल /Hospital, दवाखाना / Clinic
                                 </label>
 
                             </div>
@@ -2004,7 +2019,7 @@
                 <div class="d-flex flex-column back mb-4">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
-                            <label class="label">प्रभाग  क्रमांक/ <br />  Prabhag No.</label>
+                            <label class="label">प्रभाग  क्र./ <br />  Prabhag No.</label>
                             @Html.HiddenFor(model => model.PropertyId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.PrabhagNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -2014,7 +2029,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group pr-4">
-                            <label class="label">वार्ड क्र/ नाव<br /> Ward No./Name</label>
+                            <label class="label">वार्ड क्र./ नाव<br /> Ward No./Name</label>
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.WardName_No2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -2035,7 +2050,7 @@
                 </div>*@
 
                         <div class="form-group pr-4">
-                            <label class="label">नवीन मालमत्ता क्रमांक / New Property No.</label>
+                            <label class="label">नवीन मालमत्ता क्र. / New Property No.</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.NewPropertyNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.NewPropertyNo2, "", new { @class = "text-danger" })
@@ -2045,7 +2060,7 @@
                         </div>
 
                         <div class="form-group pr-4">
-                            <label class="label">मालमत्ता क्रमांक / Property No.</label>
+                            <label class="label">मालमत्ता क्र. / Property No.</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.PropertyNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.PropertyNo2, "", new { @class = "text-danger" })
@@ -2054,7 +2069,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group pr-4">
-                            <label class="label">जुना घर क्रमांक / <br />Old House No.</label>
+                            <label class="label">जुना घर क्र. / <br />Old House No.</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.OldHouseNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.OldHouseNo2, "", new { @class = "text-danger" })
