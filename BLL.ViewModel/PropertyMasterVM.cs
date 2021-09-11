@@ -373,6 +373,8 @@ namespace BLL.ViewModel
         public Nullable<bool> TenRPC { get; set; }
         public Nullable<bool> ElevenRPC { get; set; }
         public Nullable<bool> TwelveRPC { get; set; }
+
+        public Nullable<bool> ThirteenRPC { get; set; }
         public Nullable<bool> FirstCPC { get; set; }
         public Nullable<bool> SecondCPC { get; set; }
         public Nullable<bool> ThirdCPC { get; set; }

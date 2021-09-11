@@ -459,6 +459,7 @@ namespace BLL.Repository.Repository
                         obj.TenRPC = _Property.TenRPC;
                         obj.ElevenRPC = _Property.ElevenRPC;
                         obj.TwelveRPC = _Property.TwelveRPC;
+                        obj.ThirteenRPC = _Property.ThirteenRPC;
                         obj.FirstCPC = _Property.FirstCPC;
                         obj.SecondCPC = _Property.SecondCPC;
                         obj.ThirdCPC = _Property.ThirdCPC;
@@ -853,6 +854,7 @@ namespace BLL.Repository.Repository
                         Master.TenRPC = _Property.TenRPC;
                         Master.ElevenRPC = _Property.ElevenRPC;
                         Master.TwelveRPC = _Property.TwelveRPC;
+                        Master.ThirteenRPC = _Property.ThirteenRPC;
                         Master.FirstCPC = _Property.FirstCPC;
                         Master.SecondCPC = _Property.SecondCPC;
                         Master.ThirdCPC = _Property.ThirdCPC;
@@ -1301,6 +1303,7 @@ namespace BLL.Repository.Repository
                     Master.TenRPC = _Property.TenRPC;
                     Master.ElevenRPC = _Property.ElevenRPC;
                     Master.TwelveRPC = _Property.TwelveRPC;
+                    Master.ThirteenRPC = _Property.ThirteenRPC;
                     Master.FirstCPC = _Property.FirstCPC;
                     Master.SecondCPC = _Property.SecondCPC;
                     Master.ThirdCPC = _Property.ThirdCPC;
