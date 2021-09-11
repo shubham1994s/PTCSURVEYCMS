@@ -1,6 +1,9 @@
 ﻿@model BLL.ViewModel.PropertyMasterVM
-@{ ViewBag.Title = "Add Survey Form";
-    Layout = ""; }
+
+@{
+    ViewBag.Title = "Add Survey Form";
+    Layout = "";
+}
 <title>Add Survey Forms</title>
 <link rel="shortcut icon" href="~/Content/Images/vengurla_logo_header.png" />
 <style>
@@ -62,13 +65,13 @@
             <!--<div class="form-group pr-4">-->
             @*change*@
             <!--<label class="label">झोन क्रमांक / &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp Zone No.</label>
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.TextBoxFor(model => model.ZoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-        @Html.ValidationMessageFor(model => model.ZoneNo, "", new { @class = "text-danger" })
-        <span class="text-danger" id="err_empidd"></span>
-        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-        <span class="help-block with-errors"></span>
-    </div>-->
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.ZoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                @Html.ValidationMessageFor(model => model.ZoneNo, "", new { @class = "text-danger" })
+                <span class="text-danger" id="err_empidd"></span>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <span class="help-block with-errors"></span>
+            </div>-->
             <div class="form-group pr-4">
                 <label class="label">निवडणूक वार्ड / Election Ward</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -237,106 +240,106 @@
             <div class="form-group pr-4">
                 @*change*@
                 <!--<label class="label">घर क्र./ सदनिका क्र./ गाळा क्र.<br /> House No./ Flat No./ Shop No.</label>
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.TextBoxFor(model => model.HFSNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-        @Html.ValidationMessageFor(model => model.HFSNo, "", new { @class = "text-danger" })
-        <span class="text-danger" id="err_empidd"></span>
-        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-        <span class="help-block with-errors"></span>
-    </div>
-    <div class="form-group pr-4">-->
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.TextBoxFor(model => model.HFSNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                    @Html.ValidationMessageFor(model => model.HFSNo, "", new { @class = "text-danger" })
+                    <span class="text-danger" id="err_empidd"></span>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                    <span class="help-block with-errors"></span>
+                </div>
+                <div class="form-group pr-4">-->
                 @*change*@
                 <!--<label class="label">कायदेशीर (होय /नाही) / Legal (Y/N)</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.Legal, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.Legal, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>
-    </div>-->
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.Legal, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.Legal, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                </div>-->
                 @* Survey No. Name Section B *@
                 <!--<div class="d-flex flex-column back mb-4">
-    <div class="d-flex flex-row">
-        <div class="form-group pr-4">
-            <label class="label">सर्वे नं. / Survey No.</label>
+                <div class="d-flex flex-row">
+                    <div class="form-group pr-4">
+                        <label class="label">सर्वे नं. / Survey No.</label>
 
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.SurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.SurveyNo, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_name"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.SurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.SurveyNo, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_name"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
 
-        <div class="form-group pr-4">
-            <label class="label">हिस्सा नं./ Hissa No.</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.HissaNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.HissaNo, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>
-        <div class="form-group pr-4">
-            <label class="label">शहर सर्वे नं. /City Survey No.</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.CitySurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.CitySurveyNo, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>
-        <div class="form-group pr-4">
-            <label class="label">जुना वापर प्रकार / Old Usage Type</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.OldUsageType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.OldUsageType, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>
+                    <div class="form-group pr-4">
+                        <label class="label">हिस्सा नं./ Hissa No.</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.HissaNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.HissaNo, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">शहर सर्वे नं. /City Survey No.</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.CitySurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.CitySurveyNo, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">जुना वापर प्रकार / Old Usage Type</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.OldUsageType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.OldUsageType, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
 
-    </div>
-    <div class="d-flex flex-row">
-        <div class="form-group pr-4">
-            <label class="label">जुने  करयोग्य मूल्य / Old Rateable Value</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.OldRateableValue, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.OldRateableValue, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>
-        <div class="form-group pr-4">
-            <label class="label">जुने एकूण कर / Old Total Tax</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.OldTotalTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.OldTotalTax, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>
-        <div class="form-group pr-4">
-            <label class="label">प्रथम  आकारणी वर्ष /First Assessment Year</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.FirstAssessmentYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.FirstAssessmentYear, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>-->
+                </div>
+                <div class="d-flex flex-row">
+                    <div class="form-group pr-4">
+                        <label class="label">जुने  करयोग्य मूल्य / Old Rateable Value</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.OldRateableValue, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.OldRateableValue, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">जुने एकूण कर / Old Total Tax</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.OldTotalTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.OldTotalTax, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">प्रथम  आकारणी वर्ष /First Assessment Year</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.FirstAssessmentYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.FirstAssessmentYear, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>-->
                 @*<div class="form-group pr-4">
-            <label class="label">समास जागा / Margin Space (Sq. M.)</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.MarginSpace, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.MarginSpace, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>*@
+                        <label class="label">समास जागा / Margin Space (Sq. M.)</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.MarginSpace, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.MarginSpace, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>*@
                 <!--</div>
-    </div>-->
+                </div>-->
                 @* Building Name Section C *@
                 <div class="d-flex flex-row back mb-4">
                     <div class="form-group pr-4">
@@ -693,9 +696,19 @@
                         </div>
                         <div class="form-group pr-4" style="width:32%">
                             <label class="label">वापराचा (रेसी. / नॉन-रेसी. / मिश्रित) / Usage (Resi. / Non-resi. / Mixed)</label>
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.Usage, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                            @Html.ValidationMessageFor(model => model.Usage, "", new { @class = "text-danger" })
+                            @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+                            @*@Html.TextBoxFor(model => model.Usage, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })*@
+                            @*@Html.ValidationMessageFor(model => model.Usage, "", new { @class = "text-danger" })*@
+
+
+                            @*@Html.DropDownList(m => m.UsageList  new SelectList(Enum.GetValues(typeof(Usage))), "Select Gender")*@
+
+                            @Html.DropDownList("Usage", new List<SelectListItem>
+                           {
+              new SelectListItem { Text = "Resident", Value = "R" },
+      new SelectListItem { Text = "Non-Resident", Value = "NR"},
+      new SelectListItem { Text = "Mixed", Value = "M"}
+      }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             <span class="text-danger" id="err_empidd"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
@@ -1087,8 +1100,14 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageType1, "", new { @class = "text-danger" })
+
+                                    @Html.DropDownList("UsageType1", new List<SelectListItem>
+                        {
+                new SelectListItem { Text = "Resident", Value = "R" },
+            new SelectListItem { Text = "Non-Resident", Value = "NR"},
+   }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @*@Html.TextBoxFor(model => model.UsageType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageType1, "", new { @class = "text-danger" })*@
                                 </div>
                             </div>
                         </td>
@@ -1162,8 +1181,11 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageType2, "", new { @class = "text-danger" })
+                                    @Html.DropDownList("UsageType2", new List<SelectListItem>
+                      {
+              new SelectListItem { Text = "Resident", Value = "R" },
+          new SelectListItem { Text = "Non-Resident", Value = "NR"},
+ }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                 </div>
                             </div>
                         </td>
@@ -1236,8 +1258,11 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageType3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageType3, "", new { @class = "text-danger" })
+                                    @Html.DropDownList("UsageType3", new List<SelectListItem>
+                      {
+              new SelectListItem { Text = "Resident", Value = "R" },
+          new SelectListItem { Text = "Non-Resident", Value = "NR"},
+ }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                 </div>
                             </div>
                         </td>
@@ -1310,8 +1335,11 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageType4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageType4, "", new { @class = "text-danger" })
+                                    @Html.DropDownList("UsageType4", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Resident", Value = "R" },
+         new SelectListItem { Text = "Non-Resident", Value = "NR"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                 </div>
                             </div>
                         </td>
@@ -1384,8 +1412,11 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageType5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageType5, "", new { @class = "text-danger" })
+                                    @Html.DropDownList("UsageType5", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Resident", Value = "R" },
+         new SelectListItem { Text = "Non-Resident", Value = "NR"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                 </div>
                             </div>
                         </td>
@@ -1530,14 +1561,14 @@
                                 जागेच्या मुल्यासह बांधकाम साठी
                                 आलेला एकूण खर्च
                             </td>
-                            <td>@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                            <td>@Html.TextBoxFor(model => model.TotalPropertyExpense, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                             <td>इमारतीचे चालू करपात्र मूल्य</td>
-                            <td>@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                            <td>@Html.TextBoxFor(model => model.CurrentPropertyTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                             <td>
                                 मालमत्ता कराचा चालू
                                 दर
                             </td>
-                            <td>@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                            <td>@Html.TextBoxFor(model => model.CurrentProperyPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                         </tr>
                         <tr>
@@ -1545,18 +1576,18 @@
                                 मालमत्ता भोवतालच्या मोकळ्या
                                 जागेवरील कराचे दर
                             </td>
-                            <td>@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                            <td>@Html.TextBoxFor(model => model.OpenAroundLandtaxprice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                             <td>
                                 मालमत्ता कराची
                                 रक्कम
                             </td>
-                            <td>@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                            <td>@Html.TextBoxFor(model => model.ProperyTaxPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                             <td>
                                 एकूण करासह मालमत्ता
                                 कराची
                                 रक्कम
                             </td>
-                            <td>@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                            <td>@Html.TextBoxFor(model => model.TotalTaxPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                         </tr>
                         <tr>
@@ -1564,12 +1595,11 @@
                                 मोकळ्या जागेच्या कराची
                                 रक्कम
                             </td>
-                            <td>@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                            <td>@Html.TextBoxFor(model => model.OpenLandtaxprice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                             <td colspan="2">
                                 इमारतीच्या जागेचे मूल्य व घसारा ववचारात घेता आजचे
                                 बाजारमूल्य
                             </td>
-                            <td colspan="2">@Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
 
                         </tr>
@@ -1595,7 +1625,13 @@
                         <td>1</td>
                         <td>@Html.TextBoxFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link1", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
@@ -1604,7 +1640,13 @@
                         <td>2</td>
                         <td>@Html.TextBoxFor(model => model.Name2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link2", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
@@ -1612,7 +1654,13 @@
                         <td>3</td>
                         <td>@Html.TextBoxFor(model => model.Name3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link3", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
@@ -1621,7 +1669,13 @@
                         <td>4</td>
                         <td>@Html.TextBoxFor(model => model.Name4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link4", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
@@ -1630,7 +1684,13 @@
                         <td>5</td>
                         <td>@Html.TextBoxFor(model => model.Name5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link5", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
@@ -1639,7 +1699,13 @@
                         <td>6</td>
                         <td>@Html.TextBoxFor(model => model.Name6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link6", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
@@ -1648,7 +1714,13 @@
                         <td>7</td>
                         <td>@Html.TextBoxFor(model => model.Name7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link7", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
@@ -1657,7 +1729,13 @@
                         <td>8</td>
                         <td>@Html.TextBoxFor(model => model.Name8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link8", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
@@ -1666,7 +1744,13 @@
                         <td>9</td>
                         <td>@Html.TextBoxFor(model => model.Name9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link9", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
@@ -1675,7 +1759,13 @@
                         <td>10</td>
                         <td>@Html.TextBoxFor(model => model.Name10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link10", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
@@ -1684,7 +1774,13 @@
                         <td>11</td>
                         <td>@Html.TextBoxFor(model => model.Name11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link11", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
@@ -1693,7 +1789,13 @@
                         <td>12</td>
                         <td>@Html.TextBoxFor(model => model.Name12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.link12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.DropDownList("link12", new List<SelectListItem>
+                   {
+           new SelectListItem { Text = "Male", Value = "M" },
+       new SelectListItem { Text = "Female", Value = "F"},
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        </td>
                         <td>@Html.TextBoxFor(model => model.ContactNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
@@ -1817,7 +1919,7 @@
                     </div>
                 </div>
                 <div class="d-flex flex-column  mb-4">
-                 
+
                     <div class="d-flex flex-row">
 
                         <div class="col back mr-3">
@@ -1996,7 +2098,7 @@
                                 </label>
 
                             </div>
-                          
+
                         </div>
 
                     </div>
@@ -2025,14 +2127,14 @@
                         </div>
 
                         @*<div class="form-group pr-4">
-                    <label class="label">झोन क्रमांक / <br /> Zone No.</label>
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    @Html.TextBoxFor(model => model.ZoneNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
-                    @Html.ValidationMessageFor(model => model.ZoneNo2, "", new { @class = "text-danger" })
-                    <span class="text-danger" id="err_empidd"></span>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                    <span class="help-block with-errors"></span>
-                </div>*@
+                                <label class="label">झोन क्रमांक / <br /> Zone No.</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.ZoneNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                                @Html.ValidationMessageFor(model => model.ZoneNo2, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>*@
 
                         <div class="form-group pr-4">
                             <label class="label">नवीन मालमत्ता क्रमांक / New Property No.</label>
@@ -2070,17 +2172,17 @@
 
                     </div>
                     @*<div class="p-2 bd-highlight" style="margin:auto;">
-            <label class="label"><b>स्थळदर्शक नकाशा / Property’s Sketch Diagram</b></label>
-            </div>
-            <div class="p-2 bd-highlight" style="margin:auto;">
-                <img src="~/Images/@Model.Sketchdiagram" id="Sketchdiagram" height="500px" width="700px" style="border:solid" />
+                        <label class="label"><b>स्थळदर्शक नकाशा / Property’s Sketch Diagram</b></label>
+                        </div>
+                        <div class="p-2 bd-highlight" style="margin:auto;">
+                            <img src="~/Images/@Model.Sketchdiagram" id="Sketchdiagram" height="500px" width="700px" style="border:solid" />
 
 
 
-            </div>
-            <div class="p-2 bd-highlight" style="margin:auto;">
-                <input type="file" name="file3" id="Sketchdiagramfile" value="@Model.Sketchdiagram" onchange="show(this)">
-            </div>*@
+                        </div>
+                        <div class="p-2 bd-highlight" style="margin:auto;">
+                            <input type="file" name="file3" id="Sketchdiagramfile" value="@Model.Sketchdiagram" onchange="show(this)">
+                        </div>*@
                 </div>
 
                 <table style="width:100%" class="back mb-5">
@@ -2094,9 +2196,9 @@
                         <td>सर्वेक्षण करणारा / Surveyor</td>
                         <td>@Html.TextBoxFor(model => model.SurveyorName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         @*<td>
-                    <img src="~/Images/@Model.SurveyorSignature" id="SurveyorSignature" height="100" width="90" style="border:solid" />
-                    <input type="file" name="file" id="SurveyorSignaturefile" value="@Model.SurveyorSignature" onchange="show(this)">
-                </td>*@
+                                <img src="~/Images/@Model.SurveyorSignature" id="SurveyorSignature" height="100" width="90" style="border:solid" />
+                                <input type="file" name="file" id="SurveyorSignaturefile" value="@Model.SurveyorSignature" onchange="show(this)">
+                            </td>*@
 
                         <td>@Html.EditorFor(model => model.SurveyorDate, new { @class = "form-control" })</td>
                     </tr>
@@ -2104,9 +2206,9 @@
                         <td>डेटा एन्ट्री /Data Entry By</td>
                         <td>@Html.TextBoxFor(model => model.DataEntryName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         @*<td>
-                    <img src="~/Images/@Model.DataEntrySignature" id="DataEntrySignature" height="100" width="90" style="border:solid" />
-                    <input type="file" name="file2" id="DataEntrySignaturefile" value="@Model.DataEntrySignature" onchange="show(this)">
-                </td>*@
+                                <img src="~/Images/@Model.DataEntrySignature" id="DataEntrySignature" height="100" width="90" style="border:solid" />
+                                <input type="file" name="file2" id="DataEntrySignaturefile" value="@Model.DataEntrySignature" onchange="show(this)">
+                            </td>*@
                         <td>@Html.EditorFor(model => model.DataEntryDate, new { @class = "form-control" })</td>
 
                     </tr>
@@ -2116,18 +2218,19 @@
 
 
 
-                @*<div class="d-flex flex-column back mb-4">
-            <div class="p-2 bd-highlight" style="margin:auto;">
-                <label class="label"><b>स्थळदर्शक नकाशा / Property’s Sketch Diagram</b></label>
-            </div>
-            <div class="p-2 bd-highlight" style="margin:auto;">
-                <img src="~/Images/@Model.Sketchdiagram2" id="Sketchdiagram2" height="500px" width="700px" style="border:solid" />
-            </div>
-            <div class="p-2 bd-highlight" style="margin:auto;">
-                <input type="file" name="file4" id="Sketchdiagramfile2" value="@Model.Sketchdiagram2" onchange="show(this)">
-            </div>
+                <div class="d-flex flex-column back mb-4">
+                        <div class="p-2 bd-highlight" style="margin:auto;">
+                            <label class="label"><b>Document Upload</b></label>
+                        </div>
+                        <div class="p-2 bd-highlight" style="margin:auto;" id="docupload">
+                            <embed src="~/Images/@Model.Sketchdiagram2" id="Sketchdiagram2" height="500px" width="700px" style="border:solid" />
+                        </div>
+                        <div class="p-2 bd-highlight" style="margin:auto;">
+                            <input type="file" name="file4" id="Sketchdiagramfile2" placeholder="click"  value="@Model.Sketchdiagram2" onchange="show(this)">
+                          
+                        </div>
 
-        </div>*@
+                    </div>
                 <div class="row justify-content-center my-3">
                     <center><span class="text-danger" id="err_generate"></span></center>
                     <div class="form-group1 ">
@@ -2149,6 +2252,12 @@
 
     $(document).ready(function () {
         debugger;
+       
+        var img = '@ViewBag.nadoc';
+        if (img == 'na')
+        {
+            $('#docupload').hide();
+        }
         var today = new Date();
         var dd = today.getDate();
 
@@ -2463,7 +2572,7 @@
         $("#FileUpload_Preview").html("");
         $("#FileUpload_Preview").show();
         $("#FileUpload_Preview").append("<img />");
-
+       
         if (typeof (FileReader) != "undefined") {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -2475,6 +2584,7 @@
                 $("#FileUpload_Preview img").attr("src", e.target.result);
                 $("#FileUpload_Preview img").attr("width", "200px");
                 $("#FileUpload_Preview img").attr("height", "150px");
+              //  $('#docupload').show();
             }
             reader.readAsDataURL($(this)[0].files[0]);
         }

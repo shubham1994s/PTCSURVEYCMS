@@ -13,7 +13,7 @@ namespace PTCSURVEYCMS.Controllers
     {
         IRepository Repository;
         // GET: PTC
-
+      
         public ActionResult SurveyForm()
         {
          
@@ -21,6 +21,7 @@ namespace PTCSURVEYCMS.Controllers
             {
 
                 ViewBag.Appname = SessionHandler.Current.AppName;
+               
             
             }
             return View();
@@ -64,7 +65,7 @@ namespace PTCSURVEYCMS.Controllers
                 {
                     //int AppId = int.Parse(SessionHandler.Current.AppId.ToString());
                     //var AppDetails = mainRepository.GetApplicationDetails(AppId);
-                    var _Extensions = new[] { ".Jpg", ".png", ".jpg", "jpeg" };
+                    var _Extensions = new[] { ".Jpg", ".png", ".jpg", ".jpeg",".pdf" };
 
                     var fileName = Path.GetFileName(file2.FileName);
                     var ext = Path.GetExtension(file2.FileName);
@@ -119,7 +120,7 @@ namespace PTCSURVEYCMS.Controllers
                 {
                     //int AppId = int.Parse(SessionHandler.Current.AppId.ToString());
                     //var AppDetails = mainRepository.GetApplicationDetails(AppId);
-                    var _Extensions = new[] { ".Jpg", ".png", ".jpg", "jpeg" };
+                    var _Extensions = new[] { ".Jpg", ".png", ".jpg", ".jpeg",".pdf" };
 
                     var fileName = Path.GetFileName(file4.FileName);
                     var ext = Path.GetExtension(file4.FileName);
@@ -217,9 +218,10 @@ namespace PTCSURVEYCMS.Controllers
         [HttpGet]
         public ActionResult SurveyForm(int q = -1)
         {
-            if(q==-1)
+            if (q==-1)
             {
                 ViewBag.btn = "Save";
+                ViewBag.nadoc = "na";
             }
             else
             {
@@ -232,7 +234,12 @@ namespace PTCSURVEYCMS.Controllers
                 ViewBag.Appname_mar = SessionHandler.Current.AppName_mar;
                 Repository = new Repository();
                 var viewModel = new PropertyMasterVM();
+             
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);
+                if(viewModel.Sketchdiagram2==null)
+                {
+                    ViewBag.nadoc = "na";
+                }
                 return View(viewModel);
             }
             else
@@ -262,7 +269,37 @@ namespace PTCSURVEYCMS.Controllers
                 ViewBag.Appname_mar = SessionHandler.Current.AppName_mar;
                 Repository = new Repository();
                 var viewModel = new PropertyMasterVM();
+          
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);
+                if(viewModel.DateofConstruction1== "--Select Date--")
+                {
+                    viewModel.DateofConstruction1 = null;
+                }
+                if (viewModel.DateofConstruction2 == "--Select Date--")
+                {
+                    viewModel.DateofConstruction2 = null;
+                }
+                if (viewModel.DateofConstruction3 == "--Select Date--")
+                {
+                    viewModel.DateofConstruction3 = null;
+                }
+                if (viewModel.DateofConstruction4 == "--Select Date--")
+                {
+                    viewModel.DateofConstruction4 = null;
+                }
+                if (viewModel.DateofConstruction5 == "--Select Date--")
+                {
+                    viewModel.DateofConstruction5 = null;
+                }
+                if (viewModel.SurveyorDate == "--Select Date--")
+                {
+                    viewModel.SurveyorDate = null;
+                }
+                if (viewModel.DataEntryDate == "--Select Date--")
+                {
+                    viewModel.DataEntryDate = null;
+                }
+          
                 return View(viewModel);
             }
             else

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace BLL.ViewModel
 {
@@ -154,6 +157,9 @@ namespace BLL.ViewModel
         public string ConstStartYear { get; set; }
         public string CompletionYear { get; set; }
         public string Age { get; set; }
+
+
+      //  public Usage UsageList { get; set; }
         public string Usage { get; set; }
         public string TypeofBldg { get; set; }
         public string ConstPermNo { get; set; }
@@ -385,4 +391,5 @@ namespace BLL.ViewModel
         public Nullable<bool> FourteenCPC { get; set; }
       
     }
+  
 }
