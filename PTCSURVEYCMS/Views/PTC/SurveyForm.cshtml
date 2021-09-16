@@ -433,7 +433,7 @@
                             <span class="help-block with-errors"></span>
                         </div>  @*Change*@
                         <div class="form-group pr-4">
-                            <label class="label">  मतदान ओळखपत्र /<br /> Election Card </label>
+                            <label class="label">  मतदान ओळखपत्र /<br /> Election Card. </label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -545,7 +545,7 @@
                 <div class="d-flex flex-column back mb-4">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
-                            <label class="label"> भाडेकरूची नाव /<br /> Tenant Name</label>
+                            <label class="label"> भाडेकरूचे नाव /<br /> Tenant Name</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -693,7 +693,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group pr-4">
-                            <label class="label">इमारतीचा प्रकार / Type of Bldg<br />सोबत जोडलेल्या तत्क्याप्रमाणे - प्रपत्र-१ </label>
+                            <label class="label">इमारतीचा प्रकार / Type of Bldg<br />(सोबत जोडलेल्या तत्क्याप्रमाणे - प्रपत्र-१) </label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.TypeofBldg, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.TypeofBldg, "", new { @class = "text-danger" })
@@ -747,7 +747,7 @@
 
 
                             <div class="form-group pr-4 back  mr-2">
-                                <label class="label">सौर ऊर्जा प्रकल्प /<br />Solar Water heater</label>
+                                <label class="label">सौर ऊर्जा प्रकल्प /<br />Solar Energy Project</label>
 
                                 <div>
                                     @Html.CheckBox("SolarWaterheater", new { @class = "chkBx1" })
@@ -878,7 +878,7 @@
                             </div>
                             <div>
                               
-                                <label>  @Html.CheckBox("WaterConnectionSpecial", new { @class = "chkBx3" }) विशेष वर्ग / Special Category </label>
+                                <label>  @Html.CheckBox("WaterConnectionSpecial", new { @class = "chkBx3" }) विशेष वर्ग / Sp. Category </label>
 
                             </div>
                             <div>
@@ -980,10 +980,10 @@
                                 </div>
                                 <div>
                                     @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx9" })
-                                                                <label>
-                                                                    कृतिम पद्धत&nbsp;&nbsp;
+                                    <label>
+                                        कृत्रिम पद्धत&nbsp;&nbsp;
 
-                                                                </label>
+                                    </label>
                                                             </div>
                                 <div>
                                     @Html.CheckBox("OtherMethod", new { @class = "chkBx9" })
@@ -1005,7 +1005,7 @@
                         <div class="d-flex flex-row  mb-4 ml-3">
                             <table style="width:100%;border:1px solid black">
                                 <tr>
-                                    <th colspan="5">मालमत्ता सध्यास्थिती</th>
+                                    <th colspan="5">मालमत्तेची सद्यस्तिथी</th>
                                 </tr>
 
                                 <tr>
@@ -1050,7 +1050,7 @@
                         <th>वापराचा प्रकार (निवासी/ बिगर निवासी)/Usage Type (Resi. / Non-Resi.)</th>
                         <th>वापराच्या   प्रकारचे वर्गीकरण/Usage Type Class</th>
                         <th>अधिकुत (आहे/नाही)Legal(Y/N)</th>
-                        <th>इमारत बांधकाम क्षेत्रफ़ळ (चौ.मी.)/Buildup Area(In Sq. M.)</th>
+                        <th>इमारत बांधकाम क्षेत्रफ़ळ (चौ.मी.)/Builtup Area(In Sq. M.)</th>
                         <th>मोकळया जागेचे क्षेत्रफ़ळ (चौ.मी.)/Open Space Area(In Sq. M.)</th>
 
                     </tr>
@@ -1477,7 +1477,9 @@
 
 
                 <div class="d-flex flex-column back mb-4">
+                    <h4 class="text-center">मालमत्ता सर्वेक्षण नुसार तुलनात्मक तक्ता</h4>
                     <div class="d-flex flex-row">
+
                         <table style="width:100%">
                             <tr class="text-center">
 
@@ -1613,7 +1615,7 @@
                         </td>
 
                     </tr>
-                    <tr>
+                    <tr class="text-center">
                         <td>1</td>
                         <td>@Html.TextBoxFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1628,7 +1630,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                     </tr>
-                    <tr>
+                    <tr class="text-center">
                         <td>2</td>
                         <td>@Html.TextBoxFor(model => model.Name2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1642,7 +1644,7 @@
                         <td>@Html.TextBoxFor(model => model.ContactNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
-                    <tr>
+                    <tr class="text-center">
                         <td>3</td>
                         <td>@Html.TextBoxFor(model => model.Name3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1657,7 +1659,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                     </tr>
-                    <tr>
+                    <tr class="text-center">
                         <td>4</td>
                         <td>@Html.TextBoxFor(model => model.Name4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1672,7 +1674,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                     </tr>
-                    <tr>
+                    <tr class="text-center">
                         <td>5</td>
                         <td>@Html.TextBoxFor(model => model.Name5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1687,7 +1689,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                     </tr>
-                    <tr>
+                    <tr class="text-center">
                         <td>6</td>
                         <td>@Html.TextBoxFor(model => model.Name6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1702,7 +1704,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
 
-                    <tr>
+                    <tr class="text-center">
                         <td>7</td>
                         <td>@Html.TextBoxFor(model => model.Name7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1717,7 +1719,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
 
-                    <tr>
+                    <tr class="text-center">
                         <td>8</td>
                         <td>@Html.TextBoxFor(model => model.Name8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1732,7 +1734,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
 
-                    <tr>
+                    <tr class="text-center">
                         <td>9</td>
                         <td>@Html.TextBoxFor(model => model.Name9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1747,7 +1749,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
 
-                    <tr>
+                    <tr class="text-center">
                         <td>10</td>
                         <td>@Html.TextBoxFor(model => model.Name10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1762,7 +1764,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
 
-                    <tr>
+                    <tr class="text-center">
                         <td>11</td>
                         <td>@Html.TextBoxFor(model => model.Name11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1777,7 +1779,7 @@
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
 
-                    <tr>
+                    <tr class="text-center">
                         <td>12</td>
                         <td>@Html.TextBoxFor(model => model.Name12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         <td>@Html.TextBoxFor(model => model.Age12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -2071,7 +2073,7 @@
                                 @Html.CheckBox("TwelveCPC", new { @class = "chkBx57" })&nbsp;
                                 <label class="label">
 
-                                    रेस्टॉरंट  / ReStaurant
+                                    रेस्टॉरंट  / Restaurant
                                 </label>
 
                             </div>
@@ -2120,7 +2122,7 @@
                         </div>
 
                         <div class="form-group pr-4">
-                            <label class="label">नवीन मालमत्ता क्र. / New Property No.</label>
+                            <label class="label">नवीन मालमत्ता क्र. / <br /> New Property No.</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.NewPropertyNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.NewPropertyNo2, "", new { @class = "text-danger" })
@@ -2130,7 +2132,7 @@
                         </div>
 
                         <div class="form-group pr-4">
-                            <label class="label">मालमत्ता क्र. / Property No.</label>
+                            <label class="label">मालमत्ता क्र. / <br /> Property No.</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.PropertyNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.PropertyNo2, "", new { @class = "text-danger" })
