@@ -119,18 +119,18 @@
                 <table style="width:100%">
                     <tr class="text-center">
                         <th>
-                            <label class="label">सर्वे नं. / Survey No.</label>
+                            <label class="label">सर्वे नं. / <br /> Survey No.</label>
                         </th>
                         <th>
 
-                            <label class="label">गट नं./ Gat No.</label>
+                            <label class="label">गट नं./ <br /> Gat No.</label>
                         </th>
 
                         <th>
-                            <label class="label">सिटी सर्वे नं. /City Survey No.</label>
+                            <label class="label">सिटी सर्वे नं. / <br />City Survey No.</label>
                         </th>
                         <th>
-                            <label class="label"> वार्षिक भाडेमूल्य / Annual Rateable Valuee</label>
+                            <label class="label"> वार्षिक भाडेमूल्य / <br /> Annual Rateable Valuee</label>
                         </th>
                         <th> <label class="label mb-4">एकूण कर /<br />Total Tax</label></th>
                         <th>   <label class="label">एकुन भुखंड क्षेत्रफळ (चो. मी.) /<br /> Total Plot Area (Sq. M.)</label></th>
@@ -173,11 +173,11 @@
         <div class="d-flex flex-row back mb-3">
             <table style="width:100%">
                 <tr class="text-center">
-                    <th class="text-center"><label class="label">इमारतीचे नाव / Building Name</label></th>
+                    <th class="text-center"><label class="label">इमारतीचे नाव / <br /> Building Name</label></th>
                     <th class="text-center"><label class="label"> प्लॉट क्र. /<br /> Plot No.</label></th>
                     <th class="text-center"><label class="label">सदनिका  क्र. /<br /> Flat No.</label></th>
-                    <th class="text-center"><label class="label">एकूण मजले / No. of Floors</label></th>
-                    <th class="text-center"><label class="label">एकूण सदनिका / No. of Flats</label></th>
+                    <th class="text-center"><label class="label">एकूण मजले / <br /> No. of Floors</label></th>
+                    <th class="text-center"><label class="label">एकूण सदनिका / <br /> No. of Flats</label></th>
                     <th class="text-center"><label class="label">एकूण गाळे /<br /> No. of Shops</label></th>
                 </tr>
                 <tr class="text-center">
@@ -273,7 +273,7 @@
                         <th>
                             @*Change*@
                             <label class="label">
-                                मतदान ओळखपत्र /<br /> Election Card 
+                                मतदान ओळखपत्र /<br /> Election Card.
                             </label>
                         </th>
                     </tr>
@@ -382,7 +382,7 @@
             <div class="d-flex flex-row">
                 <table style="width:100%">
                     <tr class="text-center">
-                        <th>   <label class="label"> भाडेकरूची नाव / Tenant Name</label></th>
+                        <th>   <label class="label"> भाडेकरूचे नाव / Tenant Name</label></th>
                         <td class="p_5"> @Html.DisplayFor(model => model.TenantName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
                         <th>  <label class="label">भाडे / Rent</label></th>
                         <td class="p_5">@Html.DisplayFor(model => model.Rent, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
@@ -452,7 +452,7 @@
                         <th>  <label class="label">बांधकाम पूर्णत्वाचे वर्ष / Const.Completion Year</label></th>
                         <th>  <label class="label">वय / Age</label></th>
                         <th>  <label class="label">वापराचा प्रकार (निवासी/ बिगर निवासी / मिश्र)  / Usage Type (Resi. / Non-resi. / Mixed)</label></th>
-                        <th>  <label class="label">इमारतीचा प्रकार / Type of Bldg<br />सोबत जोडलेल्या तत्क्याप्रमाणे - प्रपत्र-१</label></th>
+                        <th>  <label class="label">इमारतीचा प्रकार / Type of Bldg<br />(सोबत जोडलेल्या तत्क्याप्रमाणे - प्रपत्र-१)</label></th>
                     </tr>
                     <tr class="text-center">
                         <td class="p_5">
@@ -542,7 +542,7 @@
                         </td>
                         <th>
 
-                            <label class="label">सौर ऊर्जा प्रकल्प /<br />Solar Water heater</label>
+                            <label class="label">सौर ऊर्जा प्रकल्प /<br />Solar Energy Project</label>
                         </th>
                         <td class="p_5">
                             @Html.CheckBox("SolarWaterheater")
@@ -644,7 +644,7 @@
 
 
                             @Html.CheckBox("WaterConnectionSpecial")
-                            <label>विशेष वर्ग /<br />Special Category </label>
+                        <label>विशेष वर्ग /<br />Sp. Category </label>
 
                             @Html.CheckBox("WaterConnectionIndustrial")
                             <label>औद्योगिक /<br />Industrial </label>
@@ -698,7 +698,7 @@
                             <div class="d-flex flex-row ">
                                 <table style="width:100%;border:1px solid black">
                                     <tr>
-                                        <th colspan="5">मालमत्ता सध्यास्थिती</th>
+                                        <th colspan="5">मालमत्तेची सद्यस्तिथी</th>
                                     </tr>
 
                                     <tr>
@@ -743,7 +743,7 @@
                         </td>
                         <td class="p_5">
                             @Html.CheckBox("NaturalMethod", new { @class = "chkBx7" })  <label>नैसर्गिक पद्धत </label>&nbsp;
-                            <label>  @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx7" })  कृतिम पद्धत &nbsp;</label><br />
+                                                                                        <label>  @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx7" })  कृत्रिम पद्धत &nbsp;</label><br />
 
                             @Html.CheckBox("OtherMethod", new { @class = "chkBx7" }) <label>
                                 इतर&nbsp;
@@ -773,8 +773,8 @@
                     <th>वापराचा प्रकार (निवासी/ बिगर निवासी)/Usage Type (Resi. / Non-Resi.)</th>
                     <th>वापराच्या   प्रकारचे वर्गीकरण/Usage Type Class</th>
                     <th>अधिकुत (आहे/नाही)Legal(Y/N)</th>
-                    <th>इमारत बांधकाम क्षेत्रफ़ळ (चौ.मी.)/Carpet Area(In Sq. M.)</th>
-                    <th>मोकळया जागेचे क्षेत्रफ़ळ (चौ.मी.)/Open space Area(In Sq. M.)</th>
+                    <th>इमारत बांधकाम क्षेत्रफ़ळ (चौ.मी.)/Builtup Area(In Sq. M.)</th>
+                    <th>मोकळया जागेचे क्षेत्रफ़ळ (चौ.मी.)/Open Space Area(In Sq. M.)</th>
 
                 </tr>
                 <tr class="text-center">
@@ -1920,7 +1920,7 @@
                         @Html.CheckBox("TwelveCPC", new { @class = "chkBx57" })&nbsp;
                         <label class="label">
 
-                            रेस्टॉरंट  / ReStaurant
+                            रेस्टॉरंट  / Restaurant
                         </label>
 
                     </div>
@@ -1949,14 +1949,14 @@
             <table style="width:100%">
                 <tr class="text-center">
                     @*Change*@
-                    <th> <label class="label">प्रभाग  क्र./ Prabhag No.</label>   </th>
+                    <th> <label class="label">प्रभाग  क्र./ <br /> Prabhag No.</label>   </th>
                     <th>
                         <label class="label">वार्ड क्र./ नाव<br /> Ward No./Name</label>
                     </th>
 
-                    <th>  <label class="label"> नवीन मालमत्ता क्र. / New Property No.</label></th>
+                    <th>  <label class="label"> नवीन मालमत्ता क्र. / <br /> New Property No.</label></th>
                     <th>
-                        <label class="label">मालमत्ता क्र. / Property No.</label>
+                        <label class="label">मालमत्ता क्र. / <br /> Property No.</label>
                     </th>
                     <th>
                         <label class="label">जुना घर क्र. / <br />Old House No.</label>
