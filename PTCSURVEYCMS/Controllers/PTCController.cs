@@ -236,7 +236,7 @@ namespace PTCSURVEYCMS.Controllers
                 var viewModel = new PropertyMasterVM();
              
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);
-                if(viewModel.Sketchdiagram2==null)
+                if (viewModel.Sketchdiagram2 == null)
                 {
                     ViewBag.nadoc = "na";
                 }

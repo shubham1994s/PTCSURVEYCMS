@@ -265,47 +265,52 @@ namespace BLL.Repository.Repository
                         obj.FloorNo1 = _Property.FloorNo1;
                         obj.OccupancyStatus1 = _Property.OccupancyStatus1;
                         obj.ConstType1 = _Property.ConstType1;
-                        if(_Property.DateofConstruction1=="--Select Date--")
-                        {
-                            obj.DateofConstruction1 = null;
-                        }
-                        else
-                        {
-                            obj.DateofConstruction1 = DateTime.ParseExact(_Property.DateofConstruction1, "dd-MM-yyyy", provider);
-                        }
+                        //if(_Property.DateofConstruction1=="--Select Date--")
+                        //{
+                        //    obj.DateofConstruction1 = null;
+                        //}
+                        //else
+                        //{
+                        //    obj.DateofConstruction1 = DateTime.ParseExact(_Property.DateofConstruction1, "dd-MM-yyyy", provider);
+                        //}
 
-                        if (_Property.DateofConstruction2 == "--Select Date--")
-                        {
-                            obj.DateofConstruction2 = null;
-                        }
-                        else
-                        {
-                            obj.DateofConstruction2 = DateTime.ParseExact(_Property.DateofConstruction2, "dd-MM-yyyy", provider);
-                        }
-                        if (_Property.DateofConstruction3 == "--Select Date--")
-                        {
-                            obj.DateofConstruction3 = null;
-                        }
-                        else
-                        {
-                            obj.DateofConstruction3 = DateTime.ParseExact(_Property.DateofConstruction3, "dd-MM-yyyy", provider);
-                        }
-                        if (_Property.DateofConstruction4 == "--Select Date--")
-                        {
-                            obj.DateofConstruction4 = null;
-                        }
-                        else
-                        {
-                            obj.DateofConstruction4 = DateTime.ParseExact(_Property.DateofConstruction4, "dd-MM-yyyy", provider);
-                        }
-                        if (_Property.DateofConstruction5 == "--Select Date--")
-                        {
-                            obj.DateofConstruction5 = null;
-                        }
-                        else
-                        {
-                            obj.DateofConstruction5 = DateTime.ParseExact(_Property.DateofConstruction5, "dd-MM-yyyy", provider);
-                        }
+                        //if (_Property.DateofConstruction2 == "--Select Date--")
+                        //{
+                        //    obj.DateofConstruction2 = null;
+                        //}
+                        //else
+                        //{
+                        //    obj.DateofConstruction2 = DateTime.ParseExact(_Property.DateofConstruction2, "dd-MM-yyyy", provider);
+                        //}
+                        //if (_Property.DateofConstruction3 == "--Select Date--")
+                        //{
+                        //    obj.DateofConstruction3 = null;
+                        //}
+                        //else
+                        //{
+                        //    obj.DateofConstruction3 = DateTime.ParseExact(_Property.DateofConstruction3, "dd-MM-yyyy", provider);
+                        //}
+                        //if (_Property.DateofConstruction4 == "--Select Date--")
+                        //{
+                        //    obj.DateofConstruction4 = null;
+                        //}
+                        //else
+                        //{
+                        //    obj.DateofConstruction4 = DateTime.ParseExact(_Property.DateofConstruction4, "dd-MM-yyyy", provider);
+                        //}
+                        //if (_Property.DateofConstruction5 == "--Select Date--")
+                        //{
+                        //    obj.DateofConstruction5 = null;
+                        //}
+                        //else
+                        //{
+                        //    obj.DateofConstruction5 = DateTime.ParseExact(_Property.DateofConstruction5, "dd-MM-yyyy", provider);
+                        //}
+                        obj.DateofConstruction1 = _Property.DateofConstruction1;
+                        obj.DateofConstruction2 = _Property.DateofConstruction2;
+                        obj.DateofConstruction3 = _Property.DateofConstruction3;
+                        obj.DateofConstruction4 = _Property.DateofConstruction4;
+                        obj.DateofConstruction5 = _Property.DateofConstruction5;
                         obj.UsageType1 = _Property.UsageType1;
                         obj.UsageTypeClass1 = _Property.UsageTypeClass1;
                         obj.Legal1 = _Property.Legal1;
@@ -667,14 +672,9 @@ namespace BLL.Repository.Repository
                         Master.FloorNo1 = _Property.FloorNo1;
                         Master.OccupancyStatus1 = _Property.OccupancyStatus1;
                         Master.ConstType1 = _Property.ConstType1;
-                        if (_Property.DateofConstruction1 != "--Select Date--")
-                        { 
-                        Master.DateofConstruction1 = DateTime.ParseExact(_Property.DateofConstruction1, "dd-MM-yyyy", provider);
-                        }
-                        else
-                        {
-                            Master.DateofConstruction1 = null;
-                        }
+                       
+                        Master.DateofConstruction1 =_Property.DateofConstruction1;
+                     
                         Master.UsageType1 = _Property.UsageType1;
                         Master.UsageTypeClass1 = _Property.UsageTypeClass1;
                         Master.Legal1 = _Property.Legal1;
@@ -682,15 +682,8 @@ namespace BLL.Repository.Repository
                         Master.BuildupArea1 = _Property.BuildupArea1;
                         Master.FloorNo2 = _Property.FloorNo2;
                         Master.OccupancyStatus2 = _Property.OccupancyStatus2;
-                        Master.ConstType2 = _Property.ConstType2;
-                        if (_Property.DateofConstruction2 != "--Select Date--")
-                        {
-                            Master.DateofConstruction2 = DateTime.ParseExact(_Property.DateofConstruction2, "dd-MM-yyyy", provider);
-                        }
-                        else
-                        {
-                            Master.DateofConstruction2 = null;
-                        }
+                        Master.ConstType2 = _Property.ConstType2;                  
+                        Master.DateofConstruction2 = _Property.DateofConstruction2;
                         Master.UsageType2 = _Property.UsageType2;
                         Master.UsageTypeClass2 = _Property.UsageTypeClass2;
                         Master.Legal2 = _Property.Legal2;
@@ -699,14 +692,9 @@ namespace BLL.Repository.Repository
                         Master.FloorNo3 = _Property.FloorNo3;
                         Master.OccupancyStatus3 = _Property.OccupancyStatus3;
                         Master.ConstType3 = _Property.ConstType3;
-                        if (_Property.DateofConstruction3 != "--Select Date--")
-                        {
-                            Master.DateofConstruction3 = DateTime.ParseExact(_Property.DateofConstruction3, "dd-MM-yyyy", provider);
-                        }
-                        else
-                        {
-                            Master.DateofConstruction3 = null;
-                        }
+                               Master.DateofConstruction3 = _Property.DateofConstruction3;
+                   
+                    
                         Master.UsageType3 = _Property.UsageType3;
                         Master.UsageTypeClass3 = _Property.UsageTypeClass3;
                         Master.Legal3 = _Property.Legal3;
@@ -715,14 +703,9 @@ namespace BLL.Repository.Repository
                         Master.FloorNo4 = _Property.FloorNo4;
                         Master.OccupancyStatus4 = _Property.OccupancyStatus4;
                         Master.ConstType4 = _Property.ConstType4;
-                        if (_Property.DateofConstruction4 != "--Select Date--")
-                        {
-                            Master.DateofConstruction4 = DateTime.ParseExact(_Property.DateofConstruction4, "dd-MM-yyyy", provider);
-                        }
-                        else
-                        {
-                            Master.DateofConstruction4 = null;
-                        }
+                 
+                            Master.DateofConstruction4 =_Property.DateofConstruction4;
+                      
                         Master.UsageType4 = _Property.UsageType4;
                         Master.UsageTypeClass4 = _Property.UsageTypeClass4;
                         Master.Legal4 = _Property.Legal4;
@@ -731,14 +714,15 @@ namespace BLL.Repository.Repository
                         Master.FloorNo5 = _Property.FloorNo5;
                         Master.OccupancyStatus5 = _Property.OccupancyStatus5;
                         Master.ConstType5 = _Property.ConstType5;
-                        if (_Property.DateofConstruction5 != "--Select Date--")
-                        {
-                            Master.DateofConstruction5 = DateTime.ParseExact(_Property.DateofConstruction5, "dd-MM-yyyy", provider);
-                        }
-                        else
-                        {
-                            Master.DateofConstruction5 = null;
-                        }
+                        //if (_Property.DateofConstruction5 != "--Select Date--")
+                        //{
+                        //    Master.DateofConstruction5 = DateTime.ParseExact(_Property.DateofConstruction5, "dd-MM-yyyy", provider);
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction5 = null;
+                        //}
+                        Master.DateofConstruction5 = _Property.DateofConstruction5;
                         Master.UsageType5 = _Property.UsageType5;
                         Master.UsageTypeClass5 = _Property.UsageTypeClass5;
                         Master.Legal5 = _Property.Legal5;
@@ -1106,64 +1090,70 @@ namespace BLL.Repository.Repository
                     Master.FloorNo1 = _Property.FloorNo1;
                     Master.OccupancyStatus1 = _Property.OccupancyStatus1;
                     Master.ConstType1 = _Property.ConstType1;
-                    if(_Property.DateofConstruction1 !=null)
-                    { 
-                    Master.DateofConstruction1 = Convert.ToDateTime(_Property.DateofConstruction1).ToString("dd-MM-yyyy");
-                    }
-                    
-                    else
-                    {
-                        Master.DateofConstruction1 = "--Select Date--";
-                    }
+                    Master.DateofConstruction1 = _Property.DateofConstruction1;
+                    Master.DateofConstruction2 = _Property.DateofConstruction2;
+                    Master.DateofConstruction3 = _Property.DateofConstruction3;
+                    Master.DateofConstruction4 = _Property.DateofConstruction4;
+                    Master.DateofConstruction5 = _Property.DateofConstruction5;
 
-                    if (_Property.DateofConstruction2 != null)
-                    {
-                        Master.DateofConstruction2 = Convert.ToDateTime(_Property.DateofConstruction2).ToString("dd-MM-yyyy");
-                    }
-                    else
-                    {
-                        Master.DateofConstruction2 = "--Select Date--";
-                    }
+                    //if(_Property.DateofConstruction1 !=null)
+                    //{ 
+                    //Master.DateofConstruction1 = Convert.ToDateTime(_Property.DateofConstruction1).ToString("dd-MM-yyyy");
+                    //}
 
+                    //else
+                    //{
+                    //    Master.DateofConstruction1 = "--Select Date--";
+                    //}
 
-                    if (_Property.DateofConstruction3 != null)
-                    {
-                        Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
-                    }
-                    else
-                    {
-                        Master.DateofConstruction3 = "--Select Date--";
-                    }
+                    //if (_Property.DateofConstruction2 != null)
+                    //{
+                    //    Master.DateofConstruction2 = Convert.ToDateTime(_Property.DateofConstruction2).ToString("dd-MM-yyyy");
+                    //}
+                    //else
+                    //{
+                    //    Master.DateofConstruction2 = "--Select Date--";
+                    //}
 
 
-                    if (_Property.DateofConstruction3 != null)
-                    {
-                        Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
-                    }
-                    else
-                    {
-                        Master.DateofConstruction3 = "--Select Date--";
-                    }
+                    //if (_Property.DateofConstruction3 != null)
+                    //{
+                    //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
+                    //}
+                    //else
+                    //{
+                    //    Master.DateofConstruction3 = "--Select Date--";
+                    //}
 
 
-                    if (_Property.DateofConstruction4 != null)
-                    {
-                        Master.DateofConstruction4 = Convert.ToDateTime(_Property.DateofConstruction4).ToString("dd-MM-yyyy");
-                    }
-                    else
-                    {
-                        Master.DateofConstruction4 = "--Select Date--";
-                    }
+                    //if (_Property.DateofConstruction3 != null)
+                    //{
+                    //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
+                    //}
+                    //else
+                    //{
+                    //    Master.DateofConstruction3 = "--Select Date--";
+                    //}
 
 
-                    if (_Property.DateofConstruction5 != null)
-                    {
-                        Master.DateofConstruction5 = Convert.ToDateTime(_Property.DateofConstruction5).ToString("dd-MM-yyyy");
-                    }
-                    else
-                    {
-                        Master.DateofConstruction5 = "--Select Date--";
-                    }
+                    //if (_Property.DateofConstruction4 != null)
+                    //{
+                    //    Master.DateofConstruction4 = Convert.ToDateTime(_Property.DateofConstruction4).ToString("dd-MM-yyyy");
+                    //}
+                    //else
+                    //{
+                    //    Master.DateofConstruction4 = "--Select Date--";
+                    //}
+
+
+                    //if (_Property.DateofConstruction5 != null)
+                    //{
+                    //    Master.DateofConstruction5 = Convert.ToDateTime(_Property.DateofConstruction5).ToString("dd-MM-yyyy");
+                    //}
+                    //else
+                    //{
+                    //    Master.DateofConstruction5 = "--Select Date--";
+                    //}
                     Master.UsageType1 = _Property.UsageType1;
                     Master.UsageTypeClass1 = _Property.UsageTypeClass1;
                     Master.Legal1 = _Property.Legal1;

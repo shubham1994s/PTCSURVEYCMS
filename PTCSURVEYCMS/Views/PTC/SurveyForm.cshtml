@@ -20,6 +20,12 @@
    h5, h6 {
         font-weight: 600 !important
     }
+    /*.form-control {
+        text-transform: capitalize;
+    }
+    .form-control1 {
+        text-transform: lowercase;
+    }*/
 </style>
 @*@Styles.Render("~/Content/AddEditCSS")*@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -410,7 +416,7 @@
                         <div class="form-group pr-4">
                             <label class="label">आडनाव / Last Name</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control",style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.PropOwnerLastName, "", new { @class = "text-danger" })
                             <span class="text-danger" id="err_empidd"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -428,7 +434,7 @@
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.PropOwnerTelephoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
                             @Html.ValidationMessageFor(model => model.PropOwnerTelephoneNo, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="text-danger" id="err_TelephoneNoidd"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>  @*Change*@
@@ -454,7 +460,7 @@
                         <div class="form-group pr-4">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerEmailId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.TextBoxFor(model => model.PropOwnerEmailId, new {@class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.PropOwnerEmailId, "", new { @class = "text-danger" })
                             <span class="text-danger" id="err_PropOwnerEmailId"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -469,7 +475,7 @@
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.PropOwnerAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12" })
                             @Html.ValidationMessageFor(model => model.PropOwnerAdhaarNo, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="text-danger" id="err_PropOwnerAdhaarNo"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
@@ -521,7 +527,7 @@
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.OccupierMobileNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
                             @Html.ValidationMessageFor(model => model.OccupierMobileNo, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="text-danger" id="err_OccupierMobileNo"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
@@ -534,7 +540,7 @@
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.OccupierAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12" })
                             @Html.ValidationMessageFor(model => model.OccupierAdhaarNo, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="text-danger" id="err_OccupierAdhaarNo"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
@@ -581,7 +587,7 @@
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.TenantMobileNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
                             @Html.ValidationMessageFor(model => model.TenantMobileNo, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="text-danger" id="err_TenantMobileNo"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
@@ -594,7 +600,7 @@
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.TenantAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12" })
                             @Html.ValidationMessageFor(model => model.TenantAdhaarNo, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="text-danger" id="err_TenantAdhaarNo"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
@@ -628,9 +634,9 @@
                         <div class="form-group pr-4">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.Longitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.TextBoxFor(model => model.Longitude, new { @type = "number",@class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="text-danger" id="err_Longitude"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
@@ -641,9 +647,9 @@
                         <div class="form-group pr-4">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.Latitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.TextBoxFor(model => model.Latitude, new {@type= "number", @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="text-danger" id="err_Latitude"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
@@ -732,8 +738,8 @@
 
                     </div>
                     <div class="d-flex flex-row">
-                        <div class="d-flex flex-row  mb-4">
-                            <div class="form-group pr-4 back mr-2">
+                        <div class="d-flex flex-row  mb-5">
+                            <div class="form-group pr-5 back mr-5">
                                 <label class="label">जलपुनर्भरण व्यवस्था / <br />Rain water harvest</label>
 
                                 <div>
@@ -746,7 +752,7 @@
                             </div>
 
 
-                            <div class="form-group pr-4 back  mr-2">
+                            <div class="form-group pr-5 back  mr-5">
                                 <label class="label">सौर ऊर्जा प्रकल्प /<br />Solar Energy Project</label>
 
                                 <div>
@@ -759,8 +765,8 @@
                             </div>
 
                         </div>
-                        <div class="d-flex flex-row  mb-4">
-                            <div class="form-group pr-4 back  mr-2">
+                        <div class="d-flex flex-row  mb-5">
+                            <div class="form-group pr-4 back  mr-5">
                                 <label class="label">खतनिर्माती प्रकल्प /<br />Composting Project </label>
 
                                 <div>
@@ -946,13 +952,13 @@
                                 </div>
                                 <div>
                                     <label>
-                                        @Html.CheckBox("UnderGroundGutter", new { @class = "chkBx7" })  भूमिगत गटर / Closed Drain
+                                        @Html.CheckBox("UnderGroundGutter", new { @class = "chkBx7" })  भूमिगत गटार / Closed Drain
                                     </label>
 
                                 </div>
                                 <div>
                                   
-                                    <label>  @Html.CheckBox("OpenGutter", new { @class = "chkBx7" })  उघडी गटर / Open Drain </label>
+                                    <label>  @Html.CheckBox("OpenGutter", new { @class = "chkBx7" })  उघडी गटार / Open Drain </label>
 
                                 </div>
 
@@ -1009,7 +1015,7 @@
                                 </tr>
 
                                 <tr>
-                                    <td>भिंती</td>
+                                    <td><b>भिंती</b></td>
                                     <td> @Html.CheckBox("Safe", new { @class = "chkBx13" })</td>
                                     <td>सुस्थितीत</td>
                                     <td> @Html.CheckBox("Danger", new { @class = "chkBx13" })</td>
@@ -1017,7 +1023,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        छप्पर
+                                        <b> छप्पर</b>
                                     </td>
                                     <td> @Html.CheckBox("Safe2", new { @class = "chkBx10" })</td>
                                     <td>सुस्थितीत</td>
@@ -1026,7 +1032,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        काँलम
+                                        <b> काँलम</b>
                                     </td>
                                     <td> @Html.CheckBox("Safe3", new { @class = "chkBx11" })</td>
                                     <td>सुस्थितीत</td>
@@ -1066,7 +1072,13 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.OccupancyStatus1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                   
+                                    @Html.DropDownList("OccupancyStatus1", new List<SelectListItem>
+                     {
+        new SelectListItem { Text = "Owner", Value = "Owner" },
+new SelectListItem { Text = "Tenant", Value = "Tenant"},
+new SelectListItem { Text = "Lease", Value = "Lease"}
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.OccupancyStatus1, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1074,7 +1086,15 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("ConstType1", new List<SelectListItem>
+                      {
+         new SelectListItem { Text = "A", Value = "A" },
+ new SelectListItem { Text = "B", Value = "B"},
+ new SelectListItem { Text = "C", Value = "C"},
+   new SelectListItem { Text = "D", Value = "D" },
+ new SelectListItem { Text = "E", Value = "E"},
+ new SelectListItem { Text = "OP", Value = "OP"}
+ }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1098,8 +1118,8 @@
                 new SelectListItem { Text = "Resident", Value = "R" },
             new SelectListItem { Text = "Non-Resident", Value = "NR"},
    }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @*@Html.TextBoxFor(model => model.UsageType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageType1, "", new { @class = "text-danger" })*@
+                                   
+                                    @Html.ValidationMessageFor(model => model.UsageType1, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
@@ -1114,7 +1134,11 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.Legal1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("Legal1", new List<SelectListItem>
+                       {
+               new SelectListItem { Text = "Yes", Value = "Y" },
+           new SelectListItem { Text = "No", Value = "N"},
+  }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.Legal1, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1148,15 +1172,29 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.OccupancyStatus2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("OccupancyStatus2", new List<SelectListItem>
+               {
+  new SelectListItem { Text = "Owner", Value = "Owner" },
+new SelectListItem { Text = "Tenant", Value = "Tenant"},
+new SelectListItem { Text = "Lease", Value = "Lease"}
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.OccupancyStatus2, "", new { @class = "text-danger" })
+                                   
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("ConstType2", new List<SelectListItem>
+                     {
+        new SelectListItem { Text = "A", Value = "A" },
+new SelectListItem { Text = "B", Value = "B"},
+new SelectListItem { Text = "C", Value = "C"},
+  new SelectListItem { Text = "D", Value = "D" },
+new SelectListItem { Text = "E", Value = "E"},
+new SelectListItem { Text = "OP", Value = "OP"}
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1192,7 +1230,11 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.Legal2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("Legal2", new List<SelectListItem>
+                       {
+               new SelectListItem { Text = "Yes", Value = "Y" },
+           new SelectListItem { Text = "No", Value = "N"},
+  }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.Legal2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1226,7 +1268,12 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.OccupancyStatus3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("OccupancyStatus3", new List<SelectListItem>
+                   {
+      new SelectListItem { Text = "Owner", Value = "Owner" },
+    new SelectListItem { Text = "Tenant", Value = "Tenant"},
+    new SelectListItem { Text = "Lease", Value = "Lease"}
+    }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.OccupancyStatus3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1234,7 +1281,15 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("ConstType3", new List<SelectListItem>
+                     {
+        new SelectListItem { Text = "A", Value = "A" },
+new SelectListItem { Text = "B", Value = "B"},
+new SelectListItem { Text = "C", Value = "C"},
+  new SelectListItem { Text = "D", Value = "D" },
+new SelectListItem { Text = "E", Value = "E"},
+new SelectListItem { Text = "OP", Value = "OP"}
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ConstType3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1269,7 +1324,11 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.Legal3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("Legal3", new List<SelectListItem>
+                           {
+                   new SelectListItem { Text = "Yes", Value = "Y" },
+               new SelectListItem { Text = "No", Value = "N"},
+      }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.Legal3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1303,7 +1362,12 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.OccupancyStatus4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("OccupancyStatus4", new List<SelectListItem>
+                  {
+     new SelectListItem { Text = "Owner", Value = "Owner" },
+   new SelectListItem { Text = "Tenant", Value = "Tenant"},
+   new SelectListItem { Text = "Lease", Value = "Lease"}
+   }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.OccupancyStatus4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1311,7 +1375,15 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("ConstType4", new List<SelectListItem>
+                     {
+        new SelectListItem { Text = "A", Value = "A" },
+new SelectListItem { Text = "B", Value = "B"},
+new SelectListItem { Text = "C", Value = "C"},
+  new SelectListItem { Text = "D", Value = "D" },
+new SelectListItem { Text = "E", Value = "E"},
+new SelectListItem { Text = "OP", Value = "OP"}
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ConstType4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1346,7 +1418,11 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.Legal4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("Legal4", new List<SelectListItem>
+                            {
+                    new SelectListItem { Text = "Yes", Value = "Y" },
+                new SelectListItem { Text = "No", Value = "N"},
+       }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.Legal4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1380,7 +1456,12 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.OccupancyStatus5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("OccupancyStatus5", new List<SelectListItem>
+                  {
+     new SelectListItem { Text = "Owner", Value = "Owner" },
+   new SelectListItem { Text = "Tenant", Value = "Tenant"},
+   new SelectListItem { Text = "Lease", Value = "Lease"}
+   }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.OccupancyStatus5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1388,7 +1469,15 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("ConstType5", new List<SelectListItem>
+                      {
+         new SelectListItem { Text = "A", Value = "A" },
+ new SelectListItem { Text = "B", Value = "B"},
+ new SelectListItem { Text = "C", Value = "C"},
+   new SelectListItem { Text = "D", Value = "D" },
+ new SelectListItem { Text = "E", Value = "E"},
+ new SelectListItem { Text = "OP", Value = "OP"}
+ }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ConstType5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1423,7 +1512,11 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.Legal5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.DropDownList("Legal5", new List<SelectListItem>
+                         {
+                 new SelectListItem { Text = "Yes", Value = "Y" },
+             new SelectListItem { Text = "No", Value = "N"},
+    }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.Legal5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1491,7 +1584,15 @@
                                 <th>बिगर निवाशी </th>
                             </tr>
                             <tr>
-                                <td> @Html.TextBoxFor(model => model.OldUsageType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                <td>
+                                    @Html.DropDownList("OldUsageType", new List<SelectListItem>
+                      {
+         new SelectListItem { Text = "Resident", Value = "R" },
+ new SelectListItem { Text = "Non-Resident", Value = "NR"},
+ new SelectListItem { Text = "Mixed", Value = "M"}
+ }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                  
+                                </td>
                                 <td> @Html.TextBoxFor(model => model.OldConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                                 <td> @Html.TextBoxFor(model => model.OldCarpetAreaResident, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1513,7 +1614,15 @@
                                 <th>बिगर निवाशी </th>
                             </tr>
                             <tr>
-                                <td> @Html.TextBoxFor(model => model.NewUsageType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                <td>
+                                    @Html.DropDownList("NewUsageType", new List<SelectListItem>
+                     {
+        new SelectListItem { Text = "Resident", Value = "R" },
+new SelectListItem { Text = "Non-Resident", Value = "NR"},
+new SelectListItem { Text = "Mixed", Value = "M"}
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                  
+                                </td>
                                 <td> @Html.TextBoxFor(model => model.NewConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                                 <td> @Html.TextBoxFor(model => model.NewCarpetAreaResident, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1537,7 +1646,15 @@
                                 <th>बिगर निवाशी </th>
                             </tr>
                             <tr>
-                                <td> @Html.TextBoxFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                <td>
+                                    @Html.DropDownList("ExtendUsage_Type", new List<SelectListItem>
+                    {
+       new SelectListItem { Text = "Resident", Value = "R" },
+new SelectListItem { Text = "Non-Resident", Value = "NR"},
+new SelectListItem { Text = "Mixed", Value = "M"}
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                
+                                </td>
                                 <td>@Html.TextBoxFor(model => model.ExtendConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                                 <td> @Html.TextBoxFor(model => model.ExtendCarpetAreaResident, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
@@ -1594,7 +1711,9 @@
                                 इमारतीच्या जागेचे मूल्य व घसारा विचारात घेता आजचे
                                 बाजारमूल्य
                             </td>
-
+                            <td colspan="2">
+                                @Html.TextBoxFor(model => model.ProperyTaxMarketPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            </td>
 
                         </tr>
                     </table>
@@ -1845,7 +1964,7 @@
                             <div>
                                 @Html.CheckBox("EightPT", new { @class = "chkBx24" })&nbsp;
 
-                                <label class="label">8. आर. सी. सी. पद्धतीचे विना उड् वाहक बहुमजली इमारती  </label>
+                                <label class="label">8. आर. सी. सी. पद्धतीचा विना उड् वाहक बहुमजली इमारती  </label>
                             </div>
                             <div>
                                 @Html.CheckBox("NinePT", new { @class = "chkBx25" })&nbsp;
@@ -1880,12 +1999,12 @@
                             <div>
                                 @Html.CheckBox("TherteenPT", new { @class = "chkBx29" })&nbsp;
 
-                                <label class="label">13. इमारती खालील वाहनतड  (पार्किंग एरिया )</label>
+                                <label class="label">13. इमारती खालील वाहनतळ  (पार्किंग एरिया )</label>
                             </div>
                             <div>
                                 @Html.CheckBox("FourteenPT", new { @class = "chkBx30" })&nbsp;
 
-                                <label class="label">14. इमारतीचे तदघर (बेसमेंट एरिया )   </label>
+                                <label class="label">14. इमारतीचे तळघर (बेसमेंट एरिया )   </label>
                             </div>
                             <div>
                                 @Html.CheckBox("FifteenPT", new { @class = "chkBx31" })&nbsp;
@@ -1933,7 +2052,7 @@
 
                                 <label class="label">
                                     @Html.CheckBox("ThirdRPC", new { @class = "chkBx36" })&nbsp;
-                                    बांगला / डुप्लेक्स (Bunglow / Duplex)
+                                    बंगला / डुप्लेक्स (Bunglow / Duplex)
                                 </label>
                             </div>
                             <div>
@@ -2208,7 +2327,7 @@
                             <label class="label"><b>Document Upload</b></label>
                         </div>
                         <div class="p-2 bd-highlight" style="margin:auto;" id="docupload">
-                            <embed src="~/Images/@Model.Sketchdiagram2" id="Sketchdiagram2" height="500px" width="700px" style="border:solid" />
+                            <embed src="~/Images/@Model.Sketchdiagram2" id="Sketchdiagram2" height="500px" width="950px" style="border:solid" />
                         </div>
                         <div class="p-2 bd-highlight" style="margin:auto;">
                             <input type="file" name="file4" id="Sketchdiagramfile2" placeholder="click"  value="@Model.Sketchdiagram2" onchange="show(this)">
@@ -2237,7 +2356,66 @@
 
     $(document).ready(function () {
         debugger;
+      
+        $("#PropOwnerTelephoneNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_TelephoneNoidd").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#OccupierMobileNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_OccupierMobileNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#TenantMobileNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_TenantMobileNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        
+        $("#PropOwnerAdhaarNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_PropOwnerAdhaarNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#OccupierAdhaarNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_OccupierAdhaarNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+
+        $("#TenantAdhaarNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_TenantAdhaarNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+
        
+
         var img = '@ViewBag.nadoc';
         if (img == 'na')
         {
@@ -2263,21 +2441,21 @@
         if ($('#SurveyorDate').val() == '') {
             $('#SurveyorDate').val("--Select Date--");
         }
-        if ($('#DateofConstruction1').val() == '') {
-            $('#DateofConstruction1').val("--Select Date--");
-        }
-        if ($('#DateofConstruction2').val() == '') {
-            $('#DateofConstruction2').val("--Select Date--");
-        }
-        if ($('#DateofConstruction3').val() == '') {
-            $('#DateofConstruction3').val("--Select Date--");
-        }
-        if ($('#DateofConstruction4').val() == '') {
-            $('#DateofConstruction4').val("--Select Date--");
-        }
-        if ($('#DateofConstruction5').val() == '') {
-            $('#DateofConstruction5').val("--Select Date--");
-        }
+        //if ($('#DateofConstruction1').val() == '') {
+        //    $('#DateofConstruction1').val("--Select Date--");
+        //}
+        //if ($('#DateofConstruction2').val() == '') {
+        //    $('#DateofConstruction2').val("--Select Date--");
+        //}
+        //if ($('#DateofConstruction3').val() == '') {
+        //    $('#DateofConstruction3').val("--Select Date--");
+        //}
+        //if ($('#DateofConstruction4').val() == '') {
+        //    $('#DateofConstruction4').val("--Select Date--");
+        //}
+        //if ($('#DateofConstruction5').val() == '') {
+        //    $('#DateofConstruction5').val("--Select Date--");
+       // }
         $("#PropertyNo").change(function () {
             debugger;
 
@@ -2353,7 +2531,48 @@
         $("#PropOwnerFirstName").keyup(function () {
             $('#PropOwnerFirstName').css('textTransform', 'capitalize');
         });
-
+        $("#Name1").keyup(function () {
+            $('#Name1').css('textTransform', 'capitalize');
+        });
+        $("#Name2").keyup(function () {
+            $('#Name2').css('textTransform', 'capitalize');
+        });
+        $("#Name3").keyup(function () {
+            $('#Name3').css('textTransform', 'capitalize');
+        });
+         $("#Name4").keyup(function () {
+            $('#Name4').css('textTransform', 'capitalize');
+         });
+        $("#Name5").keyup(function () {
+            $('#Name5').css('textTransform', 'capitalize');
+        });
+        $("#Name6").keyup(function () {
+            $('#Name6').css('textTransform', 'capitalize');
+        });
+         $("#Name7").keyup(function () {
+            $('#Name7').css('textTransform', 'capitalize');
+         });
+         $("#Name8").keyup(function () {
+            $('#Name9').css('textTransform', 'capitalize');
+        });
+        $("#Name9").keyup(function () {
+            $('#Name9').css('textTransform', 'capitalize');
+        });
+        $("#Name10").keyup(function () {
+            $('#Name10').css('textTransform', 'capitalize');
+        });
+        $("#Name11").keyup(function () {
+            $('#Name11').css('textTransform', 'capitalize');
+        });
+        $("#Name12").keyup(function () {
+            $('#Name12').css('textTransform', 'capitalize');
+        });
+        $("#SurveyorName").keyup(function () {
+            $('#SurveyorName').css('textTransform', 'capitalize');
+        });
+        $("#DataEntryName").keyup(function () {
+            $('#DataEntryName').css('textTransform', 'capitalize');
+        });
         $("#DataEntryDate").datepicker({
 
             dateFormat: "dd-mm-yy",
@@ -2369,41 +2588,41 @@
             changeYear: true
 
         });
-        $("#DateofConstruction5").datepicker({
+        //$("#DateofConstruction5").datepicker({
 
-            dateFormat: "dd-mm-yy",
-            changeMonth: true,
-            changeYear: true
+        //    dateFormat: "dd-mm-yy",
+        //    changeMonth: true,
+        //    changeYear: true
 
-        });
-        $("#DateofConstruction4").datepicker({
+        //});
+        //$("#DateofConstruction4").datepicker({
 
-            dateFormat: "dd-mm-yy",
-            changeMonth: true,
-            changeYear: true
+        //    dateFormat: "dd-mm-yy",
+        //    changeMonth: true,
+        //    changeYear: true
 
-        });
-        $("#DateofConstruction3").datepicker({
+        //});
+        //$("#DateofConstruction3").datepicker({
 
-            dateFormat: "dd-mm-yy",
-            changeMonth: true,
-            changeYear: true
+        //    dateFormat: "dd-mm-yy",
+        //    changeMonth: true,
+        //    changeYear: true
 
-        });
-        $("#DateofConstruction2").datepicker({
+        //});
+        //$("#DateofConstruction2").datepicker({
 
-            dateFormat: "dd-mm-yy",
-            changeMonth: true,
-            changeYear: true
+        //    dateFormat: "dd-mm-yy",
+        //    changeMonth: true,
+        //    changeYear: true
 
-        });
-        $("#DateofConstruction1").datepicker({
+        //});
+        //$("#DateofConstruction1").datepicker({
 
-            dateFormat: "dd-mm-yy",
-            changeMonth: true,
-            changeYear: true
+        //    dateFormat: "dd-mm-yy",
+        //    changeMonth: true,
+        //    changeYear: true
 
-        });
+        //});
 
     });
     $('.chkBx').change(function () {
@@ -2569,7 +2788,7 @@
                 $("#FileUpload_Preview img").attr("src", e.target.result);
                 $("#FileUpload_Preview img").attr("width", "200px");
                 $("#FileUpload_Preview img").attr("height", "150px");
-              //  $('#docupload').show();
+                $('#docupload').show();
             }
             reader.readAsDataURL($(this)[0].files[0]);
         }

@@ -4,6 +4,9 @@
 <title>View Survey Form</title>
 <link rel="shortcut icon" href="~/Content/Images/vengurla_logo_header.png" />
 <style>
+    .form-control {
+        text-transform: capitalize;
+    }
     table, th, td {
         border: 1px solid black;
         border-collapse: collapse;
@@ -11,6 +14,7 @@
 
     .p_5 {
         padding: 5px 5px 5px 5px !important;
+        text-transform: capitalize;
     }
 
     .border1 {
@@ -24,6 +28,7 @@
     h5, h6 {
         font-weight: 600 !important
     }
+    
 </style>
 @*@Styles.Render("~/Content/AddEditCSS")*@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,13 +52,12 @@
     @*<button type="button" onclick="print()">pdf</button>*@
     <div class="container">
         <div class="d-flex justify-content-end pr-3">
-            <div class="d-flex justify-content-end pr-3">
                 <button type="button" style="padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
-    line-height: 1.5;border-radius: 3px;border-style: none;" onclick="window.print()">
+            line-height: 1.5;border-radius: 3px;border-style: none;" onclick="window.print()">
                     Genrate Pdf
                 </button>
             </div>
-        </div>
+     
         @* Building Name Section A *@
         <div class="d-flex flex-row back mb-3">
             <table style="width:100%">
@@ -476,15 +480,15 @@
 
                         <td>
 
-                        @Html.DropDownList("Usage", new List<SelectListItem>
-                         {
-            new SelectListItem { Text = "Resident", Value = "R" },
-    new SelectListItem { Text = "Non-Resident", Value = "NR"},
-    new SelectListItem { Text = "Mixed", Value = "M"}
-    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                    </td>
-                           
-                       
+                            @Html.DropDownList("Usage", new List<SelectListItem>
+                             {
+                new SelectListItem { Text = "Resident", Value = "R" },
+        new SelectListItem { Text = "Non-Resident", Value = "NR"},
+        new SelectListItem { Text = "Mixed", Value = "M"}
+        }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                        </td>
+
+
 
                         <td>
 
@@ -644,7 +648,7 @@
 
 
                             @Html.CheckBox("WaterConnectionSpecial")
-                        <label>विशेष वर्ग /<br />Sp. Category </label>
+                            <label>विशेष वर्ग /<br />Sp. Category </label>
 
                             @Html.CheckBox("WaterConnectionIndustrial")
                             <label>औद्योगिक /<br />Industrial </label>
@@ -743,7 +747,7 @@
                         </td>
                         <td class="p_5">
                             @Html.CheckBox("NaturalMethod", new { @class = "chkBx7" })  <label>नैसर्गिक पद्धत </label>&nbsp;
-                                                                                        <label>  @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx7" })  कृत्रिम पद्धत &nbsp;</label><br />
+                            <label>  @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx7" })  कृत्रिम पद्धत &nbsp;</label><br />
 
                             @Html.CheckBox("OtherMethod", new { @class = "chkBx7" }) <label>
                                 इतर&nbsp;
@@ -789,7 +793,13 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.OccupancyStatus1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("OccupancyStatus1", new List<SelectListItem>
+                    {
+       new SelectListItem { Text = "Owner", Value = "Owner" },
+    new SelectListItem { Text = "Tenant", Value = "Tenant"},
+    new SelectListItem { Text = "Lease", Value = "Lease"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+
 
                             </div>
                         </div>
@@ -797,7 +807,15 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.ConstType1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("ConstType1", new List<SelectListItem>
+                        {
+           new SelectListItem { Text = "A", Value = "A" },
+    new SelectListItem { Text = "B", Value = "B"},
+    new SelectListItem { Text = "C", Value = "C"},
+     new SelectListItem { Text = "D", Value = "D" },
+    new SelectListItem { Text = "E", Value = "E"},
+    new SelectListItem { Text = "OP", Value = "OP"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
                             </div>
                         </div>
@@ -807,22 +825,22 @@
                             <div>
                                 @Html.DisplayFor(model => model.DateofConstruction1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
 
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                        <div>
-                            @Html.DropDownList("UsageType1", new List<SelectListItem>
-                       {
-               new SelectListItem { Text = "Resident", Value = "R" },
-           new SelectListItem { Text = "Non-Resident", Value = "NR"},
-  }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>
+                        <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                            <div>
+                                @Html.DropDownList("UsageType1", new List<SelectListItem>
+                           {
+                   new SelectListItem { Text = "Resident", Value = "R" },
+               new SelectListItem { Text = "Non-Resident", Value = "NR"},
+      }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                            </div>
                         </div>
-                    </div>
-                </td>
-             
-              
+                    </td>
+
+
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
@@ -834,7 +852,11 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.Legal1, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("Legal1", new List<SelectListItem>
+                         {
+                 new SelectListItem { Text = "Yes", Value = "Y" },
+             new SelectListItem { Text = "No", Value = "N"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
                             </div>
                         </div>
@@ -868,7 +890,13 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.OccupancyStatus2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("OccupancyStatus2", new List<SelectListItem>
+                      {
+         new SelectListItem { Text = "Owner", Value = "Owner" },
+    new SelectListItem { Text = "Tenant", Value = "Tenant"},
+    new SelectListItem { Text = "Lease", Value = "Lease"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.OccupancyStatus1, "", new { @class = "text-danger" })
 
                             </div>
                         </div>
@@ -876,7 +904,15 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.ConstType2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("ConstType2", new List<SelectListItem>
+                         {
+            new SelectListItem { Text = "A", Value = "A" },
+    new SelectListItem { Text = "B", Value = "B"},
+    new SelectListItem { Text = "C", Value = "C"},
+      new SelectListItem { Text = "D", Value = "D" },
+    new SelectListItem { Text = "E", Value = "E"},
+    new SelectListItem { Text = "OP", Value = "OP"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
                             </div>
                         </div>
@@ -886,22 +922,22 @@
                             <div>
                                 @Html.DisplayFor(model => model.DateofConstruction2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
 
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                        <div>
-                            @Html.DropDownList("UsageType2", new List<SelectListItem>
-                     {
-             new SelectListItem { Text = "Resident", Value = "R" },
-         new SelectListItem { Text = "Non-Resident", Value = "NR"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>
+                        <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                            <div>
+                                @Html.DropDownList("UsageType2", new List<SelectListItem>
+                         {
+                 new SelectListItem { Text = "Resident", Value = "R" },
+             new SelectListItem { Text = "Non-Resident", Value = "NR"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                            </div>
                         </div>
-                    </div>
-                </td>
-              
-                
+                    </td>
+
+
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
@@ -913,7 +949,11 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.Legal2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("Legal2", new List<SelectListItem>
+                      {
+              new SelectListItem { Text = "Yes", Value = "Y" },
+          new SelectListItem { Text = "No", Value = "N"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
                             </div>
                         </div>
@@ -947,15 +987,28 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.OccupancyStatus3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
-
+                                @Html.DropDownList("OccupancyStatus3", new List<SelectListItem>
+                         {
+            new SelectListItem { Text = "Owner", Value = "Owner" },
+    new SelectListItem { Text = "Tenant", Value = "Tenant"},
+    new SelectListItem { Text = "Lease", Value = "Lease"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.OccupancyStatus1, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.ConstType3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("ConstType3", new List<SelectListItem>
+                       {
+          new SelectListItem { Text = "A", Value = "A" },
+    new SelectListItem { Text = "B", Value = "B"},
+    new SelectListItem { Text = "C", Value = "C"},
+    new SelectListItem { Text = "D", Value = "D" },
+    new SelectListItem { Text = "E", Value = "E"},
+    new SelectListItem { Text = "OP", Value = "OP"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
                             </div>
                         </div>
@@ -965,22 +1018,22 @@
                             <div>
                                 @Html.DisplayFor(model => model.DateofConstruction3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
 
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                        <div>
-                            @Html.DropDownList("UsageType3", new List<SelectListItem>
-                       {
-               new SelectListItem { Text = "Resident", Value = "R" },
-           new SelectListItem { Text = "Non-Resident", Value = "NR"},
-  }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>
+                        <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                            <div>
+                                @Html.DropDownList("UsageType3", new List<SelectListItem>
+                           {
+                   new SelectListItem { Text = "Resident", Value = "R" },
+               new SelectListItem { Text = "Non-Resident", Value = "NR"},
+      }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                            </div>
                         </div>
-                    </div>
-                </td>
-            
-                
+                    </td>
+
+
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
@@ -992,8 +1045,11 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.Legal3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
-
+                                @Html.DropDownList("Legal3", new List<SelectListItem>
+                         {
+                 new SelectListItem { Text = "Yes", Value = "Y" },
+             new SelectListItem { Text = "No", Value = "N"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
                             </div>
                         </div>
                     </td>
@@ -1026,7 +1082,13 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.OccupancyStatus4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("OccupancyStatus4", new List<SelectListItem>
+                   {
+      new SelectListItem { Text = "Owner", Value = "Owner" },
+    new SelectListItem { Text = "Tenant", Value = "Tenant"},
+    new SelectListItem { Text = "Lease", Value = "Lease"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.OccupancyStatus1, "", new { @class = "text-danger" })
 
                             </div>
                         </div>
@@ -1034,7 +1096,15 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.ConstType4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("ConstType4", new List<SelectListItem>
+                           {
+              new SelectListItem { Text = "A", Value = "A" },
+      new SelectListItem { Text = "B", Value = "B"},
+      new SelectListItem { Text = "C", Value = "C"},
+        new SelectListItem { Text = "D", Value = "D" },
+      new SelectListItem { Text = "E", Value = "E"},
+      new SelectListItem { Text = "OP", Value = "OP"}
+      }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
                             </div>
                         </div>
@@ -1044,22 +1114,22 @@
                             <div>
                                 @Html.DisplayFor(model => model.DateofConstruction4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
 
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                        <div>
-                            @Html.DropDownList("UsageType4", new List<SelectListItem>
-                      {
-              new SelectListItem { Text = "Resident", Value = "R" },
-          new SelectListItem { Text = "Non-Resident", Value = "NR"},
- }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>
+                        <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                            <div>
+                                @Html.DropDownList("UsageType4", new List<SelectListItem>
+                          {
+                  new SelectListItem { Text = "Resident", Value = "R" },
+              new SelectListItem { Text = "Non-Resident", Value = "NR"},
+     }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                            </div>
                         </div>
-                    </div>
-                </td>
-          
-                 
+                    </td>
+
+
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
@@ -1071,7 +1141,11 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.Legal4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("Legal4", new List<SelectListItem>
+                       {
+               new SelectListItem { Text = "Yes", Value = "Y" },
+           new SelectListItem { Text = "No", Value = "N"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
                             </div>
                         </div>
@@ -1105,7 +1179,13 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.OccupancyStatus5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("OccupancyStatus5", new List<SelectListItem>
+                           {
+              new SelectListItem { Text = "Owner", Value = "Owner" },
+      new SelectListItem { Text = "Tenant", Value = "Tenant"},
+      new SelectListItem { Text = "Lease", Value = "Lease"}
+      }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.OccupancyStatus1, "", new { @class = "text-danger" })
 
                             </div>
                         </div>
@@ -1113,7 +1193,15 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.ConstType5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                @Html.DropDownList("ConstType5", new List<SelectListItem>
+                        {
+           new SelectListItem { Text = "A", Value = "A" },
+    new SelectListItem { Text = "B", Value = "B"},
+    new SelectListItem { Text = "C", Value = "C"},
+     new SelectListItem { Text = "D", Value = "D" },
+    new SelectListItem { Text = "E", Value = "E"},
+    new SelectListItem { Text = "OP", Value = "OP"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
                             </div>
                         </div>
@@ -1123,21 +1211,21 @@
                             <div>
                                 @Html.DisplayFor(model => model.DateofConstruction5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
 
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                        <div>
-                            @Html.DropDownList("UsageType5", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Resident", Value = "R" },
-     new SelectListItem { Text = "Non-Resident", Value = "NR"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>
+                        <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                            <div>
+                                @Html.DropDownList("UsageType5", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Resident", Value = "R" },
+         new SelectListItem { Text = "Non-Resident", Value = "NR"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                            </div>
                         </div>
-                    </div>
-                </td>
-         
+                    </td>
+
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
@@ -1149,8 +1237,11 @@
                     <td>
                         <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                             <div>
-                                @Html.DisplayFor(model => model.Legal5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
-
+                                @Html.DropDownList("Legal5", new List<SelectListItem>
+                       {
+               new SelectListItem { Text = "Yes", Value = "Y" },
+           new SelectListItem { Text = "No", Value = "N"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
                             </div>
                         </div>
                     </td>
@@ -1213,7 +1304,12 @@
                             <label class="label">जुना वापराचा प्रकार (निवाशी / बिगर निवाशी / मिश्र ) / <br />Old Usage Type(Resi. / Non-Resi. / Mixed )</label>
                         </th>
                         <td>
-                            @Html.DisplayFor(model => model.OldUsageType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                            @Html.DropDownList("OldUsageType", new List<SelectListItem>
+                    {
+       new SelectListItem { Text = "Resident", Value = "R" },
+    new SelectListItem { Text = "Non-Resident", Value = "NR"},
+    new SelectListItem { Text = "Mixed", Value = "M"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
                         </td>
                         <th>
                             <label class="label">जुना बांधकामाचा प्रकार / <br />Old Construction Type</label>
@@ -1247,7 +1343,12 @@
                             <label class="label">नवीन वापराचा प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />New Usage Type(Resi. / Non-Resi. / Mixed )</label>
                         </th>
                         <td>
-                            @Html.DisplayFor(model => model.NewUsageType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                            @Html.DropDownList("NewUsageType", new List<SelectListItem>
+                    {
+       new SelectListItem { Text = "Resident", Value = "R" },
+    new SelectListItem { Text = "Non-Resident", Value = "NR"},
+    new SelectListItem { Text = "Mixed", Value = "M"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
                         </td>
                         <th>
                             <label class="label">नवीन बांधकामाचा प्रकार / <br />New Construction Type</label>
@@ -1284,7 +1385,12 @@
                         </th>
                         <td>
 
-                            @Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                            @Html.DropDownList("ExtendUsage_Type", new List<SelectListItem>
+                    {
+       new SelectListItem { Text = "Resident", Value = "R" },
+    new SelectListItem { Text = "Non-Resident", Value = "NR"},
+    new SelectListItem { Text = "Mixed", Value = "M"}
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
                         </td>
                         <th>
                             <label class="label">वाढीव बांधकामाचा प्रकार / <br />Extend Construction Type</label>
@@ -1319,19 +1425,19 @@
             <h4 style="text-align:center;font-weight:600" class="my-2">मालमत्तेचाबाबतचा इतर तपशील </h4>
             <table>
 
-            <tr class="text-center">
-                <th>
-                    जागेच्या मुल्यासह बांधकाम साठी
-                    आलेला एकूण खर्च
-                </th>
-                <td>@Html.DisplayFor(model => model.TotalPropertyExpense, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <th>इमारतीचे चालू करपात्र मूल्य</th>
-                <td>@Html.DisplayFor(model => model.CurrentPropertyTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <th>
-                    मालमत्ता कराचा चालू
-                    दर
-                </th>
-                <td>@Html.DisplayFor(model => model.CurrentProperyPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                <tr class="text-center">
+                    <th>
+                        जागेच्या मुल्यासह बांधकाम साठी
+                        आलेला एकूण खर्च
+                    </th>
+                    <td>@Html.DisplayFor(model => model.TotalPropertyExpense, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <th>इमारतीचे चालू करपात्र मूल्य</th>
+                    <td>@Html.DisplayFor(model => model.CurrentPropertyTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <th>
+                        मालमत्ता कराचा चालू
+                        दर
+                    </th>
+                    <td>@Html.DisplayFor(model => model.CurrentProperyPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                 <tr class="text-center">
                     <th>
                         जागेच्या मुल्यासह बांधकाम साठी
@@ -1346,24 +1452,24 @@
                     </th>
                     <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
-            </tr>
-            <tr class="text-center">
-                <th>
-                    मालमत्ता भोवतालच्या मोकळ्या
-                    जागेवरील कराचे दर
-                </th>
-                <td>@Html.DisplayFor(model => model.OpenAroundLandtaxprice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <th>
-                    मालमत्ता कराची
-                    रक्कम
-                </th>
-                <td>@Html.DisplayFor(model => model.ProperyTaxPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <th>
-                    एकूण करासह मालमत्ता
-                    कराची
-                    रक्कम
-                </th>
-                <td>@Html.DisplayFor(model => model.TotalTaxPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+                <tr class="text-center">
+                    <th>
+                        मालमत्ता भोवतालच्या मोकळ्या
+                        जागेवरील कराचे दर
+                    </th>
+                    <td>@Html.DisplayFor(model => model.OpenAroundLandtaxprice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <th>
+                        मालमत्ता कराची
+                        रक्कम
+                    </th>
+                    <td>@Html.DisplayFor(model => model.ProperyTaxPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <th>
+                        एकूण करासह मालमत्ता
+                        कराची
+                        रक्कम
+                    </th>
+                    <td>@Html.DisplayFor(model => model.TotalTaxPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                 </tr>
                 <tr class="text-center">
                     <th>
@@ -1383,18 +1489,18 @@
                     </th>
                     <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
-            </tr>
-            <tr class="text-center">
-                <th>
-                    मोकळ्या जागेच्या कराची
-                    रक्कम
-                </th>
-                <td>@Html.DisplayFor(model => model.OpenLandtaxprice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <th colspan="2">
-                    इमारतीच्या जागेचे मूल्य व घसारा ववचारात घेता आजचे
-                    बाजारमूल्य
-                </th>
-                <td colspan="2">@Html.DisplayFor(model => model.ProperyTaxMarketPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+                <tr class="text-center">
+                    <th>
+                        मोकळ्या जागेच्या कराची
+                        रक्कम
+                    </th>
+                    <td>@Html.DisplayFor(model => model.OpenLandtaxprice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <th colspan="2">
+                        इमारतीच्या जागेचे मूल्य व घसारा ववचारात घेता आजचे
+                        बाजारमूल्य
+                    </th>
+                    <td colspan="2">@Html.DisplayFor(model => model.ProperyTaxMarketPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                 </tr>
                 <tr class="text-center">
                     <th>
@@ -1446,12 +1552,12 @@
                     </td>
                     <td>
 
-                    @Html.DropDownList("link1", new List<SelectListItem>
-                    {
-            new SelectListItem { Text = "Male", Value = "M" },
-        new SelectListItem { Text = "Female", Value = "F"},
- }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                      
+                        @Html.DropDownList("link1", new List<SelectListItem>
+                        {
+                new SelectListItem { Text = "Male", Value = "M" },
+            new SelectListItem { Text = "Female", Value = "F"},
+     }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+
 
                     </td>
                     <td>
@@ -1465,184 +1571,184 @@
 
                     </td>
 
-            </tr>
-            <tr class="text-center">
-                <td>2</td>
-                <td>@Html.DisplayFor(model => model.Name2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link2", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-            </tr>
-            <tr class="text-center">
-                <td>3</td>
-                <td>@Html.DisplayFor(model => model.Name3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link3", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                 </tr>
-              
-              
-            <tr class="text-center">
-                <td>4</td>
-                <td>@Html.DisplayFor(model => model.Name4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link4", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                <tr class="text-center">
+                    <td>2</td>
+                    <td>@Html.DisplayFor(model => model.Name2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link2", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                 </tr>
-               
-            <tr class="text-center">
-                <td>5</td>
-                <td>@Html.DisplayFor(model => model.Name5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link5", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                <tr class="text-center">
+                    <td>3</td>
+                    <td>@Html.DisplayFor(model => model.Name3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link3", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                 </tr>
-           
-            <tr class="text-center">
-                <td>6</td>
-                <td>@Html.DisplayFor(model => model.Name6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link6", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-            </tr>
-               
-            
-            <tr class="text-center">
-                <td>7</td>
-                <td>@Html.DisplayFor(model => model.Name7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link7", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-            </tr>
-         
 
-            <tr class="text-center">
-                <td>8</td>
-                <td>@Html.DisplayFor(model => model.Name8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link8", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-            </tr>
-          
 
-            <tr class="text-center">
-                <td>9</td>
-                <td>@Html.DisplayFor(model => model.Name9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link9", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-            </tr>
-          
+                <tr class="text-center">
+                    <td>4</td>
+                    <td>@Html.DisplayFor(model => model.Name4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link4", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
 
-            <tr class="text-center">
-                <td>10</td>
-                <td>@Html.DisplayFor(model => model.Name10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link10", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-            </tr>
-             
+                <tr class="text-center">
+                    <td>5</td>
+                    <td>@Html.DisplayFor(model => model.Name5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link5", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
 
-            <tr class="text-center">
-                <td>11</td>
-                <td>@Html.DisplayFor(model => model.Name11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link11", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-            </tr>
-              
+                <tr class="text-center">
+                    <td>6</td>
+                    <td>@Html.DisplayFor(model => model.Name6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link6", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
 
-            <tr class="text-center">
-                <td>12</td>
-                <td>@Html.DisplayFor(model => model.Name12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.Age12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>
-                    @Html.DropDownList("link12", new List<SelectListItem>
-                 {
-         new SelectListItem { Text = "Male", Value = "M" },
-     new SelectListItem { Text = "Female", Value = "F"},
-}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                </td>
-                <td>@Html.DisplayFor(model => model.ContactNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <td>@Html.DisplayFor(model => model.VoterIdentityNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-            </tr>
-        </table>
-           
-            
+
+                <tr class="text-center">
+                    <td>7</td>
+                    <td>@Html.DisplayFor(model => model.Name7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link7", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+
+
+                <tr class="text-center">
+                    <td>8</td>
+                    <td>@Html.DisplayFor(model => model.Name8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link8", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+
+
+                <tr class="text-center">
+                    <td>9</td>
+                    <td>@Html.DisplayFor(model => model.Name9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link9", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+
+
+                <tr class="text-center">
+                    <td>10</td>
+                    <td>@Html.DisplayFor(model => model.Name10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link10", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+
+
+                <tr class="text-center">
+                    <td>11</td>
+                    <td>@Html.DisplayFor(model => model.Name11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link11", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+
+
+                <tr class="text-center">
+                    <td>12</td>
+                    <td>@Html.DisplayFor(model => model.Name12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.Age12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>
+                        @Html.DropDownList("link12", new List<SelectListItem>
+                     {
+             new SelectListItem { Text = "Male", Value = "M" },
+         new SelectListItem { Text = "Female", Value = "F"},
+    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                    </td>
+                    <td>@Html.DisplayFor(model => model.ContactNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                    <td>@Html.DisplayFor(model => model.VoterIdentityNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                </tr>
+            </table>
+
+
 
         </div>
         <h5 class="text-center" style="margin-top:18%"> प्रपत्र - 1 </h5>
-        <div class="d-flex flex-column  mb-4" style="border:1px solid black ; padding:2%">
+        <div class="d-flex flex-column  mb-4" style="border: 1px solid black; padding: 2%; margin-left: 3%; width: 96%;">
             <h6 class="text-center">इमारतीचा प्रकार </h6>
             <div class="d-flex flex-row">
 
@@ -1762,7 +1868,7 @@
 
             <div class="d-flex flex-row">
 
-                <div class="col mr-3" style="border:1px solid black ; padding:2%" s>
+                <div class="col mr-3" style="border: 1px solid black; padding: 2%; margin-left: 3%; /* width: 56%; */" >
                     <h6>निवसी मालमत्तांचे वर्गीकरण /<br />Residential Property Category</h6>
                     <div>
                         @Html.CheckBox("FirstRPC", new { @class = "chkBx34" })&nbsp;
@@ -1842,7 +1948,7 @@
 
 
                 </div>
-                <div class="col" style="border:1px solid black ; padding:2%">
+                <div class="col" style="border: 1px solid black; padding: 2%; margin-right: 1%;">
                     <h6>बिगर निवाशी  मालमत्तांचे वर्गीकरण /<br />Commercial Property Category</h6>
                     <div>
                         @Html.CheckBox("FirstCPC", new { @class = "chkBx46" })&nbsp;
@@ -2034,32 +2140,32 @@
         function goBack() {
             window.history.back();
         }
-                            //function print() {
-                            //    const filename  = 'ThisIsYourPDFFilename.pdf';
+                                //function print() {
+                                //    const filename  = 'ThisIsYourPDFFilename.pdf';
 
-                            //    html2canvas(document.getElementById('target')).then(canvas => {
-                            //        let pdf = new jsPDF('p', 'mm', 'a4');
-                            //        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
-                            //        pdf.save(filename);
-                            //    });
-                            //}
-                            //function print() {
-                            //    window.print()
-                            //}
+                                //    html2canvas(document.getElementById('target')).then(canvas => {
+                                //        let pdf = new jsPDF('p', 'mm', 'a4');
+                                //        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+                                //        pdf.save(filename);
+                                //    });
+                                //}
+                                //function print() {
+                                //    window.print()
+                                //}
 
-                            // Variant
-                            // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
-                            //var quality=4;
-                            //function print(quality) {
-                            //    const filename  = 'ThisIsYourPDFFilename.pdf';
+                                // Variant
+                                // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
+                                //var quality=4;
+                                //function print(quality) {
+                                //    const filename  = 'ThisIsYourPDFFilename.pdf';
 
-                            //    html2canvas(document.getElementById('target'),
-                            //							{scale: quality}
-                            //					 ).then(canvas => {
-                            //					     let pdf = new jsPDF('p', 'mm', 'a4');
-                            //					     pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
-                            //					     pdf.addPage();
-                            //					     pdf.save(filename);
-                            //					 });
-                            //}
+                                //    html2canvas(document.getElementById('target'),
+                                //							{scale: quality}
+                                //					 ).then(canvas => {
+                                //					     let pdf = new jsPDF('p', 'mm', 'a4');
+                                //					     pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+                                //					     pdf.addPage();
+                                //					     pdf.save(filename);
+                                //					 });
+                                //}
     </script>

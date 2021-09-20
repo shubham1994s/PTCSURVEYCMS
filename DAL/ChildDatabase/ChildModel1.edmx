@@ -129,7 +129,7 @@
           <Property Name="FloorNo1" Type="nvarchar" MaxLength="500" />
           <Property Name="OccupancyStatus1" Type="nvarchar" MaxLength="500" />
           <Property Name="ConstType1" Type="nvarchar" MaxLength="500" />
-          <Property Name="DateofConstruction1" Type="datetime" />
+          <Property Name="DateofConstruction1" Type="nvarchar" MaxLength="50" />
           <Property Name="UsageType1" Type="nvarchar" MaxLength="500" />
           <Property Name="UsageTypeClass1" Type="nvarchar" MaxLength="500" />
           <Property Name="Legal1" Type="nvarchar" MaxLength="100" />
@@ -138,7 +138,7 @@
           <Property Name="FloorNo2" Type="nvarchar" MaxLength="500" />
           <Property Name="OccupancyStatus2" Type="nvarchar" MaxLength="500" />
           <Property Name="ConstType2" Type="nvarchar" MaxLength="500" />
-          <Property Name="DateofConstruction2" Type="datetime" />
+          <Property Name="DateofConstruction2" Type="nvarchar" MaxLength="50" />
           <Property Name="UsageType2" Type="nvarchar" MaxLength="500" />
           <Property Name="UsageTypeClass2" Type="nvarchar" MaxLength="500" />
           <Property Name="Legal2" Type="nvarchar" MaxLength="100" />
@@ -147,7 +147,7 @@
           <Property Name="FloorNo3" Type="nvarchar" MaxLength="500" />
           <Property Name="OccupancyStatus3" Type="nvarchar" MaxLength="500" />
           <Property Name="ConstType3" Type="nvarchar" MaxLength="500" />
-          <Property Name="DateofConstruction3" Type="datetime" />
+          <Property Name="DateofConstruction3" Type="nvarchar" MaxLength="50" />
           <Property Name="UsageType3" Type="nvarchar" MaxLength="500" />
           <Property Name="UsageTypeClass3" Type="nvarchar" MaxLength="500" />
           <Property Name="Legal3" Type="nvarchar" MaxLength="100" />
@@ -156,7 +156,7 @@
           <Property Name="FloorNo4" Type="nvarchar" MaxLength="500" />
           <Property Name="OccupancyStatus4" Type="nvarchar" MaxLength="500" />
           <Property Name="ConstType4" Type="nvarchar" MaxLength="500" />
-          <Property Name="DateofConstruction4" Type="datetime" />
+          <Property Name="DateofConstruction4" Type="nvarchar" MaxLength="50" />
           <Property Name="UsageType4" Type="nvarchar" MaxLength="500" />
           <Property Name="UsageTypeClass4" Type="nvarchar" MaxLength="500" />
           <Property Name="Legal4" Type="nvarchar" MaxLength="100" />
@@ -164,7 +164,7 @@
           <Property Name="BuildupArea4" Type="nvarchar" MaxLength="500" />
           <Property Name="FloorNo5" Type="nvarchar" MaxLength="500" />
           <Property Name="ConstType5" Type="nvarchar" MaxLength="500" />
-          <Property Name="DateofConstruction5" Type="datetime" />
+          <Property Name="DateofConstruction5" Type="nvarchar" MaxLength="50" />
           <Property Name="UsageType5" Type="nvarchar" MaxLength="500" />
           <Property Name="UsageTypeClass5" Type="nvarchar" MaxLength="500" />
           <Property Name="Legal5" Type="nvarchar" MaxLength="100" />
@@ -633,7 +633,7 @@
           <Property Name="FloorNo1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="OccupancyStatus1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ConstType1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="DateofConstruction1" Type="DateTime" Precision="3" />
+          <Property Name="DateofConstruction1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UsageType1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="UsageTypeClass1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Legal1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -642,7 +642,7 @@
           <Property Name="FloorNo2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="OccupancyStatus2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ConstType2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="DateofConstruction2" Type="DateTime" Precision="3" />
+          <Property Name="DateofConstruction2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UsageType2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="UsageTypeClass2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Legal2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -651,7 +651,7 @@
           <Property Name="FloorNo3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="OccupancyStatus3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ConstType3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="DateofConstruction3" Type="DateTime" Precision="3" />
+          <Property Name="DateofConstruction3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UsageType3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="UsageTypeClass3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Legal3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -660,7 +660,7 @@
           <Property Name="FloorNo4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="OccupancyStatus4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ConstType4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="DateofConstruction4" Type="DateTime" Precision="3" />
+          <Property Name="DateofConstruction4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UsageType4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="UsageTypeClass4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Legal4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -668,7 +668,7 @@
           <Property Name="BuildupArea4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="FloorNo5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ConstType5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="DateofConstruction5" Type="DateTime" Precision="3" />
+          <Property Name="DateofConstruction5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UsageType5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="UsageTypeClass5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Legal5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -719,19 +719,19 @@
           <Property Name="Sketchdiagram" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Sketchdiagram2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="AppId" Type="Int32" />
-          <Property Name="ZoneNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="VillageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="HFSNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Legal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="HissaNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="OldRateableValue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="OldTotalTax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="FirstAssessmentYear" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ImageNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="WardNameNo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ZoneNo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="FHNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PropertyType2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FHNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneNo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WardNameNo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FirstAssessmentYear" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OldTotalTax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Legal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OldRateableValue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HissaNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HFSNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VillageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NewPropertyNo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NoOfTrees" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Personalwell" Type="Boolean" />
@@ -759,15 +759,14 @@
           <Property Name="TotalPropertyExpense" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="CurrentPropertyTax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="CurrentProperyPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="OpenAroundLandtaxprice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OpenLandtaxprice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="ProperyTaxPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="TotalTaxPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="OpenLandtaxprice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OpenAroundLandtaxprice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="ProperyTaxMarketPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Name4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -776,6 +775,7 @@
           <Property Name="Name10" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name11" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name12" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Name4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Age1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Age2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Age3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -1051,6 +1051,7 @@
                 <ScalarProperty Name="Age3" ColumnName="Age3" />
                 <ScalarProperty Name="Age2" ColumnName="Age2" />
                 <ScalarProperty Name="Age1" ColumnName="Age1" />
+                <ScalarProperty Name="Name4" ColumnName="Name4" />
                 <ScalarProperty Name="Name12" ColumnName="Name12" />
                 <ScalarProperty Name="Name11" ColumnName="Name11" />
                 <ScalarProperty Name="Name10" ColumnName="Name10" />
@@ -1059,15 +1060,14 @@
                 <ScalarProperty Name="Name7" ColumnName="Name7" />
                 <ScalarProperty Name="Name6" ColumnName="Name6" />
                 <ScalarProperty Name="Name5" ColumnName="Name5" />
-                <ScalarProperty Name="Name4" ColumnName="Name4" />
                 <ScalarProperty Name="Name3" ColumnName="Name3" />
                 <ScalarProperty Name="Name2" ColumnName="Name2" />
                 <ScalarProperty Name="Name1" ColumnName="Name1" />
                 <ScalarProperty Name="ProperyTaxMarketPrice" ColumnName="ProperyTaxMarketPrice" />
-                <ScalarProperty Name="OpenLandtaxprice" ColumnName="OpenLandtaxprice" />
+                <ScalarProperty Name="OpenAroundLandtaxprice" ColumnName="OpenAroundLandtaxprice" />
                 <ScalarProperty Name="TotalTaxPrice" ColumnName="TotalTaxPrice" />
                 <ScalarProperty Name="ProperyTaxPrice" ColumnName="ProperyTaxPrice" />
-                <ScalarProperty Name="OpenAroundLandtaxprice" ColumnName="OpenAroundLandtaxprice" />
+                <ScalarProperty Name="OpenLandtaxprice" ColumnName="OpenLandtaxprice" />
                 <ScalarProperty Name="CurrentProperyPrice" ColumnName="CurrentProperyPrice" />
                 <ScalarProperty Name="CurrentPropertyTax" ColumnName="CurrentPropertyTax" />
                 <ScalarProperty Name="TotalPropertyExpense" ColumnName="TotalPropertyExpense" />
@@ -1095,19 +1095,19 @@
                 <ScalarProperty Name="Personalwell" ColumnName="Personalwell" />
                 <ScalarProperty Name="NoOfTrees" ColumnName="NoOfTrees" />
                 <ScalarProperty Name="NewPropertyNo2" ColumnName="NewPropertyNo2" />
-                <ScalarProperty Name="PropertyType2" ColumnName="PropertyType2" />
-                <ScalarProperty Name="FHNo" ColumnName="FHNo" />
-                <ScalarProperty Name="ZoneNo2" ColumnName="ZoneNo2" />
-                <ScalarProperty Name="WardNameNo2" ColumnName="WardNameNo2" />
-                <ScalarProperty Name="ImageNo" ColumnName="ImageNo" />
-                <ScalarProperty Name="FirstAssessmentYear" ColumnName="FirstAssessmentYear" />
-                <ScalarProperty Name="OldTotalTax" ColumnName="OldTotalTax" />
-                <ScalarProperty Name="OldRateableValue" ColumnName="OldRateableValue" />
-                <ScalarProperty Name="HissaNo" ColumnName="HissaNo" />
-                <ScalarProperty Name="Legal" ColumnName="Legal" />
-                <ScalarProperty Name="HFSNo" ColumnName="HFSNo" />
                 <ScalarProperty Name="VillageName" ColumnName="VillageName" />
+                <ScalarProperty Name="HFSNo" ColumnName="HFSNo" />
                 <ScalarProperty Name="ZoneNo" ColumnName="ZoneNo" />
+                <ScalarProperty Name="HissaNo" ColumnName="HissaNo" />
+                <ScalarProperty Name="OldRateableValue" ColumnName="OldRateableValue" />
+                <ScalarProperty Name="Legal" ColumnName="Legal" />
+                <ScalarProperty Name="OldTotalTax" ColumnName="OldTotalTax" />
+                <ScalarProperty Name="FirstAssessmentYear" ColumnName="FirstAssessmentYear" />
+                <ScalarProperty Name="ImageNo" ColumnName="ImageNo" />
+                <ScalarProperty Name="WardNameNo2" ColumnName="WardNameNo2" />
+                <ScalarProperty Name="ZoneNo2" ColumnName="ZoneNo2" />
+                <ScalarProperty Name="FHNo" ColumnName="FHNo" />
+                <ScalarProperty Name="PropertyType2" ColumnName="PropertyType2" />
                 <ScalarProperty Name="AppId" ColumnName="AppId" />
                 <ScalarProperty Name="Sketchdiagram2" ColumnName="Sketchdiagram2" />
                 <ScalarProperty Name="Sketchdiagram" ColumnName="Sketchdiagram" />

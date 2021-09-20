@@ -136,7 +136,7 @@ public partial class PropertyMaster
 
     public string ConstType1 { get; set; }
 
-    public Nullable<System.DateTime> DateofConstruction1 { get; set; }
+    public string DateofConstruction1 { get; set; }
 
     public string UsageType1 { get; set; }
 
@@ -154,7 +154,7 @@ public partial class PropertyMaster
 
     public string ConstType2 { get; set; }
 
-    public Nullable<System.DateTime> DateofConstruction2 { get; set; }
+    public string DateofConstruction2 { get; set; }
 
     public string UsageType2 { get; set; }
 
@@ -172,7 +172,7 @@ public partial class PropertyMaster
 
     public string ConstType3 { get; set; }
 
-    public Nullable<System.DateTime> DateofConstruction3 { get; set; }
+    public string DateofConstruction3 { get; set; }
 
     public string UsageType3 { get; set; }
 
@@ -190,7 +190,7 @@ public partial class PropertyMaster
 
     public string ConstType4 { get; set; }
 
-    public Nullable<System.DateTime> DateofConstruction4 { get; set; }
+    public string DateofConstruction4 { get; set; }
 
     public string UsageType4 { get; set; }
 
@@ -206,7 +206,7 @@ public partial class PropertyMaster
 
     public string ConstType5 { get; set; }
 
-    public Nullable<System.DateTime> DateofConstruction5 { get; set; }
+    public string DateofConstruction5 { get; set; }
 
     public string UsageType5 { get; set; }
 
@@ -308,31 +308,31 @@ public partial class PropertyMaster
 
     public Nullable<int> AppId { get; set; }
 
-    public string ZoneNo { get; set; }
-
-    public string VillageName { get; set; }
-
-    public string HFSNo { get; set; }
-
-    public string Legal { get; set; }
-
-    public string HissaNo { get; set; }
-
-    public string OldRateableValue { get; set; }
-
-    public string OldTotalTax { get; set; }
-
-    public string FirstAssessmentYear { get; set; }
-
-    public string ImageNo { get; set; }
-
-    public string WardNameNo2 { get; set; }
-
-    public string ZoneNo2 { get; set; }
+    public string PropertyType2 { get; set; }
 
     public string FHNo { get; set; }
 
-    public string PropertyType2 { get; set; }
+    public string ZoneNo2 { get; set; }
+
+    public string WardNameNo2 { get; set; }
+
+    public string ImageNo { get; set; }
+
+    public string FirstAssessmentYear { get; set; }
+
+    public string OldTotalTax { get; set; }
+
+    public string Legal { get; set; }
+
+    public string OldRateableValue { get; set; }
+
+    public string HissaNo { get; set; }
+
+    public string ZoneNo { get; set; }
+
+    public string HFSNo { get; set; }
+
+    public string VillageName { get; set; }
 
     public string NewPropertyNo2 { get; set; }
 
@@ -388,13 +388,13 @@ public partial class PropertyMaster
 
     public string CurrentProperyPrice { get; set; }
 
-    public string OpenAroundLandtaxprice { get; set; }
+    public string OpenLandtaxprice { get; set; }
 
     public string ProperyTaxPrice { get; set; }
 
     public string TotalTaxPrice { get; set; }
 
-    public string OpenLandtaxprice { get; set; }
+    public string OpenAroundLandtaxprice { get; set; }
 
     public string ProperyTaxMarketPrice { get; set; }
 
@@ -403,8 +403,6 @@ public partial class PropertyMaster
     public string Name2 { get; set; }
 
     public string Name3 { get; set; }
-
-    public string Name4 { get; set; }
 
     public string Name5 { get; set; }
 
@@ -421,6 +419,8 @@ public partial class PropertyMaster
     public string Name11 { get; set; }
 
     public string Name12 { get; set; }
+
+    public string Name4 { get; set; }
 
     public string Age1 { get; set; }
 

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0b0f6d9b86d8482d93966165701adb39" Name="Diagram1">
+      <Diagram DiagramId="0b0f6d9b86d8482d93966165701adb39" Name="Diagram1" ZoomLevel="124">
         <EntityTypeShape EntityType="DEVPTCSURVEYMALEGAONModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DEVPTCSURVEYMALEGAONModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DEVPTCSURVEYMALEGAONModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
@@ -13,6 +13,7 @@
         <AssociationConnector Association="DEVPTCSURVEYMALEGAONModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="DEVPTCSURVEYMALEGAONModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="DEVPTCSURVEYMALEGAONModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DEVPTCSURVEYMALEGAONModel.PropertyMaster" Width="1.5" PointX="3.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
