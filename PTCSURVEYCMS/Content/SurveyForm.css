@@ -12,3 +12,26 @@ hr{border-top:black !important}
     padding-right: 1%;
     border: 1px solid #12b3de;
 }
+
+
+
+#logo1 {
+    position: absolute;
+    height: 150px;
+    top: 0%;
+    left: 13%
+}
+
+
+#logo2 {
+    position: absolute;
+    height: 90px;
+    top: 6%;
+    right: 7%
+}
+@media (max-width:1024px){
+    .width{
+        max-width:880px
+    }
+    #logo2{right:3%}
+}
