@@ -43,11 +43,11 @@
     line-height: 1.5;border-radius: 3px;border-style: none;" onclick="goBack()">
         Back
     </button>
-    <img src="~/Content/Images/vengurla logo.jpeg" style="position: absolute;height: 150px;top: 0%;left:10%" />
+    <img src="~/Content/Images/vengurla logo.jpeg" id="logo1" />
     <h1 class="text-center my-3">@ViewBag.Appname_mar</h1>
     <h6 class="text-center mb-3">स्वच्छता विभाग </h6>
     <h6 class="text-center mb-5 font-weight-bold"><u> स्वच्छ सर्वेक्षण मालमत्ता सर्वेक्षण नमुना</u></h6>
-    <img src="~/content/Images/Logo_150x48.png" style="position: absolute;height: 90px;top:5%; right:5%" />
+    <img src="~/content/Images/Logo_150x48.png" id="logo2"/>
     <div class="container">
 
         @* Building Name Section A *@
@@ -331,7 +331,7 @@
                 <!--</div>
                 </div>-->
                 @* Building Name Section C *@
-                <div class="d-flex flex-row back mb-4">
+                <div class="d-flex flex-row back mb-4 width">
                     <div class="form-group pr-4">
                         <label class="label">इमारतीचे नाव /<br /> Building Name</label>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -389,7 +389,7 @@
                 </div>
                 <hr />
                 @* Prop. Owner Namee Section D *@
-                <div class="d-flex flex-column back mb-4">
+                <div class="d-flex flex-column back mb-4 width">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
                             <label class="label"> मालमत्ताधारकाचे नाव /<br /> Prop. Owner Name</label>
@@ -482,7 +482,7 @@
                     </div>
                 </div>
                 @* Occupier Name Section E *@
-                <div class="d-flex flex-column back mb-4">
+                <div class="d-flex flex-column back mb-4 width">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
                             <label class="label"> भोगवटदाराचे नाव /<br /> Occupier Name</label>
@@ -548,7 +548,7 @@
                 </div>
 
                 @* Occupier Name Section F *@
-                <div class="d-flex flex-column back mb-4">
+                <div class="d-flex flex-column back mb-4 width">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
                             <label class="label"> भाडेकरूचे नाव /<br /> Tenant Name</label>
@@ -608,7 +608,7 @@
                 </div>
                 <hr />
                 @* Address Section G *@
-                <div class="d-flex flex-column back mb-4">
+                <div class="d-flex flex-column back mb-4 width">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
                             <label class="label">पत्ता /<br /> Address</label>
@@ -654,8 +654,8 @@
                             <span class="help-block with-errors"></span>
                         </div>
                     </div>
-                    <div class="d-flex flex-row back mb-4">
-                        <div class="form-group pr-4">
+                    <div class="d-flex flex-row back mb-4 width" >
+                        <div class="form-group pr-4" style="width:22%">
                             <label class="label">बांधकाम चालू केलेले वर्ष /<br /> Const. Start Year</label>
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -666,7 +666,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
 
-                        <div class="form-group pr-4">
+                        <div class="form-group pr-4" style="width:23%">
                             <label class="label">बांधकाम पूर्णत्वाचे वर्ष / Const.Completion Year</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.CompletionYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -675,7 +675,7 @@
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
-                        <div class="form-group pr-4" style="width:10%">
+                        <div class="form-group pr-4" style="width:9%">
                             <label class="label">वय / Age</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.Age, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -684,7 +684,7 @@
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
-                        <div class="form-group pr-4" style="width:32%">
+                        <div class="form-group pr-4" style="width:37%">
                             <label class="label">वापराचा प्रकार (निवासी/ बिगर निवासी / मिश्र) / Usage Type (Resi. / Non-resi. / Mixed)</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.DropDownList("Usage", new List<SelectListItem>
@@ -698,7 +698,7 @@
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
-                        <div class="form-group pr-4">
+                        <div class="form-group pr-4" style="width:35%">
                             <label class="label">इमारतीचा प्रकार / Type of Bldg<br />(सोबत जोडलेल्या तत्क्याप्रमाणे - प्रपत्र-१) </label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.TypeofBldg, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -710,7 +710,7 @@
 
                     </div>
                 </div>
-                <div class="d-flex flex-column back mb-4">
+                <div class="d-flex flex-column back mb-4 width">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
                             <label class="label">बांधकाम परवानगी क्र. / Const. Perm. No.</label>
@@ -738,7 +738,7 @@
 
                     </div>
                     <div class="d-flex flex-row">
-                        <div class="d-flex flex-row  mb-5">
+                        <div class="d-flex flex-row  mb-5" style="width:100%">
                             <div class="form-group pr-5 back mr-5">
                                 <label class="label">जलपुनर्भरण व्यवस्था / <br />Rain water harvest</label>
 
@@ -765,7 +765,7 @@
                             </div>
 
                         </div>
-                        <div class="d-flex flex-row  mb-5">
+                        <div class="d-flex flex-row  mb-5" style="width:100%">
                             <div class="form-group pr-4 back  mr-5">
                                 <label class="label">खतनिर्माती प्रकल्प /<br />Composting Project </label>
 
@@ -921,8 +921,8 @@
                                 </label>
 
                                 <div>
-                                    @Html.CheckBox("FST", new { @class = "chkBx6" })
-                                    <label>फक्त सेप्टिक टैंक &nbsp;</label>
+                                  
+                                    <label>@Html.CheckBox("FST", new { @class = "chkBx6" }) फक्त सेप्टिक टैंक </label>
 
                                 </div>
                                 <div>
@@ -1047,7 +1047,7 @@
                 </div>
 
 
-                <table style="width:100%" class="back mb-4">
+                <table style="width:100%" class="back mb-4 width">
                     <tr>
                         <th>मजला क्र./Floor No.</th>
                         <th>मालकी (मालमत्ता धारक/भाडेकरू/लीज) /<br />Occupancy Status(Owner / Tenant/ Lease)</th>
@@ -1530,7 +1530,7 @@ new SelectListItem { Text = "Lease", Value = "Lease"}
                 </table>
 
 
-                <div class="d-flex flex-column back mb-4">
+                <div class="d-flex flex-column back mb-4 width">
                     <h4 class="text-center">मालमत्ता सर्वेक्षण नुसार तुलनात्मक तक्ता</h4>
                     <div class="d-flex flex-row">
 
@@ -1682,7 +1682,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                 </div>
 
 
-                <table class="back mb-4">
+                <table class="back mb-4 width">
                     <tr><th style="text-align:center;font-weight:600" colspan="6">कुटुंबातील सदस्ययांचा  तपशील </th></tr>
                     <tr class="text-center">
                         <td>अ. क्र.</td>
@@ -1876,7 +1876,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                 </table>
                 @*change*@
                 <h5 class="text-center"> प्रपत्र - 1 </h5>
-                <div class="d-flex flex-column back mb-4">
+                <div class="d-flex flex-column back mb-4 width">
                     <h6 class="text-center">इमारतीचा प्रकार </h6>
                     <div class="d-flex flex-row">
 
@@ -1994,7 +1994,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                 </div>
                 <div class="d-flex flex-column  mb-4">
 
-                    <div class="d-flex flex-row">
+                    <div class="d-flex flex-row width">
 
                         <div class="col back mr-3">
                             <h6>निवसी मालमत्तांचे वर्गीकरण /<br />Residential Property Category</h6>
@@ -2178,7 +2178,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 
                     </div>
                 </div>
-                <div class="d-flex flex-column back mb-4">
+                <div class="d-flex flex-column back mb-4 width">
                     <div class="d-flex flex-row">
                         <div class="form-group pr-4">
                             <label class="label">प्रभाग  क्र./ <br />  Prabhag No.</label>
@@ -2250,7 +2250,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                         </div>*@
                 </div>
 
-                <table style="width:100%" class="back mb-5">
+                <table style="width:100%" class="back mb-5 width">
                     <tr>
                         <th>वर्णन / Description</th>
                         <th>नाव / Name</th>
@@ -2283,7 +2283,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 
 
 
-                <div class="d-flex flex-column back mb-4">
+                <div class="d-flex flex-column back mb-4 width">
                         <div class="p-2 bd-highlight" style="margin:auto;">
                             <label class="label"><b>Document Upload</b></label>
                         </div>
@@ -2296,7 +2296,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                         </div>
 
                     </div>
-                <div class="row justify-content-center my-3">
+                <div class="row justify-content-center my-3 width">
                     <center><span class="text-danger" id="err_generate"></span></center>
                     <div class="form-group1 ">
                         <button type="submit" name="submit" style="padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
