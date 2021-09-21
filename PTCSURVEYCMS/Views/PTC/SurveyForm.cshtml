@@ -12,7 +12,17 @@
         border-collapse: collapse;
         font-weight: 500;
     }
+  
 
+    .subject {
+        width: 17%;
+    }
+    .prakar {
+        width: 10%
+    }
+    .second {
+        width: 12%
+    }
     .pl {
         margin-left: 5px
     }
@@ -20,6 +30,7 @@
    h5, h6 {
         font-weight: 600 !important
     }
+td input{width:100%}
     /*.form-control {
         text-transform: capitalize;
     }
@@ -848,22 +859,19 @@
                             </div>
                             <div class="form-group pr-4 back ">
                                 <label class="label">शौचालयाचा प्रकार / Type of Toilet</label>
-
-                                <div>
-                                    @Html.CheckBox("LocationofToiletResidential", new { @class = "chkBx5" })
-                                    <label> स्वतंत्र्य / Self &nbsp;</label>
-
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("LocationofToiletResidential", new { @class = "chkBx5" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label> स्वतंत्र्य / Self &nbsp;</label></div>
                                 </div>
-                                <div>
-                                    @Html.CheckBox("LocationofToiletSpecial", new { @class = "chkBx5" })
-                                    <label>संयुक्त / Common &nbsp;</label>
-
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">  @Html.CheckBox("LocationofToiletSpecial", new { @class = "chkBx5" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label>संयुक्त / Common &nbsp;</label></div>
                                 </div>
-                                <div>
-                                 
-                                    <label>   @Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx5" }) व्यवस्था नाही /<br /> No Arrangement &nbsp;</label>
-
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx5" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label> व्यवस्था नाही / No Arrangement &nbsp;</label></div>
                                 </div>
+                                
                             </div>
 
 
@@ -884,7 +892,7 @@
                             </div>
                             <div>
                               
-                                <label>  @Html.CheckBox("WaterConnectionSpecial", new { @class = "chkBx3" }) विशेष वर्ग / Sp. Category </label>
+                                <label>  @Html.CheckBox("WaterConnectionSpecial", new { @class = "chkBx3" }) विशेष वर्ग/Sp.Category </label>
 
                             </div>
                             <div>
@@ -894,169 +902,160 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex flex-row">
-
-                        <div class="form-group pr-4 back mr-3">
 
 
-                            <div>
-                                @Html.CheckBox("DoorLockResidential", new { @class = "chkBx8" })
-                                <label>घर बंद / Door Lock &nbsp;</label>
+                    <div class="d-flex flex-row  mb-4">
+                      
+                            <div class="form-group back mr-3" style="max-width: 20%; padding: 10px; height:210px;">
 
-                            </div>
-                            <div>
-                                <label> @Html.CheckBox("DoorLockSpecial", new { @class = "chkBx8" })&nbsp; कायम घर बंद / Permanent<br /> Door Lock </label>
-
-                            </div>
-                            <div>
-                                <label>@Html.CheckBox("DoorLockIndustrial", new { @class = "chkBx8" })&nbsp; बाहेरून मोजमाप /Outer<br />  Measurement </label>
-
-                            </div>
-                        </div>
-                        @*Change*@
-                        <div class="d-flex flex-row  mb-4">
-                            <div class="form-group pr-4 back mr-3" style="width:70%">
-                                <label class="label">
-                                    शौचालय टाकी प्रकार /
-                                </label>
-
-                                <div>
-                                  
-                                    <label>@Html.CheckBox("FST", new { @class = "chkBx6" }) फक्त सेप्टिक टैंक </label>
-
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">  @Html.CheckBox("DoorLockResidential", new { @class = "chkBx8" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label>घर बंद / Door Lock</label></div>
                                 </div>
-                                <div>
-                                   
-                                    <label> @Html.CheckBox("STS", new { @class = "chkBx6" }) सेप्टिक टैंक +<br> शोषखड्डा &nbsp;</label>
-
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("DoorLockSpecial", new { @class = "chkBx8" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label> कायम घर बंद / Permanent Door Lock</label></div>
                                 </div>
-                                <div>
-                                    @Html.CheckBox("Other", new { @class = "chkBx6" })
-                                    <label>
-                                        इतर&nbsp;
-                                    </label>
-
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("DoorLockIndustrial", new { @class = "chkBx8" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label>  बाहेरून मोजमाप /Outer Measurement</label></div>
                                 </div>
+                         
                             </div>
-
-
                             @*Change*@
-                            <div class="form-group pr-4 back  mr-3">
-                                <label class="label">सांडपाणी गटारात सोडता काय ?</label>
-                                <div>
-                                    @Html.CheckBox("SGSK", new { @class = "chkBx2" })
-                                    <label>होय </label>&nbsp;
-                                    @Html.CheckBox("NOSGSK", new { @class = "chkBx2" })
-                                    <label>नाही</label>
-
-                                </div>
-                                <div>
-                                    <label>
-                                        @Html.CheckBox("UnderGroundGutter", new { @class = "chkBx7" })  भूमिगत गटार / Closed Drain
+                            <div class="d-flex flex-row  mb-4">
+                                <div class="form-group pr-4 back mr-3" style="width:70%">
+                                    <label class="label">
+                                        शौचालय टाकी प्रकार
                                     </label>
+                                    <div class="row">
+                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("FST", new { @class = "chkBx6" })</div>
+                                        <div class="col-6" style="max-width: 80%;flex:none">  <label> फक्त सेप्टिक टैंक</label></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("STS", new { @class = "chkBx6" })</div>
+                                        <div class="col-6" style="max-width: 80%;flex:none">  <label> सेप्टिक टैंक + शोषखड्डा</label></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("Other", new { @class = "chkBx6" })</div>
+                                        <div class="col-6" style="max-width: 80%;flex:none">  <label>इतर</label></div>
+                                    </div>
 
                                 </div>
-                                <div>
-                                  
-                                    <label>  @Html.CheckBox("OpenGutter", new { @class = "chkBx7" })  उघडी गटार / Open Drain </label>
+
+
+                                @*Change*@
+                                <div class="form-group pr-4 back  mr-3">
+                                    <label class="label">सांडपाणी गटारात सोडता काय ?</label>
+                                    <div>
+                                        @Html.CheckBox("SGSK", new { @class = "chkBx2" })
+                                        <label>होय </label>&nbsp;
+                                        @Html.CheckBox("NOSGSK", new { @class = "chkBx2" })
+                                        <label>नाही</label>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">  @Html.CheckBox("UnderGroundGutter", new { @class = "chkBx7" })</div>
+                                        <div class="col-6" style="max-width: 80%;flex:none">  <label>  भूमिगत गटार / Closed Drain</label></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("OpenGutter", new { @class = "chkBx7" }) </div>
+                                        <div class="col-6" style="max-width: 80%;flex:none">  <label>उघडी गटार / Open Drain</label></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("OtherGutter", new { @class = "chkBx7" })</div>
+                                        <div class="col-6" style="max-width: 80%;flex:none">  <label> इतर</label></div>
+                                    </div>
 
                                 </div>
 
-                                <div>
-                                    @Html.CheckBox("OtherGutter", new { @class = "chkBx7" })
-                                    <label>
-                                        इतर&nbsp;
-                                    </label>
+                            </div>
+                            <div class="d-flex flex-row  mb-4">
 
+
+
+                                <div class="form-group pr-4 back">
+                                    <label class="label">इमारती  करिता सांडपाणी शुद्धीकरण प्रकल्प आहे का ?</label>
+
+                                    <div>
+                                        @Html.CheckBox("NaturalMethod", new { @class = "chkBx9" })
+                                        <label> नैसर्गिक पद्धत &nbsp;</label>
+
+                                    </div>
+                                    <div>
+                                        @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx9" })
+                                        <label>
+                                            कृत्रिम पद्धत&nbsp;&nbsp;
+
+                                        </label>
+                                    </div>
+                                    <div>
+                                        @Html.CheckBox("OtherMethod", new { @class = "chkBx9" })
+                                        <label>
+                                            इतर&nbsp;&nbsp;
+
+                                        </label>
+                                    </div>
+                                    <div>
+                                        @Html.CheckBox("NoProject", new { @class = "chkBx9" })
+                                        <label>
+                                            प्रकल्प नाही&nbsp;&nbsp;
+
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
+                            @*Change*@
+                            <div class="d-flex flex-row  mb-4 ml-3">
+                                <table style="width:100%;border:1px solid black">
+                                    <tr>
+                                        <th colspan="5">मालमत्तेची सद्यस्तिथी</th>
+                                    </tr>
 
-                        </div>
-                        <div class="d-flex flex-row  mb-4">
+                                    <tr>
+                                        <td><b>भिंती</b></td>
+                                        <td> @Html.CheckBox("Safe", new { @class = "chkBx13", style = "width:auto" })</td>
+                                        <td>सुस्थितीत</td>
+                                        <td> @Html.CheckBox("Danger", new { @class = "chkBx13", style = "width:auto" })</td>
+                                        <td> धोकदायक</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b> छप्पर</b>
+                                        </td>
+                                        <td> @Html.CheckBox("Safe2", new { @class = "chkBx10", style = "width:auto" })</td>
+                                        <td>सुस्थितीत</td>
+                                        <td> @Html.CheckBox("Danger2", new { @class = "chkBx10", style = "width:auto" })</td>
+                                        <td> धोकदायक</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b> काँलम</b>
+                                        </td>
+                                        <td> @Html.CheckBox("Safe3", new { @class = "chkBx11", style = "width:auto" })</td>
+                                        <td>सुस्थितीत</td>
+                                        <td> @Html.CheckBox("Danger3", new { @class = "chkBx11", style = "width:auto" })</td>
+                                        <td> धोकदायक</td>
+                                    </tr>
 
-
-
-                            <div class="form-group pr-4 back">
-                                <label class="label">इमारती  करिता सांडपाणी शुद्धीकरण प्रकल्प आहे का ?</label>
-
-                                <div>
-                                    @Html.CheckBox("NaturalMethod", new { @class = "chkBx9" })
-                                    <label> नैसर्गिक पद्धत &nbsp;</label>
-
-                                </div>
-                                <div>
-                                    @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx9" })
-                                    <label>
-                                        कृत्रिम पद्धत&nbsp;&nbsp;
-
-                                    </label>
-                                                            </div>
-                                <div>
-                                    @Html.CheckBox("OtherMethod", new { @class = "chkBx9" })
-                                    <label>
-                                        इतर&nbsp;&nbsp;
-
-                                    </label>
-                                </div>
-                                <div>
-                                    @Html.CheckBox("NoProject", new { @class = "chkBx9" })
-                                    <label>
-                                        प्रकल्प नाही&nbsp;&nbsp;
-
-                                    </label>
-                                </div>
+                                </table>
                             </div>
                         </div>
-                        @*Change*@
-                        <div class="d-flex flex-row  mb-4 ml-3">
-                            <table style="width:100%;border:1px solid black">
-                                <tr>
-                                    <th colspan="5">मालमत्तेची सद्यस्तिथी</th>
-                                </tr>
 
-                                <tr>
-                                    <td><b>भिंती</b></td>
-                                    <td> @Html.CheckBox("Safe", new { @class = "chkBx13" })</td>
-                                    <td>सुस्थितीत</td>
-                                    <td> @Html.CheckBox("Danger", new { @class = "chkBx13" })</td>
-                                    <td> धोकदायक</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <b> छप्पर</b>
-                                    </td>
-                                    <td> @Html.CheckBox("Safe2", new { @class = "chkBx10" })</td>
-                                    <td>सुस्थितीत</td>
-                                    <td> @Html.CheckBox("Danger2", new { @class = "chkBx10" })</td>
-                                    <td> धोकदायक</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <b> काँलम</b>
-                                    </td>
-                                    <td> @Html.CheckBox("Safe3", new { @class = "chkBx11" })</td>
-                                    <td>सुस्थितीत</td>
-                                    <td> @Html.CheckBox("Danger3", new { @class = "chkBx11" })</td>
-                                    <td> धोकदायक</td>
-                                </tr>
-
-                            </table>
-                        </div>
                     </div>
 
-                </div>
 
-
-                <table style="width:100%" class="back mb-4 width">
+                <table style="width: 100%; table-layout: fixed;" class="back mb-4 width">
+                   
                     <tr>
                         <th>मजला क्र./Floor No.</th>
-                        <th>मालकी (मालमत्ता धारक/भाडेकरू/लीज) /<br />Occupancy Status(Owner / Tenant/ Lease)</th>
-                        <th>बांधकामाचा प्रकार/Const.Type<br />(A, B, C,D, E,OP))</th>
-                        <th>बांधकाम वर्ष/Date of Construction</th>
-                        <th>वापराचा प्रकार (निवासी/ बिगर निवासी)/Usage Type (Resi. / Non-Resi.)</th>
-                        <th>वापराच्या   प्रकारचे वर्गीकरण/Usage Type Class</th>
-                        <th>अधिकुत (आहे/नाही)Legal(Y/N)</th>
-                        <th>इमारत बांधकाम क्षेत्रफ़ळ (चौ.मी.)/Builtup Area(In Sq. M.)</th>
+                        <th class="second">मालकी (मालमत्ता धारक/भाडेकरू/लीज) /<br />Occupancy Status(Owner / Tenant/ Lease)</th>
+                        <th class="prakar">बांधकामाचा प्रकार/ Const.Type<br />(A, B, C,D, E,OP))</th>
+                        <th style="width:10%">बांधकाम वर्ष/Date of Construction</th>
+                        <th class="subject">वापराचा प्रकार (निवासी/ बिगर निवासी)/Usage Type (Resi. / Non-Resi.)</th>
+                        <th>वापराच्या   प्रकारचे वर्गीकरण/ Usage Type Class</th>
+                        <th>अधिकुत (आहे/नाही) Legal(Y/N)</th>
+                        <th>इमारत बांधकाम क्षेत्रफ़ळ (चौ.मी.)/ Builtup Area(In Sq. M.)</th>
                         <th>मोकळया जागेचे क्षेत्रफ़ळ (चौ.मी.)/Open Space Area(In Sq. M.)</th>
 
                     </tr>
@@ -1072,7 +1071,7 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                   
+
                                     @Html.DropDownList("OccupancyStatus1", new List<SelectListItem>
                      {
         new SelectListItem { Text = "Owner", Value = "Owner" },
@@ -1100,25 +1099,25 @@ new SelectListItem { Text = "Lease", Value = "Lease"}
                             </div>
                         </td>
                         <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
+                            <div class="form-group pr-2 pl-2 pt-2">
+                                <div >
 
 
-                                    @Html.EditorFor(model => model.DateofConstruction1, new { @class = "form-control" })
+                                    @Html.EditorFor(model => model.DateofConstruction1, new {@class = "form-control", style = "width:20%" })
                                     @Html.ValidationMessageFor(model => model.DateofConstruction1, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
+                                <div style="width:100%">
 
                                     @Html.DropDownList("UsageType1", new List<SelectListItem>
                         {
                 new SelectListItem { Text = "Resident", Value = "R" },
             new SelectListItem { Text = "Non-Resident", Value = "NR"},
    }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                   
+
                                     @Html.ValidationMessageFor(model => model.UsageType1, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1179,7 +1178,7 @@ new SelectListItem { Text = "Tenant", Value = "Tenant"},
 new SelectListItem { Text = "Lease", Value = "Lease"}
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.OccupancyStatus2, "", new { @class = "text-danger" })
-                                   
+
                                 </div>
                             </div>
                         </td>
@@ -1672,7 +1671,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                                 जागेच्या मुल्यासह बांधकाम साठी
                                 आलेला एकूण खर्च
                             </td>
-                            <td>@Html.TextBoxFor(model => model.TotalPropertyExpense, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                            <td>@Html.TextBoxFor(model => model.TotalPropertyExpense, new { @class = "form-control", style = "font-family:Arial, FontAwesome;" })</td>
                             <td>इमारतीचे चालू करपात्र मूल्य</td>
                             <td>@Html.TextBoxFor(model => model.CurrentPropertyTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                             <td>
