@@ -882,7 +882,7 @@ namespace BLL.Repository.Repository
                     OldHouseNo1 = x.HouseNo,
                     PropOwnerFirstName = x.PropOwnerFirstName,
                     PropOwnerLastName = x.PropOwnerLastName,
-                    PropOwnerElectionCardNo = x.PropOwnerMobileNo,
+                    PropOwnerTelephoneNo = x.PropOwnerTelephoneNo,
 
                 }).ToList();
             }
