@@ -645,7 +645,7 @@ td input{width:100%}
                         <div class="form-group pr-4">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.Longitude, new { @type = "number",@class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.TextBoxFor(model => model.Longitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
                             <span class="text-danger" id="err_Longitude"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -658,7 +658,7 @@ td input{width:100%}
                         <div class="form-group pr-4">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.Latitude, new {@type= "number", @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.TextBoxFor(model => model.Latitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                             @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
                             <span class="text-danger" id="err_Latitude"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -1085,15 +1085,8 @@ new SelectListItem { Text = "Lease", Value = "Lease"}
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.DropDownList("ConstType1", new List<SelectListItem>
-                      {
-         new SelectListItem { Text = "A", Value = "A" },
- new SelectListItem { Text = "B", Value = "B"},
- new SelectListItem { Text = "C", Value = "C"},
-   new SelectListItem { Text = "D", Value = "D" },
- new SelectListItem { Text = "E", Value = "E"},
- new SelectListItem { Text = "OP", Value = "OP"}
- }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                 
                                     @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1185,15 +1178,7 @@ new SelectListItem { Text = "Lease", Value = "Lease"}
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.DropDownList("ConstType2", new List<SelectListItem>
-                     {
-        new SelectListItem { Text = "A", Value = "A" },
-new SelectListItem { Text = "B", Value = "B"},
-new SelectListItem { Text = "C", Value = "C"},
-  new SelectListItem { Text = "D", Value = "D" },
-new SelectListItem { Text = "E", Value = "E"},
-new SelectListItem { Text = "OP", Value = "OP"}
-}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1280,15 +1265,7 @@ new SelectListItem { Text = "OP", Value = "OP"}
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.DropDownList("ConstType3", new List<SelectListItem>
-                     {
-        new SelectListItem { Text = "A", Value = "A" },
-new SelectListItem { Text = "B", Value = "B"},
-new SelectListItem { Text = "C", Value = "C"},
-  new SelectListItem { Text = "D", Value = "D" },
-new SelectListItem { Text = "E", Value = "E"},
-new SelectListItem { Text = "OP", Value = "OP"}
-}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.ConstType3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ConstType3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1374,15 +1351,7 @@ new SelectListItem { Text = "OP", Value = "OP"}
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.DropDownList("ConstType4", new List<SelectListItem>
-                     {
-        new SelectListItem { Text = "A", Value = "A" },
-new SelectListItem { Text = "B", Value = "B"},
-new SelectListItem { Text = "C", Value = "C"},
-  new SelectListItem { Text = "D", Value = "D" },
-new SelectListItem { Text = "E", Value = "E"},
-new SelectListItem { Text = "OP", Value = "OP"}
-}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.ConstType4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ConstType4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1468,15 +1437,7 @@ new SelectListItem { Text = "OP", Value = "OP"}
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.DropDownList("ConstType5", new List<SelectListItem>
-                      {
-         new SelectListItem { Text = "A", Value = "A" },
- new SelectListItem { Text = "B", Value = "B"},
- new SelectListItem { Text = "C", Value = "C"},
-   new SelectListItem { Text = "D", Value = "D" },
- new SelectListItem { Text = "E", Value = "E"},
- new SelectListItem { Text = "OP", Value = "OP"}
- }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.ConstType5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ConstType5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -2413,7 +2374,29 @@ new SelectListItem { Text = "Mixed", Value = "M"}
             }
         });
 
-       
+        $("#Longitude").keypress(function (e){
+            //getting key code of pressed key
+           // var keycode = (key.which) ? key.which : key.keyCode;
+            //comparing pressed keycodes
+    
+            if (e.which > 31 && (e.which < 48 || e.which > 57) && e.which != 46) {
+                $("#err_Longitude").html("Numeric Value Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+          
+        });
+
+        $("#Latitude").keypress(function (e) {
+            //getting key code of pressed key
+            // var keycode = (key.which) ? key.which : key.keyCode;
+            //comparing pressed keycodes
+
+            if (e.which > 31 && (e.which < 48 || e.which > 57) && e.which != 46) {
+                $("#err_Latitude").html("Numeric Value Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+
+        });
 
         var img = '@ViewBag.nadoc';
         if (img == 'na')
@@ -2571,6 +2554,9 @@ new SelectListItem { Text = "Mixed", Value = "M"}
         });
         $("#DataEntryName").keyup(function () {
             $('#DataEntryName').css('textTransform', 'capitalize');
+        });
+        $("#PropOwnerElectionCardNo").keyup(function () {
+            $('#PropOwnerElectionCardNo').css('textTransform', 'uppercase');
         });
         $("#DataEntryDate").datepicker({
 
