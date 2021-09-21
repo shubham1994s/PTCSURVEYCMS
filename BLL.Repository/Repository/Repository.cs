@@ -868,6 +868,7 @@ namespace BLL.Repository.Repository
             return Result;
         }
 
+      
         public List<PropertyMasterVM> getPropertyDetails(int AppId)
         {
             List<PropertyMasterVM> result = new List<PropertyMasterVM>();
