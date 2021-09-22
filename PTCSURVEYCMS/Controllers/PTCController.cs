@@ -164,11 +164,11 @@ namespace PTCSURVEYCMS.Controllers
                 SessionHandler.Current.AppId = clientId;
                 int AppId = SessionHandler.Current.AppId;     
                 AppDetailsVM  ApplicationDetails = Repository.GetApplicationDetails(AppId);
-               // ViewBag.Appname = ApplicationDetails.AppName;
+                ViewBag.Appname = ApplicationDetails.AppName;
             }
           else
             {
-             //   ViewBag.Appname = SessionHandler.Current.AppName;
+                ViewBag.Appname = SessionHandler.Current.AppName;
             }
             if (SessionHandler.Current.AppId != 0)
             {
@@ -244,10 +244,10 @@ namespace PTCSURVEYCMS.Controllers
             }
             if (SessionHandler.Current.AppId != 0)
             {
-
-                int Appid = SessionHandler.Current.AppId;
-                ViewBag.Appname_mar = SessionHandler.Current.AppName_mar;
                 Repository = new Repository();
+                int Appid = SessionHandler.Current.AppId;
+                AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(Appid);
+                ViewBag.Appname_mar = ApplicationDetails.AppName_mar;
                 var viewModel = new PropertyMasterVM();
              
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);
@@ -281,8 +281,11 @@ namespace PTCSURVEYCMS.Controllers
                     ViewBag.logo = "vengurla logo.jpeg";
                     ViewBag.RLogo = "Logo_150x48.png";
                 }
-                ViewBag.Appname_mar = SessionHandler.Current.AppName_mar;
                 Repository = new Repository();
+                AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(Appid);
+                ViewBag.Appname_mar = ApplicationDetails.AppName_mar;
+               
+             
                 var viewModel = new PropertyMasterVM();
           
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);
