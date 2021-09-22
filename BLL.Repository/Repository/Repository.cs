@@ -884,6 +884,7 @@ namespace BLL.Repository.Repository
                     PropOwnerFirstName = x.PropOwnerFirstName,
                     PropOwnerLastName = x.PropOwnerLastName,
                     PropOwnerTelephoneNo = x.PropOwnerTelephoneNo,
+                    Sketchdiagram2=x.Sketchdiagram2
 
                 }).ToList();
             }

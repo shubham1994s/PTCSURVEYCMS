@@ -164,11 +164,11 @@ namespace PTCSURVEYCMS.Controllers
                 SessionHandler.Current.AppId = clientId;
                 int AppId = SessionHandler.Current.AppId;     
                 AppDetailsVM  ApplicationDetails = Repository.GetApplicationDetails(AppId);
-                ViewBag.Appname = ApplicationDetails.AppName;
+               // ViewBag.Appname = ApplicationDetails.AppName;
             }
           else
             {
-                ViewBag.Appname = SessionHandler.Current.AppName;
+             //   ViewBag.Appname = SessionHandler.Current.AppName;
             }
             if (SessionHandler.Current.AppId != 0)
             {
@@ -205,6 +205,21 @@ namespace PTCSURVEYCMS.Controllers
         }
 
 
+        // done by shubham
+        public FileResult Export(int q)
+        {
+            Repository = new Repository();
+            int Appid = SessionHandler.Current.AppId;
+            var viewModel = new PropertyMasterVM();
+                viewModel = Repository.getPropertyDetailsByID(q, Appid);
+            //Build the File Path.
+                string fileName= viewModel.Sketchdiagram2;
+                string path = Server.MapPath("~/Images/") + fileName;
+                //Read the File data into Byte Array.
+                byte[] bytes = System.IO.File.ReadAllBytes(path);
+                //Send the File to Download.         
+            return File(bytes, "application/octet-stream", fileName);
+        }
         [HttpGet]
         public JsonResult getPropertyDetails()
         {
