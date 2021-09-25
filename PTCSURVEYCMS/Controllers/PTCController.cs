@@ -263,7 +263,17 @@ namespace PTCSURVEYCMS.Controllers
             }
 
         }
-
+        public RedirectResult Delete(int q)
+        {
+            int AppId = SessionHandler.Current.AppId;
+            var viewModel = new PropertyMasterVM();
+            if (SessionHandler.Current.AppId != 0)
+            {
+                Repository = new Repository();
+                viewModel = Repository.getDeleteByID(q, AppId);
+            }
+            return Redirect("/PTC/SurveyList");
+        }
 
         [HttpGet]
         public ActionResult ViewSurveyForm(int q = -1)

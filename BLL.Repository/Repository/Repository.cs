@@ -875,7 +875,7 @@ namespace BLL.Repository.Repository
 
             using (var db = new DEVPTCSURVEYMALEGAONEntities(AppId))
             {
-                result = db.PropertyMasters.Select(x => new PropertyMasterVM
+                result = db.PropertyMasters.Where(x=>x.IsDelete==false).Select(x => new PropertyMasterVM
                 {
                     PropertyId = x.PropertyId,
                     NewPropertyNo = x.NewPropertyNo,
@@ -1319,7 +1319,22 @@ namespace BLL.Repository.Repository
             }
             return Master;
         }
-    }
+
+        public PropertyMasterVM getDeleteByID(int q, int AppId)
+        {
+            PropertyMasterVM Master = new PropertyMasterVM();
+            using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(AppId))
+            {
+                var _Property = db.PropertyMasters.Where(c => c.PropertyId == q).FirstOrDefault();
+                if (_Property != null)
+                {
+                    _Property.IsDelete = true;
+                    db.SaveChanges();
+                }
+            }
+                return Master;
+        }
+        }
 }
 
 

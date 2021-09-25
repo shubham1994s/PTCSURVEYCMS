@@ -10,6 +10,18 @@ function Edit(ID) {
     window.location.href = "/PTC/SurveyForm?q=" + ID;
 }
 
+function Delete(ID) {
+   // return confirm('Are you sure you want to Delete?')
+    var x = confirm("Are you sure you want to delete?");
+    if (x) {
+        window.location.href = "/PTC/Delete?q=" + ID;
+        return true;
+    }
+   
+    else
+        return false;
+   
+}
 function View(ID) {
     window.location.href = "/PTC/ViewSurveyForm?q=" + ID;
 }
@@ -85,7 +97,7 @@ function ActiveEmployee() {
                 { "data": "PropertyNo" },
             { "data": "OldHouseNo1" },
                
-                { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon">edit</i>'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon">edit</i><a  href="javascript:void(0)"  class="tooltip1" style="cursor:pointer"   onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" },
             { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
             { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
          /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/

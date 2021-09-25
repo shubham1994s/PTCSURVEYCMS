@@ -624,6 +624,8 @@ public partial class PropertyMaster
 
     public Nullable<bool> ThirteenRPC { get; set; }
 
+    public Nullable<bool> IsDelete { get; set; }
+
 }
 
 }

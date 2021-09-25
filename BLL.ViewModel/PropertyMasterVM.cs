@@ -391,7 +391,9 @@ namespace BLL.ViewModel
         public Nullable<bool> TwelveCPC { get; set; }
         public Nullable<bool> ThirteenCPC { get; set; }
         public Nullable<bool> FourteenCPC { get; set; }
-      
+
+        public Nullable<bool> IsDelete { get; set; }
+        
     }
   
 }

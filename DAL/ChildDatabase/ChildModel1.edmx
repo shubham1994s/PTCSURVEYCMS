@@ -373,6 +373,7 @@
           <Property Name="ThirteenCPC" Type="bit" />
           <Property Name="FourteenCPC" Type="bit" />
           <Property Name="ThirteenRPC" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -877,6 +878,7 @@
           <Property Name="ThirteenCPC" Type="Boolean" />
           <Property Name="FourteenCPC" Type="Boolean" />
           <Property Name="ThirteenRPC" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -950,6 +952,7 @@
           <EntitySetMapping Name="PropertyMasters">
             <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.PropertyMaster">
               <MappingFragment StoreEntitySet="PropertyMaster">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
                 <ScalarProperty Name="ThirteenRPC" ColumnName="ThirteenRPC" />
                 <ScalarProperty Name="FourteenCPC" ColumnName="FourteenCPC" />
                 <ScalarProperty Name="ThirteenCPC" ColumnName="ThirteenCPC" />
