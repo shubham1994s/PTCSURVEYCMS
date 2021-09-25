@@ -28,6 +28,7 @@
     h5, h6 {
         font-weight: 600 !important
     }
+   
     
 </style>
 @*@Styles.Render("~/Content/AddEditCSS")*@
@@ -58,7 +59,7 @@
             </button>
         </div>
        @* Building Name Section A *@
-        <div class="d-flex flex-row back mb-3">
+        <div class="d-flex flex-row back">
             <table style="width:100%">
                 <tr class="text-center">
                     <th><label class="label text-center">प्रभाग  क्र. /<br /> Prabhag No.</label></th>
@@ -117,7 +118,7 @@
             </div>*@
         @* Survey No. Name Section B *@
         @*Change*@
-        <div class="d-flex flex-column back mb-3">
+        <div class="d-flex flex-column back">
             <div class="d-flex flex-row">
                 <table style="width:100%">
                     <tr class="text-center">
@@ -173,7 +174,7 @@
             </div>
         </div>
         @* Building Name Section C *@
-        <div class="d-flex flex-row back mb-3">
+        <div class="d-flex flex-row back">
             <table style="width:100%">
                 <tr class="text-center">
                     <th class="text-center"><label class="label">इमारतीचे नाव / <br /> Building Name</label></th>
@@ -226,7 +227,7 @@
         </div>
 
         @* Prop. Owner Namee Section D *@
-        <div class="d-flex flex-column back mb-3">
+        <div class="d-flex flex-column back">
 
             <div class="d-flex flex-row">
                 <table style="width:100%">
@@ -316,7 +317,7 @@
 
         </div>
         @* Occupier Name Section E *@
-        <div class="d-flex flex-column back mb-3">
+        <div class="d-flex flex-column back">
             <div class="d-flex flex-row">
                 <table style="width:100%">
                     <tr class="text-center">
@@ -381,7 +382,7 @@
 
 
         @* Occupier Name Section F *@
-        <div class="d-flex flex-column back mb-3">
+        <div class="d-flex flex-column back">
             <div class="d-flex flex-row">
                 <table style="width:100%">
                     <tr class="text-center">
@@ -409,7 +410,7 @@
         </div>
         <hr />
         @* Address Section G *@
-        <div class="d-flex flex-column back mb-4">
+        <div class="d-flex flex-column back">
             <div class="d-flex flex-row" style="margin-bottom: 3%;">
                 <table style="width:100%">
                     <tr class="text-center">
@@ -700,18 +701,18 @@
                             @*Change*@
                             <div class="d-flex flex-row ">
                                 <table style="width:100%;border:1px solid black">
-                                    <tr>
+                                    <tr class="text-center">
                                         <th colspan="5">मालमत्तेची सद्यस्तिथी</th>
                                     </tr>
 
-                                    <tr>
+                                    <tr class="text-center">
                                         <td>भिंती</td>
                                         <td> @Html.CheckBox("Safe", new { @class = "chkBx9" })</td>
                                         <td>सुस्थितीत</td>
                                         <td> @Html.CheckBox("Danger", new { @class = "chkBx9" })</td>
                                         <td> धोकदायक</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="text-center">
                                         <td>
                                             छप्पर
                                         </td>
@@ -720,7 +721,7 @@
                                         <td> @Html.CheckBox("Danger2", new { @class = "chkBx9" })</td>
                                         <td> धोकदायक</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="text-center">
                                         <td>
                                             काँलम
                                         </td>
@@ -1260,129 +1261,88 @@
 
                 <table style="width:100%">
                     <tr class="text-center">
-                        <th class="pr-2 pl-2 pt-2">
-                            <label class="label">जुना वापराचा प्रकार (निवाशी / बिगर निवाशी / मिश्र ) / <br />Old Usage Type(Resi. / Non-Resi. / Mixed )</label>
-                        </th>
+
+
+                        <th> <label class="label">जुना वापराचा प्रकार (निवाशी / बिगर निवाशी / मिश्र ) / <br />Old Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
+                        <th> <label class="label">जुना बांधकामाचा प्रकार / <br />Old Construction Type</label></th>
+                        <th rowspan="2">जुने चटई क्षेत्रफळ / Old Carpet Area (sq.m.)</th>
+                        <th>निवाशी </th>
+                        <th>बिगर निवाशी </th>
+                    </tr>
+                    <tr class="text-center">
                         <td>
                             @Html.DropDownList("OldUsageType", new List<SelectListItem>
-                    {
-       new SelectListItem { Text = "Resident", Value = "R" },
-    new SelectListItem { Text = "Non-Resident", Value = "NR"},
-    new SelectListItem { Text = "Mixed", Value = "M"}
-    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                        </td>
-                        <th>
-                            <label class="label">जुना बांधकामाचा प्रकार / <br />Old Construction Type</label>
-                        </th>
-                        <td>
-                            @Html.DisplayFor(model => model.OldConstructionType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
-                        </td>
+             {
+new SelectListItem { Text = "Resident", Value = "R" },
+new SelectListItem { Text = "Non-Resident", Value = "NR"},
+new SelectListItem { Text = "Mixed", Value = "M"}
+}, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
+
+                        </td>
+                        <td>@Html.DisplayFor(model => model.OldConstructionType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+                        <td>@Html.DisplayFor(model => model.OldCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>@Html.DisplayFor(model => model.OldCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
 
-                    <table style="width:100%">
-                        <tr class="text-center">
-                            <th></th>
-                            <th class="pr-2 pl-2 pt-2">निवाशी</th>
-                            <th>बिगर निवाशी</th>
-                        </tr>
-                        <tr class="text-center">
-                            <th class="pr-2 pl-2 pt-2">जुने चटई क्षेत्रफळ  / Old Carpet Area (sq.m.)</th>
 
-                            <td>  @Html.DisplayFor(model => model.OldCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
 
-                            <td>  @Html.DisplayFor(model => model.OldCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
-                        </tr>
-                    </table>
-                </table>
-            </div>
-            <div class="d-flex flex-row">
-                <table style="width:100%">
                     <tr class="text-center">
-                        <th class="pr-2 pl-2 pt-2">
-                            <label class="label">नवीन वापराचा प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />New Usage Type(Resi. / Non-Resi. / Mixed )</label>
-                        </th>
+
+
+                        <th> <label class="label">नवीन वापराचा प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />New Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
+                        <th> <label class="label">नवीन बांधकामाचा प्रकार / <br />New Construction Type</label></th>
+                        <th rowspan="2">नवीन चटई क्षेत्रफळ / New Carpet Area (sq.m.)</th>
+                        <th>निवाशी </th>
+                        <th>बिगर निवाशी </th>
+                    </tr>
+                    <tr class="text-center">
                         <td>
                             @Html.DropDownList("NewUsageType", new List<SelectListItem>
-                    {
-       new SelectListItem { Text = "Resident", Value = "R" },
-    new SelectListItem { Text = "Non-Resident", Value = "NR"},
-    new SelectListItem { Text = "Mixed", Value = "M"}
-    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                        </td>
-                        <th>
-                            <label class="label">नवीन बांधकामाचा प्रकार / <br />New Construction Type</label>
-                        </th>
-                        <td>
-                            @Html.DisplayFor(model => model.NewConstructionType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
-                        </td>
+                     {
+        new SelectListItem { Text = "Resident", Value = "R" },
+     new SelectListItem { Text = "Non-Resident", Value = "NR"},
+     new SelectListItem { Text = "Mixed", Value = "M"}
+     }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
+                        </td>
+                        <td>@Html.DisplayFor(model => model.NewConstructionType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+
+                        <td>@Html.DisplayFor(model => model.NewCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>@Html.DisplayFor(model => model.NewCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
 
-                    <table style="width:100%">
-                        <tr class="text-center">
-                            <th></th>
-                            <th class="pr-2 pl-2 pt-2">निवाशी</th>
-                            <th>बिगर निवाशी</th>
-                        </tr>
 
-                        <tr class="text-center">
-                            <th class="pr-2 pl-2 pt-2">नवीन चटई क्षेत्रफळ / New Carpet Area (sq.m.)</th>
-                            <td>  @Html.DisplayFor(model => model.NewCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
-                            <td>  @Html.DisplayFor(model => model.NewCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
-
-                        </tr>
-
-                    </table>
-                </table>
-            </div>
-
-            <div class="d-flex flex-row">
-                <table style="width:100%">
                     <tr class="text-center">
-                        <th class="pr-2 pl-2 pt-2">
-                            <label class="label">वाढीव वापराचा प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />Extend Usage Type(Resi. / Non-Resi. / Mixed )</label>
-                        </th>
-                        <td>
 
-                            @Html.DropDownList("ExtendUsage_Type", new List<SelectListItem>
-                    {
-       new SelectListItem { Text = "Resident", Value = "R" },
-    new SelectListItem { Text = "Non-Resident", Value = "NR"},
-    new SelectListItem { Text = "Mixed", Value = "M"}
-    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
-                        </td>
-                        <th>
-                            <label class="label">वाढीव बांधकामाचा प्रकार / <br />Extend Construction Type</label>
-                        </th>
-                        <td>
-                            @Html.DisplayFor(model => model.ExtendConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        </td>
 
+                        <th> <label class="label">वाढीव वापराचा प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />Extend Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
+                        <th> <label class="label">वाढीव बांधकामाचा प्रकार / <br />Extend Construction Type</label></th>
+                        <th rowspan="2">वाढीव चटई क्षेत्रफळ / Extend Carpet Area (sq.m.)</th>
+                        <th>निवाशी </th>
+                        <th>बिगर निवाशी </th>
                     </tr>
+                    <tr class="text-center">
+                        <td>
+                            @Html.DropDownList("ExtendUsage_Type", new List<SelectListItem>
+               {
+  new SelectListItem { Text = "Resident", Value = "R" },
+new SelectListItem { Text = "Non-Resident", Value = "NR"},
+new SelectListItem { Text = "Mixed", Value = "M"}
+}, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
 
+                        </td>
+                        <td>@Html.DisplayFor(model => model.ExtendConstructionType, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
 
-
-                    <table style="width:100%">
-                        <tr class="text-center">
-                            <th></th>
-                            <th class="pr-2 pl-2 pt-2">निवाशी</th>
-                            <th>बिगर निवाशी</th>
-                        </tr>
-
-                        <tr class="text-center">
-
-                            <th class="pr-2 pl-2 pt-2">वाढीव चटई क्षेत्रफळ / Extend Carpet Area (sq.m.)</th>
-                            <td>  @Html.DisplayFor(model => model.ExtendCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
-                            <td>  @Html.DisplayFor(model => model.ExtendCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
-                        </tr>
-                    </table>
-
-
-
+                        <td>@Html.DisplayFor(model => model.ExtendCarpetAreaResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>@Html.DisplayFor(model => model.ExtendCarpetAreaNonResident, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                    </tr>
                 </table>
             </div>
-            <h4 style="text-align:center;font-weight:600" class="my-2">मालमत्तेचाबाबतचा इतर तपशील </h4>
+       
+
+            <h4 style="text-align:center;font-weight:600" class="my-3">मालमत्तेचाबाबतचा इतर तपशील </h4>
             <table>
 
              
@@ -1693,7 +1653,7 @@
 
                         <label class="label">
                             @Html.CheckBox("FourthPT", new { @class = "chkBx20" })&nbsp;
-                            4. दगड विटांचे चुना किंवा सिमेंट वापरून बांधलेली पक्की घरे (लोड बेअरिंग ) छतावर &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;पत्रा किंवा कौल .
+                            4. दगड विटांचे चुना किंवा सिमेंट वापरून बांधलेली पक्की घरे (लोड बेअरिंग ) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;छतावर पत्रा किंवा कौल .
                         </label>
                     </div>
                     <div>

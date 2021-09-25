@@ -1539,7 +1539,7 @@ new SelectListItem { Text = "Lease", Value = "Lease"}
 
                                 <th> <label class="label">जुना वापराचा प्रकार (निवाशी / बिगर निवाशी / मिश्र ) / <br />Old Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
                                 <th> <label class="label">जुना बांधकामाचा प्रकार / <br />Old Construction Type</label></th>
-                                <th rowspan="3">जुने चटई क्षेत्रफळ / Old Carpet Area (sq.m.)</th>
+                                <th rowspan="2">जुने चटई क्षेत्रफळ / Old Carpet Area (sq.m.)</th>
                                 <th>निवाशी </th>
                                 <th>बिगर निवाशी </th>
                             </tr>
@@ -1551,7 +1551,7 @@ new SelectListItem { Text = "Lease", Value = "Lease"}
  new SelectListItem { Text = "Non-Resident", Value = "NR"},
  new SelectListItem { Text = "Mixed", Value = "M"}
  }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                  
+
                                 </td>
                                 <td> @Html.TextBoxFor(model => model.OldConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
@@ -1560,48 +1560,41 @@ new SelectListItem { Text = "Lease", Value = "Lease"}
                             </tr>
 
 
-                        </table>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <table style="width:100%">
+
+
+
                             <tr class="text-center">
 
 
-                                <th> <label class="label">नवीन वापराचा प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />New Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
+                                <th> <label class="label">नवीन वापराचा प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />New Usage Type(Resi. / Non-Resi. / Mixed ))</label></th>
                                 <th> <label class="label">नवीन बांधकामाचा प्रकार / <br />New Construction Type</label></th>
-                                <th rowspan="3"> नवीन चटई क्षेत्रफळ / New Carpet Area (sq.m.)</th>
+                                <th rowspan="2"> नवीन चटई क्षेत्रफळ / New Carpet Area  (sq.m.)</th>
                                 <th>निवाशी </th>
                                 <th>बिगर निवाशी </th>
                             </tr>
                             <tr>
                                 <td>
                                     @Html.DropDownList("NewUsageType", new List<SelectListItem>
-                     {
-        new SelectListItem { Text = "Resident", Value = "R" },
+                      {
+         new SelectListItem { Text = "Resident", Value = "R" },
 new SelectListItem { Text = "Non-Resident", Value = "NR"},
 new SelectListItem { Text = "Mixed", Value = "M"}
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                  
+
                                 </td>
                                 <td> @Html.TextBoxFor(model => model.NewConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                                 <td> @Html.TextBoxFor(model => model.NewCarpetAreaResident, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                 <td> @Html.TextBoxFor(model => model.NewCarpetAreaNonResident, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                             </tr>
-                        </table>
 
 
-
-
-                    </div>
-                    <div class="d-flex flex-row">
-                        <table style="width:100%">
                             <tr class="text-center">
 
 
                                 <th> <label class="label">वाढीव वापराचा प्रकार (रहि / बिगर-रहि / मिश्र ) / <br />Extend Usage Type(Resi. / Non-Resi. / Mixed )</label></th>
                                 <th> <label class="label">वाढीव बांधकामाचा प्रकार / <br />Extend Construction Type</label></th>
-                                <th rowspan="3">वाढीव चटई क्षेत्रफळ / Extend Carpet Area (sq.m.) </th>
+                                <th rowspan="3"> वाढीव चटई क्षेत्रफळ / Extend Carpet Area (sq.m.)</th>
                                 <th>निवाशी </th>
                                 <th>बिगर निवाशी </th>
                             </tr>
@@ -1613,16 +1606,17 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 new SelectListItem { Text = "Non-Resident", Value = "NR"},
 new SelectListItem { Text = "Mixed", Value = "M"}
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                
+
                                 </td>
-                                <td>@Html.TextBoxFor(model => model.ExtendConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                <td> @Html.TextBoxFor(model => model.ExtendConstructionType, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                                 <td> @Html.TextBoxFor(model => model.ExtendCarpetAreaResident, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                 <td> @Html.TextBoxFor(model => model.ExtendCarpetAreaNonResident, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                             </tr>
                         </table>
-
                     </div>
+                  
+               
                     @*CHange*@
                     <h4 style="text-align:center" class="my-2">मालमत्तेचाबाबतचा इतर तपशील </h4>
                     <table>
