@@ -205,6 +205,21 @@ namespace PTCSURVEYCMS.Controllers
         }
 
 
+        // done by shubham
+        public FileResult Export(int q)
+        {
+            Repository = new Repository();
+            int Appid = SessionHandler.Current.AppId;
+            var viewModel = new PropertyMasterVM();
+                viewModel = Repository.getPropertyDetailsByID(q, Appid);
+            //Build the File Path.
+                string fileName= viewModel.Sketchdiagram2;
+                string path = Server.MapPath("~/Images/") + fileName;
+                //Read the File data into Byte Array.
+                byte[] bytes = System.IO.File.ReadAllBytes(path);
+                //Send the File to Download.         
+            return File(bytes, "application/octet-stream", fileName);
+        }
         [HttpGet]
         public JsonResult getPropertyDetails()
         {
@@ -229,10 +244,10 @@ namespace PTCSURVEYCMS.Controllers
             }
             if (SessionHandler.Current.AppId != 0)
             {
-
-                int Appid = SessionHandler.Current.AppId;
-                ViewBag.Appname_mar = SessionHandler.Current.AppName_mar;
                 Repository = new Repository();
+                int Appid = SessionHandler.Current.AppId;
+                AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(Appid);
+                ViewBag.Appname_mar = ApplicationDetails.AppName_mar;
                 var viewModel = new PropertyMasterVM();
              
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);
@@ -266,8 +281,11 @@ namespace PTCSURVEYCMS.Controllers
                     ViewBag.logo = "vengurla logo.jpeg";
                     ViewBag.RLogo = "Logo_150x48.png";
                 }
-                ViewBag.Appname_mar = SessionHandler.Current.AppName_mar;
                 Repository = new Repository();
+                AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(Appid);
+                ViewBag.Appname_mar = ApplicationDetails.AppName_mar;
+               
+             
                 var viewModel = new PropertyMasterVM();
           
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);

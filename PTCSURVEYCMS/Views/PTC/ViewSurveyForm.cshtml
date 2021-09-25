@@ -449,7 +449,7 @@
             </div>
 
             <div class="d-flex flex-row mt-5 mb-3">
-                <table style="width:100%">
+                <table style="width: 100%; margin-top: -4%;">
                     <tr class="text-center">
                         <th>   <label class="label">बांधकाम चालू केलेले वर्ष / Const. Start Year</label></th>
                         <th>  <label class="label">बांधकाम पूर्णत्वाचे वर्ष / Const.Completion Year</label></th>
@@ -1385,6 +1385,7 @@
             <h4 style="text-align:center;font-weight:600" class="my-2">मालमत्तेचाबाबतचा इतर तपशील </h4>
             <table>
 
+             
                 <tr class="text-center">
                     <th>
                         जागेच्या मुल्यासह बांधकाम साठी
@@ -1398,19 +1399,6 @@
                         दर
                     </th>
                     <td>@Html.DisplayFor(model => model.CurrentProperyPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                <tr class="text-center">
-                    <th>
-                        जागेच्या मुल्यासह बांधकाम साठी
-                        आलेला एकूण खर्च
-                    </th>
-                    <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <th>इमारतीचे चालू करपात्र मूल्य</th>
-                    <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <th>
-                        मालमत्ता कराचा चालू
-                        दर
-                    </th>
-                    <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                 </tr>
                 <tr class="text-center">
@@ -1431,25 +1419,7 @@
                     </th>
                     <td>@Html.DisplayFor(model => model.TotalTaxPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                 </tr>
-                <tr class="text-center">
-                    <th>
-                        मालमत्ता भोवतालच्या मोकळ्या
-                        जागेवरील कराचे दर
-                    </th>
-                    <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <th>
-                        मालमत्ता कराची
-                        रक्कम
-                    </th>
-                    <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <th>
-                        एकूण करासह मालमत्ता
-                        कराची
-                        रक्कम
-                    </th>
-                    <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-
-                </tr>
+            
                 <tr class="text-center">
                     <th>
                         मोकळ्या जागेच्या कराची
@@ -1462,20 +1432,7 @@
                     </th>
                     <td colspan="2">@Html.DisplayFor(model => model.ProperyTaxMarketPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                 </tr>
-                <tr class="text-center">
-                    <th>
-                        मोकळ्या जागेच्या कराची
-                        रक्कम
-                    </th>
-                    <td>@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                    <th colspan="2">
-                        इमारतीच्या जागेचे मूल्य व घसारा विचारात घेता आजचे
-                        बाजारमूल्य
-                    </th>
-                    <td colspan="2">@Html.DisplayFor(model => model.ExtendUsage_Type, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-
-
-                </tr>
+              
             </table>
         </div>
 
@@ -1707,7 +1664,7 @@
 
 
         </div>
-        <h5 class="text-center" style="margin-top:18%"> प्रपत्र - 1 </h5>
+        <h5 class="text-center" style="margin-top:30%"> प्रपत्र - 1 </h5>
         <div class="d-flex flex-column  mb-4" style="border: 1px solid black; padding: 2%; margin-left: 3%; width: 96%;">
             <h6 class="text-center">इमारतीचा प्रकार </h6>
             <div class="d-flex flex-row">

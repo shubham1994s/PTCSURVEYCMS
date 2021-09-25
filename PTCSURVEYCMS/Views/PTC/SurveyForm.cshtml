@@ -1705,8 +1705,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo1"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
 
                     </tr>
                     <tr class="text-center">
@@ -1720,8 +1723,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                                                <span class="text-danger" id="err_ContactNo2"></span>
+                                            </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
                     </tr>
                     <tr class="text-center">
                         <td>3</td>
@@ -1734,8 +1740,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo3"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
 
                     </tr>
                     <tr class="text-center">
@@ -1749,8 +1758,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo4"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
 
                     </tr>
                     <tr class="text-center">
@@ -1764,8 +1776,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo5"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
 
                     </tr>
                     <tr class="text-center">
@@ -1779,8 +1794,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo6"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
                     </tr>
 
                     <tr class="text-center">
@@ -1794,8 +1812,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo7"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
                     </tr>
 
                     <tr class="text-center">
@@ -1809,8 +1830,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo8"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
                     </tr>
 
                     <tr class="text-center">
@@ -1824,8 +1848,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo9"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
                     </tr>
 
                     <tr class="text-center">
@@ -1839,8 +1866,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo10"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
                     </tr>
 
                     <tr class="text-center">
@@ -1854,8 +1884,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo11"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
                     </tr>
 
                     <tr class="text-center">
@@ -1869,8 +1902,11 @@ new SelectListItem { Text = "Mixed", Value = "M"}
        new SelectListItem { Text = "Female", Value = "F"},
 }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </td>
-                        <td>@Html.TextBoxFor(model => model.ContactNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ContactNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            <span class="text-danger" id="err_ContactNo12"></span>
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })</td>
                     </tr>
                 </table>
                 @*change*@
@@ -2374,6 +2410,118 @@ new SelectListItem { Text = "Mixed", Value = "M"}
             }
         });
 
+
+        $("#ContactNo1").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo1").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+
+
+        $("#ContactNo2").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo2").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+
+        $("#ContactNo3").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo3").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo4").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo4").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo5").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo5").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo6").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo6").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo7").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo7").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo8").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo8").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo9").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo9").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo10").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo10").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo11").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo11").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo12").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo12").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
         $("#Longitude").keypress(function (e){
             //getting key code of pressed key
            // var keycode = (key.which) ? key.which : key.keyCode;
@@ -2423,21 +2571,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
         if ($('#SurveyorDate').val() == '') {
             $('#SurveyorDate').val("--Select Date--");
         }
-        //if ($('#DateofConstruction1').val() == '') {
-        //    $('#DateofConstruction1').val("--Select Date--");
-        //}
-        //if ($('#DateofConstruction2').val() == '') {
-        //    $('#DateofConstruction2').val("--Select Date--");
-        //}
-        //if ($('#DateofConstruction3').val() == '') {
-        //    $('#DateofConstruction3').val("--Select Date--");
-        //}
-        //if ($('#DateofConstruction4').val() == '') {
-        //    $('#DateofConstruction4').val("--Select Date--");
-        //}
-        //if ($('#DateofConstruction5').val() == '') {
-        //    $('#DateofConstruction5').val("--Select Date--");
-       // }
+     
         $("#PropertyNo").change(function () {
             debugger;
 
@@ -2558,6 +2692,46 @@ new SelectListItem { Text = "Mixed", Value = "M"}
         $("#PropOwnerElectionCardNo").keyup(function () {
             $('#PropOwnerElectionCardNo').css('textTransform', 'uppercase');
         });
+
+        $("#VoterIdentityNo1").keyup(function () {
+            $('#VoterIdentityNo1').css('textTransform', 'uppercase');
+        });
+
+        $("#VoterIdentityNo2").keyup(function () {
+            $('#VoterIdentityNo2').css('textTransform', 'uppercase');
+        });
+
+        $("#VoterIdentityNo3").keyup(function () {
+            $('#VoterIdentityNo3').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo4").keyup(function () {
+            $('#VoterIdentityNo4').css('textTransform', 'uppercase');
+        });
+        
+        $("#VoterIdentityNo5").keyup(function () {
+            $('#VoterIdentityNo5').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo6").keyup(function () {
+            $('#VoterIdentityNo6').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo7").keyup(function () {
+            $('#VoterIdentityNo7').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo8").keyup(function () {
+            $('#VoterIdentityNo8').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo9").keyup(function () {
+            $('#VoterIdentityNo9').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo10").keyup(function () {
+            $('#VoterIdentityNo10').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo11").keyup(function () {
+            $('#VoterIdentityNo11').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo12").keyup(function () {
+            $('#VoterIdentityNo12').css('textTransform', 'uppercase');
+        });
         $("#DataEntryDate").datepicker({
 
             dateFormat: "dd-mm-yy",
@@ -2573,41 +2747,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
             changeYear: true
 
         });
-        //$("#DateofConstruction5").datepicker({
-
-        //    dateFormat: "dd-mm-yy",
-        //    changeMonth: true,
-        //    changeYear: true
-
-        //});
-        //$("#DateofConstruction4").datepicker({
-
-        //    dateFormat: "dd-mm-yy",
-        //    changeMonth: true,
-        //    changeYear: true
-
-        //});
-        //$("#DateofConstruction3").datepicker({
-
-        //    dateFormat: "dd-mm-yy",
-        //    changeMonth: true,
-        //    changeYear: true
-
-        //});
-        //$("#DateofConstruction2").datepicker({
-
-        //    dateFormat: "dd-mm-yy",
-        //    changeMonth: true,
-        //    changeYear: true
-
-        //});
-        //$("#DateofConstruction1").datepicker({
-
-        //    dateFormat: "dd-mm-yy",
-        //    changeMonth: true,
-        //    changeYear: true
-
-        //});
+       
 
     });
     $('.chkBx').change(function () {

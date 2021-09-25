@@ -27,6 +27,11 @@ function Download(ID) {
   //  link = url.createObjectURL(blob);
  //   myWindow.remove(url);
 }
+
+function DownloadQRCode(q) {
+    debugger;
+    window.location.href = "/PTC/Export?q=" + q;
+};
 function closeWin() {
     myWindow.close();
 }
@@ -70,6 +75,7 @@ function ActiveEmployee() {
 
                     }
                     else {
+//
                         return 'Not Available';
                     }
                 } },
@@ -80,8 +86,9 @@ function ActiveEmployee() {
             { "data": "OldHouseNo1" },
                
                 { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon">edit</i>'; }, "width": "10%" },
-        { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }
-    
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+         /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
         ]
     });
 

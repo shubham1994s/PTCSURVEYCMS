@@ -868,6 +868,7 @@ namespace BLL.Repository.Repository
             return Result;
         }
 
+      
         public List<PropertyMasterVM> getPropertyDetails(int AppId)
         {
             List<PropertyMasterVM> result = new List<PropertyMasterVM>();
@@ -883,6 +884,7 @@ namespace BLL.Repository.Repository
                     PropOwnerFirstName = x.PropOwnerFirstName,
                     PropOwnerLastName = x.PropOwnerLastName,
                     PropOwnerTelephoneNo = x.PropOwnerTelephoneNo,
+                    Sketchdiagram2=x.Sketchdiagram2
 
                 }).ToList();
             }
