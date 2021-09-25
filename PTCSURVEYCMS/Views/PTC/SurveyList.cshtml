@@ -17,7 +17,7 @@
     a:hover {
         text-decoration: none;
     }
-    
+    .material-icons{font-size:18px}
 </style>
 @*Umesh*@
 <div class="pcoded-inner-content">
@@ -73,9 +73,9 @@
                                                 <th>New Property No</th>
                                                 <th>Property No</th>
                                                 <th>House No</th>
-                                                <th>Action</th>
                                                 <th>View</th>
                                                 <th>Scanned Document</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
 
@@ -96,7 +96,16 @@
   
 </div>
 
-
+<div class="confirm">
+    <div></div>
+    <div>
+        <div id="confirmMessage">Confirm text</div>
+        <div>
+            <input id="confirmYes" type="button" value="Yes" />
+            <input id="confirmNo" type="button" value="No" />
+        </div>
+    </div>
+</div>
 <style>
     #snackbar {
         visibility: hidden;
@@ -121,5 +130,55 @@
             -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
+
+
+
+    input[type=button] {
+        padding: 5px 10px;
+        margin: 10px 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #ddd;
+        border: 1px solid #ccc;
+    }
+
+        input[type=button]:hover {
+            background: #ccc;
+        }
+
+    .confirm {
+        display: none;
+    }
+
+        .confirm > div:first-of-type {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            top: 0px;
+            left: 0px;
+        }
+
+        .confirm > div:last-of-type {
+            padding: 10px 20px;
+            background: white;
+            position: absolute;
+            width: auto;
+            height: auto;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            border: 1px solid #333;
+        }
+
+            .confirm > div:last-of-type div:first-of-type {
+                min-width: 150px;
+                padding: 10px;
+            }
+
+            .confirm > div:last-of-type div:last-of-type {
+                text-align: right;
+            }
 </style>
 

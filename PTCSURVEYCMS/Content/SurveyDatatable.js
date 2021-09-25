@@ -10,18 +10,7 @@ function Edit(ID) {
     window.location.href = "/PTC/SurveyForm?q=" + ID;
 }
 
-function Delete(ID) {
-   // return confirm('Are you sure you want to Delete?')
-    var x = confirm("Are you sure you want to delete?");
-    if (x) {
-        window.location.href = "/PTC/Delete?q=" + ID;
-        return true;
-    }
-   
-    else
-        return false;
-   
-}
+
 function View(ID) {
     window.location.href = "/PTC/ViewSurveyForm?q=" + ID;
 }
@@ -97,9 +86,10 @@ function ActiveEmployee() {
                 { "data": "PropertyNo" },
             { "data": "OldHouseNo1" },
                
-            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon">edit</i> <a  href="javascript:void(0)"  class="tooltip1" style="cursor:pointer"   onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" },
+ 
             { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
             { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer" onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i> <a  href="javascript:void(0)"  class="tooltip1" style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
          /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
         ]
     });
@@ -108,3 +98,44 @@ function ActiveEmployee() {
 
 
 
+const ui = {
+    confirm: async (message) => createConfirm(message)
+}
+
+const createConfirm = (message) => {
+    return new Promise((complete, failed) => {
+        $('#confirmMessage').text(message)
+
+        $('#confirmYes').off('click');
+        $('#confirmNo').off('click');
+
+        $('#confirmYes').on('click', () => { $('.confirm').hide(); complete(true); });
+        $('#confirmNo').on('click', () => { $('.confirm').hide(); complete(false); });
+
+        $('.confirm').show();
+    });
+}
+
+const Delete = async (ID) => {
+    const confirm = await ui.confirm('Are you sure you want to Delete?');
+
+    if (confirm) {
+        window.location.href = "/PTC/Delete?q=" + ID;
+      return true;
+    } else
+     return false;
+}
+
+
+//function Delete(ID) {
+//    // return confirm('Are you sure you want to Delete?')
+//    var x = confirm("Are you sure you want to delete?");
+//    if (x) {
+//        window.location.href = "/PTC/Delete?q=" + ID;
+//        return true;
+//    }
+
+//    else
+//        return false;
+
+//}
