@@ -480,6 +480,7 @@ namespace BLL.Repository.Repository
                         obj.TwelveCPC = _Property.TwelveCPC;
                         obj.ThirteenCPC = _Property.ThirteenCPC;
                         obj.FourteenCPC = _Property.FourteenCPC;
+                        obj.IsDelete = false;
                         db.SaveChanges();
                         Result.message = "success";
                     }
@@ -854,6 +855,7 @@ namespace BLL.Repository.Repository
                         Master.TwelveCPC = _Property.TwelveCPC;
                         Master.ThirteenCPC = _Property.ThirteenCPC;
                         Master.FourteenCPC = _Property.FourteenCPC;
+                        Master.IsDelete = false;
                         db.PropertyMasters.Add(Master);
                         db.SaveChanges();
                         Result.message = "success";

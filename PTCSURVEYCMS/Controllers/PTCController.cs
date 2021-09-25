@@ -190,7 +190,7 @@ namespace PTCSURVEYCMS.Controllers
                 {
                     //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
 
-                    var EntryCount = db.PropertyMasters.Count();
+                    var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
                     ViewBag.EntryCount = EntryCount;
                 }
                 return View(viewModel);
@@ -386,7 +386,7 @@ namespace PTCSURVEYCMS.Controllers
             {
                 //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
 
-                var EntryCount = db.PropertyMasters.Count();
+                var EntryCount = db.PropertyMasters.Where(x=>x.IsDelete==false).Count();
                 return EntryCount;
             }
         }
