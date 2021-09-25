@@ -477,7 +477,7 @@ td input{width:100%}
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
-                        <div class="form-group pr-4">
+                        <div class="form-group pr-4" style="margin-right:4%;">
                             <label class="label">आधार क्र. /<br /> Adhaar No.</label>
 
                         </div>
@@ -642,7 +642,7 @@ td input{width:100%}
                             <label class="label">रेखावृत्त /<br /> Longitude</label>
 
                         </div>
-                        <div class="form-group pr-4">
+                        <div class="form-group pr-4" style="width:42%">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.Longitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -655,7 +655,7 @@ td input{width:100%}
                             <label class="label">अक्षवृत्त /<br /> Latitude</label>
 
                         </div>
-                        <div class="form-group pr-4">
+                        <div class="form-group pr-4" style="width:42%">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBoxFor(model => model.Latitude, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -722,7 +722,7 @@ td input{width:100%}
                     </div>
                 </div>
                 <div class="d-flex flex-column back mb-4 width">
-                    <div class="d-flex flex-row">
+                    <div class="d-flex flex-row" style="justify-content:center;">
                         <div class="form-group pr-4">
                             <label class="label">बांधकाम परवानगी क्र. / Const. Perm. No.</label>
                             <div>
@@ -1006,20 +1006,20 @@ td input{width:100%}
                                 </div>
                             </div>
                             @*Change*@
-                            <div class="d-flex flex-row  mb-4 ml-3">
+                            <div class="d-flex flex-row  mb-4 ml-3" style="width:36%">
                                 <table style="width:100%;border:1px solid black">
-                                    <tr>
+                                    <tr class="text-center">
                                         <th colspan="5">मालमत्तेची सद्यस्तिथी</th>
                                     </tr>
 
-                                    <tr>
+                                    <tr class="text-center">
                                         <td><b>भिंती</b></td>
                                         <td> @Html.CheckBox("Safe", new { @class = "chkBx13", style = "width:auto" })</td>
                                         <td>सुस्थितीत</td>
                                         <td> @Html.CheckBox("Danger", new { @class = "chkBx13", style = "width:auto" })</td>
                                         <td> धोकदायक</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="text-center">
                                         <td>
                                             <b> छप्पर</b>
                                         </td>
@@ -1028,7 +1028,7 @@ td input{width:100%}
                                         <td> @Html.CheckBox("Danger2", new { @class = "chkBx10", style = "width:auto" })</td>
                                         <td> धोकदायक</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="text-center">
                                         <td>
                                             <b> काँलम</b>
                                         </td>
@@ -1047,7 +1047,7 @@ td input{width:100%}
 
                 <table style="width: 100%; table-layout: fixed;" class="back mb-4 width">
                    
-                    <tr>
+                    <tr class="text-center">
                         <th>मजला क्र./Floor No.</th>
                         <th class="second">मालकी (मालमत्ता धारक/भाडेकरू/लीज) /<br />Occupancy Status(Owner / Tenant/ Lease)</th>
                         <th class="prakar">बांधकामाचा प्रकार/ Const.Type<br />(A, B, C,D, E,OP))</th>
