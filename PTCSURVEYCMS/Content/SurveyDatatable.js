@@ -1,7 +1,7 @@
 ﻿
 
 $(document).ready(function () {
-
+   // RadioLoadData();
     ActiveEmployee();
 });
 
@@ -42,7 +42,38 @@ function capitalize_Words(str) {
     return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
 }
 //console.log(capitalize_Words('js string exercises'));
+//$("input[name='PropertyNumber']").change(function () {
+//    //reload dropdownlist
+//    debugger;
+//    RadioLoadData();
+//})
+//function RadioLoadData() {
+//    $("input[name='PropertyNumber']").each(function () {
+//        debugger;
+//        if ($(this).is(":checked")) {
+//            var value = $(this).val();
+//            var ddlCity = $(".ddlCity");
+//            $.ajax({
+//                type: "Post",
+//                url: '/PTC/GetAllCity/',
+//                data: '{value: "' + value + '"}',
+//                contentType: "application/json; charset=utf-8",
+//                dataType: "json",
+//                success: function (data) {
+//                    ddlCity.html("");
+//                    //var selectvalue = "";
+//                    for (var i = 0; i < data.length; i++) {
+//                        ddlCity.append($('<option></option>').val(data[i].Value).html(data[i].Text));
+//                    }
+//                },
 
+//                error: function (xhr, ajaxOptions, thrownError) {
+//                    alert('Failed to retrieve counties.');
+//                }
+//            });
+//        }
+//    });
+//}
 
 function ActiveEmployee() {
     $('#datatableActive').DataTable({
