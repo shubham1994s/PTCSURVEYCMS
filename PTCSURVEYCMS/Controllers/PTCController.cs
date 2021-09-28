@@ -2,6 +2,7 @@
 using BLL.Repository.Repository;
 using BLL.ViewModel;
 using DAL.ChildDatabase;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -275,6 +276,32 @@ namespace PTCSURVEYCMS.Controllers
             return Redirect("/PTC/SurveyList");
         }
 
+
+        [HttpPost]
+        public ActionResult GetAllCity(string value)
+        {
+            string str = value;
+            List<SelectListItem> items = new List<SelectListItem>();
+            items.Add(new SelectListItem() { Text = "London", Value = "1001", Selected = false });
+            items.Add(new SelectListItem() { Text = "Kirkland", Value = "1002", Selected = true });
+            items.Add(new SelectListItem() { Text = "Redmond", Value = "1003", Selected = false });
+            items.Add(new SelectListItem() { Text = "Tacoma", Value = "1004", Selected = false });
+            items.Add(new SelectListItem() { Text = "Seattle", Value = "1005", Selected = false });
+            //ViewBag.SelectedValue = 1002;
+            items.Insert(0, new SelectListItem { Text = "Please select", Value = "0" });
+
+            List<SelectListItem> items2 = new List<SelectListItem>();
+            items2.Add(new SelectListItem() { Text = "AAA", Value = "1001", Selected = false });
+            items2.Add(new SelectListItem() { Text = "BBB", Value = "1002", Selected = true });
+            items2.Add(new SelectListItem() { Text = "CCC", Value = "1003", Selected = false });
+            items2.Add(new SelectListItem() { Text = "DDD", Value = "1004", Selected = false });
+            items2.Add(new SelectListItem() { Text = "EEE", Value = "1005", Selected = false });
+
+            if (value == "WardNumber")
+                return Json(items2, JsonRequestBehavior.AllowGet);
+
+            return Json(items, JsonRequestBehavior.AllowGet);
+        }
         [HttpGet]
         public ActionResult ViewSurveyForm(int q = -1)
         {
