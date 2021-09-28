@@ -400,98 +400,198 @@ td input{width:100%}
                 </div>
                 <hr />
                 @* Prop. Owner Namee Section D *@
-                <div class="d-flex flex-column back mb-4 width">
-                    <div class="d-flex flex-row">
-                        <div class="form-group pr-4">
-                            <label class="label"> मालमत्ताधारकाचे नाव /<br /> Prop. Owner Name</label>
+            <div class="d-flex flex-column back mb-4 width">
+                <div class="d-flex flex-row">
+                    <div class="form-group pr-4">
+                        <label class="label"> मालमत्ताधारकाचे नाव 1 /<br /> Prop. Owner Name 1</label>
 
-                        </div>
-                        <div class="form-group pr-4">
-                            <label class="label">प्रथम नाव/ First Name</label>
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                            @Html.ValidationMessageFor(model => model.PropOwnerFirstName, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
-                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                            <span class="help-block with-errors"></span>
-                        </div>
-                        <div class="form-group pr-4">
-                            <label class="label">मधले नाव / Middle Name</label>
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                            @Html.ValidationMessageFor(model => model.PropOwnerMiddleName, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
-                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                            <span class="help-block with-errors"></span>
-                        </div>
-                        <div class="form-group pr-4">
-                            <label class="label">आडनाव / Last Name</label>
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control",style = "font-family:Arial, FontAwesome" })
-                            @Html.ValidationMessageFor(model => model.PropOwnerLastName, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
-                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                            <span class="help-block with-errors"></span>
-                        </div>
                     </div>
-
-                    <div class="d-flex flex-row">
-                        <div class="form-group pr-4">
-                            <label class="label"> संपर्क क्र. /<br /> Telephone No.</label>
-
-                        </div>
-                        <div class="form-group pr-4" style="margin-left: 3.5%;">
-
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerTelephoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
-                            @Html.ValidationMessageFor(model => model.PropOwnerTelephoneNo, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_TelephoneNoidd"></span>
-                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                            <span class="help-block with-errors"></span>
-                        </div>  @*Change*@
-                        <div class="form-group pr-4">
-                            <label class="label">  मतदान ओळखपत्र /<br /> Election Card. </label>
-
-                        </div>
-                        <div class="form-group pr-4">
-
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerElectionCardNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
-                            @Html.ValidationMessageFor(model => model.PropOwnerElectionCardNo, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
-                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                            <span class="help-block with-errors"></span>
-                        </div>
+                    <div class="form-group pr-4">
+                        <label class="label">प्रथम नाव/ First Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerFirstName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
                     </div>
-                    <div class="d-flex flex-row">
-                        <div class="form-group pr-4" style="margin-right:4.5%;">
-                            <label class="label"> ई - मेल पत्ता. /<br /> Email Id.</label>
-
-                        </div>
-                        <div class="form-group pr-4">
-
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerEmailId, new {@class = "form-control", style = "font-family:Arial, FontAwesome" })
-                            @Html.ValidationMessageFor(model => model.PropOwnerEmailId, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_PropOwnerEmailId"></span>
-                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                            <span class="help-block with-errors"></span>
-                        </div>
-                        <div class="form-group pr-4" style="margin-right:4%;">
-                            <label class="label">आधार क्र. /<br /> Adhaar No.</label>
-
-                        </div>
-                        <div class="form-group pr-4">
-
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.PropOwnerAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12" })
-                            @Html.ValidationMessageFor(model => model.PropOwnerAdhaarNo, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_PropOwnerAdhaarNo"></span>
-                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                            <span class="help-block with-errors"></span>
-                        </div>
+                    <div class="form-group pr-4">
+                        <label class="label">मधले नाव / Middle Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerMiddleName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">आडनाव / Last Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerLastName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
                     </div>
                 </div>
+
+
+                <div class="d-flex flex-row">
+                    <div class="form-group pr-4">
+                        <label class="label"> मालमत्ताधारकाचे नाव 2 /<br /> Prop. Owner Name 2</label>
+
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">प्रथम नाव/ First Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerFirstName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">मधले नाव / Middle Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerMiddleName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">आडनाव / Last Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerLastName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                </div><div class="d-flex flex-row">
+                    <div class="form-group pr-4">
+                        <label class="label"> मालमत्ताधारकाचे नाव 3 /<br /> Prop. Owner Name 3</label>
+
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">प्रथम नाव/ First Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerFirstName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">मधले नाव / Middle Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerMiddleName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">आडनाव / Last Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerLastName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                </div><div class="d-flex flex-row mb-3">
+                    <div class="form-group pr-4">
+                        <label class="label"> मालमत्ताधारकाचे नाव 4 /<br /> Prop. Owner Name 4</label>
+
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">प्रथम नाव/ First Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerFirstName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">मधले नाव / Middle Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerMiddleName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">आडनाव / Last Name</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerLastName, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                </div>
+
+
+                <div class="d-flex flex-row">
+                    <div class="form-group pr-4">
+                        <label class="label"> संपर्क क्र. /<br /> Telephone No.</label>
+
+                    </div>
+                    <div class="form-group pr-4" style="margin-left: 3.5%;">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerTelephoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerTelephoneNo, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_TelephoneNoidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>  @*Change*@
+                    <div class="form-group pr-4">
+                        <label class="label">  मतदान ओळखपत्र /<br /> Election Card. </label>
+
+                    </div>
+                    <div class="form-group pr-4">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerElectionCardNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerElectionCardNo, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                </div>
+                <div class="d-flex flex-row">
+                    <div class="form-group pr-4" style="margin-right:4.5%;">
+                        <label class="label"> ई - मेल पत्ता. /<br /> Email Id.</label>
+
+                    </div>
+                    <div class="form-group pr-4">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerEmailId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerEmailId, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_PropOwnerEmailId"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4" style="margin-right:4%;">
+                        <label class="label">आधार क्र. /<br /> Adhaar No.</label>
+
+                    </div>
+                    <div class="form-group pr-4">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.PropOwnerAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12" })
+                        @Html.ValidationMessageFor(model => model.PropOwnerAdhaarNo, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_PropOwnerAdhaarNo"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                </div>
+            </div>
                 @* Occupier Name Section E *@
                 <div class="d-flex flex-column back mb-4 width">
                     <div class="d-flex flex-row">
