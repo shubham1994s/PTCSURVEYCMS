@@ -79,23 +79,25 @@
 
 
                                                     @*@Html.Label("Select Option:-")*@
+
+
+                                                    <input id="PropertyNumber" class="Score" name="selectoption" type="radio" value="Property Number" /> <b style="margin-right:3%;margin-left:0.5%"> Property Number </b>
+
+                                                    <input id="PrabhagNumber" class="Score" name="selectoption" type="radio" value="Prabhag Number" />  <b style="margin-right: 3%; margin-left: 0.5%"> Prabhag Number  </b>
+
+                                                    <input id="WardNumber" class="Score" name="selectoption" type="radio" value="Ward Number" /> <b style="margin-right: 3%; margin-left: 0.5%">   Ward Number   </b>
+
+                                                    <br />
+                                                    @*@Html.Label("Search Text:", new { style = "margin-top:8%;" })*@
                                                
+                                                <label class="changeme" style="margin-top:4%">Search No:</label>
 
-                                                     <input id="PropertyNumber" class="Score" name="selectoption" type="radio" value="PropertyNumber" /> <b> Property Number </b> 
+                                                    @Html.TextBox("SearchText")<br />
+                                                    <span class="text-danger" id="err_PropertyNo"></span>
+                                                    @*<input type="text" id="ss" value="SearchText" />*@
+                                                    @*<a href="@Url.Action("SurveyList", "PTC",new { id = Request.QueryString["SearchText"] })" type="button" class="btn btn-sm btn-primary">SearchText</a>*@
 
-                                                     <input id="PrabhagNumber" class="Score" name="selectoption" type="radio" value="PrabhagNumber" />  <b> Prabhag Number  </b> 
-
-                                                     <input id="WardNumber" class="Score" name="selectoption" type="radio" value="WardNumber" /> <b>   Ward Number   </b> 
-
-
-                                                @Html.Label("Search Text:", new { style = "margin-top:8%;" })
-
-                                                @Html.TextBox("SearchText")
-                                                <span class="text-danger" id="err_PropertyNo"></span>
-                                                @*<input type="text" id="ss" value="SearchText" />*@
-                                                @*<a href="@Url.Action("SurveyList", "PTC",new { id = Request.QueryString["SearchText"] })" type="button" class="btn btn-sm btn-primary">SearchText</a>*@
-
-                                                @*<input type="submit" value="Send Message" />*@
+                                                    @*<input type="submit" value="Send Message" />*@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="submit" name="Send" value="Send" class="btn btn-primary">Send Message</button>
@@ -148,8 +150,8 @@
         <div>
             <div id="confirmMessage">Confirm text</div>
             <div>
-                <input id="confirmYes" type="button" value="Yes" />
-                <input id="confirmNo" type="button" value="No" />
+                <input id="confirmYes" type="button" value="Yes" class="btn btn-sm btn-primary"/>
+                <input id="confirmNo" type="button" value="No" class="btn btn-sm btn-primary"/>
             </div>
         </div>
     </div>
@@ -182,16 +184,16 @@
 
 
         input[type=button] {
-            padding: 5px 10px;
+            padding: 3px 8px;
             margin: 10px 5px;
             border-radius: 5px;
             cursor: pointer;
-            background: #ddd;
+           /* background: #ddd;*/
             border: 1px solid #ccc;
         }
 
             input[type=button]:hover {
-                background: #ccc;
+                background: #0873d0;
             }
 
         .confirm {
@@ -267,3 +269,8 @@
             }
     </style>
 
+<script>
+    $('input[type=radio]').change(function (evt) {
+        $('.changeme').html($(this).val() + ' :');
+    });
+</script>
