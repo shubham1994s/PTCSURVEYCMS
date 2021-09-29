@@ -37,7 +37,7 @@ namespace BLL.Repository.Repository
         }
 
         public AppDetailsVM GetApplicationDetails(int AppId)
-        { 
+        {
             using (DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities())
             {
                 AppDetailsVM model = new AppDetailsVM();
@@ -161,7 +161,7 @@ namespace BLL.Repository.Repository
                         obj.Age12 = _Property.Age12;
 
                         obj.link1 = _Property.link1;
-                        obj.link2 = _Property.link2; 
+                        obj.link2 = _Property.link2;
                         obj.link3 = _Property.link3;
                         obj.link4 = _Property.link4;
                         obj.link5 = _Property.link5;
@@ -183,7 +183,7 @@ namespace BLL.Repository.Repository
                         obj.ContactNo8 = _Property.ContactNo8;
                         obj.ContactNo9 = _Property.ContactNo9;
                         obj.ContactNo10 = _Property.ContactNo10;
-                        obj.ContactNo11= _Property.ContactNo11;
+                        obj.ContactNo11 = _Property.ContactNo11;
                         obj.ContactNo12 = _Property.ContactNo12;
 
                         obj.VoterIdentityNo1 = _Property.VoterIdentityNo1;
@@ -332,7 +332,7 @@ namespace BLL.Repository.Repository
                         obj.FloorNo2 = _Property.FloorNo2;
                         obj.OccupancyStatus2 = _Property.OccupancyStatus2;
                         obj.ConstType2 = _Property.ConstType2;
-                      
+
                         obj.UsageType2 = _Property.UsageType2;
                         obj.UsageTypeClass2 = _Property.UsageTypeClass2;
                         obj.Legal2 = _Property.Legal2;
@@ -341,7 +341,7 @@ namespace BLL.Repository.Repository
                         obj.FloorNo3 = _Property.FloorNo3;
                         obj.OccupancyStatus3 = _Property.OccupancyStatus3;
                         obj.ConstType3 = _Property.ConstType3;
-                        
+
                         obj.UsageType3 = _Property.UsageType3;
                         obj.UsageTypeClass3 = _Property.UsageTypeClass3;
                         obj.Legal3 = _Property.Legal3;
@@ -350,7 +350,7 @@ namespace BLL.Repository.Repository
                         obj.FloorNo4 = _Property.FloorNo4;
                         obj.OccupancyStatus4 = _Property.OccupancyStatus4;
                         obj.ConstType4 = _Property.ConstType4;
-                   
+
                         obj.UsageType4 = _Property.UsageType4;
                         obj.UsageTypeClass4 = _Property.UsageTypeClass4;
                         obj.Legal4 = _Property.Legal4;
@@ -359,7 +359,7 @@ namespace BLL.Repository.Repository
                         obj.FloorNo5 = _Property.FloorNo5;
                         obj.OccupancyStatus5 = _Property.OccupancyStatus5;
                         obj.ConstType5 = _Property.ConstType5;
-                      
+
                         obj.UsageType5 = _Property.UsageType5;
                         obj.UsageTypeClass5 = _Property.UsageTypeClass5;
                         obj.Legal5 = _Property.Legal5;
@@ -403,7 +403,7 @@ namespace BLL.Repository.Repository
                         {
                             obj.DataEntryDate = DateTime.ParseExact(_Property.DataEntryDate, "dd-MM-yyyy", provider);
                         }
-                       
+
                         obj.DataEntryName = _Property.DataEntryName;
                         if (_Property.DataEntrySignature != null)
                         {
@@ -697,9 +697,9 @@ namespace BLL.Repository.Repository
                         Master.FloorNo1 = _Property.FloorNo1;
                         Master.OccupancyStatus1 = _Property.OccupancyStatus1;
                         Master.ConstType1 = _Property.ConstType1;
-                       
-                        Master.DateofConstruction1 =_Property.DateofConstruction1;
-                     
+
+                        Master.DateofConstruction1 = _Property.DateofConstruction1;
+
                         Master.UsageType1 = _Property.UsageType1;
                         Master.UsageTypeClass1 = _Property.UsageTypeClass1;
                         Master.Legal1 = _Property.Legal1;
@@ -707,7 +707,7 @@ namespace BLL.Repository.Repository
                         Master.BuildupArea1 = _Property.BuildupArea1;
                         Master.FloorNo2 = _Property.FloorNo2;
                         Master.OccupancyStatus2 = _Property.OccupancyStatus2;
-                        Master.ConstType2 = _Property.ConstType2;                  
+                        Master.ConstType2 = _Property.ConstType2;
                         Master.DateofConstruction2 = _Property.DateofConstruction2;
                         Master.UsageType2 = _Property.UsageType2;
                         Master.UsageTypeClass2 = _Property.UsageTypeClass2;
@@ -717,9 +717,9 @@ namespace BLL.Repository.Repository
                         Master.FloorNo3 = _Property.FloorNo3;
                         Master.OccupancyStatus3 = _Property.OccupancyStatus3;
                         Master.ConstType3 = _Property.ConstType3;
-                               Master.DateofConstruction3 = _Property.DateofConstruction3;
-                   
-                    
+                        Master.DateofConstruction3 = _Property.DateofConstruction3;
+
+
                         Master.UsageType3 = _Property.UsageType3;
                         Master.UsageTypeClass3 = _Property.UsageTypeClass3;
                         Master.Legal3 = _Property.Legal3;
@@ -728,9 +728,9 @@ namespace BLL.Repository.Repository
                         Master.FloorNo4 = _Property.FloorNo4;
                         Master.OccupancyStatus4 = _Property.OccupancyStatus4;
                         Master.ConstType4 = _Property.ConstType4;
-                 
-                            Master.DateofConstruction4 =_Property.DateofConstruction4;
-                      
+
+                        Master.DateofConstruction4 = _Property.DateofConstruction4;
+
                         Master.UsageType4 = _Property.UsageType4;
                         Master.UsageTypeClass4 = _Property.UsageTypeClass4;
                         Master.Legal4 = _Property.Legal4;
@@ -797,7 +797,7 @@ namespace BLL.Repository.Repository
                         {
                             Master.Sketchdiagram2 = _Property.Sketchdiagram2;
                         }
-                     
+
                         if (_Property.DataEntryDate != "--Select Date--")
                         {
                             Master.DataEntryDate = DateTime.ParseExact(_Property.DataEntryDate, "dd-MM-yyyy", provider);
@@ -894,14 +894,14 @@ namespace BLL.Repository.Repository
             return Result;
         }
 
-      
+
         public List<PropertyMasterVM> getPropertyDetails(int AppId)
         {
             List<PropertyMasterVM> result = new List<PropertyMasterVM>();
 
             using (var db = new DEVPTCSURVEYMALEGAONEntities(AppId))
             {
-                result = db.PropertyMasters.Where(x=>x.IsDelete==false).Select(x => new PropertyMasterVM
+                result = db.PropertyMasters.Where(x => x.IsDelete == false).Select(x => new PropertyMasterVM
                 {
                     PropertyId = x.PropertyId,
                     NewPropertyNo = x.NewPropertyNo,
@@ -910,7 +910,7 @@ namespace BLL.Repository.Repository
                     PropOwnerFirstName = x.PropOwnerFirstName,
                     PropOwnerLastName = x.PropOwnerLastName,
                     PropOwnerTelephoneNo = x.PropOwnerTelephoneNo,
-                    Sketchdiagram2=x.Sketchdiagram2
+                    Sketchdiagram2 = x.Sketchdiagram2
 
                 }).ToList();
             }
@@ -1201,7 +1201,7 @@ namespace BLL.Repository.Repository
                     Master.FloorNo2 = _Property.FloorNo2;
                     Master.OccupancyStatus2 = _Property.OccupancyStatus2;
                     Master.ConstType2 = _Property.ConstType2;
-                 
+
                     Master.UsageType2 = _Property.UsageType2;
                     Master.UsageTypeClass2 = _Property.UsageTypeClass2;
                     Master.Legal2 = _Property.Legal2;
@@ -1210,7 +1210,7 @@ namespace BLL.Repository.Repository
                     Master.FloorNo3 = _Property.FloorNo3;
                     Master.OccupancyStatus3 = _Property.OccupancyStatus3;
                     Master.ConstType3 = _Property.ConstType3;
-               
+
                     Master.UsageType3 = _Property.UsageType3;
                     Master.UsageTypeClass3 = _Property.UsageTypeClass3;
                     Master.Legal3 = _Property.Legal3;
@@ -1219,7 +1219,7 @@ namespace BLL.Repository.Repository
                     Master.FloorNo4 = _Property.FloorNo4;
                     Master.OccupancyStatus4 = _Property.OccupancyStatus4;
                     Master.ConstType4 = _Property.ConstType4;
-                 
+
                     Master.UsageType4 = _Property.UsageType4;
                     Master.UsageTypeClass4 = _Property.UsageTypeClass4;
                     Master.Legal4 = _Property.Legal4;
@@ -1228,7 +1228,7 @@ namespace BLL.Repository.Repository
                     Master.FloorNo5 = _Property.FloorNo5;
                     Master.OccupancyStatus5 = _Property.OccupancyStatus5;
                     Master.ConstType5 = _Property.ConstType5;
-                 
+
                     Master.UsageType5 = _Property.UsageType5;
                     Master.UsageTypeClass5 = _Property.UsageTypeClass5;
                     Master.Legal5 = _Property.Legal5;
@@ -1269,15 +1269,15 @@ namespace BLL.Repository.Repository
                     else
                     {
                         Master.DataEntryDate = "--Select Date--";
-                    }                  
+                    }
                     Master.DataEntryName = _Property.DataEntryName;
                     Master.DataEntrySignature = _Property.DataEntrySignature;
-                 
+
                     Master.NonSolarWaterheater = _Property.NonSolarWaterheater;
                     Master.NonVermicultureProject = _Property.NonVermicultureProject;
                     Master.NoLift = _Property.NoLift;
-                    Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;                 
-                    Master.Sketchdiagram = _Property.Sketchdiagram;              
+                    Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
+                    Master.Sketchdiagram = _Property.Sketchdiagram;
                     Master.Sketchdiagram2 = _Property.Sketchdiagram2;
                     Master.ZoneNo = _Property.ZoneNo;
                     Master.VillageName = _Property.VillageName;
@@ -1303,7 +1303,7 @@ namespace BLL.Repository.Repository
                     Master.NPermUseNo = _Property.NPermUseNo;
 
 
-                   Master.ZKMKG = _Property.ZKMKG;
+                    Master.ZKMKG = _Property.ZKMKG;
                     Master.DVMKG = _Property.DVMKG;
                     Master.ThirdPT = _Property.ThirdPT;
                     Master.FourthPT = _Property.FourthPT;
@@ -1349,9 +1349,9 @@ namespace BLL.Repository.Repository
                     Master.ThirteenCPC = _Property.ThirteenCPC;
                     Master.FourteenCPC = _Property.FourteenCPC;
                 }
-              else
+                else
                 {
-                    
+
                 }
             }
             return Master;
@@ -1369,7 +1369,7 @@ namespace BLL.Repository.Repository
                     db.SaveChanges();
                 }
             }
-                return Master;
+            return Master;
         }
 
 
@@ -1394,18 +1394,18 @@ namespace BLL.Repository.Repository
 
         }
 
-        public PropertyMasterVM SendPropertyDetails(int AppId,string SearchText, string SelectOption,string send, string Reminder)
+        public PropertyMasterVM SendPropertyDetails(int AppId, string SearchText, string SelectOption, string send, string Reminder,int q)
         {
             DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(AppId);
             PropertyMasterVM result = new PropertyMasterVM();
             var model = from s in db.PropertyMasters select s;
-           
+
             if (!String.IsNullOrEmpty(SearchText))
             {
                 switch (SelectOption)
                 {
                     case "PropertyNumber":
-                        model = model.Where(a =>  a.PropertyNo.Contains(SearchText));
+                        model = model.Where(a => a.PropertyNo.Contains(SearchText));
                         foreach (var item in model)
                         {
                             //  Console.WriteLine(item.PropOwnerMobileNo);
@@ -1453,15 +1453,37 @@ namespace BLL.Repository.Repository
 
                 }
             }
-           int cnt= model.Count();
-            if(cnt==0)
+            else
+            {
+                switch (SelectOption)
+                {
+                    case "PropertyNumber":
+                        model = model.Where(a => a.PropertyId==q);
+                        foreach (var item in model)
+                        {
+                            //  Console.WriteLine(item.PropOwnerMobileNo);
+                            if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                            {
+                                sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                            }
+                            if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                            {
+                                sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                            }
+                        }
+                        break;
+
+                }
+            }
+            int cnt = model.Count();
+            if (cnt == 0)
             {
                 result.ErrorMsg = "0";
             }
-        //    result = model;
+            //    result = model;
             return result;
         }
     }
-}
 
+}
 

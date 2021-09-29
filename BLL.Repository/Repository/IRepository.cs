@@ -16,7 +16,7 @@ namespace BLL.Repository.Repository
         PropertyMasterVM getDeleteByID(int q, int AppId);
 
 
-        PropertyMasterVM SendPropertyDetails(int AppId,string SearchText, string SelectOption,string send, string Reminder);
+        PropertyMasterVM SendPropertyDetails(int AppId,string SearchText, string SelectOption,string send, string Reminder,int q);
 
 
     }

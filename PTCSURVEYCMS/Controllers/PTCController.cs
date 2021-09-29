@@ -298,7 +298,7 @@ namespace PTCSURVEYCMS.Controllers
                     var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
                     ViewBag.EntryCount = EntryCount;
                 var model1 = from s in db.PropertyMasters select s;
-                var model = Repository.SendPropertyDetails(Appid, SearchText, SelectOption,send,Reminder);
+                var model = Repository.SendPropertyDetails(Appid, SearchText, SelectOption,send,Reminder,q);
                
                 return View(viewModel);
 
