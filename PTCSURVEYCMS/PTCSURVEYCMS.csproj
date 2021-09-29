@@ -1650,11 +1650,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\PTC\SurveyForm.cshtml" />
-    <Content Include="Views\PTC\SurveyList.cshtml" />
     <Content Include="Views\PTC\ViewSurveyForm.cshtml" />
     <Content Include="Views\Report\Report.cshtml" />
     <Content Include="Views\Report\GenerateReport.cshtml" />
     <Content Include="Views\Report\SurveyForm.cshtml" />
+    <Content Include="Views\PTC\SurveyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

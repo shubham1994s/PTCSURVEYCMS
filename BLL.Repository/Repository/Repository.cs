@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 
 namespace BLL.Repository.Repository
 {
@@ -214,6 +215,18 @@ namespace BLL.Repository.Repository
                         obj.PropOwnerFirstName = _Property.PropOwnerFirstName;
                         obj.PropOwnerMiddleName = _Property.PropOwnerMiddleName;
                         obj.PropOwnerLastName = _Property.PropOwnerLastName;
+                        obj.PropOwnerFirstName2 = _Property.PropOwnerFirstName2;
+                        obj.PropOwnerMiddleName2 = _Property.PropOwnerMiddleName2;
+                        obj.PropOwnerLastName2 = _Property.PropOwnerLastName2;
+
+                        obj.PropOwnerFirstName3 = _Property.PropOwnerFirstName3;
+                        obj.PropOwnerMiddleName3 = _Property.PropOwnerMiddleName3;
+                        obj.PropOwnerLastName3 = _Property.PropOwnerLastName3;
+
+                        obj.PropOwnerFirstName4 = _Property.PropOwnerFirstName4;
+                        obj.PropOwnerMiddleName4 = _Property.PropOwnerMiddleName4;
+                        obj.PropOwnerLastName4 = _Property.PropOwnerLastName4;
+
                         obj.PropOwnerTelephoneNo = _Property.PropOwnerTelephoneNo;
                         obj.PropOwnerMobileNo = _Property.PropOwnerElectionCardNo;
                         obj.PropOwnerEmailId = _Property.PropOwnerEmailId;
@@ -622,6 +635,17 @@ namespace BLL.Repository.Repository
                         Master.PropOwnerFirstName = _Property.PropOwnerFirstName;
                         Master.PropOwnerMiddleName = _Property.PropOwnerMiddleName;
                         Master.PropOwnerLastName = _Property.PropOwnerLastName;
+                        Master.PropOwnerFirstName2 = _Property.PropOwnerFirstName2;
+                        Master.PropOwnerMiddleName2 = _Property.PropOwnerMiddleName2;
+                        Master.PropOwnerLastName2 = _Property.PropOwnerLastName2;
+
+                        Master.PropOwnerFirstName3 = _Property.PropOwnerFirstName3;
+                        Master.PropOwnerMiddleName3 = _Property.PropOwnerMiddleName3;
+                        Master.PropOwnerLastName3 = _Property.PropOwnerLastName3;
+
+                        Master.PropOwnerFirstName4 = _Property.PropOwnerFirstName4;
+                        Master.PropOwnerMiddleName4 = _Property.PropOwnerMiddleName4;
+                        Master.PropOwnerLastName4 = _Property.PropOwnerLastName4;
                         Master.PropOwnerTelephoneNo = _Property.PropOwnerTelephoneNo;
                         Master.PropOwnerMobileNo = _Property.PropOwnerElectionCardNo;
                         Master.PropOwnerEmailId = _Property.PropOwnerEmailId;
@@ -1042,6 +1066,17 @@ namespace BLL.Repository.Repository
                     Master.PropOwnerFirstName = _Property.PropOwnerFirstName;
                     Master.PropOwnerMiddleName = _Property.PropOwnerMiddleName;
                     Master.PropOwnerLastName = _Property.PropOwnerLastName;
+                    Master.PropOwnerFirstName2 = _Property.PropOwnerFirstName2;
+                    Master.PropOwnerMiddleName2 = _Property.PropOwnerMiddleName2;
+                    Master.PropOwnerLastName2 = _Property.PropOwnerLastName2;
+
+                    Master.PropOwnerFirstName3 = _Property.PropOwnerFirstName3;
+                    Master.PropOwnerMiddleName3 = _Property.PropOwnerMiddleName3;
+                    Master.PropOwnerLastName3 = _Property.PropOwnerLastName3;
+
+                    Master.PropOwnerFirstName4 = _Property.PropOwnerFirstName4;
+                    Master.PropOwnerMiddleName4 = _Property.PropOwnerMiddleName4;
+                    Master.PropOwnerLastName4 = _Property.PropOwnerLastName4;
                     Master.PropOwnerTelephoneNo = _Property.PropOwnerTelephoneNo;
                     Master.PropOwnerElectionCardNo = _Property.PropOwnerMobileNo;
                     Master.PropOwnerEmailId = _Property.PropOwnerEmailId;
@@ -1336,7 +1371,81 @@ namespace BLL.Repository.Repository
             }
                 return Master;
         }
+
+
+        public void sendSMS(string sms, string MobilNumber)
+        {
+            try
+            {
+                //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://www.smsjust.com/sms/user/urlsms.php?username=ycagent&pass=yocc@5095&senderid=YOCCAG&dest_mobileno=" + MobilNumber + "&msgtype=UNI&message=" + sms + "&response=Y");
+                //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://www.smsjust.com/sms/user/urlsms.php?username=ycagent&pass=yocc@5095&senderid=YOCCAG&dest_mobileno=" + MobilNumber + "&message=" + sms + "&response=Y");
+                //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://www.smsjust.com/sms/user/urlsms.php?username=artiyocc&pass=123456&senderid=BIGVCL&dest_mobileno=" + MobilNumber + "&msgtype=UNI&message="+ sms + "%20&response=Y");
+
+                HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://www.smsjust.com/sms/user/urlsms.php?username=ycagent&pass=yocc@5095&senderid=BIGVCL&dest_mobileno=" + MobilNumber + "&message=" + sms + "%20&response=Y");
+
+                //Get response from Ozeki NG SMS Gateway Server and read the answer
+                HttpWebResponse myResp = (HttpWebResponse)myReq.GetResponse();
+                System.IO.StreamReader respStreamReader = new System.IO.StreamReader(myResp.GetResponseStream());
+                string responseString = respStreamReader.ReadToEnd();
+                respStreamReader.Close();
+                myResp.Close();
+            }
+            catch { }
+
         }
+
+        public PropertyMasterVM SendPropertyDetails(int AppId,string SearchText, string SelectOption)
+        {
+            DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(AppId);
+            PropertyMasterVM result = new PropertyMasterVM();
+            var model = from s in db.PropertyMasters select s;
+           
+            if (!String.IsNullOrEmpty(SearchText))
+            {
+                switch (SelectOption)
+                {
+                    case "PropertyNumber":
+                        model = model.Where(a =>
+                        a.PropertyNo.Contains(SearchText));
+                        foreach (var item in model)
+                        {
+                            //  Console.WriteLine(item.PropOwnerMobileNo);
+                           sendSMS("API Cross limit", "8830635095");
+                        }
+                        break;
+
+                    case "PrabhagNumber":
+                        model = model.Where(a =>
+    a.PrabhagNo.Contains(SearchText));
+
+                        foreach (var item in model)
+                        {
+                            //  Console.WriteLine(item.PropOwnerMobileNo);
+                            sendSMS("API Cross limit", item.PropOwnerTelephoneNo);
+                        }
+                        break;
+
+                    case "WardNumber":
+                        model = model.Where(a =>
+    a.WardNameNo.Contains(SearchText));
+                        foreach (var item in model)
+                        {
+                            //  Console.WriteLine(item.PropOwnerMobileNo);
+                            sendSMS("API Cross limit", item.PropOwnerTelephoneNo);
+                        }
+                        break;
+
+                }
+            }
+           int cnt= model.Count();
+            if(cnt==0)
+            {
+                result.ErrorMsg = "0";
+            }
+        //    result = model;
+            return result;
+        }
+    }
 }
 
 

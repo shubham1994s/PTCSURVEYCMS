@@ -626,6 +626,24 @@ public partial class PropertyMaster
 
     public Nullable<bool> IsDelete { get; set; }
 
+    public string PropOwnerFirstName2 { get; set; }
+
+    public string PropOwnerFirstName3 { get; set; }
+
+    public string PropOwnerFirstName4 { get; set; }
+
+    public string PropOwnerMiddleName2 { get; set; }
+
+    public string PropOwnerMiddleName3 { get; set; }
+
+    public string PropOwnerMiddleName4 { get; set; }
+
+    public string PropOwnerLastName2 { get; set; }
+
+    public string PropOwnerLastName3 { get; set; }
+
+    public string PropOwnerLastName4 { get; set; }
+
 }
 
 }

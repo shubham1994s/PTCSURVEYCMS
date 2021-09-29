@@ -2,6 +2,7 @@
 using BLL.Repository.Repository;
 using BLL.ViewModel;
 using DAL.ChildDatabase;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -157,17 +158,17 @@ namespace PTCSURVEYCMS.Controllers
             }
         }
 
-        public ActionResult SurveyList(int q = -1,int clientId=0)
+        public ActionResult SurveyList(int q = -1, int clientId = 0)
         {
             Repository = new Repository();
-            if (clientId!=0)
+            if (clientId != 0)
             {
                 SessionHandler.Current.AppId = clientId;
-                int AppId = SessionHandler.Current.AppId;     
-                AppDetailsVM  ApplicationDetails = Repository.GetApplicationDetails(AppId);
+                int AppId = SessionHandler.Current.AppId;
+                AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(AppId);
                 ViewBag.Appname = ApplicationDetails.AppName;
             }
-          else
+            else
             {
                 ViewBag.Appname = SessionHandler.Current.AppName;
             }
@@ -178,13 +179,13 @@ namespace PTCSURVEYCMS.Controllers
                 {
                     ViewBag.Clogo = "property_tax_logo.png";
 
-               }
+                }
                 if (Appid == 2)
                 {
-                    ViewBag.Clogo = "vengurla logo.jpeg";               
+                    ViewBag.Clogo = "vengurla logo.jpeg";
                 }
-              
-           
+
+
                 var viewModel = new PropertyMasterVM();
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);
                 using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(Appid))
@@ -195,17 +196,116 @@ namespace PTCSURVEYCMS.Controllers
                     ViewBag.EntryCount = EntryCount;
                 }
                 return View(viewModel);
-             
+
             }
 
             else
             {
                 return Redirect("/Account/Login");
             }
-         
+
         }
+        public string SelectionNotExists(string SearchText, string selectoption)
+        {
+            int Appid = SessionHandler.Current.AppId;
+            string msg = "";
+            using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+            {
+                //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
+              
+                if (selectoption == "PropertyNumber")
+                {
+                    var isrecord = db.PropertyMasters.Where(x => x.PropertyNo == SearchText && x.IsDelete == false).FirstOrDefault();
+                    if (isrecord == null)
+                    {
+                        msg = "This Property Number Is Not Exist!";
+                    }
+                    else
+                    {
+                        msg = "This Property Number Is  Exist!";
+                    }
+                }
+                if (selectoption == "PrabhagNumber")
+                {
+                    var isrecord = db.PropertyMasters.Where(x => x.PrabhagNo == SearchText && x.IsDelete == false).FirstOrDefault();
+                    if (isrecord == null)
+                    {
+                        msg = "This Prabhag Number Is Not Exist!";
+                    }
+                    else
+                    {
+                        msg = "This Prabhag Number Is  Exist!";
+                    }
+                }
+                if (selectoption == "WardNumber")
+                {
+                    var isrecord = db.PropertyMasters.Where(x => x.WardNameNo == SearchText && x.IsDelete == false).FirstOrDefault();
+                    if(isrecord==null)
+                    { 
+                    msg = "This Ward Number Is Not Exist!";
+                    }
+                    else
+                    {
+                        msg = "This Ward Number Is  Exist!";
+                    }
+                }
+
+           
+            }
+
+            return msg;
+        }
+        [HttpPost]
+        public ActionResult SurveyList(string SearchText, string SelectOption,int q = -1, int clientId = 0)
+        {
+            Repository = new Repository();
+            if (clientId != 0)
+            {
+                SessionHandler.Current.AppId = clientId;
+                int AppId = SessionHandler.Current.AppId;
+                AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(AppId);
+                ViewBag.Appname = ApplicationDetails.AppName;
+            }
+            else
+            {
+                ViewBag.Appname = SessionHandler.Current.AppName;
+            }
+            if (SessionHandler.Current.AppId != 0)
+            {
+                int Appid = SessionHandler.Current.AppId;
+                if (Appid == 1)
+                {
+                    ViewBag.Clogo = "property_tax_logo.png";
+
+                }
+                if (Appid == 2)
+                {
+                    ViewBag.Clogo = "vengurla logo.jpeg";
+                }
 
 
+                var viewModel = new PropertyMasterVM();
+                viewModel = Repository.getPropertyDetailsByID(q, Appid);
+
+                DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(Appid);
+                
+                    //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
+
+                    var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
+                    ViewBag.EntryCount = EntryCount;
+                var model1 = from s in db.PropertyMasters select s;
+                var model = Repository.SendPropertyDetails(Appid, SearchText, SelectOption);
+               
+                return View(viewModel);
+
+            }
+
+            else
+            {
+                return Redirect("/Account/Login");
+            }
+
+        }
         // done by shubham
         public FileResult Export(int q)
         {
@@ -302,6 +402,8 @@ namespace PTCSURVEYCMS.Controllers
 
             return Json(items, JsonRequestBehavior.AllowGet);
         }
+
+
         [HttpGet]
         public ActionResult ViewSurveyForm(int q = -1)
         {
@@ -372,7 +474,7 @@ namespace PTCSURVEYCMS.Controllers
             {
                 //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
 
-                var isrecord = db.PropertyMasters.Where(x => x.PropertyNo == PropertyNo).FirstOrDefault();
+                var isrecord = db.PropertyMasters.Where(x => x.PropertyNo == PropertyNo && x.IsDelete==false).FirstOrDefault();
                 if (isrecord != null)
                 {
                     return "1";
@@ -392,7 +494,7 @@ namespace PTCSURVEYCMS.Controllers
             {
                 //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
 
-                var isrecord = db.PropertyMasters.Where(x => x.NewPropertyNo == NewPropertyNo).FirstOrDefault();
+                var isrecord = db.PropertyMasters.Where(x => x.NewPropertyNo == NewPropertyNo && x.IsDelete == false).FirstOrDefault();
                 if (isrecord != null)
                 {
                     return "1";
@@ -404,6 +506,9 @@ namespace PTCSURVEYCMS.Controllers
 
             }
         }
+
+
+       
 
         [HttpPost]
         public int EntryCount(string PropertyNo)

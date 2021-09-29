@@ -21,9 +21,12 @@ using System.Data.Entity.Infrastructure;
 public partial class DEVPTCSURVEYMALEGAONEntities : DbContext
 {
         public DEVPTCSURVEYMALEGAONEntities(int AppId)
-            : base(PropertyTaxAppConnection.GetConnectionString(AppId))
+              : base(PropertyTaxAppConnection.GetConnectionString(AppId))
         {
+
         }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
         throw new UnintentionalCodeFirstException();

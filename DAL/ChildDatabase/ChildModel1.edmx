@@ -374,6 +374,15 @@
           <Property Name="FourteenCPC" Type="bit" />
           <Property Name="ThirteenRPC" Type="bit" />
           <Property Name="IsDelete" Type="bit" />
+          <Property Name="PropOwnerFirstName2" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropOwnerFirstName3" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropOwnerFirstName4" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropOwnerMiddleName2" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropOwnerMiddleName3" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropOwnerMiddleName4" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropOwnerLastName2" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropOwnerLastName3" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropOwnerLastName4" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -879,6 +888,15 @@
           <Property Name="FourteenCPC" Type="Boolean" />
           <Property Name="ThirteenRPC" Type="Boolean" />
           <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="PropOwnerFirstName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerFirstName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerFirstName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerMiddleName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerMiddleName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerMiddleName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerLastName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerLastName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropOwnerLastName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -952,6 +970,15 @@
           <EntitySetMapping Name="PropertyMasters">
             <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.PropertyMaster">
               <MappingFragment StoreEntitySet="PropertyMaster">
+                <ScalarProperty Name="PropOwnerLastName4" ColumnName="PropOwnerLastName4" />
+                <ScalarProperty Name="PropOwnerLastName3" ColumnName="PropOwnerLastName3" />
+                <ScalarProperty Name="PropOwnerLastName2" ColumnName="PropOwnerLastName2" />
+                <ScalarProperty Name="PropOwnerMiddleName4" ColumnName="PropOwnerMiddleName4" />
+                <ScalarProperty Name="PropOwnerMiddleName3" ColumnName="PropOwnerMiddleName3" />
+                <ScalarProperty Name="PropOwnerMiddleName2" ColumnName="PropOwnerMiddleName2" />
+                <ScalarProperty Name="PropOwnerFirstName4" ColumnName="PropOwnerFirstName4" />
+                <ScalarProperty Name="PropOwnerFirstName3" ColumnName="PropOwnerFirstName3" />
+                <ScalarProperty Name="PropOwnerFirstName2" ColumnName="PropOwnerFirstName2" />
                 <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
                 <ScalarProperty Name="ThirteenRPC" ColumnName="ThirteenRPC" />
                 <ScalarProperty Name="FourteenCPC" ColumnName="FourteenCPC" />

@@ -138,6 +138,18 @@ namespace BLL.ViewModel
         public string PropOwnerFirstName { get; set; }
         public string PropOwnerMiddleName { get; set; }
         public string PropOwnerLastName { get; set; }
+
+        public string PropOwnerFirstName2 { get; set; }
+        public string PropOwnerMiddleName2 { get; set; }
+        public string PropOwnerLastName2 { get; set; }
+
+        public string PropOwnerFirstName3 { get; set; }
+        public string PropOwnerMiddleName3 { get; set; }
+        public string PropOwnerLastName3 { get; set; }
+
+        public string PropOwnerFirstName4 { get; set; }
+        public string PropOwnerMiddleName4 { get; set; }
+        public string PropOwnerLastName4 { get; set; }
         public string PropOwnerTelephoneNo { get; set; }
         public string PropOwnerElectionCardNo { get; set; }
         public string PropOwnerEmailId { get; set; }
@@ -338,6 +350,8 @@ namespace BLL.ViewModel
         public string Sketchdiagram { get; set; }
 
         public string Sketchdiagram2 { get; set; }
+
+        public string ErrorMsg { get; set; }
 
         public Nullable<bool> ZKMKG { get; set; }
 
