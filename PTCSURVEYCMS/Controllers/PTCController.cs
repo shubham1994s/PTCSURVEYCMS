@@ -1,6 +1,7 @@
 ﻿
 using BLL.Repository.Repository;
 using BLL.ViewModel;
+using DAL;
 using DAL.ChildDatabase;
 using System;
 using System.Collections.Generic;
@@ -35,28 +36,31 @@ namespace PTCSURVEYCMS.Controllers
             int AppId = SessionHandler.Current.AppId;
             if (SessionHandler.Current.AppId != 0)
             {
-
+                DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities();
+                var AppDetails = db.AppDetails.Where(x => x.AppId == AppId).FirstOrDefault();
                 if (file != null && file.ContentLength > 0)
                 {
                     //int AppId = int.Parse(SessionHandler.Current.AppId.ToString());
                     //var AppDetails = mainRepository.GetApplicationDetails(AppId);
+                   
                     var _Extensions = new[] { ".Jpg", ".png", ".jpg", "jpeg" };
 
                     var fileName = Path.GetFileName(file.FileName);
                     var ext = Path.GetExtension(file.FileName);
+                    
                     if (_Extensions.Contains(ext))
                     {
                         //Guid Random = Guid.NewGuid();
                         string name = Path.GetFileNameWithoutExtension(fileName);
                         string myfile = name + ext;
-
-                        //var exists = System.IO.Directory.Exists(Server.MapPath(AppDetails.baseImageUrlCMS + "Images"));
-                        var exists = System.IO.Directory.Exists(Server.MapPath("~/Images"));
+                       
+                       var exists = System.IO.Directory.Exists(Server.MapPath(AppDetails.basePath));
+                    //    var exists = System.IO.Directory.Exists(Server.MapPath("~/Images"));
                         if (!exists)
                         {
-                            System.IO.Directory.CreateDirectory(Server.MapPath("~/Images"));
+                            System.IO.Directory.CreateDirectory(Server.MapPath(AppDetails.basePath));
                         }
-                        var path = Path.Combine(Server.MapPath("~/Images"), myfile);
+                        var path = Path.Combine(Server.MapPath(AppDetails.basePath), myfile);
                         //var path = Path.Combine(Server.MapPath(AppDetails.baseImageUrlCMS + "Images"), myfile);
 
                         Property.SurveyorSignature = myfile;
@@ -78,12 +82,12 @@ namespace PTCSURVEYCMS.Controllers
                         string myfile = name + ext;
 
                         //var exists = System.IO.Directory.Exists(Server.MapPath(AppDetails.baseImageUrlCMS + "Images"));
-                        var exists = System.IO.Directory.Exists(Server.MapPath("~/Images"));
+                        var exists = System.IO.Directory.Exists(Server.MapPath(AppDetails.basePath));
                         if (!exists)
                         {
-                            System.IO.Directory.CreateDirectory(Server.MapPath("~/Images"));
+                            System.IO.Directory.CreateDirectory(Server.MapPath(AppDetails.basePath));
                         }
-                        var path = Path.Combine(Server.MapPath("~/Images"), myfile);
+                        var path = Path.Combine(Server.MapPath(AppDetails.basePath), myfile);
                         //var path = Path.Combine(Server.MapPath(AppDetails.baseImageUrlCMS + "Images"), myfile);
 
                         Property.DataEntrySignature = myfile;
@@ -106,12 +110,12 @@ namespace PTCSURVEYCMS.Controllers
                         string myfile = name + ext;
 
                         //var exists = System.IO.Directory.Exists(Server.MapPath(AppDetails.baseImageUrlCMS + "Images"));
-                        var exists = System.IO.Directory.Exists(Server.MapPath("~/Images"));
+                        var exists = System.IO.Directory.Exists(Server.MapPath(AppDetails.basePath));
                         if (!exists)
                         {
-                            System.IO.Directory.CreateDirectory(Server.MapPath("~/Images"));
+                            System.IO.Directory.CreateDirectory(Server.MapPath(AppDetails.basePath));
                         }
-                        var path = Path.Combine(Server.MapPath("~/Images"), myfile);
+                        var path = Path.Combine(Server.MapPath(AppDetails.basePath), myfile);
                         //var path = Path.Combine(Server.MapPath(AppDetails.baseImageUrlCMS + "Images"), myfile);
 
                         Property.Sketchdiagram = myfile;
@@ -133,12 +137,12 @@ namespace PTCSURVEYCMS.Controllers
                         string myfile = name + ext;
 
                         //var exists = System.IO.Directory.Exists(Server.MapPath(AppDetails.baseImageUrlCMS + "Images"));
-                        var exists = System.IO.Directory.Exists(Server.MapPath("~/Images"));
+                        var exists = System.IO.Directory.Exists(Server.MapPath(AppDetails.basePath));
                         if (!exists)
                         {
-                            System.IO.Directory.CreateDirectory(Server.MapPath("~/Images"));
+                            System.IO.Directory.CreateDirectory(Server.MapPath(AppDetails.basePath));
                         }
-                        var path = Path.Combine(Server.MapPath("~/Images"), myfile);
+                        var path = Path.Combine(Server.MapPath(AppDetails.basePath), myfile);
                         //var path = Path.Combine(Server.MapPath(AppDetails.baseImageUrlCMS + "Images"), myfile);
 
                         Property.Sketchdiagram2 = myfile;
@@ -256,7 +260,7 @@ namespace PTCSURVEYCMS.Controllers
             return msg;
         }
         [HttpPost]
-        public ActionResult SurveyList(string SearchText, string SelectOption,int q = -1, int clientId = 0)
+        public ActionResult SurveyList(string send, string Reminder, string SearchText, string SelectOption,int q = -1, int clientId = 0 )
         {
             Repository = new Repository();
             if (clientId != 0)
@@ -294,7 +298,7 @@ namespace PTCSURVEYCMS.Controllers
                     var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
                     ViewBag.EntryCount = EntryCount;
                 var model1 = from s in db.PropertyMasters select s;
-                var model = Repository.SendPropertyDetails(Appid, SearchText, SelectOption);
+                var model = Repository.SendPropertyDetails(Appid, SearchText, SelectOption,send,Reminder);
                
                 return View(viewModel);
 
@@ -345,6 +349,9 @@ namespace PTCSURVEYCMS.Controllers
             }
             if (SessionHandler.Current.AppId != 0)
             {
+
+                DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities();
+               
                 Repository = new Repository();
                 int Appid = SessionHandler.Current.AppId;
                 AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(Appid);
@@ -355,6 +362,12 @@ namespace PTCSURVEYCMS.Controllers
                 if (viewModel.Sketchdiagram2 == null)
                 {
                     ViewBag.nadoc = "na";
+                }
+                else
+                {
+                    int AppId = SessionHandler.Current.AppId;
+                    var AppDetails = db.AppDetails.Where(x => x.AppId == AppId).FirstOrDefault();
+                    ViewBag.img = AppDetails.basePath;
                 }
                 return View(viewModel);
             }
@@ -377,32 +390,7 @@ namespace PTCSURVEYCMS.Controllers
         }
 
 
-        [HttpPost]
-        public ActionResult GetAllCity(string value)
-        {
-            string str = value;
-            List<SelectListItem> items = new List<SelectListItem>();
-            items.Add(new SelectListItem() { Text = "London", Value = "1001", Selected = false });
-            items.Add(new SelectListItem() { Text = "Kirkland", Value = "1002", Selected = true });
-            items.Add(new SelectListItem() { Text = "Redmond", Value = "1003", Selected = false });
-            items.Add(new SelectListItem() { Text = "Tacoma", Value = "1004", Selected = false });
-            items.Add(new SelectListItem() { Text = "Seattle", Value = "1005", Selected = false });
-            //ViewBag.SelectedValue = 1002;
-            items.Insert(0, new SelectListItem { Text = "Please select", Value = "0" });
-
-            List<SelectListItem> items2 = new List<SelectListItem>();
-            items2.Add(new SelectListItem() { Text = "AAA", Value = "1001", Selected = false });
-            items2.Add(new SelectListItem() { Text = "BBB", Value = "1002", Selected = true });
-            items2.Add(new SelectListItem() { Text = "CCC", Value = "1003", Selected = false });
-            items2.Add(new SelectListItem() { Text = "DDD", Value = "1004", Selected = false });
-            items2.Add(new SelectListItem() { Text = "EEE", Value = "1005", Selected = false });
-
-            if (value == "WardNumber")
-                return Json(items2, JsonRequestBehavior.AllowGet);
-
-            return Json(items, JsonRequestBehavior.AllowGet);
-        }
-
+      
 
         [HttpGet]
         public ActionResult ViewSurveyForm(int q = -1)

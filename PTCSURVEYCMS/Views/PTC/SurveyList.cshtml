@@ -63,13 +63,7 @@
                                     <div style="display:flex;justify-content:space-between">
                                         <span style="font-size:2em;font-weight:600">Property List </span>
                                         @*<h3 style="margin-bottom:35px;margin-top:5px"><a href="@Url.Action("GenerateReport", "Report",new {typeOfReport="PDF"})" type="button" class="btn btn-sm btn-primary float-right" style="margin-left: 10px;">Get All Entries Report</a></h3>*@
-
-                                        @*<input id="PropertyNumber" name="PropertyNumber" type="radio" value="PropertyNumber" checked="checked" style="margin-left: 44%;" /> Property Number
-                                            <input id="WardNumber" name="PropertyNumber" type="radio" value="WardNumber" /> Ward Number
-
-                                            <select id="ddlCity" class="ddlCity" style="height: 1%;">
-                                            </select>*@
-
+                                      
                                         <a id="btnShow" class="btn btn-primary btn-sm" style="margin-bottom: 2%;">Send Message</a>
                                     </div>
 
@@ -82,46 +76,31 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                                    @*<input id="PropertyNumber" name="PropertyNumber" type="radio" value="PropertyNumber" checked="checked" /> Property Number
-        <input id="WardNumber" name="PropertyNumber" type="radio" value="WardNumber" /> Ward Number
-        <input id="PrabhagNumber" name="PropertyNumber" type="radio" value="PrabhagNumber" /> Prabhag Number
-        <select id="ddlCity" class="ddlCity" style="height: 1%;">
-        </select>*@
 
 
-                                                    @Html.Label("Select Option:")
-                                                    @*@Html.DropDownList("selectoption", new List<SelectListItem>
-                             {
-                new SelectListItem { Text = "Property Number", Value = "PropertyNumber" },
+                                                    @Html.Label("Select Option:-")
+                                               
 
-        new SelectListItem { Text = "Prabhag Number", Value = "PrabhagNumber"},
-        new SelectListItem { Text = "Ward Number", Value = "WardNumber"}
-        }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })*@
+                                                    <b> Property Number :</b> <input id="PropertyNumber" class="Score" name="selectoption" type="radio" value="PropertyNumber" />
 
-                                                    @*PropertyNumber: @Html.RadioButton("selectoption1", "PropertyNumber", new { @name = "selectoption" })
-        PrabhagNumber: @Html.RadioButton("selectoption2", "PrabhagNumber", new { @name = "selectoption" })
-        WardNumber: @Html.RadioButton("selectoption3", "WardNumber", new { @name = "selectoption" })*@
+                                                    <b> Prabhag Number  :</b> <input id="PrabhagNumber" class="Score" name="selectoption" type="radio" value="PrabhagNumber" />
+
+                                                    <b>   Ward Number   : </b> <input id="WardNumber" class="Score" name="selectoption" type="radio" value="WardNumber" />
 
 
-                                                    Property Number : <input id="PropertyNumber" class="Score" name="selectoption" type="radio" value="PropertyNumber" />
+                                                @Html.Label("Search Text:", new { style = "margin-top:8%;" })
 
-                                                    Prabhag Number  :   <input id="PrabhagNumber" class="Score" name="selectoption" type="radio" value="PrabhagNumber" />
+                                                @Html.TextBox("SearchText")
+                                                <span class="text-danger" id="err_PropertyNo"></span>
+                                                @*<input type="text" id="ss" value="SearchText" />*@
+                                                @*<a href="@Url.Action("SurveyList", "PTC",new { id = Request.QueryString["SearchText"] })" type="button" class="btn btn-sm btn-primary">SearchText</a>*@
 
-                                                    Ward Number     : <input id="WardNumber" class="Score" name="selectoption" type="radio" value="WardNumber" />
-
-
-                                                    @Html.Label("Search Text:", new { style = "margin-top:8%;" })
-
-                                                    @Html.TextBox("SearchText")
-                                                    <span class="text-danger" id="err_PropertyNo"></span>
-                                                    @*<input type="text" id="ss" value="SearchText" />*@
-                                                    @*<a href="@Url.Action("SurveyList", "PTC",new { id = Request.QueryString["SearchText"] })" type="button" class="btn btn-sm btn-primary">SearchText</a>*@
-
-                                                    @*<input type="submit" value="Send Message" />*@
+                                                @*<input type="submit" value="Send Message" />*@
                                                 </div>
                                                 <div class="modal-footer">
+                                                    <button type="submit" name="Send" value="Send" class="btn btn-primary">Send Message</button>
+                                                    <button type="submit" name="Reminder" value="Reminder" class="btn btn-primary">Send Reminder</button>
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Send Message</button>
                                                 </div>
                                             </div>
                                         </div>

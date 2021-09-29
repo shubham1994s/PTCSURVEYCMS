@@ -1598,7 +1598,7 @@
       <DependentUpon>DEVPTCSURVEYMALEGAONDataSet.xsd</DependentUpon>
     </Content>
     <Content Include="libman.json" />
-    <Content Include="Images\1.35.pdf" />
+    <Content Include="Images\Vengurla\1.35.pdf" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\PPTCSURVEY.pubxml" />
     <None Include="Properties\PublishProfiles\PTCPublish.pubxml" />

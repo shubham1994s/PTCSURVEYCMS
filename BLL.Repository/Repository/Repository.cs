@@ -1394,7 +1394,7 @@ namespace BLL.Repository.Repository
 
         }
 
-        public PropertyMasterVM SendPropertyDetails(int AppId,string SearchText, string SelectOption)
+        public PropertyMasterVM SendPropertyDetails(int AppId,string SearchText, string SelectOption,string send, string Reminder)
         {
             DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(AppId);
             PropertyMasterVM result = new PropertyMasterVM();
@@ -1405,33 +1405,49 @@ namespace BLL.Repository.Repository
                 switch (SelectOption)
                 {
                     case "PropertyNumber":
-                        model = model.Where(a =>
-                        a.PropertyNo.Contains(SearchText));
+                        model = model.Where(a =>  a.PropertyNo.Contains(SearchText));
                         foreach (var item in model)
                         {
                             //  Console.WriteLine(item.PropOwnerMobileNo);
-                           sendSMS("API Cross limit", "8830635095");
+                            if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                            {
+                                sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                            }
+                            if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                            {
+                                sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                            }
                         }
                         break;
 
                     case "PrabhagNumber":
-                        model = model.Where(a =>
-    a.PrabhagNo.Contains(SearchText));
+                        model = model.Where(a => a.PrabhagNo.Contains(SearchText));
 
                         foreach (var item in model)
                         {
-                            //  Console.WriteLine(item.PropOwnerMobileNo);
-                            sendSMS("API Cross limit", item.PropOwnerTelephoneNo);
+                            if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                            {
+                                sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                            }
+                            if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                            {
+                                sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                            }
                         }
                         break;
 
                     case "WardNumber":
-                        model = model.Where(a =>
-    a.WardNameNo.Contains(SearchText));
+                        model = model.Where(a => a.WardNameNo.Contains(SearchText));
                         foreach (var item in model)
                         {
-                            //  Console.WriteLine(item.PropOwnerMobileNo);
-                            sendSMS("API Cross limit", item.PropOwnerTelephoneNo);
+                            if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                            {
+                                sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                            }
+                            if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                            {
+                                sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                            }
                         }
                         break;
 

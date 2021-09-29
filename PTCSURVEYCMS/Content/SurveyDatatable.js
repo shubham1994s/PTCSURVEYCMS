@@ -3,6 +3,7 @@
 $(document).ready(function () {
     RadioLoadData();
     ActiveEmployee();
+   
     $("#SearchText").change(function () {
         debugger;
 
@@ -70,6 +71,8 @@ $("input[name='PropertyNumber']").change(function () {
     debugger;
     RadioLoadData();
 })
+
+
 function RadioLoadData() {
     $("input[name='PropertyNumber']").each(function () {
         debugger;
@@ -98,6 +101,7 @@ function RadioLoadData() {
     });
 }
 
+const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 function ActiveEmployee() {
     $('#datatableActive').DataTable({
         "pageLength": 10,
@@ -121,12 +125,11 @@ function ActiveEmployee() {
             { "data": "PropertyId" },
             {
                 "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
-                    //return '<p> ' + full["PropOwnerFirstName"].charAt(0).toUpperCase() + full["PropOwnerFirstName"].substr(1).toLowerCase()
-                    //    + ' ' + full["PropOwnerLastName"].charAt(0).toUpperCase() + full["PropOwnerLastName"].substr(1).toLowerCase() + '</p>' } },
-
+                
                     if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
-                        return '<p> ' + full["PropOwnerFirstName"].charAt(0).toUpperCase() + full["PropOwnerFirstName"].substr(1).toLowerCase()
-                            + ' ' + full["PropOwnerLastName"].charAt(0).toUpperCase() + full["PropOwnerLastName"].substr(1).toLowerCase() + '</p>';
+                      
+                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"]) 
+                            + ' ' + uppercaseWords(full["PropOwnerLastName"]) + '</p>';
 
                     }
                     else {

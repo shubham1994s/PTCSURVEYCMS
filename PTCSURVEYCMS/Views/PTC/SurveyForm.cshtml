@@ -2417,7 +2417,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                             <label class="label"><b>Document Upload</b></label>
                         </div>
                         <div class="p-2 bd-highlight" style="margin:auto;" id="docupload">
-                            <embed src="~/Images/@Model.Sketchdiagram2" id="Sketchdiagram2" height="500px" width="950px" style="border:solid" />
+                            <embed src="@ViewBag.img/@Model.Sketchdiagram2" id="Sketchdiagram2" height="500px" width="950px" style="border:solid" />
                         </div>
                         <div class="p-2 bd-highlight" style="margin:auto;">
                             <input type="file" name="file4" id="Sketchdiagramfile2" placeholder="click"  value="@Model.Sketchdiagram2" onchange="show(this)">
