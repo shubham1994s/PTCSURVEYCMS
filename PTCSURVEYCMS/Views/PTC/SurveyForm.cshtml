@@ -2433,7 +2433,9 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 
                             <span class="glyphicon glyphicon-saved"></span>
                             <span id="buttonName">@ViewBag.btn </span>
+
                         </button>
+                        <p id="para" style="color: green; margin-left: 40%;">@ViewBag.Message </p>
                     </div>
                 </div>
             </div>
@@ -2716,6 +2718,33 @@ new SelectListItem { Text = "Mixed", Value = "M"}
         });
 
 
+        $('#PropOwnerFirstName').css('textTransform', 'capitalize');
+        $('#PropOwnerMiddleName').css('textTransform', 'capitalize');
+        $('#PropOwnerLastName').css('textTransform', 'capitalize');
+        $('#OccupierFirstName').css('textTransform', 'capitalize');
+        $('#OccupierMiddleName').css('textTransform', 'capitalize');
+        $('#OccupierLastName').css('textTransform', 'capitalize');
+        $('#TenantName').css('textTransform', 'capitalize');
+        $('#PropOwnerFirstName').css('textTransform', 'capitalize');
+        $('#Name1').css('textTransform', 'capitalize');
+        $('#Name2').css('textTransform', 'capitalize');
+        $('#Name2').css('textTransform', 'capitalize');
+        $('#Name3').css('textTransform', 'capitalize');
+        $('#Name4').css('textTransform', 'capitalize');
+        $('#Name5').css('textTransform', 'capitalize');
+        $('#Name6').css('textTransform', 'capitalize');
+        $('#Name7').css('textTransform', 'capitalize');
+        $('#Name8').css('textTransform', 'capitalize');
+        $('#Name9').css('textTransform', 'capitalize');
+        $('#Name10').css('textTransform', 'capitalize');
+        $('#Name11').css('textTransform', 'capitalize');
+        $('#Name12').css('textTransform', 'capitalize');
+        $('#SurveyorName').css('textTransform', 'capitalize');
+        $('#DataEntryName').css('textTransform', 'capitalize');
+
+
+
+
 
         $("#PropOwnerFirstName").keyup(function () {
             $('#PropOwnerFirstName').css('textTransform', 'capitalize');
@@ -2763,7 +2792,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
             $('#Name7').css('textTransform', 'capitalize');
          });
          $("#Name8").keyup(function () {
-            $('#Name9').css('textTransform', 'capitalize');
+            $('#Name8').css('textTransform', 'capitalize');
         });
         $("#Name9").keyup(function () {
             $('#Name9').css('textTransform', 'capitalize');

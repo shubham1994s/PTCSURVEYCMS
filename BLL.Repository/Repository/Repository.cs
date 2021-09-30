@@ -495,7 +495,7 @@ namespace BLL.Repository.Repository
                         obj.FourteenCPC = _Property.FourteenCPC;
                         obj.IsDelete = false;
                         db.SaveChanges();
-                        Result.message = "success";
+                        Result.message = "Save Changes Successfully!";
                     }
                     else
                     {
@@ -882,7 +882,7 @@ namespace BLL.Repository.Repository
                         Master.IsDelete = false;
                         db.PropertyMasters.Add(Master);
                         db.SaveChanges();
-                        Result.message = "success";
+                        Result.message = "Save Successfully!";
                     }
                 }
             }
@@ -1399,87 +1399,108 @@ namespace BLL.Repository.Repository
             DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(AppId);
             PropertyMasterVM result = new PropertyMasterVM();
             var model = from s in db.PropertyMasters select s;
-
-            if (!String.IsNullOrEmpty(SearchText))
+            if(SelectOption== "Property Number")
             {
-                switch (SelectOption)
+                SelectOption = "PropertyNumber";
+            }
+            if (SelectOption == "Prabhag Number")
+            {
+                SelectOption = "PrabhagNumber";
+            }
+            if (SelectOption == "Ward Number")
+            {
+                SelectOption = "WardNumber";
+            }
+            try
+            {
+                if (!String.IsNullOrEmpty(SearchText))
                 {
-                    case "PropertyNumber":
-                        model = model.Where(a => a.PropertyNo.Contains(SearchText));
-                        foreach (var item in model)
-                        {
-                            //  Console.WriteLine(item.PropOwnerMobileNo);
-                            if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                    switch (SelectOption)
+                    {
+                        case "PropertyNumber":
+                            model = model.Where(a => a.PropertyNo== SearchText &&  a.IsDelete==false);
+                            foreach (var item in model)
                             {
-                                sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                //  Console.WriteLine(item.PropOwnerMobileNo);
+                                if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                                {
+                                    sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                }
+                                if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                                {
+                                    sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                                }
                             }
-                            if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
-                            {
-                                sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
-                            }
-                        }
-                        break;
+                            break;
 
-                    case "PrabhagNumber":
-                        model = model.Where(a => a.PrabhagNo.Contains(SearchText));
+                        case "PrabhagNumber":
+                            model = model.Where(a => a.PropertyNo == SearchText && a.IsDelete == false);
 
-                        foreach (var item in model)
-                        {
-                            if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                            foreach (var item in model)
                             {
-                                sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                                {
+                                    sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                }
+                                if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                                {
+                                    sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                                }
                             }
-                            if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
-                            {
-                                sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
-                            }
-                        }
-                        break;
+                            break;
 
-                    case "WardNumber":
-                        model = model.Where(a => a.WardNameNo.Contains(SearchText));
-                        foreach (var item in model)
-                        {
-                            if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                        case "WardNumber":
+                            model = model.Where(a => a.PropertyNo == SearchText && a.IsDelete == false);
+                            foreach (var item in model)
                             {
-                                sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                                {
+                                    sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                }
+                                if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                                {
+                                    sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                                }
                             }
-                            if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
-                            {
-                                sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
-                            }
-                        }
-                        break;
+                            break;
+                          
 
+                    }
+                    int cnt = model.Count();
+                    if (cnt == 0)
+                    {
+                        result.ErrorMsg = "error";
+                    }
+                }
+                
+                else
+                {
+                    switch (SelectOption)
+                    {
+                        case "PropertyNumber":
+                            model = model.Where(a => a.PropertyId == q && a.IsDelete==false);
+                            foreach (var item in model)
+                            {
+                                //  Console.WriteLine(item.PropOwnerMobileNo);
+                                if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                                {
+                                    sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                }
+                                if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
+                                {
+                                    sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                                }
+                            }
+                            break;
+
+                    }
                 }
             }
-            else
+            catch(Exception ex)
             {
-                switch (SelectOption)
-                {
-                    case "PropertyNumber":
-                        model = model.Where(a => a.PropertyId==q);
-                        foreach (var item in model)
-                        {
-                            //  Console.WriteLine(item.PropOwnerMobileNo);
-                            if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
-                            {
-                                sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
-                            }
-                            if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
-                            {
-                                sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
-                            }
-                        }
-                        break;
-
-                }
+                result.ErrorMsg = "error";
             }
-            int cnt = model.Count();
-            if (cnt == 0)
-            {
-                result.ErrorMsg = "0";
-            }
+           
             //    result = model;
             return result;
         }

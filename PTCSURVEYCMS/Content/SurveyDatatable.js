@@ -1,9 +1,12 @@
 ﻿
 
 $(document).ready(function () {
-    RadioLoadData();
+    debugger;
+
+
+    $("#para").show().delay(3000).show().fadeOut('slow');
     ActiveEmployee();
-   
+    
     $("#SearchText").change(function () {
         debugger;
 
@@ -21,34 +24,61 @@ $(document).ready(function () {
               
             });
     });
+
+ 
 });
 function SendRemainder(q) {
     debugger;
-    //  window.location.href = "/PTC/SurveyList?q=" + q;
+ 
 
     $.ajax({
         url: "/PTC/SurveyList?q=" + q + "&selectoption=PropertyNumber&Reminder=Reminder",
         type: "POST",
-      //  data: {}
-    })
-        .done(function () {
+       
+        dataType: 'json',
+        contentType: false,
+        processData: false,
+        success: function (response) {
             debugger;
-            $('#demoModal').modal('show');
+            if (response.success) {
+            
+               
+                $('#demoModalSuccess').modal('show');
+            } else {
+                
+                $('#demoModalError').modal('show');
+            }
+        },
+        error: function (response) {
+            alert("error!");  
+        }
 
-        });
-};
-
+    });
+}
 function Bill(q) {
     debugger;
-    //  window.location.href = "/PTC/SurveyList?q=" + q;
+   
 
     $.ajax({
         url: "/PTC/SurveyList?q=" + q + "&selectoption=PropertyNumber&send=send",
         type: "POST",
-        // data: { SearchText: SearchText }
-    })
-};
+        dataType: 'json',
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            debugger;
+            if (response.success) {
+                $('#demoModalSuccess').modal('show');
+            } else {
+                $('#demoModalError').modal('show');
+            }
+        },
+        error: function (response) {
+            alert("error!");  // 
+        }
 
+    });
+}
 $(function () {
     $("#btnShow").click(function () {
         $('#demoModal').modal('show');
@@ -93,40 +123,7 @@ function capitalize_Words(str) {
     return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
 }
 //console.log(capitalize_Words('js string exercises'));
-$("input[name='PropertyNumber']").change(function () {
-    //reload dropdownlist
-    debugger;
-    RadioLoadData();
-})
 
-
-function RadioLoadData() {
-    $("input[name='PropertyNumber']").each(function () {
-        debugger;
-        if ($(this).is(":checked")) {
-            var value = $(this).val();
-            var ddlCity = $(".ddlCity");
-            $.ajax({
-                type: "Post",
-                url: '/PTC/GetAllCity/',
-                data: '{value: "' + value + '"}',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (data) {
-                    ddlCity.html("");
-                    //var selectvalue = "";
-                    for (var i = 0; i < data.length; i++) {
-                        ddlCity.append($('<option></option>').val(data[i].Value).html(data[i].Text));
-                    }
-                },
-
-                error: function (xhr, ajaxOptions, thrownError) {
-                    alert('Failed to retrieve counties.');
-                }
-            });
-        }
-    });
-}
 
 const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 function ActiveEmployee() {

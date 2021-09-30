@@ -152,7 +152,7 @@ namespace PTCSURVEYCMS.Controllers
                 Result Result = new Result();
                 Repository = new Repository();
                 Result = Repository.PropertySave(Property, AppId);
-                ViewBag.Message = Result.message;
+                TempData["Success"] = Result.message;
                 return Redirect("/PTC/SurveyList");
 
             }
@@ -199,6 +199,7 @@ namespace PTCSURVEYCMS.Controllers
                     var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
                     ViewBag.EntryCount = EntryCount;
                 }
+
                 return View(viewModel);
 
             }
@@ -297,9 +298,27 @@ namespace PTCSURVEYCMS.Controllers
 
                     var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
                     ViewBag.EntryCount = EntryCount;
-                var model1 = from s in db.PropertyMasters select s;
+             
                 var model = Repository.SendPropertyDetails(Appid, SearchText, SelectOption,send,Reminder,q);
-               
+               if(model.ErrorMsg== "error" && q!=-1)
+                {
+                   
+                    return Json(new { success = false, responseText = "Your message is not successfuly sent!" }, JsonRequestBehavior.AllowGet);                 
+                }
+               else if(q != -1)
+                {
+                   
+                    return Json(new { success = true, responseText = "Your message successfuly sent!" }, JsonRequestBehavior.AllowGet);
+                }
+
+                if (model.ErrorMsg == "error")
+                {
+                    TempData["Success"] = "This Massage Is Not Send Successfully!";                 
+                }
+                else
+                {
+                    TempData["Success"] = "This Massage Is  Send Successfully!";
+                }
                 return View(viewModel);
 
             }
