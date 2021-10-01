@@ -908,6 +908,7 @@ namespace BLL.Repository.Repository
                     PropertyNo = x.PropertyNo,
                     OldHouseNo1 = x.HouseNo,
                     PropOwnerFirstName = x.PropOwnerFirstName,
+                    PropOwnerMiddleName = x.PropOwnerMiddleName,
                     PropOwnerLastName = x.PropOwnerLastName,
                     PropOwnerTelephoneNo = x.PropOwnerTelephoneNo,
                     Sketchdiagram2 = x.Sketchdiagram2

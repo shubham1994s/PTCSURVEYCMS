@@ -156,6 +156,13 @@ function ActiveEmployee() {
                             + ' ' + uppercaseWords(full["PropOwnerLastName"]) + '</p>';
 
                     }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null) {
+
+                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
+                            + ' ' + uppercaseWords(full["PropOwnerMiddleName"]) + '</p>';
+
+                    }
                     else {
 //
                         return 'Not Available';
