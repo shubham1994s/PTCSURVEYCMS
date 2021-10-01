@@ -1381,7 +1381,7 @@ namespace BLL.Repository.Repository
                 //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://www.smsjust.com/sms/user/urlsms.php?username=ycagent&pass=yocc@5095&senderid=YOCCAG&dest_mobileno=" + MobilNumber + "&message=" + sms + "&response=Y");
                 //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://www.smsjust.com/sms/user/urlsms.php?username=artiyocc&pass=123456&senderid=BIGVCL&dest_mobileno=" + MobilNumber + "&msgtype=UNI&message="+ sms + "%20&response=Y");
 
-                HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://www.smsjust.com/sms/user/urlsms.php?username=ycagent&pass=yocc@5095&senderid=BIGVCL&dest_mobileno=" + MobilNumber + "&message=" + sms + "%20&response=Y");
+                HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://www.smsjust.com/sms/user/urlsms.php?username=artiyocc&pass=123456&senderid=BIGVCL&dest_mobileno=" + MobilNumber + "&message=" + sms + "%20&response=Y");
 
                 //Get response from Ozeki NG SMS Gateway Server and read the answer
                 HttpWebResponse myResp = (HttpWebResponse)myReq.GetResponse();
@@ -1424,11 +1424,11 @@ namespace BLL.Repository.Repository
                                 //  Console.WriteLine(item.PropOwnerMobileNo);
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;
@@ -1440,11 +1440,11 @@ namespace BLL.Repository.Repository
                             {
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;
@@ -1455,11 +1455,11 @@ namespace BLL.Repository.Repository
                             {
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;
@@ -1484,11 +1484,11 @@ namespace BLL.Repository.Repository
                                 //  Console.WriteLine(item.PropOwnerMobileNo);
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("<h1>Vengurla Property Tax <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("<h1>Vengurla Property Tax Reminder <h1>Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax No. " + item.PropertyNo + "is due", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;
