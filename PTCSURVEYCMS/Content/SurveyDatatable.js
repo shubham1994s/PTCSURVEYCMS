@@ -4,7 +4,18 @@ $(document).ready(function () {
     debugger;
 
 
-    $("#para").show().delay(3000).show().fadeOut('slow');
+   
+    /* document.getElementById("para").reset();*/
+   
+    //var msg = document.getElementById("para").textContent;
+    //if (msg == 'This Massage Is  Send Successfully!') {
+
+    //    var x = document.getElementById("snackbar");
+    //    x.className = "show";
+    //    setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
+    //    document.getElementById('para').textContent = ''
+    //}
+    
     ActiveEmployee();
     
     $("#SearchText").change(function () {
@@ -27,26 +38,72 @@ $(document).ready(function () {
 
  
 });
+//function SendRemainder(q) {
+//    debugger;
+ 
+
+//    $.ajax({
+//        url: "/PTC/SurveyList?q=" + q + "&selectoption=PropertyNumber&Reminder=Reminder",
+//        type: "POST",
+       
+//        dataType: 'json',
+//        contentType: false,
+//        processData: false,
+//        success: function (response) {
+//            debugger;
+//            if (response.success) {
+            
+               
+//                $('#demoModalSuccess').modal('show');
+//            } else {
+                
+//                $('#demoModalError').modal('show');
+//            }
+//        },
+//        error: function (response) {
+//            alert("error!");  
+//        }
+
+//    });
+//}
+
+function send() {
+    debugger
+    //var msg = document.getelementbyid("para").textcontent;
+    //if (msg == 'this massage is  send successfully!') {
+    //    var startInterval/*in milliseconds*/ = Math.floor(Math.random() * 30) * 1000;
+    //    var x = document.getelementbyid("snackbar");
+    //    x.classname = "show";
+    //    settimeout(function () { x.classname = x.classname.replace("show"); }, startInterval);
+      
+    //}
+    //else {
+    //    $('#demomodalerror').modal('show');
+    //}
+    $('#para').css('display','block')
+    //$("#para").show().delay(3000).show().fadeOut('slow').css("background-color", "yellow");;
+
+}
 function SendRemainder(q) {
     debugger;
- 
+
 
     $.ajax({
         url: "/PTC/SurveyList?q=" + q + "&selectoption=PropertyNumber&Reminder=Reminder",
         type: "POST",
-       
+
         dataType: 'json',
         contentType: false,
         processData: false,
         success: function (response) {
-            debugger;
             if (response.success) {
-            
-               
-                $('#demoModalSuccess').modal('show');
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
             } else {
-                
-                $('#demoModalError').modal('show');
+                var x = document.getElementById("snackbar1");
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
             }
         },
         error: function (response) {
@@ -55,6 +112,7 @@ function SendRemainder(q) {
 
     });
 }
+
 function Bill(q) {
     debugger;
    
@@ -68,9 +126,13 @@ function Bill(q) {
         success: function (response) {
             debugger;
             if (response.success) {
-                $('#demoModalSuccess').modal('show');
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
             } else {
-                $('#demoModalError').modal('show');
+                var x = document.getElementById("snackbar1");
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
             }
         },
         error: function (response) {
@@ -79,6 +141,8 @@ function Bill(q) {
 
     });
 }
+
+
 $(function () {
     $("#btnShow").click(function () {
         $('#demoModal').modal('show');
@@ -216,6 +280,16 @@ const Delete = async (ID) => {
     } else
      return false;
 }
+
+
+
+
+var func_count = 1
+setInterval(function () {
+    notification_count()
+}, 35000
+);
+
 
 
 //function Delete(ID) {

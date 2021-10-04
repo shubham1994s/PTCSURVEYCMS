@@ -53,10 +53,21 @@
                     </div>
                 </div>
 
+                <div id="snackbar">
+                    <img src="~/Content/check_circle_white_24dp.svg" />
+                    <p style="color:green;font-size:16px">Massage Deliverd !</p>
+                    <p style="color:grey;font-size:12px"> Your Massage Was Sent Successfully</p>
+                </div>
+                <div id="snackbar1">
+                    <img src="~/Content/dangerous_white_24dp.svg" />
+                    
+                    <p style="color:red;font-size:16px">Massage Not Deliverd !</p>
+                    <p style="color: #443d3d; font-size: 12px"> Your Massage Was Unable to Send</p>
+                </div>
                 <div class="page-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <center><div id="snackbar">Some text some message..</div></center>
+                            @*<center><div id="snackbar">Some text some message..</div></center>*@
                             <div class="card">
                                 <div class="card-header">
                                 </div>
@@ -64,11 +75,11 @@
                                     <div style="display:flex;justify-content:space-between">
                                         <span style="font-size:2em;font-weight:600">Property List </span>
                                         @*<h3 style="margin-bottom:35px;margin-top:5px"><a href="@Url.Action("GenerateReport", "Report",new {typeOfReport="PDF"})" type="button" class="btn btn-sm btn-primary float-right" style="margin-left: 10px;">Get All Entries Report</a></h3>*@
-                                        <p id="para" style="color: green; margin-left: 49%; ">@TempData["Success"]</p>
+                                        <p id="para" style="color: green; margin-left: 49%; display:none">@TempData["Success"]</p>
                                         <a id="btnShow" class="btn btn-primary btn-sm" style="margin-bottom: 2%;">Send Message</a>
 
                                     </div>
-                                  
+
                                     <div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -103,7 +114,7 @@
                                                     @*<input type="submit" value="Send Message" />*@
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" name="Send" value="Send" class="btn btn-primary">Send Message</button>
+                                                    <button type="submit" name="Send" value="Send" class="btn btn-primary" onclick="send()">Send Message</button>
                                                     <button type="submit" name="Reminder" value="Reminder" class="btn btn-primary">Send Reminder</button>
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
@@ -113,7 +124,7 @@
                                     </div>
 
 
-                                    <div class="modal fade" id="demoModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    @*<div class="modal fade" id="demoModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -151,7 +162,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>*@
                                     <div class="dt-responsive table-responsive">
 
 
@@ -207,19 +218,19 @@
     <style>
         #snackbar {
             visibility: hidden;
-            min-width: 250px;
+            min-width: 310px;
             margin-left: -135px;
             /*background-color: #333;*/
-            background: #a00155;
+            background: #99fba5;
             box-shadow: 0 12px 20px -10px rgba(34,138,133,0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(34,138,133,0.2);
             color: #fff;
             text-align: center;
             border-radius: 2px;
-            padding: 16px;
+            /* padding: 16px;*/
             position: fixed;
             z-index: 1;
             left: 88%;
-            bottom: 65%;
+            bottom: 4%;
             font-size: 16px;
         }
 
@@ -229,6 +240,50 @@
                 animation: fadein 0.5s, fadeout 0.5s 2.5s;
             }
 
+            #snackbar img {
+                border-radius: 50%;
+                height: 50px;
+                position: absolute;
+                top: -10%;
+                left: -5%;
+            }
+            #snackbar p{margin:0px;}
+
+        #snackbar1 {
+            visibility: hidden;
+            min-width: 310px;
+            margin-left: -135px;
+            /*background-color: #333;*/
+            background: #f59999;
+            box-shadow: 0 12px 20px -10px rgba(34,138,133,0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(34,138,133,0.2);
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            /* padding: 16px;*/
+            position: fixed;
+            z-index: 1;
+            left: 88%;
+            bottom: 4%;
+            font-size: 16px;
+        }
+
+            #snackbar1.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            #snackbar1 img {
+                border-radius: 50%;
+                height: 50px;
+                position: absolute;
+                top: -10%;
+                left: -5%;
+            }
+
+            #snackbar1 p {
+                margin: 0px;
+            }
 
 
         input[type=button] {

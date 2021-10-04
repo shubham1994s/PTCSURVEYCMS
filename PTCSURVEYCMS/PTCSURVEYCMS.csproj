@@ -237,6 +237,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\btnCss\StyleSheet1.css" />
+    <Content Include="Content\check_circle_white_24dp.svg" />
     <Content Include="Content\Images\Logo_150x48.png" />
     <Content Include="Content\Images\mkmj.jpeg" />
     <Content Include="Content\Images\property_tax_logo.png" />
@@ -1490,6 +1491,7 @@
     <Content Include="Content\theme-assets\assets\scss\generate.js" />
     <Content Include="Content\theme-assets\assets\scss\style.css" />
     <Content Include="Content\theme-assets\assets\scss\style.min.css" />
+    <Content Include="Content\dangerous_white_24dp.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

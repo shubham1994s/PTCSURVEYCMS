@@ -35,3 +35,53 @@ hr{border-top:black !important}
     }
     #logo2{right:3%}
 }
+
+
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -135px;
+    /*background-color: #333;*/
+    background: #c3efca;
+    box-shadow: 0 12px 20px -10px rgba(34,138,133,0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(34,138,133,0.2);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 90%;
+    bottom: 0%;
+    font-size: 16px;
+}
+
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+#snackbar1 {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -135px;
+    /*background-color: #333;*/
+    background: #c3efca;
+    box-shadow: 0 12px 20px -10px rgba(34,138,133,0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(34,138,133,0.2);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 90%;
+    bottom: 0%;
+    font-size: 16px;
+}
+
+    #snackbar1.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
