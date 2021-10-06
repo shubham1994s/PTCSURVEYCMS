@@ -881,6 +881,7 @@ namespace BLL.Repository.Repository
                         Master.ThirteenCPC = _Property.ThirteenCPC;
                         Master.FourteenCPC = _Property.FourteenCPC;
                         Master.IsDelete = false;
+
                         db.PropertyMasters.Add(Master);
                         db.SaveChanges();
                         Result.message = "Save Successfully!";
