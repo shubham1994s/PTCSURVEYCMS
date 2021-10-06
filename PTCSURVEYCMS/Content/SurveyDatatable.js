@@ -1,7 +1,7 @@
 ﻿
 
 $(document).ready(function () {
-    debugger;
+     debugger;
     //var PrabhagListNo = $('#PrabhagList').val();
     //$.ajax({
     //    type: "post",

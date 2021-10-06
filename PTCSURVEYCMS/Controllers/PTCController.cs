@@ -237,7 +237,7 @@ namespace PTCSURVEYCMS.Controllers
                         var sortColumn = Request.Form.GetValues("columns[" + Request.Form.GetValues("order[0][column]").FirstOrDefault() + "][name]").FirstOrDefault();
                         var sortColumnDir = Request.Form.GetValues("order[0][dir]").FirstOrDefault();
                         var searchValue = Request.Form.GetValues("search[value]").FirstOrDefault();
-
+                   // searchValue = "W1Z2000001";
                     Repository = new Repository();
                     //Paging Size (10,20,50,100)    
                     int pageSize = length != null ? Convert.ToInt32(length) : 0;
@@ -246,8 +246,8 @@ namespace PTCSURVEYCMS.Controllers
                     var griddata = Repository.getPropertyDetails(AppId);
                     // Getting all Customer data
                     // 
-                    List<PropertyMaster> customerData = _context.PropertyMasters.Where(x=>x.IsDelete==false).ToList();
-                   // var customerData = (from tempcustomer in griddata select tempcustomer);
+                   // List<PropertyMaster> customerData = _context.PropertyMasters.Where(x=>x.IsDelete==false).ToList();
+                   var customerData = (from tempcustomer in griddata select tempcustomer);
 
                         //Sorting    
                         if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
@@ -260,18 +260,36 @@ namespace PTCSURVEYCMS.Controllers
 
 
                     }
-
-                    recordsTotal = customerData.Count();
+                  //  IEnumerable<PropertyMaster> filteredCompanies;
+                   
                     //Search    
                     if (!string.IsNullOrEmpty(searchValue))
                     {
-                        customerData = customerData.Where(m => m.PropertyNo.ToString().ToLower().Contains(searchValue)).ToList();
+                      //  customerData = customerData.Where(m => m.PropertyNo==searchValue).ToList();
+
+                        // customerData = Repository.getPropertyDetails(AppId).Where(r => r.PropertyNo.Contains(searchValue)).ToList();
+
+                        var customerData1 = customerData.Where(c => ((string.IsNullOrEmpty(c.PropertyNo) ? " " : c.PropertyNo)
+                        //+ " " +
+                                       //(string.IsNullOrEmpty(c.zone) ? " " : c.zone) + " " +
+                                       //(string.IsNullOrEmpty(c.Area) ? " " : c.Area) + " " +
+                                       //(string.IsNullOrEmpty(c.Name) ? " " : c.Name) + " " +
+                                       //(string.IsNullOrEmpty(c.houseNo) ? " " : c.houseNo) + " " +
+                                       //(string.IsNullOrEmpty(c.Mobile) ? " " : c.Mobile) + " " +
+                                       //(string.IsNullOrEmpty(c.Address) ? " " : c.Address) + " " +
+                                       //(string.IsNullOrEmpty(c.ReferanceId) ? " " : c.ReferanceId) + " " +
+                                       //(string.IsNullOrEmpty(c.QRCode) ? " " : c.QRCode)
+                                       ).ToUpper().Contains(searchValue.ToUpper())).ToList();
+
+                        customerData = customerData1.ToList();
+
+
                     }
 
                     //total number of rows count     
-                
+                    recordsTotal = customerData.Count();
                     //Paging     
-                     var data = customerData.Skip(skip).Take(pageSize).ToList();
+                    var data = customerData.Skip(skip).Take(pageSize).ToList();
                     
                  //   var data = customerData.Take(pageSize).ToList();
                     //Returning Json Data    
