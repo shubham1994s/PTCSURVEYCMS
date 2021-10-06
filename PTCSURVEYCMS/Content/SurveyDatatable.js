@@ -201,6 +201,14 @@ function ActiveEmployee() {
             "url": "/PTC/getPropertyDetails/",
             "tye": "GET",
             "datatype": "json",
+            "dataSrc": function (json)
+            {
+            // Settings.  
+            jsonObj = $.parseJSON(json.data)
+
+              // Data  
+                 return jsonObj.data;
+        }
         },
 
         "columnDefs":
