@@ -18,6 +18,7 @@ namespace BLL.Repository.Repository
 
         PropertyMasterVM SendPropertyDetails(int AppId,string SearchText, string SelectOption,string send, string Reminder,int q);
 
+        PropertyMasterVM GetPrabhagNo(int q);
 
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Web.Mvc;
 
 namespace BLL.Repository.Repository
 {
@@ -1373,6 +1374,54 @@ namespace BLL.Repository.Repository
             return Master;
         }
 
+        //public PropertyMasterVM GetPrabhagNo(int teamId)
+        //{
+        //    try
+        //    {
+        //        using (var db = new DEVPTCSURVEYMALEGAONEntities(AppID))
+        //        {
+                 
+        //            var atten = db.PropertyMasters;
+        //            if (atten != null)
+        //            {
+
+        //                atten.UserList = ListUser();
+                       
+
+        //                return loc;
+        //            }
+        //            else
+        //            {
+        //                return new SBALUserLocationMapView();
+        //            }
+
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new SBALUserLocationMapView();
+        //    }
+        //}
+
+        //public List<SelectListItem> ListUser()
+        //{
+        //    var user = new List<SelectListItem>();
+        //    SelectListItem itemAdd = new SelectListItem() { Text = "--Select Employee--", Value = "0" };
+
+        //    try
+        //    {
+        //        user = db.UserMasters.Where(c => c.isActive == true).ToList()
+        //            .Select(x => new SelectListItem
+        //            {
+        //                Text = x.userName,
+        //                Value = x.userId.ToString()
+        //            }).OrderBy(t => t.Text).ToList();
+
+        //    }
+        //    catch (Exception ex) { throw ex; }
+
+        //    return user;
+        //}
 
         public void sendSMS(string sms, string MobilNumber)
         {
@@ -1425,11 +1474,11 @@ namespace BLL.Repository.Repository
                                 //  Console.WriteLine(item.PropOwnerMobileNo);
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
+                                  //  sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
+                                 //   sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;
@@ -1441,11 +1490,11 @@ namespace BLL.Repository.Repository
                             {
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
+                                   // sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
+                                 //   sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;
@@ -1456,11 +1505,11 @@ namespace BLL.Repository.Repository
                             {
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
+                                  //  sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
+                                  //  sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;
@@ -1504,6 +1553,11 @@ namespace BLL.Repository.Repository
            
             //    result = model;
             return result;
+        }
+
+        public PropertyMasterVM GetPrabhagNo(int q)
+        {
+            throw new NotImplementedException();
         }
     }
 

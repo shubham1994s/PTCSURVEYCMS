@@ -3,12 +3,18 @@ using BLL.Repository.Repository;
 using BLL.ViewModel;
 using DAL;
 using DAL.ChildDatabase;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+
+
 
 namespace PTCSURVEYCMS.Controllers
 {
@@ -161,7 +167,7 @@ namespace PTCSURVEYCMS.Controllers
                 return Redirect("/Account/Login");
             }
         }
-
+        [HttpGet]
         public ActionResult SurveyList(int q = -1, int clientId = 0)
         {
             Repository = new Repository();
@@ -200,17 +206,90 @@ namespace PTCSURVEYCMS.Controllers
                     ViewBag.EntryCount = EntryCount;
                 }
 
+                var jsonResult = Json("10000000", JsonRequestBehavior.AllowGet);
+                jsonResult.MaxJsonLength = int.MaxValue;
+
+               
+                //   return Json(viewModel);
                 return View(viewModel);
 
             }
 
             else
             {
-                return Redirect("/Account/Login");
+             return Redirect("/Account/Login");
             }
 
         }
-        public string SelectionNotExists(string SearchText, string selectoption)
+
+        public ActionResult LoadData()
+       {
+            try
+            {
+                int AppId = SessionHandler.Current.AppId;
+              
+                    //Creating instance of DatabaseContext class  
+                    using (DEVPTCSURVEYMALEGAONEntities _context = new DEVPTCSURVEYMALEGAONEntities(AppId))
+                    {
+                        var draw = Request.Form.GetValues("draw").FirstOrDefault();
+                        var start = Request.Form.GetValues("start").FirstOrDefault();
+                        var length = Request.Form.GetValues("length").FirstOrDefault();
+                        var sortColumn = Request.Form.GetValues("columns[" + Request.Form.GetValues("order[0][column]").FirstOrDefault() + "][name]").FirstOrDefault();
+                        var sortColumnDir = Request.Form.GetValues("order[0][dir]").FirstOrDefault();
+                        var searchValue = Request.Form.GetValues("search[value]").FirstOrDefault();
+
+                    Repository = new Repository();
+                    //Paging Size (10,20,50,100)    
+                    int pageSize = length != null ? Convert.ToInt32(length) : 0;
+                        int skip = start != null ? Convert.ToInt32(start) : 0;
+                        int recordsTotal = 0;
+                    var griddata = Repository.getPropertyDetails(AppId);
+                    // Getting all Customer data
+                    // 
+                    List<PropertyMaster> customerData = _context.PropertyMasters.Where(x=>x.IsDelete==false).ToList();
+                   // var customerData = (from tempcustomer in griddata select tempcustomer);
+
+                        //Sorting    
+                        if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
+                        {
+                        //  customerData = customerData.OrderBy(sortColumn + " " + sortColumnDir);
+
+                        //   customerData = customerData.OrderBy(sortColumn + " " + sortColumnDir);
+
+                        customerData= customerData.OrderByDescending(x => x.PropertyId).ToList();
+
+
+                    }
+
+                    recordsTotal = customerData.Count();
+                    //Search    
+                    if (!string.IsNullOrEmpty(searchValue))
+                    {
+                        customerData = customerData.Where(m => m.PropertyNo.ToString().ToLower().Contains(searchValue)).ToList();
+                    }
+
+                    //total number of rows count     
+                
+                    //Paging     
+                     var data = customerData.Skip(skip).Take(pageSize).ToList();
+                    
+                 //   var data = customerData.Take(pageSize).ToList();
+                    //Returning Json Data    
+                    return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+                    }
+                
+            }
+            
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+ 
+
+public string SelectionNotExists(string SearchText, string selectoption)
         {
             int Appid = SessionHandler.Current.AppId;
             string msg = "";
@@ -298,27 +377,58 @@ namespace PTCSURVEYCMS.Controllers
 
                     var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
                     ViewBag.EntryCount = EntryCount;
-             
-                var model = Repository.SendPropertyDetails(Appid, SearchText, SelectOption,send,Reminder,q);
-               if(model.ErrorMsg== "error" && q!=-1)
+
+                PropertyMasterVM model = new PropertyMasterVM();
+              if (q == -1 && SearchText != null )
+                 { 
+                 model = Repository.SendPropertyDetails(Appid, SearchText, SelectOption,send,Reminder,q);
+                    send = null;
+                    Reminder = null;
+                 }
+              else if(q != -1)
+                {
+                    model = Repository.SendPropertyDetails(Appid, SearchText, SelectOption, send, Reminder, q);
+                }
+
+                if (model.ErrorMsg== "error" && q!=-1)
                 {
                    
-                    return Json(new { success = false, responseText = "Your message is not successfuly sent!" }, JsonRequestBehavior.AllowGet);                 
+                    return Json(new { success = false, responseText = "Your message is not successfuly send!" }, JsonRequestBehavior.AllowGet);                 
                 }
                else if(q != -1)
                 {
                    
-                    return Json(new { success = true, responseText = "Your message successfuly sent!" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { success = true, responseText = "Your message successfuly send!" }, JsonRequestBehavior.AllowGet);
                 }
 
                 if (model.ErrorMsg == "error")
                 {
-                    TempData["Success"] = "This Massage Is Not Send Successfully!";                 
+                    if (TempData["Success"] == null)
+                    {
+                        TempData["Success"] = "This Massage Is Not Send Successfully!";
+                    }
+                    else
+                    {
+                        TempData["Success"] = null;
+                    }
                 }
-                else
+                else if(model.ErrorMsg != "error")
                 {
+                    if(TempData["Success"]==null)
+                    { 
                     TempData["Success"] = "This Massage Is  Send Successfully!";
+                    }
+                    else
+                    {
+                        TempData["Success"] = null;
+                    }
                 }
+
+                 if (q !=-1 && Reminder==null && send==null)
+                {                
+                        TempData["Success"] = null;               
+                }
+
                 return View(viewModel);
 
             }
@@ -329,6 +439,21 @@ namespace PTCSURVEYCMS.Controllers
             }
 
         }
+
+
+        //public ActionResult PrabhagList()
+        //{
+        //    if (SessionHandler.Current.AppId != 0)
+        //    {
+        //        PropertyMasterVM obj = new PropertyMasterVM();
+        //        Repository = new Repository();
+        //        obj = Repository.GetPrabhagNo(-1);
+        //        return Json(obj.PrabhagNoList, JsonRequestBehavior.AllowGet);
+
+        //    }
+        //    else
+        //        return Redirect("/Account/Login");
+        //}
         // done by shubham
         public FileResult Export(int q)
         {
@@ -344,14 +469,52 @@ namespace PTCSURVEYCMS.Controllers
                 //Send the File to Download.         
             return File(bytes, "application/octet-stream", fileName);
         }
-        [HttpGet]
+       [HttpGet]
         public JsonResult getPropertyDetails()
         {
             Repository = new Repository();
             int AppId = SessionHandler.Current.AppId;
             var griddata = Repository.getPropertyDetails(AppId);
             //var dataJson = JsonConvert.SerializeObject(griddata);
-            return Json(new { data = griddata }, JsonRequestBehavior.AllowGet);
+            //  Response.Write(new ScriptingJsonSerializationSection().MaxJsonLength);
+            //     var serializer = new JavaScriptSerializer { MaxJsonLength = Int32.MaxValue, RecursionLimit = 100000 };
+            return Json(new { data = griddata, MaxJsonLength = 86753090 },JsonRequestBehavior.AllowGet);
+
+            //JsonSerializerSettings json = new JsonSerializerSettings
+            //{
+            //    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            //};
+            //var result = JsonConvert.SerializeObject(griddata, Formatting.Indented, json);
+            //return new JsonResult { Data = result, MaxJsonLength = int.MaxValue };
+
+         //   return new JsonResult() { Data = griddata, JsonRequestBehavior = JsonRequestBehavior.AllowGet, MaxJsonLength = Int32.MaxValue };
+            //    var serializer = new JavaScriptSerializer { MaxJsonLength = Int32.MaxValue, RecursionLimit = 100 };
+
+            //return new JsonResult()
+            //{
+            //    Content = serializer.Serialize(griddata),
+            //    ContentType = "application/json",
+            //};
+            //var jsonResult = Json(griddata, JsonRequestBehavior.AllowGet);
+            //jsonResult.MaxJsonLength = int.MaxValue;
+            //return jsonResult;
+            //  return new JsonResult ({ Data = griddata, MaxJsonLength = Int32.MaxValue, JsonRequestBehavior.AllowGet });
+
+            //return new JsonResult()
+            //{
+            //   // ContentEncoding = Encoding.Default,
+            //    ContentType = "application/json",
+            //    Data = griddata,
+            //    JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+            //    MaxJsonLength = 50000000
+            //};
+
+            //return new JsonResult()
+            //{
+            //    Data = griddata,
+            //    MaxJsonLength = 86753090,
+            //    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            //};
         }
 
         [HttpGet]

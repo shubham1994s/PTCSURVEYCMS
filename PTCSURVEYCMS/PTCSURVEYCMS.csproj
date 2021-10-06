@@ -98,6 +98,12 @@
     <Reference Include="System.IO.Compression.FileSystem, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\40-System.IO.Compression.FileSystem.1.0.0.2\lib\net40-client\System.IO.Compression.FileSystem.dll</HintPath>
     </Reference>
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.12.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.2.12\lib\net45\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -1618,6 +1624,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="System.Linq.Dynamic.dll" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

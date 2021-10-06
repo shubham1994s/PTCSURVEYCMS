@@ -4,13 +4,13 @@
 }
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-@*<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>*@
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
 <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 @*<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />*@
 
-<script src="~/Scripts/jquery.dataTables.min.js"></script>
+@*<script src="~/Scripts/jquery.dataTables.min.js"></script>*@
 
 <script src="~/Content/SurveyDatatable.js"></script>
 @*<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>*@
@@ -75,8 +75,9 @@
                                     <div style="display:flex;justify-content:space-between">
                                         <span style="font-size:2em;font-weight:600">Property List </span>
                                         @*<h3 style="margin-bottom:35px;margin-top:5px"><a href="@Url.Action("GenerateReport", "Report",new {typeOfReport="PDF"})" type="button" class="btn btn-sm btn-primary float-right" style="margin-left: 10px;">Get All Entries Report</a></h3>*@
-                                        <p id="para" style="color: green; margin-left: 49%; display:none">@TempData["Success"]</p>
-                                        <a id="btnShow" class="btn btn-primary btn-sm" style="margin-bottom: 2%;">Send Message</a>
+                                        <p id="para" style="color: green; margin-left: 49%;">@TempData["Success"]</p>
+                                       @* <a id="btnShow" class="btn btn-primary btn-sm" style="margin-bottom: 2%;">Send Message</a>*@
+                                        @*<a id="btnSearch" class="btn btn-primary btn-sm" style="margin-bottom: 2%;">Advance Search</a>*@
 
                                     </div>
 
@@ -123,46 +124,86 @@
                                         </div>
                                     </div>
 
-
-                                    @*<div class="modal fade" id="demoModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="demoModalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title" id="myModalLabel">Advance Search</h4>
 
                                                 </div>
                                                 <div class="modal-body">
 
 
-                                                    <p class="alert alert-success" id="successMessage">Your message successfuly sent!</p>
 
+                                                    <label>Select Prabhag No.</label>
+                                                    <select id="PrabhagList" class="form-control form-control form-control-sm"></select>
+
+                                                    <input id="PrabhagNumber" class="Score" name="selectoption" type="radio" value="Prabhag Number" />  <b style="margin-right: 3%; margin-left: 0.5%"> Prabhag Number  </b>
+
+                                                    <input id="WardNumber" class="Score" name="selectoption" type="radio" value="Ward Number" /> <b style="margin-right: 3%; margin-left: 0.5%">   Ward Number   </b>
+
+                                                    <br />
+
+
+                                                    <label class="changeme" style="margin-top:4%">Search No:</label>
+
+                                                    @Html.TextBox("SearchText")<br />
+                                                    <span class="text-danger" id="err_PropertyNo"></span>
+                                                    @*<input type="text" id="ss" value="SearchText" />*@
+                                                    @*<a href="@Url.Action("SurveyList", "PTC",new { id = Request.QueryString["SearchText"] })" type="button" class="btn btn-sm btn-primary">SearchText</a>*@
+
+                                                    @*<input type="submit" value="Send Message" />*@
                                                 </div>
                                                 <div class="modal-footer">
+                                                    <button type="submit" name="Send" value="Send" class="btn btn-primary" onclick="send()">Filter</button>
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="modal fade" id="demoModalError" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-                                                </div>
-                                                <div class="modal-body">
+                                    @*<div class="modal fade" id="demoModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+
+
+                        <p class="alert alert-success" id="successMessage">Your message successfuly sent!</p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="demoModalError" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
 
 
 
-                                                    <p class="alert alert-success" id="ErrorMessage">Your message is not successfuly sent!</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>*@
+                        <p class="alert alert-success" id="ErrorMessage">Your message is not successfuly sent!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
                                     <div class="dt-responsive table-responsive">
 
 
