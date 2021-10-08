@@ -252,38 +252,25 @@ namespace PTCSURVEYCMS.Controllers
                         //Sorting    
                         if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
                         {
-                        //  customerData = customerData.OrderBy(sortColumn + " " + sortColumnDir);
-
-                        //   customerData = customerData.OrderBy(sortColumn + " " + sortColumnDir);
+                     
 
                         customerData= customerData.OrderByDescending(x => x.PropertyId).ToList();
-
-
-                    }
-                  //  IEnumerable<PropertyMaster> filteredCompanies;
+                    }         
                    
                     //Search    
                     if (!string.IsNullOrEmpty(searchValue))
                     {
-                      //  customerData = customerData.Where(m => m.PropertyNo==searchValue).ToList();
-
-                        // customerData = Repository.getPropertyDetails(AppId).Where(r => r.PropertyNo.Contains(searchValue)).ToList();
-
-                        var customerData1 = customerData.Where(c => ((string.IsNullOrEmpty(c.PropertyNo) ? " " : c.PropertyNo)
-                        //+ " " +
-                                       //(string.IsNullOrEmpty(c.zone) ? " " : c.zone) + " " +
-                                       //(string.IsNullOrEmpty(c.Area) ? " " : c.Area) + " " +
-                                       //(string.IsNullOrEmpty(c.Name) ? " " : c.Name) + " " +
-                                       //(string.IsNullOrEmpty(c.houseNo) ? " " : c.houseNo) + " " +
-                                       //(string.IsNullOrEmpty(c.Mobile) ? " " : c.Mobile) + " " +
-                                       //(string.IsNullOrEmpty(c.Address) ? " " : c.Address) + " " +
-                                       //(string.IsNullOrEmpty(c.ReferanceId) ? " " : c.ReferanceId) + " " +
-                                       //(string.IsNullOrEmpty(c.QRCode) ? " " : c.QRCode)
+                        var model = customerData.Where(c => ((string.IsNullOrEmpty(c.PropOwnerFirstName) ? " " : c.PropOwnerFirstName) + " " +
+                                      (string.IsNullOrEmpty(c.PropOwnerMiddleName) ? " " : c.PropOwnerMiddleName) + " " +
+                                      (string.IsNullOrEmpty(c.PropOwnerLastName) ? " " : c.PropOwnerLastName) + " " +
+                                       (string.IsNullOrEmpty(c.PropOwnerTelephoneNo) ? " " : c.PropOwnerTelephoneNo) + " " +
+                                      (string.IsNullOrEmpty(c.NewPropertyNo) ? " " : c.NewPropertyNo) + " " +
+                                      (string.IsNullOrEmpty(c.PropertyNo) ? " " : c.PropertyNo) + " " +
+                                      (string.IsNullOrEmpty(c.OldHouseNo1) ? " " : c.OldHouseNo1)
+                                                           
                                        ).ToUpper().Contains(searchValue.ToUpper())).ToList();
 
-                        customerData = customerData1.ToList();
-
-
+                       customerData = model.ToList();
                     }
 
                     //total number of rows count     
@@ -459,19 +446,51 @@ public string SelectionNotExists(string SearchText, string selectoption)
         }
 
 
-        //public ActionResult PrabhagList()
-        //{
-        //    if (SessionHandler.Current.AppId != 0)
-        //    {
-        //        PropertyMasterVM obj = new PropertyMasterVM();
-        //        Repository = new Repository();
-        //        obj = Repository.GetPrabhagNo(-1);
-        //        return Json(obj.PrabhagNoList, JsonRequestBehavior.AllowGet);
+        public ActionResult PrabhagList()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetPrabhagNo(AppId, -1);
+                return Json(obj.PrabhagNoList, JsonRequestBehavior.AllowGet);
 
-        //    }
-        //    else
-        //        return Redirect("/Account/Login");
-        //}
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+        public ActionResult WardList()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetWardNo(AppId, -1);
+                return Json(obj.WardNoList, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+
+        public ActionResult CSDateList()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetCSDate(AppId, -1);
+                return Json(obj.CSDateList, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+                return Redirect("/Account/Login");
+        }
         // done by shubham
         public FileResult Export(int q)
         {

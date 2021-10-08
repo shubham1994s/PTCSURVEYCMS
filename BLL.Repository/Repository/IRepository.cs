@@ -18,7 +18,11 @@ namespace BLL.Repository.Repository
 
         PropertyMasterVM SendPropertyDetails(int AppId,string SearchText, string SelectOption,string send, string Reminder,int q);
 
-        PropertyMasterVM GetPrabhagNo(int q);
+        PropertyMasterVM GetPrabhagNo(int Appid, int q);
+
+        PropertyMasterVM GetWardNo(int Appid, int q);
+
+        PropertyMasterVM GetCSDate(int Appid, int q);
 
     }
 }

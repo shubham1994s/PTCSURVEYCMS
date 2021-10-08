@@ -2,24 +2,59 @@
 
 $(document).ready(function () {
      debugger;
-    //var PrabhagListNo = $('#PrabhagList').val();
-    //$.ajax({
-    //    type: "post",
-    //    url: "/PTC/PrabhagList",
-    //    data: { userId: PrabhagListNo },
-    //    datatype: "json",
-    //    traditional: true,
-    //    success: function (data) {
-    //        district = '<option value="-1">Select Prabhag No.</option>';
-    //        for (var i = 0; i < data.length; i++) {
-    //            district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
-    //        }
-    //        //district = district + '</select>';
-    //        $('#PrabhagList').html(district);
-    //    }
-    //});
+    var PrabhagListNo = $('#PrabhagList').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/PrabhagList",
+        data: { userId: PrabhagListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1">Select Prabhag No.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#PrabhagList').html(district);
+        }
+    });
+
+
+    var WardListNo = $('#WardList').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/WardList",
+        data: { userId: WardListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1">Select Ward No.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#WardList').html(district);
+        }
+    });
+
+    var WardListNo = $('#CSDate').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/CSDateList",
+        data: { userId: WardListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1">Select Cons.Start Date.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#CSDate').html(district);
+        }
+    });
     $("#SearchText").val("");
-   
+  $("#para").show().delay(3000).show().fadeOut('slow');
     /* document.getElementById("para").reset();*/
    
    
@@ -97,7 +132,7 @@ function send() {
     //    $('#demomodalerror').modal('show');
     //}
     $('#para').css('display','block')
-    //$("#para").show().delay(3000).show().fadeOut('slow').css("background-color", "yellow");;
+    //$("#para").show().delay(3000).show().fadeOut('slow').css("background-color", "yellow");
 
 }
 function SendRemainder(q) {
@@ -211,73 +246,13 @@ function capitalize_Words(str) {
 
 const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 function ActiveEmployee() {
-//    $('#datatableActive').DataTable({
-//       // "pageLength": 10,
-       
-//        //"order": [
-//        //       [0, "desc"]
-//        //],
-//        //destroy: true,
-//        "ajax": {
-//            "url": "/PTC/getPropertyDetails/",
-//            "tye": "GET",
-//            "datatype": "json",
-
-//        },
-
-//        "columnDefs":
-//        [{
-//            "targets": [0],
-//            "visible": false,
-//            "searchable": false
-//            }],
-//        "columns": [
-//            { "data": "PropertyId" },
-//            {
-//                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
-                
-//                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
-                      
-//                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"]) 
-//                            + ' ' + uppercaseWords(full["PropOwnerLastName"]) + '</p>';
-
-//                    }
-
-//                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null) {
-
-//                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
-//                            + ' ' + uppercaseWords(full["PropOwnerMiddleName"]) + '</p>';
-
-//                    }
-//                    else {
-////
-//                        return 'Not Available';
-//                    }
-//                } },
-
-//            { "data": "PropOwnerTelephoneNo" },
-//                { "data": "NewPropertyNo" },
-//                { "data": "PropertyNo" },
-//            { "data": "OldHouseNo1" },
-               
- 
-//            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
-//            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
-//            {
-//                "render": function (data, type, full, meta) {
-//                    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>' }, "width": "10%" },
-//            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
-//         /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
-//        ]
-//    });
-
 
     $('#datatableActive').DataTable({
       //  "processing": true, // for show progress bar  
         "serverSide": true, // for process server side  
         "filter": true, // this is for disable filter (search box)
         "orderMulti": false, // for disable multiple column at once  
-        "pageLength": 10,
+        "pageLength": 5,
         "searching": true,
         // "order": [
         //       [0, "asc"]
@@ -328,11 +303,11 @@ function ActiveEmployee() {
 
             { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
             { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
-            {
-                "render": function (data, type, full, meta) {
-                    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
-                }, "width": "10%"
-            },
+         //   {
+                //"render": function (data, type, full, meta) {
+                //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+                //}, "width": "10%"
+           // },
             { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
             /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
         ]

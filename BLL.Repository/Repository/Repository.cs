@@ -1556,9 +1556,160 @@ namespace BLL.Repository.Repository
             return result;
         }
 
-        public PropertyMasterVM GetPrabhagNo(int q)
+        public PropertyMasterVM GetPrabhagNo(int Appid,int q)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+                {
+                   
+
+                    var Details = db.PropertyMasters.ToList();
+                    if (Details != null)
+                    {
+                        PropertyMasterVM Prabhag = new PropertyMasterVM();
+
+                        Prabhag.PrabhagNoList = ListPrabhag(Appid);
+                     
+                        return Prabhag;
+                    }
+                    else
+                    {
+                        return new PropertyMasterVM();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new PropertyMasterVM();
+            }
+        }
+
+        public List<SelectListItem> ListPrabhag(int Appid)
+        {
+            var user = new List<SelectListItem>();
+           
+            using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+            {
+                List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
+                                             select obj).GroupBy(n => new { n.PrabhagNo }).Select(g => g.FirstOrDefault())
+                                           .ToList();            
+                try
+                {
+                    user = listObjects.Where(c => c.IsDelete == false && c.PrabhagNo!=null).ToList()
+                        .Select(x => new SelectListItem
+                        {
+                            Text = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo,
+                            Value = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo
+                        }).Distinct().OrderBy(t => t.Text).ToList();                 
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return user;
+        }
+
+        public PropertyMasterVM GetWardNo(int Appid, int q)
+        {
+            try
+            {
+                using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+                {
+
+
+                    var Details = db.PropertyMasters.ToList();
+                    if (Details != null)
+                    {
+                        PropertyMasterVM ward = new PropertyMasterVM();
+
+                        ward.WardNoList = ListWard(Appid);
+
+                        return ward;
+                    }
+                    else
+                    {
+                        return new PropertyMasterVM();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new PropertyMasterVM();
+            }
+        }
+
+        public List<SelectListItem> ListWard(int Appid)
+        {
+            var user = new List<SelectListItem>();
+         
+            using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+            {
+                List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
+                                                    select obj).GroupBy(n => new { n.WardNameNo }).Select(g => g.FirstOrDefault())
+                                           .ToList();
+                try
+                {
+                    user = listObjects.Where(c => c.IsDelete == false && c.WardNameNo != null).ToList()
+                        .Select(x => new SelectListItem
+                        {
+                            Text = (string.IsNullOrEmpty(x.WardNameNo)) ? " " : x.WardNameNo,
+                            Value = (string.IsNullOrEmpty(x.WardNameNo)) ? " " : x.WardNameNo
+                        }).Distinct().OrderBy(t => t.Text).ToList();
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return user;
+        }
+
+        public PropertyMasterVM GetCSDate(int Appid, int q)
+        {
+            try
+            {
+                using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+                {
+                    var Details = db.PropertyMasters.ToList();
+                    if (Details != null)
+                    {
+                        PropertyMasterVM ward = new PropertyMasterVM();
+                        ward.CSDateList = ListCSDate(Appid);
+
+                        return ward;
+                    }
+                    else
+                    {
+                        return new PropertyMasterVM();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new PropertyMasterVM();
+            }
+        }
+
+        public List<SelectListItem> ListCSDate(int Appid)
+        {
+            var user = new List<SelectListItem>();
+
+            using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+            {
+                List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
+                                                    select obj).GroupBy(n => new { n.ConstStartYear }).Select(g => g.FirstOrDefault())
+                                           .ToList();
+                try
+                {
+                    user = listObjects.Where(c => c.IsDelete == false && c.ConstStartYear != null).ToList()
+                        .Select(x => new SelectListItem
+                        {
+                            Text = (string.IsNullOrEmpty(x.ConstStartYear)) ? " " : x.ConstStartYear,
+                            Value = (string.IsNullOrEmpty(x.ConstStartYear)) ? " " : x.ConstStartYear
+                        }).Distinct().OrderBy(t => t.Text).ToList();
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return user;
         }
     }
 
