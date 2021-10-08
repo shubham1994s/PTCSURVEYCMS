@@ -2,22 +2,57 @@
 
 $(document).ready(function () {
      debugger;
-    //var PrabhagListNo = $('#PrabhagList').val();
-    //$.ajax({
-    //    type: "post",
-    //    url: "/PTC/PrabhagList",
-    //    data: { userId: PrabhagListNo },
-    //    datatype: "json",
-    //    traditional: true,
-    //    success: function (data) {
-    //        district = '<option value="-1">Select Prabhag No.</option>';
-    //        for (var i = 0; i < data.length; i++) {
-    //            district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
-    //        }
-    //        //district = district + '</select>';
-    //        $('#PrabhagList').html(district);
-    //    }
-    //});
+    var PrabhagListNo = $('#PrabhagList').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/PrabhagList",
+        data: { userId: PrabhagListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1">Select Prabhag No.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#PrabhagList').html(district);
+        }
+    });
+
+
+    var WardListNo = $('#WardList').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/WardList",
+        data: { userId: WardListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1">Select Ward No.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#WardList').html(district);
+        }
+    });
+
+    var WardListNo = $('#CSDate').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/CSDateList",
+        data: { userId: WardListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1">Select Cons.Start Date.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#CSDate').html(district);
+        }
+    });
     $("#SearchText").val("");
   $("#para").show().delay(3000).show().fadeOut('slow');
     /* document.getElementById("para").reset();*/

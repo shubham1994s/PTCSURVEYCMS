@@ -10,5 +10,9 @@ namespace BLL.ViewModel
     public class FilterDropdownVM
     {
         public List<SelectListItem> PrabhagNoList { get; set; }
+
+        public List<SelectListItem> WardNoList { get; set; }
+
+        public List<SelectListItem> CSDateList { get; set; }
     }
 }

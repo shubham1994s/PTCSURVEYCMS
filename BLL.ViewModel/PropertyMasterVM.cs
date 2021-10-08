@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace BLL.ViewModel
 {
-    public class PropertyMasterVM 
+    public class PropertyMasterVM : FilterDropdownVM
     {
 
         public int PropertyId { get; set; }

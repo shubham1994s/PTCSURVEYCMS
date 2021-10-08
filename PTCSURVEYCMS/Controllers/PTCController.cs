@@ -446,19 +446,51 @@ public string SelectionNotExists(string SearchText, string selectoption)
         }
 
 
-        //public ActionResult PrabhagList()
-        //{
-        //    if (SessionHandler.Current.AppId != 0)
-        //    {
-        //        PropertyMasterVM obj = new PropertyMasterVM();
-        //        Repository = new Repository();
-        //        obj = Repository.GetPrabhagNo(-1);
-        //        return Json(obj.PrabhagNoList, JsonRequestBehavior.AllowGet);
+        public ActionResult PrabhagList()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetPrabhagNo(AppId, -1);
+                return Json(obj.PrabhagNoList, JsonRequestBehavior.AllowGet);
 
-        //    }
-        //    else
-        //        return Redirect("/Account/Login");
-        //}
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+        public ActionResult WardList()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetWardNo(AppId, -1);
+                return Json(obj.WardNoList, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+
+        public ActionResult CSDateList()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetCSDate(AppId, -1);
+                return Json(obj.CSDateList, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+                return Redirect("/Account/Login");
+        }
         // done by shubham
         public FileResult Export(int q)
         {
