@@ -8,7 +8,7 @@ namespace BLL.ViewModel
 {
     public class PropertyMasterVM : FilterDropdownVM
     {
-        public List<SelectListItem> PropertyNoList;
+       
 
         public int PropertyId { get; set; }
         public string PrabhagNo { get; set; }

@@ -16,5 +16,8 @@ namespace BLL.ViewModel
         public List<SelectListItem> CSDateList { get; set; }
 
         public List<SelectListItem> CEDateList { get; set; }
+
+
+        public List<SelectListItem> PropertyNoList { get; set; }
     }
 }

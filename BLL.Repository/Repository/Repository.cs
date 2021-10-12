@@ -917,7 +917,13 @@ namespace BLL.Repository.Repository
                     PrabhagNo = x.PrabhagNo,
                     WardName_No = x.WardNameNo,
                     ConstStartYear = x.ConstStartYear,
-                    CompletionYear = x.CompletionYear
+                    CompletionYear = x.CompletionYear,
+                    Safe=x.Safe,
+                    Safe2 = x.Safe2,
+                    Safe3 = x.Safe3,
+                    Danger = x.Danger,
+                    Danger2 = x.Danger2,
+                    Danger3 = x.Danger3,
 
 
                 }).ToList();
@@ -1591,20 +1597,23 @@ namespace BLL.Repository.Repository
             }
         }
 
-        public PropertyMasterVM GetPropertyNo(int Appid, int q)
+        public PropertyMasterVM GetPropertyNoList(int Appid, string pname)
         {
             try
             {
                 using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
                 {
-
-
-                    var Details = db.PropertyMasters.ToList();
+                    string fname, mname, lname;
+                    string[] arr = pname.Split(' ');
+                     fname = arr[0];
+                     mname = arr[1];
+                   //  lname = arr[2];
+                    var Details = db.PropertyMasters.Where(x=>x.PropOwnerFirstName== fname && x.PropOwnerMiddleName == mname).ToList();
                     if (Details != null)
                     {
                         PropertyMasterVM Property = new PropertyMasterVM();
 
-                        Property.PropertyNoList = ListProperty(Appid);
+                        Property.PropertyNoList = ListProperty(Appid, pname);
 
                         return Property;
                     }
@@ -1644,18 +1653,35 @@ namespace BLL.Repository.Repository
             return user;
         }
 
-        public List<SelectListItem> ListProperty(int Appid)
+        public List<SelectListItem> ListProperty(int Appid, string pname)
         {
             var user = new List<SelectListItem>();
-
+            List<PropertyMaster> listObjects = new List<PropertyMaster>();
             using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
             {
-                List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
-                                                    select obj).GroupBy(n => new { n.PropertyNo }).Select(g => g.FirstOrDefault())
+                string fname, mname, lname;
+                string[] arr = pname.Split(' ');
+                if (arr.Length > 0)
+                {
+                    fname = arr[0];
+                 listObjects = (from obj in db.PropertyMasters where obj.PropOwnerFirstName==fname
+                                                        select obj).GroupBy(n => new { n.PropertyNo }).Select(g => g.FirstOrDefault())
                                            .ToList();
+                }
+                if (arr.Length > 1)
+                {
+                    mname = arr[1];
+                    listObjects = listObjects.Where(x => x.PropOwnerMiddleName == mname).ToList();
+                }
+                if (arr.Length > 2)
+                {
+                    lname = arr[2];
+                    listObjects = listObjects.Where(x => x.PropOwnerLastName == lname).ToList();
+                }
+
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.PropertyNo != null).ToList()
+                    user = listObjects
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.PropertyNo)) ? " " : x.PropertyNo,
@@ -1808,7 +1834,7 @@ namespace BLL.Repository.Repository
                                            .ToList();
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.CompletionYear != null).ToList()
+                    user = listObjects.Where(c =>  c.CompletionYear != null).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.CompletionYear)) ? " " : x.CompletionYear,

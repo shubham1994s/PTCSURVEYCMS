@@ -75,22 +75,7 @@ $(document).ready(function () {
         }
     });
 
-    var PropertyNo = $('#PRONO').val();
-    $.ajax({
-        type: "post",
-        url: "/PTC/PropertyNo",
-        data: { userid: PropertyNo },
-        datatype: "json",
-        traditional: true,
-        success: function (data) {
-            district = '<option value="-1">Select Property No.</option>';
-            for (var i = 0; i < data.length; i++) {
-                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
-            }
-            $('#PRONO').html(district);
-        }
-
-    });
+   
 
     $("#SearchText").val("");
     $("#para").show().delay(3000).show().fadeOut('slow');
@@ -126,8 +111,51 @@ $(document).ready(function () {
             });
     });
 
+    $("#test").focusout(function () {
+        debugger;
+        var PRONOBYNAME = $('#test').val();
+        $.ajax({
+            type: "post",
+            url: "/PTC/PropertyNoList?pname=" + PRONOBYNAME + "",
+            data: { PRONOBYNAME: PRONOBYNAME },
+            datatype: "json",
+            traditional: true,
+            success: function (data) {
+                district = '<option value="-1">Select Property No.</option>';
+                for (var i = 0; i < data.length; i++) {
+                    district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                }
+                $('#PRONOBYNAME').html(district);
+            }
+
+        });
+    });
+  
 
 });
+
+
+
+
+function Search() { 
+  
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME;
+
+    // alert(value );
+    oTable = $('#datatableActive').DataTable();
+    oTable.search(value).draw();
+    oTable.search("");
+    document.getElementById('USER_ID_FK').value = -1;
+}
 //function SendRemainder(q) {
 //    debugger;
 

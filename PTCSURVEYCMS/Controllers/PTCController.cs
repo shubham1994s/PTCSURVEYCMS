@@ -227,17 +227,42 @@ namespace PTCSURVEYCMS.Controllers
             try
             {
                 int AppId = SessionHandler.Current.AppId;
-              
+                
                     //Creating instance of DatabaseContext class  
                     using (DEVPTCSURVEYMALEGAONEntities _context = new DEVPTCSURVEYMALEGAONEntities(AppId))
                     {
-                        var draw = Request.Form.GetValues("draw").FirstOrDefault();
+                         var draw = Request.Form.GetValues("draw").FirstOrDefault();
                         var start = Request.Form.GetValues("start").FirstOrDefault();
                         var length = Request.Form.GetValues("length").FirstOrDefault();
                         var sortColumn = Request.Form.GetValues("columns[" + Request.Form.GetValues("order[0][column]").FirstOrDefault() + "][name]").FirstOrDefault();
                         var sortColumnDir = Request.Form.GetValues("order[0][dir]").FirstOrDefault();
-                        var searchValue = Request.Form.GetValues("search[value]").FirstOrDefault();
-                   // searchValue = "W1Z2000001";
+                       var searchValue = Request.Form.GetValues("search[value]").FirstOrDefault();
+                    if (Convert.ToInt32(length) >= 5 )
+                    {
+                        
+                            string[] a = searchValue.Split(',');
+                            if ((searchValue == null || searchValue == "") && (Convert.ToInt32(length) >= 5))
+                            {
+                                if (a.Length >= 5 && a[5].ToString() == "1")
+                                {
+                                    searchValue = Session["Search"].ToString();
+                                }
+                                else
+                                {
+                                    if ((searchValue == null || searchValue == "") && (Convert.ToInt32(length) >= 5 && draw != "1"))
+                                    { searchValue = Session["Search"].ToString(); }
+                                    else
+                                    {
+                                        searchValue = "";
+                                        Session["Search"] = null;
+                                        Session["rn"] = null;
+                                    }
+                                }
+                            }
+                        }
+                   
+
+                    // searchValue = "W1Z2000001";
                     Repository = new Repository();
                     //Paging Size (10,20,50,100)    
                     int pageSize = length != null ? Convert.ToInt32(length) : 0;
@@ -255,10 +280,84 @@ namespace PTCSURVEYCMS.Controllers
                      
 
                         customerData= customerData.OrderByDescending(x => x.PropertyId).ToList();
-                    }         
-                   
-                    //Search    
-                    if (!string.IsNullOrEmpty(searchValue))
+                    }
+
+                    //Search
+                    var searchString = searchValue;
+                    Session["Search"] = searchString;
+                    string[] arr = searchString.Split(',');
+                    if (arr[0] == "f")
+                    {
+                        if (arr[1]!="All")
+                        {
+                            customerData = customerData.Where(x => x.PrabhagNo == arr[1]).ToList();
+                        }
+                        if (arr[2] != "All")
+                        {
+                            customerData = customerData.Where(x => x.WardName_No == arr[2]).ToList();
+                        }
+                        if (arr[3] != "All")
+                        {
+                            customerData = customerData.Where(x => x.CompletionYear == arr[3]).ToList();
+                        }
+
+                        if (arr[4] != "All")
+                        {
+                            customerData = customerData.Where(x => x.ConstStartYear == arr[4]).ToList();
+                        }
+                        if (arr[5] != "All")
+                        { 
+                            if(arr[5]== "Safe")
+                            {  
+                            customerData = customerData.Where(x => x.Safe == true).ToList();
+                            }
+                            if (arr[5] == "Safe2")
+                            {
+                                customerData = customerData.Where(x => x.Safe2 == true).ToList();
+                            }
+                            if (arr[5] == "Safe3")
+                            {
+                                customerData = customerData.Where(x => x.Safe3 == true).ToList();
+                            }
+                            if (arr[5] == "Danger")
+                            {
+                                customerData = customerData.Where(x => x.Danger == true).ToList();
+                            }
+                            if (arr[5] == "Danger2")
+                            {
+                                customerData = customerData.Where(x => x.Danger2 == true).ToList();
+                            }
+                            if (arr[5] == "Danger3")
+                            {
+                                customerData = customerData.Where(x => x.Danger3 == true).ToList();
+                            }
+                        }
+
+                        if (arr[6] != "All")
+                        {
+                            customerData = customerData.Where(x => x.PropertyNo == arr[6]).ToList();
+                            string fname, mname, lname;
+                            string pname = arr[7];
+                            string[] arr1 = pname.Split(' ');
+                            if (arr1.Length > 0)
+                            {
+                                fname = arr1[0];
+                                customerData = customerData.Where(x => x.PropOwnerFirstName == fname).ToList();
+                            }
+                            if (arr1.Length > 1)
+                            {
+                                mname = arr1[1];
+                                customerData = customerData.Where(x => x.PropOwnerMiddleName == mname).ToList();
+                            }
+                            if (arr1.Length > 2)
+                            {
+                                lname = arr1[2];
+                                customerData = customerData.Where(x => x.PropOwnerLastName == lname).ToList();
+                            }
+
+                        }
+                    }
+                    else if (!string.IsNullOrEmpty(searchValue))
                     {
                         var model = customerData.Where(c => ((string.IsNullOrEmpty(c.PropOwnerFirstName) ? " " : c.PropOwnerFirstName) + " " +
                                       (string.IsNullOrEmpty(c.PropOwnerMiddleName) ? " " : c.PropOwnerMiddleName) + " " +
@@ -511,15 +610,15 @@ public string SelectionNotExists(string SearchText, string selectoption)
                 return Redirect("/Account/Login");
         }
 
-        public ActionResult PropertyNo()
+        public ActionResult PropertyNoList(string pname)
         {
             if (SessionHandler.Current.AppId != 0)
             {
                 PropertyMasterVM obj = new PropertyMasterVM();
                 Repository = new Repository();
                 int AppId = SessionHandler.Current.AppId;
-                obj = Repository.GetPropertyNo(AppId, -1);
-                return Json(obj.PropertyNo, JsonRequestBehavior.AllowGet);
+                obj = Repository.GetPropertyNoList(AppId, pname);
+                return Json(obj.PropertyNoList, JsonRequestBehavior.AllowGet);
 
             }
             else
