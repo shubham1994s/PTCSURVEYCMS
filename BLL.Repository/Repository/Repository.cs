@@ -1671,7 +1671,15 @@ namespace BLL.Repository.Repository
                 if (arr.Length > 1)
                 {
                     mname = arr[1];
+                 
                     listObjects = listObjects.Where(x => x.PropOwnerMiddleName == mname).ToList();
+                    if(listObjects.Count==0)
+                    {
+                        listObjects = (from obj in db.PropertyMasters
+                                       where obj.PropOwnerLastName == mname
+                                       select obj).GroupBy(n => new { n.PropertyNo }).Select(g => g.FirstOrDefault())
+                                          .ToList();
+                    }
                 }
                 if (arr.Length > 2)
                 {

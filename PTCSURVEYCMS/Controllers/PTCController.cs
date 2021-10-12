@@ -333,9 +333,12 @@ namespace PTCSURVEYCMS.Controllers
                             }
                         }
 
-                        if (arr[6] != "All")
+                        if (arr[6] != "-1")
                         {
                             customerData = customerData.Where(x => x.PropertyNo == arr[6]).ToList();
+                        }
+                        if(arr[7]!="")
+                        {
                             string fname, mname, lname;
                             string pname = arr[7];
                             string[] arr1 = pname.Split(' ');
@@ -343,19 +346,21 @@ namespace PTCSURVEYCMS.Controllers
                             {
                                 fname = arr1[0];
                                 customerData = customerData.Where(x => x.PropOwnerFirstName == fname).ToList();
+                                customerData = customerData.Where(x => x.PropOwnerMiddleName == fname).ToList();
                             }
                             if (arr1.Length > 1)
                             {
                                 mname = arr1[1];
                                 customerData = customerData.Where(x => x.PropOwnerMiddleName == mname).ToList();
+                                customerData = customerData.Where(x => x.PropOwnerLastName == mname).ToList();
                             }
                             if (arr1.Length > 2)
                             {
                                 lname = arr1[2];
                                 customerData = customerData.Where(x => x.PropOwnerLastName == lname).ToList();
                             }
-
                         }
+
                     }
                     else if (!string.IsNullOrEmpty(searchValue))
                     {
