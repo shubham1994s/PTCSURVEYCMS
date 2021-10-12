@@ -913,7 +913,12 @@ namespace BLL.Repository.Repository
                     PropOwnerMiddleName = x.PropOwnerMiddleName,
                     PropOwnerLastName = x.PropOwnerLastName,
                     PropOwnerTelephoneNo = x.PropOwnerTelephoneNo,
-                    Sketchdiagram2 = x.Sketchdiagram2
+                    Sketchdiagram2 = x.Sketchdiagram2,
+                    PrabhagNo = x.PrabhagNo,
+                    WardName_No = x.WardNameNo,
+                    ConstStartYear = x.ConstStartYear,
+                    CompletionYear = x.CompletionYear
+
 
                 }).ToList();
             }
@@ -1586,6 +1591,36 @@ namespace BLL.Repository.Repository
             }
         }
 
+        public PropertyMasterVM GetPropertyNo(int Appid, int q)
+        {
+            try
+            {
+                using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+                {
+
+
+                    var Details = db.PropertyMasters.ToList();
+                    if (Details != null)
+                    {
+                        PropertyMasterVM Property = new PropertyMasterVM();
+
+                        Property.PropertyNoList = ListProperty(Appid);
+
+                        return Property;
+                    }
+                    else
+                    {
+                        return new PropertyMasterVM();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new PropertyMasterVM();
+            }
+        }
+
         public List<SelectListItem> ListPrabhag(int Appid)
         {
             var user = new List<SelectListItem>();
@@ -1603,6 +1638,29 @@ namespace BLL.Repository.Repository
                             Text = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo,
                             Value = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo
                         }).Distinct().OrderBy(t => t.Text).ToList();                 
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return user;
+        }
+
+        public List<SelectListItem> ListProperty(int Appid)
+        {
+            var user = new List<SelectListItem>();
+
+            using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+            {
+                List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
+                                                    select obj).GroupBy(n => new { n.PropertyNo }).Select(g => g.FirstOrDefault())
+                                           .ToList();
+                try
+                {
+                    user = listObjects.Where(c => c.IsDelete == false && c.PropertyNo != null).ToList()
+                        .Select(x => new SelectListItem
+                        {
+                            Text = (string.IsNullOrEmpty(x.PropertyNo)) ? " " : x.PropertyNo,
+                            Value = (string.IsNullOrEmpty(x.PropertyNo)) ? " " : x.PropertyNo
+                        }).Distinct().OrderBy(t => t.Text).ToList();
                 }
                 catch (Exception ex) { throw ex; }
             }
@@ -1689,6 +1747,33 @@ namespace BLL.Repository.Repository
             }
         }
 
+        public PropertyMasterVM GetCEDate(int Appid, int q)
+        {
+            try
+            {
+                using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+                {
+                    var Details = db.PropertyMasters.ToList();
+                    if (Details != null)
+                    {
+                        PropertyMasterVM ward = new PropertyMasterVM();
+                        ward.CEDateList = ListCEDate(Appid);
+
+                        return ward;
+                    }
+                    else
+                    {
+                        return new PropertyMasterVM();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new PropertyMasterVM();
+            }
+        }
+
         public List<SelectListItem> ListCSDate(int Appid)
         {
             var user = new List<SelectListItem>();
@@ -1705,6 +1790,29 @@ namespace BLL.Repository.Repository
                         {
                             Text = (string.IsNullOrEmpty(x.ConstStartYear)) ? " " : x.ConstStartYear,
                             Value = (string.IsNullOrEmpty(x.ConstStartYear)) ? " " : x.ConstStartYear
+                        }).Distinct().OrderBy(t => t.Text).ToList();
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return user;
+        }
+
+        public List<SelectListItem> ListCEDate(int Appid)
+        {
+            var user = new List<SelectListItem>();
+
+            using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+            {
+                List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
+                                                    select obj).GroupBy(n => new { n.CompletionYear }).Select(g => g.FirstOrDefault())
+                                           .ToList();
+                try
+                {
+                    user = listObjects.Where(c => c.IsDelete == false && c.CompletionYear != null).ToList()
+                        .Select(x => new SelectListItem
+                        {
+                            Text = (string.IsNullOrEmpty(x.CompletionYear)) ? " " : x.CompletionYear,
+                            Value = (string.IsNullOrEmpty(x.CompletionYear)) ? " " : x.CompletionYear
                         }).Distinct().OrderBy(t => t.Text).ToList();
                 }
                 catch (Exception ex) { throw ex; }

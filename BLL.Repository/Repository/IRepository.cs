@@ -24,5 +24,8 @@ namespace BLL.Repository.Repository
 
         PropertyMasterVM GetCSDate(int Appid, int q);
 
+        PropertyMasterVM GetCEDate(int Appid, int q);
+
+        PropertyMasterVM GetPropertyNo(int Appid, int q);
     }
 }

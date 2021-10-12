@@ -266,8 +266,12 @@ namespace PTCSURVEYCMS.Controllers
                                        (string.IsNullOrEmpty(c.PropOwnerTelephoneNo) ? " " : c.PropOwnerTelephoneNo) + " " +
                                       (string.IsNullOrEmpty(c.NewPropertyNo) ? " " : c.NewPropertyNo) + " " +
                                       (string.IsNullOrEmpty(c.PropertyNo) ? " " : c.PropertyNo) + " " +
-                                      (string.IsNullOrEmpty(c.OldHouseNo1) ? " " : c.OldHouseNo1)
-                                                           
+                                      (string.IsNullOrEmpty(c.OldHouseNo1) ? " " : c.OldHouseNo1) + "" +
+                                      (string.IsNullOrEmpty(c.PrabhagNo) ? " " : c.PrabhagNo) + "" +
+                                      (string.IsNullOrEmpty(c.WardName_No) ? " " : c.WardName_No) + "" +
+                                      (string.IsNullOrEmpty(c.ConstStartYear) ? " " : c.ConstStartYear) + "" +
+                                      (string.IsNullOrEmpty(c.CompletionYear) ? " " : c.CompletionYear)
+
                                        ).ToUpper().Contains(searchValue.ToUpper())).ToList();
 
                        customerData = model.ToList();
@@ -486,6 +490,36 @@ public string SelectionNotExists(string SearchText, string selectoption)
                 int AppId = SessionHandler.Current.AppId;
                 obj = Repository.GetCSDate(AppId, -1);
                 return Json(obj.CSDateList, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+        public ActionResult CEDateList()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetCEDate(AppId, -1);
+                return Json(obj.CEDateList, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+        public ActionResult PropertyNo()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetPropertyNo(AppId, -1);
+                return Json(obj.PropertyNo, JsonRequestBehavior.AllowGet);
 
             }
             else

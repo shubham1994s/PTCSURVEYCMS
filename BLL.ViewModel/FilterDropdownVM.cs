@@ -14,5 +14,7 @@ namespace BLL.ViewModel
         public List<SelectListItem> WardNoList { get; set; }
 
         public List<SelectListItem> CSDateList { get; set; }
+
+        public List<SelectListItem> CEDateList { get; set; }
     }
 }
