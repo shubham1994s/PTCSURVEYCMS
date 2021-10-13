@@ -1630,6 +1630,35 @@ namespace BLL.Repository.Repository
             }
         }
 
+        public PropertyMasterVM GetOwnerNameList(int Appid, string pno)
+        {
+            try
+            {
+                using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+                {
+                    
+                    var Details = db.PropertyMasters.Where(x => x.PropertyNo == pno).ToList();
+                    if (Details != null)
+                    {
+                        PropertyMasterVM Property = new PropertyMasterVM();
+
+                        Property.PropertyOwnerList = ListOwnerName(Appid, pno);
+
+                        return Property;
+                    }
+                    else
+                    {
+                        return new PropertyMasterVM();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new PropertyMasterVM();
+            }
+        }
+
         public List<SelectListItem> ListPrabhag(int Appid)
         {
             var user = new List<SelectListItem>();
@@ -1647,6 +1676,36 @@ namespace BLL.Repository.Repository
                             Text = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo,
                             Value = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo
                         }).Distinct().OrderBy(t => t.Text).ToList();                 
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return user;
+        }
+
+        public List<SelectListItem> ListOwnerName(int Appid, string pno)
+        {
+            var user = new List<SelectListItem>();
+            List<PropertyMaster> listObjects = new List<PropertyMaster>();
+            using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+            {
+                
+                    listObjects = (from obj in db.PropertyMasters
+                                   where obj.PropertyNo == pno
+                                   select obj).GroupBy(n => new { n.PropOwnerFirstName }).Select(g => g.FirstOrDefault())
+                                              .ToList();
+                   
+                try
+                {
+                    user = listObjects
+                        .Select(x => new SelectListItem
+                        {
+                            Text = (string.IsNullOrEmpty(x.PropOwnerFirstName)) ? " " : x.PropOwnerFirstName + " " +
+                                    //  (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName) + " " +
+                                      (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName),
+                            Value = (string.IsNullOrEmpty(x.PropOwnerFirstName)) ? " " : x.PropOwnerFirstName + " " +
+                                 //     (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName) + " " +
+                                      (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName)
+                        }).Distinct().OrderBy(t => t.Text).ToList();
                 }
                 catch (Exception ex) { throw ex; }
             }
@@ -1671,12 +1730,12 @@ namespace BLL.Repository.Repository
                 if (arr.Length > 1)
                 {
                     mname = arr[1];
-                 
-                    listObjects = listObjects.Where(x => x.PropOwnerMiddleName == mname).ToList();
+                    fname = arr[0];
+                    listObjects = listObjects.Where(x => x.PropOwnerMiddleName == mname && x.PropOwnerFirstName == fname).ToList();
                     if(listObjects.Count==0)
                     {
                         listObjects = (from obj in db.PropertyMasters
-                                       where obj.PropOwnerLastName == mname
+                                       where obj.PropOwnerLastName == mname && obj.PropOwnerFirstName==fname
                                        select obj).GroupBy(n => new { n.PropertyNo }).Select(g => g.FirstOrDefault())
                                           .ToList();
                     }

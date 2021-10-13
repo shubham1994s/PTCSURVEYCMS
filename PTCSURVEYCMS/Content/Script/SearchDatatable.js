@@ -122,10 +122,32 @@ $(document).ready(function () {
             traditional: true,
             success: function (data) {
                 district = '<option value="-1">Select Property No.</option>';
+                district = '<option value="">Select All.</option>';
                 for (var i = 0; i < data.length; i++) {
                     district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
                 }
                 $('#PRONOBYNAME').html(district);
+            }
+
+        });
+    });
+
+    $("#poname").focusout(function () {
+        debugger;
+        var Name = $('#poname').val();
+        $.ajax({
+            type: "post",
+            url: "/PTC/OwnerNameList?pname=" + Name + "",
+            data: { Name: Name },
+            datatype: "json",
+            traditional: true,
+            success: function (data) {
+                district = '<option value="-1">Select Name</option>';
+                district = '<option value="">Select All.</option>';
+                for (var i = 0; i < data.length; i++) {
+                    district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                }
+                $('#Name').html(district);
             }
 
         });
@@ -136,9 +158,97 @@ $(document).ready(function () {
 
 
 
+    function None() {
+        ActiveEmployee();
+    document.getElementById('common').style.display = 'none';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('allrecords').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'none';
+    document.getElementById('byname').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
+    }
+
+    function show1() {
+        ActiveEmployee();
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('const').style.display = 'block';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('allrecords').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+        document.getElementById('byprono').style.display = 'none';
+        var value = "";
+        // alert(value );
+        oTable = $('#datatableActive').DataTable();
+        oTable.search(value).draw();
+        oTable.search("");
+      
+    }
+
+    function show2() {
+        ActiveEmployee();
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('allrecords').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+        document.getElementById('byprono').style.display = 'none';
+        var value = "";
+        // alert(value );
+        oTable = $('#datatableActive').DataTable();
+        oTable.search(value).draw();
+        oTable.search("");
+    }
+
+    function show3() {
+        ActiveEmployee();
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('allrecords').style.display = 'block';
+    document.getElementById('const').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+        document.getElementById('adfilbtn').style.display = 'block';
+        var value = "";
+        // alert(value );
+        oTable = $('#datatableActive').DataTable();
+        oTable.search(value).draw();
+        oTable.search("");
+    }
+    function show4() {
+        ActiveEmployee();
+    document.getElementById('byprono').style.display = 'block';
+    document.getElementById('common').style.display = 'none';
+    document.getElementById('allrecords').style.display = 'none';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+        document.getElementById('byname').style.display = 'none';
+        var value = "";
+        // alert(value );
+        oTable = $('#datatableActive').DataTable();
+        oTable.search(value).draw();
+        oTable.search("");
+    }
+    function show5() {
+        ActiveEmployee();
+    document.getElementById('byname').style.display = 'block';
+    document.getElementById('common').style.display = 'none';
+    document.getElementById('allrecords').style.display = 'none';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+        document.getElementById('byprono').style.display = 'none';
+        var value = "";
+        // alert(value );
+        oTable = $('#datatableActive').DataTable();
+        oTable.search(value).draw();
+        oTable.search("");
+    }
+
 
 function Search() { 
-  
+    debugger;
     Filter = "f";
     PrabhagList = $('#PrabhagList').val();
     WardList = $('#WardList').val();
@@ -147,14 +257,15 @@ function Search() {
     OCNO = $('#OCNO').val();
     PRONOBYNAME = $('#PRONOBYNAME').val();
     PROOWNAME = $('#test').val();
-    
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME;
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name;
 
     // alert(value );
     oTable = $('#datatableActive').DataTable();
     oTable.search(value).draw();
     oTable.search("");
-    document.getElementById('USER_ID_FK').value = -1;
+//    document.getElementById('USER_ID_FK').value = -1;
 }
 //function SendRemainder(q) {
 //    debugger;
@@ -321,6 +432,7 @@ function ActiveEmployee() {
         "orderMulti": false, // for disable multiple column at once  
         "pageLength": 5,
         "searching": true,
+        destroy: true,
         // "order": [
         //       [0, "asc"]
         //],

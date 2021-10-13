@@ -19,5 +19,7 @@ namespace BLL.ViewModel
 
 
         public List<SelectListItem> PropertyNoList { get; set; }
+
+        public List<SelectListItem> PropertyOwnerList { get; set; }
     }
 }
