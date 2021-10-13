@@ -556,7 +556,7 @@ td input{width:100%}
                     <div class="form-group pr-4">
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerElectionCardNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                        @Html.TextBoxFor(model => model.PropOwnerElectionCardNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         @Html.ValidationMessageFor(model => model.PropOwnerElectionCardNo, "", new { @class = "text-danger" })
                         <span class="text-danger" id="err_empidd"></span>
                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
