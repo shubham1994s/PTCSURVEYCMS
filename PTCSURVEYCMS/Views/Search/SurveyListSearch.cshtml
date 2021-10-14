@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Vengurla Property Survey";
 }
+
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
@@ -57,30 +59,39 @@
         float: right;
         margin-bottom: 10px;
     }
+
     #common {
-        display:none;
+        display: none;
     }
+
     #const {
         display: none;
     }
+
     #consstate {
         display: none;
     }
+
     #ConsPerNo {
         display: none;
     }
+
     #adfilbtn {
-        display:none;
+        display: none;
     }
+
     #byprono {
-        display:none;
+        display: none;
     }
+
     #byname {
         display: none;
     }
-    #tapshil{
-        display:none;
+
+    #tapshil {
+        display: none;
     }
+
     input[type='radio']:after {
         width: 15px;
         height: 15px;
@@ -108,11 +119,13 @@
         visibility: visible;
         border: 2px solid #969b95;
     }
+
     .sfp {
         padding-top: 5%;
         background-color: #fff;
         box-shadow: 2px 2px 2px 2px;
     }
+
     .sfa2 {
         margin-top: 5px;
         padding-top: 5px;
@@ -136,7 +149,7 @@
 
                                     @*<a href="@Url.Action("GenerateReport","Report" ,new {typeOfReport="PDF"})">Get All Entries Report </a>*@
                                     <h4 sytle="magin-bottom:30px;font-weight:800;">
-                                      <a href="@Url.Action("SurveyList", "PTC")" type="button" class="btn btn-sm btn-primary">Back</a>
+                                        <a href="@Url.Action("SurveyList", "PTC")" type="button" class="btn btn-sm btn-primary">Back</a>
                                     </h4>
                                     @*<img src="~/Content/Images/@ViewBag.Clogo" style="position: absolute;height: 155px;top: -5%;left:42%" />*@
                                     <span style="border: 1px solid #357ebd; padding: 5px; height: fit-content; margin-top: 10px !important ">Total Proprety Count : @ViewBag.EntryCount</span>
@@ -172,12 +185,12 @@
                     <div class="container">
                         <div class="row sfp">
                             @*<div class="col-lg-4 form-group">
-            <input type="radio" name="tab" value="igotnone" onclick="None();" />
-            काहीही नाही / None
+                                    <input type="radio" name="tab" value="igotnone" onclick="None();" />
+                                    काहीही नाही / None
 
-        </div>*@
+                                </div>*@
                             <div class="col-lg-4 form-group">
-                                <input type="radio" name="tab"  id="igotnone"  value="igotone" onclick="show1();" />
+                                <input type="radio" name="tab" id="igotnone" value="igotone" onclick="show1();" />
                                 बांधकाम वर्ष / Const. Date
 
                             </div>
@@ -195,7 +208,7 @@
                                 <input type="radio" name="tab" value="igotsix" onclick="show7();" />
                                 कुटुंबातील सदस्ययांचा तपशील
                             </div>
-                            
+
 
                             <div class="col-lg-4 form-group" style="display:none;">
 
@@ -204,142 +217,144 @@
                             </div>
 
                         </div>
-                            <div class="row sfa2">
-                                <div class="col-sm-12">
-                                    <div class="card">
+                        <div class="row sfa2">
+                            <div class="col-sm-12">
+                                <div class="card">
 
-                                        <div class="card-block">
-                                           
+                                    <div class="card-block">
 
-                                            <div class="container" style="padding-top:8px">
 
-                                                <div class="row" id="tapshil">
-                                                    <div class="col-lg-4 form-group">
+                                        <div class="container" style="padding-top:8px">
 
-                                                        <input type="radio" name="tab" value="igotfour" onclick="show4();" />
-                                                        मालमत्ता क्र. / By Property No.
-                                                    </div>
-                                                    <div class="col-lg-4 form-group">
+                                            <div class="row" id="tapshil">
+                                                <div class="col-lg-4 form-group">
 
-                                                        <input type="radio" name="tab" value="igotfive" onclick="show5();" />
-                                                        नाव / By Name.
-                                                    </div>
+                                                    <input type="radio" name="tab" value="igotfour" onclick="show4();" />
+                                                    मालमत्ता क्र. / By Property No.
                                                 </div>
-                                                <form id="Searchform">
-                                                    <div class="row" style="padding-right: 8px;">
-                                                        <div id="common">
-                                                            <div class="col-lg-3 form-group">
-                                                                <label>प्रभाग क्र. /</label>
-                                                                <label>Select Prabhag No.</label>
-                                                                <select id="PrabhagList" class="form-control form-control form-control-sm">
-                                                                </select>
+                                                <div class="col-lg-4 form-group">
 
-                                                            </div>
-                                                            <div class="col-lg-3 form-group">
-                                                                <label>वार्ड नाव व क्र. /</label>
-                                                                <label>Select Ward No.</label>
-                                                                <select id="WardList" class="form-control form-control form-control-sm">
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div id="const">
-                                                            <div class="col-lg-3 form-group">
-                                                                <label>बांधकाम चालू केलेले वर्ष / </label>
-                                                                <label>Cons.Start Date.</label>
-                                                                <select id="CSDate" class="form-control form-control form-control-sm">
-                                                                </select>
-                                                            </div>
+                                                    <input type="radio" name="tab" value="igotfive" onclick="show5();" />
+                                                    नाव / By Name.
+                                                </div>
+                                            </div>
+                                            <form id="Searchform">
+                                                <div class="row" style="padding-right: 8px;">
+                                                    <div id="common">
+                                                        <div class="col-lg-3 form-group">
+                                                            <label>प्रभाग क्र. /</label>
+                                                            <label>Select Prabhag No.</label>
+                                                            <select id="PrabhagList" class="form-control form-control form-control-sm">
+                                                            </select>
 
-                                                            <div class="col-lg-3 form-group">
-                                                                <label> बांधकाम पूर्णत्वाचे वर्ष /</label>
-                                                                <label>Cons.End Date.</label>
-                                                                <select id="CEDate" class="form-control form-control form-control-sm">
-                                                                </select>
-                                                            </div>
                                                         </div>
-                                                        <div id="consstate" class="col-lg-3 form-group">
-                                                            <label> मालमत्तेची सद्यस्तिथी</label>
-                                                            <select id="OCNO" class="form-control form-control form-control-sm">
-                                                                <option value="">मालमत्तेची सद्यस्तिथी</option>
-                                                                <option value="ALL">Select All.</option>
-                                                                <option value="Safe">भिंती (सुस्थितीत)</option>
-                                                                <option value="Danger">भिंती (धोकदायक)</option>
-                                                                <option value="Safe2">छप्पर (सुस्थितीत)</option>
-                                                                <option value="Danger2">छप्पर (धोकदायक)</option>
-                                                                <option value="Safe3">काँलम (सुस्थितीत)</option>
-                                                                <option value="Danger3">काँलम (धोकदायक)</option>
+                                                        <div class="col-lg-3 form-group">
+                                                            <label>वार्ड नाव व क्र. /</label>
+                                                            <label>Select Ward No.</label>
+                                                            <select id="WardList" class="form-control form-control form-control-sm">
                                                             </select>
                                                         </div>
-                                                        <div id="ConsPerNo">
-                                                            <div class="col-lg-3 form-group">
-                                                                <label>बांधकाम परवानगी क्र. /</label>
-                                                                <label>Const. Perm. No.</label>
-                                                                <select id="CPNO" class="form-control form-control form-control-sm">
-                                                                    <option value="">Select Const. Perm. No.</option>
-                                                                    <option value="ALL">Select All.</option>
-                                                                    <option value="Y">YES</option>
-                                                                    <option value="N">NO</option>
-                                                                    <option value="NA">Not Select</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-3 form-group">
-                                                                <label>भोगवटा दाखला क्र. /</label>
-                                                                <label> O. C. No.</label>
-                                                                <select id="OCNO" class="form-control form-control form-control-sm">
-                                                                    <option value="">O. C. No</option>
-                                                                    <option value="ALL">Select All.</option>
-                                                                    <option value="Y">YES</option>
-                                                                    <option value="N">NO</option>
-                                                                    <option value="NA">Not Select</option>
-                                                                </select>
-                                                            </div>
+                                                    </div>
+                                                    <div id="const">
+                                                        <div class="col-lg-3 form-group">
+                                                            <label>बांधकाम चालू केलेले वर्ष / </label>
+                                                            <label>Cons.Start Date.</label>
+                                                            <select id="CSDate" class="form-control form-control form-control-sm">
+                                                            </select>
                                                         </div>
-                                                        <div id="byprono">
-                                                            <div class="col-lg-3 form-group">
-                                                                <label>मालमत्ता क्र. / </label>
-                                                                <label> Property No.</label>
 
-                                                                <input type="text" id="poname" class="form-control form-control form-control-sm" placeholder="Enter Property No" />
-                                                            </div>
-                                                            <div class="col-lg-3 form-group">
-                                                                <label>नाव/</label>
-                                                                <label> Name</label>
-                                                                <select id="Name" class="form-control form-control form-control-sm">
-                                                                </select>
-                                                            </div>
+                                                        <div class="col-lg-3 form-group">
+                                                            <label> बांधकाम पूर्णत्वाचे वर्ष /</label>
+                                                            <label>Cons.End Date.</label>
+                                                            <select id="CEDate" class="form-control form-control form-control-sm">
+                                                            </select>
                                                         </div>
-                                                        <div id="byname">
-                                                            <div class="col-lg-3 form-group">
-                                                                <label>नाव/</label>
-                                                                <label> Name</label>
-                                                                <input type="text" id="test" class="form-control form-control form-control-sm" placeholder="Enter Name" onInput="edValueKeyPress()" />
-                                                                <span id="lblValue"> </span>
-                                                            </div>
-                                                            <div class="col-lg-3 form-group">
-                                                                <label>मालमत्ता क्र. / </label>
-                                                                <label> Property No.</label>
-                                                                <select id="PRONOBYNAME" class="form-control form-control form-control-sm">
-                                                                    <option value="">Select Property No.</option>
-                                                                    <option value="ALL">Select All.</option>
-                                                                </select>
-                                                            </div>
+                                                    </div>
+                                                    <div id="consstate" class="col-lg-3 form-group">
+                                                        <label> मालमत्तेची सद्यस्तिथी</label>
+                                                        <select id="OCNO" class="form-control form-control form-control-sm">
+                                                            <option value="">मालमत्तेची सद्यस्तिथी</option>
+                                                            <option value="ALL">Select All.</option>
+                                                            <option value="Safe">भिंती (सुस्थितीत)</option>
+                                                            <option value="Danger">भिंती (धोकदायक)</option>
+                                                            <option value="Safe2">छप्पर (सुस्थितीत)</option>
+                                                            <option value="Danger2">छप्पर (धोकदायक)</option>
+                                                            <option value="Safe3">काँलम (सुस्थितीत)</option>
+                                                            <option value="Danger3">काँलम (धोकदायक)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div id="ConsPerNo">
+                                                        <div class="col-lg-3 form-group">
+                                                            <label>बांधकाम परवानगी क्र. /</label>
+                                                            <label>Const. Perm. No.</label>
+                                                            <select id="CPNO" class="form-control form-control form-control-sm">
+                                                                <option value="">Select Const. Perm. No.</option>
+                                                                <option value="ALL">Select All.</option>
+                                                                <option value="Y">YES</option>
+                                                                <option value="N">NO</option>
+                                                                <option value="NA">Not Select</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-3 form-group">
+                                                            <label>भोगवटा दाखला क्र. /</label>
+                                                            <label> O. C. No.</label>
+                                                            <select id="OCNOY" class="form-control form-control form-control-sm">
+                                                                <option value="">O. C. No</option>
+                                                                <option value="ALL">Select All.</option>
+                                                                <option value="Y">YES</option>
+                                                                <option value="N">NO</option>
+                                                                <option value="NA">Not Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div id="byprono">
+                                                        <div class="col-lg-3 form-group">
+                                                            <label>मालमत्ता क्र. / </label>
+                                                            <label> Property No.</label>
 
+                                                            <input type="text" id="poname" class="form-control form-control form-control-sm" placeholder="Enter Property No" />
+                                                        </div>
+                                                        <div class="col-lg-3 form-group">
+                                                            <label>नाव/</label>
+                                                            <label> Name</label>
+                                                            <select id="Name" class="form-control form-control form-control-sm">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div id="byname">
+                                                        <div class="col-lg-3 form-group">
+                                                            <label>नाव/</label>
+                                                            <label> Name</label>
+                                                            <input type="text" id="test" class="form-control form-control form-control-sm" placeholder="Enter Name" onInput="edValueKeyPress()" />
+                                                            <span id="lblValue"> </span>
+                                                        </div>
+                                                        <div class="col-lg-3 form-group">
+                                                            <label>मालमत्ता क्र. / </label>
+                                                            <label> Property No.</label>
+                                                            <select id="PRONOBYNAME" class="form-control form-control form-control-sm">
+                                                                <option value="">Select Property No.</option>
+                                                                <option value="ALL">Select All.</option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div id="adfilbtn" class="row">
+                                                    <div class="col-sm-2  offset-md-10" style="text-align: right; float: right;">
+                                                        <div class="controls">
+                                                            <input data-background-color="filter-button-box-color" style="margin:8px;" class="btn btn-sm btn-success filter-button-style" type="reset" value="Filter Records" id="filter" onclick="Search()" />
+
+                                                            <input data-background-color="filter-button-box-color" style="margin:8px;" class="btn btn-sm btn-success filter-button-style" type="reset" value="Filter Records" id="filterfamily" onclick="SearchFamily()" />
                                                         </div>
                                                     </div>
 
+                                                </div>
+                                            </form>
+                                        </div>
 
-                                                    <div id="adfilbtn" class="row">
-                                                        <div class="col-sm-2  offset-md-10" style="text-align: right; float: right;">
-                                                            <div class="controls">
-                                                                <input type="reset" data-background-color="filter-button-box-color" style="margin:8px;" class="btn btn-sm btn-success filter-button-style" type="button" value="Filter Records" id="filter" onclick="Search()" />
-                                                            </div>
-                                                        </div>
-                                                       
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                            @*<div  class="container" style="padding-top:8px">
+                                        @*<div  class="container" style="padding-top:8px">
                                                 <div class="row">
                                                     <div class="col-lg-3 form-group">
                                                         <label>Select Prabhag No.</label>
@@ -448,44 +463,335 @@
 
                                             </div>*@
 
-                                            <div class="dt-responsive table-responsive">
+                                        <div class="dt-responsive table-responsive" id="datatableActive1">
 
-                                                <table id="datatableActive" class="table table-striped table-bordered nowrap">
-                                                    <thead>
-                                                        <tr>
+                                            <table id="datatableActive" class="table table-striped table-bordered nowrap">
+                                                <thead>
+                                                    <tr>
 
-                                                            <th>PrabhagNo </th>
-                                                            <th>Ward No </th>
-                                                            <th>Cons. Start Date </th>
-                                                            <th>Cons. End Date </th>
-                                                            <th>Owner Name</th>
-                                                            <th>Owner Mobile No</th>
-                                                            <th>New Property No</th>
-                                                            <th>Property No</th>
-                                                            <th>House No</th>
-                                                            <th>View</th>
-                                                            <th>Scanned Document</th>
-                                                            <th>Action</th>
-                                                        </tr>
-                                                    </thead>
+                                                        <th>PrabhagNo </th>
+                                                        <th>Ward No </th>
+                                                        <th>Cons. Start Date </th>
+                                                        <th>Cons. End Date </th>
+                                                        <th>Owner Name</th>
+                                                        <th>Owner Mobile No</th>
+                                                        <th>New Property No</th>
+                                                        <th>Property No</th>
+                                                        <th>House No</th>
+                                                        <th>View</th>
+                                                        <th>Scanned Document</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
 
-                                                </table>
+                                            </table>
 
 
-                                            </div>
                                         </div>
-                                    </div>
 
+                                   
+                                        <div class="d-flex flex-column back mb-4" id="familytbl" style="display:none;">
+                                            <table style="width:100%" class="back mb-4">
+                                                <tr class="text-center"><th style="text-align:center;font-weight:600" colspan="6">कुटुंबातील सदस्ययांचा  तपशील </th></tr>
+                                                <tr class="text-center">
+                                                    <th>अ. क्र.</th>
+                                                    <th>नाव</th>
+                                                    <th>वय</th>
+                                                    <th>लिंग  </th>
+                                                    <th>संपर्क क्र.</th>
+                                                    <th>
+                                                        मतादार ओळखपत्र क्र.
+                                                    </th>
+
+                                                </tr>
+
+                                                <tr class="text-center">
+                                                    <td>1</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Age1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                                    </td>
+                                                    <td>
+
+                                                        @Html.DropDownList("link1", new List<SelectListItem>
+                                                        {
+                                                new SelectListItem { Text = "Male", Value = "M" },
+                                            new SelectListItem { Text = "Female", Value = "F"},
+                                     }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.ContactNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                                    </td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.VoterIdentityNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr class="text-center">
+                                                    <td>2</td>
+                                                    <td>
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.Age2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link2", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+                                                <tr class="text-center">
+                                                    <td>3</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link3", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>4</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link4", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+                                                <tr class="text-center">
+                                                    <td>5</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link5", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+                                                <tr class="text-center">
+                                                    <td>6</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link6", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>7</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link7", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>8</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link8", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>9</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link9", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>10</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link10", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>11</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link11", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>12</td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+
+                                                    <td>@Html.DisplayFor(model => model.Age12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link12", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+                                            </table>
+
+
+
+                                        </div>
+                                     
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
+                    </div>
+                </div>
             </div>
+
+            <br />
+
         </div>
-
-        <br />
-
     </div>
-</div>
 }
 <style>
     #snackbar {
