@@ -460,7 +460,211 @@
                                                         <th>मतादार ओळखपत्र क्र.</th>
                                                     </tr>
                                                 </thead>
+                                                <tr class="text-center">
+                                                    <td>1</td>
+                                                    <td>
 
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                                    </td>
+
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.Age1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                                    </td>
+                                                    <td>
+
+                                                        @Html.DropDownList("link1", new List<SelectListItem>
+                                                        {
+                                                new SelectListItem { Text = "Male", Value = "M" },
+                                            new SelectListItem { Text = "Female", Value = "F"},
+                                     }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+
+
+                                                    </td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.ContactNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                                    </td>
+                                                    <td>
+
+                                                        @Html.DisplayFor(model => model.VoterIdentityNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr class="text-center">
+                                                    <td>2</td>
+                                                    <td>@Html.DisplayFor(model => model.Name2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link2", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+                                                <tr class="text-center">
+                                                    <td>3</td>
+                                                    <td>@Html.DisplayFor(model => model.Name3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link3", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>4</td>
+                                                    <td>@Html.DisplayFor(model => model.Name4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link4", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+                                                <tr class="text-center">
+                                                    <td>5</td>
+                                                    <td>@Html.DisplayFor(model => model.Name5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link5", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+                                                <tr class="text-center">
+                                                    <td>6</td>
+                                                    <td>@Html.DisplayFor(model => model.Name6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link6", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>7</td>
+                                                    <td>@Html.DisplayFor(model => model.Name7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link7", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>8</td>
+                                                    <td>@Html.DisplayFor(model => model.Name8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link8", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>9</td>
+                                                    <td>@Html.DisplayFor(model => model.Name9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link9", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>10</td>
+                                                    <td>@Html.DisplayFor(model => model.Name10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link10", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>11</td>
+                                                    <td>@Html.DisplayFor(model => model.Name11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link11", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
+
+
+                                                <tr class="text-center">
+                                                    <td>12</td>
+                                                    <td>@Html.DisplayFor(model => model.Name12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.Age12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>
+                                                        @Html.DropDownList("link12", new List<SelectListItem>
+                                                     {
+                                             new SelectListItem { Text = "Male", Value = "M" },
+                                         new SelectListItem { Text = "Female", Value = "F"},
+                                    }, "Select", new { @class = "form-control", @disabled = "disabled", style = "font-family:Arial, FontAwesome" })
+                                                    </td>
+                                                    <td>@Html.DisplayFor(model => model.ContactNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td>@Html.DisplayFor(model => model.VoterIdentityNo12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                </tr>
                                             </table>
 
 

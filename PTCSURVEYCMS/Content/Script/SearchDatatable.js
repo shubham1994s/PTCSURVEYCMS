@@ -3,6 +3,7 @@
 
 $(document).ready(function () {
     debugger;
+    document.getElementById('secondtable').style.display = 'block';
     var PrabhagListNo = $('#PrabhagList').val();
     $.ajax({
         type: "post",
@@ -304,6 +305,10 @@ function show7() {
 }
 
 function SearchByName() {
+    
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    window.location.href = "/Search/SurveyListSearch?q=" + poname;
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
 
