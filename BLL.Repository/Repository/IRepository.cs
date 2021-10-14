@@ -13,7 +13,7 @@ namespace BLL.Repository.Repository
 
         PropertyMasterVM getPropertyDetailsByID(int q, int AppId);
 
-        PropertyMasterVM getPropertyDetailsByFamily(string q, int AppId);
+        PropertyMasterVM getPropertyDetailsByFamily(string q,string n, int AppId);
 
         PropertyMasterVM getDeleteByID(int q, int AppId);
 

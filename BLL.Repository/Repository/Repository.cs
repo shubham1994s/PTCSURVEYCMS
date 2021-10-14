@@ -1387,13 +1387,13 @@ namespace BLL.Repository.Repository
             return Master;
         }
 
-        public PropertyMasterVM getPropertyDetailsByFamily(string q, int AppId)
+        public PropertyMasterVM getPropertyDetailsByFamily(string q,string n, int AppId)
         {
             PropertyMasterVM Master = new PropertyMasterVM();
             using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(AppId))
             {
 
-                var _Property = db.PropertyMasters.Where(c => c.PropertyNo == q).FirstOrDefault();
+                var _Property = db.PropertyMasters.Where(c => c.PropertyNo == q && c.PropOwnerFirstName==n).FirstOrDefault();
                 if (_Property != null)
                 {
                     Master.PropertyId = _Property.PropertyId;

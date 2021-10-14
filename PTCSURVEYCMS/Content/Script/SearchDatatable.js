@@ -305,13 +305,35 @@ function show7() {
 }
 
 function SearchByName() {
-    
-    PROOWNAME = $('#test').val();
+    debugger;
+    PROOWNAME = $('#Name').val();
     poname = $('#poname').val();
-    window.location.href = "/Search/SurveyListSearch?q=" + poname;
+    window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
+    //$.ajax({
+    //    url: "/Search/LoadData",
+    //    type: "POST",
+    //    dataType: 'json',
+    //    contentType: false,
+    //    processData: false,
+    //    success: function (response) {
+    //        debugger;
+    //        if (response.success) {
+    //            var x = document.getElementById("snackbar");
+    //            x.className = "show";
+    //            setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
+    //        } else {
+    //            var x = document.getElementById("snackbar1");
+    //            x.className = "show";
+    //            setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
+    //        }
+    //    },
+    //    error: function (response) {
+    //        alert("error!");  // 
+    //    }
 
+    //});
 }
 function Search() {
     debugger;
@@ -564,6 +586,9 @@ function ActiveEmployee() {
     });
 
 }
+
+
+
 
 
 
