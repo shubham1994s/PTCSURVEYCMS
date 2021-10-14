@@ -1,4 +1,6 @@
 ﻿
+
+
 $(document).ready(function () {
     debugger;
     var PrabhagListNo = $('#PrabhagList').val();
@@ -586,3 +588,4 @@ const Delete = async (ID) => {
 //        return false;
 
 //}
+
