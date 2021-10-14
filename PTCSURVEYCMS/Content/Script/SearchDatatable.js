@@ -297,7 +297,9 @@ function Search() {
     PROOWNAME = $('#test').val();
     poname = $('#poname').val();
     Name = $('#Name').val();
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name;
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
 
     // alert(value );
     oTable = $('#datatableActive').DataTable();
