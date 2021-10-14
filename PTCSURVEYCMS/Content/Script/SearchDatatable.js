@@ -1,9 +1,6 @@
 ﻿
-
 $(document).ready(function () {
     debugger;
-    
-   // $("#familytbl").hide();
     var PrabhagListNo = $('#PrabhagList').val();
     $.ajax({
         type: "post",
@@ -77,7 +74,7 @@ $(document).ready(function () {
         }
     });
 
-   
+
 
     $("#SearchText").val("");
     $("#para").show().delay(3000).show().fadeOut('slow');
@@ -93,7 +90,7 @@ $(document).ready(function () {
     //    document.getElementById('para').textContent = ''
     //}
 
-   ActiveEmployee();
+    ActiveEmployee();
 
     $("#SearchText").change(function () {
         debugger;
@@ -154,105 +151,112 @@ $(document).ready(function () {
 
         });
     });
-  
+
 
 });
 
 
 
-    function None() {
-        ActiveEmployee();
+function None() {
+    ActiveEmployee();
     document.getElementById('common').style.display = 'none';
     document.getElementById('const').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'none';
     document.getElementById('byname').style.display = 'none';
-        document.getElementById('byprono').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
 
-    }
+}
 
-    function show1() {
-        ActiveEmployee();
-        var element = document.getElementById("cusmargin");
-        element.classList.remove("MyClass");
+function show1() {
+    ActiveEmployee();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
     document.getElementById('const').style.display = 'block';
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
-        document.getElementById('byprono').style.display = 'none';
-        document.getElementById('tapshil').style.display = 'none';
-        $("#familytbl").hide();
-        $("#datatableActive1").show();
-      
-    }
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    var value = "";
+    // alert(value );
+    oTable = $('#datatableActive').DataTable();
+    oTable.search(value).draw();
+    oTable.search("");
 
-    function show2() {
-        ActiveEmployee();
-        var element = document.getElementById("cusmargin");
-        element.classList.remove("MyClass");
+}
+
+function show2() {
+    ActiveEmployee();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
     document.getElementById('consstate').style.display = 'block';
     document.getElementById('const').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
-        document.getElementById('byprono').style.display = 'none';
-        document.getElementById('tapshil').style.display = 'none';
-        $("#familytbl").hide();
-        $("#datatableActive1").show();
-    }
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    var value = "";
+    // alert(value );
+    oTable = $('#datatableActive').DataTable();
+    oTable.search(value).draw();
+    oTable.search("");
+}
 
-    function show3() {
-        ActiveEmployee();
+function show3() {
+    ActiveEmployee();
     document.getElementById('common').style.display = 'block';
     document.getElementById('ConsPerNo').style.display = 'block';
     document.getElementById('const').style.display = 'block';
     document.getElementById('consstate').style.display = 'block';
-        document.getElementById('adfilbtn').style.display = 'block';
-        $("#familytbl").hide();
-        $("#datatableActive1").show();
-       
-    }
-    function show4() {
-        ActiveEmployee();
-        var element = document.getElementById("cusmargin");
-        element.classList.add("MyClass");
-       // ActiveEmployee();
+    document.getElementById('adfilbtn').style.display = 'block';
+    var value = "";
+    // alert(value );
+    oTable = $('#datatableActive').DataTable();
+    oTable.search(value).draw();
+    oTable.search("");
+}
+function show4() {
+    ActiveEmployee();
+    var element = document.getElementById("cusmargin");
+    element.classList.add("MyClass");
     document.getElementById('byprono').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
     document.getElementById('const').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
-        document.getElementById('byname').style.display = 'none';
-        //$("#familytbl").show();
-        //$("#datatableActive1").hide();
-        
-  
-        var value = "";
-        // alert(value );
-        oTable = $('#datatableActive').DataTable();
-        oTable.search(value).draw();
-        oTable.search("");
-    }
-    function show5() {
-        ActiveEmployee();
-        var element = document.getElementById("cusmargin");
-        element.classList.add("MyClass");
-     //  ActiveEmployee();
+    document.getElementById('byname').style.display = 'none';
+
+
+    var value = "";
+    // alert(value );
+    oTable = $('#datatableActive').DataTable();
+    oTable.search(value).draw();
+    oTable.search("");
+}
+function show5() {
+    ActiveEmployee();
+    var element = document.getElementById("cusmargin");
+    element.classList.add("MyClass");
     document.getElementById('byname').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
     document.getElementById('const').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
-        document.getElementById('byprono').style.display = 'none';
-     
-        
-    }
+    document.getElementById('byprono').style.display = 'none';
+    var value = "";
+    // alert(value );
+    oTable = $('#datatableActive').DataTable();
+    oTable.search(value).draw();
+    oTable.search("");
+}
 
 function show6() {
     var element = document.getElementById("cusmargin");
@@ -265,8 +269,6 @@ function show6() {
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
-    $("#familytbl").hide();
-    $("#datatableActive1").show();
 }
 
 function show7() {
@@ -278,12 +280,10 @@ function show7() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('byname').style.display = 'none';
-    //$("#familytbl").show();
-    //$("#datatableActive1").hide();
 }
 
 
-function Search() { 
+function Search() {
     debugger;
     Filter = "f";
     PrabhagList = $('#PrabhagList').val();
@@ -295,42 +295,13 @@ function Search() {
     PROOWNAME = $('#test').val();
     poname = $('#poname').val();
     Name = $('#Name').val();
-    CPNO = $('#CPNO').val();
-    OCNOY = $('#OCNOY').val();
-
-    //if (poname != "" && Name != "" )
-    //{
-    //    PrabhagList = "All";
-    //    WardList ="All";
-    //    CSDate ="All";
-    //    CEDate = "All";
-    //    OCNO = "";
-    //    PRONOBYNAME = "";
-    //    PROOWNAME ="";
-    //}
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name;
 
     // alert(value );
     oTable = $('#datatableActive').DataTable();
     oTable.search(value).draw();
     oTable.search("");
-//    document.getElementById('USER_ID_FK').value = -1;
-}
-
-
-function SearchFamily() {
-    debugger;
-
-    PROOWNAME = $('#test').val();
-    poname = $('#poname').val();
-  
-    document.getElementById('familytbl').style.display = 'block';
-    document.getElementById('datatableActive1').style.display = 'none';
-    window.location.href = "/Search/SurveyListSearch?q=" + poname;
-    //$("#familytbl").show();
-    //$("#datatableActive1").hide();
-  
-
+    //    document.getElementById('USER_ID_FK').value = -1;
 }
 //function SendRemainder(q) {
 //    debugger;
