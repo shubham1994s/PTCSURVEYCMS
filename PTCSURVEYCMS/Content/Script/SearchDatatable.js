@@ -216,11 +216,7 @@ $(document).ready(function () {
     document.getElementById('const').style.display = 'block';
     document.getElementById('consstate').style.display = 'block';
         document.getElementById('adfilbtn').style.display = 'block';
-        var value = "";
-        // alert(value );
-        oTable = $('#datatableActive').DataTable();
-        oTable.search(value).draw();
-        oTable.search("");
+       
     }
     function show4() {
         ActiveEmployee();
@@ -252,11 +248,7 @@ $(document).ready(function () {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
         document.getElementById('byprono').style.display = 'none';
-        var value = "";
-        // alert(value );
-        oTable = $('#datatableActive').DataTable();
-        oTable.search(value).draw();
-        oTable.search("");
+        
     }
 
 function show6() {
@@ -296,6 +288,16 @@ function Search() {
     PROOWNAME = $('#test').val();
     poname = $('#poname').val();
     Name = $('#Name').val();
+    //if (poname != "" && Name != "" )
+    //{
+    //    PrabhagList = "All";
+    //    WardList ="All";
+    //    CSDate ="All";
+    //    CEDate = "All";
+    //    OCNO = "";
+    //    PRONOBYNAME = "";
+    //    PROOWNAME ="";
+    //}
     var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name;
 
     // alert(value );

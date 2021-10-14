@@ -386,7 +386,7 @@ namespace PTCSURVEYCMS.Controllers
                         {
                             customerData = customerData.Where(x => x.PropertyNo == arr[8]).ToList();
                         }
-                        if (arr[9] != null)
+                        if (arr[9] != "null")
                         {
                             string fname, mname, lname;
                             string pname = arr[9];
