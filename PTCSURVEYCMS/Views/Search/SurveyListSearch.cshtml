@@ -19,6 +19,9 @@
 @*<script src="~/Content/theme-assets/assets/js/SearchDatatable.js"></script>*@
 <script src="~/Content/Script/SearchDatatable.js"></script>
 <style>
+    body {
+        background-color: #ece9eda8;
+    }
     a:hover {
         text-decoration: none;
     }
@@ -82,11 +85,17 @@
 
     #byprono {
         display: none;
+        margin-left: 20%;
+        display: none;
     }
 
     #byname {
         display: none;
+        margin-left: 20%;
     }
+    #tapshil {
+        display: none;
+        padding-left: 25%;
 
     #tapshil {
         display: none;
@@ -121,16 +130,56 @@
     }
 
     .sfp {
-        padding-top: 5%;
-        background-color: #fff;
-        box-shadow: 2px 2px 2px 2px;
+        padding-top: 0%;
+        background-color: #abe2b7;
+        margin-bottom: 2%;
     }
 
     .sfa2 {
         margin-top: 5px;
         padding-top: 5px;
         background-color: #fff;
-        box-shadow: 2px 2px 2px 2px;
+        
+    }
+    .container-fluid {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .page-header {
+        border-bottom: 0px solid #eee;
+        margin: 10px -62px 0px;
+    }
+    .cpr {
+        padding-right: 5px;
+    }
+    .cptb {
+        padding-bottom: 1%;
+        padding-top: 1%;
+    }
+    .fbbc {
+        /* background-color: #e5dede;
+        border-radius: 30px;*/
+        border: 1px Solid #000;
+    }
+    .filterinput {
+        padding-left: 1%;
+        background-color: #abe2b7;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .custom-filter {
+        margin: 8px;
+        background-color: #286090;
+        border-color: #0903fb;
+    }
+    .controls {
+        margin-top: 28%;
+    }
+    .MyClass {
+        margin-top: 19%;
+    }
+    .borright {
+        border-right:none;
     }
 </style>
 
@@ -152,7 +201,7 @@
                                         <a href="@Url.Action("SurveyList", "PTC")" type="button" class="btn btn-sm btn-primary">Back</a>
                                     </h4>
                                     @*<img src="~/Content/Images/@ViewBag.Clogo" style="position: absolute;height: 155px;top: -5%;left:42%" />*@
-                                    <span style="border: 1px solid #357ebd; padding: 5px; height: fit-content; margin-top: 10px !important ">Total Proprety Count : @ViewBag.EntryCount</span>
+                                    @*<span style="border: 1px solid #357ebd; padding: 5px; height: fit-content; margin-top: 10px !important ">Total Proprety Count : @ViewBag.EntryCount</span>*@
                                 </div>
 
                                 @*<button type="button" class="btn btn-default active" onclick="location.href='@Url.Action("SurveyForm", "Report")'">Financial</button>*@
@@ -173,7 +222,7 @@
                                 </div>
                                 <div class="card-block">
                                     <div style="display:flex;justify-content:space-between">
-                                        <span style="font-size:2em;font-weight:600">Property List </span>
+                                        <span style="font-size:20px;font-weight:600">Advance Search </span>
                                         <p id="para" style="color: green; margin-left: 49%;">@TempData["Success"]</p>
 
                                     </div>
@@ -182,35 +231,39 @@
                         </div>
                     </div>
 
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row sfp">
+
                             @*<div class="col-lg-4 form-group">
                                     <input type="radio" name="tab" value="igotnone" onclick="None();" />
                                     काहीही नाही / None
 
+        </div>*@
+                            <div class="col-lg-2 form-group cpr cptb fbbc borright">
+                                <input type="radio" name="tab" value="igotone" onclick="show1();" />
                                 </div>*@
                             <div class="col-lg-4 form-group">
                                 <input type="radio" name="tab" id="igotnone" value="igotone" onclick="show1();" />
                                 बांधकाम वर्ष / Const. Date
 
                             </div>
-                            <div class="col-lg-4 form-group">
+                            <div class="col-lg-3 form-group cptb fbbc borright">
 
                                 <input type="radio" name="tab" value="igotsix" onclick="show6();" />
                                 बांधकाम परवानगी क्र. / Const. Perm. No.
                             </div>
-                            <div class="col-lg-4 form-group">
+                            <div class="col-lg-4 form-group cptb fbbc borright">
                                 <input type="radio" name="tab" value="igottwo" onclick="show2();" />
                                 मालमत्तेची सद्यस्तिथी / Current status of the property
                             </div>
-                            <div class="col-lg-4 form-group">
+                            <div class="col-lg-3 form-group cptb fbbc">
 
                                 <input type="radio" name="tab" value="igotsix" onclick="show7();" />
                                 कुटुंबातील सदस्ययांचा तपशील
                             </div>
 
 
-                            <div class="col-lg-4 form-group" style="display:none;">
+                            <div class="col-lg-3 form-group" style="display:none;">
 
                                 <input type="radio" name="tab" value="igotthree" onclick="show3();" />
                                 सर्व फिल्टर / All Filters
@@ -226,14 +279,34 @@
 
                                         <div class="container" style="padding-top:8px">
 
+                            <div id="tapshil">
+                                <div class="row">
+                                    <div class="col-lg-4 form-group cptb fbbc borright">
                                             <div class="row" id="tapshil">
                                                 <div class="col-lg-4 form-group">
 
+                                        <input type="radio" name="tab" value="igotfour" onclick="show4();" />
+                                        मालमत्ता क्र. / By Property No.
+                                    </div>
+                                    <div class="col-lg-4 form-group cptb fbbc">
                                                     <input type="radio" name="tab" value="igotfour" onclick="show4();" />
                                                     मालमत्ता क्र. / By Property No.
                                                 </div>
                                                 <div class="col-lg-4 form-group">
 
+                                        <input type="radio" name="tab" value="igotfive" onclick="show5();" />
+                                        नाव / By Name.
+                                    </div>
+                                </div>
+                            </div>
+                            <form id="Searchform">
+                                <div class="row filterinput">
+                                    <div id="common">
+                                        <div class="col-lg-2 form-group">
+                                            <label>प्रभाग क्र. /</label>
+                                            <label>Select Prabhag No.</label>
+                                            <select id="PrabhagList" class="form-control form-control form-control-sm">
+                                            </select>
                                                     <input type="radio" name="tab" value="igotfive" onclick="show5();" />
                                                     नाव / By Name.
                                                 </div>
@@ -247,6 +320,21 @@
                                                             <select id="PrabhagList" class="form-control form-control form-control-sm">
                                                             </select>
 
+                                        </div>
+                                        <div class="col-lg-2 form-group">
+                                            <label>वार्ड नाव व क्र. /</label>
+                                            <label>Select Ward No.</label>
+                                            <select id="WardList" class="form-control form-control form-control-sm">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="const">
+                                        <div class="col-lg-2 form-group">
+                                            <label>बांधकाम चालू केलेले वर्ष / </label>
+                                            <label>Cons.Start Date.</label>
+                                            <select id="CSDate" class="form-control form-control form-control-sm">
+                                            </select>
+                                        </div>
                                                         </div>
                                                         <div class="col-lg-3 form-group">
                                                             <label>वार्ड नाव व क्र. /</label>
@@ -263,6 +351,55 @@
                                                             </select>
                                                         </div>
 
+                                        <div class="col-lg-2 form-group">
+                                            <label> बांधकाम पूर्णत्वाचे वर्ष /</label>
+                                            <label>Cons.End Date.</label>
+                                            <select id="CEDate" class="form-control form-control form-control-sm">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="consstate" class="col-lg-3 form-group">
+                                        <label> मालमत्तेची सद्यस्तिथी /</label>
+                                        <label>Current status of the property</label>
+                                        <select id="OCNO" class="form-control form-control form-control-sm">
+                                            <option value="">मालमत्तेची सद्यस्तिथी</option>
+                                            <option value="ALL">Select All.</option>
+                                            <option value="Safe">भिंती (सुस्थितीत)</option>
+                                            <option value="Danger">भिंती (धोकदायक)</option>
+                                            <option value="Safe2">छप्पर (सुस्थितीत)</option>
+                                            <option value="Danger2">छप्पर (धोकदायक)</option>
+                                            <option value="Safe3">काँलम (सुस्थितीत)</option>
+                                            <option value="Danger3">काँलम (धोकदायक)</option>
+                                        </select>
+                                    </div>
+                                    <div id="ConsPerNo">
+                                        <div class="col-lg-2 form-group">
+                                            <label>बांधकाम परवानगी क्र. /</label>
+                                            <label>Const. Perm. No.</label>
+                                            <select id="CPNO" class="form-control form-control form-control-sm">
+                                                <option value="">Select Const. Perm. No.</option>
+                                                <option value="ALL">Select All.</option>
+                                                <option value="Y">YES</option>
+                                                <option value="N">NO</option>
+                                                <option value="NA">Not Select</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2 form-group">
+                                            <label>भोगवटा दाखला क्र. /</label>
+                                            <label> O. C. No.</label>
+                                            <select id="OCNO" class="form-control form-control form-control-sm">
+                                                <option value="">O. C. No</option>
+                                                <option value="ALL">Select All.</option>
+                                                <option value="Y">YES</option>
+                                                <option value="N">NO</option>
+                                                <option value="NA">Not Select</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="byprono">
+                                        <div class="col-lg-3 form-group cptb">
+                                            <label>मालमत्ता क्र. / </label>
+                                            <label> Property No.</label>
                                                         <div class="col-lg-3 form-group">
                                                             <label> बांधकाम पूर्णत्वाचे वर्ष /</label>
                                                             <label>Cons.End Date.</label>
@@ -312,6 +449,30 @@
                                                             <label>मालमत्ता क्र. / </label>
                                                             <label> Property No.</label>
 
+                                            <input type="text" id="poname" class="form-control form-control form-control-sm" placeholder="Enter Property No" />
+                                        </div>
+                                        <div class="col-lg-3 form-group cptb">
+                                            <label>नाव/</label>
+                                            <label> Name</label>
+                                            <select id="Name" class="form-control form-control form-control-sm">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="byname">
+                                        <div class="col-lg-3 form-group cptb">
+                                            <label>नाव/</label>
+                                            <label> Name</label>
+                                            <input type="text" id="test" class="form-control form-control form-control-sm" placeholder="Enter Name" onInput="edValueKeyPress()" />
+                                            <span id="lblValue"> </span>
+                                        </div>
+                                        <div class="col-lg-3 form-group cptb">
+                                            <label>मालमत्ता क्र. / </label>
+                                            <label> Property No.</label>
+                                            <select id="PRONOBYNAME" class="form-control form-control form-control-sm">
+                                                <option value="">Select Property No.</option>
+                                                <option value="ALL">Select All.</option>
+                                            </select>
+                                        </div>
                                                             <input type="text" id="poname" class="form-control form-control form-control-sm" placeholder="Enter Property No" />
                                                         </div>
                                                         <div class="col-lg-3 form-group">
@@ -337,9 +498,36 @@
                                                             </select>
                                                         </div>
 
+                                    </div>
+                                    <div id="adfilbtn">
+                                        <div class="col-sm-2  offset-md-10" style="text-align: right; float: left;">
+                                            <div id="cusmargin" class="controls">
+                                                <input  type="reset" data-background-color="filter-button-box-color"  class="btn btn-sm btn-success filter-button-style custom-filter" type="button" value="Filter Records" id="filter" onclick="Search()" />
+                                            </div>
+                                        </div>
                                                     </div>
                                                 </div>
 
+                                    </div>
+                                </div>
+
+
+                               
+                            </form>
+                        </div>
+
+                            <div class="row sfa2">
+                                <div class="col-sm-12">
+                                    <div class="card">
+
+                                        <div class="card-block">
+                                           
+
+                                            <div class="container" style="padding-top:8px">
+
+                                               
+                                              
+                                            </div>
 
                                                 <div id="adfilbtn" class="row">
                                                     <div class="col-sm-2  offset-md-10" style="text-align: right; float: right;">

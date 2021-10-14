@@ -174,6 +174,8 @@ $(document).ready(function () {
 
     function show1() {
         ActiveEmployee();
+        var element = document.getElementById("cusmargin");
+        element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
     document.getElementById('const').style.display = 'block';
     document.getElementById('consstate').style.display = 'none';
@@ -189,6 +191,8 @@ $(document).ready(function () {
 
     function show2() {
         ActiveEmployee();
+        var element = document.getElementById("cusmargin");
+        element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
     document.getElementById('consstate').style.display = 'block';
     document.getElementById('const').style.display = 'none';
@@ -213,6 +217,9 @@ $(document).ready(function () {
        
     }
     function show4() {
+        ActiveEmployee();
+        var element = document.getElementById("cusmargin");
+        element.classList.add("MyClass");
        // ActiveEmployee();
     document.getElementById('byprono').style.display = 'block';
     document.getElementById('common').style.display = 'none';
@@ -224,8 +231,17 @@ $(document).ready(function () {
         //$("#familytbl").show();
         //$("#datatableActive1").hide();
         
+  
+        var value = "";
+        // alert(value );
+        oTable = $('#datatableActive').DataTable();
+        oTable.search(value).draw();
+        oTable.search("");
     }
     function show5() {
+        ActiveEmployee();
+        var element = document.getElementById("cusmargin");
+        element.classList.add("MyClass");
      //  ActiveEmployee();
     document.getElementById('byname').style.display = 'block';
     document.getElementById('common').style.display = 'none';
@@ -239,6 +255,8 @@ $(document).ready(function () {
     }
 
 function show6() {
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
     document.getElementById('ConsPerNo').style.display = 'block';
     document.getElementById('adfilbtn').style.display = 'block';
@@ -263,6 +281,8 @@ function show7() {
     //$("#familytbl").show();
     //$("#datatableActive1").hide();
 }
+
+
 function Search() { 
     debugger;
     Filter = "f";
