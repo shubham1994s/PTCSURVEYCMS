@@ -19,9 +19,15 @@ namespace PTCSURVEYCMS.Controllers
             return View();
         }
 
-        public ActionResult SurveyListSearch(int q = -1, int clientId = 0)
+        [HttpGet]
+        public ActionResult SurveyListSearch(string q = "-1" ,int clientId=0)
         {
             Repository = new Repository();
+
+            if(q!= "-1")
+            {
+                ViewBag.vis = "f";
+            }
             if (clientId != 0)
             {
                 SessionHandler.Current.AppId = clientId;
@@ -48,7 +54,7 @@ namespace PTCSURVEYCMS.Controllers
 
 
                 var viewModel = new PropertyMasterVM();
-                viewModel = Repository.getPropertyDetailsByID(q, Appid);
+                viewModel = Repository.getPropertyDetailsByFamily(q, Appid);
                 using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(Appid))
                 {
                     //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  

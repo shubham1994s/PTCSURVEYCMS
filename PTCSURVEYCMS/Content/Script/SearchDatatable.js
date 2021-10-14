@@ -2,6 +2,8 @@
 
 $(document).ready(function () {
     debugger;
+    
+   // $("#familytbl").hide();
     var PrabhagListNo = $('#PrabhagList').val();
     $.ajax({
         type: "post",
@@ -91,7 +93,7 @@ $(document).ready(function () {
     //    document.getElementById('para').textContent = ''
     //}
 
-    ActiveEmployee();
+   ActiveEmployee();
 
     $("#SearchText").change(function () {
         debugger;
@@ -182,11 +184,8 @@ $(document).ready(function () {
     document.getElementById('byname').style.display = 'none';
         document.getElementById('byprono').style.display = 'none';
         document.getElementById('tapshil').style.display = 'none';
-        var value = "";
-        // alert(value );
-        oTable = $('#datatableActive').DataTable();
-        oTable.search(value).draw();
-        oTable.search("");
+        $("#familytbl").hide();
+        $("#datatableActive1").show();
       
     }
 
@@ -202,11 +201,8 @@ $(document).ready(function () {
     document.getElementById('byname').style.display = 'none';
         document.getElementById('byprono').style.display = 'none';
         document.getElementById('tapshil').style.display = 'none';
-        var value = "";
-        // alert(value );
-        oTable = $('#datatableActive').DataTable();
-        oTable.search(value).draw();
-        oTable.search("");
+        $("#familytbl").hide();
+        $("#datatableActive1").show();
     }
 
     function show3() {
@@ -216,12 +212,15 @@ $(document).ready(function () {
     document.getElementById('const').style.display = 'block';
     document.getElementById('consstate').style.display = 'block';
         document.getElementById('adfilbtn').style.display = 'block';
+        $("#familytbl").hide();
+        $("#datatableActive1").show();
        
     }
     function show4() {
         ActiveEmployee();
         var element = document.getElementById("cusmargin");
         element.classList.add("MyClass");
+       // ActiveEmployee();
     document.getElementById('byprono').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
@@ -229,6 +228,8 @@ $(document).ready(function () {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
         document.getElementById('byname').style.display = 'none';
+        //$("#familytbl").show();
+        //$("#datatableActive1").hide();
         
   
         var value = "";
@@ -241,6 +242,7 @@ $(document).ready(function () {
         ActiveEmployee();
         var element = document.getElementById("cusmargin");
         element.classList.add("MyClass");
+     //  ActiveEmployee();
     document.getElementById('byname').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
@@ -248,6 +250,7 @@ $(document).ready(function () {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
         document.getElementById('byprono').style.display = 'none';
+     
         
     }
 
@@ -262,6 +265,8 @@ function show6() {
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
+    $("#familytbl").hide();
+    $("#datatableActive1").show();
 }
 
 function show7() {
@@ -273,6 +278,8 @@ function show7() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('byname').style.display = 'none';
+    //$("#familytbl").show();
+    //$("#datatableActive1").hide();
 }
 
 
@@ -288,6 +295,9 @@ function Search() {
     PROOWNAME = $('#test').val();
     poname = $('#poname').val();
     Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+
     //if (poname != "" && Name != "" )
     //{
     //    PrabhagList = "All";
@@ -298,13 +308,29 @@ function Search() {
     //    PRONOBYNAME = "";
     //    PROOWNAME ="";
     //}
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name;
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
 
     // alert(value );
     oTable = $('#datatableActive').DataTable();
     oTable.search(value).draw();
     oTable.search("");
 //    document.getElementById('USER_ID_FK').value = -1;
+}
+
+
+function SearchFamily() {
+    debugger;
+
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+  
+    document.getElementById('familytbl').style.display = 'block';
+    document.getElementById('datatableActive1').style.display = 'none';
+    window.location.href = "/Search/SurveyListSearch?q=" + poname;
+    //$("#familytbl").show();
+    //$("#datatableActive1").hide();
+  
+
 }
 //function SendRemainder(q) {
 //    debugger;
