@@ -168,7 +168,8 @@ function None() {
     document.getElementById('adfilbtn').style.display = 'none';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
-
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
 }
 
 function show1() {
@@ -183,6 +184,10 @@ function show1() {
     document.getElementById('byname').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filter').style.display = 'block';
+    document.getElementById('secondtable').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'block';
     var value = "";
     // alert(value );
     oTable = $('#datatableActive').DataTable();
@@ -203,6 +208,10 @@ function show2() {
     document.getElementById('byname').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filter').style.display = 'block';
+    document.getElementById('secondtable').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'block';
     var value = "";
     // alert(value );
     oTable = $('#datatableActive').DataTable();
@@ -234,7 +243,9 @@ function show4() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
-
+    document.getElementById('filterbyname').style.display = 'block';
+    document.getElementById('filter').style.display = 'none';
+    
 
     var value = "";
     // alert(value );
@@ -253,6 +264,8 @@ function show5() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byprono').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'block';
+    document.getElementById('filter').style.display = 'none';
     var value = "";
     // alert(value );
     oTable = $('#datatableActive').DataTable();
@@ -271,6 +284,10 @@ function show6() {
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filter').style.display = 'block';
+    document.getElementById('secondtable').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'block';
 }
 
 function show7() {
@@ -282,9 +299,15 @@ function show7() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('byname').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filter').style.display = 'block';
 }
 
+function SearchByName() {
+    document.getElementById('secondtable').style.display = 'block';
+    document.getElementById('firsttable').style.display = 'none';
 
+}
 function Search() {
     debugger;
     Filter = "f";
