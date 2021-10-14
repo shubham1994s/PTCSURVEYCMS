@@ -186,9 +186,9 @@
 
 @using (Html.BeginForm("SurveyList", "PTC", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "ValidateUser();", role = "form" }))
 {
-    <div class="pcoded-inner-content">
-        <div class="main-body">
-            <div class="page-wrapper">
+   
+      
+         
 
                 <div class="page-header">
                     <div class="row align-items-end">
@@ -234,14 +234,10 @@
                     <div class="container-fluid">
                         <div class="row sfp">
 
-                            @*<div class="col-lg-4 form-group">
-                                    <input type="radio" name="tab" value="igotnone" onclick="None();" />
-                                    काहीही नाही / None
-
-        </div>*@
+                       
                             <div class="col-lg-2 form-group cpr cptb fbbc borright">
                                 <input type="radio" name="tab" value="igotone" onclick="show1();" />
-                                </div>*@
+                                </div>
                             <div class="col-lg-4 form-group">
                                 <input type="radio" name="tab" id="igotnone" value="igotone" onclick="show1();" />
                                 बांधकाम वर्ष / Const. Date
@@ -513,7 +509,7 @@
 
 
                                
-                            </form>
+                           
                         </div>
 
                             <div class="row sfa2">
@@ -539,7 +535,7 @@
                                                     </div>
 
                                                 </div>
-                                            </form>
+                                        
                                         </div>
 
                                         @*<div  class="container" style="padding-top:8px">
