@@ -237,11 +237,21 @@ function closeWin() {
     myWindow.close();
 }
 
-
+function capitalize_Words(str) {
+    debugger;
+    return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+}
+//console.log(capitalize_Words('js string exercises'));
 
 debugger;
-const capitalStr = phrase.charAt(0).toUpperCase() + phrase.slice(1);
-//
+//const uppercaseWords = str.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
+//const uppercaseWords = ([first, ...rest], locale = navigator.language) => first.toLocaleUpperCase(locale) + rest.join('')
+//const uppercaseWords = str.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
+
+//str = str.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
+
+//document.getElementById('result').textContent = str;
+//var strn = str => str.replace(/\./g, ' ');
 function ActiveEmployee() {
 
     $('#datatableActive').DataTable({
@@ -281,17 +291,25 @@ function ActiveEmployee() {
 
                     if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
 
-                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
-                        + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                        + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
 
                     }
 
-                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null) {
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
 
-                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
                         + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
 
                     }
+
+                    if (full["PropOwnerFirstName"] != null ) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                          
+
+                    }
+
                   
                     else {
                         //
