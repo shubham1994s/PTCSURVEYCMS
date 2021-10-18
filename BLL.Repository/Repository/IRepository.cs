@@ -31,5 +31,7 @@ namespace BLL.Repository.Repository
         PropertyMasterVM GetPropertyNoList(int Appid, string pname);
 
         PropertyMasterVM GetOwnerNameList(int Appid, string pname);
+
+        PropertyMasterVM GetOwnerNameFocus(int Appid,string pname);
     }
 }

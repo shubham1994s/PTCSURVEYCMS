@@ -24,10 +24,7 @@ namespace PTCSURVEYCMS.Controllers
         {
             Repository = new Repository();
 
-            if(q!= "-1")
-            {
-                ViewBag.vis = "f";
-            }
+            
             if (clientId != 0)
             {
                 SessionHandler.Current.AppId = clientId;
@@ -55,6 +52,10 @@ namespace PTCSURVEYCMS.Controllers
 
                 var viewModel = new PropertyMasterVM();
                 viewModel = Repository.getPropertyDetailsByFamily(q,n, Appid);
+                if (q != "-1")
+                {
+                    return PartialView("_SearchFamily", viewModel);
+                }
                 using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(Appid))
                 {
                     //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  

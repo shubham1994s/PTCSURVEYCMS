@@ -1392,429 +1392,1295 @@ namespace BLL.Repository.Repository
             PropertyMasterVM Master = new PropertyMasterVM();
             using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(AppId))
             {
-
-                var _Property = db.PropertyMasters.Where(c => c.PropertyNo == q && c.PropOwnerFirstName==n).FirstOrDefault();
-                if (_Property != null)
+                string fname, mname, lname;
+                string pname = n;
+                string[] arr1 = pname.Split(' ');
+             
+                if (arr1.Length > 0)
                 {
-                    Master.PropertyId = _Property.PropertyId;
-                    Master.PrabhagNo = _Property.PrabhagNo;
-                    Master.WardName_No = _Property.WardNameNo;
-                    Master.ElectionWard = _Property.ElectionWard;
-                    Master.NewPropertyNo = _Property.NewPropertyNo;
-                    Master.PropertyNo = _Property.PropertyNo;
-                    Master.OldHouseNo1 = _Property.HouseNo;
-                    Master.OldHouseNo2 = _Property.oldHouseNo2;
-                    Master.NoOfTrees = _Property.NoOfTrees;
-                    Master.Personalwell = _Property.Personalwell;
-                    Master.HeritageTree = _Property.HeritageTree;
+                    fname = arr1[0];
 
-                    Master.WaterConnection = _Property.WaterConnection;
-                    Master.NoWaterConnection = _Property.NoWaterConnection;
-                    Master.STP = _Property.STP;
-                    Master.FST = _Property.FST;
-                    Master.STS = _Property.STS;
-                    Master.Other = _Property.Other;
-                    Master.SGSK = _Property.SGSK;
-
-                    Master.NOSGSK = _Property.NOSGSK;
-                    Master.OtherGutter = _Property.OtherGutter;
-                    Master.NaturalMethod = _Property.NaturalMethod;
-                    Master.ArtifitialMethod = _Property.ArtifitialMethod;
-                    Master.OtherMethod = _Property.OtherMethod;
-                    Master.NoProject = _Property.NoProject;
-                    Master.Safe = _Property.Safe;
-                    Master.Danger = _Property.Danger;
-                    Master.Safe2 = _Property.Safe2;
-                    Master.Danger2 = _Property.Danger2;
-                    Master.Safe3 = _Property.Safe3;
-
-                    Master.NOSGSK = _Property.NOSGSK;
-                    Master.OtherGutter = _Property.OtherGutter;
-                    Master.NaturalMethod = _Property.NaturalMethod;
-                    Master.ArtifitialMethod = _Property.ArtifitialMethod;
-                    Master.OtherMethod = _Property.OtherMethod;
-                    Master.NoProject = _Property.NoProject;
-                    Master.Safe = _Property.Safe;
-                    Master.Danger = _Property.Danger;
-                    Master.Safe2 = _Property.Safe2;
-                    Master.Danger2 = _Property.Danger2;
-                    Master.Safe3 = _Property.Safe3;
-                    Master.Danger3 = _Property.Danger3;
-
-                    Master.TotalPropertyExpense = _Property.TotalPropertyExpense;
-                    Master.CurrentPropertyTax = _Property.CurrentPropertyTax;
-                    Master.CurrentProperyPrice = _Property.CurrentProperyPrice;
-                    Master.OpenAroundLandtaxprice = _Property.OpenAroundLandtaxprice;
-                    Master.ProperyTaxPrice = _Property.ProperyTaxPrice;
-                    Master.TotalTaxPrice = _Property.TotalTaxPrice;
-                    Master.OpenLandtaxprice = _Property.OpenLandtaxprice;
-                    Master.ProperyTaxMarketPrice = _Property.ProperyTaxMarketPrice;
-                    Master.Name1 = _Property.Name1;
-                    Master.Name2 = _Property.Name2;
-                    Master.Name3 = _Property.Name3;
-                    Master.Name4 = _Property.Name4;
-
-                    Master.Name5 = _Property.Name5;
-                    Master.Name6 = _Property.Name6;
-                    Master.Name7 = _Property.Name7;
-                    Master.Name8 = _Property.Name8;
-
-                    Master.Name9 = _Property.Name9;
-                    Master.Name10 = _Property.Name10;
-                    Master.Name11 = _Property.Name11;
-                    Master.Name12 = _Property.Name12;
-
-                    Master.Age1 = _Property.Age1;
-                    Master.Age2 = _Property.Age2;
-                    Master.Age3 = _Property.Age3;
-                    Master.Age4 = _Property.Age4;
-
-                    Master.Age5 = _Property.Age5;
-                    Master.Age6 = _Property.Age6;
-                    Master.Age7 = _Property.Age7;
-                    Master.Age8 = _Property.Age8;
-
-                    Master.Age9 = _Property.Age9;
-                    Master.Age10 = _Property.Age10;
-                    Master.Age11 = _Property.Age11;
-                    Master.Age12 = _Property.Age12;
-
-                    Master.link1 = _Property.link1;
-                    Master.link2 = _Property.link2;
-                    Master.link3 = _Property.link3;
-                    Master.link4 = _Property.link4;
-                    Master.link5 = _Property.link5;
-                    Master.link6 = _Property.link6;
-                    Master.link7 = _Property.link7;
-                    Master.link8 = _Property.link8;
-                    Master.link9 = _Property.link9;
-                    Master.link10 = _Property.link10;
-                    Master.link11 = _Property.link11;
-                    Master.link12 = _Property.link12;
-
-                    Master.ContactNo1 = _Property.ContactNo1;
-                    Master.ContactNo2 = _Property.ContactNo2;
-                    Master.ContactNo3 = _Property.ContactNo3;
-                    Master.ContactNo4 = _Property.ContactNo4;
-                    Master.ContactNo5 = _Property.ContactNo5;
-                    Master.ContactNo6 = _Property.ContactNo6;
-                    Master.ContactNo7 = _Property.ContactNo7;
-                    Master.ContactNo8 = _Property.ContactNo8;
-                    Master.ContactNo9 = _Property.ContactNo9;
-                    Master.ContactNo10 = _Property.ContactNo10;
-                    Master.ContactNo11 = _Property.ContactNo11;
-                    Master.ContactNo12 = _Property.ContactNo12;
-
-                    Master.VoterIdentityNo1 = _Property.VoterIdentityNo1;
-                    Master.VoterIdentityNo2 = _Property.VoterIdentityNo2;
-                    Master.VoterIdentityNo3 = _Property.VoterIdentityNo3;
-                    Master.VoterIdentityNo4 = _Property.VoterIdentityNo4;
-                    Master.VoterIdentityNo5 = _Property.VoterIdentityNo5;
-                    Master.VoterIdentityNo6 = _Property.VoterIdentityNo6;
-                    Master.VoterIdentityNo7 = _Property.VoterIdentityNo7;
-                    Master.VoterIdentityNo8 = _Property.VoterIdentityNo8;
-                    Master.VoterIdentityNo9 = _Property.VoterIdentityNo9;
-                    Master.VoterIdentityNo10 = _Property.VoterIdentityNo10;
-                    Master.VoterIdentityNo11 = _Property.VoterIdentityNo11;
-                    Master.VoterIdentityNo12 = _Property.VoterIdentityNo12;
-                    Master.SurveyNo = _Property.SurveyNo;
-                    Master.GatNo = _Property.GatNo;
-                    Master.CitySurveyNo = _Property.CitySurveyNo;
-                    Master.AnnualRateableValue = _Property.AnnualRateableValue;
-                    Master.TotalPlotArea = _Property.TotalPlotArea;
-                    Master.TotalBuildupArea = _Property.TotalBuildupArea;
-                    Master.MarginSpace = _Property.MarginSpace;
-                    Master.BuildingName = _Property.BuildingName;
-                    Master.PlotNo = _Property.PlotNo;
-                    Master.FlatNo = _Property.FlatNo;
-                    Master.NoofFloors = _Property.NoofFloors;
-                    Master.NoofFlats = _Property.NoofFlats;
-                    Master.NoofShops = _Property.NoofShops;
-                    Master.PropOwnerFirstName = _Property.PropOwnerFirstName;
-                    Master.PropOwnerMiddleName = _Property.PropOwnerMiddleName;
-                    Master.PropOwnerLastName = _Property.PropOwnerLastName;
-                    Master.PropOwnerFirstName2 = _Property.PropOwnerFirstName2;
-                    Master.PropOwnerMiddleName2 = _Property.PropOwnerMiddleName2;
-                    Master.PropOwnerLastName2 = _Property.PropOwnerLastName2;
-
-                    Master.PropOwnerFirstName3 = _Property.PropOwnerFirstName3;
-                    Master.PropOwnerMiddleName3 = _Property.PropOwnerMiddleName3;
-                    Master.PropOwnerLastName3 = _Property.PropOwnerLastName3;
-
-                    Master.PropOwnerFirstName4 = _Property.PropOwnerFirstName4;
-                    Master.PropOwnerMiddleName4 = _Property.PropOwnerMiddleName4;
-                    Master.PropOwnerLastName4 = _Property.PropOwnerLastName4;
-                    Master.PropOwnerTelephoneNo = _Property.PropOwnerTelephoneNo;
-                    Master.PropOwnerElectionCardNo = _Property.PropOwnerMobileNo;
-                    Master.PropOwnerEmailId = _Property.PropOwnerEmailId;
-                    Master.PropOwnerAdhaarNo = _Property.PropOwnerAdhaarNo;
-                    Master.OccupierFirstName = _Property.OccupierFirstName;
-                    Master.OccupierMiddleName = _Property.OccupierMiddleName;
-                    Master.OccupierLastName = _Property.OccupierLastName;
-                    Master.OccupierMobileNo = _Property.OccupierMobileNo;
-                    Master.OccupierAdhaarNo = _Property.OccupierAdhaarNo;
-                    Master.TenantName = _Property.TenantName;
-                    Master.Rent = _Property.Rent;
-                    Master.TenantMobileNo = _Property.TenantMobileNo;
-                    Master.TenantAdhaarNo = _Property.TenantAdhaarNo;
-                    Master.Address = _Property.Address;
-                    Master.Longitude = _Property.Longitude;
-                    Master.Latitude = _Property.Latitude;
-                    Master.ConstStartYear = _Property.ConstStartYear;
-                    Master.CompletionYear = _Property.CompletionYear;
-                    Master.Age = _Property.Age;
-                    Master.Usage = _Property.Usage;
-                    Master.TypeofBldg = _Property.TypeofBldg;
-                    Master.ConstPermNo = _Property.ConstPermNo;
-                    Master.PermUseNo = _Property.PermUseNo;
-                    Master.Rainwaterharvest = _Property.Rainwaterharvest;
-                    Master.NonRainwaterharvest = _Property.NonRainwaterharvest;
-                    Master.SolarWaterheater = _Property.SolarWaterheater;
-                    Master.VermicultureProject = _Property.VermicultureProject;
-                    Master.SWHRemark = _Property.SWHRemark;
-                    Master.WaterConnectionResidential = _Property.WaterConnectionResidential;
-                    Master.WaterConnectionIndustrial = _Property.WaterConnectionIndustrial;
-                    Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
-                    Master.Borewell = _Property.Borewell;
-                    Master.NonBorewellr = _Property.NonBorewellr;
-                    Master.NoofToilets = _Property.NoofToilets;
-                    Master.LocationofToiletResidential = _Property.LocationofToiletResidential;
-                    Master.LocationofToiletSpecial = _Property.LocationofToiletSpecial;
-                    Master.LocationofToiletIndustrial = _Property.LocationofToiletIndustrial;
-                    Master.ParkingFacilityIndustrial = _Property.ParkingFacilityIndustrial;
-                    Master.ParkingFacilityResidential = _Property.ParkingFacilityResidential;
-                    Master.ParkingFacilitySpecial = _Property.ParkingFacilitySpecial;
-                    Master.UnderGroundGutter = _Property.UnderGroundGutter;
-                    Master.OpenGutter = _Property.OpenGutter;
-                    Master.DoorLockIndustrial = _Property.DoorLockIndustrial;
-                    Master.DoorLockResidential = _Property.DoorLockResidential;
-                    Master.DoorLockSpecial = _Property.DoorLockSpecial;
-                    Master.PermanentDoorLock = _Property.PermanentDoorLock;
-                    Master.OuterMeasurement = _Property.OuterMeasurement;
-                    Master.Lift = _Property.Lift;
-                    Master.Remarks = _Property.Remarks;
-                    Master.FloorNo1 = _Property.FloorNo1;
-                    Master.OccupancyStatus1 = _Property.OccupancyStatus1;
-                    Master.ConstType1 = _Property.ConstType1;
-                    Master.DateofConstruction1 = _Property.DateofConstruction1;
-                    Master.DateofConstruction2 = _Property.DateofConstruction2;
-                    Master.DateofConstruction3 = _Property.DateofConstruction3;
-                    Master.DateofConstruction4 = _Property.DateofConstruction4;
-                    Master.DateofConstruction5 = _Property.DateofConstruction5;
-
-                    //if(_Property.DateofConstruction1 !=null)
-                    //{ 
-                    //Master.DateofConstruction1 = Convert.ToDateTime(_Property.DateofConstruction1).ToString("dd-MM-yyyy");
-                    //}
-
-                    //else
-                    //{
-                    //    Master.DateofConstruction1 = "--Select Date--";
-                    //}
-
-                    //if (_Property.DateofConstruction2 != null)
-                    //{
-                    //    Master.DateofConstruction2 = Convert.ToDateTime(_Property.DateofConstruction2).ToString("dd-MM-yyyy");
-                    //}
-                    //else
-                    //{
-                    //    Master.DateofConstruction2 = "--Select Date--";
-                    //}
-
-
-                    //if (_Property.DateofConstruction3 != null)
-                    //{
-                    //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
-                    //}
-                    //else
-                    //{
-                    //    Master.DateofConstruction3 = "--Select Date--";
-                    //}
-
-
-                    //if (_Property.DateofConstruction3 != null)
-                    //{
-                    //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
-                    //}
-                    //else
-                    //{
-                    //    Master.DateofConstruction3 = "--Select Date--";
-                    //}
-
-
-                    //if (_Property.DateofConstruction4 != null)
-                    //{
-                    //    Master.DateofConstruction4 = Convert.ToDateTime(_Property.DateofConstruction4).ToString("dd-MM-yyyy");
-                    //}
-                    //else
-                    //{
-                    //    Master.DateofConstruction4 = "--Select Date--";
-                    //}
-
-
-                    //if (_Property.DateofConstruction5 != null)
-                    //{
-                    //    Master.DateofConstruction5 = Convert.ToDateTime(_Property.DateofConstruction5).ToString("dd-MM-yyyy");
-                    //}
-                    //else
-                    //{
-                    //    Master.DateofConstruction5 = "--Select Date--";
-                    //}
-                    Master.UsageType1 = _Property.UsageType1;
-                    Master.UsageTypeClass1 = _Property.UsageTypeClass1;
-                    Master.Legal1 = _Property.Legal1;
-                    Master.CarpetArea1 = _Property.CarpetArea1;
-                    Master.BuildupArea1 = _Property.BuildupArea1;
-                    Master.FloorNo2 = _Property.FloorNo2;
-                    Master.OccupancyStatus2 = _Property.OccupancyStatus2;
-                    Master.ConstType2 = _Property.ConstType2;
-
-                    Master.UsageType2 = _Property.UsageType2;
-                    Master.UsageTypeClass2 = _Property.UsageTypeClass2;
-                    Master.Legal2 = _Property.Legal2;
-                    Master.CarpetArea2 = _Property.CarpetArea2;
-                    Master.BuildupArea2 = _Property.BuildupArea2;
-                    Master.FloorNo3 = _Property.FloorNo3;
-                    Master.OccupancyStatus3 = _Property.OccupancyStatus3;
-                    Master.ConstType3 = _Property.ConstType3;
-
-                    Master.UsageType3 = _Property.UsageType3;
-                    Master.UsageTypeClass3 = _Property.UsageTypeClass3;
-                    Master.Legal3 = _Property.Legal3;
-                    Master.CarpetArea3 = _Property.CarpetArea3;
-                    Master.BuildupArea3 = _Property.BuildupArea3;
-                    Master.FloorNo4 = _Property.FloorNo4;
-                    Master.OccupancyStatus4 = _Property.OccupancyStatus4;
-                    Master.ConstType4 = _Property.ConstType4;
-
-                    Master.UsageType4 = _Property.UsageType4;
-                    Master.UsageTypeClass4 = _Property.UsageTypeClass4;
-                    Master.Legal4 = _Property.Legal4;
-                    Master.CarpetArea4 = _Property.CarpetArea4;
-                    Master.BuildupArea4 = _Property.BuildupArea4;
-                    Master.FloorNo5 = _Property.FloorNo5;
-                    Master.OccupancyStatus5 = _Property.OccupancyStatus5;
-                    Master.ConstType5 = _Property.ConstType5;
-
-                    Master.UsageType5 = _Property.UsageType5;
-                    Master.UsageTypeClass5 = _Property.UsageTypeClass5;
-                    Master.Legal5 = _Property.Legal5;
-                    Master.CarpetArea5 = _Property.CarpetArea5;
-                    Master.BuildupArea5 = _Property.BuildupArea5;
-                    Master.totaltax = _Property.totaltax;
-                    Master.totalBuildupArea1 = _Property.totalBuildupArea1;
-                    Master.totalCarpetArea = _Property.totalCarpetArea;
-                    Master.totaltax = _Property.totaltax;
-                    Master.OldUsageType = _Property.OldUsageType;
-                    Master.OldConstructionType = _Property.OldConstructionType;
-                    Master.OldCarpetAreaResident = _Property.OldCarpetAreaResident;
-                    Master.OldCarpetAreaNonResident = _Property.OldCarpetAreaNonResident;
-                    Master.NewUsageType = _Property.NewUsageType;
-                    Master.NewConstructionType = _Property.NewConstructionType;
-                    Master.NewCarpetAreaResident = _Property.NewCarpetAreaResident;
-                    Master.NewCarpetAreaNonResident = _Property.NewCarpetAreaNonResident;
-                    Master.ExtendUsage_Type = _Property.ExtendUsageType;
-                    Master.ExtendConstructionType = _Property.ExtendConstructionType;
-                    Master.ExtendCarpetAreaResident = _Property.ExtendCarpetAreaResident;
-                    Master.ExtendCarpetAreaNonResident = _Property.ExtendCarpetAreaNonResident;
-                    Master.PropertyType = _Property.PropertyType;
-                    Master.SurveyorName = _Property.SurveyorName;
-                    Master.SurveyorSignature = _Property.SurveyorSignature;
-
-                    if (_Property.SurveyorDate != null)
+                    var _Property = db.PropertyMasters.Where(c => c.PropertyNo == q && (string.IsNullOrEmpty(c.PropOwnerFirstName) ? " " : c.PropOwnerFirstName.ToLower()) == fname.ToLower()).FirstOrDefault();
+                    if (_Property != null)
                     {
-                        Master.SurveyorDate = Convert.ToDateTime(_Property.SurveyorDate).ToString("dd-MM-yyyy");
+                        Master.PropertyId = _Property.PropertyId;
+                        Master.PrabhagNo = _Property.PrabhagNo;
+                        Master.WardName_No = _Property.WardNameNo;
+                        Master.ElectionWard = _Property.ElectionWard;
+                        Master.NewPropertyNo = _Property.NewPropertyNo;
+                        Master.PropertyNo = _Property.PropertyNo;
+                        Master.OldHouseNo1 = _Property.HouseNo;
+                        Master.OldHouseNo2 = _Property.oldHouseNo2;
+                        Master.NoOfTrees = _Property.NoOfTrees;
+                        Master.Personalwell = _Property.Personalwell;
+                        Master.HeritageTree = _Property.HeritageTree;
+
+                        Master.WaterConnection = _Property.WaterConnection;
+                        Master.NoWaterConnection = _Property.NoWaterConnection;
+                        Master.STP = _Property.STP;
+                        Master.FST = _Property.FST;
+                        Master.STS = _Property.STS;
+                        Master.Other = _Property.Other;
+                        Master.SGSK = _Property.SGSK;
+
+                        Master.NOSGSK = _Property.NOSGSK;
+                        Master.OtherGutter = _Property.OtherGutter;
+                        Master.NaturalMethod = _Property.NaturalMethod;
+                        Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                        Master.OtherMethod = _Property.OtherMethod;
+                        Master.NoProject = _Property.NoProject;
+                        Master.Safe = _Property.Safe;
+                        Master.Danger = _Property.Danger;
+                        Master.Safe2 = _Property.Safe2;
+                        Master.Danger2 = _Property.Danger2;
+                        Master.Safe3 = _Property.Safe3;
+
+                        Master.NOSGSK = _Property.NOSGSK;
+                        Master.OtherGutter = _Property.OtherGutter;
+                        Master.NaturalMethod = _Property.NaturalMethod;
+                        Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                        Master.OtherMethod = _Property.OtherMethod;
+                        Master.NoProject = _Property.NoProject;
+                        Master.Safe = _Property.Safe;
+                        Master.Danger = _Property.Danger;
+                        Master.Safe2 = _Property.Safe2;
+                        Master.Danger2 = _Property.Danger2;
+                        Master.Safe3 = _Property.Safe3;
+                        Master.Danger3 = _Property.Danger3;
+
+                        Master.TotalPropertyExpense = _Property.TotalPropertyExpense;
+                        Master.CurrentPropertyTax = _Property.CurrentPropertyTax;
+                        Master.CurrentProperyPrice = _Property.CurrentProperyPrice;
+                        Master.OpenAroundLandtaxprice = _Property.OpenAroundLandtaxprice;
+                        Master.ProperyTaxPrice = _Property.ProperyTaxPrice;
+                        Master.TotalTaxPrice = _Property.TotalTaxPrice;
+                        Master.OpenLandtaxprice = _Property.OpenLandtaxprice;
+                        Master.ProperyTaxMarketPrice = _Property.ProperyTaxMarketPrice;
+                        Master.Name1 = _Property.Name1;
+                        Master.Name2 = _Property.Name2;
+                        Master.Name3 = _Property.Name3;
+                        Master.Name4 = _Property.Name4;
+
+                        Master.Name5 = _Property.Name5;
+                        Master.Name6 = _Property.Name6;
+                        Master.Name7 = _Property.Name7;
+                        Master.Name8 = _Property.Name8;
+
+                        Master.Name9 = _Property.Name9;
+                        Master.Name10 = _Property.Name10;
+                        Master.Name11 = _Property.Name11;
+                        Master.Name12 = _Property.Name12;
+
+                        Master.Age1 = _Property.Age1;
+                        Master.Age2 = _Property.Age2;
+                        Master.Age3 = _Property.Age3;
+                        Master.Age4 = _Property.Age4;
+
+                        Master.Age5 = _Property.Age5;
+                        Master.Age6 = _Property.Age6;
+                        Master.Age7 = _Property.Age7;
+                        Master.Age8 = _Property.Age8;
+
+                        Master.Age9 = _Property.Age9;
+                        Master.Age10 = _Property.Age10;
+                        Master.Age11 = _Property.Age11;
+                        Master.Age12 = _Property.Age12;
+
+                        Master.link1 = _Property.link1;
+                        Master.link2 = _Property.link2;
+                        Master.link3 = _Property.link3;
+                        Master.link4 = _Property.link4;
+                        Master.link5 = _Property.link5;
+                        Master.link6 = _Property.link6;
+                        Master.link7 = _Property.link7;
+                        Master.link8 = _Property.link8;
+                        Master.link9 = _Property.link9;
+                        Master.link10 = _Property.link10;
+                        Master.link11 = _Property.link11;
+                        Master.link12 = _Property.link12;
+
+                        Master.ContactNo1 = _Property.ContactNo1;
+                        Master.ContactNo2 = _Property.ContactNo2;
+                        Master.ContactNo3 = _Property.ContactNo3;
+                        Master.ContactNo4 = _Property.ContactNo4;
+                        Master.ContactNo5 = _Property.ContactNo5;
+                        Master.ContactNo6 = _Property.ContactNo6;
+                        Master.ContactNo7 = _Property.ContactNo7;
+                        Master.ContactNo8 = _Property.ContactNo8;
+                        Master.ContactNo9 = _Property.ContactNo9;
+                        Master.ContactNo10 = _Property.ContactNo10;
+                        Master.ContactNo11 = _Property.ContactNo11;
+                        Master.ContactNo12 = _Property.ContactNo12;
+
+                        Master.VoterIdentityNo1 = _Property.VoterIdentityNo1;
+                        Master.VoterIdentityNo2 = _Property.VoterIdentityNo2;
+                        Master.VoterIdentityNo3 = _Property.VoterIdentityNo3;
+                        Master.VoterIdentityNo4 = _Property.VoterIdentityNo4;
+                        Master.VoterIdentityNo5 = _Property.VoterIdentityNo5;
+                        Master.VoterIdentityNo6 = _Property.VoterIdentityNo6;
+                        Master.VoterIdentityNo7 = _Property.VoterIdentityNo7;
+                        Master.VoterIdentityNo8 = _Property.VoterIdentityNo8;
+                        Master.VoterIdentityNo9 = _Property.VoterIdentityNo9;
+                        Master.VoterIdentityNo10 = _Property.VoterIdentityNo10;
+                        Master.VoterIdentityNo11 = _Property.VoterIdentityNo11;
+                        Master.VoterIdentityNo12 = _Property.VoterIdentityNo12;
+                        Master.SurveyNo = _Property.SurveyNo;
+                        Master.GatNo = _Property.GatNo;
+                        Master.CitySurveyNo = _Property.CitySurveyNo;
+                        Master.AnnualRateableValue = _Property.AnnualRateableValue;
+                        Master.TotalPlotArea = _Property.TotalPlotArea;
+                        Master.TotalBuildupArea = _Property.TotalBuildupArea;
+                        Master.MarginSpace = _Property.MarginSpace;
+                        Master.BuildingName = _Property.BuildingName;
+                        Master.PlotNo = _Property.PlotNo;
+                        Master.FlatNo = _Property.FlatNo;
+                        Master.NoofFloors = _Property.NoofFloors;
+                        Master.NoofFlats = _Property.NoofFlats;
+                        Master.NoofShops = _Property.NoofShops;
+                        Master.PropOwnerFirstName = _Property.PropOwnerFirstName;
+                        Master.PropOwnerMiddleName = _Property.PropOwnerMiddleName;
+                        Master.PropOwnerLastName = _Property.PropOwnerLastName;
+                        Master.PropOwnerFirstName2 = _Property.PropOwnerFirstName2;
+                        Master.PropOwnerMiddleName2 = _Property.PropOwnerMiddleName2;
+                        Master.PropOwnerLastName2 = _Property.PropOwnerLastName2;
+
+                        Master.PropOwnerFirstName3 = _Property.PropOwnerFirstName3;
+                        Master.PropOwnerMiddleName3 = _Property.PropOwnerMiddleName3;
+                        Master.PropOwnerLastName3 = _Property.PropOwnerLastName3;
+
+                        Master.PropOwnerFirstName4 = _Property.PropOwnerFirstName4;
+                        Master.PropOwnerMiddleName4 = _Property.PropOwnerMiddleName4;
+                        Master.PropOwnerLastName4 = _Property.PropOwnerLastName4;
+                        Master.PropOwnerTelephoneNo = _Property.PropOwnerTelephoneNo;
+                        Master.PropOwnerElectionCardNo = _Property.PropOwnerMobileNo;
+                        Master.PropOwnerEmailId = _Property.PropOwnerEmailId;
+                        Master.PropOwnerAdhaarNo = _Property.PropOwnerAdhaarNo;
+                        Master.OccupierFirstName = _Property.OccupierFirstName;
+                        Master.OccupierMiddleName = _Property.OccupierMiddleName;
+                        Master.OccupierLastName = _Property.OccupierLastName;
+                        Master.OccupierMobileNo = _Property.OccupierMobileNo;
+                        Master.OccupierAdhaarNo = _Property.OccupierAdhaarNo;
+                        Master.TenantName = _Property.TenantName;
+                        Master.Rent = _Property.Rent;
+                        Master.TenantMobileNo = _Property.TenantMobileNo;
+                        Master.TenantAdhaarNo = _Property.TenantAdhaarNo;
+                        Master.Address = _Property.Address;
+                        Master.Longitude = _Property.Longitude;
+                        Master.Latitude = _Property.Latitude;
+                        Master.ConstStartYear = _Property.ConstStartYear;
+                        Master.CompletionYear = _Property.CompletionYear;
+                        Master.Age = _Property.Age;
+                        Master.Usage = _Property.Usage;
+                        Master.TypeofBldg = _Property.TypeofBldg;
+                        Master.ConstPermNo = _Property.ConstPermNo;
+                        Master.PermUseNo = _Property.PermUseNo;
+                        Master.Rainwaterharvest = _Property.Rainwaterharvest;
+                        Master.NonRainwaterharvest = _Property.NonRainwaterharvest;
+                        Master.SolarWaterheater = _Property.SolarWaterheater;
+                        Master.VermicultureProject = _Property.VermicultureProject;
+                        Master.SWHRemark = _Property.SWHRemark;
+                        Master.WaterConnectionResidential = _Property.WaterConnectionResidential;
+                        Master.WaterConnectionIndustrial = _Property.WaterConnectionIndustrial;
+                        Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
+                        Master.Borewell = _Property.Borewell;
+                        Master.NonBorewellr = _Property.NonBorewellr;
+                        Master.NoofToilets = _Property.NoofToilets;
+                        Master.LocationofToiletResidential = _Property.LocationofToiletResidential;
+                        Master.LocationofToiletSpecial = _Property.LocationofToiletSpecial;
+                        Master.LocationofToiletIndustrial = _Property.LocationofToiletIndustrial;
+                        Master.ParkingFacilityIndustrial = _Property.ParkingFacilityIndustrial;
+                        Master.ParkingFacilityResidential = _Property.ParkingFacilityResidential;
+                        Master.ParkingFacilitySpecial = _Property.ParkingFacilitySpecial;
+                        Master.UnderGroundGutter = _Property.UnderGroundGutter;
+                        Master.OpenGutter = _Property.OpenGutter;
+                        Master.DoorLockIndustrial = _Property.DoorLockIndustrial;
+                        Master.DoorLockResidential = _Property.DoorLockResidential;
+                        Master.DoorLockSpecial = _Property.DoorLockSpecial;
+                        Master.PermanentDoorLock = _Property.PermanentDoorLock;
+                        Master.OuterMeasurement = _Property.OuterMeasurement;
+                        Master.Lift = _Property.Lift;
+                        Master.Remarks = _Property.Remarks;
+                        Master.FloorNo1 = _Property.FloorNo1;
+                        Master.OccupancyStatus1 = _Property.OccupancyStatus1;
+                        Master.ConstType1 = _Property.ConstType1;
+                        Master.DateofConstruction1 = _Property.DateofConstruction1;
+                        Master.DateofConstruction2 = _Property.DateofConstruction2;
+                        Master.DateofConstruction3 = _Property.DateofConstruction3;
+                        Master.DateofConstruction4 = _Property.DateofConstruction4;
+                        Master.DateofConstruction5 = _Property.DateofConstruction5;
+
+                        //if(_Property.DateofConstruction1 !=null)
+                        //{ 
+                        //Master.DateofConstruction1 = Convert.ToDateTime(_Property.DateofConstruction1).ToString("dd-MM-yyyy");
+                        //}
+
+                        //else
+                        //{
+                        //    Master.DateofConstruction1 = "--Select Date--";
+                        //}
+
+                        //if (_Property.DateofConstruction2 != null)
+                        //{
+                        //    Master.DateofConstruction2 = Convert.ToDateTime(_Property.DateofConstruction2).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction2 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction3 != null)
+                        //{
+                        //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction3 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction3 != null)
+                        //{
+                        //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction3 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction4 != null)
+                        //{
+                        //    Master.DateofConstruction4 = Convert.ToDateTime(_Property.DateofConstruction4).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction4 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction5 != null)
+                        //{
+                        //    Master.DateofConstruction5 = Convert.ToDateTime(_Property.DateofConstruction5).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction5 = "--Select Date--";
+                        //}
+                        Master.UsageType1 = _Property.UsageType1;
+                        Master.UsageTypeClass1 = _Property.UsageTypeClass1;
+                        Master.Legal1 = _Property.Legal1;
+                        Master.CarpetArea1 = _Property.CarpetArea1;
+                        Master.BuildupArea1 = _Property.BuildupArea1;
+                        Master.FloorNo2 = _Property.FloorNo2;
+                        Master.OccupancyStatus2 = _Property.OccupancyStatus2;
+                        Master.ConstType2 = _Property.ConstType2;
+
+                        Master.UsageType2 = _Property.UsageType2;
+                        Master.UsageTypeClass2 = _Property.UsageTypeClass2;
+                        Master.Legal2 = _Property.Legal2;
+                        Master.CarpetArea2 = _Property.CarpetArea2;
+                        Master.BuildupArea2 = _Property.BuildupArea2;
+                        Master.FloorNo3 = _Property.FloorNo3;
+                        Master.OccupancyStatus3 = _Property.OccupancyStatus3;
+                        Master.ConstType3 = _Property.ConstType3;
+
+                        Master.UsageType3 = _Property.UsageType3;
+                        Master.UsageTypeClass3 = _Property.UsageTypeClass3;
+                        Master.Legal3 = _Property.Legal3;
+                        Master.CarpetArea3 = _Property.CarpetArea3;
+                        Master.BuildupArea3 = _Property.BuildupArea3;
+                        Master.FloorNo4 = _Property.FloorNo4;
+                        Master.OccupancyStatus4 = _Property.OccupancyStatus4;
+                        Master.ConstType4 = _Property.ConstType4;
+
+                        Master.UsageType4 = _Property.UsageType4;
+                        Master.UsageTypeClass4 = _Property.UsageTypeClass4;
+                        Master.Legal4 = _Property.Legal4;
+                        Master.CarpetArea4 = _Property.CarpetArea4;
+                        Master.BuildupArea4 = _Property.BuildupArea4;
+                        Master.FloorNo5 = _Property.FloorNo5;
+                        Master.OccupancyStatus5 = _Property.OccupancyStatus5;
+                        Master.ConstType5 = _Property.ConstType5;
+
+                        Master.UsageType5 = _Property.UsageType5;
+                        Master.UsageTypeClass5 = _Property.UsageTypeClass5;
+                        Master.Legal5 = _Property.Legal5;
+                        Master.CarpetArea5 = _Property.CarpetArea5;
+                        Master.BuildupArea5 = _Property.BuildupArea5;
+                        Master.totaltax = _Property.totaltax;
+                        Master.totalBuildupArea1 = _Property.totalBuildupArea1;
+                        Master.totalCarpetArea = _Property.totalCarpetArea;
+                        Master.totaltax = _Property.totaltax;
+                        Master.OldUsageType = _Property.OldUsageType;
+                        Master.OldConstructionType = _Property.OldConstructionType;
+                        Master.OldCarpetAreaResident = _Property.OldCarpetAreaResident;
+                        Master.OldCarpetAreaNonResident = _Property.OldCarpetAreaNonResident;
+                        Master.NewUsageType = _Property.NewUsageType;
+                        Master.NewConstructionType = _Property.NewConstructionType;
+                        Master.NewCarpetAreaResident = _Property.NewCarpetAreaResident;
+                        Master.NewCarpetAreaNonResident = _Property.NewCarpetAreaNonResident;
+                        Master.ExtendUsage_Type = _Property.ExtendUsageType;
+                        Master.ExtendConstructionType = _Property.ExtendConstructionType;
+                        Master.ExtendCarpetAreaResident = _Property.ExtendCarpetAreaResident;
+                        Master.ExtendCarpetAreaNonResident = _Property.ExtendCarpetAreaNonResident;
+                        Master.PropertyType = _Property.PropertyType;
+                        Master.SurveyorName = _Property.SurveyorName;
+                        Master.SurveyorSignature = _Property.SurveyorSignature;
+
+                        if (_Property.SurveyorDate != null)
+                        {
+                            Master.SurveyorDate = Convert.ToDateTime(_Property.SurveyorDate).ToString("dd-MM-yyyy");
+                        }
+                        else
+                        {
+                            Master.SurveyorDate = "--Select Date--";
+                        }
+                        if (_Property.DataEntryDate != null)
+                        {
+                            Master.DataEntryDate = Convert.ToDateTime(_Property.DataEntryDate).ToString("dd-MM-yyyy");
+                        }
+                        else
+                        {
+                            Master.DataEntryDate = "--Select Date--";
+                        }
+                        Master.DataEntryName = _Property.DataEntryName;
+                        Master.DataEntrySignature = _Property.DataEntrySignature;
+
+                        Master.NonSolarWaterheater = _Property.NonSolarWaterheater;
+                        Master.NonVermicultureProject = _Property.NonVermicultureProject;
+                        Master.NoLift = _Property.NoLift;
+                        Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
+                        Master.Sketchdiagram = _Property.Sketchdiagram;
+                        Master.Sketchdiagram2 = _Property.Sketchdiagram2;
+                        Master.ZoneNo = _Property.ZoneNo;
+                        Master.VillageName = _Property.VillageName;
+                        Master.HFSNo = _Property.HFSNo;
+                        Master.Legal = _Property.Legal;
+                        Master.HissaNo = _Property.HissaNo;
+                        Master.OldRateableValue = _Property.OldRateableValue;
+                        Master.OldTotalTax = _Property.OldTotalTax;
+                        Master.FirstAssessmentYear = _Property.FirstAssessmentYear;
+                        Master.ImageNo = _Property.ImageNo;
+                        Master.WardName_No2 = _Property.WardNameNo2;
+                        Master.ZoneNo2 = _Property.ZoneNo2;
+                        Master.FHNo = _Property.FHNo;
+                        Master.PropertyType2 = _Property.PropertyType2;
+                        Master.NewPropertyNo2 = _Property.NewPropertyNo2;
+                        Master.PropertyNo2 = _Property.PropertyNo2;
+                        Master.GarbageType = _Property.GarbageType;
+                        Master.NOGarbageType = _Property.NOGarbageType;
+                        Master.PrabhagNo2 = _Property.PrabhagNo2;
+                        Master.YConstPermNo = _Property.YConstPermNo;
+                        Master.NConstPermNo = _Property.NConstPermNo;
+                        Master.YPermUseNo = _Property.YPermUseNo;
+                        Master.NPermUseNo = _Property.NPermUseNo;
+
+
+                        Master.ZKMKG = _Property.ZKMKG;
+                        Master.DVMKG = _Property.DVMKG;
+                        Master.ThirdPT = _Property.ThirdPT;
+                        Master.FourthPT = _Property.FourthPT;
+                        Master.FifthPT = _Property.FifthPT;
+                        Master.SixPT = _Property.SixPT;
+                        Master.SevenPT = _Property.SevenPT;
+                        Master.EightPT = _Property.EightPT;
+                        Master.NinePT = _Property.NinePT;
+                        Master.TenPT = _Property.TenPT;
+                        Master.ElevenPT = _Property.ElevenPT;
+                        Master.TwelvePT = _Property.TwelvePT;
+                        Master.TherteenPT = _Property.TherteenPT;
+                        Master.FourteenPT = _Property.FourteenPT;
+                        Master.FifteenPT = _Property.FifteenPT;
+                        Master.SixteenPT = _Property.SixteenPT;
+                        Master.seventeenPT = _Property.seventeenPT;
+                        Master.FirstRPC = _Property.FirstRPC;
+                        Master.SecondRPC = _Property.SecondRPC;
+                        Master.ThirdRPC = _Property.ThirdRPC;
+                        Master.FourthRPC = _Property.FourthRPC;
+                        Master.FifthRPC = _Property.FifthRPC;
+                        Master.SixRPC = _Property.SixRPC;
+                        Master.SevenRPC = _Property.SevenRPC;
+                        Master.EightRPC = _Property.EightRPC;
+                        Master.NineRPC = _Property.NineRPC;
+                        Master.TenRPC = _Property.TenRPC;
+                        Master.ElevenRPC = _Property.ElevenRPC;
+                        Master.TwelveRPC = _Property.TwelveRPC;
+                        Master.ThirteenRPC = _Property.ThirteenRPC;
+                        Master.FirstCPC = _Property.FirstCPC;
+                        Master.SecondCPC = _Property.SecondCPC;
+                        Master.ThirdCPC = _Property.ThirdCPC;
+                        Master.FourthCPC = _Property.FourthCPC;
+                        Master.FifthCPC = _Property.FifthCPC;
+                        Master.SixCPC = _Property.SixCPC;
+                        Master.SevenCPC = _Property.SevenCPC;
+                        Master.EightCPC = _Property.EightCPC;
+
+                        Master.NineCPC = _Property.NineCPC;
+                        Master.TenCPC = _Property.TenCPC;
+                        Master.ElevenCPC = _Property.ElevenCPC;
+                        Master.TwelveCPC = _Property.TwelveCPC;
+                        Master.ThirteenCPC = _Property.ThirteenCPC;
+                        Master.FourteenCPC = _Property.FourteenCPC;
                     }
-                    else
+                }
+                if (arr1.Length > 1)
+                {
+                    fname = arr1[0];
+                    mname = arr1[1];
+                    var _Property = db.PropertyMasters.Where(x => x.PropertyNo == q && (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower()  && (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName.ToLower()) == mname.ToLower()).FirstOrDefault();
+                    if (_Property != null)
                     {
-                        Master.SurveyorDate = "--Select Date--";
+                        Master.PropertyId = _Property.PropertyId;
+                        Master.PrabhagNo = _Property.PrabhagNo;
+                        Master.WardName_No = _Property.WardNameNo;
+                        Master.ElectionWard = _Property.ElectionWard;
+                        Master.NewPropertyNo = _Property.NewPropertyNo;
+                        Master.PropertyNo = _Property.PropertyNo;
+                        Master.OldHouseNo1 = _Property.HouseNo;
+                        Master.OldHouseNo2 = _Property.oldHouseNo2;
+                        Master.NoOfTrees = _Property.NoOfTrees;
+                        Master.Personalwell = _Property.Personalwell;
+                        Master.HeritageTree = _Property.HeritageTree;
+
+                        Master.WaterConnection = _Property.WaterConnection;
+                        Master.NoWaterConnection = _Property.NoWaterConnection;
+                        Master.STP = _Property.STP;
+                        Master.FST = _Property.FST;
+                        Master.STS = _Property.STS;
+                        Master.Other = _Property.Other;
+                        Master.SGSK = _Property.SGSK;
+
+                        Master.NOSGSK = _Property.NOSGSK;
+                        Master.OtherGutter = _Property.OtherGutter;
+                        Master.NaturalMethod = _Property.NaturalMethod;
+                        Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                        Master.OtherMethod = _Property.OtherMethod;
+                        Master.NoProject = _Property.NoProject;
+                        Master.Safe = _Property.Safe;
+                        Master.Danger = _Property.Danger;
+                        Master.Safe2 = _Property.Safe2;
+                        Master.Danger2 = _Property.Danger2;
+                        Master.Safe3 = _Property.Safe3;
+
+                        Master.NOSGSK = _Property.NOSGSK;
+                        Master.OtherGutter = _Property.OtherGutter;
+                        Master.NaturalMethod = _Property.NaturalMethod;
+                        Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                        Master.OtherMethod = _Property.OtherMethod;
+                        Master.NoProject = _Property.NoProject;
+                        Master.Safe = _Property.Safe;
+                        Master.Danger = _Property.Danger;
+                        Master.Safe2 = _Property.Safe2;
+                        Master.Danger2 = _Property.Danger2;
+                        Master.Safe3 = _Property.Safe3;
+                        Master.Danger3 = _Property.Danger3;
+
+                        Master.TotalPropertyExpense = _Property.TotalPropertyExpense;
+                        Master.CurrentPropertyTax = _Property.CurrentPropertyTax;
+                        Master.CurrentProperyPrice = _Property.CurrentProperyPrice;
+                        Master.OpenAroundLandtaxprice = _Property.OpenAroundLandtaxprice;
+                        Master.ProperyTaxPrice = _Property.ProperyTaxPrice;
+                        Master.TotalTaxPrice = _Property.TotalTaxPrice;
+                        Master.OpenLandtaxprice = _Property.OpenLandtaxprice;
+                        Master.ProperyTaxMarketPrice = _Property.ProperyTaxMarketPrice;
+                        Master.Name1 = _Property.Name1;
+                        Master.Name2 = _Property.Name2;
+                        Master.Name3 = _Property.Name3;
+                        Master.Name4 = _Property.Name4;
+
+                        Master.Name5 = _Property.Name5;
+                        Master.Name6 = _Property.Name6;
+                        Master.Name7 = _Property.Name7;
+                        Master.Name8 = _Property.Name8;
+
+                        Master.Name9 = _Property.Name9;
+                        Master.Name10 = _Property.Name10;
+                        Master.Name11 = _Property.Name11;
+                        Master.Name12 = _Property.Name12;
+
+                        Master.Age1 = _Property.Age1;
+                        Master.Age2 = _Property.Age2;
+                        Master.Age3 = _Property.Age3;
+                        Master.Age4 = _Property.Age4;
+
+                        Master.Age5 = _Property.Age5;
+                        Master.Age6 = _Property.Age6;
+                        Master.Age7 = _Property.Age7;
+                        Master.Age8 = _Property.Age8;
+
+                        Master.Age9 = _Property.Age9;
+                        Master.Age10 = _Property.Age10;
+                        Master.Age11 = _Property.Age11;
+                        Master.Age12 = _Property.Age12;
+
+                        Master.link1 = _Property.link1;
+                        Master.link2 = _Property.link2;
+                        Master.link3 = _Property.link3;
+                        Master.link4 = _Property.link4;
+                        Master.link5 = _Property.link5;
+                        Master.link6 = _Property.link6;
+                        Master.link7 = _Property.link7;
+                        Master.link8 = _Property.link8;
+                        Master.link9 = _Property.link9;
+                        Master.link10 = _Property.link10;
+                        Master.link11 = _Property.link11;
+                        Master.link12 = _Property.link12;
+
+                        Master.ContactNo1 = _Property.ContactNo1;
+                        Master.ContactNo2 = _Property.ContactNo2;
+                        Master.ContactNo3 = _Property.ContactNo3;
+                        Master.ContactNo4 = _Property.ContactNo4;
+                        Master.ContactNo5 = _Property.ContactNo5;
+                        Master.ContactNo6 = _Property.ContactNo6;
+                        Master.ContactNo7 = _Property.ContactNo7;
+                        Master.ContactNo8 = _Property.ContactNo8;
+                        Master.ContactNo9 = _Property.ContactNo9;
+                        Master.ContactNo10 = _Property.ContactNo10;
+                        Master.ContactNo11 = _Property.ContactNo11;
+                        Master.ContactNo12 = _Property.ContactNo12;
+
+                        Master.VoterIdentityNo1 = _Property.VoterIdentityNo1;
+                        Master.VoterIdentityNo2 = _Property.VoterIdentityNo2;
+                        Master.VoterIdentityNo3 = _Property.VoterIdentityNo3;
+                        Master.VoterIdentityNo4 = _Property.VoterIdentityNo4;
+                        Master.VoterIdentityNo5 = _Property.VoterIdentityNo5;
+                        Master.VoterIdentityNo6 = _Property.VoterIdentityNo6;
+                        Master.VoterIdentityNo7 = _Property.VoterIdentityNo7;
+                        Master.VoterIdentityNo8 = _Property.VoterIdentityNo8;
+                        Master.VoterIdentityNo9 = _Property.VoterIdentityNo9;
+                        Master.VoterIdentityNo10 = _Property.VoterIdentityNo10;
+                        Master.VoterIdentityNo11 = _Property.VoterIdentityNo11;
+                        Master.VoterIdentityNo12 = _Property.VoterIdentityNo12;
+                        Master.SurveyNo = _Property.SurveyNo;
+                        Master.GatNo = _Property.GatNo;
+                        Master.CitySurveyNo = _Property.CitySurveyNo;
+                        Master.AnnualRateableValue = _Property.AnnualRateableValue;
+                        Master.TotalPlotArea = _Property.TotalPlotArea;
+                        Master.TotalBuildupArea = _Property.TotalBuildupArea;
+                        Master.MarginSpace = _Property.MarginSpace;
+                        Master.BuildingName = _Property.BuildingName;
+                        Master.PlotNo = _Property.PlotNo;
+                        Master.FlatNo = _Property.FlatNo;
+                        Master.NoofFloors = _Property.NoofFloors;
+                        Master.NoofFlats = _Property.NoofFlats;
+                        Master.NoofShops = _Property.NoofShops;
+                        Master.PropOwnerFirstName = _Property.PropOwnerFirstName;
+                        Master.PropOwnerMiddleName = _Property.PropOwnerMiddleName;
+                        Master.PropOwnerLastName = _Property.PropOwnerLastName;
+                        Master.PropOwnerFirstName2 = _Property.PropOwnerFirstName2;
+                        Master.PropOwnerMiddleName2 = _Property.PropOwnerMiddleName2;
+                        Master.PropOwnerLastName2 = _Property.PropOwnerLastName2;
+
+                        Master.PropOwnerFirstName3 = _Property.PropOwnerFirstName3;
+                        Master.PropOwnerMiddleName3 = _Property.PropOwnerMiddleName3;
+                        Master.PropOwnerLastName3 = _Property.PropOwnerLastName3;
+
+                        Master.PropOwnerFirstName4 = _Property.PropOwnerFirstName4;
+                        Master.PropOwnerMiddleName4 = _Property.PropOwnerMiddleName4;
+                        Master.PropOwnerLastName4 = _Property.PropOwnerLastName4;
+                        Master.PropOwnerTelephoneNo = _Property.PropOwnerTelephoneNo;
+                        Master.PropOwnerElectionCardNo = _Property.PropOwnerMobileNo;
+                        Master.PropOwnerEmailId = _Property.PropOwnerEmailId;
+                        Master.PropOwnerAdhaarNo = _Property.PropOwnerAdhaarNo;
+                        Master.OccupierFirstName = _Property.OccupierFirstName;
+                        Master.OccupierMiddleName = _Property.OccupierMiddleName;
+                        Master.OccupierLastName = _Property.OccupierLastName;
+                        Master.OccupierMobileNo = _Property.OccupierMobileNo;
+                        Master.OccupierAdhaarNo = _Property.OccupierAdhaarNo;
+                        Master.TenantName = _Property.TenantName;
+                        Master.Rent = _Property.Rent;
+                        Master.TenantMobileNo = _Property.TenantMobileNo;
+                        Master.TenantAdhaarNo = _Property.TenantAdhaarNo;
+                        Master.Address = _Property.Address;
+                        Master.Longitude = _Property.Longitude;
+                        Master.Latitude = _Property.Latitude;
+                        Master.ConstStartYear = _Property.ConstStartYear;
+                        Master.CompletionYear = _Property.CompletionYear;
+                        Master.Age = _Property.Age;
+                        Master.Usage = _Property.Usage;
+                        Master.TypeofBldg = _Property.TypeofBldg;
+                        Master.ConstPermNo = _Property.ConstPermNo;
+                        Master.PermUseNo = _Property.PermUseNo;
+                        Master.Rainwaterharvest = _Property.Rainwaterharvest;
+                        Master.NonRainwaterharvest = _Property.NonRainwaterharvest;
+                        Master.SolarWaterheater = _Property.SolarWaterheater;
+                        Master.VermicultureProject = _Property.VermicultureProject;
+                        Master.SWHRemark = _Property.SWHRemark;
+                        Master.WaterConnectionResidential = _Property.WaterConnectionResidential;
+                        Master.WaterConnectionIndustrial = _Property.WaterConnectionIndustrial;
+                        Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
+                        Master.Borewell = _Property.Borewell;
+                        Master.NonBorewellr = _Property.NonBorewellr;
+                        Master.NoofToilets = _Property.NoofToilets;
+                        Master.LocationofToiletResidential = _Property.LocationofToiletResidential;
+                        Master.LocationofToiletSpecial = _Property.LocationofToiletSpecial;
+                        Master.LocationofToiletIndustrial = _Property.LocationofToiletIndustrial;
+                        Master.ParkingFacilityIndustrial = _Property.ParkingFacilityIndustrial;
+                        Master.ParkingFacilityResidential = _Property.ParkingFacilityResidential;
+                        Master.ParkingFacilitySpecial = _Property.ParkingFacilitySpecial;
+                        Master.UnderGroundGutter = _Property.UnderGroundGutter;
+                        Master.OpenGutter = _Property.OpenGutter;
+                        Master.DoorLockIndustrial = _Property.DoorLockIndustrial;
+                        Master.DoorLockResidential = _Property.DoorLockResidential;
+                        Master.DoorLockSpecial = _Property.DoorLockSpecial;
+                        Master.PermanentDoorLock = _Property.PermanentDoorLock;
+                        Master.OuterMeasurement = _Property.OuterMeasurement;
+                        Master.Lift = _Property.Lift;
+                        Master.Remarks = _Property.Remarks;
+                        Master.FloorNo1 = _Property.FloorNo1;
+                        Master.OccupancyStatus1 = _Property.OccupancyStatus1;
+                        Master.ConstType1 = _Property.ConstType1;
+                        Master.DateofConstruction1 = _Property.DateofConstruction1;
+                        Master.DateofConstruction2 = _Property.DateofConstruction2;
+                        Master.DateofConstruction3 = _Property.DateofConstruction3;
+                        Master.DateofConstruction4 = _Property.DateofConstruction4;
+                        Master.DateofConstruction5 = _Property.DateofConstruction5;
+
+                        //if(_Property.DateofConstruction1 !=null)
+                        //{ 
+                        //Master.DateofConstruction1 = Convert.ToDateTime(_Property.DateofConstruction1).ToString("dd-MM-yyyy");
+                        //}
+
+                        //else
+                        //{
+                        //    Master.DateofConstruction1 = "--Select Date--";
+                        //}
+
+                        //if (_Property.DateofConstruction2 != null)
+                        //{
+                        //    Master.DateofConstruction2 = Convert.ToDateTime(_Property.DateofConstruction2).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction2 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction3 != null)
+                        //{
+                        //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction3 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction3 != null)
+                        //{
+                        //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction3 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction4 != null)
+                        //{
+                        //    Master.DateofConstruction4 = Convert.ToDateTime(_Property.DateofConstruction4).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction4 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction5 != null)
+                        //{
+                        //    Master.DateofConstruction5 = Convert.ToDateTime(_Property.DateofConstruction5).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction5 = "--Select Date--";
+                        //}
+                        Master.UsageType1 = _Property.UsageType1;
+                        Master.UsageTypeClass1 = _Property.UsageTypeClass1;
+                        Master.Legal1 = _Property.Legal1;
+                        Master.CarpetArea1 = _Property.CarpetArea1;
+                        Master.BuildupArea1 = _Property.BuildupArea1;
+                        Master.FloorNo2 = _Property.FloorNo2;
+                        Master.OccupancyStatus2 = _Property.OccupancyStatus2;
+                        Master.ConstType2 = _Property.ConstType2;
+
+                        Master.UsageType2 = _Property.UsageType2;
+                        Master.UsageTypeClass2 = _Property.UsageTypeClass2;
+                        Master.Legal2 = _Property.Legal2;
+                        Master.CarpetArea2 = _Property.CarpetArea2;
+                        Master.BuildupArea2 = _Property.BuildupArea2;
+                        Master.FloorNo3 = _Property.FloorNo3;
+                        Master.OccupancyStatus3 = _Property.OccupancyStatus3;
+                        Master.ConstType3 = _Property.ConstType3;
+
+                        Master.UsageType3 = _Property.UsageType3;
+                        Master.UsageTypeClass3 = _Property.UsageTypeClass3;
+                        Master.Legal3 = _Property.Legal3;
+                        Master.CarpetArea3 = _Property.CarpetArea3;
+                        Master.BuildupArea3 = _Property.BuildupArea3;
+                        Master.FloorNo4 = _Property.FloorNo4;
+                        Master.OccupancyStatus4 = _Property.OccupancyStatus4;
+                        Master.ConstType4 = _Property.ConstType4;
+
+                        Master.UsageType4 = _Property.UsageType4;
+                        Master.UsageTypeClass4 = _Property.UsageTypeClass4;
+                        Master.Legal4 = _Property.Legal4;
+                        Master.CarpetArea4 = _Property.CarpetArea4;
+                        Master.BuildupArea4 = _Property.BuildupArea4;
+                        Master.FloorNo5 = _Property.FloorNo5;
+                        Master.OccupancyStatus5 = _Property.OccupancyStatus5;
+                        Master.ConstType5 = _Property.ConstType5;
+
+                        Master.UsageType5 = _Property.UsageType5;
+                        Master.UsageTypeClass5 = _Property.UsageTypeClass5;
+                        Master.Legal5 = _Property.Legal5;
+                        Master.CarpetArea5 = _Property.CarpetArea5;
+                        Master.BuildupArea5 = _Property.BuildupArea5;
+                        Master.totaltax = _Property.totaltax;
+                        Master.totalBuildupArea1 = _Property.totalBuildupArea1;
+                        Master.totalCarpetArea = _Property.totalCarpetArea;
+                        Master.totaltax = _Property.totaltax;
+                        Master.OldUsageType = _Property.OldUsageType;
+                        Master.OldConstructionType = _Property.OldConstructionType;
+                        Master.OldCarpetAreaResident = _Property.OldCarpetAreaResident;
+                        Master.OldCarpetAreaNonResident = _Property.OldCarpetAreaNonResident;
+                        Master.NewUsageType = _Property.NewUsageType;
+                        Master.NewConstructionType = _Property.NewConstructionType;
+                        Master.NewCarpetAreaResident = _Property.NewCarpetAreaResident;
+                        Master.NewCarpetAreaNonResident = _Property.NewCarpetAreaNonResident;
+                        Master.ExtendUsage_Type = _Property.ExtendUsageType;
+                        Master.ExtendConstructionType = _Property.ExtendConstructionType;
+                        Master.ExtendCarpetAreaResident = _Property.ExtendCarpetAreaResident;
+                        Master.ExtendCarpetAreaNonResident = _Property.ExtendCarpetAreaNonResident;
+                        Master.PropertyType = _Property.PropertyType;
+                        Master.SurveyorName = _Property.SurveyorName;
+                        Master.SurveyorSignature = _Property.SurveyorSignature;
+
+                        if (_Property.SurveyorDate != null)
+                        {
+                            Master.SurveyorDate = Convert.ToDateTime(_Property.SurveyorDate).ToString("dd-MM-yyyy");
+                        }
+                        else
+                        {
+                            Master.SurveyorDate = "--Select Date--";
+                        }
+                        if (_Property.DataEntryDate != null)
+                        {
+                            Master.DataEntryDate = Convert.ToDateTime(_Property.DataEntryDate).ToString("dd-MM-yyyy");
+                        }
+                        else
+                        {
+                            Master.DataEntryDate = "--Select Date--";
+                        }
+                        Master.DataEntryName = _Property.DataEntryName;
+                        Master.DataEntrySignature = _Property.DataEntrySignature;
+
+                        Master.NonSolarWaterheater = _Property.NonSolarWaterheater;
+                        Master.NonVermicultureProject = _Property.NonVermicultureProject;
+                        Master.NoLift = _Property.NoLift;
+                        Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
+                        Master.Sketchdiagram = _Property.Sketchdiagram;
+                        Master.Sketchdiagram2 = _Property.Sketchdiagram2;
+                        Master.ZoneNo = _Property.ZoneNo;
+                        Master.VillageName = _Property.VillageName;
+                        Master.HFSNo = _Property.HFSNo;
+                        Master.Legal = _Property.Legal;
+                        Master.HissaNo = _Property.HissaNo;
+                        Master.OldRateableValue = _Property.OldRateableValue;
+                        Master.OldTotalTax = _Property.OldTotalTax;
+                        Master.FirstAssessmentYear = _Property.FirstAssessmentYear;
+                        Master.ImageNo = _Property.ImageNo;
+                        Master.WardName_No2 = _Property.WardNameNo2;
+                        Master.ZoneNo2 = _Property.ZoneNo2;
+                        Master.FHNo = _Property.FHNo;
+                        Master.PropertyType2 = _Property.PropertyType2;
+                        Master.NewPropertyNo2 = _Property.NewPropertyNo2;
+                        Master.PropertyNo2 = _Property.PropertyNo2;
+                        Master.GarbageType = _Property.GarbageType;
+                        Master.NOGarbageType = _Property.NOGarbageType;
+                        Master.PrabhagNo2 = _Property.PrabhagNo2;
+                        Master.YConstPermNo = _Property.YConstPermNo;
+                        Master.NConstPermNo = _Property.NConstPermNo;
+                        Master.YPermUseNo = _Property.YPermUseNo;
+                        Master.NPermUseNo = _Property.NPermUseNo;
+
+
+                        Master.ZKMKG = _Property.ZKMKG;
+                        Master.DVMKG = _Property.DVMKG;
+                        Master.ThirdPT = _Property.ThirdPT;
+                        Master.FourthPT = _Property.FourthPT;
+                        Master.FifthPT = _Property.FifthPT;
+                        Master.SixPT = _Property.SixPT;
+                        Master.SevenPT = _Property.SevenPT;
+                        Master.EightPT = _Property.EightPT;
+                        Master.NinePT = _Property.NinePT;
+                        Master.TenPT = _Property.TenPT;
+                        Master.ElevenPT = _Property.ElevenPT;
+                        Master.TwelvePT = _Property.TwelvePT;
+                        Master.TherteenPT = _Property.TherteenPT;
+                        Master.FourteenPT = _Property.FourteenPT;
+                        Master.FifteenPT = _Property.FifteenPT;
+                        Master.SixteenPT = _Property.SixteenPT;
+                        Master.seventeenPT = _Property.seventeenPT;
+                        Master.FirstRPC = _Property.FirstRPC;
+                        Master.SecondRPC = _Property.SecondRPC;
+                        Master.ThirdRPC = _Property.ThirdRPC;
+                        Master.FourthRPC = _Property.FourthRPC;
+                        Master.FifthRPC = _Property.FifthRPC;
+                        Master.SixRPC = _Property.SixRPC;
+                        Master.SevenRPC = _Property.SevenRPC;
+                        Master.EightRPC = _Property.EightRPC;
+                        Master.NineRPC = _Property.NineRPC;
+                        Master.TenRPC = _Property.TenRPC;
+                        Master.ElevenRPC = _Property.ElevenRPC;
+                        Master.TwelveRPC = _Property.TwelveRPC;
+                        Master.ThirteenRPC = _Property.ThirteenRPC;
+                        Master.FirstCPC = _Property.FirstCPC;
+                        Master.SecondCPC = _Property.SecondCPC;
+                        Master.ThirdCPC = _Property.ThirdCPC;
+                        Master.FourthCPC = _Property.FourthCPC;
+                        Master.FifthCPC = _Property.FifthCPC;
+                        Master.SixCPC = _Property.SixCPC;
+                        Master.SevenCPC = _Property.SevenCPC;
+                        Master.EightCPC = _Property.EightCPC;
+
+                        Master.NineCPC = _Property.NineCPC;
+                        Master.TenCPC = _Property.TenCPC;
+                        Master.ElevenCPC = _Property.ElevenCPC;
+                        Master.TwelveCPC = _Property.TwelveCPC;
+                        Master.ThirteenCPC = _Property.ThirteenCPC;
+                        Master.FourteenCPC = _Property.FourteenCPC;
                     }
-                    if (_Property.DataEntryDate != null)
+                }
+                if (arr1.Length > 2)
+                {
+                    fname = arr1[0];
+                    lname = arr1[2];
+                    var _Property = db.PropertyMasters.Where(x => x.PropertyNo == q && (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower() && (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == lname.ToLower()).FirstOrDefault();
+
+
+                    if (_Property != null)
                     {
-                        Master.DataEntryDate = Convert.ToDateTime(_Property.DataEntryDate).ToString("dd-MM-yyyy");
+                        Master.PropertyId = _Property.PropertyId;
+                        Master.PrabhagNo = _Property.PrabhagNo;
+                        Master.WardName_No = _Property.WardNameNo;
+                        Master.ElectionWard = _Property.ElectionWard;
+                        Master.NewPropertyNo = _Property.NewPropertyNo;
+                        Master.PropertyNo = _Property.PropertyNo;
+                        Master.OldHouseNo1 = _Property.HouseNo;
+                        Master.OldHouseNo2 = _Property.oldHouseNo2;
+                        Master.NoOfTrees = _Property.NoOfTrees;
+                        Master.Personalwell = _Property.Personalwell;
+                        Master.HeritageTree = _Property.HeritageTree;
+
+                        Master.WaterConnection = _Property.WaterConnection;
+                        Master.NoWaterConnection = _Property.NoWaterConnection;
+                        Master.STP = _Property.STP;
+                        Master.FST = _Property.FST;
+                        Master.STS = _Property.STS;
+                        Master.Other = _Property.Other;
+                        Master.SGSK = _Property.SGSK;
+
+                        Master.NOSGSK = _Property.NOSGSK;
+                        Master.OtherGutter = _Property.OtherGutter;
+                        Master.NaturalMethod = _Property.NaturalMethod;
+                        Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                        Master.OtherMethod = _Property.OtherMethod;
+                        Master.NoProject = _Property.NoProject;
+                        Master.Safe = _Property.Safe;
+                        Master.Danger = _Property.Danger;
+                        Master.Safe2 = _Property.Safe2;
+                        Master.Danger2 = _Property.Danger2;
+                        Master.Safe3 = _Property.Safe3;
+
+                        Master.NOSGSK = _Property.NOSGSK;
+                        Master.OtherGutter = _Property.OtherGutter;
+                        Master.NaturalMethod = _Property.NaturalMethod;
+                        Master.ArtifitialMethod = _Property.ArtifitialMethod;
+                        Master.OtherMethod = _Property.OtherMethod;
+                        Master.NoProject = _Property.NoProject;
+                        Master.Safe = _Property.Safe;
+                        Master.Danger = _Property.Danger;
+                        Master.Safe2 = _Property.Safe2;
+                        Master.Danger2 = _Property.Danger2;
+                        Master.Safe3 = _Property.Safe3;
+                        Master.Danger3 = _Property.Danger3;
+
+                        Master.TotalPropertyExpense = _Property.TotalPropertyExpense;
+                        Master.CurrentPropertyTax = _Property.CurrentPropertyTax;
+                        Master.CurrentProperyPrice = _Property.CurrentProperyPrice;
+                        Master.OpenAroundLandtaxprice = _Property.OpenAroundLandtaxprice;
+                        Master.ProperyTaxPrice = _Property.ProperyTaxPrice;
+                        Master.TotalTaxPrice = _Property.TotalTaxPrice;
+                        Master.OpenLandtaxprice = _Property.OpenLandtaxprice;
+                        Master.ProperyTaxMarketPrice = _Property.ProperyTaxMarketPrice;
+                        Master.Name1 = _Property.Name1;
+                        Master.Name2 = _Property.Name2;
+                        Master.Name3 = _Property.Name3;
+                        Master.Name4 = _Property.Name4;
+
+                        Master.Name5 = _Property.Name5;
+                        Master.Name6 = _Property.Name6;
+                        Master.Name7 = _Property.Name7;
+                        Master.Name8 = _Property.Name8;
+
+                        Master.Name9 = _Property.Name9;
+                        Master.Name10 = _Property.Name10;
+                        Master.Name11 = _Property.Name11;
+                        Master.Name12 = _Property.Name12;
+
+                        Master.Age1 = _Property.Age1;
+                        Master.Age2 = _Property.Age2;
+                        Master.Age3 = _Property.Age3;
+                        Master.Age4 = _Property.Age4;
+
+                        Master.Age5 = _Property.Age5;
+                        Master.Age6 = _Property.Age6;
+                        Master.Age7 = _Property.Age7;
+                        Master.Age8 = _Property.Age8;
+
+                        Master.Age9 = _Property.Age9;
+                        Master.Age10 = _Property.Age10;
+                        Master.Age11 = _Property.Age11;
+                        Master.Age12 = _Property.Age12;
+
+                        Master.link1 = _Property.link1;
+                        Master.link2 = _Property.link2;
+                        Master.link3 = _Property.link3;
+                        Master.link4 = _Property.link4;
+                        Master.link5 = _Property.link5;
+                        Master.link6 = _Property.link6;
+                        Master.link7 = _Property.link7;
+                        Master.link8 = _Property.link8;
+                        Master.link9 = _Property.link9;
+                        Master.link10 = _Property.link10;
+                        Master.link11 = _Property.link11;
+                        Master.link12 = _Property.link12;
+
+                        Master.ContactNo1 = _Property.ContactNo1;
+                        Master.ContactNo2 = _Property.ContactNo2;
+                        Master.ContactNo3 = _Property.ContactNo3;
+                        Master.ContactNo4 = _Property.ContactNo4;
+                        Master.ContactNo5 = _Property.ContactNo5;
+                        Master.ContactNo6 = _Property.ContactNo6;
+                        Master.ContactNo7 = _Property.ContactNo7;
+                        Master.ContactNo8 = _Property.ContactNo8;
+                        Master.ContactNo9 = _Property.ContactNo9;
+                        Master.ContactNo10 = _Property.ContactNo10;
+                        Master.ContactNo11 = _Property.ContactNo11;
+                        Master.ContactNo12 = _Property.ContactNo12;
+
+                        Master.VoterIdentityNo1 = _Property.VoterIdentityNo1;
+                        Master.VoterIdentityNo2 = _Property.VoterIdentityNo2;
+                        Master.VoterIdentityNo3 = _Property.VoterIdentityNo3;
+                        Master.VoterIdentityNo4 = _Property.VoterIdentityNo4;
+                        Master.VoterIdentityNo5 = _Property.VoterIdentityNo5;
+                        Master.VoterIdentityNo6 = _Property.VoterIdentityNo6;
+                        Master.VoterIdentityNo7 = _Property.VoterIdentityNo7;
+                        Master.VoterIdentityNo8 = _Property.VoterIdentityNo8;
+                        Master.VoterIdentityNo9 = _Property.VoterIdentityNo9;
+                        Master.VoterIdentityNo10 = _Property.VoterIdentityNo10;
+                        Master.VoterIdentityNo11 = _Property.VoterIdentityNo11;
+                        Master.VoterIdentityNo12 = _Property.VoterIdentityNo12;
+                        Master.SurveyNo = _Property.SurveyNo;
+                        Master.GatNo = _Property.GatNo;
+                        Master.CitySurveyNo = _Property.CitySurveyNo;
+                        Master.AnnualRateableValue = _Property.AnnualRateableValue;
+                        Master.TotalPlotArea = _Property.TotalPlotArea;
+                        Master.TotalBuildupArea = _Property.TotalBuildupArea;
+                        Master.MarginSpace = _Property.MarginSpace;
+                        Master.BuildingName = _Property.BuildingName;
+                        Master.PlotNo = _Property.PlotNo;
+                        Master.FlatNo = _Property.FlatNo;
+                        Master.NoofFloors = _Property.NoofFloors;
+                        Master.NoofFlats = _Property.NoofFlats;
+                        Master.NoofShops = _Property.NoofShops;
+                        Master.PropOwnerFirstName = _Property.PropOwnerFirstName;
+                        Master.PropOwnerMiddleName = _Property.PropOwnerMiddleName;
+                        Master.PropOwnerLastName = _Property.PropOwnerLastName;
+                        Master.PropOwnerFirstName2 = _Property.PropOwnerFirstName2;
+                        Master.PropOwnerMiddleName2 = _Property.PropOwnerMiddleName2;
+                        Master.PropOwnerLastName2 = _Property.PropOwnerLastName2;
+
+                        Master.PropOwnerFirstName3 = _Property.PropOwnerFirstName3;
+                        Master.PropOwnerMiddleName3 = _Property.PropOwnerMiddleName3;
+                        Master.PropOwnerLastName3 = _Property.PropOwnerLastName3;
+
+                        Master.PropOwnerFirstName4 = _Property.PropOwnerFirstName4;
+                        Master.PropOwnerMiddleName4 = _Property.PropOwnerMiddleName4;
+                        Master.PropOwnerLastName4 = _Property.PropOwnerLastName4;
+                        Master.PropOwnerTelephoneNo = _Property.PropOwnerTelephoneNo;
+                        Master.PropOwnerElectionCardNo = _Property.PropOwnerMobileNo;
+                        Master.PropOwnerEmailId = _Property.PropOwnerEmailId;
+                        Master.PropOwnerAdhaarNo = _Property.PropOwnerAdhaarNo;
+                        Master.OccupierFirstName = _Property.OccupierFirstName;
+                        Master.OccupierMiddleName = _Property.OccupierMiddleName;
+                        Master.OccupierLastName = _Property.OccupierLastName;
+                        Master.OccupierMobileNo = _Property.OccupierMobileNo;
+                        Master.OccupierAdhaarNo = _Property.OccupierAdhaarNo;
+                        Master.TenantName = _Property.TenantName;
+                        Master.Rent = _Property.Rent;
+                        Master.TenantMobileNo = _Property.TenantMobileNo;
+                        Master.TenantAdhaarNo = _Property.TenantAdhaarNo;
+                        Master.Address = _Property.Address;
+                        Master.Longitude = _Property.Longitude;
+                        Master.Latitude = _Property.Latitude;
+                        Master.ConstStartYear = _Property.ConstStartYear;
+                        Master.CompletionYear = _Property.CompletionYear;
+                        Master.Age = _Property.Age;
+                        Master.Usage = _Property.Usage;
+                        Master.TypeofBldg = _Property.TypeofBldg;
+                        Master.ConstPermNo = _Property.ConstPermNo;
+                        Master.PermUseNo = _Property.PermUseNo;
+                        Master.Rainwaterharvest = _Property.Rainwaterharvest;
+                        Master.NonRainwaterharvest = _Property.NonRainwaterharvest;
+                        Master.SolarWaterheater = _Property.SolarWaterheater;
+                        Master.VermicultureProject = _Property.VermicultureProject;
+                        Master.SWHRemark = _Property.SWHRemark;
+                        Master.WaterConnectionResidential = _Property.WaterConnectionResidential;
+                        Master.WaterConnectionIndustrial = _Property.WaterConnectionIndustrial;
+                        Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
+                        Master.Borewell = _Property.Borewell;
+                        Master.NonBorewellr = _Property.NonBorewellr;
+                        Master.NoofToilets = _Property.NoofToilets;
+                        Master.LocationofToiletResidential = _Property.LocationofToiletResidential;
+                        Master.LocationofToiletSpecial = _Property.LocationofToiletSpecial;
+                        Master.LocationofToiletIndustrial = _Property.LocationofToiletIndustrial;
+                        Master.ParkingFacilityIndustrial = _Property.ParkingFacilityIndustrial;
+                        Master.ParkingFacilityResidential = _Property.ParkingFacilityResidential;
+                        Master.ParkingFacilitySpecial = _Property.ParkingFacilitySpecial;
+                        Master.UnderGroundGutter = _Property.UnderGroundGutter;
+                        Master.OpenGutter = _Property.OpenGutter;
+                        Master.DoorLockIndustrial = _Property.DoorLockIndustrial;
+                        Master.DoorLockResidential = _Property.DoorLockResidential;
+                        Master.DoorLockSpecial = _Property.DoorLockSpecial;
+                        Master.PermanentDoorLock = _Property.PermanentDoorLock;
+                        Master.OuterMeasurement = _Property.OuterMeasurement;
+                        Master.Lift = _Property.Lift;
+                        Master.Remarks = _Property.Remarks;
+                        Master.FloorNo1 = _Property.FloorNo1;
+                        Master.OccupancyStatus1 = _Property.OccupancyStatus1;
+                        Master.ConstType1 = _Property.ConstType1;
+                        Master.DateofConstruction1 = _Property.DateofConstruction1;
+                        Master.DateofConstruction2 = _Property.DateofConstruction2;
+                        Master.DateofConstruction3 = _Property.DateofConstruction3;
+                        Master.DateofConstruction4 = _Property.DateofConstruction4;
+                        Master.DateofConstruction5 = _Property.DateofConstruction5;
+
+                        //if(_Property.DateofConstruction1 !=null)
+                        //{ 
+                        //Master.DateofConstruction1 = Convert.ToDateTime(_Property.DateofConstruction1).ToString("dd-MM-yyyy");
+                        //}
+
+                        //else
+                        //{
+                        //    Master.DateofConstruction1 = "--Select Date--";
+                        //}
+
+                        //if (_Property.DateofConstruction2 != null)
+                        //{
+                        //    Master.DateofConstruction2 = Convert.ToDateTime(_Property.DateofConstruction2).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction2 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction3 != null)
+                        //{
+                        //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction3 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction3 != null)
+                        //{
+                        //    Master.DateofConstruction3 = Convert.ToDateTime(_Property.DateofConstruction3).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction3 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction4 != null)
+                        //{
+                        //    Master.DateofConstruction4 = Convert.ToDateTime(_Property.DateofConstruction4).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction4 = "--Select Date--";
+                        //}
+
+
+                        //if (_Property.DateofConstruction5 != null)
+                        //{
+                        //    Master.DateofConstruction5 = Convert.ToDateTime(_Property.DateofConstruction5).ToString("dd-MM-yyyy");
+                        //}
+                        //else
+                        //{
+                        //    Master.DateofConstruction5 = "--Select Date--";
+                        //}
+                        Master.UsageType1 = _Property.UsageType1;
+                        Master.UsageTypeClass1 = _Property.UsageTypeClass1;
+                        Master.Legal1 = _Property.Legal1;
+                        Master.CarpetArea1 = _Property.CarpetArea1;
+                        Master.BuildupArea1 = _Property.BuildupArea1;
+                        Master.FloorNo2 = _Property.FloorNo2;
+                        Master.OccupancyStatus2 = _Property.OccupancyStatus2;
+                        Master.ConstType2 = _Property.ConstType2;
+
+                        Master.UsageType2 = _Property.UsageType2;
+                        Master.UsageTypeClass2 = _Property.UsageTypeClass2;
+                        Master.Legal2 = _Property.Legal2;
+                        Master.CarpetArea2 = _Property.CarpetArea2;
+                        Master.BuildupArea2 = _Property.BuildupArea2;
+                        Master.FloorNo3 = _Property.FloorNo3;
+                        Master.OccupancyStatus3 = _Property.OccupancyStatus3;
+                        Master.ConstType3 = _Property.ConstType3;
+
+                        Master.UsageType3 = _Property.UsageType3;
+                        Master.UsageTypeClass3 = _Property.UsageTypeClass3;
+                        Master.Legal3 = _Property.Legal3;
+                        Master.CarpetArea3 = _Property.CarpetArea3;
+                        Master.BuildupArea3 = _Property.BuildupArea3;
+                        Master.FloorNo4 = _Property.FloorNo4;
+                        Master.OccupancyStatus4 = _Property.OccupancyStatus4;
+                        Master.ConstType4 = _Property.ConstType4;
+
+                        Master.UsageType4 = _Property.UsageType4;
+                        Master.UsageTypeClass4 = _Property.UsageTypeClass4;
+                        Master.Legal4 = _Property.Legal4;
+                        Master.CarpetArea4 = _Property.CarpetArea4;
+                        Master.BuildupArea4 = _Property.BuildupArea4;
+                        Master.FloorNo5 = _Property.FloorNo5;
+                        Master.OccupancyStatus5 = _Property.OccupancyStatus5;
+                        Master.ConstType5 = _Property.ConstType5;
+
+                        Master.UsageType5 = _Property.UsageType5;
+                        Master.UsageTypeClass5 = _Property.UsageTypeClass5;
+                        Master.Legal5 = _Property.Legal5;
+                        Master.CarpetArea5 = _Property.CarpetArea5;
+                        Master.BuildupArea5 = _Property.BuildupArea5;
+                        Master.totaltax = _Property.totaltax;
+                        Master.totalBuildupArea1 = _Property.totalBuildupArea1;
+                        Master.totalCarpetArea = _Property.totalCarpetArea;
+                        Master.totaltax = _Property.totaltax;
+                        Master.OldUsageType = _Property.OldUsageType;
+                        Master.OldConstructionType = _Property.OldConstructionType;
+                        Master.OldCarpetAreaResident = _Property.OldCarpetAreaResident;
+                        Master.OldCarpetAreaNonResident = _Property.OldCarpetAreaNonResident;
+                        Master.NewUsageType = _Property.NewUsageType;
+                        Master.NewConstructionType = _Property.NewConstructionType;
+                        Master.NewCarpetAreaResident = _Property.NewCarpetAreaResident;
+                        Master.NewCarpetAreaNonResident = _Property.NewCarpetAreaNonResident;
+                        Master.ExtendUsage_Type = _Property.ExtendUsageType;
+                        Master.ExtendConstructionType = _Property.ExtendConstructionType;
+                        Master.ExtendCarpetAreaResident = _Property.ExtendCarpetAreaResident;
+                        Master.ExtendCarpetAreaNonResident = _Property.ExtendCarpetAreaNonResident;
+                        Master.PropertyType = _Property.PropertyType;
+                        Master.SurveyorName = _Property.SurveyorName;
+                        Master.SurveyorSignature = _Property.SurveyorSignature;
+
+                        if (_Property.SurveyorDate != null)
+                        {
+                            Master.SurveyorDate = Convert.ToDateTime(_Property.SurveyorDate).ToString("dd-MM-yyyy");
+                        }
+                        else
+                        {
+                            Master.SurveyorDate = "--Select Date--";
+                        }
+                        if (_Property.DataEntryDate != null)
+                        {
+                            Master.DataEntryDate = Convert.ToDateTime(_Property.DataEntryDate).ToString("dd-MM-yyyy");
+                        }
+                        else
+                        {
+                            Master.DataEntryDate = "--Select Date--";
+                        }
+                        Master.DataEntryName = _Property.DataEntryName;
+                        Master.DataEntrySignature = _Property.DataEntrySignature;
+
+                        Master.NonSolarWaterheater = _Property.NonSolarWaterheater;
+                        Master.NonVermicultureProject = _Property.NonVermicultureProject;
+                        Master.NoLift = _Property.NoLift;
+                        Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
+                        Master.Sketchdiagram = _Property.Sketchdiagram;
+                        Master.Sketchdiagram2 = _Property.Sketchdiagram2;
+                        Master.ZoneNo = _Property.ZoneNo;
+                        Master.VillageName = _Property.VillageName;
+                        Master.HFSNo = _Property.HFSNo;
+                        Master.Legal = _Property.Legal;
+                        Master.HissaNo = _Property.HissaNo;
+                        Master.OldRateableValue = _Property.OldRateableValue;
+                        Master.OldTotalTax = _Property.OldTotalTax;
+                        Master.FirstAssessmentYear = _Property.FirstAssessmentYear;
+                        Master.ImageNo = _Property.ImageNo;
+                        Master.WardName_No2 = _Property.WardNameNo2;
+                        Master.ZoneNo2 = _Property.ZoneNo2;
+                        Master.FHNo = _Property.FHNo;
+                        Master.PropertyType2 = _Property.PropertyType2;
+                        Master.NewPropertyNo2 = _Property.NewPropertyNo2;
+                        Master.PropertyNo2 = _Property.PropertyNo2;
+                        Master.GarbageType = _Property.GarbageType;
+                        Master.NOGarbageType = _Property.NOGarbageType;
+                        Master.PrabhagNo2 = _Property.PrabhagNo2;
+                        Master.YConstPermNo = _Property.YConstPermNo;
+                        Master.NConstPermNo = _Property.NConstPermNo;
+                        Master.YPermUseNo = _Property.YPermUseNo;
+                        Master.NPermUseNo = _Property.NPermUseNo;
+
+
+                        Master.ZKMKG = _Property.ZKMKG;
+                        Master.DVMKG = _Property.DVMKG;
+                        Master.ThirdPT = _Property.ThirdPT;
+                        Master.FourthPT = _Property.FourthPT;
+                        Master.FifthPT = _Property.FifthPT;
+                        Master.SixPT = _Property.SixPT;
+                        Master.SevenPT = _Property.SevenPT;
+                        Master.EightPT = _Property.EightPT;
+                        Master.NinePT = _Property.NinePT;
+                        Master.TenPT = _Property.TenPT;
+                        Master.ElevenPT = _Property.ElevenPT;
+                        Master.TwelvePT = _Property.TwelvePT;
+                        Master.TherteenPT = _Property.TherteenPT;
+                        Master.FourteenPT = _Property.FourteenPT;
+                        Master.FifteenPT = _Property.FifteenPT;
+                        Master.SixteenPT = _Property.SixteenPT;
+                        Master.seventeenPT = _Property.seventeenPT;
+                        Master.FirstRPC = _Property.FirstRPC;
+                        Master.SecondRPC = _Property.SecondRPC;
+                        Master.ThirdRPC = _Property.ThirdRPC;
+                        Master.FourthRPC = _Property.FourthRPC;
+                        Master.FifthRPC = _Property.FifthRPC;
+                        Master.SixRPC = _Property.SixRPC;
+                        Master.SevenRPC = _Property.SevenRPC;
+                        Master.EightRPC = _Property.EightRPC;
+                        Master.NineRPC = _Property.NineRPC;
+                        Master.TenRPC = _Property.TenRPC;
+                        Master.ElevenRPC = _Property.ElevenRPC;
+                        Master.TwelveRPC = _Property.TwelveRPC;
+                        Master.ThirteenRPC = _Property.ThirteenRPC;
+                        Master.FirstCPC = _Property.FirstCPC;
+                        Master.SecondCPC = _Property.SecondCPC;
+                        Master.ThirdCPC = _Property.ThirdCPC;
+                        Master.FourthCPC = _Property.FourthCPC;
+                        Master.FifthCPC = _Property.FifthCPC;
+                        Master.SixCPC = _Property.SixCPC;
+                        Master.SevenCPC = _Property.SevenCPC;
+                        Master.EightCPC = _Property.EightCPC;
+
+                        Master.NineCPC = _Property.NineCPC;
+                        Master.TenCPC = _Property.TenCPC;
+                        Master.ElevenCPC = _Property.ElevenCPC;
+                        Master.TwelveCPC = _Property.TwelveCPC;
+                        Master.ThirteenCPC = _Property.ThirteenCPC;
+                        Master.FourteenCPC = _Property.FourteenCPC;
                     }
-                    else
-                    {
-                        Master.DataEntryDate = "--Select Date--";
-                    }
-                    Master.DataEntryName = _Property.DataEntryName;
-                    Master.DataEntrySignature = _Property.DataEntrySignature;
-
-                    Master.NonSolarWaterheater = _Property.NonSolarWaterheater;
-                    Master.NonVermicultureProject = _Property.NonVermicultureProject;
-                    Master.NoLift = _Property.NoLift;
-                    Master.WaterConnectionSpecialCategory = _Property.WaterConnectionSpecialCategory;
-                    Master.Sketchdiagram = _Property.Sketchdiagram;
-                    Master.Sketchdiagram2 = _Property.Sketchdiagram2;
-                    Master.ZoneNo = _Property.ZoneNo;
-                    Master.VillageName = _Property.VillageName;
-                    Master.HFSNo = _Property.HFSNo;
-                    Master.Legal = _Property.Legal;
-                    Master.HissaNo = _Property.HissaNo;
-                    Master.OldRateableValue = _Property.OldRateableValue;
-                    Master.OldTotalTax = _Property.OldTotalTax;
-                    Master.FirstAssessmentYear = _Property.FirstAssessmentYear;
-                    Master.ImageNo = _Property.ImageNo;
-                    Master.WardName_No2 = _Property.WardNameNo2;
-                    Master.ZoneNo2 = _Property.ZoneNo2;
-                    Master.FHNo = _Property.FHNo;
-                    Master.PropertyType2 = _Property.PropertyType2;
-                    Master.NewPropertyNo2 = _Property.NewPropertyNo2;
-                    Master.PropertyNo2 = _Property.PropertyNo2;
-                    Master.GarbageType = _Property.GarbageType;
-                    Master.NOGarbageType = _Property.NOGarbageType;
-                    Master.PrabhagNo2 = _Property.PrabhagNo2;
-                    Master.YConstPermNo = _Property.YConstPermNo;
-                    Master.NConstPermNo = _Property.NConstPermNo;
-                    Master.YPermUseNo = _Property.YPermUseNo;
-                    Master.NPermUseNo = _Property.NPermUseNo;
-
-
-                    Master.ZKMKG = _Property.ZKMKG;
-                    Master.DVMKG = _Property.DVMKG;
-                    Master.ThirdPT = _Property.ThirdPT;
-                    Master.FourthPT = _Property.FourthPT;
-                    Master.FifthPT = _Property.FifthPT;
-                    Master.SixPT = _Property.SixPT;
-                    Master.SevenPT = _Property.SevenPT;
-                    Master.EightPT = _Property.EightPT;
-                    Master.NinePT = _Property.NinePT;
-                    Master.TenPT = _Property.TenPT;
-                    Master.ElevenPT = _Property.ElevenPT;
-                    Master.TwelvePT = _Property.TwelvePT;
-                    Master.TherteenPT = _Property.TherteenPT;
-                    Master.FourteenPT = _Property.FourteenPT;
-                    Master.FifteenPT = _Property.FifteenPT;
-                    Master.SixteenPT = _Property.SixteenPT;
-                    Master.seventeenPT = _Property.seventeenPT;
-                    Master.FirstRPC = _Property.FirstRPC;
-                    Master.SecondRPC = _Property.SecondRPC;
-                    Master.ThirdRPC = _Property.ThirdRPC;
-                    Master.FourthRPC = _Property.FourthRPC;
-                    Master.FifthRPC = _Property.FifthRPC;
-                    Master.SixRPC = _Property.SixRPC;
-                    Master.SevenRPC = _Property.SevenRPC;
-                    Master.EightRPC = _Property.EightRPC;
-                    Master.NineRPC = _Property.NineRPC;
-                    Master.TenRPC = _Property.TenRPC;
-                    Master.ElevenRPC = _Property.ElevenRPC;
-                    Master.TwelveRPC = _Property.TwelveRPC;
-                    Master.ThirteenRPC = _Property.ThirteenRPC;
-                    Master.FirstCPC = _Property.FirstCPC;
-                    Master.SecondCPC = _Property.SecondCPC;
-                    Master.ThirdCPC = _Property.ThirdCPC;
-                    Master.FourthCPC = _Property.FourthCPC;
-                    Master.FifthCPC = _Property.FifthCPC;
-                    Master.SixCPC = _Property.SixCPC;
-                    Master.SevenCPC = _Property.SevenCPC;
-                    Master.EightCPC = _Property.EightCPC;
-
-                    Master.NineCPC = _Property.NineCPC;
-                    Master.TenCPC = _Property.TenCPC;
-                    Master.ElevenCPC = _Property.ElevenCPC;
-                    Master.TwelveCPC = _Property.TwelveCPC;
-                    Master.ThirteenCPC = _Property.ThirteenCPC;
-                    Master.FourteenCPC = _Property.FourteenCPC;
                 }
                 else
                 {
@@ -2112,6 +2978,34 @@ namespace BLL.Repository.Repository
             }
         }
 
+        public PropertyMasterVM GetOwnerNameFocus(int Appid,string pname)
+        {
+            try
+            {
+                using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+                {
+
+                    var Details = db.PropertyMasters.Where(x=>x.IsDelete==false).FirstOrDefault();
+                    if (Details != null)
+                    {
+                        PropertyMasterVM Property = new PropertyMasterVM();
+
+                        Property.PropertyOwnerList = ListOwnerNameFocus(Appid, pname);
+                        return Property;
+                    }
+                    else
+                    {
+                        return new PropertyMasterVM();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new PropertyMasterVM();
+            }
+        }
+
         public List<SelectListItem> ListPrabhag(int Appid)
         {
             var user = new List<SelectListItem>();
@@ -2157,6 +3051,39 @@ namespace BLL.Repository.Repository
                                       (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName),
                             Value = (string.IsNullOrEmpty(x.PropOwnerFirstName)) ? " " : x.PropOwnerFirstName + " " +
                                  //     (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName) + " " +
+                                      (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName)
+                        }).Distinct().OrderBy(t => t.Text).ToList();
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return user;
+        }
+
+        public List<SelectListItem> ListOwnerNameFocus(int Appid, string pname)
+      {
+            var user = new List<SelectListItem>();
+            List<PropertyMaster> listObjects = new List<PropertyMaster>();
+            using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+            {
+
+                listObjects = (from obj in db.PropertyMasters
+                           
+                               select obj).GroupBy(n => new { n.PropOwnerFirstName }).Select(g => g.FirstOrDefault())
+                                          .ToList();
+
+                try
+                {
+                    user = listObjects.Where(c => ((string.IsNullOrEmpty(c.PropOwnerFirstName) ? " " : c.PropOwnerFirstName) + " " +
+                                      //(string.IsNullOrEmpty(c.PropOwnerMiddleName) ? " " : c.PropOwnerMiddleName) + " " +
+                                      (string.IsNullOrEmpty(c.PropOwnerLastName) ? " " : c.PropOwnerLastName) 
+                                       ).ToUpper().Contains(pname.ToUpper()))
+                        .Select(x => new SelectListItem
+                        {
+                            Text = (string.IsNullOrEmpty(x.PropOwnerFirstName)) ? " " : x.PropOwnerFirstName + " " +
+                                      //  (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName) + " " +
+                                      (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName),
+                            Value = (string.IsNullOrEmpty(x.PropOwnerFirstName)) ? " " : x.PropOwnerFirstName + " " +
+                                      //     (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName) + " " +
                                       (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName)
                         }).Distinct().OrderBy(t => t.Text).ToList();
                 }

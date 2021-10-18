@@ -3,8 +3,8 @@
 
 $(document).ready(function () {
     debugger;
-    /* document.getElementById('secondtable').style.display = 'block';*/
-   
+    /*  document.getElementById('secondtable').style.display = 'block';*/
+    document.getElementById('tapshil').style.display = 'block';
     var PrabhagListNo = $('#PrabhagList').val();
     $.ajax({
         type: "post",
@@ -115,7 +115,7 @@ $(document).ready(function () {
     });
 
     $("#test").focusout(function () {
-        debugger;
+     //   debugger;
         var PRONOBYNAME = $('#test').val();
         $.ajax({
             type: "post",
@@ -156,6 +156,26 @@ $(document).ready(function () {
         });
     });
 
+    $("#test").keyup(function () {
+      //  debugger;
+        var PRONOBYNAME = $('#test').val();
+        $.ajax({
+            type: "post",
+            url: "/PTC/OwnerNameListFocus?pname=" + PRONOBYNAME + "",
+            data: "{'prefixText':'" + document.getElementById('test').value + "'}",
+            datatype: "json",
+            traditional: true,
+            success: function (data) {            
+                district = '<option value=""></option>';
+                for (var i = 0; i < data.length; i++) {
+                    district = district + '<option value="' + data[i].Value + '"></option>';
+                }
+              
+             $('#tests').html(district);
+            }
+
+        });
+    });
 
 });
 
@@ -171,8 +191,9 @@ function None() {
     document.getElementById('byname').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-  
+   
 }
 
 function show1() {
@@ -189,9 +210,10 @@ function show1() {
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
-  /*  document.getElementById('secondtable').style.display = 'none';*/
+    document.getElementById('filterbyProperty').style.display = 'none';
+      document.getElementById('secondtable').style.display = 'none';
     document.getElementById('firsttable').style.display = 'block';
-
+   
 
 }
 
@@ -209,14 +231,12 @@ function show2() {
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
-    /*  document.getElementById('secondtable').style.display = 'none';*/
+    document.getElementById('secondtable').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'block';
 
-  
-   // window.location.href = "/Search/SurveyListSearch?q=-1";
- //   document.getElementById('firsttable').style.display = 'block';
-    
-   
+
 }
 
 function show3() {
@@ -226,7 +246,7 @@ function show3() {
     document.getElementById('const').style.display = 'block';
     document.getElementById('consstate').style.display = 'block';
     document.getElementById('adfilbtn').style.display = 'block';
-  
+
 }
 function show4() {
     ActiveEmployee();
@@ -240,10 +260,11 @@ function show4() {
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'block';
+    document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    
 
-  
+
+
 }
 function show5() {
     ActiveEmployee();
@@ -256,9 +277,10 @@ function show5() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byprono').style.display = 'none';
-    document.getElementById('filterbyname').style.display = 'block';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
-  
+
 }
 
 function show6() {
@@ -273,10 +295,11 @@ function show6() {
     document.getElementById('byname').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
-  /*  document.getElementById('secondtable').style.display = 'none';*/
+    document.getElementById('secondtable').style.display = 'none';
     document.getElementById('firsttable').style.display = 'block';
-   
+    
 }
 
 function show7() {
@@ -289,7 +312,10 @@ function show7() {
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
+    document.getElementById('secondtable').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'block';
 
 }
 
@@ -300,33 +326,21 @@ function SearchByName() {
     window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
-    //$.ajax({
-    //    url: "/Search/LoadData",
-    //    type: "POST",
-    //    dataType: 'json',
-    //    contentType: false,
-    //    processData: false,
-    //    success: function (response) {
-    //        debugger;
-    //        if (response.success) {
-    //            var x = document.getElementById("snackbar");
-    //            x.className = "show";
-    //            setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
-    //        } else {
-    //            var x = document.getElementById("snackbar1");
-    //            x.className = "show";
-    //            setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
-    //        }
-    //    },
-    //    error: function (response) {
-    //        alert("error!");  // 
-    //    }
+  
+}
 
-    //});
+function SearchByProperty() {
+    debugger;
+    poname = $('#PRONOBYNAME').val();
+    PROOWNAME   = $('#test').val();
+    window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
+    document.getElementById('secondtable').style.display = 'block';
+    document.getElementById('firsttable').style.display = 'none';
+
 }
 function Search() {
     debugger;
-      Filter = "f";
+    Filter = "f";
     PrabhagList = $('#PrabhagList').val();
     WardList = $('#WardList').val();
     CSDate = $('#CSDate').val();
@@ -344,7 +358,7 @@ function Search() {
     oTable = $('#datatableActive').DataTable();
     oTable.search(value).draw();
     oTable.search("");
-     
+
     //    document.getElementById('USER_ID_FK').value = -1;
 }
 //function SendRemainder(q) {
