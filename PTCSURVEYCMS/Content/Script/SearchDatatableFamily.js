@@ -5,79 +5,10 @@ $(document).ready(function () {
     debugger;
     /*  document.getElementById('secondtable').style.display = 'block';*/
     document.getElementById('tapshil').style.display = 'block';
-    var PrabhagListNo = $('#PrabhagList').val();
-    $.ajax({
-        type: "post",
-        url: "/PTC/PrabhagList",
-        data: { userId: PrabhagListNo },
-        datatype: "json",
-        traditional: true,
-        success: function (data) {
-            district = '<option value="-1">Select Prabhag No.</option>';
-            district = '<option value="All">Select All.</option>';
-            for (var i = 0; i < data.length; i++) {
-                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
-            }
-            //district = district + '</select>';
-            $('#PrabhagList').html(district);
-        }
-    });
-
-
-    var WardListNo = $('#WardList').val();
-    $.ajax({
-        type: "post",
-        url: "/PTC/WardList",
-        data: { userId: WardListNo },
-        datatype: "json",
-        traditional: true,
-        success: function (data) {
-            district = '<option value="-1">Select Ward No.</option>';
-            district = '<option value="All">Select All.</option>';
-            for (var i = 0; i < data.length; i++) {
-                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
-            }
-            //district = district + '</select>';
-            $('#WardList').html(district);
-        }
-    });
-
-    var WardListNo = $('#CSDate').val();
-    $.ajax({
-        type: "post",
-        url: "/PTC/CSDateList",
-        data: { userId: WardListNo },
-        datatype: "json",
-        traditional: true,
-        success: function (data) {
-            district = '<option value="-1">Select Cons.Start Date.</option>';
-            district = '<option value="All">Select All.</option>';
-            for (var i = 0; i < data.length; i++) {
-                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
-            }
-            //district = district + '</select>';
-            $('#CSDate').html(district);
-        }
-    });
-
-    var WardListNo = $('#CEDate').val();
-    $.ajax({
-        type: "post",
-        url: "/PTC/CEDateList",
-        data: { userId: WardListNo },
-        datatype: "json",
-        traditional: true,
-        success: function (data) {
-            district = '<option value="-1">Select Cons.End Date.</option>';
-            district = '<option value="All">Select All.</option>';
-            for (var i = 0; i < data.length; i++) {
-                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
-            }
-            //district = district + '</select>';
-            $('#CEDate').html(district);
-        }
-    });
-
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCEDate();
+    FillCSDate();
 
 
     $("#SearchText").val("");
@@ -180,6 +111,87 @@ $(document).ready(function () {
 });
 
 
+function FillPrabhagListNo() {
+    var PrabhagListNo = $('#PrabhagList').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/PrabhagList",
+        data: { userId: PrabhagListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1" >Select Prabhag No.</option>';
+            district = '<option value="All" selectedIndex="-1">Select All.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#PrabhagList').html(district);
+        }
+    });
+
+}
+
+function FillWardListNo() {
+    var WardListNo = $('#WardList').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/WardList",
+        data: { userId: WardListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1">Select Ward No.</option>';
+            district = '<option value="All">Select All.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#WardList').html(district);
+        }
+    });
+
+}
+
+function FillCSDate() {
+    var WardListNo = $('#CSDate').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/CSDateList",
+        data: { userId: WardListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1">Select Cons.Start Date.</option>';
+            district = '<option value="All">Select All.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#CSDate').html(district);
+        }
+    });
+}
+
+function FillCEDate() {
+    var WardListNo = $('#CEDate').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/CEDateList",
+        data: { userId: WardListNo },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1">Select Cons.End Date.</option>';
+            district = '<option value="All">Select All.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#CEDate').html(district);
+        }
+    });
+}
 
 function None() {
     ActiveEmployee();
@@ -235,6 +247,8 @@ function show2() {
     document.getElementById('filter').style.display = 'block';
     document.getElementById('secondtable').style.display = 'none';
     document.getElementById('firsttable').style.display = 'block';
+    FillPrabhagListNo();
+    FillWardListNo();
 
 
 }
@@ -299,7 +313,8 @@ function show6() {
     document.getElementById('filter').style.display = 'block';
     document.getElementById('secondtable').style.display = 'none';
     document.getElementById('firsttable').style.display = 'block';
-    
+    FillPrabhagListNo();
+    FillWardListNo();
 }
 
 function show7() {

@@ -296,15 +296,18 @@ namespace PTCSURVEYCMS.Controllers
                         {
                             customerData = customerData.Where(x => x.WardName_No == arr[2]).ToList();
                         }
-                        if (arr[3] != "All")
-                        {
-                            customerData = customerData.Where(x => x.CompletionYear == arr[3]).ToList();
-                        }
-
                         if (arr[4] != "All")
                         {
-                            customerData = customerData.Where(x => x.ConstStartYear == arr[4]).ToList();
+                            int CSDate = Convert.ToInt32(arr[4]);
+                            customerData = customerData.Where(x => Convert.ToInt32(x.ConstStartYear) >= CSDate & x.ConstStartYear!=null).ToList();
                         }
+                        if (arr[3] != "All")
+                        {
+                            int CEDate = Convert.ToInt32(arr[3]);
+                            customerData = customerData.Where(x => Convert.ToInt32(x.CompletionYear) <= CEDate & x.CompletionYear != null).ToList();
+                        }
+
+                    
                         if (arr[5] != "")
                         { 
                             if(arr[5]== "Safe")
