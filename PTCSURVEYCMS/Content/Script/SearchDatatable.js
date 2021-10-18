@@ -578,7 +578,7 @@ function ActiveEmployee() {
         //        "searchable": false
         //    }],
         "columns": [
-            { "data": "PrabhagNo" },
+            { "data": "PropertyId"},
             { "data": "WardName_No" },
             { "data": "ConstStartYear" },
             { "data": "CompletionYear" },
