@@ -282,12 +282,7 @@ function ActiveEmployee() {
             {
                 "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
 
-                    //if (full["PropOwnerFirstName"].includes == ".") {
-
-                    //    return '<p> ' + (full["PropOwnerFirstName"])
-                    //        + ' ' + (full["PropOwnerMiddleName"]) + '</p>';
-
-                    //}
+                   
 
                     if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
 
@@ -307,12 +302,9 @@ function ActiveEmployee() {
 
                         return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
                           
-
-                    }
-
-                  
+                    }                
                     else {
-                        //
+                       
                         return 'Not Available';
                     }
                 }

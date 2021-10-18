@@ -4,7 +4,7 @@
 $(document).ready(function () {
     debugger;
     /* document.getElementById('secondtable').style.display = 'block';*/
-   
+  
     var PrabhagListNo = $('#PrabhagList').val();
     $.ajax({
         type: "post",
@@ -197,6 +197,7 @@ function None() {
 }
 
 function show1() {
+    debugger;
     ActiveEmployee();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
@@ -212,6 +213,8 @@ function show1() {
     document.getElementById('filter').style.display = 'block';
   /*  document.getElementById('secondtable').style.display = 'none';*/
     document.getElementById('firsttable').style.display = 'block';
+    $("#PrabhagList").find('option:first')
+        .attr('selected', 'selected');
 
 
 }
@@ -283,6 +286,7 @@ function show5() {
 }
 
 function show6() {
+    debugger;
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -297,6 +301,8 @@ function show6() {
     document.getElementById('filter').style.display = 'block';
   /*  document.getElementById('secondtable').style.display = 'none';*/
     document.getElementById('firsttable').style.display = 'block';
+    $("#PrabhagList").find('option:first')
+        .attr('selected', 'selected');
    
 }
 
