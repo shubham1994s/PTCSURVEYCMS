@@ -3060,7 +3060,7 @@ namespace BLL.Repository.Repository
         }
 
         public List<SelectListItem> ListOwnerNameFocus(int Appid, string pname)
-      {
+        {
             var user = new List<SelectListItem>();
             List<PropertyMaster> listObjects = new List<PropertyMaster>();
             using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
