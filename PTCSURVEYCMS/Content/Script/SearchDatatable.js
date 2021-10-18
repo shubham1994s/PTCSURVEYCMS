@@ -156,6 +156,27 @@ $(document).ready(function () {
         });
     });
 
+    $("#test").keyup(function () {
+        //  debugger;
+        var PRONOBYNAME = $('#test').val();
+        $.ajax({
+            type: "post",
+            url: "/PTC/OwnerNameListFocus?pname=" + PRONOBYNAME + "",
+            data: "{'prefixText':'" + document.getElementById('test').value + "'}",
+            datatype: "json",
+            traditional: true,
+            success: function (data) {
+                district = '<option value=""></option>';
+                for (var i = 0; i < data.length; i++) {
+                    district = district + '<option value="' + data[i].Value + '"></option>';
+                }
+
+                $('#tests').html(district);
+            }
+
+        });
+    });
+
 
 });
 
