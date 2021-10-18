@@ -273,14 +273,15 @@ function show4() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
-    document.getElementById('filterbyname').style.display = 'block';
-    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
 
 
 
 }
 function show5() {
+    debugger;
     ActiveEmployee();
     var element = document.getElementById("cusmargin");
     element.classList.add("MyClass");
@@ -291,8 +292,8 @@ function show5() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byprono').style.display = 'none';
-    document.getElementById('filterbyname').style.display = 'none';
-    document.getElementById('filterbyProperty').style.display = 'block';
+    document.getElementById('filterbyname').style.display = 'block';
+    document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
 
 }
@@ -336,8 +337,8 @@ function show7() {
 
 function SearchByName() {
     debugger;
-    PROOWNAME = $('#Name').val();
-    poname = $('#poname').val();
+    poname = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
     window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
@@ -346,8 +347,8 @@ function SearchByName() {
 
 function SearchByProperty() {
     debugger;
-    poname = $('#PRONOBYNAME').val();
-    PROOWNAME   = $('#test').val();
+    poname = $('#poname').val();
+    PROOWNAME = $('#Name').val();
     window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';

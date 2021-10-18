@@ -361,18 +361,18 @@ function show7() {
 
 function SearchByName() {
     debugger;
-    PROOWNAME = $('#Name').val();
-    poname = $('#poname').val();
+    poname = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
     window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
-  
+
 }
 
 function SearchByProperty() {
     debugger;
-    poname = $('#PRONOBYNAME').val();
-    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    PROOWNAME = $('#Name').val();
     window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
