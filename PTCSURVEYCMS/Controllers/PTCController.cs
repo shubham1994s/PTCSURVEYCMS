@@ -430,130 +430,7 @@ namespace PTCSURVEYCMS.Controllers
                                 lname = arr1[2];
                                 customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == lname.ToLower()).ToList();
                             }
-                            TempData["Name1"] = customerData.Select(x=>x.Name1).FirstOrDefault();
-                            TempData.Keep("Name1");
-                            TempData["Name2"] = customerData.Select(x => x.Name2).FirstOrDefault();
-                            TempData.Keep("Name2");
-                            TempData["Name3"] = customerData.Select(x => x.Name3).FirstOrDefault();
-                            TempData.Keep("Name3");
-                            TempData["Name4"] = customerData.Select(x => x.Name4).FirstOrDefault();
-                            TempData.Keep("Name4");
-                            TempData["Name5"] = customerData.Select(x => x.Name5).FirstOrDefault();
-                            TempData.Keep("Name5");
-                            TempData["Name6"] = customerData.Select(x => x.Name6).FirstOrDefault();
-                            TempData.Keep("Name6");
-                            TempData["Name7"] = customerData.Select(x => x.Name7).FirstOrDefault();
-                            TempData.Keep("Name7");
-                            TempData["Name8"] = customerData.Select(x => x.Name8).FirstOrDefault();
-                            TempData.Keep("Name8");
-                            TempData["Name9"] = customerData.Select(x => x.Name9).FirstOrDefault();
-                            TempData.Keep("Name9");
-                            TempData["Name10"] = customerData.Select(x => x.Name10).FirstOrDefault();
-                            TempData.Keep("Name10");
-                            TempData["Name11"] = customerData.Select(x => x.Name11).FirstOrDefault();
-                            TempData.Keep("Name11");
-                            TempData["Name12"] = customerData.Select(x => x.Name12).FirstOrDefault();
-                            TempData.Keep("Name12");
-
-                            TempData["Age1"] = customerData.Select(x => x.Age1).FirstOrDefault();
-                            TempData.Keep("Age1");
-                            TempData["Age2"] = customerData.Select(x => x.Age2).FirstOrDefault();
-                            TempData.Keep("Age2");
-                            TempData["Age3"] = customerData.Select(x => x.Age3).FirstOrDefault();
-                            TempData.Keep("Age3");
-                            TempData["Age4"] = customerData.Select(x => x.Age4).FirstOrDefault();
-                            TempData.Keep("Age4");
-                            TempData["Age5"] = customerData.Select(x => x.Age5).FirstOrDefault();
-                            TempData.Keep("Age5");
-                            TempData["Age6"] = customerData.Select(x => x.Age6).FirstOrDefault();
-                            TempData.Keep("Age6");
-                            TempData["Age7"] = customerData.Select(x => x.Age7).FirstOrDefault();
-                            TempData.Keep("Age7");
-                            TempData["Age8"] = customerData.Select(x => x.Age8).FirstOrDefault();
-                            TempData.Keep("Age8");
-                            TempData["Age9"] = customerData.Select(x => x.Age9).FirstOrDefault();
-                            TempData.Keep("Age9");
-                            TempData["Age10"] = customerData.Select(x => x.Age10).FirstOrDefault();
-                            TempData.Keep("Age10");
-                            TempData["Age11"] = customerData.Select(x => x.Age11).FirstOrDefault();
-                            TempData.Keep("Age11");
-                            TempData["Age12"] = customerData.Select(x => x.Age12).FirstOrDefault();
-                            TempData.Keep("Age12");
-
-                            TempData["link1"] = customerData.Select(x => x.link1).FirstOrDefault();
-                            TempData.Keep("link1");
-                            TempData["link2"] = customerData.Select(x => x.link2).FirstOrDefault();
-                            TempData.Keep("link2");
-                            TempData["link3"] = customerData.Select(x => x.link3).FirstOrDefault();
-                            TempData.Keep("link3");
-                            TempData["link4"] = customerData.Select(x => x.link4).FirstOrDefault();
-                            TempData.Keep("link4");
-                            TempData["link5"] = customerData.Select(x => x.link5).FirstOrDefault();
-                            TempData.Keep("link5");
-                            TempData["link6"] = customerData.Select(x => x.link6).FirstOrDefault();
-                            TempData.Keep("link6");
-                            TempData["link7"] = customerData.Select(x => x.link7).FirstOrDefault();
-                            TempData.Keep("link7");
-                            TempData["link8"] = customerData.Select(x => x.link8).FirstOrDefault();
-                            TempData.Keep("link8");
-                            TempData["link9"] = customerData.Select(x => x.link9).FirstOrDefault();
-                            TempData.Keep("link9");
-                            TempData["link10"] = customerData.Select(x => x.link10).FirstOrDefault();
-                            TempData.Keep("link10");
-                            TempData["link11"] = customerData.Select(x => x.link11).FirstOrDefault();
-                            TempData.Keep("link11");
-                            TempData["link12"] = customerData.Select(x => x.link12).FirstOrDefault();
-                            TempData.Keep("link12");
-
-                            TempData["ContactNo1"] = customerData.Select(x => x.ContactNo1).FirstOrDefault();
-                            TempData.Keep("ContactNo1");
-                            TempData["ContactNo2"] = customerData.Select(x => x.ContactNo2).FirstOrDefault();
-                            TempData.Keep("ContactNo2");
-                            TempData["ContactNo3"] = customerData.Select(x => x.ContactNo3).FirstOrDefault();
-                            TempData.Keep("ContactNo3");
-                            TempData["ContactNo4"] = customerData.Select(x => x.ContactNo4).FirstOrDefault();
-                            TempData.Keep("ContactNo4");
-                            TempData["ContactNo5"] = customerData.Select(x => x.ContactNo5).FirstOrDefault();
-                            TempData.Keep("ContactNo5");
-                            TempData["ContactNo6"] = customerData.Select(x => x.ContactNo6).FirstOrDefault();
-                            TempData.Keep("ContactNo6");
-                            TempData["ContactNo7"] = customerData.Select(x => x.ContactNo7).FirstOrDefault();
-                            TempData.Keep("ContactNo7");
-                            TempData["Name8"] = customerData.Select(x => x.ContactNo8).FirstOrDefault();
-                            TempData.Keep("Name8");
-                            TempData["ContactNo9"] = customerData.Select(x => x.ContactNo9).FirstOrDefault();
-                            TempData.Keep("ContactNo9");
-                            TempData["ContactNo10"] = customerData.Select(x => x.ContactNo10).FirstOrDefault();
-                            TempData.Keep("ContactNo10");
-                            TempData["ContactNo11"] = customerData.Select(x => x.ContactNo11).FirstOrDefault();
-                            TempData.Keep("ContactNo11");
-                            TempData["ContactNo12"] = customerData.Select(x => x.ContactNo12).FirstOrDefault();
-                            TempData.Keep("ContactNo12");
-
-                            TempData["VoterIdentityNo1"] = customerData.Select(x => x.VoterIdentityNo1).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo1");
-                            TempData["VoterIdentityNo2"] = customerData.Select(x => x.VoterIdentityNo2).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo2");
-                            TempData["VoterIdentityNo3"] = customerData.Select(x => x.VoterIdentityNo3).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo3");
-                            TempData["VoterIdentityNo4"] = customerData.Select(x => x.VoterIdentityNo4).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo4");
-                            TempData["VoterIdentityNo5"] = customerData.Select(x => x.VoterIdentityNo5).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo5");
-                            TempData["VoterIdentityNo6"] = customerData.Select(x => x.VoterIdentityNo6).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo6");
-                            TempData["Name7"] = customerData.Select(x => x.VoterIdentityNo7).FirstOrDefault();
-                            TempData.Keep("Name7");
-                            TempData["VoterIdentityNo8"] = customerData.Select(x => x.VoterIdentityNo8).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo8");
-                            TempData["VoterIdentityNo9"] = customerData.Select(x => x.VoterIdentityNo9).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo9");
-                            TempData["VoterIdentityNo10"] = customerData.Select(x => x.VoterIdentityNo10).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo10");
-                            TempData["VoterIdentityNo11"] = customerData.Select(x => x.VoterIdentityNo11).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo11");
-                            TempData["VoterIdentityNo12"] = customerData.Select(x => x.VoterIdentityNo12).FirstOrDefault();
-                            TempData.Keep("VoterIdentityNo12");
+                         
 
                         }
 
@@ -868,6 +745,22 @@ public string SelectionNotExists(string SearchText, string selectoption)
                 Repository = new Repository();
                 int AppId = SessionHandler.Current.AppId;
                 obj = Repository.GetOwnerNameList(AppId, pname);
+                return Json(obj.PropertyOwnerList, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+        public ActionResult OwnerNameListFocus(string pname)
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetOwnerNameFocus(AppId, pname);
+               // var data = new { fname = obj.PropOwnerFirstName, lname = obj.PropOwnerLastName };
                 return Json(obj.PropertyOwnerList, JsonRequestBehavior.AllowGet);
 
             }
