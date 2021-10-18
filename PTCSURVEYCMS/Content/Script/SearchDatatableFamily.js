@@ -273,14 +273,15 @@ function show4() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
-    document.getElementById('filterbyname').style.display = 'block';
-    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
 
 
 
 }
 function show5() {
+    debugger;
     ActiveEmployee();
     var element = document.getElementById("cusmargin");
     element.classList.add("MyClass");
@@ -291,8 +292,8 @@ function show5() {
     document.getElementById('consstate').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('byprono').style.display = 'none';
-    document.getElementById('filterbyname').style.display = 'none';
-    document.getElementById('filterbyProperty').style.display = 'block';
+    document.getElementById('filterbyname').style.display = 'block';
+    document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
 
 }
