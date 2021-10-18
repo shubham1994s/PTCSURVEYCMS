@@ -237,14 +237,11 @@ function closeWin() {
     myWindow.close();
 }
 
-function capitalize_Words(str) {
-    debugger;
-    return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
-}
-//console.log(capitalize_Words('js string exercises'));
 
 
-const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
+debugger;
+const capitalStr = phrase.charAt(0).toUpperCase() + phrase.slice(1);
+//
 function ActiveEmployee() {
 
     $('#datatableActive').DataTable({
@@ -275,19 +272,27 @@ function ActiveEmployee() {
             {
                 "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
 
+                    //if (full["PropOwnerFirstName"].includes == ".") {
+
+                    //    return '<p> ' + (full["PropOwnerFirstName"])
+                    //        + ' ' + (full["PropOwnerMiddleName"]) + '</p>';
+
+                    //}
+
                     if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
 
-                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
-                            + ' ' + uppercaseWords(full["PropOwnerLastName"]) + '</p>';
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
+                        + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
 
                     }
 
                     if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null) {
 
-                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
-                            + ' ' + uppercaseWords(full["PropOwnerMiddleName"]) + '</p>';
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
+                        + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
 
                     }
+                  
                     else {
                         //
                         return 'Not Available';

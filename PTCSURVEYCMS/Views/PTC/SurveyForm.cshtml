@@ -1048,9 +1048,9 @@ td input{width:100%}
                                 <div class="form-group pr-4 back  mr-3">
                                     <label class="label">सांडपाणी गटारात सोडता काय ?</label>
                                     <div>
-                                        @Html.CheckBox("SGSK", new { @class = "chkBx2" })
+                                        @Html.CheckBox("SGSK", new { @class = "chkBx33" })
                                         <label>होय </label>&nbsp;
-                                        @Html.CheckBox("NOSGSK", new { @class = "chkBx2" })
+                                        @Html.CheckBox("NOSGSK", new { @class = "chkBx33" })
                                         <label>नाही</label>
 
                                     </div>
@@ -2971,6 +2971,9 @@ new SelectListItem { Text = "Mixed", Value = "M"}
     });
     $('.chkBx32').change(function () {
         $(".chkBx32").not(this).prop('checked', false);
+    });
+    $('.chkBx33').change(function () {
+        $(".chkBx33").not(this).prop('checked', false);
     });
     $('#trash_badge').click(function () {
         debugger;
