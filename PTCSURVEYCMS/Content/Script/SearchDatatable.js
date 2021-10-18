@@ -178,7 +178,33 @@ $(document).ready(function () {
     });
 
 
+    function check() {
+        document.getElementById("consd").checked = true;
+        ActiveEmployee();
+        var element = document.getElementById("cusmargin");
+        element.classList.remove("MyClass");
+        document.getElementById('common').style.display = 'block';
+        document.getElementById('const').style.display = 'block';
+        document.getElementById('consstate').style.display = 'none';
+        document.getElementById('ConsPerNo').style.display = 'none';
+        document.getElementById('adfilbtn').style.display = 'block';
+        document.getElementById('byname').style.display = 'none';
+        document.getElementById('byprono').style.display = 'none';
+        document.getElementById('tapshil').style.display = 'none';
+        document.getElementById('filterbyname').style.display = 'none';
+        document.getElementById('filter').style.display = 'block';
+        /*  document.getElementById('secondtable').style.display = 'none';*/
+        document.getElementById('firsttable').style.display = 'block';
+    }
+    function uncheck() {
+        document.getElementById("red").checked = false;
+    }
+
+    window.onload = check();
+
 });
+
+
 
 
 
@@ -307,13 +333,14 @@ function show6() {
 }
 
 function show7() {
+    document.getElementById("bpn").checked = true;
     document.getElementById('tapshil').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
-    document.getElementById('adfilbtn').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('const').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
-    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('byprono').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
