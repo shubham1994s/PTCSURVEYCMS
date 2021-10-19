@@ -79,7 +79,7 @@ $(document).ready(function () {
                 district = '<option value="-1">Select Name</option>';
                 district = '<option value="">Select All.</option>';
                 for (var i = 0; i < data.length; i++) {
-                    district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                    district = district + '<option value=' + data[i].Value + '>' + data[i].Text.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</option>';
                 }
                 $('#Name').html(district);
             }
@@ -363,7 +363,7 @@ function SearchByName() {
     debugger;
     poname = $('#PRONOBYNAME').val();
     PROOWNAME = $('#test').val();
-    window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
+    window.location.href = "/Search/SurveyListSearch?x=" + poname + "&y=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
 

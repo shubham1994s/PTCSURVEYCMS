@@ -4,7 +4,42 @@
 $(document).ready(function () {
     debugger;
     /*  document.getElementById('secondtable').style.display = 'block';*/
-    document.getElementById('tapshil').style.display = 'block';
+    var url_string = window.location.href; //window.location.href
+    var url = new URL(url_string);
+    var q = url.searchParams.get("q");
+    var n = url.searchParams.get("n");
+    var x = url.searchParams.get("y");
+    var y = url.searchParams.get("x");
+
+    if (q != null && n != null) {
+
+        $('#poname').val(q);
+        // district = '<option value="">Select All.</option>';
+        $("#Name").append("<option class='form-control form-control form-control-sm' value='" + n + "' selected> " + n + "</option>");
+        // $('#Name').val(n);
+        document.getElementById('tapshil').style.display = 'block';
+        document.getElementById("bpn").checked = true;
+        document.getElementById('byprono').style.display = 'block';
+        document.getElementById('filterbyProperty').style.display = 'block';
+        document.getElementById('filter').style.display = 'none';
+        document.getElementById('adfilbtn').style.display = 'block';
+    }
+    debugger;
+    if (x != null && y != null) {
+
+        $('#test').val(x);
+        // district = '<option value="">Select All.</option>';
+        $("#PRONOBYNAME").append("<option class='form-control form-control form-control-sm' value='" + y + "' selected> " + y + "</option>");
+        // $('#Name').val(n);
+        document.getElementById('tapshil').style.display = 'block';
+        document.getElementById("bpn2").checked = true;
+        document.getElementById('byname').style.display = 'block';
+        document.getElementById('filterbyname').style.display = 'block';
+        document.getElementById('filterbyProperty').style.display = 'none';
+        document.getElementById('filter').style.display = 'none';
+        document.getElementById('adfilbtn').style.display = 'block';
+    }
+ 
     FillPrabhagListNo();
     FillWardListNo();
     FillCEDate();
@@ -79,7 +114,7 @@ $(document).ready(function () {
                 district = '<option value="-1">Select Name</option>';
                 district = '<option value="">Select All.</option>';
                 for (var i = 0; i < data.length; i++) {
-                    district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                    district = district + '<option value=' + data[i].Value + '>' + data[i].Text.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</option>';
                 }
                 $('#Name').html(district);
             }
@@ -88,7 +123,7 @@ $(document).ready(function () {
     });
 
     $("#test").keyup(function () {
-      //  debugger;
+     debugger;
         var PRONOBYNAME = $('#test').val();
         $.ajax({
             type: "post",
@@ -99,7 +134,7 @@ $(document).ready(function () {
             success: function (data) {            
                 district = '<option value=""></option>';
                 for (var i = 0; i < data.length; i++) {
-                    district = district + '<option value="' + data[i].Value + '"></option>';
+                    district = district + '<option value="' + data[i].Value.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }) + '"></option>';
                 }
               
              $('#tests').html(district);
@@ -319,17 +354,18 @@ function show6() {
 }
 
 function show7() {
+    document.getElementById("bpn").checked = true;
     document.getElementById('tapshil').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
-    document.getElementById('adfilbtn').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('const').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
-    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('byprono').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
-    document.getElementById('filterbyProperty').style.display = 'none';
-    document.getElementById('filter').style.display = 'block';
+    document.getElementById('filterbyProperty').style.display = 'block';
+    document.getElementById('filter').style.display = 'none';
     document.getElementById('secondtable').style.display = 'none';
     document.getElementById('firsttable').style.display = 'block';
 
@@ -339,7 +375,7 @@ function SearchByName() {
     debugger;
     poname = $('#PRONOBYNAME').val();
     PROOWNAME = $('#test').val();
-    window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
+    window.location.href = "/Search/SurveyListSearch?x=" + poname + "&y=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
   
@@ -352,6 +388,8 @@ function SearchByProperty() {
     window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
+
+
 
 }
 function Search() {

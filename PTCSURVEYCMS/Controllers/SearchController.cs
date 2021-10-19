@@ -20,7 +20,7 @@ namespace PTCSURVEYCMS.Controllers
         }
 
         [HttpGet]
-        public ActionResult SurveyListSearch(string q = "-1" ,string n="-1",int clientId=0)
+        public ActionResult SurveyListSearch(string q = "-1" ,string n="-1", string x = "-1", string y = "-1", int clientId=0)
         {
             Repository = new Repository();
 
@@ -51,16 +51,27 @@ namespace PTCSURVEYCMS.Controllers
 
 
                 var viewModel = new PropertyMasterVM();
-                viewModel = Repository.getPropertyDetailsByFamily(q,n, Appid);
+              
+              
+
+
+                if (x != "-1")
+                {
+                    q = y;
+                    n = x;
+                    viewModel = Repository.getPropertyDetailsByFamily(q, n, Appid);
+                    return PartialView("_SearchFamily", viewModel);
+                }
                 if (q != "-1")
                 {
+                    viewModel = Repository.getPropertyDetailsByFamily(q, n, Appid);
                     return PartialView("_SearchFamily", viewModel);
                 }
                 using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(Appid))
                 {
                     //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
 
-                    var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
+                    var EntryCount = db.PropertyMasters.Where(c => c.IsDelete == false).Count();
                     ViewBag.EntryCount = EntryCount;
                 }
 
