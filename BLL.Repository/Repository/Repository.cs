@@ -940,6 +940,7 @@ namespace BLL.Repository.Repository
                     Name10 = x.Name10,
                     Name11 = x.Name11,
                     Name12 = x.Name12,
+                 //   SurveyorName=x.SurveyorName,
 
 
                 }).ToList();

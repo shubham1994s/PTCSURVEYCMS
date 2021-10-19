@@ -6,6 +6,7 @@ using DAL.ChildDatabase;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.SqlServer;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -285,7 +286,7 @@ namespace PTCSURVEYCMS.Controllers
                     //Search
                     var searchString = searchValue;
                     Session["Search"] = searchString;
-                    string[] arr = searchString.Split(',');
+                     string[] arr = searchString.Split(',');
                     if (arr[0] == "f")
                     {
                         if (arr[1]!="All")
@@ -296,34 +297,27 @@ namespace PTCSURVEYCMS.Controllers
                         {
                             customerData = customerData.Where(x => x.WardName_No == arr[2]).ToList();
                         }
-                        if (arr[4] != "All")
-                        {
-                            int CSDate = Convert.ToInt32(arr[4]);
-                            customerData = customerData.Where(x => Convert.ToInt32(x.ConstStartYear) >= CSDate & x.ConstStartYear!=null).ToList();
-                        }
-                        if (arr[3] != "All")
-                        {
-                            int CEDate = Convert.ToInt32(arr[3]);
-                            customerData = customerData.Where(x => Convert.ToInt32(x.CompletionYear) <= CEDate & x.CompletionYear != null).ToList();
-                        }
+                     
 
                         if (arr[4] != "All" && arr[3] == "All")
                         {
                             int CSDate = Convert.ToInt32(arr[4]);
-                            customerData = customerData.Where(x => Convert.ToInt32(x.ConstStartYear) == CSDate & x.ConstStartYear != null).ToList();
+                            customerData = customerData.Where(x => x.ConstStartYear == arr[4] & x.ConstStartYear != null).ToList();
                         }
 
                         if (arr[3] != "All" && arr[4] == "All")
                         {
                             int CEDate = Convert.ToInt32(arr[3]);
-                            customerData = customerData.Where(x => Convert.ToInt32(x.CompletionYear) == CEDate & x.CompletionYear != null).ToList();
+                            customerData = customerData.Where(x => x.CompletionYear == arr[3] & x.CompletionYear != null).ToList();
                         }
 
                         if (arr[3] != "All" && arr[4] != "All")
                         {
                             int CSDate = Convert.ToInt32(arr[4]);
                             int CEDate = Convert.ToInt32(arr[3]);
-                            customerData = customerData.Where(x => Convert.ToInt32(x.ConstStartYear) >= CSDate & Convert.ToInt32(x.CompletionYear) <= CEDate & x.CompletionYear != null).ToList();
+                            customerData = customerData.Where(x =>  x.CompletionYear != null && x.CompletionYear != "").ToList();
+                            customerData = customerData.Where(x => x.ConstStartYear != null &&  x.ConstStartYear != "").ToList();
+                            customerData = customerData.Where(x => Convert.ToInt32(x.ConstStartYear) >= CSDate & Convert.ToInt32(x.CompletionYear) <= CEDate).ToList();
                         }
                         if (arr[5] != "")
                         { 
@@ -504,7 +498,7 @@ namespace PTCSURVEYCMS.Controllers
                                       (string.IsNullOrEmpty(c.CompletionYear) ? " " : c.CompletionYear)
 
                                        ).ToUpper().Contains(searchValue.ToUpper())).ToList();
-
+                    
                        customerData = model.ToList();
                     }
 
