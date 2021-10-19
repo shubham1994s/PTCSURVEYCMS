@@ -144,8 +144,8 @@ $.ajax({
     datatype: "json",
     traditional: true,
     success: function (data) {
-        district = '<option value="-1" >Select Prabhag No.</option>';
-        district = '<option value="All" selectedIndex="-1">Select All.</option>';
+       // district = '<option value="-1" >Select Prabhag No.</option>';
+        district = '<option value="All" >Select All.</option>';
         for (var i = 0; i < data.length; i++) {
             district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
         }
@@ -165,7 +165,7 @@ function FillWardListNo() {
         datatype: "json",
         traditional: true,
         success: function (data) {
-            district = '<option value="-1">Select Ward No.</option>';
+           // district = '<option value="-1">Select Ward No.</option>';
             district = '<option value="All">Select All.</option>';
             for (var i = 0; i < data.length; i++) {
                 district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
@@ -560,6 +560,7 @@ const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 function ActiveEmployee() {
 
     $('#datatableActive').DataTable({
+    
         //  "processing": true, // for show progress bar  
         "serverSide": true, // for process server side  
         "filter": true, // this is for disable filter (search box)
@@ -584,7 +585,8 @@ function ActiveEmployee() {
         //        "searchable": false
         //    }],
         "columns": [
-            { "data": "PropertyId"},
+            
+            { "data": "PrabhagNo"},
             { "data": "WardName_No" },
             { "data": "ConstStartYear" },
             { "data": "CompletionYear" },
