@@ -415,7 +415,7 @@ function SearchByProperty() {
 
 }
 function Search() {
-    debugger;
+   // debugger;
       Filter = "f";
     PrabhagList = $('#PrabhagList').val();
     WardList = $('#WardList').val();
