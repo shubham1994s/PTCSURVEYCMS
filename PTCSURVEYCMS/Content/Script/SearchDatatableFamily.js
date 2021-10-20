@@ -24,6 +24,8 @@ $(document).ready(function () {
         document.getElementById('filterbyProperty').style.display = 'block';
         document.getElementById('filter').style.display = 'none';
         document.getElementById('adfilbtn').style.display = 'block';
+        var element = document.getElementById("cusmargin");
+        element.classList.add("MyClass");
     }
     debugger;
     if (x != null && y != null) {
@@ -40,6 +42,8 @@ $(document).ready(function () {
         document.getElementById('filterbyProperty').style.display = 'none';
         document.getElementById('filter').style.display = 'none';
         document.getElementById('adfilbtn').style.display = 'block';
+        var element = document.getElementById("cusmargin");
+        element.classList.add("MyClass");
     }
   
     FillPrabhagListNo();
@@ -400,6 +404,8 @@ function show6() {
 function show7() {
     debugger;
     document.getElementById("bpn").checked = true;
+        var element = document.getElementById("cusmargin");
+    element.classList.add("MyClass");
     document.getElementById('tapshil').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
@@ -428,6 +434,8 @@ function show7() {
 
 function SearchByName() {
     debugger;
+    var element = document.getElementById("cusmargin");
+    element.classList.add("MyClass");
     poname = $('#PRONOBYNAME').val();
     PROOWNAME = $('#test').val();
     window.location.href = "/Search/SurveyListSearch?x=" + poname + "&y=" + PROOWNAME + "";
@@ -438,6 +446,8 @@ function SearchByName() {
 
 function SearchByProperty() {
     debugger;
+    var element = document.getElementById("cusmargin");
+    element.classList.add("MyClass");
     poname = $('#poname').val();
     PROOWNAME = $('#Name').val();
     window.location.href = "/Search/SurveyListSearch?q=" + poname + "&n=" + PROOWNAME + "";
