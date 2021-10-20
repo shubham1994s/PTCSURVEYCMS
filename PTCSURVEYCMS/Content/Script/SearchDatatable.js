@@ -108,6 +108,24 @@ $(document).ready(function () {
         });
     });
 
+    $("#poname").change(function () {
+
+
+        var PropertyNo = $("#poname").val();
+        $.ajax({
+            url: "/PTC/IsPropertyNoExists?PropertyNo=" + PropertyNo,
+            type: "POST",
+            data: { PropertyNo: PropertyNo }
+        })
+            .done(function (msg) {
+                if (msg == 1) {
+                    $('#err_PropertyNo').text('This Is Already Exist PropertyNo!');
+                } else {
+                    $('#err_PropertyNo').text('This PropertyNo Is Not Exist!');
+                }
+            });
+    });
+
 
     function check() {
         document.getElementById("consd").checked = true;
@@ -417,7 +435,7 @@ function SearchByProperty() {
 
 }
 function Search() {
-    debugger;
+   // debugger;
       Filter = "f";
     PrabhagList = $('#PrabhagList').val();
     WardList = $('#WardList').val();

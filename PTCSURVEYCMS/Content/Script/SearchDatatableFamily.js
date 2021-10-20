@@ -184,7 +184,7 @@ function FillPrabhagListNo() {
             for (var i = 0; i < data.length; i++) {
                 district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
             }
-            //district = district + '</select>';
+         
             $('#PrabhagList').html(district);
         }
     });
@@ -205,7 +205,7 @@ function FillWardListNo() {
             for (var i = 0; i < data.length; i++) {
                 district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
             }
-            //district = district + '</select>';
+           
             $('#WardList').html(district);
         }
     });
@@ -226,7 +226,7 @@ function FillCSDate() {
             for (var i = 0; i < data.length; i++) {
                 district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
             }
-            //district = district + '</select>';
+          
             $('#CSDate').html(district);
         }
     });
