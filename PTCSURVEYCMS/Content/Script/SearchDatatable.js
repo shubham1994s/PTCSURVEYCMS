@@ -165,7 +165,7 @@ function FillWardListNo() {
         datatype: "json",
         traditional: true,
         success: function (data) {
-            district = '<option value="-1">Select Ward No.</option>';
+           // district = '<option value="-1">Select Ward No.</option>';
             district = '<option value="All">Select All.</option>';
             for (var i = 0; i < data.length; i++) {
                 district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
@@ -369,6 +369,8 @@ function show6() {
 function show7() {
     debugger;
     document.getElementById("bpn").checked = true;
+    var element = document.getElementById("cusmargin");
+    element.classList.add("MyClass");
     document.getElementById('tapshil').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
@@ -596,6 +598,7 @@ const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 function ActiveEmployee() {
 
     $('#datatableActive').DataTable({
+    
         //  "processing": true, // for show progress bar  
         "serverSide": true, // for process server side  
         "filter": true, // this is for disable filter (search box)
@@ -620,7 +623,8 @@ function ActiveEmployee() {
         //        "searchable": false
         //    }],
         "columns": [
-            { "data": "PrabhagNo" },
+            
+            { "data": "PrabhagNo"},
             { "data": "WardName_No" },
             { "data": "ConstStartYear" },
             { "data": "CompletionYear" },
