@@ -14,6 +14,7 @@ $(document).ready(function () {
     if (q != null && n != null) {
 
         $('#poname').val(q);
+        n = n.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); });
         // district = '<option value="">Select All.</option>';
         $("#Name").append("<option class='form-control form-control form-control-sm' value='" + n + "' selected> " + n + "</option>");
         // $('#Name').val(n);
@@ -28,6 +29,7 @@ $(document).ready(function () {
     if (x != null && y != null) {
 
         $('#test').val(x);
+        y = y.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); });
         // district = '<option value="">Select All.</option>';
         $("#PRONOBYNAME").append("<option class='form-control form-control form-control-sm' value='" + y + "' selected> " + y + "</option>");
         // $('#Name').val(n);
@@ -39,7 +41,7 @@ $(document).ready(function () {
         document.getElementById('filter').style.display = 'none';
         document.getElementById('adfilbtn').style.display = 'block';
     }
- 
+  
     FillPrabhagListNo();
     FillWardListNo();
     FillCEDate();
@@ -114,7 +116,7 @@ $(document).ready(function () {
                 district = '<option value="-1">Select Name</option>';
                 district = '<option value="">Select All.</option>';
                 for (var i = 0; i < data.length; i++) {
-                    district = district + '<option value=' + data[i].Value + '>' + data[i].Text.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</option>';
+                    district = district + '<option value="' + data[i].Value + '">' + data[i].Text.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</option>';
                 }
                 $('#Name').html(district);
             }
@@ -141,6 +143,24 @@ $(document).ready(function () {
             }
 
         });
+    });
+
+    $("#poname").change(function () {
+      
+
+        var PropertyNo = $("#poname").val();
+        $.ajax({
+            url: "/PTC/IsPropertyNoExists?PropertyNo=" + PropertyNo,
+            type: "POST",
+            data: { PropertyNo: PropertyNo }
+        })
+            .done(function (msg) {
+                if (msg == 1) {
+                    $('#err_PropertyNo').text('This Is Already Exist PropertyNo!');
+                } else {
+                    $('#err_PropertyNo').text('This PropertyNo Is Not Exist!');
+                }
+            });
     });
 
 });
@@ -244,6 +264,7 @@ function None() {
 }
 
 function show1() {
+    debugger;
     ActiveEmployee();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
@@ -256,15 +277,23 @@ function show1() {
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
-    document.getElementById('filter').style.display = 'block';
     document.getElementById('filterbyProperty').style.display = 'none';
-      document.getElementById('secondtable').style.display = 'none';
-    document.getElementById('firsttable').style.display = 'block';
-   
+    document.getElementById('filter').style.display = 'block';
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
 
 }
 
 function show2() {
+    debugger;
     ActiveEmployee();
 
     var element = document.getElementById("cusmargin");
@@ -280,14 +309,19 @@ function show2() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
-    document.getElementById('secondtable').style.display = 'none';
-    document.getElementById('firsttable').style.display = 'block';
+
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
     FillPrabhagListNo();
     FillWardListNo();
-
+    FillCSDate();
+    FillCEDate();
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
 
 }
-
 function show3() {
     ActiveEmployee();
     document.getElementById('common').style.display = 'block';
@@ -334,6 +368,7 @@ function show5() {
 }
 
 function show6() {
+    debugger;
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -347,13 +382,23 @@ function show6() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
-    document.getElementById('secondtable').style.display = 'none';
     document.getElementById('firsttable').style.display = 'block';
+
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
     FillPrabhagListNo();
     FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+
 }
 
 function show7() {
+    debugger;
     document.getElementById("bpn").checked = true;
     document.getElementById('tapshil').style.display = 'block';
     document.getElementById('common').style.display = 'none';
@@ -366,8 +411,18 @@ function show7() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('secondtable').style.display = 'none';
-    document.getElementById('firsttable').style.display = 'block';
+
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+
 
 }
 

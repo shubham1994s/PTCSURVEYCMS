@@ -79,7 +79,7 @@ $(document).ready(function () {
                 district = '<option value="-1">Select Name</option>';
                 district = '<option value="">Select All.</option>';
                 for (var i = 0; i < data.length; i++) {
-                    district = district + '<option value=' + data[i].Value + '>' + data[i].Text.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</option>';
+                    district = district + '<option value="' + data[i].Value + '">' + data[i].Text.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</option>';
                 }
                 $('#Name').html(district);
             }
@@ -144,7 +144,7 @@ $.ajax({
     datatype: "json",
     traditional: true,
     success: function (data) {
-       // district = '<option value="-1" >Select Prabhag No.</option>';
+        district = '<option value="-1" >Select Prabhag No.</option>';
         district = '<option value="All" >Select All.</option>';
         for (var i = 0; i < data.length; i++) {
             district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
@@ -248,15 +248,21 @@ function show1() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
-  /*  document.getElementById('secondtable').style.display = 'none';*/
-    //document.getElementById('firsttable').style.display = 'block';
-    //$("#PrabhagList").find('option:first')
-    //    .attr('selected', 'selected');
-
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
 
 }
 
 function show2() {
+    debugger;
     ActiveEmployee();
 
     var element = document.getElementById("cusmargin");
@@ -272,11 +278,19 @@ function show2() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
+    
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
     FillPrabhagListNo();
     FillWardListNo();
-   
-}
+    FillCSDate();
+    FillCEDate();
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
 
+}
 function show3() {
     ActiveEmployee();
     document.getElementById('common').style.display = 'block';
@@ -338,8 +352,18 @@ function show6() {
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
     document.getElementById('firsttable').style.display = 'block';   
+
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
     FillPrabhagListNo();
     FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+
 }
 
 function show7() {
@@ -356,6 +380,18 @@ function show7() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
+
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+
    
 }
 
@@ -668,25 +704,4 @@ const Delete = async (ID) => {
 
 
 
-
-//var func_count = 1
-//setInterval(function () {
-//    notification_count()
-//}, 35000
-//);
-
-
-
-//function Delete(ID) {
-//    // return confirm('Are you sure you want to Delete?')
-//    var x = confirm("Are you sure you want to delete?");
-//    if (x) {
-//        window.location.href = "/PTC/Delete?q=" + ID;
-//        return true;
-//    }
-
-//    else
-//        return false;
-
-//}
 

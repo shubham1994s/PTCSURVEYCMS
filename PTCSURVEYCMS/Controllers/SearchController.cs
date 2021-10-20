@@ -57,8 +57,8 @@ namespace PTCSURVEYCMS.Controllers
 
                 if (x != "-1")
                 {
-                    q = y;
-                    n = x;
+                    q = x;
+                    n = y;
                     viewModel = Repository.getPropertyDetailsByFamily(q, n, Appid);
                     return PartialView("_SearchFamily", viewModel);
                 }
