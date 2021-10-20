@@ -237,21 +237,8 @@ function closeWin() {
     myWindow.close();
 }
 
-function capitalize_Words(str) {
-    debugger;
-    return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
-}
-//console.log(capitalize_Words('js string exercises'));
 
-debugger;
-//const uppercaseWords = str.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
-//const uppercaseWords = ([first, ...rest], locale = navigator.language) => first.toLocaleUpperCase(locale) + rest.join('')
-//const uppercaseWords = str.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
 
-//str = str.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); });
-
-//document.getElementById('result').textContent = str;
-//var strn = str => str.replace(/\./g, ' ');
 function ActiveEmployee() {
 
     $('#datatableActive').DataTable({

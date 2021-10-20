@@ -197,6 +197,7 @@
 </style>
 
 
+
 @using (Html.BeginForm("SurveyList", "PTC", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "ValidateUser();", role = "form" }))
 {
     <div class="pcoded-inner-content" style="width: 87%; margin-left: 8%;">
@@ -328,14 +329,7 @@
                                         <label> मालमत्तेची सद्यस्तिथी /</label>
                                         <label>Current status of the property</label>
                                         <select id="OCNO" class="form-control form-control form-control-sm">
-                                            <option value="">मालमत्तेची सद्यस्तिथी</option>
-                                            <option value="ALL">Select All.</option>
-                                            <option value="Safe">भिंती (सुस्थितीत)</option>
-                                            <option value="Danger">भिंती (धोकदायक)</option>
-                                            <option value="Safe2">छप्पर (सुस्थितीत)</option>
-                                            <option value="Danger2">छप्पर (धोकदायक)</option>
-                                            <option value="Safe3">काँलम (सुस्थितीत)</option>
-                                            <option value="Danger3">काँलम (धोकदायक)</option>
+                                           
                                         </select>
                                     </div>
                                     <div id="ConsPerNo">
@@ -343,22 +337,14 @@
                                             <label>बांधकाम परवानगी क्र. /</label>
                                             <label>Const. Perm. No.</label>
                                             <select id="CPNO" class="form-control form-control form-control-sm">
-                                                <option value="">Select Const. Perm. No.</option>
-                                                <option value="ALL">Select All.</option>
-                                                <option value="Y">YES</option>
-                                                <option value="N">NO</option>
-                                                <option value="NA">Not Select</option>
+                                              
                                             </select>
                                         </div>
                                         <div class="col-lg-2 form-group">
                                             <label>भोगवटा दाखला क्र. /</label>
                                             <label> O. C. No.</label>
                                             <select id="OCNOY" class="form-control form-control form-control-sm">
-                                                <option value="">O. C. No</option>
-                                                <option value="ALL">Select All.</option>
-                                                <option value="Y">YES</option>
-                                                <option value="N">NO</option>
-                                                <option value="NA">Not Select</option>
+                                               
                                             </select>
                                         </div>
                                     </div>
@@ -368,6 +354,7 @@
                                             <label> Property No.</label>
 
                                             <input type="text" id="poname" class="form-control form-control form-control-sm" placeholder="Enter Property No" />
+                                            <span  class="text-danger"  id="err_PropertyNo"></span>
                                         </div>
                                         <div class="col-lg-3 form-group cptb">
                                             <label>नाव/</label>
@@ -470,9 +457,9 @@
                                                 </thead>
                                                 <tr class="text-center">
                                                     <td>1</td>
-                                                    <td>
+                                                    <td style="text-transform: capitalize;">
 
-                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control",style = "font-family:Arial, FontAwesome" })
 
                                                     </td>
 
@@ -505,7 +492,7 @@
                                                 </tr>
                                                 <tr class="text-center">
                                                     <td>2</td>
-                                                    <td>@Html.DisplayFor(model => model.Name2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link2", new List<SelectListItem>
@@ -519,7 +506,7 @@
                                                 </tr>
                                                 <tr class="text-center">
                                                     <td>3</td>
-                                                    <td>@Html.DisplayFor(model => model.Name3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link3", new List<SelectListItem>
@@ -535,7 +522,7 @@
 
                                                 <tr class="text-center">
                                                     <td>4</td>
-                                                    <td>@Html.DisplayFor(model => model.Name4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link4", new List<SelectListItem>
@@ -550,7 +537,7 @@
 
                                                 <tr class="text-center">
                                                     <td>5</td>
-                                                    <td>@Html.DisplayFor(model => model.Name5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link5", new List<SelectListItem>
@@ -565,7 +552,7 @@
 
                                                 <tr class="text-center">
                                                     <td>6</td>
-                                                    <td>@Html.DisplayFor(model => model.Name6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age6, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link6", new List<SelectListItem>
@@ -581,7 +568,7 @@
 
                                                 <tr class="text-center">
                                                     <td>7</td>
-                                                    <td>@Html.DisplayFor(model => model.Name7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age7, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link7", new List<SelectListItem>
@@ -597,7 +584,7 @@
 
                                                 <tr class="text-center">
                                                     <td>8</td>
-                                                    <td>@Html.DisplayFor(model => model.Name8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age8, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link8", new List<SelectListItem>
@@ -613,7 +600,7 @@
 
                                                 <tr class="text-center">
                                                     <td>9</td>
-                                                    <td>@Html.DisplayFor(model => model.Name9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age9, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link9", new List<SelectListItem>
@@ -629,7 +616,7 @@
 
                                                 <tr class="text-center">
                                                     <td>10</td>
-                                                    <td>@Html.DisplayFor(model => model.Name10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link10", new List<SelectListItem>
@@ -645,7 +632,7 @@
 
                                                 <tr class="text-center">
                                                     <td>11</td>
-                                                    <td>@Html.DisplayFor(model => model.Name11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age11, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link11", new List<SelectListItem>
@@ -661,7 +648,7 @@
 
                                                 <tr class="text-center">
                                                     <td>12</td>
-                                                    <td>@Html.DisplayFor(model => model.Name12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                                                    <td style="text-transform: capitalize;">@Html.DisplayFor(model => model.Name12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>@Html.DisplayFor(model => model.Age12, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                                                     <td>
                                                         @Html.DropDownList("link12", new List<SelectListItem>
@@ -854,14 +841,18 @@
         }
 </style>
 
+
+
+
 <script>
     $(document).ready(function () {
+        debugger;
         $('#datatablePartial').DataTable();
+        
     });
+
+
 </script>
-
-
-
 
 
 <script>
