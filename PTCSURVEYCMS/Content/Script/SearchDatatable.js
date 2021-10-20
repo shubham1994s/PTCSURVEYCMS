@@ -145,7 +145,7 @@ $.ajax({
     traditional: true,
     success: function (data) {
         district = '<option value="-1" >Select Prabhag No.</option>';
-        district = '<option value="All" selectedIndex="-1">Select All.</option>';
+        district = '<option value="All" >Select All.</option>';
         for (var i = 0; i < data.length; i++) {
             district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
         }
