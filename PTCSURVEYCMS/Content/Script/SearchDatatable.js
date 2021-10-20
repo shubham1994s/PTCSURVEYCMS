@@ -369,6 +369,8 @@ function show6() {
 function show7() {
     debugger;
     document.getElementById("bpn").checked = true;
+    var element = document.getElementById("cusmargin");
+    element.classList.add("MyClass");
     document.getElementById('tapshil').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
