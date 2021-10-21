@@ -2432,7 +2432,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
     line-height: 1.5;border-radius: 3px;border-style: none;" id="btnSubmit" onclick="return Validate()">
 
                             <span class="glyphicon glyphicon-saved"></span>
-                            <span id="buttonName">@ViewBag.btn </span>
+                            <span id="buttonName" >@ViewBag.btn </span>
 
                         </button>
                         <p id="para" style="color: green; margin-left: 40%;">@ViewBag.Message </p>
@@ -2871,7 +2871,13 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 
         });
        
+        document.getElementById("buttonName").onclick = function () {
+            debugger;
+            //disable
+            this.disabled = true;
 
+            //do some validation stuff
+        }
     });
     $('.chkBx').change(function () {
         $(".chkBx").not(this).prop('checked', false);
