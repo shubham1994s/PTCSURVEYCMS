@@ -301,6 +301,8 @@ function show1() {
 
     document.getElementById('poname').value = ''
     document.getElementById('Name').value = ''
+    document.getElementById('test').value = ''
+    document.getElementById('PRONOBYNAME').value = ''
 
 }
 
@@ -341,6 +343,8 @@ function show2() {
 
     document.getElementById('poname').value = ''
     document.getElementById('Name').value = ''
+    document.getElementById('test').value = ''
+    document.getElementById('PRONOBYNAME').value = ''
 
 }
 function show3() {
@@ -422,6 +426,8 @@ function show6() {
     window.history.pushState('', 'New Page Title', '/Search/SurveyListSearch');
     document.getElementById('poname').value = ''
     document.getElementById('Name').value = ''
+    document.getElementById('test').value = ''
+    document.getElementById('PRONOBYNAME').value = ''
    
 }
 
