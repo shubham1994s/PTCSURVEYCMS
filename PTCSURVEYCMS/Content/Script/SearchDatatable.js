@@ -254,6 +254,8 @@ function show1() {
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
     document.getElementById('firsttable').style.display = 'block';
     document.getElementById('Thirdtable').style.display = 'none';
@@ -288,7 +290,9 @@ function show2() {
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
-    document.getElementById('filter').style.display = 'block';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'block';
@@ -368,7 +372,9 @@ function show6() {
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
-    document.getElementById('filter').style.display = 'block';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'none';
+    document.getElementById('filterbyno').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'block';
     document.getElementById('Fourthtable').style.display = 'none';
@@ -405,6 +411,8 @@ function show7() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'none';
+    document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'block';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'none';
@@ -458,26 +466,66 @@ function Search() {
     var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
 
     // alert(value );
-    if (CSDate != "All" || CEDate != "All") {
-        oTable = $('#datatableActive').DataTable();
-    }
-    if (CPNO != null || OCNOY != null) {
-        oTable = $('#ThirddatatableActive').DataTable();
-    }
-    if (OCNO != "") {
-        if (OCNO != null) {
-            oTable = $('#FourthdatatableActive').DataTable();
-        }
-       
-    }
-   
-   
+
+
+   oTable = $('#datatableActive').DataTable();
+  
     oTable.search(value).draw();
     oTable.search("");
 }
 
 
 
+function SearchByNo() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
+
+    // alert(value );
+
+        oTable = $('#ThirddatatableActive').DataTable();
+    
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
+
+
+
+function SearchByStatus() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
+
+    // alert(value );
+
+    oTable = $('#FourthdatatableActive').DataTable();
+  
+    oTable.search(value).draw();
+    oTable.search("");
+}
 
 
 function send() {
