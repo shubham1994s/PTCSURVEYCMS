@@ -257,7 +257,7 @@ function ActiveEmployee() {
             "datatype": "json",
 
         },
-
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
         "columnDefs":
             [{
                 "targets": [0],
