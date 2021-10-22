@@ -2,7 +2,7 @@
 
 
 $(document).ready(function () {
-    debugger;
+   // debugger;
     /*  document.getElementById('secondtable').style.display = 'block';*/
     var url_string = window.location.href; //window.location.href
     var url = new URL(url_string);
@@ -27,7 +27,7 @@ $(document).ready(function () {
         var element = document.getElementById("cusmargin");
         element.classList.add("MyClass");
     }
-    debugger;
+   // debugger;
     if (x != null && y != null) {
 
         $('#test').val(x);
@@ -54,17 +54,7 @@ $(document).ready(function () {
 
     $("#SearchText").val("");
     $("#para").show().delay(3000).show().fadeOut('slow');
-    /* document.getElementById("para").reset();*/
-
-
-    //var msg = document.getElementById("para").textContent;
-    //if (msg == 'This Massage Is  Send Successfully!') {
-
-    //    var x = document.getElementById("snackbar");
-    //    x.className = "show";
-    //    setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
-    //    document.getElementById('para').textContent = ''
-    //}
+  
 
     ActiveEmployee();
 
@@ -285,6 +275,8 @@ function show1() {
     document.getElementById('filter').style.display = 'block';
     document.getElementById('firsttable').style.display = 'block';
     document.getElementById('secondtable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'none';
     FillPrabhagListNo();
     FillWardListNo();
     FillCSDate();
@@ -308,8 +300,7 @@ function show1() {
 
 function show2() {
     debugger;
-    ActiveEmployee();
-
+    PropertyActive();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -323,9 +314,10 @@ function show2() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
-    document.getElementById('firsttable').style.display = 'block';
+    document.getElementById('firsttable').style.display = 'none';
     document.getElementById('secondtable').style.display = 'none';
-    
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
 
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
@@ -394,8 +386,8 @@ function show5() {
 
 function show6() {
    
-    debugger;
-    ActiveEmployee();
+   // debugger;
+    StatusActive();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -410,9 +402,10 @@ function show6() {
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
     document.getElementById('firsttable').style.display = 'block';
-    document.getElementById('firsttable').style.display = 'block';
+    document.getElementById('firsttable').style.display = 'none';
     document.getElementById('secondtable').style.display = 'none';
-
+    document.getElementById('Thirdtable').style.display = 'block';
+    document.getElementById('Fourthtable').style.display = 'none';
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
     FillPrabhagListNo();
@@ -450,7 +443,9 @@ function show7() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
-
+    document.getElementById('firsttable').style.display = 'block';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'none';
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
     FillPrabhagListNo();
@@ -508,6 +503,8 @@ function Search() {
 
     // alert(value );
     oTable = $('#datatableActive').DataTable();
+    oTable = $('#ThirddatatableActive').DataTable();
+    oTable = $('#FourthdatatableActive').DataTable();
     oTable.search(value).draw();
     oTable.search("");
 
@@ -742,6 +739,256 @@ function ActiveEmployee() {
     });
 
 }
+
+
+
+function StatusActive() {
+
+    $('#ThirddatatableActive').DataTable({
+
+        //  "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once  
+        "pageLength": 5,
+        "searching": true,
+        destroy: true,
+        // "order": [
+        //       [0, "asc"]
+        //],
+        "ajax": {
+            "url": "/PTC/LoadData/",
+            "type": "POST",
+            "datatype": "json",
+
+        },
+
+        //"columnDefs":
+        //    [{
+        //        "targets": [0],
+        //        "visible": false,
+        //        "searchable": false
+        //    }],
+        "columns": [
+
+            { "data": "PrabhagNo" },
+            { "data": "WardName_No" },
+            {
+                "data": "YConstPermNo", "render": function (data, type, full, meta) {
+
+                    if (full["YConstPermNo"] == 0 && full["NConstPermNo"] == 0) {
+
+                        return 'Not Available';
+
+                    }
+                    if (full["YConstPermNo"] == 1 && full["NConstPermNo"] == 0) {
+
+                        return 'Yes';
+
+                    }
+                    if (full["YConstPermNo"] == 0 && full["NConstPermNo"] == 1) {
+
+                        return 'No';
+
+                    }
+                }
+            },
+            { "data": "ConstPermNo" },
+            {
+                "data": "YPermUseNo", "render": function (data, type, full, meta) {
+
+                    if (full["YPermUseNo"] == 0 && full["NPermUseNo"] == 0) {
+
+                        return 'Not Available';
+
+                    }
+                    if (full["YPermUseNo"] == 1 && full["NPermUseNo"] == 0) {
+
+                        return 'Yes';
+
+                    }
+                    if (full["YPermUseNo"] == 0 && full["NPermUseNo"] == 1) {
+
+                        return 'No';
+
+                    }
+                }
+            },
+            { "data": "PermUseNo" },
+            {
+                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+
+                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
+                            + ' ' + uppercaseWords(full["PropOwnerLastName"]) + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null) {
+
+                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
+                            + ' ' + uppercaseWords(full["PropOwnerMiddleName"]) + '</p>';
+
+                    }
+                    else {
+                        //
+                        return 'Not Available';
+                    }
+                }
+            },
+
+            { "data": "PropOwnerTelephoneNo" },
+            { "data": "NewPropertyNo" },
+            { "data": "PropertyNo" },
+            { "data": "OldHouseNo1" },
+
+
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            //   {
+            //"render": function (data, type, full, meta) {
+            //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+            //}, "width": "10%"
+            // },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+            /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
+        ]
+    });
+
+}
+
+function PropertyActive() {
+
+    $('#FourthdatatableActive').DataTable({
+
+        //  "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once  
+        "pageLength": 5,
+        "searching": true,
+        destroy: true,
+
+        "ajax": {
+            "url": "/PTC/LoadData/",
+            "type": "POST",
+            "datatype": "json",
+
+        },
+
+        "columns": [
+
+            { "data": "PrabhagNo" },
+            { "data": "WardName_No" },
+
+
+            {
+                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+
+                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
+                            + ' ' + uppercaseWords(full["PropOwnerLastName"]) + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null) {
+
+                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
+                            + ' ' + uppercaseWords(full["PropOwnerMiddleName"]) + '</p>';
+
+                    }
+                    else {
+                        //
+                        return 'Not Available';
+                    }
+                }
+            },
+
+            {
+                "data": "Safe", "render": function (data, type, full, meta) {
+
+                    if (full["Safe"] == 0 && full["Danger"] == 0) {
+
+                        return 'Not Available';
+
+                    }
+                    if (full["Safe"] == 1 && full["Danger"] == 0) {
+
+                        return 'सुस्थितीत';
+
+                    }
+                    if (full["Safe"] == 0 && full["Danger"] == 1) {
+
+                        return 'धोकदायक';
+
+                    }
+                }
+            },
+
+            {
+                "data": "Safe2", "render": function (data, type, full, meta) {
+
+                    if (full["Safe2"] == 0 && full["Danger2"] == 0) {
+
+                        return 'Not Available';
+
+                    }
+                    if (full["Safe2"] == 1 && full["Danger2"] == 0) {
+
+                        return 'सुस्थितीत';
+
+                    }
+                    if (full["Safe2"] == 0 && full["Danger2"] == 1) {
+
+                        return 'धोकदायक';
+
+                    }
+                }
+            },
+
+            {
+                "data": "Safe3", "render": function (data, type, full, meta) {
+
+                    if (full["Safe3"] == 0 && full["Danger3"] == 0) {
+
+                        return 'Not Available';
+
+                    }
+                    if (full["Safe3"] == 1 && full["Danger3"] == 0) {
+
+                        return 'सुस्थितीत';
+
+                    }
+                    if (full["Safe3"] == 0 && full["Danger3"] == 1) {
+
+                        return 'धोकदायक';
+
+                    }
+                }
+            },
+
+            { "data": "PropOwnerTelephoneNo" },
+            { "data": "NewPropertyNo" },
+            { "data": "PropertyNo" },
+            { "data": "OldHouseNo1" },
+
+
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            //   {
+            //"render": function (data, type, full, meta) {
+            //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+            //}, "width": "10%"
+            // },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+            /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
+        ]
+    });
+
+}
+
 
 
 

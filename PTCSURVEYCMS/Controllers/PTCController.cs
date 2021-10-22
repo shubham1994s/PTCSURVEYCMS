@@ -495,8 +495,11 @@ namespace PTCSURVEYCMS.Controllers
                                       (string.IsNullOrEmpty(c.PrabhagNo) ? " " : c.PrabhagNo) + "" +
                                       (string.IsNullOrEmpty(c.WardName_No) ? " " : c.WardName_No) + "" +
                                       (string.IsNullOrEmpty(c.ConstStartYear) ? " " : c.ConstStartYear) + "" +
-                                      (string.IsNullOrEmpty(c.CompletionYear) ? " " : c.CompletionYear)
-
+                                      (string.IsNullOrEmpty(c.CompletionYear) ? " " : c.CompletionYear) + "" +
+                                       (string.IsNullOrEmpty(c.ConstPermNo) ? " " : c.ConstPermNo) + "" +
+                                     // (string.IsNullOrEmpty(c.YConstPermNo) ? " " : c.YConstPermNo) + "" +
+                                      (string.IsNullOrEmpty(c.PermUseNo) ? " " : c.PermUseNo)
+                                    //  (string.IsNullOrEmpty(c.CompletionYear) ? " " : c.CompletionYear)
                                        ).ToUpper().Contains(searchValue.ToUpper())).ToList();
                     
                        customerData = model.ToList();
@@ -506,8 +509,6 @@ namespace PTCSURVEYCMS.Controllers
                     recordsTotal = customerData.Count();
                     //Paging     
                     var data = customerData.Skip(skip).Take(pageSize).ToList();
-                    
-                 //   var data = customerData.Take(pageSize).ToList();
                     //Returning Json Data    
                     return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
                     }

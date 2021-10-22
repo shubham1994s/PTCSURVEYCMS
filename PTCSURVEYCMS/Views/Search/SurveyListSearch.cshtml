@@ -198,6 +198,10 @@
     #filterbyProperty {
         padding: 7px 10px;
     }
+    #Thirdtable, #Fourthtable {
+        display: none;
+    }
+    
 </style>
 
 
@@ -395,6 +399,7 @@
                                                 <input data-background-color="filter-button-box-color" class="btn btn-sm btn-success filter-button-style custom-filter" type="button" value="Filter Records" id="filter" onclick="Search()" />
                                                 <input data-background-color="filter-button-box-color" class="btn btn-sm btn-success filter-button-style custom-filter" type="button" value="Filter Records" id="filterbyname" onclick="SearchByName()" />
                                                 <input data-background-color="filter-button-box-color" class="btn btn-sm btn-success filter-button-style custom-filter" type="button" value="Filter Records" id="filterbyProperty" onclick="SearchByProperty()" />
+                                             
                                             </div>
                                         </div>
 
@@ -432,6 +437,61 @@
                                                         <th>Cons. Start Date </th>
                                                         <th>Cons. End Date </th>
                                                         <th>Owner Name</th>
+                                                        <th>Owner Mobile No</th>
+                                                        <th>New Property No</th>
+                                                        <th>Property No</th>
+                                                        <th>House No</th>
+                                                        <th>View</th>
+                                                        <th>Scanned Document</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                            </table>
+
+
+                                        </div>
+
+                                        <div class="dt-responsive table-responsive" id="Thirdtable">
+
+                                            <table id="ThirddatatableActive" class="table table-striped table-bordered nowrap">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>PrabhagNo </th>
+                                                        <th>Ward No </th>
+                                                        <th>Const.Perm. Status</th>
+                                                        <th>Const.Perm. No</th>
+                                                        <th>O.C. Status</th>
+                                                        <th>O.C. NO</th>
+                                                        <th>Owner Name</th>
+                                                        <th>Owner Mobile No</th>
+                                                        <th>New Property No</th>
+                                                        <th>Property No</th>
+                                                        <th>House No</th>
+                                                        <th>View</th>
+                                                        <th>Scanned Document</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                            </table>
+
+
+                                        </div>
+
+                                        <div class="dt-responsive table-responsive" id="Fourthtable">
+
+                                            <table id="FourthdatatableActive" class="table table-striped table-bordered nowrap">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>PrabhagNo </th>
+                                                        <th>Ward No </th>
+                                                        <th>Owner Name</th>
+                                                        <th>भिंती</th>
+                                                        <th>छप्पर</th>
+                                                        <th>काँलम</th>
                                                         <th>Owner Mobile No</th>
                                                         <th>New Property No</th>
                                                         <th>Property No</th>

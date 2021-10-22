@@ -924,10 +924,12 @@ namespace BLL.Repository.Repository
                     Danger = x.Danger,
                     Danger2 = x.Danger2,
                     Danger3 = x.Danger3,
-                    YPermUseNo=x.YPermUseNo,
+                    YPermUseNo=x.YPermUseNo,           
                     NPermUseNo=x.NPermUseNo,
                     YConstPermNo=x.YConstPermNo,
                     NConstPermNo=x.NConstPermNo,
+                    ConstPermNo=x.ConstPermNo,
+                    PermUseNo=x.PermUseNo,
                     Name1=x.Name1,
                     Name2 = x.Name2,
                     Name3 = x.Name3,
@@ -940,7 +942,7 @@ namespace BLL.Repository.Repository
                     Name10 = x.Name10,
                     Name11 = x.Name11,
                     Name12 = x.Name12,
-                 //   SurveyorName=x.SurveyorName,
+                   
 
 
                 }).ToList();

@@ -205,6 +205,11 @@
     #filterbyProperty {
         padding: 7px 10px;
     }
+
+    #Thirdtable, #Fourthtable {
+        display: none;
+    }
+    
 </style>
 
 
@@ -451,12 +456,66 @@
 
                                         </div>
 
+                                        <div class="dt-responsive table-responsive" id="Thirdtable">
+
+                                            <table id="ThirddatatableActive" class="table table-striped table-bordered nowrap">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>PrabhagNo </th>
+                                                        <th>Ward No </th>
+                                                        <th>Const.Perm. Status</th>
+                                                        <th>Const.Perm. No</th>
+                                                        <th>O.C. Status</th>
+                                                        <th>O.C. NO</th>
+                                                        <th>Owner Name</th>
+                                                        <th>Owner Mobile No</th>
+                                                        <th>New Property No</th>
+                                                        <th>Property No</th>
+                                                        <th>House No</th>
+                                                        <th>View</th>
+                                                        <th>Scanned Document</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                            </table>
+
+
+                                        </div>
+
+                                        <div class="dt-responsive table-responsive" id="Fourthtable">
+
+                                            <table id="FourthdatatableActive" class="table table-striped table-bordered nowrap">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>PrabhagNo </th>
+                                                        <th>Ward No </th>
+                                                        <th>Owner Name</th>
+                                                        <th>भिंती</th>
+                                                        <th>छप्पर</th>
+                                                        <th>काँलम</th>
+                                                        <th>Owner Mobile No</th>
+                                                        <th>New Property No</th>
+                                                        <th>Property No</th>
+                                                        <th>House No</th>
+                                                        <th>View</th>
+                                                        <th>Scanned Document</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                            </table>
+
+
+                                        </div>
 
                                         <div class="dt-responsive table-responsive" id="secondtable" style="height:100%">
 
-                                                            <table class="table table-striped table-bordered nowrap">
-                                                                <thead>
-                                                                    <tr>
+                                            <table class="table table-striped table-bordered nowrap">
+                                                <thead>
+                                                    <tr>
 
                                                         <th>अ. क्र.</th>
                                                         <th>नाव </th>
@@ -470,7 +529,7 @@
                                                     <td>1</td>
                                                     <td style="text-transform: capitalize;">
 
-                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control",style = "font-family:Arial, FontAwesome" })
+                                                        @Html.DisplayFor(model => model.Name1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
                                                     </td>
 
@@ -675,6 +734,9 @@
 
 
                                         </div>
+
+
+
 
                                     </div>
                                 </div>
