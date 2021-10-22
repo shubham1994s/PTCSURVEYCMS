@@ -160,7 +160,7 @@ $(document).ready(function () {
         })
             .done(function (msg) {
                 if (msg == 1) {
-                    $('#err_PropertyNo').html("<span style='color:#002bff;'>This Property No. Is Available</span>");
+                    $('#err_PropertyNo').text('This Is Already Exist PropertyNo!');
                 } else {
                     $('#err_PropertyNo').text('This Property Number Is Not Exist!');
                 }
