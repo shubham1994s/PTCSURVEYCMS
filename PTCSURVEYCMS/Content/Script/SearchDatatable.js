@@ -13,18 +13,7 @@ $(document).ready(function () {
     FillCSDate();
     $("#SearchText").val("");
     $("#para").show().delay(3000).show().fadeOut('slow');
-    /* document.getElementById("para").reset();*/
-
-
-    //var msg = document.getElementById("para").textContent;
-    //if (msg == 'This Massage Is  Send Successfully!') {
-
-    //    var x = document.getElementById("snackbar");
-    //    x.className = "show";
-    //    setTimeout(function () { x.className = x.className.replace("show", ""); }, 4000);
-    //    document.getElementById('para').textContent = ''
-    //}
-
+  
     ActiveEmployee();
 
     $("#SearchText").change(function () {
@@ -445,7 +434,7 @@ function SearchByProperty() {
 
 }
 function Search() {
-    debugger;
+   // debugger;
       Filter = "f";
     PrabhagList = $('#PrabhagList').val();
     WardList = $('#WardList').val();
