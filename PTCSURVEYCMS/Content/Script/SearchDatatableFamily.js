@@ -416,8 +416,7 @@ function show6() {
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
     $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
-    //window.location.href = "/Search/SurveyListSearch";
-    //location.replace('/Search/SurveyListSearch');
+   
     window.history.pushState('', 'New Page Title', '/Search/SurveyListSearch');
     document.getElementById('poname').value = ''
     document.getElementById('Name').value = ''
@@ -502,13 +501,22 @@ function Search() {
     var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
 
     // alert(value );
-    oTable = $('#datatableActive').DataTable();
-    oTable = $('#ThirddatatableActive').DataTable();
-    oTable = $('#FourthdatatableActive').DataTable();
+    if (CSDate != "All" || CEDate != "All") {
+        oTable = $('#datatableActive').DataTable();
+    }
+    if (CPNO != null || OCNOY != null) {
+        oTable = $('#ThirddatatableActive').DataTable();
+    }
+    if (OCNO != "") {
+        if (OCNO != null) {
+            oTable = $('#FourthdatatableActive').DataTable();
+        }
+
+    }
     oTable.search(value).draw();
     oTable.search("");
 
-    //    document.getElementById('USER_ID_FK').value = -1;
+  
 }
 //function SendRemainder(q) {
 //    debugger;
