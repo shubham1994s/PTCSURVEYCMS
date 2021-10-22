@@ -447,6 +447,8 @@ function show7() {
     document.getElementById('byprono').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
     document.getElementById('firsttable').style.display = 'block';
@@ -753,6 +755,7 @@ function ActiveEmployee() {
         //        "visible": false,
         //        "searchable": false
         //    }],
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
         "columns": [
             { "data": "PrabhagNo" },
             { "data": "WardName_No" },
@@ -830,6 +833,7 @@ function StatusActive() {
         //        "visible": false,
         //        "searchable": false
         //    }],
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
         "columns": [
 
             { "data": "PrabhagNo" },
@@ -937,6 +941,7 @@ function PropertyActive() {
             "datatype": "json",
 
         },
+        "lengthMenu": [[5, 10, 25, 50 ], [5, 10, 25, 50]],
 
         "columns": [
 

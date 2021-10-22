@@ -420,6 +420,8 @@ function show7() {
     document.getElementById('byprono').style.display = 'block';
     document.getElementById('byname').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
     document.getElementById('filterbystatus').style.display = 'none';
@@ -675,7 +677,7 @@ function ActiveEmployee() {
             "datatype": "json",
 
         },
-
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
         //"columnDefs":
         //    [{
         //        "targets": [0],
@@ -746,6 +748,7 @@ function StatusActive() {
         // "order": [
         //       [0, "asc"]
         //],
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
         "ajax": {
             "url": "/PTC/LoadData/",
             "type": "POST",
@@ -866,7 +869,7 @@ function PropertyActive() {
             "datatype": "json",
 
         },
-
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
         "columns": [
 
             { "data": "PrabhagNo" },
