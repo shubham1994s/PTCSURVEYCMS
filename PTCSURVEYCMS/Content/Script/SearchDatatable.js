@@ -280,6 +280,8 @@ function show1() {
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
 
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
 }
 
 function show2() {
@@ -312,6 +314,10 @@ function show2() {
     $("#CPNO").empty();
     $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
 
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
 }
 function show3() {
     ActiveEmployee();
@@ -389,6 +395,8 @@ function show6() {
     $("#CPNO").empty();
     $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
 
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
 }
 
 function show7() {
@@ -461,9 +469,20 @@ function Search() {
     var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
 
     // alert(value );
-    oTable = $('#datatableActive').DataTable();
-    oTable = $('#ThirddatatableActive').DataTable();
-    oTable = $('#FourthdatatableActive').DataTable();
+    if (CSDate != "All" || CEDate != "All") {
+        oTable = $('#datatableActive').DataTable();
+    }
+    if (CPNO != null || OCNOY != null) {
+        oTable = $('#ThirddatatableActive').DataTable();
+    }
+    if (OCNO != "") {
+        if (OCNO != null) {
+            oTable = $('#FourthdatatableActive').DataTable();
+        }
+       
+    }
+   
+   
     oTable.search(value).draw();
     oTable.search("");
 }
