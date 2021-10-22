@@ -272,6 +272,8 @@ function show1() {
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
     document.getElementById('firsttable').style.display = 'block';
     document.getElementById('secondtable').style.display = 'none';
@@ -313,7 +315,9 @@ function show2() {
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
-    document.getElementById('filter').style.display = 'block';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('secondtable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
@@ -400,7 +404,9 @@ function show6() {
     document.getElementById('tapshil').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
-    document.getElementById('filter').style.display = 'block';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'none';
+    document.getElementById('filterbyno').style.display = 'block';
     document.getElementById('firsttable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('secondtable').style.display = 'none';
@@ -485,6 +491,7 @@ function SearchByProperty() {
 
 
 }
+
 function Search() {
     debugger;
     Filter = "f";
@@ -502,14 +509,68 @@ function Search() {
     var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
 
     // alert(value );
+
+
     oTable = $('#datatableActive').DataTable();
-    oTable = $('#ThirddatatableActive').DataTable();
-    oTable = $('#FourthdatatableActive').DataTable();
+
     oTable.search(value).draw();
     oTable.search("");
-
-    //    document.getElementById('USER_ID_FK').value = -1;
 }
+
+
+
+function SearchByNo() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
+
+    // alert(value );
+
+    oTable = $('#ThirddatatableActive').DataTable();
+
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
+
+
+
+function SearchByStatus() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
+
+    // alert(value );
+
+    oTable = $('#FourthdatatableActive').DataTable();
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
+
+
 //function SendRemainder(q) {
 //    debugger;
 
