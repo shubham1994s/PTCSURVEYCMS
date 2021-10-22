@@ -119,9 +119,9 @@ $(document).ready(function () {
         })
             .done(function (msg) {
                 if (msg == 1) {
-                    $('#err_PropertyNo').text('This Is Already Exist PropertyNo!');
+                    $('#err_PropertyNo').text('This Property Number Is Already Exist !');
                 } else {
-                    $('#err_PropertyNo').text('This PropertyNo Is Not Exist!');
+                    $('#err_PropertyNo').text('This Property Number Is Not Exist!');
                 }
             });
     });
