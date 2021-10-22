@@ -790,7 +790,10 @@ public string SelectionNotExists(string SearchText, string selectoption)
                 viewModel = Repository.getPropertyDetailsByID(q, Appid);
             //Build the File Path.
                 string fileName= viewModel.Sketchdiagram2;
-                string path = Server.MapPath("~/Images/") + fileName;
+            DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities();
+            var AppDetails = db.AppDetails.Where(x => x.AppId == Appid).FirstOrDefault();
+            var path = Server.MapPath(AppDetails.basePath) + fileName;
+        //    string path = Server.MapPath("~/Images/") + fileName;
                 //Read the File data into Byte Array.
                 byte[] bytes = System.IO.File.ReadAllBytes(path);
                 //Send the File to Download.         

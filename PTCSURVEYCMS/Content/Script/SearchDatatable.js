@@ -370,7 +370,7 @@ function show6() {
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'block';
     document.getElementById('firsttable').style.display = 'block';   
-
+      ActiveEmployee();
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
     FillPrabhagListNo();
@@ -385,6 +385,7 @@ function show6() {
 }
 
 function show7() {
+    ActiveEmployee();
     debugger;
     document.getElementById("bpn").checked = true;
     var element = document.getElementById("cusmargin");

@@ -393,7 +393,9 @@ function show5() {
 }
 
 function show6() {
+   
     debugger;
+    ActiveEmployee();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -432,6 +434,7 @@ function show6() {
 }
 
 function show7() {
+    ActiveEmployee();
     debugger;
     document.getElementById("bpn").checked = true;
         var element = document.getElementById("cusmargin");
