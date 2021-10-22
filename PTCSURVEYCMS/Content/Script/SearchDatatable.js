@@ -119,7 +119,7 @@ $(document).ready(function () {
         })
             .done(function (msg) {
                 if (msg == 1) {
-                    $('#err_PropertyNo').text('This Property Number Is Already Exist !');
+                    $('#err_PropertyNo').html("<span style='color:#002bff;'>This Property No. Is Available</span>");
                 } else {
                     $('#err_PropertyNo').text('This Property Number Is Not Exist!');
                 }

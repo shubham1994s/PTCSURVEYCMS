@@ -160,7 +160,7 @@ $(document).ready(function () {
         })
             .done(function (msg) {
                 if (msg == 1) {
-                    $('#err_PropertyNo').text('This Property Number Is Already Exist !');
+                    $('#err_PropertyNo').html("<span style='color:#002bff;'>This Property No. Is Available</span>");
                 } else {
                     $('#err_PropertyNo').text('This Property Number Is Not Exist!');
                 }
@@ -295,10 +295,14 @@ function show1() {
     $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
-   
-    window.location.href = "/Search/SurveyListSearch";
-    
-    
+    //window.location.href = "/Search/SurveyListSearch";
+    //location.replace('/Search/SurveyListSearch');
+    window.history.pushState('', 'New Page Title', '/Search/SurveyListSearch');
+
+    document.getElementById('poname').value = ''
+    document.getElementById('Name').value = ''
+    document.getElementById('test').value = ''
+    document.getElementById('PRONOBYNAME').value = ''
 
 }
 
@@ -333,7 +337,15 @@ function show2() {
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
     $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
-    window.location.href = "/Search/SurveyListSearch";
+    //window.location.href = "/Search/SurveyListSearch";
+    //location.replace('/Search/SurveyListSearch');
+    window.history.pushState('', 'New Page Title', '/Search/SurveyListSearch');
+
+    document.getElementById('poname').value = ''
+    document.getElementById('Name').value = ''
+    document.getElementById('test').value = ''
+    document.getElementById('PRONOBYNAME').value = ''
+
 }
 function show3() {
     ActiveEmployee();
@@ -409,7 +421,14 @@ function show6() {
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
     $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
-    window.location.href = "/Search/SurveyListSearch";
+    //window.location.href = "/Search/SurveyListSearch";
+    //location.replace('/Search/SurveyListSearch');
+    window.history.pushState('', 'New Page Title', '/Search/SurveyListSearch');
+    document.getElementById('poname').value = ''
+    document.getElementById('Name').value = ''
+    document.getElementById('test').value = ''
+    document.getElementById('PRONOBYNAME').value = ''
+   
 }
 
 function show7() {
