@@ -3016,11 +3016,13 @@ namespace BLL.Repository.Repository
             using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
             {
                 List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
-                                             select obj).GroupBy(n => new { n.PrabhagNo }).Select(g => g.FirstOrDefault())
+
+                                                    where obj.IsDelete == false
+                                                    select obj).GroupBy(n => new { n.PrabhagNo }).Select(g => g.FirstOrDefault())
                                            .ToList();            
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.PrabhagNo!=null && c.PrabhagNo == c.PrabhagNo.Trim()).ToList()
+                    user = listObjects.Where(c =>  c.PrabhagNo!=null && c.PrabhagNo == c.PrabhagNo.Trim()).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo,
@@ -3041,7 +3043,7 @@ namespace BLL.Repository.Repository
             {
                 
                     listObjects = (from obj in db.PropertyMasters
-                                   where obj.PropertyNo == pno
+                                   where obj.PropertyNo == pno && obj.IsDelete == false
                                    select obj).GroupBy(n => new { n.PropOwnerFirstName }).Select(g => g.FirstOrDefault())
                                               .ToList();
                    
@@ -3071,7 +3073,7 @@ namespace BLL.Repository.Repository
             {
 
                 listObjects = (from obj in db.PropertyMasters
-                           
+                               where obj.IsDelete == false
                                select obj).GroupBy(n => new { n.PropOwnerFirstName }).Select(g => g.FirstOrDefault())
                                           .ToList();
 
@@ -3107,8 +3109,8 @@ namespace BLL.Repository.Repository
                 if (arr.Length > 0)
                 {
                     fname = arr[0];
-                 listObjects = (from obj in db.PropertyMasters where obj.PropOwnerFirstName==fname
-                                                        select obj).GroupBy(n => new { n.PropertyNo }).Select(g => g.FirstOrDefault())
+                 listObjects = (from obj in db.PropertyMasters where obj.PropOwnerFirstName==fname &&  obj.IsDelete == false
+                                select obj).GroupBy(n => new { n.PropertyNo }).Select(g => g.FirstOrDefault())
                                            .ToList();
                 }
                 if (arr.Length > 1)
@@ -3181,11 +3183,12 @@ namespace BLL.Repository.Repository
             using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
             {
                 List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
+                                                    where obj.IsDelete == false
                                                     select obj).GroupBy(n => new { n.WardNameNo }).Select(g => g.FirstOrDefault())
                                            .ToList();
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.WardNameNo != null && c.WardNameNo == c.WardNameNo.Trim()).ToList()
+                    user = listObjects.Where(c =>  c.WardNameNo != null && c.WardNameNo == c.WardNameNo.Trim()).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.WardNameNo)) ? " " : x.WardNameNo,
@@ -3258,11 +3261,12 @@ namespace BLL.Repository.Repository
             using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
             {
                 List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
+                                                    where obj.IsDelete == false
                                                     select obj).GroupBy(n => new { n.ConstStartYear }).Select(g => g.FirstOrDefault())
                                            .ToList();
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.ConstStartYear != null && c.ConstStartYear == c.ConstStartYear.Trim()).ToList()
+                    user = listObjects.Where(c => c.ConstStartYear != null && c.ConstStartYear == c.ConstStartYear.Trim()).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.ConstStartYear)) ? " " : x.ConstStartYear,
@@ -3281,11 +3285,12 @@ namespace BLL.Repository.Repository
             using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
             {
                 List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
+                                                    where obj.IsDelete == false
                                                     select obj).GroupBy(n => new { n.CompletionYear }).Select(g => g.FirstOrDefault())
                                            .ToList();
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.CompletionYear != null && c.CompletionYear == c.CompletionYear.Trim()).ToList()
+                    user = listObjects.Where(c =>  c.CompletionYear != null ).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.CompletionYear)) ? " " : x.CompletionYear,
