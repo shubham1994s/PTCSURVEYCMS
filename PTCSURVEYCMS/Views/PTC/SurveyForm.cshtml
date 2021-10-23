@@ -67,9 +67,9 @@ td input{width:100%}
                 <label class="label">प्रभाग  क्र. /<br /> Prabhag No.</label>
                 @Html.HiddenFor(model => model.PropertyId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(model => model.PrabhagNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                @Html.TextBoxFor(model => model.PrabhagNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "2", maxlength = "2" })
                 @Html.ValidationMessageFor(model => model.PrabhagNo, "", new { @class = "text-danger" })
-                <span class="text-danger" id="err_name"></span>
+                <span class="text-danger" id="err_PrabhagNo"></span>
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <span class="help-block with-errors"></span>
             </div>
@@ -77,9 +77,9 @@ td input{width:100%}
             <div class="form-group pr-4">
                 <label class="label">वार्ड नाव व क्र. /<br /> Ward Name & No.</label>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(model => model.WardName_No, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                @Html.TextBoxFor(model => model.WardName_No, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "2", maxlength = "2" })
                 @Html.ValidationMessageFor(model => model.WardName_No, "", new { @class = "text-danger" })
-                <span class="text-danger" id="err_empidd"></span>
+                <span class="text-danger" id="err_WardName_No"></span>
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <span class="help-block with-errors"></span>
             </div>
@@ -770,9 +770,9 @@ td input{width:100%}
                             <label class="label">बांधकाम चालू केलेले वर्ष /<br /> Const. Start Year</label>
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.ConstStartYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.TextBoxFor(model => model.ConstStartYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "4", maxlength = "4" })
                             @Html.ValidationMessageFor(model => model.ConstStartYear, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_name"></span>
+                            <span class="text-danger" id="err_ConstStartYear"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
@@ -780,9 +780,9 @@ td input{width:100%}
                         <div class="form-group pr-4" style="width:23%">
                             <label class="label">बांधकाम पूर्णत्वाचे वर्ष / Const.Completion Year</label>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.CompletionYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.TextBoxFor(model => model.CompletionYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "4", maxlength = "4" })
                             @Html.ValidationMessageFor(model => model.CompletionYear, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="text-danger" id="err_CompletionYear"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
                         </div>
@@ -2448,7 +2448,60 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 
     $(document).ready(function () {
         debugger;
-      
+
+        $("#PrabhagNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_PrabhagNo").html("Required 2 Digits Only");
+                return false;
+            }
+            else
+            {
+                $("#err_PrabhagNo").html("");
+            }
+
+        });
+
+        $("#WardName_No").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_WardName_No").html("Required 2 Digits Only");
+                return false;
+            }
+            else {
+                $("#err_WardName_No").html("");
+            }
+        });
+
+        $("#ConstStartYear").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ConstStartYear").html("Required 4 Digits Only");
+                return false;
+            }
+            else {
+                $("#err_ConstStartYear").html("");
+            }
+        });
+
+        $("#CompletionYear").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_CompletionYear").html("Required 4 Digits Only");
+                return false;
+            }
+            else {
+                $("#err_CompletionYear").html("");
+            }
+        });
         $("#PropOwnerTelephoneNo").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
             if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {

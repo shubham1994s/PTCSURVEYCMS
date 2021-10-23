@@ -241,7 +241,10 @@ function None() {
 
 function show1() {
     //debugger;
-    ActiveEmployee();
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -260,10 +263,7 @@ function show1() {
     document.getElementById('firsttable').style.display = 'block';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'none';
-    FillPrabhagListNo();
-    FillWardListNo();
-    FillCSDate();
-    FillCEDate();
+ 
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
@@ -273,11 +273,15 @@ function show1() {
 
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
+    ActiveEmployee();
 }
 
 function show2() {
     debugger;
-    PropertyActive();
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -298,10 +302,7 @@ function show2() {
     document.getElementById('Fourthtable').style.display = 'block';
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
-    FillPrabhagListNo();
-    FillWardListNo();
-    FillCSDate();
-    FillCEDate();
+   
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
@@ -311,6 +312,7 @@ function show2() {
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
     document.getElementById('CEDate').value = ''
+    PropertyActive();
 }
 function show3() {
     ActiveEmployee();
@@ -359,7 +361,10 @@ function show5() {
 
 function show6() {
     debugger;
-    StatusActive();
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -381,10 +386,7 @@ function show6() {
     //  ActiveEmployee();
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
-    FillPrabhagListNo();
-    FillWardListNo();
-    FillCSDate();
-    FillCEDate();
+   
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
@@ -392,10 +394,14 @@ function show6() {
 
     document.getElementById('CSDate').value = ''
     document.getElementById('CEDate').value = ''
+    StatusActive();
 }
 
 function show7() {
-    ActiveEmployee();
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
    // debugger;
     document.getElementById("bpn").checked = true;
     var element = document.getElementById("cusmargin");
@@ -422,15 +428,12 @@ function show7() {
     document.getElementById('filterbyno').style.display = 'none';
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
-    FillPrabhagListNo();
-    FillWardListNo();
-    FillCSDate();
-    FillCEDate();
+  
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
     $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
-
+    ActiveEmployee();
    
 }
 
