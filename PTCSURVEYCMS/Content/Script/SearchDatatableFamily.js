@@ -422,8 +422,7 @@ function show6() {
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
     $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
-    //window.location.href = "/Search/SurveyListSearch";
-    //location.replace('/Search/SurveyListSearch');
+   
     window.history.pushState('', 'New Page Title', '/Search/SurveyListSearch');
     document.getElementById('poname').value = ''
     document.getElementById('Name').value = ''
@@ -454,6 +453,8 @@ function show7() {
     document.getElementById('firsttable').style.display = 'block';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'none';
+    document.getElementById('filterbyno').style.display = 'none';
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
     FillPrabhagListNo();

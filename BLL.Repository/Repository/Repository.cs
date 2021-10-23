@@ -3020,7 +3020,7 @@ namespace BLL.Repository.Repository
                                            .ToList();            
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.PrabhagNo != null && c.PrabhagNo.Trim() == c.PrabhagNo).ToList()
+                    user = listObjects.Where(c => c.IsDelete == false && c.PrabhagNo!=null && c.PrabhagNo == c.PrabhagNo.Trim()).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo,
@@ -3185,7 +3185,7 @@ namespace BLL.Repository.Repository
                                            .ToList();
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.WardNameNo != null).ToList()
+                    user = listObjects.Where(c => c.IsDelete == false && c.WardNameNo != null && c.WardNameNo == c.WardNameNo.Trim()).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.WardNameNo)) ? " " : x.WardNameNo,
@@ -3262,7 +3262,7 @@ namespace BLL.Repository.Repository
                                            .ToList();
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.ConstStartYear != null).ToList()
+                    user = listObjects.Where(c => c.IsDelete == false && c.ConstStartYear != null && c.ConstStartYear == c.ConstStartYear.Trim()).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.ConstStartYear)) ? " " : x.ConstStartYear,
@@ -3285,7 +3285,7 @@ namespace BLL.Repository.Repository
                                            .ToList();
                 try
                 {
-                    user = listObjects.Where(c =>  c.CompletionYear != null).ToList()
+                    user = listObjects.Where(c => c.IsDelete == false && c.CompletionYear != null && c.CompletionYear == c.CompletionYear.Trim()).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.CompletionYear)) ? " " : x.CompletionYear,
