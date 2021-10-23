@@ -291,24 +291,21 @@ namespace PTCSURVEYCMS.Controllers
                     {
                         if (arr[1]!="All")
                         {
-                            customerData = customerData.Where(x => x.PrabhagNo == arr[1]).ToList();
+                          
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PrabhagNo) ? " " : x.PrabhagNo.Trim()) == arr[1].Trim()).ToList();
                         }
                         if (arr[2] != "All")
                         {
-                            customerData = customerData.Where(x => x.WardName_No == arr[2]).ToList();
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.WardName_No) ? " " : x.WardName_No.Trim()) == arr[2].Trim()).ToList();
                         }
-                     
-
                         if (arr[4] != "All" && arr[3] == "All")
-                        {
-                            int CSDate = Convert.ToInt32(arr[4]);
-                            customerData = customerData.Where(x => x.ConstStartYear == arr[4] & x.ConstStartYear != null).ToList();
+                        {          
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.ConstStartYear) ? " " : x.ConstStartYear.Trim()) == arr[4].Trim()).ToList();
                         }
 
                         if (arr[3] != "All" && arr[4] == "All")
                         {
-                            int CEDate = Convert.ToInt32(arr[3]);
-                            customerData = customerData.Where(x => x.CompletionYear == arr[3] & x.CompletionYear != null).ToList();
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.CompletionYear) ? " " : x.CompletionYear.Trim()) == arr[3].Trim()).ToList();
                         }
 
                         if (arr[3] != "All" && arr[4] != "All")
