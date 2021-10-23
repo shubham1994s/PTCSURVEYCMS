@@ -3020,10 +3020,11 @@ namespace BLL.Repository.Repository
                                            .ToList();            
                 try
                 {
-                    user = listObjects.Where(c => c.IsDelete == false && c.PrabhagNo!=null).ToList()
+                    user = listObjects.Where(c => c.IsDelete == false && c.PrabhagNo != null && c.PrabhagNo.Trim() == c.PrabhagNo).ToList()
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo,
+
                             Value = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo
                         }).Distinct().OrderBy(t => t.Text).ToList();                 
                 }

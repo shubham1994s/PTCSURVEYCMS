@@ -291,7 +291,8 @@ namespace PTCSURVEYCMS.Controllers
                     {
                         if (arr[1]!="All")
                         {
-                            customerData = customerData.Where(x => x.PrabhagNo == arr[1]).ToList();
+                            //customerData = customerData.Where(x => x.PrabhagNo == arr[1]).ToList();
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PrabhagNo) ? " " : x.PrabhagNo.Trim()) == arr[1].Trim()).ToList();
                         }
                         if (arr[2] != "All")
                         {
