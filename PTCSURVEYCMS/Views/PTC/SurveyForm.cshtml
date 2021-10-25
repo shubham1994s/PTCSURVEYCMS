@@ -2448,7 +2448,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 
     $(document).ready(function () {
         debugger;
-
+   
         $("#PrabhagNo").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
             if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
@@ -2932,6 +2932,51 @@ new SelectListItem { Text = "Mixed", Value = "M"}
             //do some validation stuff
         }
     });
+
+
+
+
+    $("#PrabhagNo").change(function () {
+      
+        var pno = $("#PrabhagNo").val();
+        $("#PrabhagNo2").val(pno);
+
+    });
+
+    $("#WardName_No").change(function () {
+       
+        var pno = $("#WardName_No").val();
+        $("#WardName_No2").val(pno);
+
+    });
+
+    $("#ElectionWard").change(function () {
+     
+        var pno = $("#ElectionWard").val();
+        $("#ElectionWard2").val(pno);
+
+    });
+
+    $("#NewPropertyNo").change(function () {
+       
+        var pno = $("#NewPropertyNo").val();
+        $("#NewPropertyNo2").val(pno);
+
+    });
+    $("#PropertyNo").change(function () {
+ 
+        var pno = $("#PropertyNo").val();
+        $("#PropertyNo2").val(pno);
+
+    });
+    
+    $("#OldHouseNo1").change(function () {
+
+        var pno = $("#OldHouseNo1").val();
+        $("#OldHouseNo2").val(pno);
+
+    });
+
     $('.chkBx').change(function () {
         $(".chkBx").not(this).prop('checked', false);
     });
