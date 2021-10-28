@@ -2,7 +2,7 @@
 
 
 $(document).ready(function () {
-   // debugger;
+    // debugger;
     /*  document.getElementById('secondtable').style.display = 'block';*/
     var url_string = window.location.href; //window.location.href
     var url = new URL(url_string);
@@ -27,7 +27,7 @@ $(document).ready(function () {
         var element = document.getElementById("cusmargin");
         element.classList.add("MyClass");
     }
-   // debugger;
+    // debugger;
     if (x != null && y != null) {
 
         $('#test').val(x);
@@ -45,7 +45,7 @@ $(document).ready(function () {
         var element = document.getElementById("cusmargin");
         element.classList.add("MyClass");
     }
-  
+
     FillPrabhagListNo();
     FillWardListNo();
     FillCEDate();
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
     $("#SearchText").val("");
     $("#para").show().delay(3000).show().fadeOut('slow');
-  
+
 
     ActiveEmployee();
 
@@ -77,7 +77,7 @@ $(document).ready(function () {
     });
 
     $("#test").focusout(function () {
-     //   debugger;
+        //   debugger;
         var PRONOBYNAME = $('#test').val();
         $.ajax({
             type: "post",
@@ -119,7 +119,7 @@ $(document).ready(function () {
     });
 
     $("#test").keyup(function () {
-     debugger;
+        debugger;
         var PRONOBYNAME = $('#test').val();
         $.ajax({
             type: "post",
@@ -127,13 +127,13 @@ $(document).ready(function () {
             data: "{'prefixText':'" + document.getElementById('test').value + "'}",
             datatype: "json",
             traditional: true,
-            success: function (data) {            
+            success: function (data) {
                 district = '<option value=""></option>';
                 for (var i = 0; i < data.length; i++) {
                     district = district + '<option value="' + data[i].Value.replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }) + '"></option>';
                 }
-              
-             $('#tests').html(district);
+
+                $('#tests').html(district);
             }
 
         });
@@ -174,7 +174,7 @@ function FillPrabhagListNo() {
             for (var i = 0; i < data.length; i++) {
                 district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
             }
-         
+
             $('#PrabhagList').html(district);
         }
     });
@@ -195,7 +195,7 @@ function FillWardListNo() {
             for (var i = 0; i < data.length; i++) {
                 district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
             }
-           
+
             $('#WardList').html(district);
         }
     });
@@ -216,7 +216,7 @@ function FillCSDate() {
             for (var i = 0; i < data.length; i++) {
                 district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
             }
-          
+
             $('#CSDate').html(district);
         }
     });
@@ -254,7 +254,7 @@ function None() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-   
+
 }
 
 function show1() {
@@ -263,7 +263,7 @@ function show1() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
-   
+
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -283,7 +283,7 @@ function show1() {
     document.getElementById('secondtable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'none';
-   
+
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
@@ -329,7 +329,7 @@ function show2() {
 
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
-   
+
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
@@ -390,8 +390,8 @@ function show5() {
 }
 
 function show6() {
-   
-   // debugger;
+
+    // debugger;
     FillPrabhagListNo();
     FillWardListNo();
     FillCSDate();
@@ -418,12 +418,12 @@ function show6() {
     document.getElementById('Fourthtable').style.display = 'none';
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
-  
+
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
     $("#CPNO").append("<option value='ALL'>Select All.</option><option value = 'Y' > YES</option><option value='N'>NO</option><option value='NA'>Not Selected</option>");
-   
+
     window.history.pushState('', 'New Page Title', '/Search/SurveyListSearch');
     document.getElementById('poname').value = ''
     document.getElementById('Name').value = ''
@@ -439,7 +439,7 @@ function show7() {
     FillCEDate();
     debugger;
     document.getElementById("bpn").checked = true;
-        var element = document.getElementById("cusmargin");
+    var element = document.getElementById("cusmargin");
     element.classList.add("MyClass");
     document.getElementById('tapshil').style.display = 'block';
     document.getElementById('common').style.display = 'none';
@@ -461,7 +461,7 @@ function show7() {
     document.getElementById('filterbyno').style.display = 'none';
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
- 
+
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
@@ -479,7 +479,7 @@ function SearchByName() {
     window.location.href = "/Search/SurveyListSearch?x=" + poname + "&y=" + PROOWNAME + "";
     document.getElementById('secondtable').style.display = 'block';
     document.getElementById('firsttable').style.display = 'none';
-  
+
 }
 
 function SearchByProperty() {
@@ -768,15 +768,21 @@ function ActiveEmployee() {
 
                     if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
 
-                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
-                            + ' ' + uppercaseWords(full["PropOwnerLastName"]) + '</p>';
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
 
                     }
 
-                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null) {
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
 
-                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
-                            + ' ' + uppercaseWords(full["PropOwnerMiddleName"]) + '</p>';
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
 
                     }
                     else {
@@ -887,15 +893,21 @@ function StatusActive() {
 
                     if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
 
-                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
-                            + ' ' + uppercaseWords(full["PropOwnerLastName"]) + '</p>';
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
 
                     }
 
-                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null) {
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
 
-                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
-                            + ' ' + uppercaseWords(full["PropOwnerMiddleName"]) + '</p>';
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
 
                     }
                     else {
@@ -943,7 +955,7 @@ function PropertyActive() {
             "datatype": "json",
 
         },
-        "lengthMenu": [[5, 10, 25, 50 ], [5, 10, 25, 50]],
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
 
         "columns": [
 
@@ -956,15 +968,21 @@ function PropertyActive() {
 
                     if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
 
-                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
-                            + ' ' + uppercaseWords(full["PropOwnerLastName"]) + '</p>';
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
 
                     }
 
-                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null) {
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
 
-                        return '<p> ' + uppercaseWords(full["PropOwnerFirstName"])
-                            + ' ' + uppercaseWords(full["PropOwnerMiddleName"]) + '</p>';
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
 
                     }
                     else {
