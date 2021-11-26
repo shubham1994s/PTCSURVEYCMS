@@ -12,31 +12,142 @@
         border-collapse: collapse;
         font-weight: 500;
     }
-  
+
 
     .subject {
         width: 17%;
     }
+
     .prakar {
         width: 10%
     }
+
     .second {
         width: 12%
     }
+
     .pl {
         margin-left: 5px
     }
-    .mr{margin-right:15px}
-   h5, h6 {
+
+    .mr {
+        margin-right: 15px
+    }
+
+    h5, h6 {
         font-weight: 600 !important
     }
-td input{width:100%}
+
+    td input {
+        width: 100%
+    }
     /*.form-control {
         text-transform: capitalize;
     }
     .form-control1 {
         text-transform: lowercase;
     }*/
+
+    .remove_button, .add_button {
+        margin-top: 36px;
+    }
+    .Tenant_remove_button {
+        margin-top: 10px;
+    }
+        .circle {
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            background-color: rgb(44, 108, 128);
+            position: relative;
+            margin-top: 5px;
+        }
+
+        .circle::after {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            height: 3px;
+            margin-top: -2px;
+            top: 50%;
+            left: 5px;
+            right: 5px;
+            z-index: 9;
+        }
+
+        .circle::before {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            width: 3px;
+            margin-left: -1px;
+            left: 50%;
+            top: 5px;
+            bottom: 5px;
+            z-index: 9;
+        }
+
+        .owncircle {
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            background-color: rgb(44, 108, 128);
+            position: relative;
+            margin-top: 5px;
+        }
+
+        .owncircle::after {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            height: 3px;
+            margin-top: -2px;
+            top: 50%;
+            left: 5px;
+            right: 5px;
+            z-index: 9;
+        }
+
+        .owncircle::before {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            width: 3px;
+            margin-left: -2px;
+            left: 50%;
+            top: 5px;
+            bottom: 5px;
+            z-index: 9;
+        }
+
+        .Ncircle {
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            background-color: rgb(44, 108, 128);
+            position: relative;
+            margin-top: -2px;
+        }
+
+        .Ncircle::after {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            height: 3px;
+            margin-top: -2px;
+            top: 50%;
+            left: 5px;
+            right: 5px;
+            z-index: 9;
+        }
+
+    
+      
 </style>
 @*@Styles.Render("~/Content/AddEditCSS")*@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -58,7 +169,7 @@ td input{width:100%}
     <h1 class="text-center my-3">@ViewBag.Appname_mar</h1>
     <h6 class="text-center mb-3">स्वच्छता विभाग </h6>
     <h6 class="text-center mb-5 font-weight-bold"><u> स्वच्छ सर्वेक्षण मालमत्ता सर्वेक्षण नमुना</u></h6>
-    <img src="~/content/Images/Logo_150x48.png" id="logo2"/>
+    <img src="~/content/Images/Logo_150x48.png" id="logo2" />
     <div class="container">
 
         @* Building Name Section A *@
@@ -281,55 +392,55 @@ td input{width:100%}
                 </div>-->
                 @* Survey No. Name Section B *@
                 <!--<div class="d-flex flex-column back mb-4">
+                            <div class="d-flex flex-row">
+                                <div class="form-group pr-4">
+                                    <label class="label">सर्वे नं. / Survey No.</label>
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.SurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.SurveyNo, "", new { @class = "text-danger" })
+                                    <span class="text-danger" id="err_name"></span>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <span class="help-block with-errors"></span>
+                                </div>
+
+                    <div class="form-group pr-4">
+                        <label class="label">हिस्सा नं./ Hissa No.</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.HissaNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.HissaNo, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+                </div>
                 <div class="d-flex flex-row">
                     <div class="form-group pr-4">
-                        <label class="label">सर्वे नं. / Survey No.</label>
-
+                        <label class="label">जुने  करयोग्य मूल्य / Old Rateable Value</label>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.SurveyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.SurveyNo, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_name"></span>
+                        @Html.TextBoxFor(model => model.OldRateableValue, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.OldRateableValue, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                         <span class="help-block with-errors"></span>
                     </div>
-
-        <div class="form-group pr-4">
-            <label class="label">हिस्सा नं./ Hissa No.</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.HissaNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.HissaNo, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-       
-    </div>
-    <div class="d-flex flex-row">
-        <div class="form-group pr-4">
-            <label class="label">जुने  करयोग्य मूल्य / Old Rateable Value</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.OldRateableValue, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.OldRateableValue, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>
-        <div class="form-group pr-4">
-            <label class="label">जुने एकूण कर / Old Total Tax</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.OldTotalTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.OldTotalTax, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>
-        <div class="form-group pr-4">
-            <label class="label">प्रथम  आकारणी वर्ष /First Assessment Year</label>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.TextBoxFor(model => model.FirstAssessmentYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-            @Html.ValidationMessageFor(model => model.FirstAssessmentYear, "", new { @class = "text-danger" })
-            <span class="text-danger" id="err_empidd"></span>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <span class="help-block with-errors"></span>
-        </div>-->
+                    <div class="form-group pr-4">
+                        <label class="label">जुने एकूण कर / Old Total Tax</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.OldTotalTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.OldTotalTax, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group pr-4">
+                        <label class="label">प्रथम  आकारणी वर्ष /First Assessment Year</label>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.FirstAssessmentYear, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                        @Html.ValidationMessageFor(model => model.FirstAssessmentYear, "", new { @class = "text-danger" })
+                        <span class="text-danger" id="err_empidd"></span>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <span class="help-block with-errors"></span>
+                    </div>-->
                 @*<div class="form-group pr-4">
                         <label class="label">समास जागा / Margin Space (Sq. M.)</label>
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -400,198 +511,205 @@ td input{width:100%}
                 </div>
                 <hr />
                 @* Prop. Owner Namee Section D *@
-            <div class="d-flex flex-column back mb-4 width">
-                <div class="d-flex flex-row">
-                    <div class="form-group pr-4">
-                        <label class="label"> मालमत्ताधारकाचे नाव 1 /<br /> Prop. Owner Name 1</label>
+                <div class="d-flex flex-column back mb-4 width ">
+                    <div class="field_wrapper">
+                        <div class="d-flex flex-row">
+                            <div class="form-group pr-4">
+                                <label class="label"> मालमत्ताधारकाचे नाव 1 /<br /> Prop. Owner Name 1</label>
 
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">प्रथम नाव/ First Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerFirstName, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">मधले नाव / Middle Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerMiddleName, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">आडनाव / Last Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerLastName, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <a href="javascript:void(0);" class="add_button" title="Add field"><div class="owncircle"></div></a>
+                        </div>
                     </div>
-                    <div class="form-group pr-4">
-                        <label class="label">प्रथम नाव/ First Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerFirstName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerFirstName, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
+
+
+
+                    @*<div class="d-flex flex-row">
+                            <div class="form-group pr-4">
+                                <label class="label"> मालमत्ताधारकाचे नाव 2 /<br /> Prop. Owner Name 2</label>
+
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">प्रथम नाव/ First Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerFirstName2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerFirstName2, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">मधले नाव / Middle Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerMiddleName2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerMiddleName2, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">आडनाव / Last Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerLastName2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerLastName2, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                        </div>*@
+                    @*<div class="d-flex flex-row">
+                            <div class="form-group pr-4">
+                                <label class="label"> मालमत्ताधारकाचे नाव 3 /<br /> Prop. Owner Name 3</label>
+
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">प्रथम नाव/ First Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerFirstName3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerFirstName3, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">मधले नाव / Middle Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerMiddleName3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerMiddleName3, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">आडनाव / Last Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerLastName3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerLastName3, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                        </div>*@
+                    @*<div class="d-flex flex-row mb-3">
+                            <div class="form-group pr-4">
+                                <label class="label"> मालमत्ताधारकाचे नाव 4 /<br /> Prop. Owner Name 4</label>
+
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">प्रथम नाव/ First Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerFirstName4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerFirstName4, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">मधले नाव / Middle Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerMiddleName4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerMiddleName4, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">आडनाव / Last Name</label>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.PropOwnerLastName4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.PropOwnerLastName4, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                        </div>*@
+                    <div class="d-flex flex-row">
+                        <div class="form-group pr-4">
+                            <label class="label"> संपर्क क्र. /<br /> Telephone No.</label>
+
+                        </div>
+                        <div class="form-group pr-4" style="margin-left: 3.5%;">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.PropOwnerTelephoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
+                            @Html.ValidationMessageFor(model => model.PropOwnerTelephoneNo, "", new { @class = "text-danger" })
+                            <span class="text-danger" id="err_TelephoneNoidd"></span>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <span class="help-block with-errors"></span>
+                        </div>  @*Change*@
+                        <div class="form-group pr-4">
+                            <label class="label">  मतदान ओळखपत्र /<br /> Election Card. </label>
+
+                        </div>
+                        <div class="form-group pr-4">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.PropOwnerElectionCardNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.ValidationMessageFor(model => model.PropOwnerElectionCardNo, "", new { @class = "text-danger" })
+                            <span class="text-danger" id="err_empidd"></span>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <span class="help-block with-errors"></span>
+                        </div>
                     </div>
-                    <div class="form-group pr-4">
-                        <label class="label">मधले नाव / Middle Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerMiddleName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerMiddleName, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">आडनाव / Last Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerLastName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerLastName, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
+                    <div class="d-flex flex-row">
+                        <div class="form-group pr-4" style="margin-right:4.5%;">
+                            <label class="label"> ई - मेल पत्ता. /<br /> Email Id.</label>
+
+                        </div>
+                        <div class="form-group pr-4">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.PropOwnerEmailId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.ValidationMessageFor(model => model.PropOwnerEmailId, "", new { @class = "text-danger" })
+                            <span class="text-danger" id="err_PropOwnerEmailId"></span>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                        <div class="form-group pr-4" style="margin-right:4%;">
+                            <label class="label">आधार क्र. /<br /> Adhaar No.</label>
+
+                        </div>
+                        <div class="form-group pr-4">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.PropOwnerAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12" })
+                            @Html.ValidationMessageFor(model => model.PropOwnerAdhaarNo, "", new { @class = "text-danger" })
+                            <span class="text-danger" id="err_PropOwnerAdhaarNo"></span>
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <span class="help-block with-errors"></span>
+                        </div>
                     </div>
                 </div>
 
 
-                <div class="d-flex flex-row">
-                    <div class="form-group pr-4">
-                        <label class="label"> मालमत्ताधारकाचे नाव 2 /<br /> Prop. Owner Name 2</label>
 
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">प्रथम नाव/ First Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerFirstName2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerFirstName2, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">मधले नाव / Middle Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerMiddleName2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerMiddleName2, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">आडनाव / Last Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerLastName2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerLastName2, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                </div><div class="d-flex flex-row">
-                    <div class="form-group pr-4">
-                        <label class="label"> मालमत्ताधारकाचे नाव 3 /<br /> Prop. Owner Name 3</label>
-
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">प्रथम नाव/ First Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerFirstName3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerFirstName3, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">मधले नाव / Middle Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerMiddleName3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerMiddleName3, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">आडनाव / Last Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerLastName3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerLastName3, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                </div><div class="d-flex flex-row mb-3">
-                    <div class="form-group pr-4">
-                        <label class="label"> मालमत्ताधारकाचे नाव 4 /<br /> Prop. Owner Name 4</label>
-
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">प्रथम नाव/ First Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerFirstName4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerFirstName4, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">मधले नाव / Middle Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerMiddleName4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerMiddleName4, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                    <div class="form-group pr-4">
-                        <label class="label">आडनाव / Last Name</label>
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerLastName4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerLastName4, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                </div>
-
-
-                <div class="d-flex flex-row">
-                    <div class="form-group pr-4">
-                        <label class="label"> संपर्क क्र. /<br /> Telephone No.</label>
-
-                    </div>
-                    <div class="form-group pr-4" style="margin-left: 3.5%;">
-
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerTelephoneNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerTelephoneNo, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_TelephoneNoidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>  @*Change*@
-                    <div class="form-group pr-4">
-                        <label class="label">  मतदान ओळखपत्र /<br /> Election Card. </label>
-
-                    </div>
-                    <div class="form-group pr-4">
-
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerElectionCardNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerElectionCardNo, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_empidd"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                </div>
-                <div class="d-flex flex-row">
-                    <div class="form-group pr-4" style="margin-right:4.5%;">
-                        <label class="label"> ई - मेल पत्ता. /<br /> Email Id.</label>
-
-                    </div>
-                    <div class="form-group pr-4">
-
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerEmailId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerEmailId, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_PropOwnerEmailId"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                    <div class="form-group pr-4" style="margin-right:4%;">
-                        <label class="label">आधार क्र. /<br /> Adhaar No.</label>
-
-                    </div>
-                    <div class="form-group pr-4">
-
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.PropOwnerAdhaarNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "12", maxlength = "12" })
-                        @Html.ValidationMessageFor(model => model.PropOwnerAdhaarNo, "", new { @class = "text-danger" })
-                        <span class="text-danger" id="err_PropOwnerAdhaarNo"></span>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                        <span class="help-block with-errors"></span>
-                    </div>
-                </div>
-            </div>
                 @* Occupier Name Section E *@
                 <div class="d-flex flex-column back mb-4 width">
                     <div class="d-flex flex-row">
@@ -660,37 +778,41 @@ td input{width:100%}
 
                 @* Occupier Name Section F *@
                 <div class="d-flex flex-column back mb-4 width">
-                    <div class="d-flex flex-row">
-                        <div class="form-group pr-4">
-                            <label class="label"> भाडेकरूचे नाव /<br /> Tenant Name</label>
+                    <div class="field_wrapper_Tenant">
+                        <div class="d-flex flex-row">
+                            <div class="form-group pr-4">
+                                <label class="label"> भाडेकरूचे नाव /<br /> Tenant Name</label>
 
-                        </div>
-                        <div class="form-group pr-4">
+                            </div>
+                            <div class="form-group pr-4">
 
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.TenantName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                            @Html.ValidationMessageFor(model => model.TenantName, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
-                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                            <span class="help-block with-errors"></span>
-                        </div>
-                        <div class="form-group pr-4">
-                            <label class="label">भाडे / Rent</label>
-                        </div>
-                        <div class="form-group pr-4">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.TenantName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.TenantName, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <div class="form-group pr-4">
+                                <label class="label">भाडे / Rent</label>
+                            </div>
+                            <div class="form-group pr-4">
 
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @Html.TextBoxFor(model => model.Rent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                            @Html.ValidationMessageFor(model => model.Rent, "", new { @class = "text-danger" })
-                            <span class="text-danger" id="err_empidd"></span>
-                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                            <span class="help-block with-errors"></span>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(model => model.Rent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                @Html.ValidationMessageFor(model => model.Rent, "", new { @class = "text-danger" })
+                                <span class="text-danger" id="err_empidd"></span>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span class="help-block with-errors"></span>
+                            </div>
+                            <a href="javascript:void(0);" class="Tenant_add_button" title="Add field"><div class="circle"></div></a>
                         </div>
                     </div>
 
+
                     <div class="d-flex flex-row">
-                        <div class="form-group pr-4"  style="margin-right:1.2%;">
-                            <label class="label" >भ्रमणध्वनी क्र. /<br /> Mobile No.</label>
+                        <div class="form-group pr-4" style="margin-right:1.2%;">
+                            <label class="label">भ्रमणध्वनी क्र. /<br /> Mobile No.</label>
 
                         </div>
                         <div class="form-group pr-4">
@@ -765,7 +887,7 @@ td input{width:100%}
                             <span class="help-block with-errors"></span>
                         </div>
                     </div>
-                    <div class="d-flex flex-row back mb-4 width" >
+                    <div class="d-flex flex-row back mb-4 width">
                         <div class="form-group pr-4" style="width:22%">
                             <label class="label">बांधकाम चालू केलेले वर्ष /<br /> Const. Start Year</label>
 
@@ -804,7 +926,7 @@ td input{width:100%}
    new SelectListItem { Text = "Non-Resident", Value = "NR"},
    new SelectListItem { Text = "Mixed", Value = "M"}
    }, "Select", new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                          
+
                             <span class="text-danger" id="err_empidd"></span>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                             <span class="help-block with-errors"></span>
@@ -843,7 +965,7 @@ td input{width:100%}
                                 <label class="pl">नाही</label>
 
                             </div>
-                          @Html.TextBoxFor(model => model.PermUseNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                            @Html.TextBoxFor(model => model.PermUseNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                         </div>
 
 
@@ -857,7 +979,7 @@ td input{width:100%}
                                     @Html.CheckBox("Rainwaterharvest", new { @class = "chkBx" })
                                     <label class="pl mr">आहे/Yes</label><br />
                                     @Html.CheckBox("NonRainwaterharvest", new { @class = "chkBx" })
-                                <label class="pl">नाही/No</label>
+                                    <label class="pl">नाही/No</label>
 
                                 </div>
                             </div>
@@ -897,7 +1019,7 @@ td input{width:100%}
                                     @Html.CheckBox("GarbageType", new { @class = "chkBx12" })
                                     <label>&nbsp;होय  &nbsp;</label>&nbsp;&nbsp;
                                     @Html.CheckBox("NOGarbageType", new { @class = "chkBx12" })
-                                <label class="pl">नाही</label>
+                                    <label class="pl">नाही</label>
 
                                 </div>
                             </div>
@@ -971,7 +1093,7 @@ td input{width:100%}
                                     <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("LocationofToiletIndustrial", new { @class = "chkBx5" })</div>
                                     <div class="col-6" style="max-width: 80%;flex:none">  <label> व्यवस्था नाही / No Arrangement &nbsp;</label></div>
                                 </div>
-                                
+
                             </div>
 
 
@@ -991,7 +1113,7 @@ td input{width:100%}
 
                             </div>
                             <div>
-                              
+
                                 <label>  @Html.CheckBox("WaterConnectionSpecial", new { @class = "chkBx3" }) विशेष वर्ग/Sp.Category </label>
 
                             </div>
@@ -1005,148 +1127,148 @@ td input{width:100%}
 
 
                     <div class="d-flex flex-row  mb-4">
-                      
-                            <div class="form-group back mr-3" style="max-width: 20%; padding: 10px; height:210px;">
 
-                                <div class="row">
-                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">  @Html.CheckBox("DoorLockResidential", new { @class = "chkBx8" })</div>
-                                    <div class="col-6" style="max-width: 80%;flex:none">  <label>घर बंद / Door Lock</label></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("DoorLockSpecial", new { @class = "chkBx8" })</div>
-                                    <div class="col-6" style="max-width: 80%;flex:none">  <label> कायम घर बंद / Permanent Door Lock</label></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("DoorLockIndustrial", new { @class = "chkBx8" })</div>
-                                    <div class="col-6" style="max-width: 80%;flex:none">  <label>  बाहेरून मोजमाप /Outer Measurement</label></div>
-                                </div>
-                         
+                        <div class="form-group back mr-3" style="max-width: 20%; padding: 10px; height:210px;">
+
+                            <div class="row">
+                                <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">  @Html.CheckBox("DoorLockResidential", new { @class = "chkBx8" })</div>
+                                <div class="col-6" style="max-width: 80%;flex:none">  <label>घर बंद / Door Lock</label></div>
                             </div>
+                            <div class="row">
+                                <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("DoorLockSpecial", new { @class = "chkBx8" })</div>
+                                <div class="col-6" style="max-width: 80%;flex:none">  <label> कायम घर बंद / Permanent Door Lock</label></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("DoorLockIndustrial", new { @class = "chkBx8" })</div>
+                                <div class="col-6" style="max-width: 80%;flex:none">  <label>  बाहेरून मोजमाप /Outer Measurement</label></div>
+                            </div>
+
+                        </div>
+                        @*Change*@
+                        <div class="d-flex flex-row  mb-4">
+                            <div class="form-group pr-4 back mr-3" style="width:70%">
+                                <label class="label">
+                                    शौचालय टाकी प्रकार
+                                </label>
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("FST", new { @class = "chkBx6" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label> फक्त सेप्टिक टैंक</label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("STS", new { @class = "chkBx6" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label> सेप्टिक टैंक + शोषखड्डा</label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("Other", new { @class = "chkBx6" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label>इतर</label></div>
+                                </div>
+
+                            </div>
+
+
                             @*Change*@
-                            <div class="d-flex flex-row  mb-4">
-                                <div class="form-group pr-4 back mr-3" style="width:70%">
-                                    <label class="label">
-                                        शौचालय टाकी प्रकार
+                            <div class="form-group pr-4 back  mr-3">
+                                <label class="label">सांडपाणी गटारात सोडता काय ?</label>
+                                <div>
+                                    @Html.CheckBox("SGSK", new { @class = "chkBx33" })
+                                    <label>होय </label>&nbsp;
+                                    @Html.CheckBox("NOSGSK", new { @class = "chkBx33" })
+                                    <label>नाही</label>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">  @Html.CheckBox("UnderGroundGutter", new { @class = "chkBx7" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label>  भूमिगत गटार / Closed Drain</label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("OpenGutter", new { @class = "chkBx7" }) </div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label>उघडी गटार / Open Drain</label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("OtherGutter", new { @class = "chkBx7" })</div>
+                                    <div class="col-6" style="max-width: 80%;flex:none">  <label> इतर</label></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="d-flex flex-row  mb-4">
+
+
+
+                            <div class="form-group pr-4 back">
+                                <label class="label">इमारती  करिता सांडपाणी शुद्धीकरण प्रकल्प आहे का ?</label>
+
+                                <div>
+                                    @Html.CheckBox("NaturalMethod", new { @class = "chkBx9" })
+                                    <label> नैसर्गिक पद्धत &nbsp;</label>
+
+                                </div>
+                                <div>
+                                    @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx9" })
+                                    <label>
+                                        कृत्रिम पद्धत&nbsp;&nbsp;
+
                                     </label>
-                                    <div class="row">
-                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("FST", new { @class = "chkBx6" })</div>
-                                        <div class="col-6" style="max-width: 80%;flex:none">  <label> फक्त सेप्टिक टैंक</label></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("STS", new { @class = "chkBx6" })</div>
-                                        <div class="col-6" style="max-width: 80%;flex:none">  <label> सेप्टिक टैंक + शोषखड्डा</label></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("Other", new { @class = "chkBx6" })</div>
-                                        <div class="col-6" style="max-width: 80%;flex:none">  <label>इतर</label></div>
-                                    </div>
-
                                 </div>
+                                <div>
+                                    @Html.CheckBox("OtherMethod", new { @class = "chkBx9" })
+                                    <label>
+                                        इतर&nbsp;&nbsp;
 
-
-                                @*Change*@
-                                <div class="form-group pr-4 back  mr-3">
-                                    <label class="label">सांडपाणी गटारात सोडता काय ?</label>
-                                    <div>
-                                        @Html.CheckBox("SGSK", new { @class = "chkBx33" })
-                                        <label>होय </label>&nbsp;
-                                        @Html.CheckBox("NOSGSK", new { @class = "chkBx33" })
-                                        <label>नाही</label>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">  @Html.CheckBox("UnderGroundGutter", new { @class = "chkBx7" })</div>
-                                        <div class="col-6" style="max-width: 80%;flex:none">  <label>  भूमिगत गटार / Closed Drain</label></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;"> @Html.CheckBox("OpenGutter", new { @class = "chkBx7" }) </div>
-                                        <div class="col-6" style="max-width: 80%;flex:none">  <label>उघडी गटार / Open Drain</label></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6" style="padding-right: 9px; max-width: 10%; padding-top: 2%;">@Html.CheckBox("OtherGutter", new { @class = "chkBx7" })</div>
-                                        <div class="col-6" style="max-width: 80%;flex:none">  <label> इतर</label></div>
-                                    </div>
-
+                                    </label>
                                 </div>
+                                <div>
+                                    @Html.CheckBox("NoProject", new { @class = "chkBx9" })
+                                    <label>
+                                        प्रकल्प नाही&nbsp;&nbsp;
 
-                            </div>
-                            <div class="d-flex flex-row  mb-4">
-
-
-
-                                <div class="form-group pr-4 back">
-                                    <label class="label">इमारती  करिता सांडपाणी शुद्धीकरण प्रकल्प आहे का ?</label>
-
-                                    <div>
-                                        @Html.CheckBox("NaturalMethod", new { @class = "chkBx9" })
-                                        <label> नैसर्गिक पद्धत &nbsp;</label>
-
-                                    </div>
-                                    <div>
-                                        @Html.CheckBox("ArtifitialMethod", new { @class = "chkBx9" })
-                                        <label>
-                                            कृत्रिम पद्धत&nbsp;&nbsp;
-
-                                        </label>
-                                    </div>
-                                    <div>
-                                        @Html.CheckBox("OtherMethod", new { @class = "chkBx9" })
-                                        <label>
-                                            इतर&nbsp;&nbsp;
-
-                                        </label>
-                                    </div>
-                                    <div>
-                                        @Html.CheckBox("NoProject", new { @class = "chkBx9" })
-                                        <label>
-                                            प्रकल्प नाही&nbsp;&nbsp;
-
-                                        </label>
-                                    </div>
+                                    </label>
                                 </div>
-                            </div>
-                            @*Change*@
-                            <div class="d-flex flex-row  mb-4 ml-3" style="width:36%">
-                                <table style="width:100%;border:1px solid black">
-                                    <tr class="text-center">
-                                        <th colspan="5">मालमत्तेची सद्यस्तिथी</th>
-                                    </tr>
-
-                                    <tr class="text-center">
-                                        <td><b>भिंती</b></td>
-                                        <td> @Html.CheckBox("Safe", new { @class = "chkBx13", style = "width:auto" })</td>
-                                        <td>सुस्थितीत</td>
-                                        <td> @Html.CheckBox("Danger", new { @class = "chkBx13", style = "width:auto" })</td>
-                                        <td> धोकदायक</td>
-                                    </tr>
-                                    <tr class="text-center">
-                                        <td>
-                                            <b> छप्पर</b>
-                                        </td>
-                                        <td> @Html.CheckBox("Safe2", new { @class = "chkBx10", style = "width:auto" })</td>
-                                        <td>सुस्थितीत</td>
-                                        <td> @Html.CheckBox("Danger2", new { @class = "chkBx10", style = "width:auto" })</td>
-                                        <td> धोकदायक</td>
-                                    </tr>
-                                    <tr class="text-center">
-                                        <td>
-                                            <b> काँलम</b>
-                                        </td>
-                                        <td> @Html.CheckBox("Safe3", new { @class = "chkBx11", style = "width:auto" })</td>
-                                        <td>सुस्थितीत</td>
-                                        <td> @Html.CheckBox("Danger3", new { @class = "chkBx11", style = "width:auto" })</td>
-                                        <td> धोकदायक</td>
-                                    </tr>
-
-                                </table>
                             </div>
                         </div>
+                        @*Change*@
+                        <div class="d-flex flex-row  mb-4 ml-3" style="width:36%">
+                            <table style="width:100%;border:1px solid black">
+                                <tr class="text-center">
+                                    <th colspan="5">मालमत्तेची सद्यस्तिथी</th>
+                                </tr>
 
+                                <tr class="text-center">
+                                    <td><b>भिंती</b></td>
+                                    <td> @Html.CheckBox("Safe", new { @class = "chkBx13", style = "width:auto" })</td>
+                                    <td>सुस्थितीत</td>
+                                    <td> @Html.CheckBox("Danger", new { @class = "chkBx13", style = "width:auto" })</td>
+                                    <td> धोकदायक</td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td>
+                                        <b> छप्पर</b>
+                                    </td>
+                                    <td> @Html.CheckBox("Safe2", new { @class = "chkBx10", style = "width:auto" })</td>
+                                    <td>सुस्थितीत</td>
+                                    <td> @Html.CheckBox("Danger2", new { @class = "chkBx10", style = "width:auto" })</td>
+                                    <td> धोकदायक</td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td>
+                                        <b> काँलम</b>
+                                    </td>
+                                    <td> @Html.CheckBox("Safe3", new { @class = "chkBx11", style = "width:auto" })</td>
+                                    <td>सुस्थितीत</td>
+                                    <td> @Html.CheckBox("Danger3", new { @class = "chkBx11", style = "width:auto" })</td>
+                                    <td> धोकदायक</td>
+                                </tr>
+
+                            </table>
+                        </div>
                     </div>
+
+                </div>
 
 
                 <table style="width: 100%; table-layout: fixed;" class="back mb-4 width">
-                   
+
                     <tr class="text-center">
                         <th>मजला क्र./Floor No.</th>
                         <th class="second">मालकी (मालमत्ता धारक/भाडेकरू/लीज) /<br />Occupancy Status(Owner / Tenant/ Lease)</th>
@@ -1186,17 +1308,17 @@ new SelectListItem { Text = "Lease", Value = "Lease"}
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
                                     @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                 
+
                                     @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2">
-                                <div >
+                                <div>
 
 
-                                    @Html.EditorFor(model => model.DateofConstruction1, new {@class = "form-control", style = "width:20%" })
+                                    @Html.EditorFor(model => model.DateofConstruction1, new { @class = "form-control", style = "width:20%" })
                                     @Html.ValidationMessageFor(model => model.DateofConstruction1, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -1715,8 +1837,8 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                             </tr>
                         </table>
                     </div>
-                  
-               
+
+
                     @*CHange*@
                     <h4 style="text-align:center" class="my-2">मालमत्तेचाबाबतचा इतर तपशील </h4>
                     <table>
@@ -1819,8 +1941,8 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                         </td>
                         <td>
                             @Html.TextBoxFor(model => model.ContactNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
-                                                <span class="text-danger" id="err_ContactNo2"></span>
-                                            </td>
+                            <span class="text-danger" id="err_ContactNo2"></span>
+                        </td>
                         <td>@Html.TextBoxFor(model => model.VoterIdentityNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
                     <tr class="text-center">
@@ -1838,7 +1960,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                             @Html.TextBoxFor(model => model.ContactNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
                             <span class="text-danger" id="err_ContactNo3"></span>
                         </td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome"})</td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
 
                     </tr>
                     <tr class="text-center">
@@ -1964,7 +2086,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                             @Html.TextBoxFor(model => model.ContactNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10" })
                             <span class="text-danger" id="err_ContactNo10"></span>
                         </td>
-                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome"})</td>
+                        <td>@Html.TextBoxFor(model => model.VoterIdentityNo10, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                     </tr>
 
                     <tr class="text-center">
@@ -2413,18 +2535,18 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 
 
                 <div class="d-flex flex-column back mb-4 width">
-                        <div class="p-2 bd-highlight" style="margin:auto;">
-                            <label class="label"><b>Document Upload</b></label>
-                        </div>
-                        <div class="p-2 bd-highlight" style="margin:auto;" id="docupload">
-                            <embed src="@ViewBag.img/@Model.Sketchdiagram2" id="Sketchdiagram2" height="500px" width="950px" style="border:solid" />
-                        </div>
-                        <div class="p-2 bd-highlight" style="margin:auto;">
-                            <input type="file" name="file4" id="Sketchdiagramfile2" placeholder="click"  value="@Model.Sketchdiagram2" onchange="show(this)">
-                          
-                        </div>
+                    <div class="p-2 bd-highlight" style="margin:auto;">
+                        <label class="label"><b>Document Upload</b></label>
+                    </div>
+                    <div class="p-2 bd-highlight" style="margin:auto;" id="docupload">
+                        <embed src="@ViewBag.img/@Model.Sketchdiagram2" id="Sketchdiagram2" height="500px" width="950px" style="border:solid" />
+                    </div>
+                    <div class="p-2 bd-highlight" style="margin:auto;">
+                        <input type="file" name="file4" id="Sketchdiagramfile2" placeholder="click" value="@Model.Sketchdiagram2" onchange="show(this)">
 
                     </div>
+
+                </div>
                 <div class="row justify-content-center my-3 width">
                     <center><span class="text-danger" id="err_generate"></span></center>
                     <div class="form-group1 ">
@@ -2432,7 +2554,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
     line-height: 1.5;border-radius: 3px;border-style: none;" id="btnSubmit" onclick="return Validate()">
 
                             <span class="glyphicon glyphicon-saved"></span>
-                            <span id="buttonName" >@ViewBag.btn </span>
+                            <span id="buttonName">@ViewBag.btn </span>
 
                         </button>
                         <p id="para" style="color: green; margin-left: 40%;">@ViewBag.Message </p>
@@ -2448,7 +2570,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 
     $(document).ready(function () {
         debugger;
-   
+
         $("#PrabhagNo").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
             if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
@@ -2529,7 +2651,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
                 return false;
             }
         });
-        
+
         $("#PropOwnerAdhaarNo").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
             if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
@@ -2675,12 +2797,12 @@ new SelectListItem { Text = "Mixed", Value = "M"}
             //getting key code of pressed key
            // var keycode = (key.which) ? key.which : key.keyCode;
             //comparing pressed keycodes
-    
+
             if (e.which > 31 && (e.which < 48 || e.which > 57) && e.which != 46) {
                 $("#err_Longitude").html("Numeric Value Only").show().delay(1500).show().fadeOut('slow');
                 return false;
             }
-          
+
         });
 
         $("#Latitude").keypress(function (e) {
@@ -2720,7 +2842,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
         if ($('#SurveyorDate').val() == '') {
             $('#SurveyorDate').val("--Select Date--");
         }
-     
+
         $("#PropertyNo").change(function () {
             debugger;
 
@@ -2883,7 +3005,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
         $("#VoterIdentityNo4").keyup(function () {
             $('#VoterIdentityNo4').css('textTransform', 'uppercase');
         });
-        
+
         $("#VoterIdentityNo5").keyup(function () {
             $('#VoterIdentityNo5').css('textTransform', 'uppercase');
         });
@@ -2923,7 +3045,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
             changeYear: true
 
         });
-       
+
         document.getElementById("buttonName").onclick = function () {
             debugger;
             //disable
@@ -2937,34 +3059,34 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 
 
     $("#PrabhagNo").change(function () {
-      
+
         var pno = $("#PrabhagNo").val();
         $("#PrabhagNo2").val(pno);
 
     });
 
     $("#WardName_No").change(function () {
-       
+
         var pno = $("#WardName_No").val();
         $("#WardName_No2").val(pno);
 
     });
 
-   
+
 
     $("#NewPropertyNo").change(function () {
-       
+
         var pno = $("#NewPropertyNo").val();
         $("#NewPropertyNo2").val(pno);
 
     });
     $("#PropertyNo").change(function () {
- 
+
         var pno = $("#PropertyNo").val();
         $("#PropertyNo2").val(pno);
 
     });
-    
+
     $("#OldHouseNo1").change(function () {
 
         var pno = $("#OldHouseNo1").val();
@@ -3126,7 +3248,7 @@ new SelectListItem { Text = "Mixed", Value = "M"}
         $("#FileUpload_Preview").html("");
         $("#FileUpload_Preview").show();
         $("#FileUpload_Preview").append("<img />");
-       
+
         if (typeof (FileReader) != "undefined") {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -3174,3 +3296,63 @@ new SelectListItem { Text = "Mixed", Value = "M"}
 </script>
 
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        var maxField = 10; //Input fields increment limitation
+        var addButton = $('.add_button'); //Add button selector
+        var wrapper = $('.field_wrapper'); //Input field wrapper
+        //var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button"><img src="remove-icon.png"/></a></div>'; //New input field html
+        var fieldHTML = '<div id="demo"><div class="d-flex flex-row"> <div class="form-group pr-4"> <label class="label"> मालमत्ताधारकाचे नाव <span id="ownercount"></span> /<br /> Prop. Owner Name </label> </div><div class="form-group pr-4"><label class="label">प्रथम नाव/ First Name</label><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name ="PropOwnerFirstName[]"/><span class="text-danger" id="err_empidd"></span></div><div class="form-group pr-4"><label class="label">मधले नाव / Middle Name</label><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name ="PropOwnerMiddleName[]"/><span class="text-danger" id="err_empidd"></span><span class="glyphicon form-control-feedback" aria-hidden="true"></span><span class="help-block with-errors"></span></div> <div class="form-group pr-4"><label class="label">आडनाव / Last Name</label><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name = "PropOwnerLastName[]" /><input type="hidden" /><span class="text-danger" id="err_empidd"></span><span class="glyphicon form-control-feedback" aria-hidden="true"></span> <span class="help-block with-errors"></span></div><a href="javascript:void(0);" class="remove_button"><div class="Ncircle"></div></a></div></div>'; //New input field html
+        var x = 1; //Initial field counter is 1
+
+        //Once add button is clicked
+        $(addButton).click(function () {
+            //Check maximum number of input fields
+            if (x < maxField) {
+                x++; //Increment field counter
+                $(wrapper).append(fieldHTML); //Add field html
+            }
+        });
+
+        //Once remove button is clicked
+        $(wrapper).on('click', '.remove_button', function (e) {
+            e.preventDefault();
+            $(this).parent('div').remove(); //Remove field html
+            x--; //Decrement field counter
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var maxField = 10; //Input fields increment limitation
+        var addButton = $('.Tenant_add_button'); //Add button selector
+        var wrapper = $('.field_wrapper_Tenant'); //Input field wrapper
+        //var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button"><img src="remove-icon.png"/></a></div>'; //New input field html
+        var fieldHTML = '<div id="demo"> <div class="d-flex flex-row"><div class="form-group pr-4"><label class="label"> भाडेकरूचे नाव /<br /> Tenant Name</label></div><div class="form-group pr-4"><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name ="TenantName[]"/><span class="text-danger" id="err_empidd"></span><span class="glyphicon form-control-feedback" aria-hidden="true"></span><span class="help-block with-errors"></span></div><div class="form-group pr-4"><label class="label">भाडे / Rent</label></div><div class="form-group pr-4"><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name ="Rent[]"/><span class="text-danger" id="err_empidd"></span><span class="glyphicon form-control-feedback" aria-hidden="true"></span><span class="help-block with-errors"></span></div><a href="javascript:void(0);" class="Tenant_remove_button"><div class="Ncircle"></div></div></div>'; //New input field html
+        var x = 1; //Initial field counter is 1
+
+        //Once add button is clicked
+        $(addButton).click(function () {
+            //Check maximum number of input fields
+            if (x < maxField) {
+                x++; //Increment field counter
+                $(wrapper).append(fieldHTML); //Add field html
+            }
+        });
+
+        //Once remove button is clicked
+        $(wrapper).on('click', '.Tenant_remove_button', function (e) {
+            e.preventDefault();
+            $(this).parent('div').remove(); //Remove field html
+            x--; //Decrement field counter
+        });
+    });
+</script>
+
+<script>
+    var ii = document.querySelectorAll("#demo > input");
+    document.getElementById("ownercount").innerHTML = (ii.length / 4);
+
+</script>
