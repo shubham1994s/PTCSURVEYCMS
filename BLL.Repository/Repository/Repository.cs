@@ -2808,11 +2808,11 @@ namespace BLL.Repository.Repository
                                 //  Console.WriteLine(item.PropOwnerMobileNo);
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                  //  sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                 //   sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;
@@ -2824,11 +2824,11 @@ namespace BLL.Repository.Repository
                             {
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                   // sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                 //   sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;
@@ -2839,11 +2839,11 @@ namespace BLL.Repository.Repository
                             {
                                 if (!string.IsNullOrEmpty(send) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                  //  sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                                 if (!string.IsNullOrEmpty(Reminder) && !string.IsNullOrEmpty(item.PropOwnerTelephoneNo))
                                 {
-                                  //  sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
+                                    sendSMS("Vengurla Property Tax Reminder - Your Property Tax Bill for Rs." + item.totaltax + " for Property Tax number " + item.PropertyNo + " is due. BIGVCL", item.PropOwnerTelephoneNo);
                                 }
                             }
                             break;

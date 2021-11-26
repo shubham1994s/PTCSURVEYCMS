@@ -119,8 +119,8 @@
                                     <div style="display:flex;justify-content:space-between">
                                         <span style="font-size:2em;font-weight:600">Property List </span>
                                         @*<h3 style="margin-bottom:35px;margin-top:5px"><a href="@Url.Action("GenerateReport", "Report",new {typeOfReport="PDF"})" type="button" class="btn btn-sm btn-primary float-right" style="margin-left: 10px;">Get All Entries Report</a></h3>*@
-                                        <p id="para" style="color: green; margin-left: 49%;">@TempData["Success"]</p>
-                                        @* <a id="btnShow" class="btn btn-primary btn-sm" style="margin-bottom: 2%;">Send Message</a>*@
+                                        @*<p id="para" style="color: green; margin-left: 49%;">@TempData["Success"]</p>*@
+                                        
                                         @*<a id="btnSearch" class="btn btn-primary btn-sm" style="margin-bottom: 2%;">Advance Search</a>*@
 
                                     </div>
@@ -173,90 +173,8 @@
 
 
 
-                                    @*<div class="container">
-                                            <!-- Trigger the modal with a button -->
-                                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Advance Search</button>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="myModal" role="dialog">
-                                                <div class="modal-dialog">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Advance Search</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form>
-                                                                <div class="row">
-                                                                    <div class="col-lg-3 form-group">
-                                                                        <label>Select Prabhag No.</label>
-                                                                        <select id="PrabhagList" class="form-control form-control form-control-sm">
-                                                                            <option value="">Select Prabhag No.</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-lg-3 form-group">
-                                                                        <label>Select Ward No.</label>
-                                                                        <select id="WardList" class="form-control form-control form-control-sm">
-                                                                            <option value="">Select Ward No</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-lg-3 form-group">
-                                                                        <label>Cons.Start Date.</label>
-                                                                        <select id="CSDate" class="form-control form-control form-control-sm">
-                                                                            <option value="">Select Cons.Start Date.</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-lg-3 form-group">
-                                                                        <label>Cons.End Date.</label>
-                                                                        <select id="CEDate" class="form-control form-control form-control-sm">
-                                                                            <option value="">Select Cons.End Date.</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-lg-3 form-group">
-                                                                        <label>Const. Perm. No.</label>
-                                                                        <select id="CPNO" class="form-control form-control form-control-sm">
-                                                                            <option value="">Select Const. Perm. No.</option>
-                                                                            <option value="Y">YES</option>
-                                                                            <option value="N">NO</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-lg-3 form-group">
-                                                                        <label> O. C. No.</label>
-                                                                        <select id="OCNO" class="form-control form-control form-control-sm">
-                                                                            <option value="">O. C. No</option>
-                                                                            <option value="Y">YES</option>
-                                                                            <option value="N">NO</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="col-lg-3 form-group">
-                                                                        <label> मालमत्तेची सद्यस्तिथी</label>
-                                                                        <select id="OCNO" class="form-control form-control form-control-sm">
-                                                                            <option value="">मालमत्तेची सद्यस्तिथी</option>
-                                                                            <option value="">भिंती (सुस्थितीत)</option>
-                                                                            <option value="">भिंती (धोकदायक)</option>
-                                                                            <option value="">छप्पर (सुस्थितीत)</option>
-                                                                            <option value="">छप्पर (धोकदायक)</option>
-                                                                            <option value="">काँलम (सुस्थितीत)</option>
-                                                                            <option value="">काँलम (धोकदायक)</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <button id="ASF" type="submit" name="" value="" class="btn btn-primary">Filter</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>*@
                                     <div class="container">
-                                        <a href="~/Search/SurveyListSearch"><button type="button" class="btn btn-sm btn-primary ads">Advance Search</button></a>
+                                        <a id="btnShow" class="btn btn-primary btn-sm" style="margin-bottom: 2%; margin-left: 79%;">Send Message</a>  <a href="~/Search/SurveyListSearch"> <button type="button" class="btn btn-sm btn-primary ads">Advance Search</button></a>
                                     </div>
 
                                     <div class="dt-responsive table-responsive">
@@ -273,7 +191,7 @@
                                                     <th>House No</th>
                                                     <th>View</th>
                                                     <th>Scanned Document</th>
-                                                    @*<th>Sent Massage</th>*@
+                                                    <th>Send Message</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
