@@ -2,7 +2,7 @@
 
 @model BLL.ViewModel.PropertyMasterVM
 @{
-    ViewBag.Title = "Vengurla Property Survey";
+    ViewBag.Title = "NamunaList";
 }
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -82,7 +82,7 @@
 
                                     @*<a href="@Url.Action("GenerateReport","Report" ,new {typeOfReport="PDF"})">Get All Entries Report </a>*@
                                     <h4 sytle="magin-bottom:30px;font-weight:800;">
-                                        <a href="@Url.Action("SurveyForm", "PTC")" type="button" class="btn btn-sm btn-primary">Add New Survey Form</a>
+                                        <a href="@Url.Action("NamunaForm", "PTC")" type="button" class="btn btn-sm btn-primary">Add New Namuna Form</a>
                                     </h4>
                                     <img src="~/Content/Images/@ViewBag.Clogo" style="position: absolute;height: 155px;top: -5%;left:42%" />
                                     @*<span style="border: 1px solid #357ebd; padding: 5px; height: fit-content; margin-top: 10px !important ">total proprety count : @viewbag.entrycount</span>*@
@@ -120,7 +120,7 @@
                                         <span style="font-size:2em;font-weight:600">Property List </span>
                                         @*<h3 style="margin-bottom:35px;margin-top:5px"><a href="@Url.Action("GenerateReport", "Report",new {typeOfReport="PDF"})" type="button" class="btn btn-sm btn-primary float-right" style="margin-left: 10px;">Get All Entries Report</a></h3>*@
                                         @*<p id="para" style="color: green; margin-left: 49%;">@TempData["Success"]</p>*@
-                                        
+
                                         @*<a id="btnSearch" class="btn btn-primary btn-sm" style="margin-bottom: 2%;">Advance Search</a>*@
 
                                     </div>
@@ -173,9 +173,9 @@
 
 
 
-                                    <div class="container">
+                                    @*<div class="container">
                                         <a id="btnShow" class="btn btn-primary btn-sm" style="margin-bottom: 2%; margin-left: 79%;">Send Message</a>  <a href="~/Search/SurveyListSearch"> <button type="button" class="btn btn-sm btn-primary ads">Advance Search</button></a>
-                                    </div>
+                                    </div>*@
 
                                     <div class="dt-responsive table-responsive">
 
