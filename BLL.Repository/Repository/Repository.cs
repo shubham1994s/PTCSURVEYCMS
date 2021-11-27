@@ -3026,6 +3026,7 @@ namespace BLL.Repository.Repository
                         .Select(x => new SelectListItem
                         {
                             Text = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo,
+
                             Value = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo
                         }).Distinct().OrderBy(t => t.Text).ToList();                 
                 }
