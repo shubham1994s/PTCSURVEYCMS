@@ -1,0 +1,2398 @@
+﻿@model BLL.ViewModel.PropertyMasterVM
+@{
+    ViewBag.Title = "NamunaForm";
+    Layout = "";
+}
+
+<title>Add Namuna Forms</title>
+<link rel="shortcut icon" href="~/Content/Images/vengurla_logo_header.png" />
+<style>
+    table, th, td {
+        border: 1px solid #12b3de;
+        border-collapse: collapse;
+        font-weight: 500;
+    }
+
+    .srno {
+        width:10%;
+    }
+    .subject {
+        width: 15%;
+    }
+
+    .prakar {
+        width: 10%
+    }
+
+    .second {
+        width: 12%
+    }
+
+    .pl {
+        margin-left: 5px
+    }
+
+    .mr {
+        margin-right: 15px
+    }
+
+    h5, h6 {
+        font-weight: 600 !important
+    }
+
+    td input {
+        width: 100%
+    }
+    /*.form-control {
+        text-transform: capitalize;
+    }
+    .form-control1 {
+        text-transform: lowercase;
+    }*/
+
+    .remove_button, .add_button {
+        margin-top: 36px;
+    }
+
+    .Tenant_remove_button {
+        margin-top: 10px;
+    }
+
+    .circle {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        background-color: rgb(44, 108, 128);
+        position: relative;
+        margin-top: 5px;
+    }
+
+        .circle::after {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            height: 3px;
+            margin-top: -2px;
+            top: 50%;
+            left: 5px;
+            right: 5px;
+            z-index: 9;
+        }
+
+        .circle::before {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            width: 3px;
+            margin-left: -1px;
+            left: 50%;
+            top: 5px;
+            bottom: 5px;
+            z-index: 9;
+        }
+
+    .owncircle {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        background-color: rgb(44, 108, 128);
+        position: relative;
+        margin-top: 5px;
+    }
+
+        .owncircle::after {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            height: 3px;
+            margin-top: -2px;
+            top: 50%;
+            left: 5px;
+            right: 5px;
+            z-index: 9;
+        }
+
+        .owncircle::before {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            width: 3px;
+            margin-left: -2px;
+            left: 50%;
+            top: 5px;
+            bottom: 5px;
+            z-index: 9;
+        }
+
+    .Ncircle {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        background-color: rgb(44, 108, 128);
+        position: relative;
+        margin-top: -2px;
+    }
+
+        .Ncircle::after {
+            content: " ";
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            height: 3px;
+            margin-top: -2px;
+            top: 50%;
+            left: 5px;
+            right: 5px;
+            z-index: 9;
+        }
+    .bt-text{
+        font-size:14px;
+    }
+    .pr-0 {
+        padding-right:0px;
+    }
+    .pl-0{
+        padding-left:0px;
+    }
+    .bigth {
+        width:40%;
+    }
+    .bigth2 {
+        width: 25%;
+    }
+    th, td {
+        text-align: center !important;
+    }
+    .srnoo {
+        width:5%;
+    }
+</style>
+@*@Styles.Render("~/Content/AddEditCSS")*@
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/SurveyForm.css" rel="stylesheet" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+@using (Html.BeginForm("AddSurveyForm", "PTC", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "ValidateUser();", role = "form" }))
+{
+    <button class="ml-5" type="button" style="position:absolute;top:25px;padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
+    line-height: 1.5;border-radius: 3px;border-style: none;" onclick="goBack()">
+        Back
+    </button>
+    <img src="~/Content/Images/vengurla logo.jpeg" id="logo1" />
+    <h1 class="text-center my-3">@ViewBag.Appname_mar</h1>
+    <h6 class="text-center mb-3">स्वच्छता विभाग </h6>
+    <h6 class="text-center mb-5 font-weight-bold"><u> स्वच्छ सर्वेक्षण मालमत्ता सर्वेक्षण नमुना</u></h6>
+    <img src="~/content/Images/Logo_150x48.png" id="logo2" />
+    <div class="container-fluid">
+
+
+        @*change*@
+        <div class="d-flex flex-row back mb-4">
+
+
+
+            <div class="form-group pr-4">
+
+
+                <h6 class="text-right mb-3">नामुना क्र. ४३</h6>
+                <h6 class="text-right mb-3">@ViewBag.Appname_mar</h6>
+                <h6 class="text-center mb-3">20&nbsp;&nbsp;&nbsp;&nbsp;- 21&nbsp;&nbsp;&nbsp;&nbsp; या वर्षासाठी कर आकारणीस पात्र असलेल्या इमारती आणि जमिनी यांची आकारणी सुचि </h6>
+                <table style="width: 100%; table-layout: fixed;" class="back mb-4 width">
+
+                    <tr class="text-center">
+                        <th class="srnoo">अनु क्रमांक.</th>
+                        <th class="subject">रस्त्याचे वा <br />विभाग / <br />मांमंडलाचे नाव</th>
+                        <th class="prakar">मालमत्ता क्र.<br />20&nbsp;&nbsp;-20&nbsp;&nbsp;</th>
+                        <th style="width:10%">मालमत्तेचे वर्णन</th>
+                        <th class="subject">मालकाचे नाव</th>
+                        <th class="subject">भोगवटदाराचे नाव</th>
+                        <th class="srno">वापर</th>
+                        <th class="srno">अंदाजित <br />वार्षिक भाडे</th>
+                        <th class="srno">भाडयाने <br />दिलेल्या <br />अंदाजित <br />भागाचे वार्षिक <br />भाडे</th>
+                        <th class="srno">भाडयाने न<br />दिलेल्या <br />भागाचे वार्षिक <br />भाडे</th>
+                        <th class="srno">इमारतीचे<br /> किंवा <br />जमिनीचे <br />वार्षिक <br />भाडे</th>
+
+                    </tr>
+                    <tr>
+                        <th>१</th>
+                        <th>२</th>
+                        <th>३</th>
+                        <th>४</th>
+                        <th>५</th>
+                        <th>६</th>
+                        <th>६ अ</th>
+                        <th>७</th>
+                        <th>८</th>
+                        <th>९</th>
+                        <th>१०</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.DateofConstruction1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+
+                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ConstType3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.DateofConstruction3, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ConstType4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.DateofConstruction4, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ConstType5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.DateofConstruction5, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-3 pr-0"><p class="bt-text">नक्कल तयार करणार</p></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार</p></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+
+                                <div class="col-lg-3 pr-0"><p class="bt-text">नक्कलचे शब्द -</p></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+
+                                <div class="col-lg-3 pr-0"><p class="bt-text">लिहिणवाड  फी -</p></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+
+                                <div class="col-lg-3 pr-0"><p class="bt-text">तावाची फी -</p></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+
+                                <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार -</p></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+        </div>
+
+
+        <div class="d-flex flex-row back mb-4">
+
+
+
+            <div class="form-group pr-4">
+
+
+                <h6 class="text-left mb-3">नियम ७४ पहा</h6>
+                <h6 class="text-left mb-3">@ViewBag.Appname_mar</h6>
+                <h6 class="text-center mb-3">20&nbsp;&nbsp;&nbsp;&nbsp;- 21&nbsp;&nbsp;&nbsp;&nbsp; या वर्षासाठी कर आकारणीस पात्र असलेल्या इमारती आणि जमिनी यांची आकारणी सुचि </h6>
+                <table style="width: 100%; table-layout: fixed;" class="back mb-4 width">
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    <tr class="text-center">
+                        <th class="srno" rowspan="2">दुरुस्त्या <br />इत्यादीसाठी <br />१० टक्के <br /> वजाती</th>
+                        <th class="subject" rowspan="2">इमारतीचे <br />किंवा <br />जमिनीचे<br /> कर योग्य<br /> मूल्य</th>
+                        <th class="bigth" colspan="6" scope="colgroup">आकारण्यात आलेल्या करांचा रकमा </th>
+                        <th style="width:10%" rowspan="2">करयोग्य <br />इमारत किंवा <br />जमीन</th>
+                        <th class="bigth2" colspan="5" scope="colgroup">अपिलाचे निकाल आणि त्यानंतरचे फेरफार</th>
+                        <th class="subject" rowspan="2">प्राधिकृत मूल्य निर्धारण<br />अधिकारी/मूल्य निर्धारण<br />अधिकाऱ्यांची नेमणूक<br />करण्यात आली असेल<br />तर स्थायी समितीच्या<br />सभापतींची सही</th>
+                        <th class="srno" rowspan="2">नंतर वाढ किंवा<br />घट करण्यात<br />आल्याचा बाबतीत<br />आदेशांच्या<br /> निर्देशासह शेरा</th>
+
+                    </tr>
+                    <tr>
+                        <th scope="col">एकत्रित <br />मालमत्ता <br />कर</th>
+                        <th scope="col">वृक्ष<br /> कर</th>
+                        <th scope="col">शिक्षण <br /> कर</th>
+                        <th scope="col">रोहयो <br />उपकर</th>
+                        <th scope="col">इतर +</th>
+                        <th scope="col">एकूण</th>
+                        <td scope="col">कर</td>
+                        <td scope="col">कर</td>
+                        <td scope="col">कर</td>
+                        <td scope="col">कर</td>
+                        <td scope="col">एकूण</td>
+                    </tr>
+                    <tr>
+                        <th>११</th>
+                        <th>१२</th>
+                        <th>१३</th>
+                        <th>१४</th>
+                        <th>१५</th>
+                        <th>१६</th>
+                        <th>१७</th>
+                        <th>१८</th>
+                        <th>१९</th>
+                        <th>२०</th>
+                        <th>२१</th>
+                        <th>२२</th>
+                        <th>२३</th>
+                        <th>२४</th>
+                        <th>२५</th>
+                        <th>२६</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.DateofConstruction1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+
+                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+
+                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+
+                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+
+                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+
+                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-3 pr-0"><p class="bt-text">नक्कल तयार करणार</p></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार</p></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+
+                                <div class="col-lg-3 pr-0"><p class="bt-text">नक्कलचे शब्द -</p></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+
+                                <div class="col-lg-3 pr-0"><p class="bt-text">लिहिणवाड  फी -</p></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+
+                                <div class="col-lg-3 pr-0"><p class="bt-text">तावाची फी -</p></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+
+                                <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार -</p></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-7 pl-0">
+                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table style="width:100%" class="back mb-5 width">
+                    <tr>
+                        <th>वर्णन / Description</th>
+                        <th>नाव / Name</th>
+                        @*<th>स्वाक्षरी / Signature</th>*@
+                        <th>तारीख / Date</th>
+                    </tr>
+                    <tr>
+                        <td>सर्वेक्षण करणारा / Surveyor</td>
+                        <td>@Html.TextBoxFor(model => model.SurveyorName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        @*<td>
+                    <img src="~/Images/@Model.SurveyorSignature" id="SurveyorSignature" height="100" width="90" style="border:solid" />
+                    <input type="file" name="file" id="SurveyorSignaturefile" value="@Model.SurveyorSignature" onchange="show(this)">
+                </td>*@
+
+                        <td>@Html.EditorFor(model => model.SurveyorDate, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>डेटा एन्ट्री /Data Entry By</td>
+                        <td>@Html.TextBoxFor(model => model.DataEntryName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        @*<td>
+                    <img src="~/Images/@Model.DataEntrySignature" id="DataEntrySignature" height="100" width="90" style="border:solid" />
+                    <input type="file" name="file2" id="DataEntrySignaturefile" value="@Model.DataEntrySignature" onchange="show(this)">
+                </td>*@
+                        <td>@Html.EditorFor(model => model.DataEntryDate, new { @class = "form-control" })</td>
+
+                    </tr>
+
+                </table>
+
+
+
+                <div class="row justify-content-center my-3 width">
+                    <center><span class="text-danger" id="err_generate"></span></center>
+                    <div class="form-group1 ">
+                        <button type="submit" name="submit" style="padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
+    line-height: 1.5;border-radius: 3px;border-style: none;" id="btnSubmit" onclick="return Validate()">
+
+                            <span class="glyphicon glyphicon-saved"></span>
+                            <span id="buttonName">@ViewBag.btn </span>
+
+                        </button>
+                        <p id="para" style="color: green; margin-left: 40%;">@ViewBag.Message </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+}
+
+<script>
+
+    $(document).ready(function () {
+        debugger;
+
+        $("#PrabhagNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_PrabhagNo").html("Required 2 Digits Only");
+                return false;
+            }
+            else
+            {
+                $("#err_PrabhagNo").html("");
+            }
+
+        });
+
+        $("#WardName_No").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_WardName_No").html("Required 2 Digits Only");
+                return false;
+            }
+            else {
+                $("#err_WardName_No").html("");
+            }
+        });
+
+        $("#ConstStartYear").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ConstStartYear").html("Required 4 Digits Only");
+                return false;
+            }
+            else {
+                $("#err_ConstStartYear").html("");
+            }
+        });
+
+        $("#CompletionYear").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_CompletionYear").html("Required 4 Digits Only");
+                return false;
+            }
+            else {
+                $("#err_CompletionYear").html("");
+            }
+        });
+        $("#PropOwnerTelephoneNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_TelephoneNoidd").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#OccupierMobileNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_OccupierMobileNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#TenantMobileNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_TenantMobileNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+
+        $("#PropOwnerAdhaarNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_PropOwnerAdhaarNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#OccupierAdhaarNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_OccupierAdhaarNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+
+        $("#TenantAdhaarNo").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_TenantAdhaarNo").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+
+
+        $("#ContactNo1").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo1").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+
+
+        $("#ContactNo2").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo2").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+
+        $("#ContactNo3").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo3").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo4").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo4").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo5").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo5").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo6").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo6").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo7").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo7").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo8").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo8").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo9").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo9").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo10").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo10").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo11").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo11").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#ContactNo12").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44) {
+                //display error message
+                //$("#err_mobile").html("केवल अंक | Digits Only").show().delay(1500).show().fadeOut('slow');
+                $("#err_ContactNo12").html("Digits Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+        });
+        $("#Longitude").keypress(function (e){
+            //getting key code of pressed key
+           // var keycode = (key.which) ? key.which : key.keyCode;
+            //comparing pressed keycodes
+
+            if (e.which > 31 && (e.which < 48 || e.which > 57) && e.which != 46) {
+                $("#err_Longitude").html("Numeric Value Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+
+        });
+
+        $("#Latitude").keypress(function (e) {
+            //getting key code of pressed key
+            // var keycode = (key.which) ? key.which : key.keyCode;
+            //comparing pressed keycodes
+
+            if (e.which > 31 && (e.which < 48 || e.which > 57) && e.which != 46) {
+                $("#err_Latitude").html("Numeric Value Only").show().delay(1500).show().fadeOut('slow');
+                return false;
+            }
+
+        });
+
+        var img = '@ViewBag.nadoc';
+        if (img == 'na')
+        {
+            $('#docupload').hide();
+        }
+        var today = new Date();
+        var dd = today.getDate();
+
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        today = dd + '-' + mm + '-' + yyyy;
+        if ($('#DataEntryDate').val() == '') {
+            $('#DataEntryDate').val("--Select Date--");
+        }
+
+        if ($('#SurveyorDate').val() == '') {
+            $('#SurveyorDate').val("--Select Date--");
+        }
+
+        $("#PropertyNo").change(function () {
+            debugger;
+
+            var PropertyNo = $("#PropertyNo").val();
+            $.ajax({
+                url: "/PTC/IsPropertyNoExists?PropertyNo=" + PropertyNo,
+                type: "POST",
+                data: { PropertyNo: PropertyNo }
+            })
+                .done(function (msg) {
+                    if (msg == 1) {
+                        $('#err_PropertyNo').text('This Is Already Exist PropertyNo!');
+                    } else {
+                        $('#err_PropertyNo').text('');
+                    }
+                });
+        });
+
+        //$("#NewPropertyNo").change(function () {
+        //    debugger;
+
+        //    var NewPropertyNo = $("#NewPropertyNo").val();
+        //    $.ajax({
+        //        url: "/PTC/IsNewPropertyNoExists?NewPropertyNo=" + NewPropertyNo,
+        //        type: "POST",
+        //        data: { NewPropertyNo: NewPropertyNo }
+        //    })
+        //        .done(function (msg) {
+        //            if (msg == 1) {
+        //                $('#err_NewPropertyNo').text('This Is Already Exist NewPropertyNo!');
+        //            } else {
+        //                $('#err_NewPropertyNo').text('');
+        //            }
+        //        });
+        //});
+
+        $('#PropOwnerEmailId').change(function () {
+            debugger;
+            var inputvalues = $(this).val();
+            var regex = /^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/;
+            if (!regex.test(inputvalues)) {
+                $('#err_PropOwnerEmailId').text('Invalid Email Id!');
+                return regex.test(inputvalues);
+            }
+            else {
+                $('#err_PropOwnerEmailId').text('');
+            }
+        });
+
+
+        $('#PropOwnerFirstName').css('textTransform', 'capitalize');
+        $('#PropOwnerMiddleName').css('textTransform', 'capitalize');
+        $('#PropOwnerLastName').css('textTransform', 'capitalize');
+        $('#OccupierFirstName').css('textTransform', 'capitalize');
+        $('#OccupierMiddleName').css('textTransform', 'capitalize');
+        $('#OccupierLastName').css('textTransform', 'capitalize');
+        $('#TenantName').css('textTransform', 'capitalize');
+        $('#PropOwnerFirstName').css('textTransform', 'capitalize');
+        $('#Name1').css('textTransform', 'capitalize');
+        $('#Name2').css('textTransform', 'capitalize');
+        $('#Name2').css('textTransform', 'capitalize');
+        $('#Name3').css('textTransform', 'capitalize');
+        $('#Name4').css('textTransform', 'capitalize');
+        $('#Name5').css('textTransform', 'capitalize');
+        $('#Name6').css('textTransform', 'capitalize');
+        $('#Name7').css('textTransform', 'capitalize');
+        $('#Name8').css('textTransform', 'capitalize');
+        $('#Name9').css('textTransform', 'capitalize');
+        $('#Name10').css('textTransform', 'capitalize');
+        $('#Name11').css('textTransform', 'capitalize');
+        $('#Name12').css('textTransform', 'capitalize');
+        $('#SurveyorName').css('textTransform', 'capitalize');
+        $('#DataEntryName').css('textTransform', 'capitalize');
+
+
+
+
+
+        $("#PropOwnerFirstName").keyup(function () {
+            $('#PropOwnerFirstName').css('textTransform', 'capitalize');
+        });
+        $("#PropOwnerMiddleName").keyup(function () {
+            $('#PropOwnerMiddleName').css('textTransform', 'capitalize');
+        });
+        $("#PropOwnerLastName").keyup(function () {
+            $('#PropOwnerLastName').css('textTransform', 'capitalize');
+        });
+        $("#OccupierFirstName").keyup(function () {
+            $('#OccupierFirstName').css('textTransform', 'capitalize');
+        });
+        $("#OccupierMiddleName").keyup(function () {
+            $('#OccupierMiddleName').css('textTransform', 'capitalize');
+        });
+        $("#OccupierLastName").keyup(function () {
+            $('#OccupierLastName').css('textTransform', 'capitalize');
+        });
+        $("#TenantName").keyup(function () {
+            $('#TenantName').css('textTransform', 'capitalize');
+        });
+        $("#PropOwnerFirstName").keyup(function () {
+            $('#PropOwnerFirstName').css('textTransform', 'capitalize');
+        });
+        $("#Name1").keyup(function () {
+            $('#Name1').css('textTransform', 'capitalize');
+        });
+        $("#Name2").keyup(function () {
+            $('#Name2').css('textTransform', 'capitalize');
+        });
+        $("#Name3").keyup(function () {
+            $('#Name3').css('textTransform', 'capitalize');
+        });
+         $("#Name4").keyup(function () {
+            $('#Name4').css('textTransform', 'capitalize');
+         });
+        $("#Name5").keyup(function () {
+            $('#Name5').css('textTransform', 'capitalize');
+        });
+        $("#Name6").keyup(function () {
+            $('#Name6').css('textTransform', 'capitalize');
+        });
+         $("#Name7").keyup(function () {
+            $('#Name7').css('textTransform', 'capitalize');
+         });
+         $("#Name8").keyup(function () {
+            $('#Name8').css('textTransform', 'capitalize');
+        });
+        $("#Name9").keyup(function () {
+            $('#Name9').css('textTransform', 'capitalize');
+        });
+        $("#Name10").keyup(function () {
+            $('#Name10').css('textTransform', 'capitalize');
+        });
+        $("#Name11").keyup(function () {
+            $('#Name11').css('textTransform', 'capitalize');
+        });
+        $("#Name12").keyup(function () {
+            $('#Name12').css('textTransform', 'capitalize');
+        });
+        $("#SurveyorName").keyup(function () {
+            $('#SurveyorName').css('textTransform', 'capitalize');
+        });
+        $("#DataEntryName").keyup(function () {
+            $('#DataEntryName').css('textTransform', 'capitalize');
+        });
+        $("#PropOwnerElectionCardNo").keyup(function () {
+            $('#PropOwnerElectionCardNo').css('textTransform', 'uppercase');
+        });
+
+        $("#VoterIdentityNo1").keyup(function () {
+            $('#VoterIdentityNo1').css('textTransform', 'uppercase');
+        });
+
+        $("#VoterIdentityNo2").keyup(function () {
+            $('#VoterIdentityNo2').css('textTransform', 'uppercase');
+        });
+
+        $("#VoterIdentityNo3").keyup(function () {
+            $('#VoterIdentityNo3').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo4").keyup(function () {
+            $('#VoterIdentityNo4').css('textTransform', 'uppercase');
+        });
+
+        $("#VoterIdentityNo5").keyup(function () {
+            $('#VoterIdentityNo5').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo6").keyup(function () {
+            $('#VoterIdentityNo6').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo7").keyup(function () {
+            $('#VoterIdentityNo7').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo8").keyup(function () {
+            $('#VoterIdentityNo8').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo9").keyup(function () {
+            $('#VoterIdentityNo9').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo10").keyup(function () {
+            $('#VoterIdentityNo10').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo11").keyup(function () {
+            $('#VoterIdentityNo11').css('textTransform', 'uppercase');
+        });
+        $("#VoterIdentityNo12").keyup(function () {
+            $('#VoterIdentityNo12').css('textTransform', 'uppercase');
+        });
+        $("#DataEntryDate").datepicker({
+
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true
+
+        });
+
+        $("#SurveyorDate").datepicker({
+
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true
+
+        });
+
+        document.getElementById("buttonName").onclick = function () {
+            debugger;
+            //disable
+            this.disabled = true;
+
+            //do some validation stuff
+        }
+    });
+
+
+
+
+    $("#PrabhagNo").change(function () {
+
+        var pno = $("#PrabhagNo").val();
+        $("#PrabhagNo2").val(pno);
+
+    });
+
+    $("#WardName_No").change(function () {
+
+        var pno = $("#WardName_No").val();
+        $("#WardName_No2").val(pno);
+
+    });
+
+
+
+    $("#NewPropertyNo").change(function () {
+
+        var pno = $("#NewPropertyNo").val();
+        $("#NewPropertyNo2").val(pno);
+
+    });
+    $("#PropertyNo").change(function () {
+
+        var pno = $("#PropertyNo").val();
+        $("#PropertyNo2").val(pno);
+
+    });
+
+    $("#OldHouseNo1").change(function () {
+
+        var pno = $("#OldHouseNo1").val();
+        $("#OldHouseNo2").val(pno);
+
+    });
+
+    $('.chkBx').change(function () {
+        $(".chkBx").not(this).prop('checked', false);
+    });
+    $('.chkBx1').change(function () {
+        $(".chkBx1").not(this).prop('checked', false);
+    });
+    $('.chkBx2').change(function () {
+        $(".chkBx2").not(this).prop('checked', false);
+    });
+    $('.chkBx3').change(function () {
+        $(".chkBx3").not(this).prop('checked', false);
+    });
+    $('.chkBx4').change(function () {
+        $(".chkBx4").not(this).prop('checked', false);
+    });
+    $('.chkBx5').change(function () {
+        $(".chkBx5").not(this).prop('checked', false);
+    });
+    $('.chkBx6').change(function () {
+        $(".chkBx6").not(this).prop('checked', false);
+    });
+    $('.chkBx7').change(function () {
+        $(".chkBx7").not(this).prop('checked', false);
+    });
+    $('.chkBx8').change(function () {
+        $(".chkBx8").not(this).prop('checked', false);
+    });
+    $('.chkBx9').change(function () {
+        $(".chkBx9").not(this).prop('checked', false);
+    });
+    $('.chkBx10').change(function () {
+        $(".chkBx10").not(this).prop('checked', false);
+    });
+    $('.chkBx11').change(function () {
+        $(".chkBx11").not(this).prop('checked', false);
+    });
+    $('.chkBx12').change(function () {
+        $(".chkBx12").not(this).prop('checked', false);
+    });
+    $('.chkBx13').change(function () {
+        $(".chkBx13").not(this).prop('checked', false);
+    });
+    $('.chkBx14').change(function () {
+        $(".chkBx14").not(this).prop('checked', false);
+    });
+    $('.chkBx15').change(function () {
+        $(".chkBx15").not(this).prop('checked', false);
+    });
+    $('.chkBx16').change(function () {
+        $(".chkBx16").not(this).prop('checked', false);
+    });
+    $('.chkBx17').change(function () {
+        $(".chkBx17").not(this).prop('checked', false);
+    });
+    $('.chkBx18').change(function () {
+        $(".chkBx18").not(this).prop('checked', false);
+    });
+    $('.chkBx19').change(function () {
+        $(".chkBx19").not(this).prop('checked', false);
+    });
+    $('.chkBx20').change(function () {
+        $(".chkBx20").not(this).prop('checked', false);
+    });
+    $('.chkBx21').change(function () {
+        $(".chkBx21").not(this).prop('checked', false);
+    });
+    $('.chkBx22').change(function () {
+        $(".chkBx22").not(this).prop('checked', false);
+    });
+    $('.chkBx23').change(function () {
+        $(".chkBx23").not(this).prop('checked', false);
+    });
+    $('.chkBx24').change(function () {
+        $(".chkBx24").not(this).prop('checked', false);
+    });
+    $('.chkBx25').change(function () {
+        $(".chkBx25").not(this).prop('checked', false);
+    });
+    $('.chkBx26').change(function () {
+        $(".chkBx26").not(this).prop('checked', false);
+    });
+    $('.chkBx27').change(function () {
+        $(".chkBx27").not(this).prop('checked', false);
+    });
+    $('.chkBx28').change(function () {
+        $(".chkBx28").not(this).prop('checked', false);
+    });
+    $('.chkBx29').change(function () {
+        $(".chkBx29").not(this).prop('checked', false);
+    });
+    $('.chkBx30').change(function () {
+        $(".chkBx30").not(this).prop('checked', false);
+    });
+    $('.chkBx31').change(function () {
+        $(".chkBx31").not(this).prop('checked', false);
+    });
+    $('.chkBx32').change(function () {
+        $(".chkBx32").not(this).prop('checked', false);
+    });
+    $('.chkBx33').change(function () {
+        $(".chkBx33").not(this).prop('checked', false);
+    });
+    $('#trash_badge').click(function () {
+        debugger;
+        $("#FileUpload_Preview").html("");
+    });
+    $('#SurveyorSignaturefile').change(function () {
+        debugger;
+        $("#FileUpload_Preview").html("");
+        $("#FileUpload_Preview").show();
+        $("#FileUpload_Preview").append("<img />");
+
+        if (typeof (FileReader) != "undefined") {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#SurveyorSignature').attr('src', e.target.result);
+                //-----------------------------------
+                // Preview image
+                //-----------------------------------
+                $("#FileUpload_Preview img").attr("src", e.target.result);
+                $("#FileUpload_Preview img").attr("width", "200px");
+                $("#FileUpload_Preview img").attr("height", "150px");
+            }
+            reader.readAsDataURL($(this)[0].files[0]);
+        }
+    });
+
+    $('#Sketchdiagramfile').change(function () {
+        debugger;
+        $("#FileUpload_Preview").html("");
+        $("#FileUpload_Preview").show();
+        $("#FileUpload_Preview").append("<img />");
+
+        if (typeof (FileReader) != "undefined") {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+
+                $('#Sketchdiagram').attr('src', e.target.result);
+                //-----------------------------------
+                // Preview image
+                //-----------------------------------
+                $("#FileUpload_Preview img").attr("src", e.target.result);
+                $("#FileUpload_Preview img").attr("width", "200px");
+                $("#FileUpload_Preview img").attr("height", "150px");
+            }
+            reader.readAsDataURL($(this)[0].files[0]);
+        }
+    });
+
+    $('#Sketchdiagramfile2').change(function () {
+        debugger;
+        $("#FileUpload_Preview").html("");
+        $("#FileUpload_Preview").show();
+        $("#FileUpload_Preview").append("<img />");
+
+        if (typeof (FileReader) != "undefined") {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+
+                $('#Sketchdiagram2').attr('src', e.target.result);
+                //-----------------------------------
+                // Preview image
+                //-----------------------------------
+                $("#FileUpload_Preview img").attr("src", e.target.result);
+                $("#FileUpload_Preview img").attr("width", "200px");
+                $("#FileUpload_Preview img").attr("height", "150px");
+                $('#docupload').show();
+            }
+            reader.readAsDataURL($(this)[0].files[0]);
+        }
+    });
+
+    $('#DataEntrySignaturefile').change(function () {
+        debugger;
+        $("#FileUpload_Preview").html("");
+        $("#FileUpload_Preview").show();
+        $("#FileUpload_Preview").append("<img />");
+
+        if (typeof (FileReader) != "undefined") {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+
+                $('#DataEntrySignature').attr('src', e.target.result);
+                //-----------------------------------
+                // Preview image
+                //-----------------------------------
+                $("#FileUpload_Preview img").attr("src", e.target.result);
+                $("#FileUpload_Preview img").attr("width", "200px");
+                $("#FileUpload_Preview img").attr("height", "150px");
+            }
+            reader.readAsDataURL($(this)[0].files[0]);
+        }
+    });
+    function goBack() {
+        window.history.back();
+    }
+
+
+
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var maxField = 10; //Input fields increment limitation
+        var addButton = $('.add_button'); //Add button selector
+        var wrapper = $('.field_wrapper'); //Input field wrapper
+        //var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button"><img src="remove-icon.png"/></a></div>'; //New input field html
+        var fieldHTML = '<div id="demo"><div class="d-flex flex-row"> <div class="form-group pr-4"> <label class="label"> मालमत्ताधारकाचे नाव <span id="ownercount"></span> /<br /> Prop. Owner Name </label> </div><div class="form-group pr-4"><label class="label">प्रथम नाव/ First Name</label><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name ="PropOwnerFirstName[]"/><span class="text-danger" id="err_empidd"></span></div><div class="form-group pr-4"><label class="label">मधले नाव / Middle Name</label><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name ="PropOwnerMiddleName[]"/><span class="text-danger" id="err_empidd"></span><span class="glyphicon form-control-feedback" aria-hidden="true"></span><span class="help-block with-errors"></span></div> <div class="form-group pr-4"><label class="label">आडनाव / Last Name</label><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name = "PropOwnerLastName[]" /><input type="hidden" /><span class="text-danger" id="err_empidd"></span><span class="glyphicon form-control-feedback" aria-hidden="true"></span> <span class="help-block with-errors"></span></div><a href="javascript:void(0);" class="remove_button"><div class="Ncircle"></div></a></div></div>'; //New input field html
+        var x = 1; //Initial field counter is 1
+
+        //Once add button is clicked
+        $(addButton).click(function () {
+            //Check maximum number of input fields
+            if (x < maxField) {
+                x++; //Increment field counter
+                $(wrapper).append(fieldHTML); //Add field html
+            }
+        });
+
+        //Once remove button is clicked
+        $(wrapper).on('click', '.remove_button', function (e) {
+            e.preventDefault();
+            $(this).parent('div').remove(); //Remove field html
+            x--; //Decrement field counter
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var maxField = 10; //Input fields increment limitation
+        var addButton = $('.Tenant_add_button'); //Add button selector
+        var wrapper = $('.field_wrapper_Tenant'); //Input field wrapper
+        //var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button"><img src="remove-icon.png"/></a></div>'; //New input field html
+        var fieldHTML = '<div id="demo"> <div class="d-flex flex-row"><div class="form-group pr-4"><label class="label"> भाडेकरूचे नाव /<br /> Tenant Name</label></div><div class="form-group pr-4"><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name ="TenantName[]"/><span class="text-danger" id="err_empidd"></span><span class="glyphicon form-control-feedback" aria-hidden="true"></span><span class="help-block with-errors"></span></div><div class="form-group pr-4"><label class="label">भाडे / Rent</label></div><div class="form-group pr-4"><input type = "text" class="form-control" style = "font-family:Arial, FontAwesome" name ="Rent[]"/><span class="text-danger" id="err_empidd"></span><span class="glyphicon form-control-feedback" aria-hidden="true"></span><span class="help-block with-errors"></span></div><a href="javascript:void(0);" class="Tenant_remove_button"><div class="Ncircle"></div></div></div>'; //New input field html
+        var x = 1; //Initial field counter is 1
+
+        //Once add button is clicked
+        $(addButton).click(function () {
+            //Check maximum number of input fields
+            if (x < maxField) {
+                x++; //Increment field counter
+                $(wrapper).append(fieldHTML); //Add field html
+            }
+        });
+
+        //Once remove button is clicked
+        $(wrapper).on('click', '.Tenant_remove_button', function (e) {
+            e.preventDefault();
+            $(this).parent('div').remove(); //Remove field html
+            x--; //Decrement field counter
+        });
+    });
+</script>
+
+<script>
+    var ii = document.querySelectorAll("#demo > input");
+    document.getElementById("ownercount").innerHTML = (ii.length / 4);
+
+</script>
