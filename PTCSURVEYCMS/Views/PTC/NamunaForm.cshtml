@@ -170,6 +170,12 @@
     .srnoo {
         width:5%;
     }
+    .text-line {
+        background: transparent;
+        border: none;
+        border-top: 1px solid #000000;
+        width: 100%;
+    }
 </style>
 @*@Styles.Render("~/Content/AddEditCSS")*@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -743,7 +749,7 @@
                             </div>
                             <div class="row pt-2">
 
-                                <div class="col-lg-3 pr-0"><p class="bt-text">तावाची फी -</p></div>
+                                <div class="col-lg-3 pr-0"><p class="bt-text">लावाची फी -</p></div>
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-7 pl-0">
                                     @Html.TextBoxFor(model => model.LF, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -1539,59 +1545,62 @@
                 </table>
 
 
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-9">
+                        <div class="col-lg-8">
 
                             <div class="row">
-                                <div class="col-lg-2"></div>
+                           
                                 <div class="col-lg-2 pr-0"><p class="bt-text">अर्जदार श्री.</p></div>
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.AppilcantName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.AppilcantName, new { @class = "text-line", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.AppilcantName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-4">
                             <div class="row pt-2">
-                                <div class="col-lg-2"></div>
                                 <div class="col-lg-4 pr-0">
                                     <p class="bt-text">
                                         यांच्या दिनांक
                                     </p>
                                 </div>
-                                <div class="col-lg-6 pl-0">
-                                    @Html.TextBoxFor(model => model.ApplicantDate, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                <div class="col-lg-8 pl-0">
+                                    @Html.TextBoxFor(model => model.ApplicantDate, new { @class = "text-line", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.ApplicantDate, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             </div>
 
                         </div>
-                        <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
                             <div class="row">
 
-                                <div class="col-lg-3 pr-0"><p class="bt-text"> च्या अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
+                                <div class="col-lg-3 pr-0"><p class="bt-text">अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
 
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.TaxRegister, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.TaxRegister, new { @class = "text-line", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.NWord, "", new { @class = "text-danger" })
                                 </div>
-                                <div class="col-lg-2">वरून सदर घराचा उतारा दिला आहे.</div>
+                              
                             </div>
 
-                            <div class="row pt-2">
-
-                                <div class="col-lg-3 pr-0"><p class="bt-text">तारीख</p></div>
-                                <div class="col-lg-2"></div>
-                                <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.TaxRegisterDate, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.TaxRegisterDate, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
+                           
 
                         </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-lg-3 pr-0"><p class="bt-text">वरून सदर घराचा उतारा दिला आहे.</p></div>
+                    </div>
+                    <div class="row pt-2 pb-2">
+                        <div class="col-lg-2 pr-0"><p class="bt-text">तारीख</p></div>
 
+                        <div class="col-lg-7 pl-0">
+                            @Html.TextBoxFor(model => model.TaxRegisterDate, new { @class = "text-line", style = "font-family:Arial, FontAwesome" })
+                            @Html.ValidationMessageFor(model => model.TaxRegisterDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
                     </div>
 
                 <table style="width:100%" class="back mb-5 width">
