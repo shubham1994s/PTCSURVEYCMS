@@ -123,7 +123,7 @@ $(function () {
 });
 function Edit(ID) {
 
-    window.location.href = "/PTC/SurveyForm?q=" + ID;
+    window.location.href = "/PTC/NamunaForm?q=" + ID;
 }
 
 
@@ -145,10 +145,7 @@ function Download(ID) {
     //   myWindow.remove(url);
 }
 
-function DownloadQRCode(q) {
-    debugger;
-    window.location.href = "/PTC/Export?q=" + q;
-};
+
 
 
 function closeWin() {
@@ -183,29 +180,16 @@ function ActiveEmployee() {
                 "searchable": false
             }],
         "columns": [
-            { "data": "PropertyId" },
+            { "data": "NamunaId" },
             {
-                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+                "data": "OwnerName", "render": function (data, type, full, meta) {
 
 
 
-                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
 
-                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
-                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
+                    if (full["OwnerName"] != null) {
 
-                    }
-
-                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
-
-                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
-                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
-
-                    }
-
-                    if (full["PropOwnerFirstName"] != null) {
-
-                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                        return '<p> ' + (full["OwnerName"])
 
                     }
                     else {
@@ -215,20 +199,62 @@ function ActiveEmployee() {
                 }
             },
 
-            { "data": "PropOwnerTelephoneNo" },
-            { "data": "NewPropertyNo" },
-            { "data": "PropertyNo" },
-            { "data": "OldHouseNo1" },
-
-
-            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
-            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
             {
-                "render": function (data, type, full, meta) {
-                    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
-                }, "width": "10%"
+                "data": "OccupantName", "render": function (data, type, full, meta) {
+
+
+
+
+                    if (full["OccupantName"] != null) {
+
+                        return '<p> ' + (full["OccupantName"])
+
+                    }
+                    else {
+
+                        return 'Not Available';
+                    }
+                }
             },
-            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+
+            {
+                "data": "AppilcantName", "render": function (data, type, full, meta) {
+
+
+
+
+                    if (full["PropertyNo"] != null) {
+
+                        return '<p> ' + (full["PropertyNo"])
+
+                    }
+                    else {
+
+                        return 'Not Available';
+                    }
+                }
+            },
+            {
+                "data": "PropertyNo", "render": function (data, type, full, meta) {
+
+
+
+
+                    if (full["AppilcantName"] != null) {
+
+                        return '<p> ' + (full["AppilcantName"])
+
+                    }
+                    else {
+
+                        return 'Not Available';
+                    }
+                }
+            },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["NamunaId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["NamunaId"] + ')"  > Download'; }, "width": "10%" },
+            
+       
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["NamunaId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["NamunaId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
             /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
         ]
     });
@@ -259,7 +285,7 @@ const Delete = async (ID) => {
     const confirm = await ui.confirm('Are you sure you want to Delete?');
 
     if (confirm) {
-        window.location.href = "/PTC/Delete?q=" + ID;
+        window.location.href = "/PTC/DeleteNamuna?q=" + ID;
         return true;
     } else
         return false;

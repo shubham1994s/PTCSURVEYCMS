@@ -13,7 +13,7 @@ namespace BLL.Repository.Repository
 
         List<PropertyMasterVM> getPropertyDetails(int AppId);
 
-        //List<NamunaMasterVM> getNamunaDetails(int AppId);
+        List<NamunaMasterVM> getNamunaDetails(int AppId);
 
         PropertyMasterVM getPropertyDetailsByID(int q, int AppId);
 
@@ -22,7 +22,7 @@ namespace BLL.Repository.Repository
         PropertyMasterVM getPropertyDetailsByFamily(string q,string n, int AppId);
 
         PropertyMasterVM getDeleteByID(int q, int AppId);
-
+        NamunaMasterVM getDeleteByIDNamuna(int q, int AppId);
 
         PropertyMasterVM SendPropertyDetails(int AppId,string SearchText, string SelectOption,string send, string Reminder,int q);
 

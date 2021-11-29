@@ -661,7 +661,7 @@ namespace PTCSURVEYCMS.Controllers
                     int pageSize = length != null ? Convert.ToInt32(length) : 0;
                     int skip = start != null ? Convert.ToInt32(start) : 0;
                     int recordsTotal = 0;
-                    var griddata = Repository.getPropertyDetails(AppId);
+                    var griddata = Repository.getNamunaDetails(AppId);
                     // Getting all Customer data
                     // 
                     // List<PropertyMaster> customerData = _context.PropertyMasters.Where(x=>x.IsDelete==false).ToList();
@@ -672,7 +672,7 @@ namespace PTCSURVEYCMS.Controllers
                     {
 
 
-                        customerData = customerData.OrderByDescending(x => x.PropertyId).ToList();
+                        customerData = customerData.OrderByDescending(x => x.NamunaId).ToList();
                     }
 
                     //Search
@@ -684,211 +684,30 @@ namespace PTCSURVEYCMS.Controllers
                         if (arr[1] != "All")
                         {
 
-                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PrabhagNo) ? " " : x.PrabhagNo.Trim()) == arr[1].Trim()).ToList();
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.OwnerName) ? " " : x.OwnerName.Trim()) == arr[1].Trim()).ToList();
                         }
                         if (arr[2] != "All")
                         {
-                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.WardName_No) ? " " : x.WardName_No.Trim()) == arr[2].Trim()).ToList();
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.OccupantName) ? " " : x.OccupantName.Trim()) == arr[2].Trim()).ToList();
+                        }
+                        if (arr[3] != "All" && arr[3] == "All")
+                        {
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.AppilcantName) ? " " : x.AppilcantName.Trim()) == arr[4].Trim()).ToList();
                         }
                         if (arr[4] != "All" && arr[3] == "All")
                         {
-                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.ConstStartYear) ? " " : x.ConstStartYear.Trim()) == arr[4].Trim()).ToList();
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropertyNo) ? " " : x.PropertyNo.Trim()) == arr[4].Trim()).ToList();
                         }
-
-                        if (arr[3] != "All" && arr[4] == "All")
-                        {
-                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.CompletionYear) ? " " : x.CompletionYear.Trim()) == arr[3].Trim()).ToList();
-                        }
-
-                        if (arr[3] != "All" && arr[4] != "All")
-                        {
-                            int CSDate = Convert.ToInt32(arr[4]);
-                            int CEDate = Convert.ToInt32(arr[3]);
-                            customerData = customerData.Where(x => x.CompletionYear != null && x.CompletionYear != "").ToList();
-                            customerData = customerData.Where(x => x.ConstStartYear != null && x.ConstStartYear != "").ToList();
-                            customerData = customerData.Where(x => Convert.ToInt32(x.ConstStartYear) >= CSDate & Convert.ToInt32(x.CompletionYear) <= CEDate).ToList();
-                        }
-                        if (arr[5] != "")
-                        {
-                            if (arr[5] == "Safe")
-                            {
-                                customerData = customerData.Where(x => x.Safe == true).ToList();
-                            }
-                            if (arr[5] == "Safe2")
-                            {
-                                customerData = customerData.Where(x => x.Safe2 == true).ToList();
-                            }
-                            if (arr[5] == "Safe3")
-                            {
-                                customerData = customerData.Where(x => x.Safe3 == true).ToList();
-                            }
-                            if (arr[5] == "Danger")
-                            {
-                                customerData = customerData.Where(x => x.Danger == true).ToList();
-                            }
-                            if (arr[5] == "Danger2")
-                            {
-                                customerData = customerData.Where(x => x.Danger2 == true).ToList();
-                            }
-                            if (arr[5] == "Danger3")
-                            {
-                                customerData = customerData.Where(x => x.Danger3 == true).ToList();
-                            }
-                        }
-
-                        if (arr[6] != "")
-                        {
-                            customerData = customerData.Where(x => x.PropertyNo == arr[6]).ToList();
-                        }
-                        if (arr[7] != "")
-                        {
-                            string fname, mname, lname;
-                            string pname = arr[7];
-                            string[] arr1 = pname.Split(' ');
-                            if (arr1.Length > 0)
-                            {
-                                fname = arr1[0];
-
-                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower()).ToList();
-
-                            }
-                            if (arr1.Length > 1)
-                            {
-                                fname = arr1[0];
-                                mname = arr1[1];
-                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName.ToLower()) == mname.ToLower()).ToList();
-
-                                if (customerData.Count() == 0)
-                                {
-                                    customerData = (from tempcustomer in griddata select tempcustomer);
-
-                                    //Sorting    
-                                    if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
-                                    {
-
-
-                                        customerData = customerData.OrderByDescending(x => x.PropertyId).ToList();
-                                    }
-
-                                    if (arr[6] != "")
-                                    {
-                                        customerData = customerData.Where(x => x.PropertyNo == arr[6]).ToList();
-                                    }
-                                    customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == mname.ToLower() && (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower()).ToList();
-                                }
-
-                            }
-                            if (arr1.Length > 2)
-                            {
-                                lname = arr1[2];
-                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == lname.ToLower()).ToList();
-                            }
-                        }
-
-                        if (arr[8] != "")
-                        {
-                            customerData = customerData.Where(x => x.PropertyNo == arr[8]).ToList();
-                        }
-                        string name = arr[9];
-                        if (name != "null")
-                        {
-                            string fname, mname, lname;
-                            string pname = arr[9];
-                            string[] arr1 = pname.Split(' ');
-                            if (arr1.Length > 0)
-                            {
-                                fname = arr1[0];
-
-                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower()).ToList();
-
-                            }
-                            if (arr1.Length > 1)
-                            {
-                                fname = arr1[0];
-                                mname = arr1[1];
-                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName.ToLower()) == mname.ToLower()).ToList();
-
-                                if (customerData.Count() == 0)
-                                {
-                                    customerData = (from tempcustomer in griddata select tempcustomer);
-
-                                    //Sorting    
-                                    if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
-                                    {
-
-
-                                        customerData = customerData.OrderByDescending(x => x.PropertyId).ToList();
-                                    }
-
-                                    if (arr[6] != "")
-                                    {
-                                        customerData = customerData.Where(x => x.PropertyNo == arr[6]).ToList();
-                                    }
-                                    customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == mname.ToLower() && (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower()).ToList();
-                                }
-
-                            }
-                            if (arr1.Length > 2)
-                            {
-                                lname = arr1[2];
-                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == lname.ToLower()).ToList();
-                            }
-
-
-                        }
-
-                        if (arr[10] != "")
-                        {
-                            if (arr[10] == "Y")
-                            {
-                                customerData = customerData.Where(x => x.YConstPermNo == true).ToList();
-                            }
-                            if (arr[10] == "N")
-                            {
-                                customerData = customerData.Where(x => x.NConstPermNo == true).ToList();
-                            }
-                            if (arr[10] == "NA")
-                            {
-                                customerData = customerData.Where(x => x.YConstPermNo == false && x.NConstPermNo == false).ToList();
-                            }
-                        }
-
-                        if (arr[11] != "")
-                        {
-                            if (arr[11] == "Y")
-                            {
-                                customerData = customerData.Where(x => x.YPermUseNo == true).ToList();
-                            }
-                            if (arr[11] == "N")
-                            {
-                                customerData = customerData.Where(x => x.NPermUseNo == true).ToList();
-                            }
-                            if (arr[11] == "NA")
-                            {
-                                customerData = customerData.Where(x => x.YPermUseNo == false && x.NPermUseNo == false).ToList();
-                            }
-                        }
-
-
 
                     }
                     else if (!string.IsNullOrEmpty(searchValue))
                     {
-                        var model = customerData.Where(c => ((string.IsNullOrEmpty(c.PropOwnerFirstName) ? " " : c.PropOwnerFirstName) + " " +
-                                      (string.IsNullOrEmpty(c.PropOwnerMiddleName) ? " " : c.PropOwnerMiddleName) + " " +
-                                      (string.IsNullOrEmpty(c.PropOwnerLastName) ? " " : c.PropOwnerLastName) + " " +
-                                       (string.IsNullOrEmpty(c.PropOwnerTelephoneNo) ? " " : c.PropOwnerTelephoneNo) + " " +
-                                      (string.IsNullOrEmpty(c.NewPropertyNo) ? " " : c.NewPropertyNo) + " " +
-                                      (string.IsNullOrEmpty(c.PropertyNo) ? " " : c.PropertyNo) + " " +
-                                      (string.IsNullOrEmpty(c.OldHouseNo1) ? " " : c.OldHouseNo1) + "" +
-                                      (string.IsNullOrEmpty(c.PrabhagNo) ? " " : c.PrabhagNo) + "" +
-                                      (string.IsNullOrEmpty(c.WardName_No) ? " " : c.WardName_No) + "" +
-                                      (string.IsNullOrEmpty(c.ConstStartYear) ? " " : c.ConstStartYear) + "" +
-                                      (string.IsNullOrEmpty(c.CompletionYear) ? " " : c.CompletionYear) + "" +
-                                       (string.IsNullOrEmpty(c.ConstPermNo) ? " " : c.ConstPermNo) + "" +
-                                      // (string.IsNullOrEmpty(c.YConstPermNo) ? " " : c.YConstPermNo) + "" +
-                                      (string.IsNullOrEmpty(c.PermUseNo) ? " " : c.PermUseNo)
-                                       //  (string.IsNullOrEmpty(c.CompletionYear) ? " " : c.CompletionYear)
+                        var model = customerData.Where(c => ((string.IsNullOrEmpty(c.OwnerName) ? " " : c.OwnerName) + " " +
+                                      (string.IsNullOrEmpty(c.OwnerName) ? " " : c.OccupantName) + " " +
+                                      (string.IsNullOrEmpty(c.AppilcantName) ? " " : c.AppilcantName) + " " +
+                                  
+                                      (string.IsNullOrEmpty(c.PropertyNo) ? " " : c.PropertyNo)
+                                  
                                        ).ToUpper().Contains(searchValue.ToUpper())).ToList();
 
                         customerData = model.ToList();
@@ -1336,7 +1155,20 @@ namespace PTCSURVEYCMS.Controllers
         }
 
 
-      
+        public RedirectResult DeleteNamuna(int q)
+        {
+            int AppId = SessionHandler.Current.AppId;
+            var viewModel = new NamunaMasterVM();
+            if (SessionHandler.Current.AppId != 0)
+            {
+                Repository = new Repository();
+                viewModel = Repository.getDeleteByIDNamuna(q, AppId);
+            }
+            return Redirect("/PTC/SurveyList");
+        }
+
+
+
 
         [HttpGet]
         public ActionResult ViewSurveyForm(int q = -1)
