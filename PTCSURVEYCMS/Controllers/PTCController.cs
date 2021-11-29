@@ -252,7 +252,7 @@ namespace PTCSURVEYCMS.Controllers
                 Repository = new Repository();
                 Result = Repository.NamunaSave(Namuna, AppId);
                 TempData["Success"] = Result.message;
-                return Redirect("/PTC/SurveyList");
+                return Redirect("/PTC/NamunaList");
 
             }
             else
