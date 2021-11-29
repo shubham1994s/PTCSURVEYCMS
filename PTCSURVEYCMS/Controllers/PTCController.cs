@@ -291,12 +291,12 @@ namespace PTCSURVEYCMS.Controllers
 
 
                 var viewModel = new NamunaMasterVM();
-             //   viewModel = Repository.getPropertyDetailsByID(q, Appid);
+                viewModel = Repository.getNamunaDetailsByID(q, Appid);
                 using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(Appid))
                 {
                     //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
 
-                    var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
+                    var EntryCount = db.NamunaMasters.Where(x => x.IsDelete == false).Count();
                     ViewBag.EntryCount = EntryCount;
                 }
 
@@ -1164,7 +1164,7 @@ namespace PTCSURVEYCMS.Controllers
                 Repository = new Repository();
                 viewModel = Repository.getDeleteByIDNamuna(q, AppId);
             }
-            return Redirect("/PTC/SurveyList");
+            return Redirect("/PTC/NamunaList");
         }
 
 

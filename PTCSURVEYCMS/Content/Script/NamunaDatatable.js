@@ -223,9 +223,9 @@ function ActiveEmployee() {
 
 
 
-                    if (full["PropertyNo"] != null) {
+                    if (full["AppilcantName"] != null) {
 
-                        return '<p> ' + (full["PropertyNo"])
+                        return '<p> ' + (full["AppilcantName"])
 
                     }
                     else {
@@ -240,9 +240,9 @@ function ActiveEmployee() {
 
 
 
-                    if (full["AppilcantName"] != null) {
+                    if (full["PropertyNo"] != null) {
 
-                        return '<p> ' + (full["AppilcantName"])
+                        return '<p> ' + (full["PropertyNo"])
 
                     }
                     else {

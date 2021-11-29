@@ -437,6 +437,357 @@ function show7() {
 
 }
 
+
+function show8() {
+    debugger;
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('RWHT').style.display = 'block';
+
+    
+    $("#RWH").empty();
+    $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+   
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
+    PropertyActive();
+}
+
+
+function show9() {
+    debugger;
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    \document.getElementById('STKT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'block';
+    $("#CP").empty();
+    $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
+    PropertyActive();
+}
+
+function show10() {
+    debugger;
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'block';
+    $("#SEP").empty();
+    $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
+    PropertyActive();
+}
+
+function show11() {
+    debugger;
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'block';
+   
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
+    PropertyActive();
+}
+
+
+function show12() {
+    debugger;
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'block';
+    document.getElementById('NVAT').style.display = 'block';
+    $("#WC").empty();
+    $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#NVA").empty();
+    $("#NVA").append("<option value='ALL' selected>Select All.</option><option value = 'R' >Residential</option > <option value='S'>Sp.Category</option><option value='I'>Industrial</option>");
+
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
+    PropertyActive();
+}
+
+function show13() {
+    debugger;
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'block';
+    $("#DL").empty();
+    $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
+
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
+    PropertyActive();
+}
+
+
+function show14() {
+    debugger;
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'block'; 
+    $("#STK").empty();
+    $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
+    PropertyActive();
+}
+
+function show15() {
+    debugger;
+    FillPrabhagListNo();
+    FillWardListNo();
+    FillCSDate();
+    FillCEDate();
+    var element = document.getElementById("cusmargin");
+    element.classList.remove("MyClass");
+    document.getElementById('common').style.display = 'block';
+    document.getElementById('consstate').style.display = 'block';
+    document.getElementById('const').style.display = 'none';
+    document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('byname').style.display = 'none';
+    document.getElementById('byprono').style.display = 'none';
+    document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('filterbyname').style.display = 'none';
+    document.getElementById('filterbyProperty').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('firsttable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('consstate').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'block';
+    document.getElementById('BUET').style.display = 'block';
+    $("#SGSK").empty();
+    $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
+    $("#BUE").empty();
+    $("#BUE").append("<option value='ALL' selected>Select All.</option><option value = 'BG' >भूमिगत गटार</option > <option value='UG'>उघडी गटार </option><option value='O'>इतर</option>");
+    document.getElementById('CPNO').value = ''
+    document.getElementById('OCNOY').value = ''
+    document.getElementById('CSDate').value = ''
+    document.getElementById('CEDate').value = ''
+    PropertyActive();
+}
+
 function SearchByName() {
     debugger;
     poname = $('#PRONOBYNAME').val();
@@ -524,7 +875,11 @@ function SearchByStatus() {
     Name = $('#Name').val();
     CPNO = $('#CPNO').val();
     OCNOY = $('#OCNOY').val();
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP;
 
     // alert(value );
 

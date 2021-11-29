@@ -1089,7 +1089,7 @@ namespace BLL.Repository.Repository
                         obj.TaxABCD5 = _Namuna.TaxABCD5;
                         obj.Signatures5 = _Namuna.Signatures5;
                         obj.Stamp5 = _Namuna.Stamp5;
-                        //  obj.IsDelete = false;
+                        obj.IsDelete = false;
                         db.SaveChanges();
                         Result.message = "Save Changes Successfully!";
                     }
@@ -1270,6 +1270,7 @@ namespace BLL.Repository.Repository
                        Master.TaxABCD5 = _Namuna.TaxABCD5;
                        Master.Signatures5 = _Namuna.Signatures5;
                        Master.Stamp5 = _Namuna.Stamp5;
+                       Master.IsDelete = false;
                        db.NamunaMasters.Add(Master);
                        db.SaveChanges();
                        Result.message = "Save Successfully!";
@@ -1956,7 +1957,7 @@ namespace BLL.Repository.Repository
                 }
                 else
                 {
-
+                    Master.NamunaId = -1;
                 }
             }
             return Master;

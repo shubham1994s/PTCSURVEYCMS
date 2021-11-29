@@ -247,6 +247,7 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
+                                    @Html.HiddenFor(model => model.NamunaId, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.TextBoxFor(model => model.RMNAME, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.RMNAME, "", new { @class = "text-danger" })
                                 </div>
@@ -337,6 +338,7 @@
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
+
                                     @Html.TextBoxFor(model => model.RMNAME2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
                                     @Html.ValidationMessageFor(model => model.RMNAME2, "", new { @class = "text-danger" })
                                 </div>
