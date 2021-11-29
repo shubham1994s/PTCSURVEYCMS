@@ -1,4 +1,4 @@
-﻿@model BLL.ViewModel.PropertyMasterVM
+﻿@model BLL.ViewModel.NamunaMasterVM
 @{
     ViewBag.Title = "NamunaForm";
     Layout = "";
@@ -179,7 +179,7 @@
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-@using (Html.BeginForm("AddSurveyForm", "PTC", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "ValidateUser();", role = "form" }))
+@using (Html.BeginForm("AddNamunaForm", "PTC", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "ValidateUser();", role = "form" }))
 {
     <button class="ml-5" type="button" style="position:absolute;top:25px;padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
     line-height: 1.5;border-radius: 3px;border-style: none;" onclick="goBack()">
@@ -233,37 +233,33 @@
                         <th>९</th>
                         <th>१०</th>
                     </tr>
-                    <tr>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                    <tr>
+
+                        <td>१</td>
+
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.RMNAME, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.RMNAME, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.DateofConstruction1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.PropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.PropertyNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.PropertyDescription, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.PropertyDescription, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
@@ -271,422 +267,440 @@
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div style="width:100%">
 
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.OwnerName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OwnerName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.OccupantName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OccupantName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.Used, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Used, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.AVRent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.AVRent, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.BDBVRent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BDBVRent, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.BNDBVRent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BNDBVRent, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.EKJYRent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJYRent, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
 
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
 
-                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
                     </tr>
+
                     <tr>
+
+                        <td>१</td>
+
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo3, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.RMNAME, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.RMNAME, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.PropertyNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.PropertyNo, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.ConstType3, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.PropertyDescription, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.PropertyDescription, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.OwnerName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OwnerName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.DateofConstruction3, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction3, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.OccupantName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OccupantName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.Used, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Used, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass3, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.AVRent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.AVRent, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.BDBVRent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BDBVRent, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea3, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.BNDBVRent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BNDBVRent, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea3, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.EKJYRent, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJYRent, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
+
+
                     </tr>
+
+
                     <tr>
+                        <td>3</td>
+
+
+
+
+
+
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo4, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.RMNAME3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.RMNAME3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.PropertyNo3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.PropertyNo3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.ConstType4, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.PropertyDescription3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.PropertyDescription3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.OwnerName3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OwnerName3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.DateofConstruction4, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction4, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.OccupantName3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OccupantName3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.Used3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Used3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass4, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.AVRent3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.AVRent3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.BDBVRent3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BDBVRent3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea4, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.BNDBVRent3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BNDBVRent3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea4, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.EKJYRent3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJYRent3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
+
                     </tr>
+
+
                     <tr>
+                        <td>4</td>
+
+
+
+
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo5, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.RMNAME4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.RMNAME4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.PropertyNo4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.PropertyNo4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.ConstType5, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.PropertyDescription4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.PropertyDescription4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.OwnerName4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OwnerName4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.DateofConstruction5, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction5, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.OccupantName4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OccupantName4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.Used4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Used4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass5, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.AVRent4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.AVRent4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.BDBVRent4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BDBVRent4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea5, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.BNDBVRent4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BNDBVRent4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea5, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.EKJYRent4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJYRent4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
+
+
                     </tr>
+
+                    <tr>
+                        <td>5</td>
+
+
+
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.RMNAME5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.RMNAME5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.PropertyNo5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.PropertyNo5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.PropertyDescription5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.PropertyDescription5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.OwnerName5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OwnerName5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.OccupantName5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.OccupantName5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.Used5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Used5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.AVRent5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.AVRent5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BDBVRent5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BDBVRent5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                       
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.BNDBVRent5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.BNDBVRent5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.EKJYRent5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJYRent5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
+
+
+
+
+                    </tr>
+
+
+
+
+
+
                 </table>
                 <div class="container">
                     <div class="row">
@@ -695,16 +709,16 @@
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-3 pr-0"><p class="bt-text">नक्कल तयार करणार</p></div>
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.NTK, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.NTK, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="row pt-2">
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार</p></div>
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.RP, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.RP, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
@@ -714,8 +728,8 @@
                                 <div class="col-lg-3 pr-0"><p class="bt-text">नक्कलचे शब्द -</p></div>
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.NWord, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.NWord, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="row pt-2">
@@ -723,8 +737,8 @@
                                 <div class="col-lg-3 pr-0"><p class="bt-text">लिहिणवाड  फी -</p></div>
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.LF, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.LF, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="row pt-2">
@@ -732,8 +746,8 @@
                                 <div class="col-lg-3 pr-0"><p class="bt-text">तावाची फी -</p></div>
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.LF, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.LFee, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="row pt-2">
@@ -741,8 +755,8 @@
                                 <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार -</p></div>
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.RP2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.RP2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
@@ -808,91 +822,93 @@
                         <th>२५</th>
                         <th>२६</th>
                     </tr>
+
+
                     <tr>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.DEPercentV, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.DEPercentV, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.EKJKYPrice, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJKYPrice, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.EMTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.EMTax, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.TreeTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.TreeTax, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.EducationTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.EducationTax, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.RSubTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.RSubTax, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.OtherTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.OtherTax, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.TotalTax, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.TotalTax, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.TextBoxFor(model => model.TaxBuldingLand, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.ValidationMessageFor(model => model.ConstType1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.TaxBuldingLand, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.DateofConstruction1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxA, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxA, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
@@ -900,655 +916,683 @@
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div style="width:100%">
 
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxB, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxB, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxC, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxC, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxD, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxD, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxABCD, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxABCD, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.Signatures, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Signatures, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.Stamp, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Stamp, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
 
 
                     </tr>
+
                     <tr>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.DEPercentV2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.DEPercentV2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.EKJKYPrice2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJKYPrice2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.EMTax2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
+                                    @Html.ValidationMessageFor(model => model.EMTax2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
+                                    @Html.TextBoxFor(model => model.TreeTax2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.TreeTax2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.EducationTax2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
+                                    @Html.ValidationMessageFor(model => model.EducationTax2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
+                                    @Html.TextBoxFor(model => model.RSubTax2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.RSubTax2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.OtherTax2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.OtherTax2, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TotalTax2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.TotalTax2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxBuldingLand2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.TaxBuldingLand2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxA2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxA2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.TaxB2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxB2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxC2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxC2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxD2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxD2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxABCD2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxABCD2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.Signatures2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Signatures2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.Stamp2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Stamp2, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
 
                     </tr>
+
                     <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.DEPercentV3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.DEPercentV3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.EKJKYPrice3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJKYPrice3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.EMTax3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.EMTax3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass3, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea3, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea3, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TreeTax3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
+                                    @Html.ValidationMessageFor(model => model.TreeTax3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
+                                    @Html.TextBoxFor(model => model.EducationTax3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.EducationTax3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.RSubTax3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.RSubTax3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.OtherTax3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.OtherTax3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TotalTax3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.TotalTax3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxBuldingLand3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.TaxBuldingLand3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxA3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxA3, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.TaxB3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxB3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxC3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxC3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxD3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxD3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxABCD3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxABCD3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.Signatures3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Signatures3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.Stamp3, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Stamp3, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
 
                     </tr>
+
+
                     <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.DEPercentV4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.DEPercentV4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.EKJKYPrice4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJKYPrice4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.EMTax4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.EMTax4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass4, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea4, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea4, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TreeTax4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
+                                    @Html.ValidationMessageFor(model => model.TreeTax4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
+                                    @Html.TextBoxFor(model => model.EducationTax4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.EducationTax4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.RSubTax4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.RSubTax4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.OtherTax4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.OtherTax4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TotalTax4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.TotalTax4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxBuldingLand4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.TaxBuldingLand4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxA4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxA4, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.TaxB4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxB4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxC4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxC4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxD4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxD4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxABCD4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxABCD4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.Signatures4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Signatures4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.Stamp4, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Stamp4, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
 
                     </tr>
+
+
+
                     <tr>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.DEPercentV5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.DEPercentV5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.EKJKYPrice5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.EKJKYPrice5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.EMTax5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.EMTax5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass5, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea5, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea5, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TreeTax5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
+                                    @Html.ValidationMessageFor(model => model.TreeTax5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.ConstType2, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.ConstType2, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
-                                <div>
+                                    @Html.TextBoxFor(model => model.EducationTax5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
 
-                                    @Html.TextBoxFor(model => model.DateofConstruction2, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.DateofConstruction2, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.EducationTax5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.RSubTax5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.RSubTax5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.UsageTypeClass1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.UsageTypeClass1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.OtherTax5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.OtherTax5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TotalTax5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.TotalTax5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.CarpetArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.CarpetArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxBuldingLand5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+
+                                    @Html.ValidationMessageFor(model => model.TaxBuldingLand5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
-                                    @Html.TextBoxFor(model => model.BuildupArea1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.BuildupArea1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxA5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxA5, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div style="width:100%">
+
+                                    @Html.TextBoxFor(model => model.TaxB5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxB5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxC5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxC5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxD5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxD5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.TaxABCD5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxABCD5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.Signatures5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Signatures5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
+                                <div>
+                                    @Html.TextBoxFor(model => model.Stamp5, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.Stamp5, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </td>
+
 
                     </tr>
+
+
+
 
 
                 </table>
 
+
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-9">
+
                             <div class="row">
                                 <div class="col-lg-2"></div>
-                                <div class="col-lg-3 pr-0"><p class="bt-text">नक्कल तयार करणार</p></div>
+                                <div class="col-lg-2 pr-0"><p class="bt-text">अर्जदार श्री.</p></div>
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.AppilcantName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.AppilcantName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-lg-3">
                             <div class="row pt-2">
                                 <div class="col-lg-2"></div>
-                                <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार</p></div>
-                                <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                <div class="col-lg-4 pr-0">
+                                    <p class="bt-text">
+                                        यांच्या दिनांक
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 pl-0">
+                                    @Html.TextBoxFor(model => model.ApplicantDate, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.ApplicantDate, "", new { @class = "text-danger" })
                                 </div>
                             </div>
+                            </div>
+
                         </div>
                         <div class="col-lg-6">
                             <div class="row">
 
-                                <div class="col-lg-3 pr-0"><p class="bt-text">नक्कलचे शब्द -</p></div>
-                                <div class="col-lg-2"></div>
+                                <div class="col-lg-3 pr-0"><p class="bt-text"> च्या अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
+
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxRegister, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.NWord, "", new { @class = "text-danger" })
                                 </div>
+                                <div class="col-lg-2">वरून सदर घराचा उतारा दिला आहे.</div>
                             </div>
+
                             <div class="row pt-2">
 
-                                <div class="col-lg-3 pr-0"><p class="bt-text">लिहिणवाड  फी -</p></div>
+                                <div class="col-lg-3 pr-0"><p class="bt-text">तारीख</p></div>
                                 <div class="col-lg-2"></div>
                                 <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.TaxRegisterDate, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
+                                    @Html.ValidationMessageFor(model => model.TaxRegisterDate, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <div class="row pt-2">
 
-                                <div class="col-lg-3 pr-0"><p class="bt-text">तावाची फी -</p></div>
-                                <div class="col-lg-2"></div>
-                                <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row pt-2">
-
-                                <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार -</p></div>
-                                <div class="col-lg-2"></div>
-                                <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.FloorNo1, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.FloorNo1, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
                         </div>
+
                     </div>
-                </div>
 
                 <table style="width:100%" class="back mb-5 width">
                     <tr>
@@ -1559,13 +1603,13 @@
                     </tr>
                     <tr>
                         <td>सर्वेक्षण करणारा / Surveyor</td>
-                        <td>@Html.TextBoxFor(model => model.SurveyorName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
+                        <td>@Html.TextBoxFor(model => model.SurvivorName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         @*<td>
                     <img src="~/Images/@Model.SurveyorSignature" id="SurveyorSignature" height="100" width="90" style="border:solid" />
                     <input type="file" name="file" id="SurveyorSignaturefile" value="@Model.SurveyorSignature" onchange="show(this)">
                 </td>*@
 
-                        <td>@Html.EditorFor(model => model.SurveyorDate, new { @class = "form-control" })</td>
+                        <td>@Html.EditorFor(model => model.SurvivorDate, new { @class = "form-control" })</td>
                     </tr>
                     <tr>
                         <td>डेटा एन्ट्री /Data Entry By</td>
@@ -1879,10 +1923,17 @@
             $('#DataEntryDate').val("--Select Date--");
         }
 
-        if ($('#SurveyorDate').val() == '') {
-            $('#SurveyorDate').val("--Select Date--");
+        if ($('#SurvivorDate').val() == '') {
+            $('#SurvivorDate').val("--Select Date--");
+        }
+        if ($('#ApplicantDate').val() == '') {
+            $('#ApplicantDate').val("--Select Date--");
         }
 
+        if ($('#TaxRegisterDate').val() == '') {
+            $('#TaxRegisterDate').val("--Select Date--");
+        }
+        
         $("#PropertyNo").change(function () {
             debugger;
 
@@ -2078,7 +2129,23 @@
 
         });
 
-        $("#SurveyorDate").datepicker({
+        $("#SurvivorDate").datepicker({
+
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true
+
+        });
+
+        $("#ApplicantDate").datepicker({
+
+            dateFormat: "dd-mm-yy",
+            changeMonth: true,
+            changeYear: true
+
+        });
+
+        $("#TaxRegisterDate").datepicker({
 
             dateFormat: "dd-mm-yy",
             changeMonth: true,

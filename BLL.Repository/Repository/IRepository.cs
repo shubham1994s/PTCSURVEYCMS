@@ -9,9 +9,15 @@ namespace BLL.Repository.Repository
         AppDetailsVM GetApplicationDetails(int AppId);
         Result PropertySave(PropertyMasterVM _Property, int AppId);
 
+        Result NamunaSave(NamunaMasterVM _Namuna, int AppId);
+
         List<PropertyMasterVM> getPropertyDetails(int AppId);
 
+        //List<NamunaMasterVM> getNamunaDetails(int AppId);
+
         PropertyMasterVM getPropertyDetailsByID(int q, int AppId);
+
+        NamunaMasterVM getNamunaDetailsByID(int q, int AppId);
 
         PropertyMasterVM getPropertyDetailsByFamily(string q,string n, int AppId);
 

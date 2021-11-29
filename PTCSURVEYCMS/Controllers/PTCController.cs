@@ -237,6 +237,30 @@ namespace PTCSURVEYCMS.Controllers
             return View();
         }
 
+    
+        [HttpPost]
+        public ActionResult AddNamunaForm(NamunaMasterVM Namuna)
+        {
+
+            int AppId = SessionHandler.Current.AppId;
+            if (SessionHandler.Current.AppId != 0)
+            {
+                DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities();
+                var AppDetails = db.AppDetails.Where(x => x.AppId == AppId).FirstOrDefault();
+               
+                Result Result = new Result();
+                Repository = new Repository();
+                Result = Repository.NamunaSave(Namuna, AppId);
+                TempData["Success"] = Result.message;
+                return Redirect("/PTC/SurveyList");
+
+            }
+            else
+            {
+                return Redirect("/Account/Login");
+            }
+        }
+
         [HttpGet]
         public ActionResult NamunaList(int q = -1, int clientId = 0)
         {
@@ -266,8 +290,8 @@ namespace PTCSURVEYCMS.Controllers
                 }
 
 
-                var viewModel = new PropertyMasterVM();
-                viewModel = Repository.getPropertyDetailsByID(q, Appid);
+                var viewModel = new NamunaMasterVM();
+             //   viewModel = Repository.getPropertyDetailsByID(q, Appid);
                 using (DEVPTCSURVEYMALEGAONEntities db = new DEVPTCSURVEYMALEGAONEntities(Appid))
                 {
                     //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
@@ -590,9 +614,306 @@ namespace PTCSURVEYCMS.Controllers
 
         }
 
- 
 
-public string SelectionNotExists(string SearchText, string selectoption)
+        public ActionResult LoadDataNamuna()
+        {
+            try
+            {
+                int AppId = SessionHandler.Current.AppId;
+
+                //Creating instance of DatabaseContext class  
+                using (DEVPTCSURVEYMALEGAONEntities _context = new DEVPTCSURVEYMALEGAONEntities(AppId))
+                {
+                    var draw = Request.Form.GetValues("draw").FirstOrDefault();
+                    var start = Request.Form.GetValues("start").FirstOrDefault();
+                    var length = Request.Form.GetValues("length").FirstOrDefault();
+                    var sortColumn = Request.Form.GetValues("columns[" + Request.Form.GetValues("order[0][column]").FirstOrDefault() + "][name]").FirstOrDefault();
+                    var sortColumnDir = Request.Form.GetValues("order[0][dir]").FirstOrDefault();
+                    var searchValue = Request.Form.GetValues("search[value]").FirstOrDefault();
+                    if (Convert.ToInt32(length) >= 5)
+                    {
+
+                        string[] a = searchValue.Split(',');
+                        if ((searchValue == null || searchValue == "") && (Convert.ToInt32(length) >= 5))
+                        {
+                            if (a.Length >= 5 && a[5].ToString() == "1")
+                            {
+                                searchValue = Session["Search"].ToString();
+                            }
+                            else
+                            {
+                                if ((searchValue == null || searchValue == "") && (Convert.ToInt32(length) >= 5 && draw != "1"))
+                                { searchValue = Session["Search"].ToString(); }
+                                else
+                                {
+                                    searchValue = "";
+                                    Session["Search"] = null;
+                                    Session["rn"] = null;
+                                }
+                            }
+                        }
+                    }
+
+
+                    // searchValue = "W1Z2000001";
+                    Repository = new Repository();
+                    //Paging Size (10,20,50,100)    
+                    int pageSize = length != null ? Convert.ToInt32(length) : 0;
+                    int skip = start != null ? Convert.ToInt32(start) : 0;
+                    int recordsTotal = 0;
+                    var griddata = Repository.getPropertyDetails(AppId);
+                    // Getting all Customer data
+                    // 
+                    // List<PropertyMaster> customerData = _context.PropertyMasters.Where(x=>x.IsDelete==false).ToList();
+                    var customerData = (from tempcustomer in griddata select tempcustomer);
+
+                    //Sorting    
+                    if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
+                    {
+
+
+                        customerData = customerData.OrderByDescending(x => x.PropertyId).ToList();
+                    }
+
+                    //Search
+                    var searchString = searchValue;
+                    Session["Search"] = searchString;
+                    string[] arr = searchString.Split(',');
+                    if (arr[0] == "f")
+                    {
+                        if (arr[1] != "All")
+                        {
+
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PrabhagNo) ? " " : x.PrabhagNo.Trim()) == arr[1].Trim()).ToList();
+                        }
+                        if (arr[2] != "All")
+                        {
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.WardName_No) ? " " : x.WardName_No.Trim()) == arr[2].Trim()).ToList();
+                        }
+                        if (arr[4] != "All" && arr[3] == "All")
+                        {
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.ConstStartYear) ? " " : x.ConstStartYear.Trim()) == arr[4].Trim()).ToList();
+                        }
+
+                        if (arr[3] != "All" && arr[4] == "All")
+                        {
+                            customerData = customerData.Where(x => (string.IsNullOrEmpty(x.CompletionYear) ? " " : x.CompletionYear.Trim()) == arr[3].Trim()).ToList();
+                        }
+
+                        if (arr[3] != "All" && arr[4] != "All")
+                        {
+                            int CSDate = Convert.ToInt32(arr[4]);
+                            int CEDate = Convert.ToInt32(arr[3]);
+                            customerData = customerData.Where(x => x.CompletionYear != null && x.CompletionYear != "").ToList();
+                            customerData = customerData.Where(x => x.ConstStartYear != null && x.ConstStartYear != "").ToList();
+                            customerData = customerData.Where(x => Convert.ToInt32(x.ConstStartYear) >= CSDate & Convert.ToInt32(x.CompletionYear) <= CEDate).ToList();
+                        }
+                        if (arr[5] != "")
+                        {
+                            if (arr[5] == "Safe")
+                            {
+                                customerData = customerData.Where(x => x.Safe == true).ToList();
+                            }
+                            if (arr[5] == "Safe2")
+                            {
+                                customerData = customerData.Where(x => x.Safe2 == true).ToList();
+                            }
+                            if (arr[5] == "Safe3")
+                            {
+                                customerData = customerData.Where(x => x.Safe3 == true).ToList();
+                            }
+                            if (arr[5] == "Danger")
+                            {
+                                customerData = customerData.Where(x => x.Danger == true).ToList();
+                            }
+                            if (arr[5] == "Danger2")
+                            {
+                                customerData = customerData.Where(x => x.Danger2 == true).ToList();
+                            }
+                            if (arr[5] == "Danger3")
+                            {
+                                customerData = customerData.Where(x => x.Danger3 == true).ToList();
+                            }
+                        }
+
+                        if (arr[6] != "")
+                        {
+                            customerData = customerData.Where(x => x.PropertyNo == arr[6]).ToList();
+                        }
+                        if (arr[7] != "")
+                        {
+                            string fname, mname, lname;
+                            string pname = arr[7];
+                            string[] arr1 = pname.Split(' ');
+                            if (arr1.Length > 0)
+                            {
+                                fname = arr1[0];
+
+                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower()).ToList();
+
+                            }
+                            if (arr1.Length > 1)
+                            {
+                                fname = arr1[0];
+                                mname = arr1[1];
+                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName.ToLower()) == mname.ToLower()).ToList();
+
+                                if (customerData.Count() == 0)
+                                {
+                                    customerData = (from tempcustomer in griddata select tempcustomer);
+
+                                    //Sorting    
+                                    if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
+                                    {
+
+
+                                        customerData = customerData.OrderByDescending(x => x.PropertyId).ToList();
+                                    }
+
+                                    if (arr[6] != "")
+                                    {
+                                        customerData = customerData.Where(x => x.PropertyNo == arr[6]).ToList();
+                                    }
+                                    customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == mname.ToLower() && (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower()).ToList();
+                                }
+
+                            }
+                            if (arr1.Length > 2)
+                            {
+                                lname = arr1[2];
+                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == lname.ToLower()).ToList();
+                            }
+                        }
+
+                        if (arr[8] != "")
+                        {
+                            customerData = customerData.Where(x => x.PropertyNo == arr[8]).ToList();
+                        }
+                        string name = arr[9];
+                        if (name != "null")
+                        {
+                            string fname, mname, lname;
+                            string pname = arr[9];
+                            string[] arr1 = pname.Split(' ');
+                            if (arr1.Length > 0)
+                            {
+                                fname = arr1[0];
+
+                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower()).ToList();
+
+                            }
+                            if (arr1.Length > 1)
+                            {
+                                fname = arr1[0];
+                                mname = arr1[1];
+                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerMiddleName) ? " " : x.PropOwnerMiddleName.ToLower()) == mname.ToLower()).ToList();
+
+                                if (customerData.Count() == 0)
+                                {
+                                    customerData = (from tempcustomer in griddata select tempcustomer);
+
+                                    //Sorting    
+                                    if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
+                                    {
+
+
+                                        customerData = customerData.OrderByDescending(x => x.PropertyId).ToList();
+                                    }
+
+                                    if (arr[6] != "")
+                                    {
+                                        customerData = customerData.Where(x => x.PropertyNo == arr[6]).ToList();
+                                    }
+                                    customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == mname.ToLower() && (string.IsNullOrEmpty(x.PropOwnerFirstName) ? " " : x.PropOwnerFirstName.ToLower()) == fname.ToLower()).ToList();
+                                }
+
+                            }
+                            if (arr1.Length > 2)
+                            {
+                                lname = arr1[2];
+                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.PropOwnerLastName) ? " " : x.PropOwnerLastName.ToLower()) == lname.ToLower()).ToList();
+                            }
+
+
+                        }
+
+                        if (arr[10] != "")
+                        {
+                            if (arr[10] == "Y")
+                            {
+                                customerData = customerData.Where(x => x.YConstPermNo == true).ToList();
+                            }
+                            if (arr[10] == "N")
+                            {
+                                customerData = customerData.Where(x => x.NConstPermNo == true).ToList();
+                            }
+                            if (arr[10] == "NA")
+                            {
+                                customerData = customerData.Where(x => x.YConstPermNo == false && x.NConstPermNo == false).ToList();
+                            }
+                        }
+
+                        if (arr[11] != "")
+                        {
+                            if (arr[11] == "Y")
+                            {
+                                customerData = customerData.Where(x => x.YPermUseNo == true).ToList();
+                            }
+                            if (arr[11] == "N")
+                            {
+                                customerData = customerData.Where(x => x.NPermUseNo == true).ToList();
+                            }
+                            if (arr[11] == "NA")
+                            {
+                                customerData = customerData.Where(x => x.YPermUseNo == false && x.NPermUseNo == false).ToList();
+                            }
+                        }
+
+
+
+                    }
+                    else if (!string.IsNullOrEmpty(searchValue))
+                    {
+                        var model = customerData.Where(c => ((string.IsNullOrEmpty(c.PropOwnerFirstName) ? " " : c.PropOwnerFirstName) + " " +
+                                      (string.IsNullOrEmpty(c.PropOwnerMiddleName) ? " " : c.PropOwnerMiddleName) + " " +
+                                      (string.IsNullOrEmpty(c.PropOwnerLastName) ? " " : c.PropOwnerLastName) + " " +
+                                       (string.IsNullOrEmpty(c.PropOwnerTelephoneNo) ? " " : c.PropOwnerTelephoneNo) + " " +
+                                      (string.IsNullOrEmpty(c.NewPropertyNo) ? " " : c.NewPropertyNo) + " " +
+                                      (string.IsNullOrEmpty(c.PropertyNo) ? " " : c.PropertyNo) + " " +
+                                      (string.IsNullOrEmpty(c.OldHouseNo1) ? " " : c.OldHouseNo1) + "" +
+                                      (string.IsNullOrEmpty(c.PrabhagNo) ? " " : c.PrabhagNo) + "" +
+                                      (string.IsNullOrEmpty(c.WardName_No) ? " " : c.WardName_No) + "" +
+                                      (string.IsNullOrEmpty(c.ConstStartYear) ? " " : c.ConstStartYear) + "" +
+                                      (string.IsNullOrEmpty(c.CompletionYear) ? " " : c.CompletionYear) + "" +
+                                       (string.IsNullOrEmpty(c.ConstPermNo) ? " " : c.ConstPermNo) + "" +
+                                      // (string.IsNullOrEmpty(c.YConstPermNo) ? " " : c.YConstPermNo) + "" +
+                                      (string.IsNullOrEmpty(c.PermUseNo) ? " " : c.PermUseNo)
+                                       //  (string.IsNullOrEmpty(c.CompletionYear) ? " " : c.CompletionYear)
+                                       ).ToUpper().Contains(searchValue.ToUpper())).ToList();
+
+                        customerData = model.ToList();
+                    }
+
+                    //total number of rows count     
+                    recordsTotal = customerData.Count();
+                    //Paging     
+                    var data = customerData.Skip(skip).Take(pageSize).ToList();
+                    //Returning Json Data    
+                    return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+
+
+        public string SelectionNotExists(string SearchText, string selectoption)
         {
             int Appid = SessionHandler.Current.AppId;
             string msg = "";
@@ -981,19 +1302,19 @@ public string SelectionNotExists(string SearchText, string selectoption)
                 int Appid = SessionHandler.Current.AppId;
                 AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(Appid);
                 ViewBag.Appname_mar = ApplicationDetails.AppName_mar;
-                var viewModel = new PropertyMasterVM();
+                var viewModel = new NamunaMasterVM();
 
-                viewModel = Repository.getPropertyDetailsByID(q, Appid);
-                if (viewModel.Sketchdiagram2 == null)
-                {
-                    ViewBag.nadoc = "na";
-                }
-                else
-                {
+                viewModel = Repository.getNamunaDetailsByID(q, Appid);
+                //if (viewModel.Sketchdiagram2 == null)
+                //{
+                //    ViewBag.nadoc = "na";
+                //}
+                //else
+               // {
                     int AppId = SessionHandler.Current.AppId;
                     var AppDetails = db.AppDetails.Where(x => x.AppId == AppId).FirstOrDefault();
                     ViewBag.img = AppDetails.basePath;
-                }
+             //   }
                 return View(viewModel);
             }
             else

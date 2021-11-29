@@ -92,6 +92,9 @@
     <Compile Include="ChildDatabase\C__MigrationHistory.cs">
       <DependentUpon>ChildModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ChildDatabase\NamunaMaster.cs">
+      <DependentUpon>ChildModel1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ChildDatabase\PropertyMaster.cs">
       <DependentUpon>ChildModel1.tt</DependentUpon>
     </Compile>

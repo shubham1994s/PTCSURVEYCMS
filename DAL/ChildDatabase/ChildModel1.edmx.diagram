@@ -14,6 +14,7 @@
         <AssociationConnector Association="DEVPTCSURVEYMALEGAONModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="DEVPTCSURVEYMALEGAONModel.AspNetUserRoles" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DEVPTCSURVEYMALEGAONModel.PropertyMaster" Width="2.625" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="DEVPTCSURVEYMALEGAONModel.NamunaMaster" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

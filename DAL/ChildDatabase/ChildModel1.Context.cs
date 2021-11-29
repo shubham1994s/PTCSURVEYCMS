@@ -21,10 +21,11 @@ using System.Data.Entity.Infrastructure;
 public partial class DEVPTCSURVEYMALEGAONEntities : DbContext
 {
         public DEVPTCSURVEYMALEGAONEntities(int AppId)
-              : base(PropertyTaxAppConnection.GetConnectionString(AppId))
+             : base(PropertyTaxAppConnection.GetConnectionString(AppId))
         {
 
         }
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -44,6 +45,8 @@ public partial class DEVPTCSURVEYMALEGAONEntities : DbContext
     public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
 
     public virtual DbSet<PropertyMaster> PropertyMasters { get; set; }
+
+    public virtual DbSet<NamunaMaster> NamunaMasters { get; set; }
 
 }
 

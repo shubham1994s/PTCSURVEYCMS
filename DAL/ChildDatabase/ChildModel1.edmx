@@ -66,6 +66,158 @@
           <Property Name="AccessFailedCount" Type="int" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
+        <EntityType Name="NamunaMaster">
+          <Key>
+            <PropertyRef Name="NamunaId" />
+          </Key>
+          <Property Name="NamunaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RMNAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="PropertyNo" Type="nvarchar" MaxLength="200" />
+          <Property Name="PropertyDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="OwnerName" Type="varchar" MaxLength="200" />
+          <Property Name="OccupantName" Type="varchar" MaxLength="200" />
+          <Property Name="Used" Type="varchar" MaxLength="500" />
+          <Property Name="AVRent" Type="varchar" MaxLength="200" />
+          <Property Name="BDBVRent" Type="varchar" MaxLength="200" />
+          <Property Name="BNDBVRent" Type="varchar" MaxLength="200" />
+          <Property Name="EKJYRent" Type="varchar" MaxLength="200" />
+          <Property Name="DEPercentV" Type="varchar" MaxLength="200" />
+          <Property Name="EKJKYPrice" Type="nvarchar" MaxLength="200" />
+          <Property Name="EMTax" Type="nvarchar" MaxLength="200" />
+          <Property Name="TreeTax" Type="nvarchar" MaxLength="200" />
+          <Property Name="EducationTax" Type="varchar" MaxLength="200" />
+          <Property Name="RSubTax" Type="nvarchar" MaxLength="200" />
+          <Property Name="OtherTax" Type="nvarchar" MaxLength="200" />
+          <Property Name="TotalTax" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxBuldingLand" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxA" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxB" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxC" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxD" Type="varchar" MaxLength="200" />
+          <Property Name="TaxABCD" Type="nvarchar" MaxLength="200" />
+          <Property Name="Signatures" Type="nvarchar" MaxLength="200" />
+          <Property Name="Stamp" Type="nvarchar" MaxLength="200" />
+          <Property Name="NTK" Type="nvarchar" MaxLength="200" />
+          <Property Name="NWord" Type="nvarchar" MaxLength="200" />
+          <Property Name="LF" Type="nvarchar" MaxLength="200" />
+          <Property Name="TF" Type="nvarchar" MaxLength="200" />
+          <Property Name="RP2" Type="nvarchar" MaxLength="200" />
+          <Property Name="RP" Type="nvarchar" MaxLength="200" />
+          <Property Name="SurvivorName" Type="nvarchar" MaxLength="200" />
+          <Property Name="DataEntryName" Type="nvarchar" MaxLength="200" />
+          <Property Name="SurvivorDate" Type="date" />
+          <Property Name="DataEntryDate" Type="date" />
+          <Property Name="RMNAME2" Type="nvarchar" MaxLength="1000" />
+          <Property Name="PropertyNo2" Type="nvarchar" MaxLength="400" />
+          <Property Name="PropertyDescription2" Type="nvarchar" MaxLength="1000" />
+          <Property Name="OwnerName2" Type="nvarchar" MaxLength="200" />
+          <Property Name="OccupantName2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Used2" Type="nvarchar" MaxLength="500" />
+          <Property Name="AVRent2" Type="nvarchar" MaxLength="200" />
+          <Property Name="BDBVRent2" Type="nvarchar" MaxLength="200" />
+          <Property Name="BNDBVRent2" Type="nvarchar" MaxLength="200" />
+          <Property Name="EKJYRent2" Type="nvarchar" MaxLength="200" />
+          <Property Name="DEPercentV2" Type="nvarchar" MaxLength="200" />
+          <Property Name="EKJKYPrice2" Type="nvarchar" MaxLength="200" />
+          <Property Name="EMTax2" Type="nvarchar" MaxLength="200" />
+          <Property Name="TreeTax2" Type="nvarchar" MaxLength="400" />
+          <Property Name="EducationTax2" Type="nvarchar" MaxLength="200" />
+          <Property Name="RSubTax2" Type="nvarchar" MaxLength="400" />
+          <Property Name="OtherTax2" Type="nvarchar" MaxLength="400" />
+          <Property Name="TotalTax2" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxBuldingLand2" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxA2" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxB2" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxC2" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxD2" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxABCD2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Signatures2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Stamp2" Type="nvarchar" MaxLength="200" />
+          <Property Name="AppilcantName" Type="nvarchar" MaxLength="200" />
+          <Property Name="ApplicantDate" Type="date" />
+          <Property Name="TaxRegister" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxRegisterDate" Type="date" />
+          <Property Name="RMNAME3" Type="nvarchar" MaxLength="1000" />
+          <Property Name="PropertyNo3" Type="nvarchar" MaxLength="400" />
+          <Property Name="PropertyDescription3" Type="nvarchar" MaxLength="1000" />
+          <Property Name="OwnerName3" Type="nvarchar" MaxLength="200" />
+          <Property Name="OccupantName3" Type="nvarchar" MaxLength="200" />
+          <Property Name="Used3" Type="nvarchar" MaxLength="500" />
+          <Property Name="AVRent3" Type="nvarchar" MaxLength="200" />
+          <Property Name="BDBVRent3" Type="nvarchar" MaxLength="200" />
+          <Property Name="BNDBVRent3" Type="nvarchar" MaxLength="200" />
+          <Property Name="EKJYRent3" Type="nvarchar" MaxLength="200" />
+          <Property Name="DEPercentV3" Type="nvarchar" MaxLength="200" />
+          <Property Name="EKJKYPrice3" Type="nvarchar" MaxLength="200" />
+          <Property Name="EMTax3" Type="nvarchar" MaxLength="200" />
+          <Property Name="TreeTax3" Type="nvarchar" MaxLength="400" />
+          <Property Name="EducationTax3" Type="nvarchar" MaxLength="200" />
+          <Property Name="RSubTax3" Type="nvarchar" MaxLength="400" />
+          <Property Name="OtherTax3" Type="nvarchar" MaxLength="400" />
+          <Property Name="TotalTax3" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxBuldingLand3" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxA3" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxB3" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxC3" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxD3" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxABCD3" Type="nvarchar" MaxLength="200" />
+          <Property Name="Signatures3" Type="nvarchar" MaxLength="200" />
+          <Property Name="Stamp3" Type="nvarchar" MaxLength="200" />
+          <Property Name="RMNAME4" Type="nvarchar" MaxLength="1000" />
+          <Property Name="PropertyNo4" Type="nvarchar" MaxLength="400" />
+          <Property Name="PropertyDescription4" Type="nvarchar" MaxLength="1000" />
+          <Property Name="OwnerName4" Type="nvarchar" MaxLength="200" />
+          <Property Name="OccupantName4" Type="nvarchar" MaxLength="200" />
+          <Property Name="Used4" Type="nvarchar" MaxLength="500" />
+          <Property Name="AVRent4" Type="nvarchar" MaxLength="200" />
+          <Property Name="BDBVRent4" Type="nvarchar" MaxLength="200" />
+          <Property Name="BNDBVRent4" Type="nvarchar" MaxLength="200" />
+          <Property Name="EKJYRent4" Type="nvarchar" MaxLength="200" />
+          <Property Name="DEPercentV4" Type="nvarchar" MaxLength="200" />
+          <Property Name="EKJKYPrice4" Type="nvarchar" MaxLength="200" />
+          <Property Name="EMTax4" Type="nvarchar" MaxLength="200" />
+          <Property Name="TreeTax4" Type="nvarchar" MaxLength="400" />
+          <Property Name="EducationTax4" Type="nvarchar" MaxLength="200" />
+          <Property Name="RSubTax4" Type="nvarchar" MaxLength="400" />
+          <Property Name="OtherTax4" Type="nvarchar" MaxLength="400" />
+          <Property Name="TotalTax4" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxBuldingLand4" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxA4" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxB4" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxC4" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxD4" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxABCD4" Type="nvarchar" MaxLength="200" />
+          <Property Name="Signatures4" Type="nvarchar" MaxLength="200" />
+          <Property Name="Stamp4" Type="nvarchar" MaxLength="200" />
+          <Property Name="RMNAME5" Type="nvarchar" MaxLength="1000" />
+          <Property Name="PropertyNo5" Type="nvarchar" MaxLength="400" />
+          <Property Name="PropertyDescription5" Type="nvarchar" MaxLength="1000" />
+          <Property Name="OwnerName5" Type="nvarchar" MaxLength="200" />
+          <Property Name="OccupantName5" Type="nvarchar" MaxLength="200" />
+          <Property Name="Used5" Type="nvarchar" MaxLength="500" />
+          <Property Name="AVRent5" Type="nvarchar" MaxLength="200" />
+          <Property Name="BDBVRent5" Type="nvarchar" MaxLength="200" />
+          <Property Name="BNDBVRent5" Type="nvarchar" MaxLength="200" />
+          <Property Name="EKJYRent5" Type="nvarchar" MaxLength="200" />
+          <Property Name="DEPercentV5" Type="nvarchar" MaxLength="200" />
+          <Property Name="EKJKYPrice5" Type="nvarchar" MaxLength="200" />
+          <Property Name="EMTax5" Type="nvarchar" MaxLength="200" />
+          <Property Name="TreeTax5" Type="nvarchar" MaxLength="400" />
+          <Property Name="EducationTax5" Type="nvarchar" MaxLength="200" />
+          <Property Name="RSubTax5" Type="nvarchar" MaxLength="400" />
+          <Property Name="OtherTax5" Type="nvarchar" MaxLength="400" />
+          <Property Name="TotalTax5" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxBuldingLand5" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxA5" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxB5" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxC5" Type="nvarchar" MaxLength="400" />
+          <Property Name="TaxD5" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaxABCD5" Type="nvarchar" MaxLength="200" />
+          <Property Name="Signatures5" Type="nvarchar" MaxLength="200" />
+          <Property Name="Stamp5" Type="nvarchar" MaxLength="200" />
+          <Property Name="LFee" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
         <EntityType Name="PropertyMaster">
           <Key>
             <PropertyRef Name="PropertyId" />
@@ -447,6 +599,7 @@
           <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NamunaMaster" EntityType="Self.NamunaMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PropertyMaster" EntityType="Self.PropertyMaster" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
@@ -579,6 +732,7 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
           <EntitySet Name="PropertyMasters" EntityType="DEVPTCSURVEYMALEGAONModel.PropertyMaster" />
+          <EntitySet Name="NamunaMasters" EntityType="DEVPTCSURVEYMALEGAONModel.NamunaMaster" />
         </EntityContainer>
         <EntityType Name="PropertyMaster">
           <Key>
@@ -897,6 +1051,158 @@
           <Property Name="PropOwnerLastName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="PropOwnerLastName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="PropOwnerLastName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NamunaMaster">
+          <Key>
+            <PropertyRef Name="NamunaId" />
+          </Key>
+          <Property Name="NamunaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RMNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OwnerName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OccupantName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Used" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AVRent" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BDBVRent" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BNDBVRent" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EKJYRent" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DEPercentV" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EKJKYPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EMTax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TreeTax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EducationTax" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RSubTax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TotalTax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxBuldingLand" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxB" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxD" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TaxABCD" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Signatures" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Stamp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NTK" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NWord" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LF" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TF" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RP2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SurvivorName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DataEntryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SurvivorDate" Type="DateTime" Precision="0" />
+          <Property Name="DataEntryDate" Type="DateTime" Precision="0" />
+          <Property Name="RMNAME2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyNo2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyDescription2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="OwnerName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OccupantName2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Used2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AVRent2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BDBVRent2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BNDBVRent2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EKJYRent2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DEPercentV2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EKJKYPrice2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EMTax2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TreeTax2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="EducationTax2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RSubTax2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTax2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TotalTax2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxBuldingLand2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxA2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxB2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxC2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxD2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxABCD2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Signatures2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Stamp2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AppilcantName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicantDate" Type="DateTime" Precision="0" />
+          <Property Name="TaxRegister" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxRegisterDate" Type="DateTime" Precision="0" />
+          <Property Name="RMNAME3" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyNo3" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyDescription3" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="OwnerName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OccupantName3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Used3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AVRent3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BDBVRent3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BNDBVRent3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EKJYRent3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DEPercentV3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EKJKYPrice3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EMTax3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TreeTax3" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="EducationTax3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RSubTax3" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTax3" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TotalTax3" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxBuldingLand3" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxA3" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxB3" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxC3" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxD3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxABCD3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Signatures3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Stamp3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RMNAME4" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyNo4" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyDescription4" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="OwnerName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OccupantName4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Used4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AVRent4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BDBVRent4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BNDBVRent4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EKJYRent4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DEPercentV4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EKJKYPrice4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EMTax4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TreeTax4" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="EducationTax4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RSubTax4" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTax4" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TotalTax4" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxBuldingLand4" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxA4" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxB4" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxC4" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxD4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxABCD4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Signatures4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Stamp4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RMNAME5" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyNo5" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyDescription5" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="OwnerName5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OccupantName5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Used5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AVRent5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BDBVRent5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BNDBVRent5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EKJYRent5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DEPercentV5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EKJKYPrice5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EMTax5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TreeTax5" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="EducationTax5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RSubTax5" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTax5" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TotalTax5" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxBuldingLand5" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxA5" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxB5" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxC5" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TaxD5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaxABCD5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Signatures5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Stamp5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LFee" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1283,6 +1589,159 @@
                 <ScalarProperty Name="WardNameNo" ColumnName="WardNameNo" />
                 <ScalarProperty Name="PrabhagNo" ColumnName="PrabhagNo" />
                 <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NamunaMasters">
+            <EntityTypeMapping TypeName="DEVPTCSURVEYMALEGAONModel.NamunaMaster">
+              <MappingFragment StoreEntitySet="NamunaMaster">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="LFee" ColumnName="LFee" />
+                <ScalarProperty Name="Stamp5" ColumnName="Stamp5" />
+                <ScalarProperty Name="Signatures5" ColumnName="Signatures5" />
+                <ScalarProperty Name="TaxABCD5" ColumnName="TaxABCD5" />
+                <ScalarProperty Name="TaxD5" ColumnName="TaxD5" />
+                <ScalarProperty Name="TaxC5" ColumnName="TaxC5" />
+                <ScalarProperty Name="TaxB5" ColumnName="TaxB5" />
+                <ScalarProperty Name="TaxA5" ColumnName="TaxA5" />
+                <ScalarProperty Name="TaxBuldingLand5" ColumnName="TaxBuldingLand5" />
+                <ScalarProperty Name="TotalTax5" ColumnName="TotalTax5" />
+                <ScalarProperty Name="OtherTax5" ColumnName="OtherTax5" />
+                <ScalarProperty Name="RSubTax5" ColumnName="RSubTax5" />
+                <ScalarProperty Name="EducationTax5" ColumnName="EducationTax5" />
+                <ScalarProperty Name="TreeTax5" ColumnName="TreeTax5" />
+                <ScalarProperty Name="EMTax5" ColumnName="EMTax5" />
+                <ScalarProperty Name="EKJKYPrice5" ColumnName="EKJKYPrice5" />
+                <ScalarProperty Name="DEPercentV5" ColumnName="DEPercentV5" />
+                <ScalarProperty Name="EKJYRent5" ColumnName="EKJYRent5" />
+                <ScalarProperty Name="BNDBVRent5" ColumnName="BNDBVRent5" />
+                <ScalarProperty Name="BDBVRent5" ColumnName="BDBVRent5" />
+                <ScalarProperty Name="AVRent5" ColumnName="AVRent5" />
+                <ScalarProperty Name="Used5" ColumnName="Used5" />
+                <ScalarProperty Name="OccupantName5" ColumnName="OccupantName5" />
+                <ScalarProperty Name="OwnerName5" ColumnName="OwnerName5" />
+                <ScalarProperty Name="PropertyDescription5" ColumnName="PropertyDescription5" />
+                <ScalarProperty Name="PropertyNo5" ColumnName="PropertyNo5" />
+                <ScalarProperty Name="RMNAME5" ColumnName="RMNAME5" />
+                <ScalarProperty Name="Stamp4" ColumnName="Stamp4" />
+                <ScalarProperty Name="Signatures4" ColumnName="Signatures4" />
+                <ScalarProperty Name="TaxABCD4" ColumnName="TaxABCD4" />
+                <ScalarProperty Name="TaxD4" ColumnName="TaxD4" />
+                <ScalarProperty Name="TaxC4" ColumnName="TaxC4" />
+                <ScalarProperty Name="TaxB4" ColumnName="TaxB4" />
+                <ScalarProperty Name="TaxA4" ColumnName="TaxA4" />
+                <ScalarProperty Name="TaxBuldingLand4" ColumnName="TaxBuldingLand4" />
+                <ScalarProperty Name="TotalTax4" ColumnName="TotalTax4" />
+                <ScalarProperty Name="OtherTax4" ColumnName="OtherTax4" />
+                <ScalarProperty Name="RSubTax4" ColumnName="RSubTax4" />
+                <ScalarProperty Name="EducationTax4" ColumnName="EducationTax4" />
+                <ScalarProperty Name="TreeTax4" ColumnName="TreeTax4" />
+                <ScalarProperty Name="EMTax4" ColumnName="EMTax4" />
+                <ScalarProperty Name="EKJKYPrice4" ColumnName="EKJKYPrice4" />
+                <ScalarProperty Name="DEPercentV4" ColumnName="DEPercentV4" />
+                <ScalarProperty Name="EKJYRent4" ColumnName="EKJYRent4" />
+                <ScalarProperty Name="BNDBVRent4" ColumnName="BNDBVRent4" />
+                <ScalarProperty Name="BDBVRent4" ColumnName="BDBVRent4" />
+                <ScalarProperty Name="AVRent4" ColumnName="AVRent4" />
+                <ScalarProperty Name="Used4" ColumnName="Used4" />
+                <ScalarProperty Name="OccupantName4" ColumnName="OccupantName4" />
+                <ScalarProperty Name="OwnerName4" ColumnName="OwnerName4" />
+                <ScalarProperty Name="PropertyDescription4" ColumnName="PropertyDescription4" />
+                <ScalarProperty Name="PropertyNo4" ColumnName="PropertyNo4" />
+                <ScalarProperty Name="RMNAME4" ColumnName="RMNAME4" />
+                <ScalarProperty Name="Stamp3" ColumnName="Stamp3" />
+                <ScalarProperty Name="Signatures3" ColumnName="Signatures3" />
+                <ScalarProperty Name="TaxABCD3" ColumnName="TaxABCD3" />
+                <ScalarProperty Name="TaxD3" ColumnName="TaxD3" />
+                <ScalarProperty Name="TaxC3" ColumnName="TaxC3" />
+                <ScalarProperty Name="TaxB3" ColumnName="TaxB3" />
+                <ScalarProperty Name="TaxA3" ColumnName="TaxA3" />
+                <ScalarProperty Name="TaxBuldingLand3" ColumnName="TaxBuldingLand3" />
+                <ScalarProperty Name="TotalTax3" ColumnName="TotalTax3" />
+                <ScalarProperty Name="OtherTax3" ColumnName="OtherTax3" />
+                <ScalarProperty Name="RSubTax3" ColumnName="RSubTax3" />
+                <ScalarProperty Name="EducationTax3" ColumnName="EducationTax3" />
+                <ScalarProperty Name="TreeTax3" ColumnName="TreeTax3" />
+                <ScalarProperty Name="EMTax3" ColumnName="EMTax3" />
+                <ScalarProperty Name="EKJKYPrice3" ColumnName="EKJKYPrice3" />
+                <ScalarProperty Name="DEPercentV3" ColumnName="DEPercentV3" />
+                <ScalarProperty Name="EKJYRent3" ColumnName="EKJYRent3" />
+                <ScalarProperty Name="BNDBVRent3" ColumnName="BNDBVRent3" />
+                <ScalarProperty Name="BDBVRent3" ColumnName="BDBVRent3" />
+                <ScalarProperty Name="AVRent3" ColumnName="AVRent3" />
+                <ScalarProperty Name="Used3" ColumnName="Used3" />
+                <ScalarProperty Name="OccupantName3" ColumnName="OccupantName3" />
+                <ScalarProperty Name="OwnerName3" ColumnName="OwnerName3" />
+                <ScalarProperty Name="PropertyDescription3" ColumnName="PropertyDescription3" />
+                <ScalarProperty Name="PropertyNo3" ColumnName="PropertyNo3" />
+                <ScalarProperty Name="RMNAME3" ColumnName="RMNAME3" />
+                <ScalarProperty Name="TaxRegisterDate" ColumnName="TaxRegisterDate" />
+                <ScalarProperty Name="TaxRegister" ColumnName="TaxRegister" />
+                <ScalarProperty Name="ApplicantDate" ColumnName="ApplicantDate" />
+                <ScalarProperty Name="AppilcantName" ColumnName="AppilcantName" />
+                <ScalarProperty Name="Stamp2" ColumnName="Stamp2" />
+                <ScalarProperty Name="Signatures2" ColumnName="Signatures2" />
+                <ScalarProperty Name="TaxABCD2" ColumnName="TaxABCD2" />
+                <ScalarProperty Name="TaxD2" ColumnName="TaxD2" />
+                <ScalarProperty Name="TaxC2" ColumnName="TaxC2" />
+                <ScalarProperty Name="TaxB2" ColumnName="TaxB2" />
+                <ScalarProperty Name="TaxA2" ColumnName="TaxA2" />
+                <ScalarProperty Name="TaxBuldingLand2" ColumnName="TaxBuldingLand2" />
+                <ScalarProperty Name="TotalTax2" ColumnName="TotalTax2" />
+                <ScalarProperty Name="OtherTax2" ColumnName="OtherTax2" />
+                <ScalarProperty Name="RSubTax2" ColumnName="RSubTax2" />
+                <ScalarProperty Name="EducationTax2" ColumnName="EducationTax2" />
+                <ScalarProperty Name="TreeTax2" ColumnName="TreeTax2" />
+                <ScalarProperty Name="EMTax2" ColumnName="EMTax2" />
+                <ScalarProperty Name="EKJKYPrice2" ColumnName="EKJKYPrice2" />
+                <ScalarProperty Name="DEPercentV2" ColumnName="DEPercentV2" />
+                <ScalarProperty Name="EKJYRent2" ColumnName="EKJYRent2" />
+                <ScalarProperty Name="BNDBVRent2" ColumnName="BNDBVRent2" />
+                <ScalarProperty Name="BDBVRent2" ColumnName="BDBVRent2" />
+                <ScalarProperty Name="AVRent2" ColumnName="AVRent2" />
+                <ScalarProperty Name="Used2" ColumnName="Used2" />
+                <ScalarProperty Name="OccupantName2" ColumnName="OccupantName2" />
+                <ScalarProperty Name="OwnerName2" ColumnName="OwnerName2" />
+                <ScalarProperty Name="PropertyDescription2" ColumnName="PropertyDescription2" />
+                <ScalarProperty Name="PropertyNo2" ColumnName="PropertyNo2" />
+                <ScalarProperty Name="RMNAME2" ColumnName="RMNAME2" />
+                <ScalarProperty Name="DataEntryDate" ColumnName="DataEntryDate" />
+                <ScalarProperty Name="SurvivorDate" ColumnName="SurvivorDate" />
+                <ScalarProperty Name="DataEntryName" ColumnName="DataEntryName" />
+                <ScalarProperty Name="SurvivorName" ColumnName="SurvivorName" />
+                <ScalarProperty Name="RP" ColumnName="RP" />
+                <ScalarProperty Name="RP2" ColumnName="RP2" />
+                <ScalarProperty Name="TF" ColumnName="TF" />
+                <ScalarProperty Name="LF" ColumnName="LF" />
+                <ScalarProperty Name="NWord" ColumnName="NWord" />
+                <ScalarProperty Name="NTK" ColumnName="NTK" />
+                <ScalarProperty Name="Stamp" ColumnName="Stamp" />
+                <ScalarProperty Name="Signatures" ColumnName="Signatures" />
+                <ScalarProperty Name="TaxABCD" ColumnName="TaxABCD" />
+                <ScalarProperty Name="TaxD" ColumnName="TaxD" />
+                <ScalarProperty Name="TaxC" ColumnName="TaxC" />
+                <ScalarProperty Name="TaxB" ColumnName="TaxB" />
+                <ScalarProperty Name="TaxA" ColumnName="TaxA" />
+                <ScalarProperty Name="TaxBuldingLand" ColumnName="TaxBuldingLand" />
+                <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
+                <ScalarProperty Name="OtherTax" ColumnName="OtherTax" />
+                <ScalarProperty Name="RSubTax" ColumnName="RSubTax" />
+                <ScalarProperty Name="EducationTax" ColumnName="EducationTax" />
+                <ScalarProperty Name="TreeTax" ColumnName="TreeTax" />
+                <ScalarProperty Name="EMTax" ColumnName="EMTax" />
+                <ScalarProperty Name="EKJKYPrice" ColumnName="EKJKYPrice" />
+                <ScalarProperty Name="DEPercentV" ColumnName="DEPercentV" />
+                <ScalarProperty Name="EKJYRent" ColumnName="EKJYRent" />
+                <ScalarProperty Name="BNDBVRent" ColumnName="BNDBVRent" />
+                <ScalarProperty Name="BDBVRent" ColumnName="BDBVRent" />
+                <ScalarProperty Name="AVRent" ColumnName="AVRent" />
+                <ScalarProperty Name="Used" ColumnName="Used" />
+                <ScalarProperty Name="OccupantName" ColumnName="OccupantName" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="PropertyDescription" ColumnName="PropertyDescription" />
+                <ScalarProperty Name="PropertyNo" ColumnName="PropertyNo" />
+                <ScalarProperty Name="RMNAME" ColumnName="RMNAME" />
+                <ScalarProperty Name="NamunaId" ColumnName="NamunaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

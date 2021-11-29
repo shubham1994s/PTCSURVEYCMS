@@ -68,6 +68,7 @@
     <Compile Include="FileDownload.cs" />
     <Compile Include="FilterDropdownVM.cs" />
     <Compile Include="MasterVM.cs" />
+    <Compile Include="NamunaMasterVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyMasterVM.cs" />
     <Compile Include="Result.cs" />
