@@ -1672,6 +1672,7 @@
     <Content Include="Views\Shared\_SearchFamily.cshtml" />
     <Content Include="Views\PTC\NamunaList.cshtml" />
     <Content Include="Views\PTC\NamunaForm.cshtml" />
+    <Content Include="Views\PTC\ViewNamunaForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

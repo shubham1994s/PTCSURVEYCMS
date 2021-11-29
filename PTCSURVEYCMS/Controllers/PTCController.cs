@@ -1232,6 +1232,56 @@ namespace PTCSURVEYCMS.Controllers
 
         }
 
+        [HttpGet]
+        public ActionResult ViewNamunaForm(int q = -1)
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                int Appid = SessionHandler.Current.AppId;
+                if (Appid == 1)
+                {
+                    ViewBag.logo = "property_tax_logo.png";
+                    ViewBag.RLogo = "mkmj.jpeg";
+                }
+                if (Appid == 2)
+                {
+                    ViewBag.logo = "vengurla logo.jpeg";
+                    ViewBag.RLogo = "Logo_150x48.png";
+                }
+                Repository = new Repository();
+                AppDetailsVM ApplicationDetails = Repository.GetApplicationDetails(Appid);
+                ViewBag.Appname_mar = ApplicationDetails.AppName_mar;
+
+
+                var viewModel = new NamunaMasterVM();
+
+                viewModel = Repository.getNamunaDetailsByID(q, Appid);
+                if (viewModel.SurvivorDate == "--Select Date--")
+                {
+                    viewModel.SurvivorDate = null;
+                }
+                if (viewModel.DataEntryDate == "--Select Date--")
+                {
+                    viewModel.DataEntryDate = null;
+                }
+                if (viewModel.ApplicantDate == "--Select Date--")
+                {
+                    viewModel.ApplicantDate = null;
+                }
+                if (viewModel.TaxRegisterDate == "--Select Date--")
+                {
+                    viewModel.TaxRegisterDate = null;
+                }
+
+                return View(viewModel);
+            }
+            else
+            {
+                return Redirect("/Account/Login");
+            }
+
+        }
+
         [HttpPost]
         public string IsPropertyNoExists(string PropertyNo)
         {

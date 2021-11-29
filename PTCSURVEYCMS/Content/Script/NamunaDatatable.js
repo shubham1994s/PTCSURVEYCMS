@@ -128,7 +128,7 @@ function Edit(ID) {
 
 
 function View(ID) {
-    window.location.href = "/PTC/ViewSurveyForm?q=" + ID;
+    window.location.href = "/PTC/ViewNamunaForm?q=" + ID;
 }
 var url;
 function Download(ID) {

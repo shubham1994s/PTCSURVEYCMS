@@ -1,0 +1,506 @@
+﻿@model BLL.ViewModel.NamunaMasterVM
+@{
+    ViewBag.Title = "ViewNamunaForm";
+    Layout = "";
+}
+
+
+<link rel="shortcut icon" href="~/Content/Images/vengurla_logo_header.png" />
+<style>
+    .form-control {
+        text-transform: capitalize;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .p_5 {
+        padding: 5px 5px 5px 5px !important;
+        text-transform: capitalize;
+    }
+
+    .border1 {
+        border: 1px solid black;
+    }
+
+    .back {
+        background: none !important;
+        border: none !important;
+    }
+
+    h5, h6 {
+        font-weight: 600 !important
+    }
+    .bigth {
+        width: 40%;
+    }
+
+    .bigth2 {
+        width: 25%;
+    }
+
+    th, td {
+        text-align: center !important;
+        height: 35px;
+    }
+
+    .srnoo {
+        width: 5%;
+    }
+
+    .text-line {
+        border: none;
+        border-top: 2px solid #000000;
+        width: 100%;
+    }
+</style>
+@*@Styles.Render("~/Content/AddEditCSS")*@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/SurveyForm.css" rel="stylesheet" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+
+@*<div id="target">*@
+<button class="ml-5" type="button" style="position:absolute;top:25px;padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
+    line-height: 1.5;border-radius: 3px;border-style: none;" onclick="goBack()">
+    Back
+</button>
+<img src="~/Content/Images/@ViewBag.logo " style="position: absolute;height: 150px;top: 0%;left:12%" />
+<h1 class="text-center my-3">@ViewBag.Appname_mar </h1>
+<h6 class="text-center mb-3">स्वच्छता विभाग </h6>
+<h6 class="text-center mb-5 font-weight-bold"><u> स्वच्छ सर्वेक्षण मालमत्ता सर्वेक्षण नमुना</u></h6>
+<img src="~/content/Images/@ViewBag.RLogo" style="position: absolute;height: 90px;top:1%; right:2%" />
+@*<button type="button" onclick="print()">pdf</button>*@
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-end pr-3">
+        <button type="button" style="padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
+            line-height: 1.5;border-radius: 3px;border-style: none;" onclick="window.print();">
+            Genrate Pdf
+        </button>
+    </div>
+    @* Building Name Section A *@
+    <div class="container">
+        <div class=""> <h6 class="text-right mb-3">नामुना क्र. ४३</h6></div>
+        <div class=""> <h6 class="text-right mb-3">@ViewBag.Appname_mar</h6></div>
+        <div class=""><h6 class="text-center mb-3">20&nbsp;&nbsp;&nbsp;&nbsp;- 21&nbsp;&nbsp;&nbsp;&nbsp; या वर्षासाठी कर आकारणीस पात्र असलेल्या इमारती आणि जमिनी यांची आकारणी सुचि </h6></div>
+
+    </div>
+    <div class="d-flex flex-row back mb-3">
+
+        <table style="width:100%">
+            <tr class="text-center">
+                <th class="srnoo"><label class="label text-center">अनु क्रमांक.</label></th>
+                <th class="subject"><label class="label ">रस्त्याचे वा <br />विभाग / <br />मांमंडलाचे नाव</label></th>
+                <th class="prakar"><label class="label">मालमत्ता क्र.<br />20&nbsp;&nbsp;-20&nbsp;&nbsp;</label></th>
+                <th class="subject"><label class="label">मालमत्तेचे वर्णन</label></th>
+                <th class="subject"><label class="label">मालकाचे नाव</label></th>
+                <th class="subject"><label class="label">भोगवटदाराचे नाव</label></th>
+                <th class="srno"><label class="label">वापर</label></th>
+                <th class="srno"><label class="label">अंदाजित <br />वार्षिक भाडे</label></th>
+                <th class="srno"><label class="label">भाडयाने <br />दिलेल्या <br />अंदाजित <br />भागाचे वार्षिक <br />भाडे</label></th>
+                <th class="srno"><label class="label">भाडयाने न<br />दिलेल्या <br />भागाचे वार्षिक <br />भाडे</label></th>
+                <th class="srno"><label class="label">इमारतीचे<br /> किंवा <br />जमिनीचे <br />वार्षिक <br />भाडे</label></th>
+
+            </tr>
+            <tr>
+                <th>१</th>
+                <th>२</th>
+                <th>३</th>
+                <th>४</th>
+                <th>५</th>
+                <th>६</th>
+                <th>६ अ</th>
+                <th>७</th>
+                <th>८</th>
+                <th>९</th>
+                <th>१०</th>
+            </tr>
+            <tr class="text-center">
+                <td></td>
+                <td>@Html.DisplayFor(model => model.RMNAME, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyNo, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyDescription, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OwnerName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OccupantName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Used, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.AVRent, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BDBVRent, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BNDBVRent, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJYRent, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+            <tr class="text-center">
+                <td></td>
+                <td>@Html.DisplayFor(model => model.RMNAME2, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyNo2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyDescription2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OwnerName2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OccupantName2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Used2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.AVRent2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BDBVRent2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BNDBVRent2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJYRent2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+            <tr class="text-center">
+                <td></td>
+                <td>@Html.DisplayFor(model => model.RMNAME3, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyNo3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyDescription3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OwnerName3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OccupantName3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Used3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.AVRent3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BDBVRent3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BNDBVRent3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJYRent3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+            <tr class="text-center">
+                <td></td>
+                <td>@Html.DisplayFor(model => model.RMNAME4, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyNo4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyDescription4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OwnerName4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OccupantName4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Used4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.AVRent4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BDBVRent4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BNDBVRent4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJYRent4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+            <tr class="text-center">
+                <td></td>
+                <td>@Html.DisplayFor(model => model.RMNAME5, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyNo5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.PropertyDescription5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OwnerName5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OccupantName5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Used5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.AVRent5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BDBVRent5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.BNDBVRent5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJYRent5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <div class="d-flex flex-row back mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-3 pr-0"><p class="bt-text">नक्कल तयार करणार</p></div>
+                        <div class="col-lg-7 pl-0 text-line">
+                            @Html.DisplayFor(model => model.NTK, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार</p></div>
+                        <div class="col-lg-7 pl-0 text-line">
+                            @Html.DisplayFor(model => model.RP, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+
+                        <div class="col-lg-3 pr-0"><p class="bt-text">नक्कलचे शब्द -</p></div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-7 pl-0 text-line">
+                            @Html.DisplayFor(model => model.NWord, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+
+                        <div class="col-lg-3 pr-0"><p class="bt-text">लिहिणवाड  फी -</p></div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-7 pl-0 text-line">
+                            @Html.DisplayFor(model => model.LF, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+
+                        <div class="col-lg-3 pr-0"><p class="bt-text">लावाची फी -</p></div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-7 pl-0 text-line">
+                            @Html.DisplayFor(model => model.LF, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+
+                        <div class="col-lg-3 pr-0"><p class="bt-text">रुजुवात फी -</p></div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-7 pl-0 text-line">
+                            @Html.DisplayFor(model => model.RP2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+
+                        <div class="col-lg-3 pr-0"><p class="bt-text">एकूण -</p></div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-7 pl-0 text-line">
+                            @Html.DisplayFor(model => model.RP2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class=""><h6 class="text-left mb-3">नियम ७४ पहा</h6></div>
+        <div class=""><h6 class="text-left mb-3">@ViewBag.Appname_mar</h6></div>
+        <div class=""><h6 class="text-center mb-3">20&nbsp;&nbsp;&nbsp;&nbsp;- 21&nbsp;&nbsp;&nbsp;&nbsp; या वर्षासाठी कर आकारणीस पात्र असलेल्या इमारती आणि जमिनी यांची आकारणी सुचि </h6></div>
+
+    </div>
+
+    <div class="d-flex flex-row back mb-3">
+
+        <table style="width:100%">
+
+            <colgroup span="2"></colgroup>
+            <colgroup span="2"></colgroup>
+            <tr class="text-center">
+                <th class="srno" rowspan="2"><label class="label">दुरुस्त्या <br />इत्यादीसाठी <br />१० टक्के <br /> वजाती</label></th>
+                <th class="subject" rowspan="2"><label class="label">इमारतीचे <br />किंवा <br />जमिनीचे<br /> कर योग्य<br /> मूल्य</label></th>
+                <th class="bigth" colspan="6" scope="colgroup"><label class="label">आकारण्यात आलेल्या करांचा रकमा</label> </th>
+                <th style="width:10%" rowspan="2"><label class="label">करयोग्य <br />इमारत किंवा <br />जमीन</label></th>
+                <th class="bigth2" colspan="5" scope="colgroup"><label class="label">अपिलाचे निकाल आणि त्यानंतरचे फेरफार</label></th>
+                <th class="subject" rowspan="2"><label class="label">प्राधिकृत मूल्य निर्धारण<br />अधिकारी/मूल्य निर्धारण<br />अधिकाऱ्यांची नेमणूक<br />करण्यात आली असेल<br />तर स्थायी समितीच्या<br />सभापतींची सही</label></th>
+                <th class="srno" rowspan="2"><label class="label">नंतर वाढ किंवा<br />घट करण्यात<br />आल्याचा बाबतीत<br />आदेशांच्या<br /> निर्देशासह शेरा</label></th>
+
+            </tr>
+            <tr>
+                <th scope="col">एकत्रित <br />मालमत्ता <br />कर</th>
+                <th scope="col">वृक्ष<br /> कर</th>
+                <th scope="col">शिक्षण <br /> कर</th>
+                <th scope="col">रोहयो <br />उपकर</th>
+                <th scope="col">इतर +</th>
+                <th scope="col">एकूण</th>
+                <td scope="col">कर</td>
+                <td scope="col">कर</td>
+                <td scope="col">कर</td>
+                <td scope="col">कर</td>
+                <td scope="col">एकूण</td>
+            </tr>
+            <tr>
+                <th>११</th>
+                <th>१२</th>
+                <th>१३</th>
+                <th>१४</th>
+                <th>१५</th>
+                <th>१६</th>
+                <th>१७</th>
+                <th>१८</th>
+                <th>१९</th>
+                <th>२०</th>
+                <th>२१</th>
+                <th>२२</th>
+                <th>२३</th>
+                <th>२४</th>
+                <th>२५</th>
+                <th>२६</th>
+            </tr>
+
+            <tr class="text-center">
+
+                <td>@Html.DisplayFor(model => model.DEPercentV, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJKYPrice, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EMTax, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TreeTax, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EducationTax, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.RSubTax, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OtherTax, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TotalTax, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxBuldingLand, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxA, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxB, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxC, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxD, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxABCD, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Signatures, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Stamp, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+            <tr class="text-center">
+
+                <td>@Html.DisplayFor(model => model.DEPercentV2, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJKYPrice2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EMTax2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TreeTax2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EducationTax2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.RSubTax2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OtherTax2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TotalTax2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxBuldingLand2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxA2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxB2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxC2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxD2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxABCD2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Signatures2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Stamp2, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+            <tr class="text-center">
+
+                <td>@Html.DisplayFor(model => model.DEPercentV3, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJKYPrice3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EMTax3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TreeTax3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EducationTax3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.RSubTax3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OtherTax3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TotalTax3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxBuldingLand3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxA3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxB3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxC3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxD3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxABCD3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Signatures3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Stamp3, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+            <tr class="text-center">
+
+                <td>@Html.DisplayFor(model => model.DEPercentV4, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJKYPrice4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EMTax4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TreeTax4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EducationTax4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.RSubTax4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OtherTax4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TotalTax4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxBuldingLand4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxA4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxB4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxC4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxD4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxABCD4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Signatures4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Stamp4, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+            <tr class="text-center">
+
+                <td>@Html.DisplayFor(model => model.DEPercentV5, new { @class = "p-5 border", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EKJKYPrice5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EMTax5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TreeTax5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.EducationTax5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.RSubTax5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.OtherTax5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TotalTax5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxBuldingLand5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxA5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxB5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxC5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxD5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.TaxABCD5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Signatures5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+                <td>@Html.DisplayFor(model => model.Stamp5, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })</td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <div class="d-flex flex-row back mb-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <div class="row">
+
+                        <div class="col-lg-2 pr-0"><p class="bt-text">अर्जदार श्री.</p></div>
+                        <div class="col-lg-7 pl-0 text-line">
+                            @Html.DisplayFor(model => model.AppilcantName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row pt-2">
+                        <div class="col-lg-4 pr-0">
+                            <p class="bt-text">
+                                यांच्या दिनांक
+                            </p>
+                        </div>
+                        <div class="col-lg-8 pl-0 text-line">
+                            @Html.DisplayFor(model => model.ApplicantDate, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+
+                        <div class="col-lg-3 pr-0"><p class="bt-text">अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
+
+                        <div class="col-lg-7 pl-0 text-line">
+                            @Html.DisplayFor(model => model.TaxRegister, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col-lg-3 pr-0"><p class="bt-text">वरून सदर घराचा उतारा दिला आहे.</p></div>
+            </div>
+            <div class="row pt-2 pb-2">
+                <div class="col-lg-2 pr-0"><p class="bt-text">तारीख</p></div>
+
+                <div class="col-lg-7 pl-0 text-line">
+                    @Html.DisplayFor(model => model.TaxRegisterDate, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.chkBx').change(function () {
+        $(".chkBx").not(this).prop('checked', false);
+    });
+    function goBack() {
+        window.history.back();
+    }
+                                //function print() {
+                                //    const filename  = 'ThisIsYourPDFFilename.pdf';
+
+                                //    html2canvas(document.getElementById('target')).then(canvas => {
+                                //        let pdf = new jsPDF('p', 'mm', 'a4');
+                                //        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+                                //        pdf.save(filename);
+                                //    });
+                                //}
+                                //function print() {
+                                //    window.print()
+                                //}
+
+                                // Variant
+                                // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
+                                //var quality=4;
+                                //function print(quality) {
+                                //    const filename  = 'ThisIsYourPDFFilename.pdf';
+
+                                //    html2canvas(document.getElementById('target'),
+                                //							{scale: quality}
+                                //					 ).then(canvas => {
+                                //					     let pdf = new jsPDF('p', 'mm', 'a4');
+                                //					     pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+                                //					     pdf.addPage();
+                                //					     pdf.save(filename);
+                                //					 });
+                                //}
+</script>
