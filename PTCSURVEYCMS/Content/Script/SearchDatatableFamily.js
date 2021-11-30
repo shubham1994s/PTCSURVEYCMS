@@ -851,6 +851,7 @@ function show15() {
     document.getElementById('filter').style.display = 'none';
     document.getElementById('filterbystatus').style.display = 'block';
     document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'block';
