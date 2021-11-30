@@ -603,7 +603,7 @@ namespace PTCSURVEYCMS.Controllers
                             }
                             if (arr[14] == "N")
                             {
-                                customerData = customerData.Where(x => x.NonVermicultureProject == true).ToList();
+                                customerData = customerData.Where(x => x.NonSolarWaterheater == true).ToList();
                             }
 
                         }

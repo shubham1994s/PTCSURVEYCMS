@@ -297,7 +297,20 @@ function show1() {
     document.getElementById('BUET').style.display = 'none';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
-
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
     $("#CPNO").empty();
@@ -346,6 +359,9 @@ function show2() {
     document.getElementById('BUET').style.display = 'none';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
 
@@ -442,6 +458,20 @@ function show6() {
     document.getElementById('BUET').style.display = 'none';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
     //  ActiveEmployee();
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
@@ -487,6 +517,20 @@ function show7() {
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
 
@@ -536,7 +580,21 @@ function show8() {
     document.getElementById('BUET').style.display = 'none';
     document.getElementById('RWHT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'block';
-    document.getElementById('Fifthtable').style.display = 'block'; 
+    document.getElementById('Fifthtable').style.display = 'block';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
     $("#RWH").empty();
     $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
    
@@ -567,11 +625,11 @@ function show9() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
-    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('Fourthtable').style.display = 'none';
     document.getElementById('RWHT').style.display = 'none';
     document.getElementById('SEPT').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
@@ -584,9 +642,21 @@ function show9() {
     document.getElementById('BUET').style.display = 'none';
     document.getElementById('CPT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
-    document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('Fifthtable').style.display = 'none';    
     document.getElementById('filterbyCP').style.display = 'block';
-    
+    document.getElementById('Sixthtable').style.display = 'block';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
     $("#CP").empty();
     $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
 
@@ -594,7 +664,7 @@ function show9() {
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
     document.getElementById('CEDate').value = ''
-    PropertyActive();
+    SixthdatatableActive();
 }
 
 function show10() {
@@ -616,11 +686,11 @@ function show10() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
-    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('Fourthtable').style.display = 'none';
     document.getElementById('RWHT').style.display = 'none';
     document.getElementById('CPT').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
@@ -634,6 +704,20 @@ function show10() {
     document.getElementById('SEPT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'block';
+    document.getElementById('Seventable').style.display = 'block';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
     $("#SEP").empty();
     $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
 
@@ -641,7 +725,7 @@ function show10() {
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
     document.getElementById('CEDate').value = ''
-    PropertyActive();
+    SevendatatableActive();
 }
 
 function show11() {
@@ -663,11 +747,11 @@ function show11() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
-    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('Fourthtable').style.display = 'none';
     document.getElementById('RWHT').style.display = 'none';
     document.getElementById('CPT').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
@@ -681,12 +765,26 @@ function show11() {
     document.getElementById('HTT').style.display = 'block';
     document.getElementById('Fifthtable').style.display = 'none';
     document.getElementById('filterbyRWH').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'block';
+    document.getElementById('Eighttable').style.display = 'block';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
-    document.getElementById('CEDate').value = ''
-    PropertyActive();
+    document.getElementById('CEDate').value = '' 
     FillHTNo();
+    EightdatatableActive();
 }
 
 
@@ -709,11 +807,11 @@ function show12() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
-    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('Fourthtable').style.display = 'none';
     document.getElementById('RWHT').style.display = 'none';
     document.getElementById('CPT').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
@@ -727,6 +825,20 @@ function show12() {
     document.getElementById('NVAT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'block';
+    document.getElementById('Ninetable').style.display = 'block';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
     $("#WC").empty();
     $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
     $("#NVA").empty();
@@ -736,7 +848,9 @@ function show12() {
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
     document.getElementById('CEDate').value = ''
-    PropertyActive();
+
+    NinedatatableActive();
+  
 }
 
 function show13() {
@@ -758,11 +872,11 @@ function show13() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
-    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('Fourthtable').style.display = 'none';
     document.getElementById('RWHT').style.display = 'none';
     document.getElementById('CPT').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
@@ -776,6 +890,18 @@ function show13() {
     document.getElementById('DLT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'block';
+    document.getElementById('Tentable').style.display = 'block';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
     $("#DL").empty();
     $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
 
@@ -783,7 +909,8 @@ function show13() {
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
     document.getElementById('CEDate').value = ''
-    PropertyActive();
+    TendatatableActive();
+   
 }
 
 
@@ -806,11 +933,11 @@ function show14() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
-    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('Fourthtable').style.display = 'none';
     document.getElementById('RWHT').style.display = 'none';
     document.getElementById('CPT').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
@@ -824,13 +951,25 @@ function show14() {
     document.getElementById('STKT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'block';
+    document.getElementById('Eleventable').style.display = 'block';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
     $("#STK").empty();
     $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
     document.getElementById('CEDate').value = ''
-    PropertyActive();
+    ElevendatatableActive();
 }
 
 function show15() {
@@ -852,11 +991,11 @@ function show15() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
-    document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('Fourthtable').style.display = 'none';
     document.getElementById('RWHT').style.display = 'none';
     document.getElementById('CPT').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
@@ -870,6 +1009,18 @@ function show15() {
     document.getElementById('BUET').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'block';
+    document.getElementById('Twelvetable').style.display = 'block';
     $("#SGSK").empty();
     $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
     $("#BUE").empty();
@@ -878,7 +1029,7 @@ function show15() {
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
     document.getElementById('CEDate').value = ''
-    PropertyActive();
+    TwelvedatatableActive();
 }
 
 function SearchByName() {
@@ -1030,6 +1181,267 @@ function SearchByRWH() {
 }
 
 
+function SearchByCP() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val();
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
+
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + DL + "," + NVA + "," + STK + "," + SGSK + "," + BUE;
+
+    // alert(value );
+
+    oTable = $('#SixthdatatableActive').DataTable();
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
+
+
+function SearchBySEP() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val();
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
+
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + DL + "," + NVA + "," + STK + "," + SGSK + "," + BUE;
+
+    // alert(value );
+
+    oTable = $('#SevendatatableActive').DataTable();
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
+
+
+function SearchByHT() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val();
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
+
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + DL + "," + NVA + "," + STK + "," + SGSK + "," + BUE;
+
+    // alert(value );
+
+    oTable = $('#EightdatatableActive').DataTable();
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
+
+
+function SearchByWC() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val();
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
+
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + DL + "," + NVA + "," + STK + "," + SGSK + "," + BUE;
+
+    // alert(value );
+
+    oTable = $('#NinedatatableActive').DataTable();
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
+
+function SearchByDL() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val();
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
+
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + DL + "," + NVA + "," + STK + "," + SGSK + "," + BUE;
+
+    // alert(value );
+
+    oTable = $('#TendatatableActive').DataTable();
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
+
+function SearchBySTP() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val();
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
+
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + DL + "," + NVA + "," + STK + "," + SGSK + "," + BUE;
+
+    // alert(value );
+
+    oTable = $('#ElevendatatableActive').DataTable();
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
+
+function SearchBySGSK() {
+    debugger;
+    Filter = "f";
+    PrabhagList = $('#PrabhagList').val();
+    WardList = $('#WardList').val();
+    CSDate = $('#CSDate').val();
+    CEDate = $('#CEDate').val();
+    OCNO = $('#OCNO').val();
+    PRONOBYNAME = $('#PRONOBYNAME').val();
+    PROOWNAME = $('#test').val();
+    poname = $('#poname').val();
+    Name = $('#Name').val();
+    CPNO = $('#CPNO').val();
+    OCNOY = $('#OCNOY').val();
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val();
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
+
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + DL + "," + NVA + "," + STK + "," + SGSK + "," + BUE;
+
+    // alert(value );
+
+    oTable = $('#TwelvedatatableActive').DataTable();
+
+    oTable.search(value).draw();
+    oTable.search("");
+}
 
 
 function send() {
@@ -1588,6 +2000,719 @@ function FifthdatatableActive() {
     });
 
 }
+
+
+function SixthdatatableActive() {
+
+    $('#SixthdatatableActive').DataTable({
+
+        //  "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once  
+        "pageLength": 5,
+        "searching": true,
+        destroy: true,
+
+        "ajax": {
+            "url": "/PTC/LoadData/",
+            "type": "POST",
+            "datatype": "json",
+
+        },
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
+        "columns": [
+
+            { "data": "PrabhagNo" },
+            { "data": "WardName_No" },
+
+
+            {
+                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+
+                    }
+                    else {
+                        //
+                        return 'Not Available';
+                    }
+                }
+            },
+
+            {
+                "data": "VermicultureProject", "render": function (data, type, full, meta) {
+
+                    if (full["VermicultureProject"] == 0 && full["NonVermicultureProject"] == 0) {
+
+                        return 'Not Available';
+
+                    }
+                    if (full["VermicultureProject"] == 1 && full["NonVermicultureProject"] == 0) {
+
+                        return 'Yes';
+
+                    }
+                    if (full["VermicultureProject"] == 0 && full["NonVermicultureProject"] == 1) {
+
+                        return 'No';
+
+                    }
+                }
+            },
+
+
+
+            { "data": "PropOwnerTelephoneNo" },
+            { "data": "NewPropertyNo" },
+            { "data": "PropertyNo" },
+            { "data": "OldHouseNo1" },
+
+
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            //   {
+            //"render": function (data, type, full, meta) {
+            //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+            //}, "width": "10%"
+            // },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+            /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
+        ]
+    });
+
+}
+
+
+function SevendatatableActive() {
+
+    $('#SevendatatableActive').DataTable({
+
+        //  "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once  
+        "pageLength": 5,
+        "searching": true,
+        destroy: true,
+
+        "ajax": {
+            "url": "/PTC/LoadData/",
+            "type": "POST",
+            "datatype": "json",
+
+        },
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
+        "columns": [
+
+            { "data": "PrabhagNo" },
+            { "data": "WardName_No" },
+
+
+            {
+                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+
+                    }
+                    else {
+                        //
+                        return 'Not Available';
+                    }
+                }
+            },
+
+            {
+                "data": "SolarWaterheater", "render": function (data, type, full, meta) {
+
+                    if (full["SolarWaterheater"] == 0 && full["NonSolarWaterheater"] == 0) {
+
+                        return 'Not Available';
+
+                    }
+                    if (full["SolarWaterheater"] == 1 && full["NonSolarWaterheater"] == 0) {
+
+                        return 'Yes';
+
+                    }
+                    if (full["SolarWaterheater"] == 0 && full["NonSolarWaterheater"] == 1) {
+
+                        return 'No';
+
+                    }
+                }
+            },
+
+
+
+            { "data": "PropOwnerTelephoneNo" },
+            { "data": "NewPropertyNo" },
+            { "data": "PropertyNo" },
+            { "data": "OldHouseNo1" },
+
+
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            //   {
+            //"render": function (data, type, full, meta) {
+            //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+            //}, "width": "10%"
+            // },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+            /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
+        ]
+    });
+
+}
+
+function EightdatatableActive() {
+
+    $('#EightdatatableActive').DataTable({
+
+        //  "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once  
+        "pageLength": 5,
+        "searching": true,
+        destroy: true,
+
+        "ajax": {
+            "url": "/PTC/LoadData/",
+            "type": "POST",
+            "datatype": "json",
+
+        },
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
+        "columns": [
+
+            { "data": "PrabhagNo" },
+            { "data": "WardName_No" },
+
+
+            {
+                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+
+                    }
+                    else {
+                        //
+                        return 'Not Available';
+                    }
+                }
+            },
+
+            { "data": "HeritageTree" },
+
+
+            { "data": "PropOwnerTelephoneNo" },
+            { "data": "NewPropertyNo" },
+            { "data": "PropertyNo" },
+            { "data": "OldHouseNo1" },
+
+
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            //   {
+            //"render": function (data, type, full, meta) {
+            //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+            //}, "width": "10%"
+            // },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+            /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
+        ]
+    });
+
+}
+
+
+function NinedatatableActive() {
+
+    $('#NinedatatableActive').DataTable({
+
+        //  "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once  
+        "pageLength": 5,
+        "searching": true,
+        destroy: true,
+
+        "ajax": {
+            "url": "/PTC/LoadData/",
+            "type": "POST",
+            "datatype": "json",
+
+        },
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
+        "columns": [
+
+            { "data": "PrabhagNo" },
+            { "data": "WardName_No" },
+
+
+            {
+                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+
+                    }
+                    else {
+                        //
+                        return 'Not Available';
+                    }
+                }
+            },
+
+            {
+                "data": "WaterConnection", "render": function (data, type, full, meta) {
+
+                    if (full["WaterConnection"] == 0 && full["NoWaterConnection"] == 0) {
+
+                        return 'Not Available';
+
+                    }
+                    if (full["WaterConnection"] == 1 && full["NoWaterConnection"] == 0) {
+
+                        return 'Yes';
+
+                    }
+                    if (full["WaterConnection"] == 0 && full["NoWaterConnection"] == 1) {
+
+                        return 'No';
+
+                    }
+                }
+            },
+
+            {
+                "data": "WaterConnectionResidential", "render": function (data, type, full, meta) {
+
+                    if (full["WaterConnectionResidential"] != null ) {
+
+                        return 'Residential';
+
+                    }
+                    if (full["WaterConnectionSpecialCategory"] != null) {
+
+                        return 'SpecialCategory';
+
+                    }
+                    if (full["WaterConnectionIndustrial"] != null) {
+
+                        return 'Industrial';
+
+                    }
+                }
+            },
+
+
+
+
+            { "data": "PropOwnerTelephoneNo" },
+            { "data": "NewPropertyNo" },
+            { "data": "PropertyNo" },
+            { "data": "OldHouseNo1" },
+
+
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            //   {
+            //"render": function (data, type, full, meta) {
+            //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+            //}, "width": "10%"
+            // },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+            /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
+        ]
+    });
+
+}
+
+function TendatatableActive() {
+
+    $('#TendatatableActive').DataTable({
+
+        //  "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once  
+        "pageLength": 5,
+        "searching": true,
+        destroy: true,
+
+        "ajax": {
+            "url": "/PTC/LoadData/",
+            "type": "POST",
+            "datatype": "json",
+
+        },
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
+        "columns": [
+
+            { "data": "PrabhagNo" },
+            { "data": "WardName_No" },
+
+
+            {
+                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+
+                    }
+                    else {
+                        //
+                        return 'Not Available';
+                    }
+                }
+            },
+
+            {
+                "data": "DoorLockResidential", "render": function (data, type, full, meta) {
+
+                    if (full["DoorLockResidential"] !=null) {
+
+                        return 'DoorLockResidential';
+
+                    }
+                    if (full["DoorLockSpecial"] != null) {
+
+                        return 'DoorLockSpecial';
+
+                    }
+                    if (full["DoorLockIndustrial"] != null) {
+
+                        return 'DoorLockIndustrial';
+
+                    }
+                }
+            },
+
+          
+
+
+
+
+            { "data": "PropOwnerTelephoneNo" },
+            { "data": "NewPropertyNo" },
+            { "data": "PropertyNo" },
+            { "data": "OldHouseNo1" },
+
+
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            //   {
+            //"render": function (data, type, full, meta) {
+            //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+            //}, "width": "10%"
+            // },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+            /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
+        ]
+    });
+
+}
+
+function ElevendatatableActive() {
+
+    $('#ElevendatatableActive').DataTable({
+
+        //  "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once  
+        "pageLength": 5,
+        "searching": true,
+        destroy: true,
+
+        "ajax": {
+            "url": "/PTC/LoadData/",
+            "type": "POST",
+            "datatype": "json",
+
+        },
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
+        "columns": [
+
+            { "data": "PrabhagNo" },
+            { "data": "WardName_No" },
+
+
+            {
+                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+
+                    }
+                    else {
+                        //
+                        return 'Not Available';
+                    }
+                }
+            },
+
+            {
+                "data": "FST", "render": function (data, type, full, meta) {
+
+                    if (full["FST"] != null) {
+
+                        return 'FST';
+
+                    }
+                    if (full["STS"] != null) {
+
+                        return 'STS';
+
+                    }
+                    if (full["Other"] != null) {
+
+                        return 'Other';
+
+                    }
+                }
+            },
+
+
+
+
+
+
+            { "data": "PropOwnerTelephoneNo" },
+            { "data": "NewPropertyNo" },
+            { "data": "PropertyNo" },
+            { "data": "OldHouseNo1" },
+
+
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            //   {
+            //"render": function (data, type, full, meta) {
+            //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+            //}, "width": "10%"
+            // },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+            /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
+        ]
+    });
+
+}
+
+function TwelvedatatableActive() {
+
+    $('#TwelvedatatableActive').DataTable({
+
+        //  "processing": true, // for show progress bar  
+        "serverSide": true, // for process server side  
+        "filter": true, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once  
+        "pageLength": 5,
+        "searching": true,
+        destroy: true,
+
+        "ajax": {
+            "url": "/PTC/LoadData/",
+            "type": "POST",
+            "datatype": "json",
+
+        },
+        "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
+        "columns": [
+
+            { "data": "PrabhagNo" },
+            { "data": "WardName_No" },
+
+
+            {
+                "data": "PropOwnerFirstName", "render": function (data, type, full, meta) {
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerLastName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($2) { return $2.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null && full["PropOwnerLastName"] == null && full["PropOwnerMiddleName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+                            + ' ' + (full["PropOwnerMiddleName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); }); + '</p>';
+
+                    }
+
+                    if (full["PropOwnerFirstName"] != null) {
+
+                        return '<p> ' + (full["PropOwnerFirstName"]).replace(new RegExp("(?:\\b|_)([a-z])", 'g'), function ($1) { return $1.toUpperCase(); })
+
+                    }
+                    else {
+                        //
+                        return 'Not Available';
+                    }
+                }
+            },
+            {
+                "data": "SGSK", "render": function (data, type, full, meta) {
+
+                    if (full["SGSK"] == 0 && full["NOSGSK"] == 0) {
+
+                        return 'Not Available';
+
+                    }
+                    if (full["SGSK"] == 1 && full["NOSGSK"] == 0) {
+
+                        return 'Yes';
+
+                    }
+                    if (full["SGSK"] == 0 && full["NOSGSK"] == 1) {
+
+                        return 'No';
+
+                    }
+                }
+            },
+            {
+                "data": "UnderGroundGutter", "render": function (data, type, full, meta) {
+
+                    if (full["UnderGroundGutter"] != null) {
+
+                        return 'UnderGroundGutter';
+
+                    }
+                    if (full["OpenGutter"] != null) {
+
+                        return 'OpenGutter';
+
+                    }
+                    if (full["OtherGutter"] != null) {
+
+                        return 'OtherGutter';
+
+                    }
+                }
+            },
+
+
+
+
+
+
+            { "data": "PropOwnerTelephoneNo" },
+            { "data": "NewPropertyNo" },
+            { "data": "PropertyNo" },
+            { "data": "OldHouseNo1" },
+
+
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" title="View"  style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" title="Download" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)"title="Download"  style="cursor:pointer"   onclick="DownloadQRCode(' + full["PropertyId"] + ')"  >Download'; }, "width": "10%" },
+            //   {
+            //"render": function (data, type, full, meta) {
+            //    return '<a  href="javascript:void(0)"  style="cursor:pointer"   onclick="Bill(' + full["PropertyId"] + ')"  >Bill &nbsp; /  <a href="javascript:void(0)"  style="cursor:pointer"  onclick = "SendRemainder(' + full["PropertyId"] + ')" > Bill Reminder</i>'
+            //}, "width": "10%"
+            // },
+            { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" style="cursor:pointer" title="Edit"  onclick="Edit(' + full["PropertyId"] + ')"  ><i class="material-icons edit-icon" style="font-size=18px!important">edit</i>&nbsp;<i class="material-icons" style="color: #0e91f0;font-size: 150%;">/</i>&nbsp; <a  href="javascript:void(0)"  title="Delete"  style="cursor:pointer" saveForm()  onclick="Delete(' + full["PropertyId"] + ')"  ><i class="material-icons delete-icon">delete</i>'; }, "width": "10%" }
+            /*   { "render": function (data, type, full, meta) { return '<a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="View(' + full["PropertyId"] + ')"  >View&nbsp; / <a  href="javascript:void(0)" class="tooltip1" style="cursor:pointer"   onclick="Download(' + full["PropertyId"] + ')"  > Download'; }, "width": "10%" }*/
+        ]
+    });
+
+}
+
 
 
 
