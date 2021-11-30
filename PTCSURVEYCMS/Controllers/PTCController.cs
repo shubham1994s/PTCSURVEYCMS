@@ -572,6 +572,20 @@ namespace PTCSURVEYCMS.Controllers
                             }
                         }
 
+                        //Roshan 
+                        if (arr[12] != "")
+                        {
+                            if (arr[11] == "Y")
+                            {
+                                customerData = customerData.Where(x => x.Rainwaterharvest == true).ToList();
+                            }
+                            if (arr[12] == "N")
+                            {
+                                customerData = customerData.Where(x => x.NonRainwaterharvest == true).ToList();
+                            }
+                            
+                        }
+
 
 
                     }
