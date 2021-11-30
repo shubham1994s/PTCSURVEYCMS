@@ -3523,6 +3523,37 @@ namespace BLL.Repository.Repository
             }
         }
 
+
+        public PropertyMasterVM GetHTNo(int Appid, int q)
+        {
+            try
+            {
+                using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+                {
+
+
+                    var Details = db.PropertyMasters.ToList();
+                    if (Details != null)
+                    {
+                        PropertyMasterVM HT = new PropertyMasterVM();
+
+                        HT.HTNoList =ListHtno(Appid);
+
+                        return HT;
+                    }
+                    else
+                    {
+                        return new PropertyMasterVM();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new PropertyMasterVM();
+            }
+        }
+
         public PropertyMasterVM GetPropertyNoList(int Appid, string pname)
         {
             try
@@ -3633,6 +3664,33 @@ namespace BLL.Repository.Repository
 
                             Value = (string.IsNullOrEmpty(x.PrabhagNo)) ? " " : x.PrabhagNo
                         }).Distinct().OrderBy(t => t.Text).ToList();                 
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return user;
+        }
+
+
+        public List<SelectListItem> ListHtno(int Appid)
+        {
+            var user = new List<SelectListItem>();
+
+            using (var db = new DEVPTCSURVEYMALEGAONEntities(Appid))
+            {
+                List<PropertyMaster> listObjects = (from obj in db.PropertyMasters
+
+                                                    where obj.IsDelete == false
+                                                    select obj).GroupBy(n => new { n.HeritageTree }).Select(g => g.FirstOrDefault())
+                                           .ToList();
+                try
+                {
+                    user = listObjects.Where(c => c.HeritageTree != null && c.HeritageTree == c.HeritageTree.Trim()).ToList()
+                        .Select(x => new SelectListItem
+                        {
+                            Text = (string.IsNullOrEmpty(x.HeritageTree)) ? " " : x.HeritageTree,
+
+                            Value = (string.IsNullOrEmpty(x.HeritageTree)) ? " " : x.HeritageTree
+                        }).Distinct().OrderBy(t => t.Text).ToList();
                 }
                 catch (Exception ex) { throw ex; }
             }
