@@ -1342,8 +1342,19 @@ namespace BLL.Repository.Repository
                     NoWaterConnection=x.NoWaterConnection,
                     WaterConnectionResidential=x.WaterConnectionResidential,
                     WaterConnectionSpecialCategory=x.WaterConnectionSpecialCategory,
-                    WaterConnectionIndustrial=x.WaterConnectionIndustrial
-                
+                    WaterConnectionIndustrial=x.WaterConnectionIndustrial,
+                    DoorLockResidential=x.DoorLockResidential,
+                    DoorLockSpecial=x.DoorLockSpecial,
+                    DoorLockIndustrial=x.DoorLockIndustrial,
+                    FST=x.FST,
+                    STS=x.STS,
+                    Other=x.Other,
+                    SGSK = x.SGSK,
+                    NOSGSK = x.NOSGSK,
+                    UnderGroundGutter=x.UnderGroundGutter,
+                    OpenGutter=x.OpenGutter,
+                    OtherGutter=x.OtherGutter
+
 
 
 

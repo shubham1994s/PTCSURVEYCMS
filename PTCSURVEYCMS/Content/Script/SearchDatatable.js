@@ -956,7 +956,7 @@ function SearchByStatus() {
     
     
     
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + DL + "," + NVA + "," + STK + "," + SGSK + "," + BUE ;
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + WC + "," + NVA + "," + DL + "," + STK + "," + SGSK + "," + BUE ;
 
     // alert(value );
 
