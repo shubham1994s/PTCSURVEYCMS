@@ -419,45 +419,38 @@
     <div class="d-flex flex-row back mb-3">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
 
                     <div class="row">
 
                         <div class="col-lg-2 pr-0"><p class="bt-text">अर्जदार श्री.</p></div>
-                        <div class="col-lg-7 pl-0 text-line">
+                        <div class="col-lg-6 pl-0 text-line">
                             @Html.DisplayFor(model => model.AppilcantName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </div>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-4 pr-0">
+                                    <p class="bt-text">
+                                        यांच्या दिनांक
+                                    </p>
+                                </div>
+                                <div class="col-lg-8 pl-0 text-line">
+                                    @Html.DisplayFor(model => model.ApplicantDate, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="row pt-2">
-                        <div class="col-lg-4 pr-0">
-                            <p class="bt-text">
-                                यांच्या दिनांक
-                            </p>
-                        </div>
-                        <div class="col-lg-8 pl-0 text-line">
-                            @Html.DisplayFor(model => model.ApplicantDate, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
-                        </div>
-                    </div>
-                </div>
+              
 
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
+            <div class="row pt-2">
+                 <div class="col-lg-3 pr-0"><p class="bt-text">अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
 
-                        <div class="col-lg-3 pr-0"><p class="bt-text">अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
-
-                        <div class="col-lg-7 pl-0 text-line">
+                  <div class="col-lg-7 pl-0 text-line">
                             @Html.DisplayFor(model => model.TaxRegister, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
-                        </div>
+                   </div>
 
-                    </div>
-
-
-
-                </div>
             </div>
             <div class="row pt-2">
                 <div class="col-lg-3 pr-0"><p class="bt-text">वरून सदर घराचा उतारा दिला आहे.</p></div>
@@ -472,7 +465,7 @@
         </div>
     </div>
 </div>
-  
+
 </div>
 
 <script>
