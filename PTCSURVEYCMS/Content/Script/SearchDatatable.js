@@ -2470,19 +2470,19 @@ function TendatatableActive() {
             {
                 "data": "DoorLockResidential", "render": function (data, type, full, meta) {
 
-                    if (full["DoorLockResidential"] !=null) {
+                    if (full["DoorLockResidential"] =="true") {
 
-                        return 'DoorLockResidential';
-
-                    }
-                    if (full["DoorLockSpecial"] != null) {
-
-                        return 'DoorLockSpecial';
+                        return 'घर बंद';
 
                     }
-                    if (full["DoorLockIndustrial"] != null) {
+                    if (full["DoorLockSpecial"] == "true") {
 
-                        return 'DoorLockIndustrial';
+                        return 'कायम घर बंद';
+
+                    }
+                    if (full["DoorLockIndustrial"] == "true") {
+
+                        return 'बाहेरून मोजमाप';
 
                     }
                 }
@@ -2570,19 +2570,31 @@ function ElevendatatableActive() {
             {
                 "data": "FST", "render": function (data, type, full, meta) {
 
-                    if (full["FST"] != null) {
+                    if (full["FST"] == 1) {
 
-                        return 'FST';
-
-                    }
-                    if (full["STS"] != null) {
-
-                        return 'STS';
+                        return 'फक्त सेप्टिक टैंक';
 
                     }
-                    if (full["Other"] != null) {
+                    else {
+                        return 'Not Available';
 
-                        return 'Other';
+                    }
+                    if (full["STS"] == 1) {
+
+                        return 'सेप्टिक टैंक + शोषखड्डा';
+
+                    }
+                    else {
+                        return 'Not Available';
+
+                    }
+                    if (full["Other"] == 1) {
+
+                        return 'इतर';
+
+                    }
+                    else {
+                        return 'Not Available';
 
                     }
                 }
