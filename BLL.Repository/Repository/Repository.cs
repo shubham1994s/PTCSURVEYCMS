@@ -1332,7 +1332,14 @@ namespace BLL.Repository.Repository
                     Name10 = x.Name10,
                     Name11 = x.Name11,
                     Name12 = x.Name12,
-                   
+                    Rainwaterharvest=x.Rainwaterharvest,
+                    NonRainwaterharvest=x.NonRainwaterharvest,
+                    VermicultureProject=x.VermicultureProject,
+                    NonVermicultureProject=x.NonVermicultureProject,
+                    SolarWaterheater=x.SolarWaterheater,
+                    NonSolarWaterheater=x.NonSolarWaterheater
+
+
 
 
                 }).ToList();
