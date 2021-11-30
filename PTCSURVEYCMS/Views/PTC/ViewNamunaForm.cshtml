@@ -56,6 +56,8 @@
         width: 100%;
     }
 </style>
+
+
 @*@Styles.Render("~/Content/AddEditCSS")*@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
@@ -79,12 +81,17 @@
 
 <div class="container-fluid">
     <div class="d-flex justify-content-end pr-3">
-        <button type="button" style="padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
+        @*<button type="button" style="padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
             line-height: 1.5;border-radius: 3px;border-style: none;" onclick="window.print();">
+            Genrate Pdf
+        </button>*@
+        <button type="button" style="padding:5px 10px;color: #fff;background-color: #428bca;border-color: #357ebd;font-size: 13px;
+            line-height: 1.5;border-radius: 3px;border-style: none;" onclick="printDiv('printMe')">
             Genrate Pdf
         </button>
     </div>
     @* Building Name Section A *@
+<div id='printMe'>
     <div class="container">
         <div class=""> <h6 class="text-right mb-3">नामुना क्र. ४३</h6></div>
         <div class=""> <h6 class="text-right mb-3">@ViewBag.Appname_mar</h6></div>
@@ -192,18 +199,16 @@
     </div>
 
     <div class="d-flex flex-row back mb-3">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="row">
-                        <div class="col-lg-2"></div>
                         <div class="col-lg-3 pr-0"><p class="bt-text">नक्कल तयार करणार</p></div>
                         <div class="col-lg-7 pl-0 text-line">
                             @Html.DisplayFor(model => model.NTK, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </div>
                     </div>
                     <div class="row pt-2">
-                        <div class="col-lg-2"></div>
                         <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार</p></div>
                         <div class="col-lg-7 pl-0 text-line">
                             @Html.DisplayFor(model => model.RP, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
@@ -256,7 +261,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div  style="break-before:page" class="container">
         <div class=""><h6 class="text-left mb-3">नियम ७४ पहा</h6></div>
         <div class=""><h6 class="text-left mb-3">@ViewBag.Appname_mar</h6></div>
         <div class=""><h6 class="text-center mb-3">20&nbsp;&nbsp;&nbsp;&nbsp;- 21&nbsp;&nbsp;&nbsp;&nbsp; या वर्षासाठी कर आकारणीस पात्र असलेल्या इमारती आणि जमिनी यांची आकारणी सुचि </h6></div>
@@ -414,45 +419,39 @@
     <div class="d-flex flex-row back mb-3">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
 
                     <div class="row">
 
-                        <div class="col-lg-2 pr-0"><p class="bt-text">अर्जदार श्री.</p></div>
-                        <div class="col-lg-7 pl-0 text-line">
+                        <div class="col-lg-1 pr-0"><p class="bt-text">अर्जदार श्री.</p></div>
+                        <div class="col-lg-6 pl-0 text-line">
                             @Html.DisplayFor(model => model.AppilcantName, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
                         </div>
+                        <div class="col-lg-1 pr-0"></div>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-4 pr-0">
+                                    <p class="bt-text">
+                                        यांच्या दिनांक
+                                    </p>
+                                </div>
+                                <div class="col-lg-8 pl-0 text-line">
+                                    @Html.DisplayFor(model => model.ApplicantDate, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="row pt-2">
-                        <div class="col-lg-4 pr-0">
-                            <p class="bt-text">
-                                यांच्या दिनांक
-                            </p>
-                        </div>
-                        <div class="col-lg-8 pl-0 text-line">
-                            @Html.DisplayFor(model => model.ApplicantDate, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
-                        </div>
-                    </div>
-                </div>
+              
 
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
+            <div class="row pt-2">
+                 <div class="col-lg-3 pr-0"><p class="bt-text">अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
 
-                        <div class="col-lg-3 pr-0"><p class="bt-text">अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
-
-                        <div class="col-lg-7 pl-0 text-line">
+                  <div class="col-lg-7 pl-0 text-line">
                             @Html.DisplayFor(model => model.TaxRegister, new { @class = "p-5", style = "font-family:Arial, FontAwesome" })
-                        </div>
+                   </div>
 
-                    </div>
-
-
-
-                </div>
             </div>
             <div class="row pt-2">
                 <div class="col-lg-3 pr-0"><p class="bt-text">वरून सदर घराचा उतारा दिला आहे.</p></div>
@@ -466,6 +465,8 @@
             </div>
         </div>
     </div>
+</div>
+
 </div>
 
 <script>
@@ -503,4 +504,19 @@
                                 //					     pdf.save(filename);
                                 //					 });
                                 //}
+</script>
+<script>
+    function printDiv(printMe) {
+        var printContents = document.getElementById(printMe).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+
+    }
 </script>
