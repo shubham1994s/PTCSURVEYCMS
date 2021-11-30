@@ -277,6 +277,7 @@ function show1() {
     document.getElementById('byname').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('RWHT').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
@@ -342,6 +343,10 @@ function show2() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
     document.getElementById('filterbystatus').style.display = 'block';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
