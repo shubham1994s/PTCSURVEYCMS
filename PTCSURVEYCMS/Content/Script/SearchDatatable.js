@@ -277,6 +277,7 @@ function show1() {
     document.getElementById('byname').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
+    document.getElementById('RWHT').style.display = 'none';
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
@@ -342,6 +343,10 @@ function show2() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
     document.getElementById('filterbystatus').style.display = 'block';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
@@ -500,6 +505,16 @@ function show7() {
     document.getElementById('tapshil').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('const').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
@@ -995,6 +1010,7 @@ function show15() {
     document.getElementById('filter').style.display = 'none';
     document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'none';
