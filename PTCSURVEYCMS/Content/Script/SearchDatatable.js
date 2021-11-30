@@ -400,7 +400,9 @@ function show4() {
     document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
     document.getElementById('filterbyRWH').style.display = 'none';
-
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('SGSK').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
 
 
 }
@@ -1006,6 +1008,7 @@ function show15() {
     document.getElementById('DLT').style.display = 'none';
     document.getElementById('STKT').style.display = 'none';
     document.getElementById('SGSKT').style.display = 'block';
+    document.getElementById('SGSK').style.display = 'block';
     document.getElementById('BUET').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
