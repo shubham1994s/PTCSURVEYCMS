@@ -466,8 +466,6 @@ namespace PTCSURVEYCMS.Controllers
                                     //Sorting    
                                     if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
                                     {
-
-
                                         customerData = customerData.OrderByDescending(x => x.PropertyId).ToList();
                                     }
 
@@ -595,6 +593,8 @@ namespace PTCSURVEYCMS.Controllers
 
                         }
 
+                        
+
                         if (arr[14] != "")
                         {
                             if (arr[14] == "Y")
@@ -609,51 +609,151 @@ namespace PTCSURVEYCMS.Controllers
                         }
 
 
-                        if (arr[14] != "")
+                        if (arr[16] != "")
                         {
-                            if (arr[14] == "Y")
-                            {
-                                customerData = customerData.Where(x => x.SolarWaterheater == true).ToList();
-                            }
-                            if (arr[14] == "N")
-                            {
-                                customerData = customerData.Where(x => x.NonVermicultureProject == true).ToList();
-                            }
-
-                        }
-
-
-                        if (arr[15] != "")
-                        {
-                            if (arr[15] == "Y")
+                            if (arr[16] == "Y")
                             {
                                 customerData = customerData.Where(x => x.WaterConnection == true).ToList();
                             }
-                            if (arr[15] == "N")
+                            if (arr[16] == "N")
                             {
                                 customerData = customerData.Where(x => x.NoWaterConnection == true).ToList();
                             }
 
                         }
 
-                        if (arr[16] != "")
+                        if (arr[17] != "")
                         {
-                            if (arr[16] == "R")
+                            if (arr[17] == "R")
                             {
                                 customerData = customerData.Where(x => x.WaterConnectionResidential == "true").ToList();
                             }
                             else
                             {
-                                customerData = customerData.Where(x => x.WaterConnectionResidential == "false").ToList();
+                               // customerData = customerData.Where(x => x.WaterConnectionResidential == "false").ToList();
                             }
 
-                            if (arr[16] == "S")
+                            if (arr[17] == "S")
                             {
-                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.WaterConnectionSpecialCategory) ? " " : x.WaterConnectionSpecialCategory.ToLower()) == x.WaterConnectionSpecialCategory.ToLower()).ToList();
+                                customerData = customerData.Where(x => x.WaterConnectionSpecialCategory != null).ToList();
                             }
-                            if (arr[16] == "I")
+                            if (arr[17] == "I")
                             {
-                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.WaterConnectionSpecialCategory) ? " " : x.WaterConnectionSpecialCategory.ToLower()) == x.WaterConnectionSpecialCategory.ToLower()).ToList();
+                                customerData = customerData.Where(x => x.WaterConnectionIndustrial == "true").ToList();
+                            }
+
+                        }
+
+                        if(arr[16]!="" && arr[17] != "")
+                        {
+                            if (arr[16] == "Y" && arr[17] == "R")
+                            {
+                                customerData = customerData.Where(x => x.WaterConnection == true && x.WaterConnectionResidential == "true").ToList();
+                            }
+                            if (arr[16] == "N" && arr[17] == "R")
+                            {
+                                customerData = customerData.Where(x => x.NoWaterConnection == true && x.WaterConnectionResidential == "true").ToList();
+                            }
+
+                            if (arr[16] == "Y" && arr[17] == "S")
+                            {
+                                customerData = customerData.Where(x => x.WaterConnection == true && x.WaterConnectionSpecialCategory!="" ).ToList();
+                            }
+                            if (arr[16] == "N" && arr[17] == "S")
+                            {
+                                customerData = customerData.Where(x => x.NoWaterConnection == true && x.WaterConnectionSpecialCategory != "").ToList();
+                            }
+
+                            if (arr[16] == "Y" && arr[17] == "I")
+                            {
+                                customerData = customerData.Where(x => x.WaterConnection == true && x.WaterConnectionIndustrial == "false").ToList();
+                            }
+                            if (arr[16] == "N" && arr[17] == "I")
+                            {
+                                customerData = customerData.Where(x => x.NoWaterConnection == true && x.WaterConnectionIndustrial == "false").ToList();
+                            }
+
+
+                            if (arr[18] != "")
+                            {
+                                if (arr[18] == "HC")
+                                {
+                                    customerData = customerData.Where(x => x.DoorLockResidential =="true").ToList();
+                                }
+                                if (arr[18] == "PCL")
+                                {
+                                    customerData = customerData.Where(x => x.DoorLockSpecial == "true").ToList();
+                                }
+                                if (arr[18] == "OM")
+                                {
+                                    customerData = customerData.Where(x => x.DoorLockIndustrial == "true").ToList();
+                                }
+
+                            }
+
+                            if (arr[19] != "")
+                            {
+                                if (arr[19] == "FST")
+                                {
+                                    customerData = customerData.Where(x => x.FST == true).ToList();
+                                }
+                                else
+                                {
+                                   // customerData = customerData.Where(x => x.FST == false).ToList();
+                                }
+
+                                if (arr[19] == "STS")
+                                {
+                                    customerData = customerData.Where(x => x.STS == true).ToList();
+                                }
+                                else
+                                {
+                                    //customerData = customerData.Where(x => x.STS == false).ToList();
+                                }
+
+                                if (arr[19] == "Other")
+                                {
+                                    customerData = customerData.Where(x => x.Other == true).ToList();
+                                }
+                                else
+                                {
+                                   // customerData = customerData.Where(x => x.Other == false).ToList();
+                                }
+
+
+                            }
+
+                            if (arr[20] != "")
+                            {
+                                if (arr[20] == "Y")
+                                {
+                                    customerData = customerData.Where(x => x.SGSK == true).ToList();
+                                }
+                                if (arr[20] == "N")
+                                {
+                                    customerData = customerData.Where(x => x.NOSGSK == true).ToList();
+                                }
+
+                            }
+
+                            if (arr[21] != "")
+                            {
+                                if (arr[21] == "BG")
+                                {
+                                    customerData = customerData.Where(x => x.UnderGroundGutter == "true").ToList();
+                                }
+                                if (arr[21] == "UG")
+                                {
+                                    customerData = customerData.Where(x => x.OpenGutter == "true").ToList();
+                                }
+                                if (arr[21] == "O")
+                                {
+                                    customerData = customerData.Where(x => x.OtherGutter == true).ToList();
+                                }
+                                else
+                                {
+                                    //customerData = customerData.Where(x => x.OtherGutter == false).ToList();
+                                }
                             }
 
                         }
