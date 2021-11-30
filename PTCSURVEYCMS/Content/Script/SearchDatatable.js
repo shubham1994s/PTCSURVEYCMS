@@ -515,7 +515,7 @@ function show9() {
     document.getElementById('WCT').style.display = 'none';
     document.getElementById('NVAT').style.display = 'none';
     document.getElementById('DLT').style.display = 'none';
-    \document.getElementById('STKT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
     document.getElementById('CPT').style.display = 'block';
     $("#CP").empty();
     $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
