@@ -315,6 +315,10 @@ function show2() {
     document.getElementById('const').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('secondtable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    PropertyActive();
     document.getElementById('byname').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
@@ -328,9 +332,8 @@ function show2() {
     document.getElementById('filterbystatus').style.display = 'block';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
-    document.getElementById('secondtable').style.display = 'none';
-    document.getElementById('Thirdtable').style.display = 'none';
-    document.getElementById('Fourthtable').style.display = 'block';
+  
+   
 
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
@@ -347,7 +350,7 @@ function show2() {
     document.getElementById('Name').value = ''
     document.getElementById('test').value = ''
     document.getElementById('PRONOBYNAME').value = ''
-    PropertyActive();
+   
 }
 function show3() {
     ActiveEmployee();
