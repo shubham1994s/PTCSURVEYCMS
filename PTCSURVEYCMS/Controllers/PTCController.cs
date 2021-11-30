@@ -516,8 +516,6 @@ namespace PTCSURVEYCMS.Controllers
                                     //Sorting    
                                     if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
                                     {
-
-
                                         customerData = customerData.OrderByDescending(x => x.PropertyId).ToList();
                                     }
 
@@ -606,6 +604,56 @@ namespace PTCSURVEYCMS.Controllers
                             if (arr[14] == "N")
                             {
                                 customerData = customerData.Where(x => x.NonVermicultureProject == true).ToList();
+                            }
+
+                        }
+
+
+                        if (arr[14] != "")
+                        {
+                            if (arr[14] == "Y")
+                            {
+                                customerData = customerData.Where(x => x.SolarWaterheater == true).ToList();
+                            }
+                            if (arr[14] == "N")
+                            {
+                                customerData = customerData.Where(x => x.NonVermicultureProject == true).ToList();
+                            }
+
+                        }
+
+
+                        if (arr[15] != "")
+                        {
+                            if (arr[15] == "Y")
+                            {
+                                customerData = customerData.Where(x => x.WaterConnection == true).ToList();
+                            }
+                            if (arr[15] == "N")
+                            {
+                                customerData = customerData.Where(x => x.NoWaterConnection == true).ToList();
+                            }
+
+                        }
+
+                        if (arr[16] != "")
+                        {
+                            if (arr[16] == "R")
+                            {
+                                customerData = customerData.Where(x => x.WaterConnectionResidential == "true").ToList();
+                            }
+                            else
+                            {
+                                customerData = customerData.Where(x => x.WaterConnectionResidential == "false").ToList();
+                            }
+
+                            if (arr[16] == "S")
+                            {
+                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.WaterConnectionSpecialCategory) ? " " : x.WaterConnectionSpecialCategory.ToLower()) == x.WaterConnectionSpecialCategory.ToLower()).ToList();
+                            }
+                            if (arr[16] == "I")
+                            {
+                                customerData = customerData.Where(x => (string.IsNullOrEmpty(x.WaterConnectionSpecialCategory) ? " " : x.WaterConnectionSpecialCategory.ToLower()) == x.WaterConnectionSpecialCategory.ToLower()).ToList();
                             }
 
                         }

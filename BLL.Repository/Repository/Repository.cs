@@ -1337,7 +1337,14 @@ namespace BLL.Repository.Repository
                     VermicultureProject=x.VermicultureProject,
                     NonVermicultureProject=x.NonVermicultureProject,
                     SolarWaterheater=x.SolarWaterheater,
-                    NonSolarWaterheater=x.NonSolarWaterheater
+                    NonSolarWaterheater=x.NonSolarWaterheater,
+                    WaterConnection=x.WaterConnection,
+                    NoWaterConnection=x.NoWaterConnection,
+                    WaterConnectionResidential=x.WaterConnectionResidential,
+                    WaterConnectionSpecialCategory=x.WaterConnectionSpecialCategory,
+                    WaterConnectionIndustrial=x.WaterConnectionIndustrial
+                
+
 
 
 
