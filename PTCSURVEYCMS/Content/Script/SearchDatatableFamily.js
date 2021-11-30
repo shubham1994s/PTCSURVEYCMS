@@ -342,6 +342,10 @@ function show2() {
     document.getElementById('const').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
+    document.getElementById('secondtable').style.display = 'none';
+    document.getElementById('Thirdtable').style.display = 'none';
+    document.getElementById('Fourthtable').style.display = 'block';
+    PropertyActive();
     document.getElementById('byname').style.display = 'none';
     document.getElementById('byprono').style.display = 'none';
     document.getElementById('tapshil').style.display = 'none';
@@ -389,7 +393,7 @@ function show2() {
     document.getElementById('Name').value = ''
     document.getElementById('test').value = ''
     document.getElementById('PRONOBYNAME').value = ''
-    PropertyActive();
+   
 }
 function show3() {
     ActiveEmployee();
