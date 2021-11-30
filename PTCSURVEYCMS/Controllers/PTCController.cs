@@ -593,8 +593,6 @@ namespace PTCSURVEYCMS.Controllers
 
                         }
 
-                        
-
                         if (arr[14] != "")
                         {
                             if (arr[14] == "Y")
@@ -608,14 +606,19 @@ namespace PTCSURVEYCMS.Controllers
 
                         }
 
-                        if (arr[15] != "")
+                        if (arr[15] != "null")
                         {
-                            String s = arr[15].ToString();
-                            customerData = customerData.Where(x => x.HeritageTree == s).ToList();
-                         
+                            if (arr[15] == "All")
+                            {
+
+                            }
+                            else
+                            {
+                                String s = arr[15].ToString();
+                                customerData = customerData.Where(x => x.HeritageTree == s).ToList();
+                            }
+
                         }
-
-
 
                         if (arr[16] != "")
                         {
@@ -638,7 +641,7 @@ namespace PTCSURVEYCMS.Controllers
                             }
                             else
                             {
-                               // customerData = customerData.Where(x => x.WaterConnectionResidential == "false").ToList();
+                                // customerData = customerData.Where(x => x.WaterConnectionResidential == "false").ToList();
                             }
 
                             if (arr[17] == "S")
@@ -652,7 +655,7 @@ namespace PTCSURVEYCMS.Controllers
 
                         }
 
-                        if(arr[16]!="" && arr[17] != "")
+                        if (arr[16] != "" && arr[17] != "")
                         {
                             if (arr[16] == "Y" && arr[17] == "R")
                             {
@@ -665,7 +668,7 @@ namespace PTCSURVEYCMS.Controllers
 
                             if (arr[16] == "Y" && arr[17] == "S")
                             {
-                                customerData = customerData.Where(x => x.WaterConnection == true && x.WaterConnectionSpecialCategory!="" ).ToList();
+                                customerData = customerData.Where(x => x.WaterConnection == true && x.WaterConnectionSpecialCategory != "").ToList();
                             }
                             if (arr[16] == "N" && arr[17] == "S")
                             {
@@ -681,89 +684,88 @@ namespace PTCSURVEYCMS.Controllers
                                 customerData = customerData.Where(x => x.NoWaterConnection == true && x.WaterConnectionIndustrial == "false").ToList();
                             }
 
+                        }
 
-                            if (arr[18] != "")
+                        if (arr[18] != "")
+                        {
+                            if (arr[18] == "HC")
                             {
-                                if (arr[18] == "HC")
-                                {
-                                    customerData = customerData.Where(x => x.DoorLockResidential =="true").ToList();
-                                }
-                                if (arr[18] == "PCL")
-                                {
-                                    customerData = customerData.Where(x => x.DoorLockSpecial == "true").ToList();
-                                }
-                                if (arr[18] == "OM")
-                                {
-                                    customerData = customerData.Where(x => x.DoorLockIndustrial == "true").ToList();
-                                }
-
+                                customerData = customerData.Where(x => x.DoorLockResidential == "true").ToList();
+                            }
+                            if (arr[18] == "PCL")
+                            {
+                                customerData = customerData.Where(x => x.DoorLockSpecial == "true").ToList();
+                            }
+                            if (arr[18] == "OM")
+                            {
+                                customerData = customerData.Where(x => x.DoorLockIndustrial == "true").ToList();
                             }
 
-                            if (arr[19] != "")
+                        }
+
+                        if (arr[19] != "")
+                        {
+                            if (arr[19] == "FST")
                             {
-                                if (arr[19] == "FST")
-                                {
-                                    customerData = customerData.Where(x => x.FST == true).ToList();
-                                }
-                                else
-                                {
-                                   // customerData = customerData.Where(x => x.FST == false).ToList();
-                                }
-
-                                if (arr[19] == "STS")
-                                {
-                                    customerData = customerData.Where(x => x.STS == true).ToList();
-                                }
-                                else
-                                {
-                                    //customerData = customerData.Where(x => x.STS == false).ToList();
-                                }
-
-                                if (arr[19] == "Other")
-                                {
-                                    customerData = customerData.Where(x => x.Other == true).ToList();
-                                }
-                                else
-                                {
-                                   // customerData = customerData.Where(x => x.Other == false).ToList();
-                                }
-
-
+                                customerData = customerData.Where(x => x.FST == true).ToList();
+                            }
+                            else
+                            {
+                                // customerData = customerData.Where(x => x.FST == false).ToList();
                             }
 
-                            if (arr[20] != "")
+                            if (arr[19] == "STS")
                             {
-                                if (arr[20] == "Y")
-                                {
-                                    customerData = customerData.Where(x => x.SGSK == true).ToList();
-                                }
-                                if (arr[20] == "N")
-                                {
-                                    customerData = customerData.Where(x => x.NOSGSK == true).ToList();
-                                }
-
+                                customerData = customerData.Where(x => x.STS == true).ToList();
+                            }
+                            else
+                            {
+                                //customerData = customerData.Where(x => x.STS == false).ToList();
                             }
 
-                            if (arr[21] != "")
+                            if (arr[19] == "Other")
                             {
-                                if (arr[21] == "BG")
-                                {
-                                    customerData = customerData.Where(x => x.UnderGroundGutter == "true").ToList();
-                                }
-                                if (arr[21] == "UG")
-                                {
-                                    customerData = customerData.Where(x => x.OpenGutter == "true").ToList();
-                                }
-                                if (arr[21] == "O")
-                                {
-                                    customerData = customerData.Where(x => x.OtherGutter == true).ToList();
-                                }
-                                else
-                                {
-                                    //customerData = customerData.Where(x => x.OtherGutter == false).ToList();
-                                }
+                                customerData = customerData.Where(x => x.Other == true).ToList();
+                            }
+                            else
+                            {
+                                // customerData = customerData.Where(x => x.Other == false).ToList();
                             }
 
+
+                        }
+
+                        if (arr[20] != "")
+                        {
+                            if (arr[20] == "Y")
+                            {
+                                customerData = customerData.Where(x => x.SGSK == true).ToList();
+                            }
+                            if (arr[20] == "N")
+                            {
+                                customerData = customerData.Where(x => x.NOSGSK == true).ToList();
+                            }
+
+                        }
+
+                        if (arr[21] != "")
+                        {
+                            if (arr[21] == "BG")
+                            {
+                                customerData = customerData.Where(x => x.UnderGroundGutter == "true").ToList();
+                            }
+                            if (arr[21] == "UG")
+                            {
+                                customerData = customerData.Where(x => x.OpenGutter == "true").ToList();
+                            }
+                            if (arr[21] == "O")
+                            {
+                                customerData = customerData.Where(x => x.OtherGutter == true).ToList();
+                            }
+                            else
+                            {
+                                //customerData = customerData.Where(x => x.OtherGutter == false).ToList();
+                            }
                         }
 
                         //Roshan End 30-11-2021
