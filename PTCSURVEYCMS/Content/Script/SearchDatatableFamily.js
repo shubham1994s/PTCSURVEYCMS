@@ -2,6 +2,7 @@
 
 
 $(document).ready(function () {
+
     // debugger;
     /*  document.getElementById('secondtable').style.display = 'block';*/
     var url_string = window.location.href; //window.location.href
@@ -284,6 +285,32 @@ function show1() {
     document.getElementById('secondtable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'none';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
+    document.getElementById('filterbyRWH').style.display = 'none';
+    document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
 
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
@@ -326,11 +353,26 @@ function show2() {
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
     document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbySEP').style.display = 'block';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('secondtable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
+    document.getElementById('filterbyRWH').style.display = 'none';
+    document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
 
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
@@ -395,6 +437,7 @@ function show5() {
     document.getElementById('filterbyname').style.display = 'block';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
+    document.getElementById('filterbyRWH').style.display = 'none';
 
 }
 
@@ -425,6 +468,33 @@ function show6() {
     document.getElementById('secondtable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'block';
     document.getElementById('Fourthtable').style.display = 'none';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
+    document.getElementById('filterbyRWH').style.display = 'none';
+    document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
+
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
 
@@ -483,6 +553,22 @@ function show7() {
     document.getElementById('STKT').style.display = 'none';
     document.getElementById('SGSKT').style.display = 'none';
     document.getElementById('BUET').style.display = 'none';
+    document.getElementById('filterbyRWH').style.display = 'none';
+    document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
 
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' >Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
@@ -534,6 +620,21 @@ function show8() {
     document.getElementById('RWHT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'block';
     document.getElementById('Fifthtable').style.display = 'block';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
+
     $("#RWH").empty();
     $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
 
@@ -564,7 +665,7 @@ function show9() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
@@ -583,6 +684,21 @@ function show9() {
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
     document.getElementById('filterbyCP').style.display = 'block';
+    document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'block';
+    document.getElementById('Sixthtable').style.display = 'block';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
 
     $("#CP").empty();
     $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
@@ -613,7 +729,7 @@ function show10() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
@@ -631,6 +747,21 @@ function show10() {
     document.getElementById('SEPT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'block';
+    document.getElementById('Seventable').style.display = 'block';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
+
     $("#SEP").empty();
     $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
 
@@ -660,7 +791,7 @@ function show11() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
@@ -706,7 +837,7 @@ function show12() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
@@ -724,6 +855,21 @@ function show12() {
     document.getElementById('NVAT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'block';
+    document.getElementById('Ninetable').style.display = 'block';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
+
     $("#WC").empty();
     $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
     $("#NVA").empty();
@@ -755,7 +901,7 @@ function show13() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
@@ -773,6 +919,19 @@ function show13() {
     document.getElementById('DLT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'block';
+    document.getElementById('Tentable').style.display = 'block';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+
     $("#DL").empty();
     $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
 
@@ -803,7 +962,7 @@ function show14() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
@@ -821,6 +980,19 @@ function show14() {
     document.getElementById('STKT').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'block';
+    document.getElementById('Eleventable').style.display = 'block';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
+
     $("#STK").empty();
     $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
     document.getElementById('CPNO').value = ''
@@ -849,7 +1021,7 @@ function show15() {
     document.getElementById('filterbyname').style.display = 'none';
     document.getElementById('filterbyProperty').style.display = 'none';
     document.getElementById('filter').style.display = 'none';
-    document.getElementById('filterbystatus').style.display = 'block';
+    document.getElementById('filterbystatus').style.display = 'none';
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('filterbyHT').style.display = 'none';
     document.getElementById('firsttable').style.display = 'none';
@@ -868,6 +1040,19 @@ function show15() {
     document.getElementById('BUET').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('filterbyCP').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'block';
+    document.getElementById('Twelvetable').style.display = 'block';
+
     $("#SGSK").empty();
     $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
     $("#BUE").empty();
