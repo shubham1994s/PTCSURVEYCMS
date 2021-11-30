@@ -134,7 +134,7 @@ var url;
 function Download(ID) {
     debugger;
 
-    url = "/PTC/ViewSurveyForm?q=" + ID;
+    url = "/PTC/ViewNamunaForm?q=" + ID;
 
     var myWindow;
     myWindow = window.open(url, "myWindow", "_blank", 'fullscreen=yes');

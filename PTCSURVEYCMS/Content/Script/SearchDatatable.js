@@ -6,7 +6,7 @@ $(document).ready(function () {
     /* document.getElementById('secondtable').style.display = 'block';*/
 
     document.getElementById('filterbyProperty').style.display = 'none';
-
+    show1();
     FillPrabhagListNo();
     FillWardListNo();
     FillCEDate();
@@ -263,6 +263,16 @@ function show1() {
     document.getElementById('firsttable').style.display = 'block';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'none';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
 
     $("#OCNOY").empty();
     $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
@@ -300,6 +310,16 @@ function show2() {
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'none';
     document.getElementById('Fourthtable').style.display = 'block';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
 
@@ -383,6 +403,16 @@ function show6() {
     document.getElementById('firsttable').style.display = 'none';
     document.getElementById('Thirdtable').style.display = 'block';
     document.getElementById('Fourthtable').style.display = 'none';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     //  ActiveEmployee();
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
@@ -470,6 +500,8 @@ function show8() {
     document.getElementById('NVAT').style.display = 'none';
     document.getElementById('DLT').style.display = 'none';
     document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     document.getElementById('RWHT').style.display = 'block';
 
     
@@ -515,7 +547,9 @@ function show9() {
     document.getElementById('WCT').style.display = 'none';
     document.getElementById('NVAT').style.display = 'none';
     document.getElementById('DLT').style.display = 'none';
-    \document.getElementById('STKT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     document.getElementById('CPT').style.display = 'block';
     $("#CP").empty();
     $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
@@ -559,6 +593,8 @@ function show10() {
     document.getElementById('NVAT').style.display = 'none';
     document.getElementById('DLT').style.display = 'none';
     document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     document.getElementById('SEPT').style.display = 'block';
     $("#SEP").empty();
     $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
@@ -602,6 +638,8 @@ function show11() {
     document.getElementById('SEPT').style.display = 'none';
     document.getElementById('DLT').style.display = 'none';
     document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     document.getElementById('HTT').style.display = 'block';
    
     document.getElementById('CPNO').value = ''
@@ -643,6 +681,8 @@ function show12() {
     document.getElementById('HTT').style.display = 'none';
     document.getElementById('DLT').style.display = 'none';
     document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     document.getElementById('WCT').style.display = 'block';
     document.getElementById('NVAT').style.display = 'block';
     $("#WC").empty();
@@ -688,6 +728,9 @@ function show13() {
     document.getElementById('HTT').style.display = 'none';
     document.getElementById('WCT').style.display = 'none';
     document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     document.getElementById('DLT').style.display = 'block';
     $("#DL").empty();
     $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
@@ -732,6 +775,8 @@ function show14() {
     document.getElementById('WCT').style.display = 'none';
     document.getElementById('NVAT').style.display = 'none';
     document.getElementById('DLT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     document.getElementById('STKT').style.display = 'block'; 
     $("#STK").empty();
     $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
@@ -878,8 +923,17 @@ function SearchByStatus() {
     RWH = $('#RWH').val();
     CP = $('#CP').val();
     SEP = $('#SEP').val();
-
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP;
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val(); 
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
+    
+    
+    
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + DL + "," + NVA + "," + STK + "," + SGSK + "," + BUE ;
 
     // alert(value );
 
