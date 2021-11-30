@@ -500,6 +500,16 @@ function show7() {
     document.getElementById('tapshil').style.display = 'block';
     document.getElementById('common').style.display = 'none';
     document.getElementById('ConsPerNo').style.display = 'none';
+    document.getElementById('RWHT').style.display = 'none';
+    document.getElementById('CPT').style.display = 'none';
+    document.getElementById('SEPT').style.display = 'none';
+    document.getElementById('HTT').style.display = 'none';
+    document.getElementById('WCT').style.display = 'none';
+    document.getElementById('NVAT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('STKT').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
     document.getElementById('adfilbtn').style.display = 'block';
     document.getElementById('const').style.display = 'none';
     document.getElementById('consstate').style.display = 'none';
