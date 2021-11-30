@@ -15,6 +15,7 @@
 
 
 @*<script src="~/Content/theme-assets/assets/js/SearchDatatable.js"></script>*@
+
 <script src="~/Content/Script/SearchDatatableFamily.js"></script>
 <style>
     body {
@@ -209,7 +210,9 @@
     #Thirdtable, #Fourthtable {
         display: none;
     }
-    
+    #RWHT, #CPT, #SEPT, #HTT, #WCT, #NVAT, #DLT, #STKT, #SGSKT, #BUET {
+        display: none;
+    }
 </style>
 
 
@@ -265,9 +268,9 @@
                         <div class="row sfp">
 
                             @*<div class="col-lg-4 form-group">
-                                    <input type="radio" name="tab" value="igotnone" onclick="None();" />
-                                    काहीही नाही / None
-                                </div>*@
+            <input type="radio" name="tab" value="igotnone" onclick="None();" />
+            काहीही नाही / None
+        </div>*@
                             <div class="col-lg-2 form-group cpr cptb fbbc borright">
                                 <input type="radio" name="tab" value="igotone" onclick="show1();" />
                                 <label> बांधकाम वर्ष / Const. Date</label>
@@ -287,7 +290,53 @@
                                 <input type="radio" name="tab" value="igotsix" onclick="show7();" />
                                 <label>  कुटुंबातील सदस्ययांचा तपशील </label>
                             </div>
+                            <div class="col-lg-3 form-group cptb fbbc">
 
+                                <input type="radio" name="tab" value="igotsix" onclick="show8();" />
+                                <label>जलपुनर्भरण व्यवस्था</label>
+                            </div>
+
+                            <div class="col-lg-3 form-group cptb fbbc">
+
+                                <input type="radio" name="tab" value="igotsix" onclick="show9();" />
+                                <label>खतनिर्माती प्रकल्प</label>
+                            </div>
+
+                            <div class="col-lg-3 form-group cptb fbbc">
+
+                                <input type="radio" name="tab" value="igotsix" onclick="show10();" />
+                                <label>सौर ऊर्जा प्रकल्प</label>
+                            </div>
+
+                            <div class="col-lg-3 form-group cptb fbbc">
+
+                                <input type="radio" name="tab" value="igotsix" onclick="show11();" />
+                                <label>परिसरातील प्राचीन वृक्ष संख्या</label>
+                            </div>
+
+                            <div class="col-lg-3 form-group cptb fbbc">
+
+                                <input type="radio" name="tab" value="igotsix" onclick="show12();" />
+                                <label>नळ जोडणी</label>
+                            </div>
+
+                            <div class="col-lg-3 form-group cptb fbbc">
+
+                                <input type="radio" name="tab" value="igotsix" onclick="show13();" />
+                                <label>घर बंद</label>
+                            </div>
+
+                            <div class="col-lg-3 form-group cptb fbbc">
+
+                                <input type="radio" name="tab" value="igotsix" onclick="show14();" />
+                                <label>शौचालय टाकी प्रकार</label>
+                            </div>
+
+                            <div class="col-lg-3 form-group cptb fbbc">
+
+                                <input type="radio" name="tab" value="igotsix" onclick="show15();" />
+                                <label>सांडपाणी गटारात सोडता काय ?</label>
+                            </div>
 
                             <div class="col-lg-3 form-group" style="display:none;">
 
@@ -341,11 +390,77 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div id="RWHT" class="col-lg-2 form-group">
+                                        <label>जलपुनर्भरण व्यवस्था</label>
+                                        <label>Rainwater harvest</label>
+                                        <select id="RWH" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
+
+                                    <div id="CPT" class="col-lg-2 form-group">
+                                        <label>खतनिर्माती प्रकल्प</label>
+                                        <label>Composting project</label>
+                                        <select id="CP" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
+
+                                    <div id="SEPT" class="col-lg-2 form-group">
+                                        <label>सौर ऊर्जा प्रकल्प</label>
+                                        <label>Solar energy project</label>
+                                        <select id="SEP" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
+
+                                    <div id="HTT" class="col-lg-2 form-group">
+                                        <label>परिसरातील प्राचीन वृक्ष संख्या / Heritage tree</label>
+
+                                        <select id="HT" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
+
+                                    <div id="WCT" class="col-lg-2 form-group">
+                                        <label>नळ जोडणी / Water Connection</label>
+
+                                        <select id="WC" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
+
+
+                                    <div id="NVAT" class="col-lg-2 form-group">
+                                        <label>नळ जोडणी /Water Connection Type</label>
+
+                                        <select id="NVA" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
+
+                                    <div id="DLT" class="col-lg-2 form-group">
+                                        <label>Door Lock /<br />घर बंद </label>
+
+                                        <select id="DL" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
+
+                                    <div id="STKT" class="col-lg-2 form-group">
+                                        <label>शौचालय टाकी प्रकार / Toilet Tank Type </label>
+                                        <select id="STK" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
+
+                                    <div id="SGSKT" class="col-lg-2 form-group">
+                                        <label>सांडपाणी गटारात सोडता काय ? </label>
+                                        <select id="SGSK" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
+
+                                    <div id="BUET" class="col-lg-2 form-group">
+                                        <label>सांडपाणी गटारात सोडता काय</label>
+                                        <select id="BUE" class="form-control form-control form-control-sm">
+                                        </select>
+                                    </div>
                                     <div id="consstate" class="col-lg-3 form-group">
                                         <label> मालमत्तेची सद्यस्तिथी /</label>
                                         <label>Current status of the property</label>
                                         <select id="OCNO" class="form-control form-control form-control-sm">
-                                           
                                         </select>
                                     </div>
                                     <div id="ConsPerNo">
@@ -353,14 +468,12 @@
                                             <label>बांधकाम परवानगी क्र. /</label>
                                             <label>Const. Perm. No.</label>
                                             <select id="CPNO" class="form-control form-control form-control-sm">
-                                              
                                             </select>
                                         </div>
                                         <div class="col-lg-2 form-group">
                                             <label>भोगवटा दाखला क्र. /</label>
                                             <label> O. C. No.</label>
                                             <select id="OCNOY" class="form-control form-control form-control-sm">
-                                               
                                             </select>
                                         </div>
                                     </div>
@@ -370,7 +483,7 @@
                                             <label> Property No.</label>
 
                                             <input type="text" id="poname" class="form-control form-control form-control-sm" placeholder="Enter Property No" />
-                                            <span  class="text-danger"  id="err_PropertyNo"></span>
+                                            <span class="text-danger" id="err_PropertyNo"></span>
                                         </div>
                                         <div class="col-lg-3 form-group cptb">
                                             <label>नाव/</label>

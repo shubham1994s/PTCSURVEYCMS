@@ -384,7 +384,9 @@ function show4() {
     document.getElementById('filterbyProperty').style.display = 'block';
     document.getElementById('filter').style.display = 'none';
     document.getElementById('filterbyRWH').style.display = 'none';
-
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('SGSK').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
 
 
 }
@@ -487,6 +489,13 @@ function show7() {
     document.getElementById('filterbyno').style.display = 'none';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('DLT').style.display = 'none';
+    document.getElementById('SGSK').style.display = 'none';
+    document.getElementById('SGSKT').style.display = 'none';
+    document.getElementById('BUET').style.display = 'none';
+
+
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
 
@@ -867,6 +876,7 @@ function show15() {
     document.getElementById('DLT').style.display = 'none';
     document.getElementById('STKT').style.display = 'none';
     document.getElementById('SGSKT').style.display = 'block';
+    document.getElementById('SGSK').style.display = 'block';
     document.getElementById('BUET').style.display = 'block';
     document.getElementById('filterbyRWH').style.display = 'none';
     document.getElementById('Fifthtable').style.display = 'none';
