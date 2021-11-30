@@ -11,6 +11,8 @@ namespace BLL.ViewModel
     {
         public List<SelectListItem> PrabhagNoList { get; set; }
 
+        public List<SelectListItem> HTNoList { get; set; }
+
         public List<SelectListItem> WardNoList { get; set; }
 
         public List<SelectListItem> CSDateList { get; set; }
@@ -24,5 +26,8 @@ namespace BLL.ViewModel
 
 
         public List<PropertyMasterVM> PropertyOwnerListFocus { get; set; }
+
+
+      
     }
 }

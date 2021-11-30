@@ -163,6 +163,28 @@ function FillPrabhagListNo() {
 
 }
 
+
+function FillHTNo() {
+    var HTList = $('#HT').val();
+    $.ajax({
+        type: "post",
+        url: "/PTC/HTList",
+        data: { userId: HTList },
+        datatype: "json",
+        traditional: true,
+        success: function (data) {
+            district = '<option value="-1" >Select Heritage Tree</option>';
+            district = '<option value="All" >Select All.</option>';
+            for (var i = 0; i < data.length; i++) {
+                district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+            }
+            //district = district + '</select>';
+            $('#HT').html(district);
+        }
+    });
+
+}
+
 function FillWardListNo() {
     var WardListNo = $('#WardList').val();
     $.ajax({
@@ -647,6 +669,7 @@ function show11() {
     document.getElementById('CSDate').value = ''
     document.getElementById('CEDate').value = ''
     PropertyActive();
+    FillHTNo();
 }
 
 

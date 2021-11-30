@@ -937,6 +937,22 @@ namespace PTCSURVEYCMS.Controllers
                 return Redirect("/Account/Login");
         }
 
+
+        public ActionResult HTList()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                PropertyMasterVM obj = new PropertyMasterVM();
+                Repository = new Repository();
+                int AppId = SessionHandler.Current.AppId;
+                obj = Repository.GetHTNo(AppId, -1);
+                return Json(obj.HTNoList, JsonRequestBehavior.AllowGet);
+
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
         public ActionResult WardList()
         {
             if (SessionHandler.Current.AppId != 0)

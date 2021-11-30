@@ -28,6 +28,8 @@ namespace BLL.Repository.Repository
 
         PropertyMasterVM GetPrabhagNo(int Appid, int q);
 
+        PropertyMasterVM GetHTNo(int Appid, int q);
+
         PropertyMasterVM GetWardNo(int Appid, int q);
 
         PropertyMasterVM GetCSDate(int Appid, int q);
