@@ -567,7 +567,7 @@ namespace PTCSURVEYCMS.Controllers
                         }
 
                         //Roshan 30-11-2021
-                        if (arr[12] != "")
+                        if (arr[12] != "ALL")
                         {
                             if (arr[12] == "Y")
                             {
@@ -607,6 +607,14 @@ namespace PTCSURVEYCMS.Controllers
                             }
 
                         }
+
+                        if (arr[15] != "")
+                        {
+                            String s = arr[15].ToString();
+                            customerData = customerData.Where(x => x.HeritageTree == s).ToList();
+                         
+                        }
+
 
 
                         if (arr[16] != "")

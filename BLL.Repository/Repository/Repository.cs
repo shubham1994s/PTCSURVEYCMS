@@ -1353,12 +1353,8 @@ namespace BLL.Repository.Repository
                     NOSGSK = x.NOSGSK,
                     UnderGroundGutter=x.UnderGroundGutter,
                     OpenGutter=x.OpenGutter,
-                    OtherGutter=x.OtherGutter
-
-
-
-
-
+                    OtherGutter=x.OtherGutter,
+                    HeritageTree=x.HeritageTree
 
                 }).ToList();
             }
