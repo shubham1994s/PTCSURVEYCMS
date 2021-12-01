@@ -14,8 +14,9 @@
     }
 
     .srno {
-        width:10%;
+        width: 10%;
     }
+
     .subject {
         width: 15%;
     }
@@ -149,27 +150,35 @@
             right: 5px;
             z-index: 9;
         }
-    .bt-text{
-        font-size:14px;
+
+    .bt-text {
+        font-size: 14px;
     }
+
     .pr-0 {
-        padding-right:0px;
+        padding-right: 0px;
     }
-    .pl-0{
-        padding-left:0px;
+
+    .pl-0 {
+        padding-left: 0px;
     }
+
     .bigth {
-        width:40%;
+        width: 40%;
     }
+
     .bigth2 {
         width: 25%;
     }
+
     th, td {
         text-align: center !important;
     }
+
     .srnoo {
-        width:5%;
+        width: 5%;
     }
+
     .text-line {
         background: transparent;
         border: none;
@@ -679,7 +688,7 @@
                                 </div>
                             </div>
                         </td>
-                       
+
                         <td>
                             <div class="form-group pr-2 pl-2 pt-2" style="width:100%">
                                 <div>
@@ -713,7 +722,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="row">
-                             
+
                                 <div class="col-lg-3 pr-0"><p class="bt-text">नक्कल तयार करणार</p></div>
                                 <div class="col-lg-7 pl-0">
                                     @Html.TextBoxFor(model => model.NTK, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -721,7 +730,7 @@
                                 </div>
                             </div>
                             <div class="row pt-2">
-                            
+
                                 <div class="col-lg-3 pr-0"><p class="bt-text">रुजू पाहणार</p></div>
                                 <div class="col-lg-7 pl-0">
                                     @Html.TextBoxFor(model => model.RP, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })
@@ -778,7 +787,7 @@
                         </div>
                     </div>
                 </div>
-            
+
             </div>
 
         </div>
@@ -1582,18 +1591,18 @@
                                 </div>
                             </div>
                         </div>
-                      
 
-                        </div>
+
+                    </div>
                     <div class="row pt-2">
-                           
-                                <div class="col-lg-3 pr-0"><p class="bt-text">अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
 
-                                <div class="col-lg-7 pl-0">
-                                    @Html.TextBoxFor(model => model.TaxRegister, new { @class = "text-line", style = "font-family:Arial, FontAwesome" })
-                                    @Html.ValidationMessageFor(model => model.NWord, "", new { @class = "text-danger" })
-                                </div>
-                             
+                        <div class="col-lg-3 pr-0"><p class="bt-text">अर्जान्वये म्युनिसिपल कर आकारणी रजिस्टर</p></div>
+
+                        <div class="col-lg-7 pl-0">
+                            @Html.TextBoxFor(model => model.TaxRegister, new { @class = "text-line", style = "font-family:Arial, FontAwesome" })
+                            @Html.ValidationMessageFor(model => model.NWord, "", new { @class = "text-danger" })
+                        </div>
+
                     </div>
                     <div class="row pt-2">
                         <div class="col-lg-3 pr-0"><p class="bt-text">वरून सदर घराचा उतारा दिला आहे.</p></div>
@@ -1606,7 +1615,7 @@
                             @Html.ValidationMessageFor(model => model.TaxRegisterDate, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    </div>
+                </div>
 
                 <table style="width:100%" class="back mb-5 width">
                     <tr>
@@ -1619,9 +1628,9 @@
                         <td>सर्वेक्षण करणारा / Surveyor</td>
                         <td>@Html.TextBoxFor(model => model.SurvivorName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         @*<td>
-                    <img src="~/Images/@Model.SurveyorSignature" id="SurveyorSignature" height="100" width="90" style="border:solid" />
-                    <input type="file" name="file" id="SurveyorSignaturefile" value="@Model.SurveyorSignature" onchange="show(this)">
-                </td>*@
+                                <img src="~/Images/@Model.SurveyorSignature" id="SurveyorSignature" height="100" width="90" style="border:solid" />
+                                <input type="file" name="file" id="SurveyorSignaturefile" value="@Model.SurveyorSignature" onchange="show(this)">
+                            </td>*@
 
                         <td>@Html.EditorFor(model => model.SurvivorDate, new { @class = "form-control" })</td>
                     </tr>
@@ -1629,9 +1638,9 @@
                         <td>डेटा एन्ट्री /Data Entry By</td>
                         <td>@Html.TextBoxFor(model => model.DataEntryName, new { @class = "form-control", style = "font-family:Arial, FontAwesome" })</td>
                         @*<td>
-                    <img src="~/Images/@Model.DataEntrySignature" id="DataEntrySignature" height="100" width="90" style="border:solid" />
-                    <input type="file" name="file2" id="DataEntrySignaturefile" value="@Model.DataEntrySignature" onchange="show(this)">
-                </td>*@
+                                <img src="~/Images/@Model.DataEntrySignature" id="DataEntrySignature" height="100" width="90" style="border:solid" />
+                                <input type="file" name="file2" id="DataEntrySignaturefile" value="@Model.DataEntrySignature" onchange="show(this)">
+                            </td>*@
                         <td>@Html.EditorFor(model => model.DataEntryDate, new { @class = "form-control" })</td>
 
                     </tr>
@@ -1947,7 +1956,7 @@
         if ($('#TaxRegisterDate').val() == '') {
             $('#TaxRegisterDate').val("--Select Date--");
         }
-        
+
         $("#PropertyNo").change(function () {
             debugger;
 
@@ -2177,242 +2186,9 @@
     });
 
 
-
-
-    $("#PrabhagNo").change(function () {
-
-        var pno = $("#PrabhagNo").val();
-        $("#PrabhagNo2").val(pno);
-
-    });
-
-    $("#WardName_No").change(function () {
-
-        var pno = $("#WardName_No").val();
-        $("#WardName_No2").val(pno);
-
-    });
-
-
-
-    $("#NewPropertyNo").change(function () {
-
-        var pno = $("#NewPropertyNo").val();
-        $("#NewPropertyNo2").val(pno);
-
-    });
-    $("#PropertyNo").change(function () {
-
-        var pno = $("#PropertyNo").val();
-        $("#PropertyNo2").val(pno);
-
-    });
-
-    $("#OldHouseNo1").change(function () {
-
-        var pno = $("#OldHouseNo1").val();
-        $("#OldHouseNo2").val(pno);
-
-    });
-
-    $('.chkBx').change(function () {
-        $(".chkBx").not(this).prop('checked', false);
-    });
-    $('.chkBx1').change(function () {
-        $(".chkBx1").not(this).prop('checked', false);
-    });
-    $('.chkBx2').change(function () {
-        $(".chkBx2").not(this).prop('checked', false);
-    });
-    $('.chkBx3').change(function () {
-        $(".chkBx3").not(this).prop('checked', false);
-    });
-    $('.chkBx4').change(function () {
-        $(".chkBx4").not(this).prop('checked', false);
-    });
-    $('.chkBx5').change(function () {
-        $(".chkBx5").not(this).prop('checked', false);
-    });
-    $('.chkBx6').change(function () {
-        $(".chkBx6").not(this).prop('checked', false);
-    });
-    $('.chkBx7').change(function () {
-        $(".chkBx7").not(this).prop('checked', false);
-    });
-    $('.chkBx8').change(function () {
-        $(".chkBx8").not(this).prop('checked', false);
-    });
-    $('.chkBx9').change(function () {
-        $(".chkBx9").not(this).prop('checked', false);
-    });
-    $('.chkBx10').change(function () {
-        $(".chkBx10").not(this).prop('checked', false);
-    });
-    $('.chkBx11').change(function () {
-        $(".chkBx11").not(this).prop('checked', false);
-    });
-    $('.chkBx12').change(function () {
-        $(".chkBx12").not(this).prop('checked', false);
-    });
-    $('.chkBx13').change(function () {
-        $(".chkBx13").not(this).prop('checked', false);
-    });
-    $('.chkBx14').change(function () {
-        $(".chkBx14").not(this).prop('checked', false);
-    });
-    $('.chkBx15').change(function () {
-        $(".chkBx15").not(this).prop('checked', false);
-    });
-    $('.chkBx16').change(function () {
-        $(".chkBx16").not(this).prop('checked', false);
-    });
-    $('.chkBx17').change(function () {
-        $(".chkBx17").not(this).prop('checked', false);
-    });
-    $('.chkBx18').change(function () {
-        $(".chkBx18").not(this).prop('checked', false);
-    });
-    $('.chkBx19').change(function () {
-        $(".chkBx19").not(this).prop('checked', false);
-    });
-    $('.chkBx20').change(function () {
-        $(".chkBx20").not(this).prop('checked', false);
-    });
-    $('.chkBx21').change(function () {
-        $(".chkBx21").not(this).prop('checked', false);
-    });
-    $('.chkBx22').change(function () {
-        $(".chkBx22").not(this).prop('checked', false);
-    });
-    $('.chkBx23').change(function () {
-        $(".chkBx23").not(this).prop('checked', false);
-    });
-    $('.chkBx24').change(function () {
-        $(".chkBx24").not(this).prop('checked', false);
-    });
-    $('.chkBx25').change(function () {
-        $(".chkBx25").not(this).prop('checked', false);
-    });
-    $('.chkBx26').change(function () {
-        $(".chkBx26").not(this).prop('checked', false);
-    });
-    $('.chkBx27').change(function () {
-        $(".chkBx27").not(this).prop('checked', false);
-    });
-    $('.chkBx28').change(function () {
-        $(".chkBx28").not(this).prop('checked', false);
-    });
-    $('.chkBx29').change(function () {
-        $(".chkBx29").not(this).prop('checked', false);
-    });
-    $('.chkBx30').change(function () {
-        $(".chkBx30").not(this).prop('checked', false);
-    });
-    $('.chkBx31').change(function () {
-        $(".chkBx31").not(this).prop('checked', false);
-    });
-    $('.chkBx32').change(function () {
-        $(".chkBx32").not(this).prop('checked', false);
-    });
-    $('.chkBx33').change(function () {
-        $(".chkBx33").not(this).prop('checked', false);
-    });
-    $('#trash_badge').click(function () {
-        debugger;
-        $("#FileUpload_Preview").html("");
-    });
-    $('#SurveyorSignaturefile').change(function () {
-        debugger;
-        $("#FileUpload_Preview").html("");
-        $("#FileUpload_Preview").show();
-        $("#FileUpload_Preview").append("<img />");
-
-        if (typeof (FileReader) != "undefined") {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#SurveyorSignature').attr('src', e.target.result);
-                //-----------------------------------
-                // Preview image
-                //-----------------------------------
-                $("#FileUpload_Preview img").attr("src", e.target.result);
-                $("#FileUpload_Preview img").attr("width", "200px");
-                $("#FileUpload_Preview img").attr("height", "150px");
-            }
-            reader.readAsDataURL($(this)[0].files[0]);
-        }
-    });
-
-    $('#Sketchdiagramfile').change(function () {
-        debugger;
-        $("#FileUpload_Preview").html("");
-        $("#FileUpload_Preview").show();
-        $("#FileUpload_Preview").append("<img />");
-
-        if (typeof (FileReader) != "undefined") {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-
-                $('#Sketchdiagram').attr('src', e.target.result);
-                //-----------------------------------
-                // Preview image
-                //-----------------------------------
-                $("#FileUpload_Preview img").attr("src", e.target.result);
-                $("#FileUpload_Preview img").attr("width", "200px");
-                $("#FileUpload_Preview img").attr("height", "150px");
-            }
-            reader.readAsDataURL($(this)[0].files[0]);
-        }
-    });
-
-    $('#Sketchdiagramfile2').change(function () {
-        debugger;
-        $("#FileUpload_Preview").html("");
-        $("#FileUpload_Preview").show();
-        $("#FileUpload_Preview").append("<img />");
-
-        if (typeof (FileReader) != "undefined") {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-
-                $('#Sketchdiagram2').attr('src', e.target.result);
-                //-----------------------------------
-                // Preview image
-                //-----------------------------------
-                $("#FileUpload_Preview img").attr("src", e.target.result);
-                $("#FileUpload_Preview img").attr("width", "200px");
-                $("#FileUpload_Preview img").attr("height", "150px");
-                $('#docupload').show();
-            }
-            reader.readAsDataURL($(this)[0].files[0]);
-        }
-    });
-
-    $('#DataEntrySignaturefile').change(function () {
-        debugger;
-        $("#FileUpload_Preview").html("");
-        $("#FileUpload_Preview").show();
-        $("#FileUpload_Preview").append("<img />");
-
-        if (typeof (FileReader) != "undefined") {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-
-                $('#DataEntrySignature').attr('src', e.target.result);
-                //-----------------------------------
-                // Preview image
-                //-----------------------------------
-                $("#FileUpload_Preview img").attr("src", e.target.result);
-                $("#FileUpload_Preview img").attr("width", "200px");
-                $("#FileUpload_Preview img").attr("height", "150px");
-            }
-            reader.readAsDataURL($(this)[0].files[0]);
-        }
-    });
     function goBack() {
         window.history.back();
     }
-
-
 
 </script>
 
@@ -2447,6 +2223,12 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+
+        var url_string = window.location.href; //window.location.href
+        var url = new URL(url_string);
+        var q = url.searchParams.get("q");
+        $('#NamunaId').val(q);
+
         var maxField = 10; //Input fields increment limitation
         var addButton = $('.Tenant_add_button'); //Add button selector
         var wrapper = $('.field_wrapper_Tenant'); //Input field wrapper
