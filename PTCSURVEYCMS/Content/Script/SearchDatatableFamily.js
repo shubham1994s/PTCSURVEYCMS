@@ -3155,7 +3155,7 @@ function TwelvedatatableActive() {
                     }
 
                     else {
-                        'Not Available';
+                        return 'Not Available';
                     }
                 }
             },

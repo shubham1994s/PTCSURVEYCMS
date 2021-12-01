@@ -2960,15 +2960,14 @@ function TwelvedatatableActive() {
                     }
 
                     else {
-                        'Not Available';
+                        return 'Not Available';
                     }
                 }
             },
 
 
 
-
-
+         
 
             { "data": "PropOwnerTelephoneNo" },
             { "data": "NewPropertyNo" },
