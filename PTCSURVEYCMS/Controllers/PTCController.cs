@@ -646,7 +646,7 @@ namespace PTCSURVEYCMS.Controllers
 
                             if (arr[17] == "S")
                             {
-                                customerData = customerData.Where(x => x.WaterConnectionSpecialCategory != null).ToList();
+                                customerData = customerData.Where(x => x.WaterConnectionSpecialCategory == "true").ToList();
                             }
                             if (arr[17] == "I")
                             {

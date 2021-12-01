@@ -246,6 +246,8 @@ function FillCEDate() {
     });
 }
 
+
+
 function None() {
     ActiveEmployee();
     document.getElementById('common').style.display = 'none';
@@ -267,6 +269,7 @@ function show1() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -330,6 +333,7 @@ function show2() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -366,6 +370,19 @@ function show2() {
     document.getElementById('Fifthtable').style.display = 'none';
     document.getElementById('filterbyCP').style.display = 'none';
     document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('Sixthtable').style.display = 'none';
+    document.getElementById('filterbySEP').style.display = 'none';
+    document.getElementById('Seventable').style.display = 'none';
+    document.getElementById('filterbyHT').style.display = 'none';
+    document.getElementById('Eighttable').style.display = 'none';
+    document.getElementById('filterbyWC').style.display = 'none';
+    document.getElementById('Ninetable').style.display = 'none';
+    document.getElementById('filterbyDL').style.display = 'none';
+    document.getElementById('Tentable').style.display = 'none';
+    document.getElementById('filterbySTP').style.display = 'none';
+    document.getElementById('Eleventable').style.display = 'none';
+    document.getElementById('filterbySGSK').style.display = 'none';
+    document.getElementById('Twelvetable').style.display = 'none';
 
     $("#OCNO").empty();
     $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
@@ -435,6 +452,7 @@ function show6() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -498,6 +516,7 @@ function show7() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     // debugger;
     document.getElementById("bpn").checked = true;
     var element = document.getElementById("cusmargin");
@@ -566,7 +585,7 @@ function show8() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
-  
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -612,8 +631,32 @@ function show8() {
     document.getElementById('Eleventable').style.display = 'none';
     document.getElementById('filterbySGSK').style.display = 'none';
     document.getElementById('Twelvetable').style.display = 'none';
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
     $("#RWH").empty();
     $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#CP").empty();
+    $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#SEP").empty();
+    $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#WC").empty();
+    $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#NVA").empty();
+    $("#NVA").append("<option value='ALL' selected>Select All.</option><option value = 'R' >Residential</option > <option value='S'>Sp.Category</option><option value='I'>Industrial</option>");
+    $("#DL").empty();
+    $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
+    $("#STK").empty();
+    $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
+    $("#SGSK").empty();
+    $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
+    $("#BUE").empty();
+    $("#BUE").append("<option value='ALL' selected>Select All.</option><option value = 'BG' >भूमिगत गटार</option > <option value='UG'>उघडी गटार </option><option value='O'>इतर</option>");
+
+
    
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
@@ -629,6 +672,7 @@ function show9() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -674,8 +718,32 @@ function show9() {
     document.getElementById('Eleventable').style.display = 'none';
     document.getElementById('filterbySGSK').style.display = 'none';
     document.getElementById('Twelvetable').style.display = 'none';
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
+    $("#RWH").empty();
+    $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
     $("#CP").empty();
     $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#SEP").empty();
+    $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#WC").empty();
+    $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#NVA").empty();
+    $("#NVA").append("<option value='ALL' selected>Select All.</option><option value = 'R' >Residential</option > <option value='S'>Sp.Category</option><option value='I'>Industrial</option>");
+    $("#DL").empty();
+    $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
+    $("#STK").empty();
+    $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
+    $("#SGSK").empty();
+    $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
+    $("#BUE").empty();
+    $("#BUE").append("<option value='ALL' selected>Select All.</option><option value = 'BG' >भूमिगत गटार</option > <option value='UG'>उघडी गटार </option><option value='O'>इतर</option>");
+
+
 
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
@@ -690,6 +758,7 @@ function show10() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -735,8 +804,32 @@ function show10() {
     document.getElementById('Eleventable').style.display = 'none';
     document.getElementById('filterbySGSK').style.display = 'none';
     document.getElementById('Twelvetable').style.display = 'none';
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
+    $("#RWH").empty();
+    $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#CP").empty();
+    $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
     $("#SEP").empty();
     $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#WC").empty();
+    $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#NVA").empty();
+    $("#NVA").append("<option value='ALL' selected>Select All.</option><option value = 'R' >Residential</option > <option value='S'>Sp.Category</option><option value='I'>Industrial</option>");
+    $("#DL").empty();
+    $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
+    $("#STK").empty();
+    $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
+    $("#SGSK").empty();
+    $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
+    $("#BUE").empty();
+    $("#BUE").append("<option value='ALL' selected>Select All.</option><option value = 'BG' >भूमिगत गटार</option > <option value='UG'>उघडी गटार </option><option value='O'>इतर</option>");
+
+
 
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
@@ -799,7 +892,33 @@ function show11() {
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
-    document.getElementById('CEDate').value = '' 
+    document.getElementById('CEDate').value = ''
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
+    $("#RWH").empty();
+    $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#CP").empty();
+    $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#SEP").empty();
+    $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#WC").empty();
+    $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#NVA").empty();
+    $("#NVA").append("<option value='ALL' selected>Select All.</option><option value = 'R' >Residential</option > <option value='S'>Sp.Category</option><option value='I'>Industrial</option>");
+    $("#DL").empty();
+    $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
+    $("#STK").empty();
+    $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
+    $("#SGSK").empty();
+    $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
+    $("#BUE").empty();
+    $("#BUE").append("<option value='ALL' selected>Select All.</option><option value = 'BG' >भूमिगत गटार</option > <option value='UG'>उघडी गटार </option><option value='O'>इतर</option>");
+
+
     FillHTNo();
     EightdatatableActive();
 }
@@ -811,6 +930,7 @@ function show12() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -856,10 +976,32 @@ function show12() {
     document.getElementById('Eleventable').style.display = 'none';
     document.getElementById('filterbySGSK').style.display = 'none';
     document.getElementById('Twelvetable').style.display = 'none';
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
+    $("#RWH").empty();
+    $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#CP").empty();
+    $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#SEP").empty();
+    $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
     $("#WC").empty();
     $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
     $("#NVA").empty();
     $("#NVA").append("<option value='ALL' selected>Select All.</option><option value = 'R' >Residential</option > <option value='S'>Sp.Category</option><option value='I'>Industrial</option>");
+    $("#DL").empty();
+    $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
+    $("#STK").empty();
+    $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
+    $("#SGSK").empty();
+    $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
+    $("#BUE").empty();
+    $("#BUE").append("<option value='ALL' selected>Select All.</option><option value = 'BG' >भूमिगत गटार</option > <option value='UG'>उघडी गटार </option><option value='O'>इतर</option>");
+
+
 
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
@@ -876,6 +1018,7 @@ function show13() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -919,8 +1062,31 @@ function show13() {
     document.getElementById('Tentable').style.display = 'block';
     document.getElementById('filterbySTP').style.display = 'none';
     document.getElementById('Eleventable').style.display = 'none';
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
+    $("#RWH").empty();
+    $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#CP").empty();
+    $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#SEP").empty();
+    $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#WC").empty();
+    $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#NVA").empty();
+    $("#NVA").append("<option value='ALL' selected>Select All.</option><option value = 'R' >Residential</option > <option value='S'>Sp.Category</option><option value='I'>Industrial</option>");
     $("#DL").empty();
     $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
+    $("#STK").empty();
+    $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
+    $("#SGSK").empty();
+    $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
+    $("#BUE").empty();
+    $("#BUE").append("<option value='ALL' selected>Select All.</option><option value = 'BG' >भूमिगत गटार</option > <option value='UG'>उघडी गटार </option><option value='O'>इतर</option>");
+
 
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
@@ -937,6 +1103,7 @@ function show14() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -980,8 +1147,32 @@ function show14() {
     document.getElementById('Eleventable').style.display = 'block';
     document.getElementById('filterbySGSK').style.display = 'none';
     document.getElementById('Twelvetable').style.display = 'none';
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
+    $("#RWH").empty();
+    $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#CP").empty();
+    $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#SEP").empty();
+    $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#WC").empty();
+    $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#NVA").empty();
+    $("#NVA").append("<option value='ALL' selected>Select All.</option><option value = 'R' >Residential</option > <option value='S'>Sp.Category</option><option value='I'>Industrial</option>");
+    $("#DL").empty();
+    $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
     $("#STK").empty();
     $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
+    $("#SGSK").empty();
+    $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
+    $("#BUE").empty();
+    $("#BUE").append("<option value='ALL' selected>Select All.</option><option value = 'BG' >भूमिगत गटार</option > <option value='UG'>उघडी गटार </option><option value='O'>इतर</option>");
+
+
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
@@ -995,6 +1186,7 @@ function show15() {
     FillWardListNo();
     FillCSDate();
     FillCEDate();
+    FillHTNo();
     var element = document.getElementById("cusmargin");
     element.classList.remove("MyClass");
     document.getElementById('common').style.display = 'block';
@@ -1040,10 +1232,32 @@ function show15() {
     document.getElementById('Eleventable').style.display = 'none';
     document.getElementById('filterbySGSK').style.display = 'block';
     document.getElementById('Twelvetable').style.display = 'block';
+    $("#OCNOY").empty();
+    $("#OCNOY").append("<option value='ALL' selected>Select All.</option><option value = 'Y' > YES</option > <option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#CPNO").empty();
+    $("#CPNO").append("<option value='ALL'>Select All.</option>< option value = 'Y' > YES</option ><option value='N'>NO</option><option value='NA'>Not Selected</option>");
+    $("#OCNO").empty();
+    $("#OCNO").append("<option value='' selected>मालमत्तेची सद्यस्तिथी</option>< option value = 'ALL' > Select All.</option >  <option value='Safe'>भिंती (सुस्थितीत)</option><option value='Danger'>भिंती (धोकदायक)</option> <option value='Safe2'>छप्पर (सुस्थितीत)</option> <option value='Danger2'>छप्पर (धोकदायक)</option><option value='Safe3'>काँलम (सुस्थितीत)</option><option value='Danger3'>काँलम (धोकदायक)</option>");
+    $("#RWH").empty();
+    $("#RWH").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#CP").empty();
+    $("#CP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#SEP").empty();
+    $("#SEP").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#WC").empty();
+    $("#WC").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >YES</option > <option value='N'>NO</option>");
+    $("#NVA").empty();
+    $("#NVA").append("<option value='ALL' selected>Select All.</option><option value = 'R' >Residential</option > <option value='S'>Sp.Category</option><option value='I'>Industrial</option>");
+    $("#DL").empty();
+    $("#DL").append("<option value='ALL' selected>Select All.</option><option value = 'HC' >घर बंद</option > <option value='PCL'>कायम घर बंद</option><option value='OM'>बाहेरून मोजमाप</option>");
+    $("#STK").empty();
+    $("#STK").append("<option value='ALL' selected>Select All.</option><option value = 'FST' >फक्त सेप्टिक टैंक</option > <option value='STS'>सेप्टिक टैंक + शोषखड्डा</option><option value='Other'>इतर</option>");
     $("#SGSK").empty();
     $("#SGSK").append("<option value='ALL' selected>Select All.</option><option value = 'Y' >होय</option > <option value='N'>नाही</option>");
     $("#BUE").empty();
     $("#BUE").append("<option value='ALL' selected>Select All.</option><option value = 'BG' >भूमिगत गटार</option > <option value='UG'>उघडी गटार </option><option value='O'>इतर</option>");
+
+
     document.getElementById('CPNO').value = ''
     document.getElementById('OCNOY').value = ''
     document.getElementById('CSDate').value = ''
@@ -1084,7 +1298,20 @@ function Search() {
     Name = $('#Name').val();
     CPNO = $('#CPNO').val();
     OCNOY = $('#OCNOY').val();
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val();
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
+
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + WC + "," + NVA + "," + DL + "," + STK + "," + SGSK + "," + BUE;
 
     // alert(value );
 
@@ -1111,8 +1338,20 @@ function SearchByNo() {
     Name = $('#Name').val();
     CPNO = $('#CPNO').val();
     OCNOY = $('#OCNOY').val();
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY;;
+    RWH = $('#RWH').val();
+    CP = $('#CP').val();
+    SEP = $('#SEP').val();
+    HT = $('#HT').val();
+    WC = $('#WC').val();
+    NVA = $('#NVA').val();
+    DL = $('#DL').val();
+    STK = $('#STK').val();
+    SGSK = $('#SGSK').val();
+    BUE = $('#BUE').val();
 
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + WC + "," + NVA + "," + DL + "," + STK + "," + SGSK + "," + BUE;
     // alert(value );
 
     oTable = $('#ThirddatatableActive').DataTable();
@@ -1145,13 +1384,13 @@ function SearchByStatus() {
     WC = $('#WC').val();
     NVA = $('#NVA').val();
     DL = $('#DL').val();
-    STK = $('#STK').val(); 
+    STK = $('#STK').val();
     SGSK = $('#SGSK').val();
     BUE = $('#BUE').val();
-    
-    
-    
-    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + WC + "," + NVA + "," + DL + "," + STK + "," + SGSK + "," + BUE ;
+
+
+
+    var value = Filter + "," + PrabhagList + "," + WardList + "," + CEDate + "," + CSDate + "," + OCNO + "," + PRONOBYNAME + "," + PROOWNAME + "," + poname + "," + Name + "," + CPNO + "," + OCNOY + "," + RWH + "," + CP + "," + SEP + "," + HT + "," + WC + "," + NVA + "," + DL + "," + STK + "," + SGSK + "," + BUE;
 
     // alert(value );
 
@@ -2372,23 +2611,28 @@ function NinedatatableActive() {
             {
                 "data": "WaterConnectionResidential", "render": function (data, type, full, meta) {
 
-                    if (full["WaterConnectionResidential"] != null ) {
+                    if (full["WaterConnectionResidential"] == "true") {
 
                         return 'Residential';
 
                     }
-                    if (full["WaterConnectionSpecialCategory"] != null) {
+                    if (full["WaterConnectionSpecialCategory"] == "true") {
 
                         return 'SpecialCategory';
 
                     }
-                    if (full["WaterConnectionIndustrial"] != null) {
+                    if (full["WaterConnectionIndustrial"] == "true") {
 
                         return 'Industrial';
 
                     }
+                    else {
+                        return 'Not Available';
+
+                    }
                 }
             },
+
 
 
 
@@ -2470,24 +2714,28 @@ function TendatatableActive() {
             {
                 "data": "DoorLockResidential", "render": function (data, type, full, meta) {
 
-                    if (full["DoorLockResidential"] =="true") {
+                    if (full["DoorLockResidential"] == "true") {
 
                         return 'घर बंद';
 
                     }
-                    if (full["DoorLockSpecial"] == "true") {
-
+                 
+                    if (full["DoorLockSpecial"] == "true")
+                    {
                         return 'कायम घर बंद';
-
                     }
+                 
                     if (full["DoorLockIndustrial"] == "true") {
 
                         return 'बाहेरून मोजमाप';
 
                     }
+
+                    else {
+                        return 'Not Available';
+                    }
                 }
             },
-
           
 
 
@@ -2575,19 +2823,13 @@ function ElevendatatableActive() {
                         return 'फक्त सेप्टिक टैंक';
 
                     }
-                    else {
-                        return 'Not Available';
-
-                    }
+                    
                     if (full["STS"] == 1) {
 
                         return 'सेप्टिक टैंक + शोषखड्डा';
 
                     }
-                    else {
-                        return 'Not Available';
 
-                    }
                     if (full["Other"] == 1) {
 
                         return 'इतर';
@@ -2701,20 +2943,24 @@ function TwelvedatatableActive() {
             {
                 "data": "UnderGroundGutter", "render": function (data, type, full, meta) {
 
-                    if (full["UnderGroundGutter"] != null) {
+                    if (full["UnderGroundGutter"] == "true") {
 
-                        return 'UnderGroundGutter';
-
-                    }
-                    if (full["OpenGutter"] != null) {
-
-                        return 'OpenGutter';
+                        return 'भूमिगत गटार';
 
                     }
-                    if (full["OtherGutter"] != null) {
+                    if (full["OpenGutter"] == "true") {
 
-                        return 'OtherGutter';
+                        return 'उघडी गटार';
 
+                    }
+                    if (full["OtherGutter"] == 1) {
+
+                        return 'इतर';
+
+                    }
+
+                    else {
+                        'Not Available';
                     }
                 }
             },
