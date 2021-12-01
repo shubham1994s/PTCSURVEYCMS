@@ -1464,7 +1464,6 @@ function Search() {
 }
 
 
-
 function SearchByNo() {
     debugger;
     PrabhagList = $('#PrabhagList').val();
@@ -3155,7 +3154,7 @@ function TwelvedatatableActive() {
                     }
 
                     else {
-                        'Not Available';
+                        return 'Not Available';
                     }
                 }
             },
