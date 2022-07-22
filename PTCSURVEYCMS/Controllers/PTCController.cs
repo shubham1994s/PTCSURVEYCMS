@@ -204,11 +204,14 @@ namespace PTCSURVEYCMS.Controllers
                     //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
 
                     var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
+                    
                     ViewBag.EntryCount = EntryCount;
                 }
 
                 var jsonResult = Json("10000000", JsonRequestBehavior.AllowGet);
                 jsonResult.MaxJsonLength = int.MaxValue;
+
+                ViewBag.ExportMsg = TempData["message"];
 
 
                 //   return Json(viewModel);
@@ -365,6 +368,8 @@ namespace PTCSURVEYCMS.Controllers
                     int skip = start != null ? Convert.ToInt32(start) : 0;
                     int recordsTotal = 0;
                     var griddata = Repository.getPropertyDetails(AppId);
+                   // griddata.Count("4500");
+
                     // Getting all Customer data
                     // 
                     // List<PropertyMaster> customerData = _context.PropertyMasters.Where(x=>x.IsDelete==false).ToList();
@@ -1203,7 +1208,7 @@ namespace PTCSURVEYCMS.Controllers
                 return Redirect("/Account/Login");
         }
         // done by shubham
-        public FileResult Export(int q)
+        public ActionResult Export(int q)
         {
             Repository = new Repository();
             int Appid = SessionHandler.Current.AppId;
@@ -1211,14 +1216,22 @@ namespace PTCSURVEYCMS.Controllers
             viewModel = Repository.getPropertyDetailsByID(q, Appid);
             //Build the File Path.
             string fileName = viewModel.Sketchdiagram2;
-            DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities();
-            var AppDetails = db.AppDetails.Where(x => x.AppId == Appid).FirstOrDefault();
-            var path = Server.MapPath(AppDetails.basePath) + fileName;
-            //    string path = Server.MapPath("~/Images/") + fileName;
-            //Read the File data into Byte Array.
-            byte[] bytes = System.IO.File.ReadAllBytes(path);
-            //Send the File to Download.         
-            return File(bytes, "application/octet-stream", fileName);
+            if (fileName == null)
+            {
+                TempData["message"] = "File Not Available";
+                return RedirectToAction("SurveyList");
+            }
+            else
+            {
+                DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities();
+                var AppDetails = db.AppDetails.Where(x => x.AppId == Appid).FirstOrDefault();
+                var path = Server.MapPath(AppDetails.basePath) + fileName;
+                //    string path = Server.MapPath("~/Images/") + fileName;
+                //Read the File data into Byte Array.
+                byte[] bytes = System.IO.File.ReadAllBytes(path);
+                //Send the File to Download.         
+                return File(bytes, "application/octet-stream", fileName);
+            }
         }
         [HttpGet]
         public JsonResult getPropertyDetails()
