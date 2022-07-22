@@ -1807,6 +1807,7 @@ function DownloadQRCode(q) {
 
 
 function closeWin() {
+
     myWindow.close();
 }
 
@@ -1819,7 +1820,7 @@ function capitalize_Words(str) {
 
 const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 function ActiveEmployee() {
-
+    debugger;
     $('#datatableActive').DataTable({
 
         //  "processing": true, // for show progress bar  
@@ -2025,9 +2026,9 @@ function StatusActive() {
 }
 
 function PropertyActive() {
-
+    debugger;
     $('#FourthdatatableActive').DataTable({
-
+       
         //  "processing": true, // for show progress bar  
         "serverSide": true, // for process server side  
         "filter": true, // this is for disable filter (search box)

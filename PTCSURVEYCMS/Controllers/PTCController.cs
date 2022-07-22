@@ -318,7 +318,7 @@ namespace PTCSURVEYCMS.Controllers
 
 
 
-        public ActionResult LoadData()
+        public JsonResult LoadData()
         {
             try
             {
@@ -799,6 +799,11 @@ namespace PTCSURVEYCMS.Controllers
                     var data = customerData.Skip(skip).Take(pageSize).ToList();
                     //Returning Json Data    
                     return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+                //    var griddata = Repository.getTaxReminderReport(q, t, fromDate, toDate, AppId);
+                    //var jsonResult = Json(new { aaData = griddata },JsonRequestBehavior.AllowGet);
+                    //jsonResult.MaxJsonLength = int.MaxValue;
+                    //return jsonResult;
                 }
 
             }
