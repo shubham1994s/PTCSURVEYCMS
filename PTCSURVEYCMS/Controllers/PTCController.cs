@@ -204,6 +204,7 @@ namespace PTCSURVEYCMS.Controllers
                     //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.  
 
                     var EntryCount = db.PropertyMasters.Where(x => x.IsDelete == false).Count();
+                    
                     ViewBag.EntryCount = EntryCount;
                 }
 
@@ -365,6 +366,8 @@ namespace PTCSURVEYCMS.Controllers
                     int skip = start != null ? Convert.ToInt32(start) : 0;
                     int recordsTotal = 0;
                     var griddata = Repository.getPropertyDetails(AppId);
+                   // griddata.Count("4500");
+
                     // Getting all Customer data
                     // 
                     // List<PropertyMaster> customerData = _context.PropertyMasters.Where(x=>x.IsDelete==false).ToList();

@@ -1359,9 +1359,14 @@ namespace BLL.Repository.Repository
                     HeritageTree=x.HeritageTree
 
                 }).ToList();
+
+                for (int i = 500; i <= 4500; i += 150)
+                {
+                    //result.Add(result.Add());
+                }
             }
 
-
+         
             return result;
         }
 
@@ -1846,7 +1851,7 @@ namespace BLL.Repository.Repository
                     Master.AppilcantName = _Namuna.AppilcantName;
                     Master.ApplicantDate = Convert.ToDateTime(_Namuna.ApplicantDate).ToString("dd-MM-yyyy");
                     Master.TaxRegister = _Namuna.TaxRegister;
-                    Master.TaxRegisterDate = Convert.ToDateTime(_Namuna.SurvivorDate).ToString("dd-MM-yyyy");
+                    Master.TaxRegisterDate = Convert.ToDateTime(_Namuna.TaxRegisterDate).ToString("dd-MM-yyyy");
                     Master.RMNAME = _Namuna.RMNAME;
                     Master.PropertyNo = _Namuna.PropertyNo;
                     Master.PropertyDescription = _Namuna.PropertyDescription;
