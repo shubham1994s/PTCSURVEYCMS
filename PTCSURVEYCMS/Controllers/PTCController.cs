@@ -211,6 +211,8 @@ namespace PTCSURVEYCMS.Controllers
                 var jsonResult = Json("10000000", JsonRequestBehavior.AllowGet);
                 jsonResult.MaxJsonLength = int.MaxValue;
 
+                ViewBag.ExportMsg = TempData["message"];
+
 
                 //   return Json(viewModel);
                 return View(viewModel);
@@ -319,7 +321,7 @@ namespace PTCSURVEYCMS.Controllers
 
 
 
-        public ActionResult LoadData()
+        public JsonResult LoadData()
         {
             try
             {
@@ -802,6 +804,11 @@ namespace PTCSURVEYCMS.Controllers
                     var data = customerData.Skip(skip).Take(pageSize).ToList();
                     //Returning Json Data    
                     return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+                //    var griddata = Repository.getTaxReminderReport(q, t, fromDate, toDate, AppId);
+                    //var jsonResult = Json(new { aaData = griddata },JsonRequestBehavior.AllowGet);
+                    //jsonResult.MaxJsonLength = int.MaxValue;
+                    //return jsonResult;
                 }
 
             }
@@ -1206,7 +1213,7 @@ namespace PTCSURVEYCMS.Controllers
                 return Redirect("/Account/Login");
         }
         // done by shubham
-        public FileResult Export(int q)
+        public ActionResult Export(int q)
         {
             Repository = new Repository();
             int Appid = SessionHandler.Current.AppId;
@@ -1214,14 +1221,22 @@ namespace PTCSURVEYCMS.Controllers
             viewModel = Repository.getPropertyDetailsByID(q, Appid);
             //Build the File Path.
             string fileName = viewModel.Sketchdiagram2;
-            DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities();
-            var AppDetails = db.AppDetails.Where(x => x.AppId == Appid).FirstOrDefault();
-            var path = Server.MapPath(AppDetails.basePath) + fileName;
-            //    string path = Server.MapPath("~/Images/") + fileName;
-            //Read the File data into Byte Array.
-            byte[] bytes = System.IO.File.ReadAllBytes(path);
-            //Send the File to Download.         
-            return File(bytes, "application/octet-stream", fileName);
+            if (fileName == null)
+            {
+                TempData["message"] = "File Not Available";
+                return RedirectToAction("SurveyList");
+            }
+            else
+            {
+                DEVPTCSURVEYMAINEntities db = new DEVPTCSURVEYMAINEntities();
+                var AppDetails = db.AppDetails.Where(x => x.AppId == Appid).FirstOrDefault();
+                var path = Server.MapPath(AppDetails.basePath) + fileName;
+                //    string path = Server.MapPath("~/Images/") + fileName;
+                //Read the File data into Byte Array.
+                byte[] bytes = System.IO.File.ReadAllBytes(path);
+                //Send the File to Download.         
+                return File(bytes, "application/octet-stream", fileName);
+            }
         }
         [HttpGet]
         public JsonResult getPropertyDetails()
